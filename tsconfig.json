@@ -22,8 +22,8 @@
       "@store/*": [
         "src/lib/store/*"
       ],
-      "@repository/*": [
-        "src/lib/repository/*"
+      "@api/*": [
+        "src/lib/api/*"
       ],
       "@core/*": [
         "src/lib/core/*"
@@ -33,6 +33,9 @@
       ],
       "@helpers/*": [
         "src/lib/helpers/*"
+      ],
+      "@shared/*": [
+        "src/lib/shared/*"
       ],
     }
   },

@@ -1,10 +1,5 @@
 export const TYPE_LIST = 'REPORTS';
-export const TYPE_DETAIL = 'REPORT';
 
 export const ACTIONS = {
-  REMOVE: `${TYPE_LIST}/REMOVE`,
-  SELECT: `${TYPE_LIST}/SELECT`,
-  FETCH: `${TYPE_DETAIL}/FETCH`,
-  PATCH: `${TYPE_DETAIL}/PATCH`,
-  UPDATE: `${TYPE_DETAIL}/UPDATE`,
+  FETCH: `${TYPE_LIST}/FETCH`,
 };

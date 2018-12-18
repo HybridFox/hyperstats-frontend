@@ -6,21 +6,21 @@ import { throwError as _throw } from 'rxjs';
 import { EntitiesActions } from '@store/entities';
 import { Handler } from '@store/handler';
 
-import { ReportsRepository } from '@repository/reports';
+import { ReportsRepository } from '@api/reports';
 import { ACTIONS } from './action-types';
 
 @Injectable()
-export class TasksActions {
+export class ReportsActions {
   constructor(
     private handler: Handler,
     private entitiesActions: EntitiesActions,
     private reportsRepository: ReportsRepository,
   ) {}
 
-  public fetchAll(page: number, itemsPerPage: number, sort: any, filters: any[]): Observable<any> {
+  public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH);
 
-    return this.reportsRepository.fetchAll(page, itemsPerPage, sort, filters)
+    return this.reportsRepository.fetchAll()
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.FETCH, {
@@ -31,8 +31,7 @@ export class TasksActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.FETCH, {
-            payload: this.entitiesActions.normalize(response.results, [EntitiesActions.schema.reports]),
-            pagination: response.pagination,
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.reports])
           });
         }),
         finalize(() => {

@@ -1,15 +1,22 @@
 import { ACTIONS } from './action-types';
+import { progressReducer } from '@store/hor';
 
-export const ReportsReducer = (state = null, action)  => {
-  switch (action.type) {
+import { TYPE_LIST } from './action-types';
 
-    case ACTIONS.FETCH:
-      return {
-        ...action.payload,
-      };
-
-    default:
-      return state;
-
+export const reducer = (
+  state = null,
+  action,
+) => {
+  if (action.type === ACTIONS.FETCH) {
+    return [
+      ...action.payload,
+    ];
   }
+
+  return state;
 };
+
+export const reportsReducer = progressReducer(
+  { entityType: TYPE_LIST },
+  reducer,
+);
