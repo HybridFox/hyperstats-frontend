@@ -1,3 +1,6 @@
 import { schema } from 'normalizr';
 
-export const reports = new schema.Entity('reports');
+const role = new schema.Entity('roles');
+export const report = new schema.Entity('reports', {
+  roles: [role],
+});

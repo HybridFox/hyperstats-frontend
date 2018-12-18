@@ -3,7 +3,7 @@ import { stripTrailingSlash } from '@helpers/url';
 
 export class ApiConfigService {
   public baseUrl(url: string, {
-    version = '',
+    version = 'v2',
   }: {
     version?: string;
   } = {}): string {

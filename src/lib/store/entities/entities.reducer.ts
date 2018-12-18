@@ -10,36 +10,13 @@ export const EntitiesReducer = (state = INITIAL_STATE, action) => {
     const originalEntities: any = get(state, action.payload.name);
     const payload = get(action, 'payload.entities');
 
-    switch (action.payload.name) {
-
-      case 'users':
-
-        // Do not update the current user
-        if (originalEntities) {
-          Object.keys(originalEntities).forEach(id => {
-            if (originalEntities[id].userInfo) {
-              delete payload[id];
-            }
-          });
-        }
-
-        return {
-          ...state,
-          [action.payload.name]: {
-            ...originalEntities,
-            ...payload,
-          },
-        };
-
-      default:
-        return {
-          ...state,
-          [action.payload.name]: {
-            ...originalEntities,
-            ...payload,
-          },
-        };
-    }
+    return {
+      ...state,
+      [action.payload.name]: {
+        ...originalEntities,
+        ...payload,
+      },
+    };
   }
 
   if (action.type === ACTIONS.NORMALIZE_MERGE) {

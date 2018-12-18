@@ -15,6 +15,7 @@ export class EntitiesActions {
   ) {}
 
   public normalize(data: any, entitySchema: Schema, overwrite = true) {
+    console.log(data);
     const normalizedData = normalize(data, entitySchema);
 
     Object.keys(normalizedData.entities).forEach((entityName) => {

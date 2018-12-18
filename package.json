@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test": "jest --collectCoverage",
+    "test:watch": "jest --watch",
+    "test:ci": "npm run lint && jest --runInBand --collectCoverage"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +54,35 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "jest": "^23.6.0",
+    "jest-preset-angular": "^6.0.2"
+  },
+  "jest": {
+    "verbose": false,
+    "roots": ["src"],
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts",
+    "transformIgnorePatterns": [
+      "./node_modules/(?!lodash-es/.*)"
+    ],
+    "moduleNameMapper": {
+      "@environment/(.*)": "<rootDir>/src/environments/$1",
+      "@helpers/(.*)": "<rootDir>/src/lib/helpers/$1",
+      "@shared/(.*)": "<rootDir>/src/lib/shared/$1",
+      "@store/(.*)": "<rootDir>/src/lib/store/$1",
+      "@api/(.*)": "<rootDir>/src/lib/api/$1",
+      "@core/(.*)": "<rootDir>/src/lib/core/$1"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/**/*.module.ts",
+      "!src/**/*.d.ts"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "index.ts"
+    ],
+    "testURL": "http://localhost:4350/"
   }
 }
