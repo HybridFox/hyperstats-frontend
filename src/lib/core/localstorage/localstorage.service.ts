@@ -104,15 +104,15 @@ export class LocalstorageService {
   private validateStorage(): void {
     const storage = this.snapshot;
 
-    if (!this.identifier && !storage['cas-storage']) {
+    if (!this.identifier && !storage['rare-storage']) {
       return;
     }
 
-    if (this.identifier && !storage['cas-storage']) {
-      return this.setItem('cas-storage', this.identifier);
+    if (this.identifier && !storage['rare-storage']) {
+      return this.setItem('rare-storage', this.identifier);
     }
 
-    if (this.identifier && this.identifier !== storage['cas-storage']) {
+    if (this.identifier && this.identifier !== storage['rare-storage']) {
       return this.clear();
     }
   }
