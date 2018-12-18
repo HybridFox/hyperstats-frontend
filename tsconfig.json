@@ -17,6 +17,23 @@
     "lib": [
       "es2018",
       "dom"
-    ]
-  }
+    ],
+    "paths": {
+      "@store/*": [
+        "src/lib/store/*"
+      ],
+      "@repository/*": [
+        "src/lib/repository/*"
+      ],
+      "@core/*": [
+        "src/lib/core/*"
+      ],
+      "@environments/*": [
+        "src/environments/*"
+      ],
+      "@helpers/*": [
+        "src/lib/helpers/*"
+      ],
+    }
+  },
 }

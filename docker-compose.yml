@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  app:
+    build:
+      context: .
+      args:
+        # Default docker-compose pinpoints to local environment
+        - NODE_ENV=local
+    container_name: rare
+    command: ng serve --host=0.0.0.0
+    ports:
+      # App port
+      - 4350:4350
+      # Debug port
+      - 4351:4351
+    volumes:
+      # Delegated option for faster mounted volumes
+      - .:/app:delegated
+      # Because `npm install`
+      - ./package.json:/package.json
+      - ./package-lock.json:/package-lock.json
+      # Block local modules
+      - /app/node_modules/
+volumes:
+    notused:

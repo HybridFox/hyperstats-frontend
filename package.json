@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-redux/store": "^9.0.0",
     "@angular/animations": "~7.1.0",
     "@angular/common": "~7.1.0",
     "@angular/compiler": "~7.1.0",
@@ -19,8 +20,15 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "@types/lodash-es": "^4.17.1",
+    "@types/ramda": "^0.25.44",
     "core-js": "^2.5.4",
+    "deep-extend": "^0.6.0",
+    "lodash-es": "^4.17.11",
+    "ng-redux": "^4.1.0",
     "normalizr": "^3.3.0",
+    "ramda": "^0.26.1",
+    "redux": "^4.0.1",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

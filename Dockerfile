@@ -7,11 +7,13 @@ RUN mkdir -p /app
 # ENV NODE_ENV $NODE_ENV
 
 WORKDIR /
-COPY package.json package-lock.json* .npmrc /
-RUN npm install --silent
+COPY package.json package-lock.json* /
+RUN npm install -g @angular/cli
+RUN npm install
+
 ENV PATH /node_modules/.bin:$PATH
 
 WORKDIR /app
 COPY . /app
 
-CMD [ "node", "index.js" ]
+CMD [ "ng", "serve" ]

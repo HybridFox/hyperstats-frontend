@@ -1,27 +1,155 @@
-# Rare
+# R.A.R.E. v1.0.0 #
+Eucobat Rare
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.2.
+# Table of contents #
 
-## Development server
+* [Setup](#setup)
+    * [System Dependencies](#system-dependencies)
+    * [Init](#init)
+* [Codebase](#codebase)
+    * [Structure](#structure)
+    * [NPM Scripts](#npm-scripts)
+* [Code Contribution](#code-contribution)
+    * [Guidelines](#guidelines)
+    * [Branches](#branches)
+* [Environments](#environments)
+* [Procedures](#procedures)
+    * [Deployment](#deployment)
+    * [Start Stop](#start-stop)
+* [Project Context](#project-context)
+    * [Details](#details)
+    * [Team](#team)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+---
+## Setup ##
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### System Dependencies ###
 
-## Build
+#### Deploy
+[Docker](https://docs.docker.com/)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#### Development
+[Docker](https://docs.docker.com/)<br>
+[Node (Carbon)](https://nodejs.org/)<br>
 
-## Running unit tests
+### Init ###
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* `docker-compose up --build`
 
-## Running end-to-end tests
+---
+## Codebase ##
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Structure ###
+* **src/**: Contains the angular setup.
+  * **app/**: Contains the frontend
+  * **assets/**: Contains the assets.
+  * **enviroments/**: Contains the enviroments.
+  * **lib/**: Contains shared files
+* **e2e/**: Contains the end to end tests.
 
-## Further help
+### External Services ###
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This project implements several external services:
+
+* **RARE API**: RARE API.
+
+
+### NPM Scripts ###
+
+| Command        | Description
+| -------------- | -----------
+| ng             | Angular general
+| start          | Start the project
+| build          | Build the project
+| test           | Run tests
+| lint           | Run linter
+| e2e            | Run end to end tests
+
+All commands are executable by running ``docker-compose exec app `npm run [COMMAND-NAME]` ``.
+---
+
+## Code Contribution ##
+
+### Guidelines ###
+
+
+### Branches ###
+
+We follow these naming conventions:
+
+* **master**: Production-ready code.
+* **develop**: Development code.
+* **release/***: Snapshot of a release.
+* **feature/***: For developing new features.
+* **bugfix/***: For bugs that are logged during testing.
+* **hotfix/***: Only for hotfixing critical bugs from the `master`-branch.
+
+
+---
+## Environments ##
+
+### Development ###
+
+The development environment receives automatic builds when code is contributed to the `development`-branch. This environment is expected to break from time to time and thus should be used for **internal testing only**!
+
+**URL**: [https://to-do-o.dev](https://to-do-o.dev)
+
+### Staging ###
+
+The staging environment receives automatic builds when code is contributed to the `master`-branch. This environment is expected to remain stable and should be used for **client validation testing**.
+
+**URL**: [https://to-do-a.dev](https://to-do-a.dev)
+
+### Production ###
+
+The production environment is built manually from the `master`-branch. This environment has to be **stable at all times**. No unvalidated code can be deployed on this environment.
+
+**URL**: [https://to-do-p.dev](https://to-do-p.dev)
+
+
+---
+## Procedures ##
+
+### Deployment ###
+
+Deployment is handled by CircleCI.
+
+#### Development ####
+
+Automatic deploy after build or by a manually trigger in CircleCI.
+
+#### Staging ####
+
+By a manually trigger in CircleCI.
+
+#### Production ####
+
+By a manually trigger in CircleCI.
+
+### Start Stop ###
+
+TODO
+
+---
+## Project Context ##
+
+This project is a Studio Hyperdrive team effort.
+
+### Details ###
+
+* **Client**: Eucobat
+* **Start**: 18/12/2018
+* **Jira Board**: https://district01.atlassian.net/secure/RapidBoard.jspa?projectKey=RE&rapidView=73
+* **Drive Folder**: https://drive.google.com/drive/folders/1dH2U7hfnWqWqzhAHcVK6JhlwXJc1bX58
+
+### Team ###
+
+List the team that has worked on this project, including the duration e.g.:
+
+* [Pieterjan Van Saet - Studio Hyperdrive](pieterjan.vansaet@studiohyperdrive.be)
+    * **Function**: Frontend developer
+    * **Period**: December 2018 -> ...
+* [Jeroen Valcke - Studio Hyperdrive](jeroen.valcke@studiohyperdrive.be)
+    * **Function**: Backend developer
+    * **Period**: December 2018 -> ...
