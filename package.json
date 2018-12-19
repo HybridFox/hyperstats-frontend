@@ -12,8 +12,7 @@
     "test:ci": "npm run lint && jest --runInBand --collectCoverage",
     "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
     "translate:poToJson": "node ./scripts/poToJson.js",
-    "translate:jsonToPot": "node ./scripts/jsonToPot.js",
-    "precommit": "node ./scripts/jsonToPot.js"
+    "translate:jsonToPot": "node ./scripts/jsonToPot.js"
   },
   "private": true,
   "dependencies": {
@@ -122,7 +121,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit",
+      "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
