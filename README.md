@@ -1,5 +1,4 @@
 [![CircleCI](https://circleci.com/bb/district01/rare_app_nodejs.svg?style=svg&circle-token=dfcb57f788ad4324fe27ad6ec8bbe89a90edea9e)](https://circleci.com/bb/district01/rare_app_nodejs)
-
 # R.A.R.E. v1.0.0 #
 Eucobat Rare
 
@@ -59,14 +58,17 @@ This project implements several external services:
 
 ### NPM Scripts ###
 
-| Command        | Description
-| -------------- | -----------
-| ng             | Angular general
-| start          | Start the project
-| build          | Build the project
-| test           | Run tests
-| lint           | Run linter
-| e2e            | Run end to end tests
+| Command               | Description
+| --------------------- | -----------
+| ng                    | Angular general
+| start                 | Start the project
+| build                 | Build the project
+| test                  | Run tests
+| lint                  | Run linter
+| e2e                   | Run end to end tests
+| translate:extract     | Extract all translations
+| translate:jsonToPot   | json to pot
+| translate:poToJson    | po to json
 
 All commands are executable by running ``docker-compose exec app `npm run [COMMAND-NAME]` ``.
 ---
@@ -149,9 +151,9 @@ This project is a Studio Hyperdrive team effort.
 
 List the team that has worked on this project, including the duration e.g.:
 
-* [Pieterjan Van Saet - Studio Hyperdrive](pieterjan.vansaet@studiohyperdrive.be)
+* [Pieterjan Van Saet - Studio Hyperdrive](mailto:pieterjan.vansaet@studiohyperdrive.be)
     * **Function**: Frontend developer
     * **Period**: December 2018 -> ...
-* [Jeroen Valcke - Studio Hyperdrive](jeroen.valcke@studiohyperdrive.be)
+* [Jeroen Valcke - Studio Hyperdrive](mailto:jeroen.valcke@studiohyperdrive.be)
     * **Function**: Backend developer
     * **Period**: December 2018 -> ...
