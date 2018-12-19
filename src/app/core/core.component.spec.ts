@@ -1,22 +1,12 @@
 import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { LanguageService } from './services/language';
 import { Subject } from 'rxjs';
 
 
 import { CoreComponent } from './core.component';
-
-class MockAuthService {}
-
-class MockNotificationsService {
-  listen() {
-    return new Subject<any>();
-  }
-}
-
-class MockTrackjsService {
-  public setRootViewContainerRef (ref) {}
-}
 
 class MockLanguageService {
 
@@ -28,9 +18,12 @@ describe('CoreComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CoreComponent ],
       imports: [
+        TranslateModule.forRoot(),
         RouterTestingModule,
       ],
-      providers: [],
+      providers: [
+        { provide: LanguageService, useClass: MockLanguageService },
+      ],
       schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
