@@ -14,7 +14,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 export class WebpackTranslateLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
-    console.log('get translations', lang);
-    return from(System.import(`../../assets/i18n/${lang}.json`));
+    return from(import(`../../assets/i18n/${lang}.json`));
   }
 }
