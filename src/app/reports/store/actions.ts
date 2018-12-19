@@ -31,12 +31,16 @@ export class ReportsActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.FETCH, {
-            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.report])
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.user])
           });
         }),
         finalize(() => {
           this.handler.dispatchDone(ACTIONS.FETCH);
         }),
       );
+  }
+
+  public test() {
+    this.handler.dispatch(ACTIONS.TEST);
   }
 }

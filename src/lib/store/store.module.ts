@@ -48,8 +48,12 @@ export class StoreModule {
     // Note that starting from v2.7, window.devToolsExtension was renamed to
     // window.__REDUX_DEVTOOLS_EXTENSION__ / window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__.
     // temporary use `(window as any).__REDUX_DEVTOOLS_EXTENSION__()` instead of `this.devTools.enhancer()`
-    // const enhancers = !environment.production && this.devTools.isEnabled() ? [this.devTools.enhancer()] : [];
-    const enhancers = !environment.production && this.devTools.isEnabled() ? [(window as any).__REDUX_DEVTOOLS_EXTENSION__()] : [];
+    const enhancers = !environment.production && this.devTools.isEnabled() ? [
+      this.devTools.enhancer({
+        latency: 0
+      })
+    ] : [];
+    // const enhancers = !environment.production && this.devTools.isEnabled() ? [(window as any).__REDUX_DEVTOOLS_EXTENSION__()] : [];
 
     // TODO: figure out how to do this with lazyLoaded modules
     // this.localStorage.subscribe(syncedSelectors);
