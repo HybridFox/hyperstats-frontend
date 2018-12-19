@@ -7,7 +7,7 @@
     "build": "ng build",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test": "jest --collectCoverage",
+    "test": "jest --collectCoverage --outputFile=test_results/jest/results.xml --reporters=default --reporters=jest-junit",
     "test:watch": "jest --watch",
     "test:ci": "npm run lint && jest --runInBand --collectCoverage",
     "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
@@ -55,6 +55,7 @@
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
     "jest-preset-angular": "^6.0.2",
     "karma": "~3.1.1",
     "karma-chrome-launcher": "~2.2.0",
@@ -72,6 +73,10 @@
     "verbose": false,
     "roots": [
       "src"
+    ],
+    "reporters": [
+      "default",
+    	[ "jest-junit", { "suiteName": "jest tests" } ]
     ],
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts",
@@ -96,5 +101,14 @@
       "index.ts"
     ],
     "testURL": "http://localhost:4350/"
+  },
+  "jest-junit": {
+    "suiteName": "jest tests",
+    "outputDirectory": "./test-results/jest",
+    "outputName": "./results.xml",
+    "classNameTemplate": "{classname}-{title}",
+    "titleTemplate": "{classname}-{title}",
+    "ancestorSeparator": " › ",
+    "usePathForSuiteName": "true"
   }
 }

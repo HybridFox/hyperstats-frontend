@@ -271,3 +271,4 @@ test/coverage
 # Sessions on the filesystem
 .sessions
 
+test-results
