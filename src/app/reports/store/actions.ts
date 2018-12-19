@@ -39,8 +39,4 @@ export class ReportsActions {
         }),
       );
   }
-
-  public test() {
-    this.handler.dispatch(ACTIONS.TEST);
-  }
 }

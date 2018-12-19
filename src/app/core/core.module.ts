@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { ApiModule } from '@api/api';
 
@@ -10,6 +9,11 @@ import { CoreComponent } from './core.component';
 
 import { StoreModule } from '@store/store.module';
 import { StoreService } from '@store/store.service';
+
+import { Services } from './services';
+
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { WebpackTranslateLoader } from './translations';
 
 @NgModule({
   declarations: [
@@ -20,10 +24,19 @@ import { StoreService } from '@store/store.service';
     BrowserModule,
     CoreRoutingModule,
     HttpClientModule,
-    ApiModule
+    ApiModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useClass: WebpackTranslateLoader,
+      },
+    }),
   ],
   providers: [
-    StoreService
+    StoreService,
+    Services,
+
+    { provide: LOCALE_ID, useValue: 'en' },
   ],
   bootstrap: [CoreComponent]
 })

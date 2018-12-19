@@ -2,20 +2,14 @@ import { NgModule } from '@angular/core';
 import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 
 import { environment } from '@environments/environment';
-import { LocalstorageType } from '@core/localstorage';
 
 import { Services } from '@store/services';
 import { StoreService } from '@store/store.service';
 
-import { LocalstorageModule, LocalstorageReduxPlugin } from '@core/localstorage';
 
 @NgModule({
   imports: [
     NgReduxModule,
-    LocalstorageModule.forRoot({
-      identifier: 'rare-storage-v1',
-      storageType: LocalstorageType.localStorage,
-    }),
   ],
   providers: [
     StoreService,
@@ -26,7 +20,6 @@ export class StoreModule {
   constructor(
     private ngRedux: NgRedux<any>,
     private devTools: DevToolsExtension,
-    private localStorage: LocalstorageReduxPlugin,
     private storeService: StoreService,
   ) {
     const initialState = {};

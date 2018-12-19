@@ -9,7 +9,10 @@
     "e2e": "ng e2e",
     "test": "jest --collectCoverage",
     "test:watch": "jest --watch",
-    "test:ci": "npm run lint && jest --runInBand --collectCoverage"
+    "test:ci": "npm run lint && jest --runInBand --collectCoverage",
+    "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
+    "translate:poToJson": "node ./scripts/poToJson.js",
+    "translate:jsonToPot": "node ./scripts/jsonToPot.js"
   },
   "private": true,
   "dependencies": {
@@ -22,12 +25,16 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "@types/lodash-es": "^4.17.1",
     "@types/ramda": "^0.25.44",
     "core-js": "^2.5.4",
     "deep-extend": "^0.6.0",
+    "i18next-conv": "^8.0.1",
     "lodash-es": "^4.17.11",
     "ng-redux": "^4.1.0",
+    "ngx-translate-extract": "^1.0.0",
     "normalizr": "^3.3.0",
     "ramda": "^0.26.1",
     "redux": "^4.0.1",
