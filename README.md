@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/bb/district01/rare_app_nodejs.svg?style=svg&circle-token=dfcb57f788ad4324fe27ad6ec8bbe89a90edea9e)](https://circleci.com/bb/district01/rare_app_nodejs)
+
 # R.A.R.E. v1.0.0 #
 Eucobat Rare
 
