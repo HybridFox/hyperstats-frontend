@@ -272,3 +272,4 @@ test/coverage
 .sessions
 data
 dist
+test-results

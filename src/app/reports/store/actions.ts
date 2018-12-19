@@ -31,7 +31,7 @@ export class ReportsActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.FETCH, {
-            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.report])
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.user])
           });
         }),
         finalize(() => {

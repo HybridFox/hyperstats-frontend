@@ -18,13 +18,8 @@ import { Pages } from './pages';
 @NgModule({
   imports: [
     CommonModule,
-
-    // Routing
     ReportsRoutingModule,
-
-    // Shared
     SharedModule,
-
     ReportsApiModule
   ],
   providers: [
