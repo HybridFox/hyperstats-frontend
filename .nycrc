@@ -1,0 +1,22 @@
+{
+	"include": [
+		"config/**/*.js",
+		"config/*.js",
+		"server/**/*.js",
+		"server/*.js"
+	],
+	"exclude": [
+		"**/*.spec.js"
+	],
+	"require": [
+		"babel-register",
+		"mocha"
+	],
+	"sourceMap": false,
+	"instrument": false,
+	"reporter": [
+		"lcov",
+		"text-summary"
+	],
+	"reportDir": "./test/coverage"
+}
