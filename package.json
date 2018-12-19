@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
+    "precommit": "npm run lint",
     "e2e": "ng e2e",
     "test": "jest --collectCoverage --outputFile=test_results/jest/results.xml --reporters=default --reporters=jest-junit",
     "test:watch": "jest --watch",
