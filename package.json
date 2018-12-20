@@ -14,7 +14,7 @@
     "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
     "translate:poToJson": "node ./scripts/poToJson.js",
     "translate:jsonToPot": "node ./scripts/jsonToPot.js",
-    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json --theme material"
   },
   "private": true,
   "dependencies": {
