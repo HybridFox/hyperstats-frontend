@@ -29,7 +29,6 @@
     "@studiohyperdrive/api-docs": "1.0.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "@types/lodash-es": "^4.17.1",
     "@types/ramda": "^0.25.44",
     "body-parser": "1.18.3",
     "connect-mongo": "2.0.3",
@@ -42,7 +41,6 @@
     "helmet": "3.14.0",
     "joi": "10.4.1",
     "i18next-conv": "^8.0.1",
-    "lodash-es": "^4.17.11",
     "lodash.clonedeep": "4.5.0",
     "lodash.curry": "4.1.1",
     "lodash.get": "4.4.2",
@@ -107,9 +105,6 @@
     ],
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts",
-    "transformIgnorePatterns": [
-      "./node_modules/(?!lodash-es/.*)"
-    ],
     "moduleNameMapper": {
       "@environment/(.*)": "<rootDir>/src/environments/$1",
       "@helpers/(.*)": "<rootDir>/src/lib/helpers/$1",

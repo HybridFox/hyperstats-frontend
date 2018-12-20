@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { combineReducers } from 'redux';
-import { set } from 'lodash-es';
+import { set, lensProp } from 'ramda';
 
 import { reducers } from '@store/reducers';
 
@@ -21,7 +21,8 @@ export class StoreService {
   }
 
   public injectAsyncReducer(name, reducer) {
-    set(this.asyncReducers, name, reducer);
-    this.ngRedux.replaceReducer(this.createReducer(this.asyncReducers));
+    const lens = lensProp(name.toString());
+    const result = set(lens, reducer, this.asyncReducers);
+    this.ngRedux.replaceReducer(this.createReducer(result));
   }
 }

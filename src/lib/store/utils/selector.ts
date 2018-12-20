@@ -1,33 +1,33 @@
 import { denormalize } from 'normalizr';
 import { createSelector } from 'reselect';
-import { get } from 'lodash-es';
+import { path } from 'ramda';
 
 interface SelectorOptions {
   relations?: string[];
-  path: string;
+  selector: string;
   schema: any;
 }
 
-const selectPath = (path: string) => {
+const selectPath = (selection: string) => {
   return (state) => {
-    return get(state, path);
+    return path(selection.split('.'), state);
   };
 };
 
 const selectEntity = (entityName: string) => {
   return (state) => {
-    return get(state, [ 'entities', entityName ]);
+    return path([ 'entities', entityName ], state);
   };
 };
 
-export const selectDenormalized = ({ relations = [], path, schema }: SelectorOptions) => {
+export const selectDenormalized = ({ relations = [], selector, schema }: SelectorOptions) => {
   relations.push(schema.key);
   const entitySelectors = relations.map((name) => {
     return selectEntity(name);
   });
 
   return (createSelector as any)(
-    selectPath(path),
+    selectPath(selector),
     ...entitySelectors,
     (result, ...entityData) => {
 

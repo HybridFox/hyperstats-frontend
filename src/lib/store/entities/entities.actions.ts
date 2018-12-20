@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { NgRedux } from '@angular-redux/store';
 import { normalize, Schema } from 'normalizr';
-import { get } from 'lodash-es';
+import { path } from 'ramda';
 
 import * as schemas from '@core/schemas';
 import { ACTIONS } from './entities.action-types';
@@ -23,7 +23,7 @@ export class EntitiesActions {
           type: ACTIONS.NORMALIZE_OVERWRITE,
           payload: {
             name: entityName,
-            entities: get(normalizedData.entities, entityName),
+            entities: path(entityName.split('.'), normalizedData.entities),
           },
         });
       } else {
@@ -31,7 +31,7 @@ export class EntitiesActions {
           type: ACTIONS.NORMALIZE_MERGE,
           payload: {
             name: entityName,
-            entities: get(normalizedData.entities, entityName),
+            entities: path(entityName.split('.'), normalizedData.entities),
           },
         });
       }

@@ -6,6 +6,6 @@ export const ReportsSelector = {
   result: selectDenormalized({
     relations: ['roles'],
     schema: schema.user,
-    path: 'reports.result',
+    selector: 'reports.result',
   })
 };
