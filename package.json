@@ -13,7 +13,8 @@
     "test:ci": "npm run lint && jest --runInBand --collectCoverage",
     "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
     "translate:poToJson": "node ./scripts/poToJson.js",
-    "translate:jsonToPot": "node ./scripts/jsonToPot.js"
+    "translate:jsonToPot": "node ./scripts/jsonToPot.js",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
   },
   "private": true,
   "dependencies": {
@@ -66,6 +67,7 @@
     "@angular/language-service": "~7.1.0",
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
+    "@compodoc/compodoc": "1.1.7",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
