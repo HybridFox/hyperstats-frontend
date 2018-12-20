@@ -22,7 +22,6 @@ Eucobat Rare
     * [Details](#details)
     * [Team](#team)
 
-
 ---
 ## Setup ##
 
