@@ -1,6 +1,6 @@
 const CoreController = require("../controllers/core");
 
-module.exports = (app) => {
+module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /server/status:
@@ -19,5 +19,5 @@ module.exports = (app) => {
 	 *            version:
 	 *              type: string
 	 */
-	app.route("/server/status").get(CoreController.status);
+	router.route("/status").get(CoreController.status);
 };

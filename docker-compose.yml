@@ -20,7 +20,7 @@ services:
       - 5856:5856
     volumes:
       # Delegated option for faster mounted volumes
-      - ./app:/app/app:delegated
+      - ./server:/app/server:delegated
       - ./config:/app/config:delegated
       - ./angular.json:/app/angular.json
       # Because `npm install`

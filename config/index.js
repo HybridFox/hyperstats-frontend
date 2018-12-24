@@ -2,9 +2,9 @@
 // ---
 // Project-wide configuration
 
-const merge = require("lodash.merge");
+const { mergeDeepLeft } = require("ramda");
 
-module.exports = merge(
+module.exports = mergeDeepLeft(
 	require("./general"),
 	require(`./env/${process.env.NODE_ENV.toLowerCase()}.js`)
 );

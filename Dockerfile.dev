@@ -1,4 +1,4 @@
-FROM node:carbon-alpine
+FROM node:dubnium
 
 RUN mkdir -p /app
 

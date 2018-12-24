@@ -7,8 +7,8 @@ module.exports = {
 		environments: require("./envs"),
 		cookies: {
 			maxAge: 1000 * 60 * 60 * 24 * 30,
-			name: "MySession",
-			secret: "My$€cr€T",
+			name: "rare-app",
+			secret: "xYs8rGsfW7Xwwpr6Ac73DMqCjLnVztVPBA3yPebaoi3ZimFc78mpi4zLVfQzTWyo",
 		},
 	},
 };
