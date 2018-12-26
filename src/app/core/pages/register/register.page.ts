@@ -24,7 +24,6 @@ export class RegisterPageComponent implements OnInit {
     }
 
     public submit() {
-        console.log('onSubmit');
         this.authAction.register({
             ...this.registerForm.value
         })

@@ -22,7 +22,6 @@ export class LoginPageComponent implements OnInit {
     }
 
     public submit() {
-        console.log('onSubmit');
         this.authAction.login({
             ...this.loginForm.value
         }).subscribe();

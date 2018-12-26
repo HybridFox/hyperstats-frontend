@@ -22,9 +22,6 @@ export class ErrorInterceptor implements HttpInterceptor {
             }
 
             this.toastrService.error(err.message, err.name);
-
-            console.log(err);
-
             return throwError(err);
         }));
     }
