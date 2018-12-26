@@ -1,16 +1,19 @@
 const glob = require("glob");
+const express = require("express");
 
-module.exports = (app) => {
-	glob.sync("./server/routes/**/!(index).js", {
-		absolute: true,
-	}).forEach(route => {
-		require(route)(app);
-	});
+const router = express.Router();
 
-	// Fallback route
-	app.route(["/", "/*"]).all((req, res) => {
-		res.status(404).json({
-			err: "Not Found.",
-		});
+glob.sync("./server/routes/**/!(index).js", {
+	absolute: true,
+}).forEach(route => {
+	require(route)(router);
+});
+
+// Fallback route
+router.route(["/", "/*"]).all((req, res) => {
+	res.status(404).json({
+		err: "Not Found.",
 	});
-};
+});
+
+module.exports = router;

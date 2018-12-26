@@ -6,6 +6,7 @@ const express = require("express");
 const path = require("path");
 
 const session = require("./session");
+const passportSetup = require("./passportSetup");
 
 module.exports = (app) => {
 	app.use(cookieParser());
@@ -14,6 +15,8 @@ module.exports = (app) => {
 	app.use(bodyParser.json({ limit: "50mb", keepExtensions: true }));
 
 	app.use(session);
+
+	app.use(passportSetup());
 
 	app.use(express.static(path.resolve(process.cwd(), "dist")));
 

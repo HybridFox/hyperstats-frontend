@@ -2,7 +2,7 @@ module.exports = {
 	server: {
 		port: 4350,
 		cookies: {
-			domain: ""
+			domain: "",
 		},
 		mongo: {
 			url: "mongodb://mongodb-rare/rare"

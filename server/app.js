@@ -5,7 +5,7 @@ const config = require(`${process.cwd()}/config`);
 
 require("./helpers/db");
 require("./middleware/global")(app);
-require("./routes/")(app);
+app.use("/server", require("./routes/"));
 
 app.use(require("./middleware/errorHandler"));
 

@@ -1,4 +1,4 @@
 import { filter } from 'rxjs/operators';
-import { negate, isNil } from 'lodash-es';
+import { compose, not, isNil } from 'ramda';
 
-export const isNotNil = filter(negate(isNil));
+export const isNotNil = filter(compose(not, isNil));
