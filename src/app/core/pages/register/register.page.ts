@@ -16,8 +16,10 @@ export class RegisterPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.registerForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+            password: ['', Validators.required],
+            email: ['', Validators.required]
         });
     }
 
@@ -25,6 +27,7 @@ export class RegisterPageComponent implements OnInit {
         console.log('onSubmit');
         this.authAction.register({
             ...this.registerForm.value
-        });
+        })
+            .subscribe();
     }
 }

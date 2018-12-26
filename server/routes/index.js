@@ -10,6 +10,10 @@ glob.sync("./server/routes/**/!(index).js", {
 });
 
 // Fallback route
+router.route(["/", "/*"]).options((req, res) => {
+	res.sendStatus(204);
+});
+
 router.route(["/", "/*"]).all((req, res) => {
 	res.status(404).json({
 		err: "Not Found.",

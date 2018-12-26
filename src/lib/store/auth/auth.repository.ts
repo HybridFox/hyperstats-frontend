@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthRepository {
@@ -13,11 +14,14 @@ export class AuthRepository {
 
   }
 
-  public register(username: string, password: string) {
-    const url = this.apiConfig.baseUrl('register');
-    this.http
+  public register({ firstname, lastname, email, password }): Observable<any> {
+    const url = this.apiConfig.baseUrl('/auth/register');
+
+    return this.http
       .post(url, {
-        username,
+        email,
+        firstname,
+        lastname,
         password
       });
   }
