@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
-
 
 @Injectable()
 export class LanguageService {
@@ -14,7 +12,7 @@ export class LanguageService {
     this.translate.setDefaultLang('en');
   }
 
-  public changeLanguage(lang) {
+  public changeLanguage(lang: any) {
     this.translate.use(lang);
   }
 }

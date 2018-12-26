@@ -1,4 +1,4 @@
 import { filter } from 'rxjs/operators';
-import { compose, not, isNil } from 'ramda';
+import { not, isEmpty } from 'ramda';
 
-export const isNotNil = filter(compose(not, isNil));
+export const isNotNil = filter(not(isEmpty));
