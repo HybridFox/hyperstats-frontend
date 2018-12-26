@@ -21,6 +21,8 @@ import { AuthActions } from '@store/auth';
 import { AuthRepository } from '@store/auth/auth.repository';
 import { SharedModule } from '@shared/shared.module';
 
+import { AuthGuard } from '@guards/auth.guard';
+
 import { Components } from './components';
 
 @NgModule({
@@ -50,6 +52,7 @@ import { Components } from './components';
   providers: [
     StoreService,
     Services,
+    AuthGuard,
 
     AuthActions,
     AuthRepository,
