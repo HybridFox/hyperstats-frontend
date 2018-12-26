@@ -4,12 +4,12 @@ const docs = require("@studiohyperdrive/api-docs");
 const helmet = require("helmet");
 const express = require("express");
 const path = require("path");
-const cors = require("cors");
 
 const session = require("./session");
 const passportSetup = require("./passportSetup");
 
 module.exports = (app) => {
+    app.use(passportSetup());
 
 	app.use(cookieParser());
 
@@ -18,7 +18,6 @@ module.exports = (app) => {
 
 	app.use(session);
 
-    app.use(passportSetup());
 	app.use(express.static(path.resolve(process.cwd(), "dist")));
 
 	app.use("/server", docs({
@@ -34,8 +33,4 @@ module.exports = (app) => {
 	app.use(helmet.noSniff());
 	app.use(helmet.ieNoOpen());
     app.use(helmet.hidePoweredBy());
-
-    app.use(cors({
-        origin: 'http://localhost:4351' // TODO: Make this dynamic
-    }));
 };

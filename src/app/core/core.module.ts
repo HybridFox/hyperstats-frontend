@@ -19,10 +19,14 @@ import { WebpackTranslateLoader } from './translations';
 import { Pages } from './pages';
 import { AuthActions } from '@store/auth';
 import { AuthRepository } from '@store/auth/auth.repository';
+import { SharedModule } from '@shared/shared.module';
+
+import { Components } from './components';
 
 @NgModule({
   declarations: [
     CoreComponent,
+    Components,
     Pages
   ],
   imports: [
@@ -32,6 +36,7 @@ import { AuthRepository } from '@store/auth/auth.repository';
     HttpClientModule,
     ApiModule,
 
+    SharedModule,
     ReactiveFormsModule,
 
     // Translations

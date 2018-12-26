@@ -16,8 +16,28 @@ export class AuthActions {
     private entitiesActions: EntitiesActions
   ) {}
 
-  public login({ username, password }) {
-    return this.authRepository.login();
+  public login({ email, password }): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.LOGIN_USER);
+
+    return this.authRepository
+      .login({ email, password })
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.LOGIN_USER, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap((response: any) => {
+          this.handler.dispatchSuccess(ACTIONS.LOGIN_USER, {
+            payload: this.entitiesActions.normalize(response, EntitiesActions.schema.user)
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.LOGIN_USER);
+        }),
+      );
   }
 
   public register({ firstname, lastname, email, password }): Observable<any>  {

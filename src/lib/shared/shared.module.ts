@@ -20,7 +20,7 @@ import { AuthRepository } from '@store/auth/auth.repository';
 
     // Auth
     AuthActions,
-    AuthRepository
+    AuthRepository,
   ],
   imports: [
     // Core
@@ -28,6 +28,8 @@ import { AuthRepository } from '@store/auth/auth.repository';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+
+    // Translate
     TranslateModule.forChild()
   ],
   exports: [

@@ -10,8 +10,14 @@ export class AuthRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public login() {
+  public login({ email, password }) {
+    const url = this.apiConfig.baseUrl('/auth/login');
 
+    return this.http
+      .post(url, {
+        email,
+        password
+      });
   }
 
   public register({ firstname, lastname, email, password }): Observable<any> {
