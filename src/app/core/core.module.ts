@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { ApiModule } from '@api/api';
 
@@ -24,6 +26,7 @@ import { SharedModule } from '@shared/shared.module';
 import { AuthGuard } from '@guards/auth.guard';
 
 import { Components } from './components';
+import { ErrorInterceptor } from '@helpers/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,14 @@ import { Components } from './components';
 
     SharedModule,
     ReactiveFormsModule,
+
+    // Toastr
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      progressBar: true,
+      positionClass: 'toast-bottom-right'
+    }),
 
     // Translations
     TranslateModule.forRoot({
@@ -58,6 +69,11 @@ import { Components } from './components';
     AuthRepository,
 
     { provide: LOCALE_ID, useValue: 'en' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [CoreComponent]
 })

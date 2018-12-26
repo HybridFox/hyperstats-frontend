@@ -4,10 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { AuthActions } from '@store/auth';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-    constructor(private authActions: AuthActions) { }
+    constructor(
+        private authActions: AuthActions,
+        private toastrService: ToastrService
+    ) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request).pipe(catchError(err => {
@@ -17,8 +21,11 @@ export class ErrorInterceptor implements HttpInterceptor {
                 // location.reload(true);
             }
 
-            const error = err.error.message || err.statusText;
-            return throwError(error);
+            this.toastrService.error(err.message, err.name);
+
+            console.log(err);
+
+            return throwError(err);
         }));
     }
 }
