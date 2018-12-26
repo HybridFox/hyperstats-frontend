@@ -26,11 +26,10 @@ export const selectDenormalized = ({ relations = [], selector, schema }: Selecto
     return selectEntity(name);
   });
 
-  return (createSelector as any)(
+  return createSelector(
     selectPath(selector),
     ...entitySelectors,
     (result, ...entityData) => {
-
       const entities = Object.assign({}, ...relations.map((name, index) => {
         return { [name]: entityData[index] };
       }));
