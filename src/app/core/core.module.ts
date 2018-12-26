@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ApiModule } from '@api/api';
 
@@ -15,9 +16,14 @@ import { Services } from './services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './translations';
 
+import { Pages } from './pages';
+import { AuthActions } from '@store/auth';
+import { AuthRepository } from '@store/auth/auth.repository';
+
 @NgModule({
   declarations: [
-    CoreComponent
+    CoreComponent,
+    Pages
   ],
   imports: [
     StoreModule,
@@ -25,6 +31,10 @@ import { WebpackTranslateLoader } from './translations';
     CoreRoutingModule,
     HttpClientModule,
     ApiModule,
+
+    ReactiveFormsModule,
+
+    // Translations
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -35,6 +45,9 @@ import { WebpackTranslateLoader } from './translations';
   providers: [
     StoreService,
     Services,
+
+    AuthActions,
+    AuthRepository,
 
     { provide: LOCALE_ID, useValue: 'en' },
   ],

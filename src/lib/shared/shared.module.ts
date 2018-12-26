@@ -9,12 +9,18 @@ import { TranslateModule } from '@ngx-translate/core';
 
 // Components
 import { Services } from '@shared/services';
+import { AuthActions } from '@store/auth';
+import { AuthRepository } from '@store/auth/auth.repository';
 
 @NgModule({
   providers: [
     Services,
     DatePipe,
     DecimalPipe,
+
+    // Auth
+    AuthActions,
+    AuthRepository
   ],
   imports: [
     // Core

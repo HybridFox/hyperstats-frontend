@@ -8,7 +8,15 @@ export class AuthActions {
     private authRepository: AuthRepository,
   ) {}
 
-  public login() {
+  public login({ username, password }) {
     return this.authRepository.login();
+  }
+
+  public register({ username, password }) {
+    return this.authRepository.register(username, password);
+  }
+
+  public isLoggedIn() {
+    return true;
   }
 }

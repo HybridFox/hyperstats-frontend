@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://www.mocky.io/'
+  apiBaseUrl: 'http://localhost:4350/server'
 };
 
 /*

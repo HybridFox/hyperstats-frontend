@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthActions } from '@store/auth';
 
 @Component({
-    selector: 'app-login-page',
-    templateUrl: './login.page.html',
+    selector: 'app-register-page',
+    templateUrl: './register.page.html',
 })
-export class LoginPageComponent implements OnInit {
-    public loginForm: FormGroup;
+export class RegisterPageComponent implements OnInit {
+    public registerForm: FormGroup;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -15,7 +15,7 @@ export class LoginPageComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.loginForm = this.formBuilder.group({
+        this.registerForm = this.formBuilder.group({
             username: ['', Validators.required],
             password: ['', Validators.required]
         });
@@ -23,7 +23,7 @@ export class LoginPageComponent implements OnInit {
 
     public submit() {
         console.log('onSubmit');
-        this.authAction.login({
+        this.authAction.register({
             ...this.registerForm.value
         });
     }

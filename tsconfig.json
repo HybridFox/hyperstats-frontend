@@ -37,6 +37,9 @@
       "@shared/*": [
         "src/lib/shared/*"
       ],
+      "@guards/*": [
+        "src/lib/guards/*"
+      ],
     }
   },
 }
