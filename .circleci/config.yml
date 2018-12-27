@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test-client:
     docker:
       - image: circleci/node:8.9.0
     steps:
@@ -10,6 +10,7 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
+      - run: cd client
       - run: npm install
       - run: npm install @angular/cli
       - save_cache:
@@ -45,10 +46,10 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
+      - test-client
       - deploy-develop:
           requires:
-            - build
+            - test-client
           filters:
             branches:
               only: development
