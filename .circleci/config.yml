@@ -1,44 +1,54 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.9.0
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
       - run: npm install
-
       - run: npm install @angular/cli
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
       - run: npm run test:ci
-
       - store_test_results:
           path: test-results
 
+  deploy-develop:
+    machine:
+        enabled: true
+    environment:
+      SERVER: "198.211.119.171"
+    steps:
+      - run: ssh-keyscan $SERVER >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - "bf:4d:de:df:60:0e:c7:aa:95:4d:3d:98:d2:d6:e8:49"
+      - run:
+          name: Deploy to development server
+          command: |
+            ssh shd@$SERVER "NODE_ENV=$ENVIRONMENT" bash -c '
+            cd /var/www/rare_app_nodejs
+            git checkout .
+            git checkout development
+            git pull
+            docker-compose down
+            NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.server.yml up --build -d'
 
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy-develop:
+          requires:
+            - build
+          filters:
+            branches:
+              only: development
