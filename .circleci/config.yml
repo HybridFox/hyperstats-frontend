@@ -7,19 +7,18 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-{{ checksum "client/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: cd client
-      - run: npm install
-      - run: npm install @angular/cli
+      - run: cd client && npm install
+      - run: cd client && npm install @angular/cli
       - save_cache:
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm run test:ci
+            - client/node_modules
+          key: v1-dependencies-{{ checksum "client/package.json" }}
+      - run: cd client && npm run test:ci
       - store_test_results:
-          path: test-results
+          path: client/test-results
 
   deploy-develop:
     machine:
