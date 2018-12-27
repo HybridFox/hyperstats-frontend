@@ -1,0 +1,64 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for consistent project structures and maintenance.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "fixtures": "echo \"No command specified\" && exit 0",
+    "lint": "npm run lint:eslint",
+    "lint:eslint": "eslint .",
+    "clean:coverage": "rm -Rf ./test/coverage",
+    "pretest": "npm run clean:coverage",
+    "test": "NODE_ENV=test nyc mocha",
+    "posttest": "npm run lint",
+    "open:coverage": "open ./test/coverage/lcov-report/index.html",
+    "projectsheet": "open $npm_package_studiohyperdrive_projectsheet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/district01/nodejs-boilerplate.git"
+  },
+  "author": "Thomas Bormans <thomas.bormans@studiohyperdrive.be>",
+  "contributors": [
+    "Thomas Bormans <thomas.bormans@studiohyperdrive.be>",
+    "Fabian Meul <fabian.meul@studiohyperdrive.be>",
+    "Niels Bril <niels.bril@studiohyperdrive.be>"
+  ],
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/district01/nodejs-boilerplate",
+  "dependencies": {
+    "@studiohyperdrive/api-docs": "1.0.0",
+    "body-parser": "1.18.3",
+    "cookie-parser": "1.4.3",
+    "express": "4.16.3",
+    "express-session": "1.15.6",
+    "glob": "7.1.1",
+    "helmet": "3.14.0",
+    "joi": "10.4.1",
+    "lodash.clonedeep": "4.5.0",
+    "lodash.curry": "4.1.1",
+    "lodash.get": "4.4.2",
+    "lodash.merge": "4.6.0",
+    "session-file-store": "1.0.0"
+  },
+  "devDependencies": {
+    "@studiohyperdrive/eslint-config": "3.0.2",
+    "babel-core": "6.26.3",
+    "babel-plugin-istanbul": "4.1.6",
+    "babel-preset-env": "1.7.0",
+    "chai": "4.0.2",
+    "eslint-plugin-chai-friendly": "0.4.1",
+    "istanbul": "0.4.5",
+    "mocha": "4.0.1",
+    "mocha-multi": "1.0.1",
+    "nodemon": "1.11.0",
+    "nyc": "12.0.2",
+    "pm2": "3.0.4",
+    "proxyquire": "1.8.0",
+    "supertest": "3.0.0"
+  },
+  "studiohyperdrive": {
+    "projectsheet": "https://bitbucket.org/district01/nodejs-boilerplate/overview"
+  }
+}

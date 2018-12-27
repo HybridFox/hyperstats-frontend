@@ -11,6 +11,7 @@ module.exports = (app) => {
 	app.route(["/", "/*"]).all((req, res) => {
 		res.status(404).json({
 			err: "Not Found.",
+			req: req.path,
 		});
 	});
 };

@@ -7,7 +7,7 @@ module.exports = {
 		append_env_to_name: true,
 		script: "./index.js",
 		watch: false,
-		instances: 2,
+		instances: 1,
 		merge_logs: true,
 		exec_mode: "cluster",
 		log_date_format: "YYYY-DD-MM HH:mm:ss.SSS",

@@ -1,13 +1,13 @@
-require("./helpers/environment")(process.env);
+require("./src/helpers/environment")(process.env);
 
 const app = require("express")();
 const config = require(`${process.cwd()}/config`);
 
-require("./helpers/db");
-require("./middleware/global")(app);
-require("./routes/")(app);
+require("./src/helpers/db");
+require("./src/middleware/global")(app);
+require("./src/routes")(app);
 
-app.use(require("./middleware/errorHandler"));
+app.use(require("./src/middleware/errorHandler"));
 
 const server = app.listen(config.server.port, () => {
 	console.log(`Server listening at port ${server.address().port}, running in ${process.env.NODE_ENV} mode. http://localhost:${server.address().port}/`); // eslint-disable-line no-console
