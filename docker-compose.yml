@@ -37,7 +37,7 @@ services:
         - SERVICE_PORTS=4350
     container_name: rare-fe
     command: sh -c "/wait && ../node_modules/.bin/ng serve --host=0.0.0.0"
-    port@s:
+    ports:
       # App port
       - 4351:4350
     volumes:
