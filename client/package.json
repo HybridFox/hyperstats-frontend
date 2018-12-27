@@ -26,9 +26,9 @@
     "@angular/platform-browser": "~7.1.0",
     "@angular/platform-browser-dynamic": "~7.1.0",
     "@angular/router": "~7.1.0",
-    "@studiohyperdrive/api-docs": "1.0.0",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
+    "@studiohyperdrive/api-docs": "1.0.0",
     "@types/lodash-es": "^4.17.1",
     "@types/ramda": "^0.25.44",
     "body-parser": "1.18.3",
@@ -38,8 +38,9 @@
     "deep-extend": "^0.6.0",
     "glob": "7.1.1",
     "helmet": "3.14.0",
-    "joi": "10.4.1",
     "i18next-conv": "^8.0.1",
+    "joi": "10.4.1",
+    "lodash-es": "4.17.11",
     "mongoose": "5.4.0",
     "ng-redux": "^4.1.0",
     "ngx-translate-extract": "^1.0.0",
@@ -67,7 +68,6 @@
     "husky": "^1.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
-    "jest": "^23.6.0",
     "jest-junit": "^5.2.0",
     "jest-preset-angular": "^6.0.2",
     "karma": "~3.1.1",
@@ -100,7 +100,7 @@
     "preset": "jest-preset-angular",
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts",
     "transformIgnorePatterns": [
-      "./node_modules/(?!lodash-es/.*)"
+      "/node_modules/(?!lodash-es).+\\.js$"
     ],
     "moduleNameMapper": {
       "@environment/(.*)": "<rootDir>/src/environments/$1",

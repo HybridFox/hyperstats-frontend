@@ -1,35 +1,46 @@
-import { async, TestBed } from '@angular/core/testing';
+import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './services/language';
-import { Subject } from 'rxjs';
-
-
 import { CoreComponent } from './core.component';
 
 class MockLanguageService {
-
+  initLanguage() {}
 }
 
 describe('CoreComponent', () => {
+  let component: CoreComponent;
+  let fixture: ComponentFixture<CoreComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoreComponent ],
       imports: [
         TranslateModule.forRoot(),
         RouterTestingModule,
       ],
+      declarations: [ CoreComponent ],
       providers: [
         { provide: LanguageService, useClass: MockLanguageService },
       ],
-      schemas: [NO_ERRORS_SCHEMA],
-    }).compileComponents();
+    })
+    .compileComponents();
+
+    spyOn((TestBed.get(LanguageService) as any), 'initLanguage').and.callThrough();
   }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(CoreComponent);
-    expect(fixture).not.toBeNull();
-  }));
+  beforeEach(() => {
+    fixture = TestBed.createComponent(CoreComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should initLanguage onInit', () => {
+    component.ngOnInit();
+    expect((TestBed.get(LanguageService) as any).initLanguage).toHaveBeenCalled();
+  });
 });
