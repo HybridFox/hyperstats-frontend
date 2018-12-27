@@ -19,7 +19,7 @@ services:
     container_name: client-${NODE_ENV}
     restart: always
     ports:
-      - 80:80
+      - 4350:4350
     environment:
       - NODE_ENV=${NODE_ENV}
     links:
