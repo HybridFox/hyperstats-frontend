@@ -42,7 +42,7 @@ export class StoreModule {
     // window.__REDUX_DEVTOOLS_EXTENSION__ / window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__.
     // temporary use `(window as any).__REDUX_DEVTOOLS_EXTENSION__()` instead of `this.devTools.enhancer()`
     const enhancers = !environment.production && this.devTools.isEnabled() ? [
-      this.devTools.enhancer({
+      (window as any).__REDUX_DEVTOOLS_EXTENSION__({
         latency: 0
       })
     ] : [];

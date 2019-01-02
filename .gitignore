@@ -263,5 +263,14 @@ jspm_packages
 
 # Project-specific
 # --------------------------------------------------------------------------- /
+# Mocha output
+test/output.json
+test/coverage
 
+# Sessions on the filesystem
+.sessions
+data
+dist
+test-results
 
+documentation

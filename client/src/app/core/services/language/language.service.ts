@@ -12,7 +12,7 @@ export class LanguageService {
     this.translate.setDefaultLang('en');
   }
 
-  public changeLanguage(lang) {
+  public changeLanguage(lang: any) {
     this.translate.use(lang);
   }
 }

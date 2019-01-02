@@ -12,7 +12,7 @@ export class ReportsRepository {
   ) {}
 
   public fetchAll(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/5c18f1c92f00004c00af12e6');
+    const url = this.apiConfig.baseUrl('/5c23844b2f00006c00049604');
 
     return this.http
       .get(url);
