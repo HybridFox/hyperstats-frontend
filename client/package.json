@@ -103,7 +103,7 @@
       "/node_modules/(?!lodash-es).+\\.js$"
     ],
     "moduleNameMapper": {
-      "@environment/(.*)": "<rootDir>/src/environments/$1",
+      "@environments/(.*)": "<rootDir>/src/environments/$1",
       "@helpers/(.*)": "<rootDir>/src/lib/helpers/$1",
       "@shared/(.*)": "<rootDir>/src/lib/shared/$1",
       "@store/(.*)": "<rootDir>/src/lib/store/$1",
@@ -117,6 +117,11 @@
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/",
+      "/src/main.ts",
+      "/src/polyfills.ts",
+      "/src/setupJest.ts",
+      "/src/test.ts",
+      "/src/environments/",
       "index.ts"
     ],
     "testURL": "http://localhost:4350/"

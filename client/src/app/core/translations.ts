@@ -3,11 +3,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader } from '@ngx-translate/core';
 import { from, Observable } from 'rxjs';
 
-declare var System: System;
-interface System {
-  import(request: string): Promise<any>;
-}
-
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/assets/i18n/', '.json');
 }
