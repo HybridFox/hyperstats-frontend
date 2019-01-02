@@ -5,8 +5,13 @@ jobs:
       enabled: true
     steps:
       - checkout
-      - run: docker-compose up -d
-      - run: docker-compose exec client npm run test:ci
+      - run:
+          name: Build, up & test
+          command: |
+            docker-compose build
+            docker-compose up -d
+            docker-compose exec client npm run test:client
+            docker-compose down
 
   deploy-develop:
     machine:
