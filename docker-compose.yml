@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.2'
 services:
   server:
     build:
@@ -30,7 +30,10 @@ services:
       - ./client/package-lock.json:/app/package-lock.json
       - notused:/app/node_modules
     links:
+      - selenium-chrome-standalone
       - server
+    depends_on:
+      - selenium-chrome-standalone
   mongo:
     image: mongo:4.0.4-xenial
     container_name: rare-mongodb
@@ -42,5 +45,9 @@ services:
     volumes:
       - ./server/data/db:/server/data/db
     command: mongod --smallfiles --logpath=/dev/null # --quiet
+  selenium-chrome-standalone:
+    ports:
+     - 44444:4444
+    image: "selenium/standalone-chrome"
 volumes:
     notused:
