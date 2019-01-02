@@ -2,18 +2,23 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
+const puppeteer = require("puppeteer")
 
 exports.config = {
+  seleniumAddress: 'http://selenium-chrome-standalone:4444/wd/hub',
   allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    browserName: 'chrome',
+    acceptInsecureCerts: true,
+    chromeOptions: {
+      args: ['--no-sandbox']
+    }
   },
-  directConnect: true,
-  baseUrl: 'http://localhost:4200/',
-  framework: 'jasmine',
+  baseUrl: 'http://host.docker.internal:4350/',
+  framework: 'jasmine2',
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
