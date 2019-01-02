@@ -1,0 +1,6 @@
+<p>INTERNAL PAGE {{ 'somekey.here' | translate }}</p>
+<ul>
+  <li *ngFor="let result of results$ | async">
+    {{ result | json }}
+  </li>
+</ul>

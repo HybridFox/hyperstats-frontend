@@ -22,7 +22,6 @@ Eucobat Rare
     * [Details](#details)
     * [Team](#team)
 
-
 ---
 ## Setup ##
 
@@ -70,6 +69,7 @@ This project implements several external services:
 | translate:extract     | Extract all translations
 | translate:jsonToPot   | json to pot
 | translate:poToJson    | po to json
+| compodoc              | generate angular compodocs in ./documentation
 
 All commands are executable by running ``docker-compose exec app `npm run [COMMAND-NAME]` ``.
 ---

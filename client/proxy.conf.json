@@ -1,0 +1,6 @@
+{
+	"/server": {
+	   "target": "http://host.docker.internal:4351",
+	   "secure": false
+	}
+ }
