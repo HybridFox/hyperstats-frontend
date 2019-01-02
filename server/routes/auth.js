@@ -4,7 +4,7 @@ const validationHelper = require("../helpers/validation");
 module.exports = (router) => {
 	/**
 	 * @swagger
-	 * /server/auth/login:
+	 * /api/auth/login:
 	 *   get:
 	 *     description: Login user
 	 *     produces:
@@ -15,18 +15,18 @@ module.exports = (router) => {
 	 */
 	router.route("/auth/login").post(
 		validationHelper.bodyMiddleware(validationHelper.schemas.auth.login),
-		(req, res, next) => passport.authenticate("local-login", function(error, user) {
+		(req, res, next) => passport.authenticate("local-login", (error) => {
 			if (error) {
 				return res.redirect("/login?failed=true");
 			}
 
 			return res.redirect("/dashboard");
-		})(req, res, next),
+		})(req, res, next)
 	);
 
 	/**
 	 * @swagger
-	 * /server/auth/register:
+	 * /api/auth/register:
 	 *   get:
 	 *     description: Login register
 	 *     produces:
