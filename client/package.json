@@ -10,7 +10,7 @@
     "e2e": "./node_modules/.bin/ng e2e",
     "test": "jest --collectCoverage --outputFile=test_results/jest/results.xml --reporters=default --reporters=jest-junit",
     "test:watch": "jest --watch",
-    "test:ci": "npm run lint && jest --runInBand --collectCoverage",
+    "test:ci": "npm run lint && npm run test",
     "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
     "translate:poToJson": "node ./scripts/poToJson.js",
     "translate:jsonToPot": "node ./scripts/jsonToPot.js"
@@ -39,6 +39,7 @@
     "glob": "7.1.1",
     "helmet": "3.14.0",
     "i18next-conv": "^8.0.1",
+    "jest": "23.6.0",
     "joi": "10.4.1",
     "lodash-es": "4.17.11",
     "mongoose": "5.4.0",
