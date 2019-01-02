@@ -18,6 +18,8 @@ services:
       dockerfile: Dockerfile.server
     container_name: client-${NODE_ENV}
     restart: always
+    args:
+      - buildenv=${NODE_ENV}
     ports:
       - 4350:4350
     environment:
