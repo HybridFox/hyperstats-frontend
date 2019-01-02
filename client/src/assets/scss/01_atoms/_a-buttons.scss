@@ -1,0 +1,56 @@
+.a-button {
+  font-family: $font-family-lato;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  line-height: 15px;
+  letter-spacing: 2.4px;
+  border-radius: 4px;
+  padding: 10.5px 21.5px;
+}
+
+// Button types.
+.a-button--primary {
+  @extend .a-button;
+  background-color: $blue;
+  border: 1px solid $blue;
+  color: $white;
+  text-transform: uppercase;
+}
+
+.a-button--success {
+  @extend .a-button;
+  border: 1px solid $success;
+  background-color: $success;
+  color: $white;
+}
+
+.a-button--danger {
+  @extend .a-button;
+  border: 1px solid $danger;
+  background-color: $danger;
+  color: $white;
+}
+
+// Button outline colors.
+.a-button-outline {
+  &.a-button--primary {
+    background-color: $white;
+    color: $blue;
+  }
+  &.a-button--success {
+    background-color: $white;
+    color: $success;
+  }
+  &.a-button--danger {
+    background-color: $white;
+    color: $danger;
+  }
+}
+
+// Button sizes.
+.a-button--small {
+  padding: 5px 12px;
+  font-size: $font-size-regular;
+  letter-spacing: 1.2px;
+  line-height: 17px;
+}
