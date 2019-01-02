@@ -1,5 +1,7 @@
 .a-logo {
   background-image: url("/assets/images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .a-logo--small {
@@ -12,6 +14,5 @@
   @extend .a-logo;
   width: 112px;
   height: 26px;
-  background-position: center;
   background-color: $white;
 }
