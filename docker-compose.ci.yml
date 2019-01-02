@@ -1,8 +1,28 @@
-version: '2'
+version: '3.4'
 services:
-  app:
-    build: .
+  server:
+    build:
+      context: ./server
+      args:
+        - NODE_ENV=${NODE_ENV}
+    container_name: server-${NODE_ENV}
+    command: pm2-runtime start pm2.config.js --env ${NODE_ENV}
+    restart: always
     ports:
-      - 80:80
+      - 3000:3000
     environment:
-      - CI=true
+      - NODE_ENV=${NODE_ENV}
+  client:
+    build:
+      args:
+        - buildenv=${NODE_ENV}
+      context: ./client
+      dockerfile: Dockerfile.server
+    container_name: client-${NODE_ENV}
+    restart: always
+    ports:
+      - 4350:4350
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    links:
+      - server

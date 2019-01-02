@@ -263,6 +263,7 @@ jspm_packages
 
 # Project-specific
 # --------------------------------------------------------------------------- /
+
 # Mocha output
 test/output.json
 test/coverage
@@ -272,5 +273,3 @@ test/coverage
 data
 dist
 test-results
-
-documentation
