@@ -14,12 +14,12 @@ services:
       - NODE_ENV=${NODE_ENV}
   client:
     build:
+      args:
+        - buildenv=${NODE_ENV}
       context: ./client
       dockerfile: Dockerfile.server
     container_name: client-${NODE_ENV}
     restart: always
-    args:
-      - buildenv=${NODE_ENV}
     ports:
       - 4350:4350
     environment:
