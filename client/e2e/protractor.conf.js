@@ -16,7 +16,7 @@ exports.config = {
       args: ['--no-sandbox']
     }
   },
-  baseUrl: 'http://host.docker.internal:4350/',
+  baseUrl: 'http://client:4350/',
   framework: 'jasmine2',
   jasmineNodeOpts: {
     showColors: true,

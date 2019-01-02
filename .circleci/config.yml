@@ -9,8 +9,7 @@ jobs:
           name: Build, up & test
           command: |
             docker-compose build
-            docker-compose up -d
-            docker-compose exec client npm run test:ci
+            docker-compose up -d && docker-compose exec client npm run test:ci
             docker-compose down
 
   deploy-develop:
