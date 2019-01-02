@@ -23,18 +23,7 @@ export class StoreModule {
     private storeService: StoreService,
   ) {
     const initialState = {};
-    /*
-    const syncedSelectors = [
-      'columns',
-    ];
-    const initialState = this.localStorage.selectFromStorage(syncedSelectors);
-    const syncedReducerPlaceholders = syncedSelectors.reduce((acc, curr) => ({
-      ...acc,
-      [curr]: () => initialState.hasOwnProperty(curr) ? initialState[curr] : null,
-    }), {});
-    */
     const rootReducer = this.storeService.createReducer({
-      // ...syncedReducerPlaceholders,
       ...this.storeService.asyncReducers,
     });
 
@@ -46,10 +35,6 @@ export class StoreModule {
         latency: 0
       })
     ] : [];
-    // const enhancers = !environment.production && this.devTools.isEnabled() ? [(window as any).__REDUX_DEVTOOLS_EXTENSION__()] : [];
-
-    // TODO: figure out how to do this with lazyLoaded modules
-    // this.localStorage.subscribe(syncedSelectors);
 
     this.ngRedux.configureStore(rootReducer, initialState, [], enhancers);
   }
