@@ -2,11 +2,12 @@
   font-family: $font-family-lato;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
-  line-height: 15px;
+  line-height: 18px;
   letter-spacing: 2.4px;
   border-radius: 4px;
-  padding: 10.5px 21.5px;
+  padding: 9.6px 32px;
   border: 1px solid;
+  text-decoration: none;
   @include transition(all 0.5s ease-in-out);
 }
 
@@ -18,8 +19,7 @@
   color: $white;
   text-transform: uppercase;
   &:hover {
-    background-color: $white;
-    color: $blue;
+    background-color: rgba($blue, 0.8);
   }
 }
 
@@ -29,8 +29,7 @@
   border-color: $success;
   color: $white;
   &:hover {
-    background-color: $white;
-    color: $success;
+    background-color: rgba($success, 0.8);
   }
 }
 
@@ -40,8 +39,7 @@
   border-color: $danger;
   color: $white;
   &:hover {
-    background-color: $white;
-    color: $danger;
+    background-color: rgba($danger, 0.8);
   }
 }
 
@@ -77,6 +75,6 @@
 .a-button--small {
   padding: 5px 12px;
   font-size: $font-size-regular;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.6px;
   line-height: 17px;
 }
