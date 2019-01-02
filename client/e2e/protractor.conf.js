@@ -2,7 +2,6 @@
 // https://github.com/angular/protractor/blob/master/lib/config.ts
 
 const { SpecReporter } = require('jasmine-spec-reporter');
-const puppeteer = require("puppeteer")
 
 exports.config = {
   seleniumAddress: 'http://selenium-chrome-standalone:4444/wd/hub',

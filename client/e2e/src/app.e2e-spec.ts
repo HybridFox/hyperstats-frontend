@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should render', () => {
+  it('should show it works!', () => {
     page.navigateTo();
-    expect(page).toBeDefined();
+    expect(page.getTitleText()).toEqual('It works!');
   });
 });
