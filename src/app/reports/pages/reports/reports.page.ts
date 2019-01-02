@@ -9,7 +9,7 @@ import { ReportsActions, ReportsSelector } from '../../store';
   templateUrl: './reports.page.html',
 })
 export class ReportsPageComponent implements OnInit {
-  @select(ReportsSelector.result) public result$;
+  @select(ReportsSelector.result) public results$;
 
   constructor(
     private route: ActivatedRoute,

@@ -3,7 +3,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './services/language';
-import { Subject } from 'rxjs';
 
 
 import { CoreComponent } from './core.component';

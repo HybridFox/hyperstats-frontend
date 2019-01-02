@@ -12,7 +12,7 @@ export class CoreComponent implements OnInit {
     private languageService: LanguageService,
   ) {}
 
-    public ngOnInit() {
-      this.languageService.initLanguage();
-    }
+  public ngOnInit() {
+    this.languageService.initLanguage();
+  }
 }
