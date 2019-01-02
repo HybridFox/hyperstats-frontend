@@ -6,11 +6,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build, up & test
-          command: |
-            docker-compose build
-            docker-compose up -d && docker-compose exec client npm run test:ci
-            docker-compose down
+          name: Build docker image
+          command: docker-compose build
+      - run:
+          name: Bring docker image up
+          command: docker-compose up -d
+      - run:
+          name: Execute test:ci
+          command: docker-compose exec client npm run test:ci
+      - run:
+          name: Stop docker container
+          command: docker-compose down
 
   deploy-develop:
     machine:
