@@ -10,7 +10,7 @@ jobs:
           command: |
             docker-compose build
             docker-compose up -d
-            docker-compose exec client npm run test:client
+            docker-compose exec client npm run test:ci
             docker-compose down
 
   deploy-develop:
