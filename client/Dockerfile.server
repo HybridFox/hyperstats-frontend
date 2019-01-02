@@ -1,14 +1,13 @@
-ARG buildenv
-
 # Stage 0: Build Angular
 FROM node:carbon-alpine AS build
+ARG buildenv
 
 WORKDIR /usr/build
 RUN npm i npm@latest -g
 COPY package.json package-lock.json* .npmrc ./
 RUN npm install --silent
 COPY . .
-RUN npm run build --configuration=$buildenv
+RUN npm run build -- --configuration=$buildenv
 
 # Stage 1: Serve Angular
 FROM nginx:stable
