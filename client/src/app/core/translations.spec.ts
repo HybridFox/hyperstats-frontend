@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpLoaderFactory } from './translations';
 
 describe('HttpLoaderFactory', () => {
-    class mockHttpClient {
+    class MockHttpClient {
         public handler;
     }
 
@@ -18,7 +18,7 @@ describe('HttpLoaderFactory', () => {
     });
 
     it('should return TranslateHttpLoader', () => {
-        const loader = HttpLoaderFactory(mockHttpClient);
+        const loader = HttpLoaderFactory(MockHttpClient);
         expect(loader.prefix).toEqual('/assets/i18n/');
         expect(loader.suffix).toEqual('.json');
     });
