@@ -26,7 +26,8 @@ export const selectDenormalized = ({ relations = [], selector, schema }: Selecto
     return selectEntity(name);
   });
 
-  return createSelector(
+
+  return (createSelector as any)(
     selectPath(selector),
     ...entitySelectors,
     (result, ...entityData) => {
