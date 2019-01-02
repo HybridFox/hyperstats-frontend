@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Deploy to development server
           command: |
-            ssh shd@$SERVER "NODE_ENV=$ENVIRONMENT" bash -c '
+            ssh shd@$SERVER "NODE_ENV=development" bash -c '
             cd /var/www/rare_app_nodejs
             git checkout .
             git checkout development
