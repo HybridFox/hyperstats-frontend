@@ -1,64 +1,46 @@
-version: '3.1'
+version: '3.4'
 services:
-  app:
-    image: app-image
+  server:
     build:
-      context: .
-      dockerfile: Dockerfile.dev
+      context: ./server
       args:
-        # Default docker-compose pinpoints to local environment
         - NODE_ENV=local
-    container_name: rare
-    environment:
-        - WAIT_HOSTS=mongodb-rare:27017
-        - SERVICE_PORTS=4350
-    command: sh -c "/wait && ../node_modules/.bin/nodemon --inspect=0.0.0.0:5856"
+    container_name: rare-server
+    command: /node_modules/.bin/nodemon --inspect=0.0.0.0:5858
     ports:
-      # App port
-      - 4350:4350
+      - 4351:4351
       # Debug port
-      - 5856:5856
+      - 5858:5858
     volumes:
-      # Delegated option for faster mounted volumes
-      - ./app:/app/app:delegated
-      - ./config:/app/config:delegated
-      - ./angular.json:/app/angular.json
-      # Because `npm install`
-      - ./package.json:/package.json
-      - ./package-lock.json:/package-lock.json
-      # Block local modules
-      - /app/node_modules/
-    depends_on:
-      - mongodb-rare
-  fe:
-    image: app-image
+      - ./server:/app:delegated
+      - ./server/package.json:/package.json
+      - ./server/package-lock.json:/package-lock.json
+      - notused:/app/node_modules
     environment:
-        - WAIT_HOSTS=mongodb-rare:27017, app:4350
-        - SERVICE_PORTS=4350
-    container_name: rare-fe
-    command: sh -c "/wait && ../node_modules/.bin/ng serve --host=0.0.0.0"
+      - NODE_ENV=local
+  client:
+    build:
+      context: ./client
+    container_name: rare-client
     ports:
-      # App port
-      - 4351:4350
+      - 4350:4350
     volumes:
-      # Delegated option for faster mounted volumes
-      - ./src:/app/src:delegated
-      # Because `npm install`
-      - ./package.json:/package.json
-      - ./package-lock.json:/package-lock.json
-      # Block local modules
-      - /app/node_modules/
-    depends_on:
-      - mongodb-rare
-      - app
-  mongodb-rare:
-    image: mongo:latest
-    container_name: "mongodb-rare"
+      - ./client:/app:delegated
+      - ./client/package.json:/app/package.json
+      - ./client/package-lock.json:/app/package-lock.json
+      - notused:/app/node_modules
+    links:
+      - server
+  mongo:
+    image: mongo:4.0.4-xenial
+    container_name: rare-mongodb
     environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
-    volumes:
-      - ./data/db:/data/db
+      - MONGO_DATA_DIR=/server/data/db
+      - MONGO_LOG_DIR=/server/dev/null
     ports:
       - 27011:27017
+    volumes:
+      - ./server/data/db:/server/data/db
     command: mongod --smallfiles --logpath=/dev/null # --quiet
+volumes:
+    notused:

@@ -1,0 +1,16 @@
+FROM node:carbon-alpine
+
+RUN mkdir -p /app
+WORKDIR /app
+
+RUN npm i npm@latest -g
+
+COPY package.json package-lock.json* .npmrc ./
+RUN npm install --silent
+ENV PATH /node_modules/.bin:$PATH
+
+COPY . /app
+
+EXPOSE 4350
+
+CMD [ "npm", "start" ]
