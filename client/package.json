@@ -10,7 +10,7 @@
     "e2e": "./node_modules/.bin/ng e2e --port 4352",
     "test": "jest --collectCoverage --outputFile=test_results/jest/results.xml --reporters=default --reporters=jest-junit",
     "test:watch": "jest --watch",
-    "test:ci": "npm run lint && npm run test",
+    "test:ci": "npm run lint && npm run test && npm run e2e",
     "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
     "translate:poToJson": "node ./scripts/poToJson.js",
     "translate:jsonToPot": "node ./scripts/jsonToPot.js",
