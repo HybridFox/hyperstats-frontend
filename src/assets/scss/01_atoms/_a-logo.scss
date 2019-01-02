@@ -1,0 +1,17 @@
+.a-logo {
+  background-image: url("/assets/images/logo.png");
+}
+
+.a-logo--small {
+  @extend .a-logo;
+  width: 22px;
+  height: 24px;
+}
+
+.a-logo--white {
+  @extend .a-logo;
+  width: 112px;
+  height: 26px;
+  background-position: center;
+  background-color: $white;
+}
