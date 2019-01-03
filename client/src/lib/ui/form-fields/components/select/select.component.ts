@@ -1,13 +1,8 @@
 import { Component, forwardRef, OnInit, OnDestroy, Input } from '@angular/core';
-import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor, Validators } from '@angular/forms';
+import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-
-interface Option {
-  label: string;
-  value: string;
-}
-
+import { Option } from './select.types';
 @Component({
   selector: 'app-select-input',
   templateUrl: './select.component.html',
