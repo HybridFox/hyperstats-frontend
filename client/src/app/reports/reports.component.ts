@@ -1,5 +1,4 @@
-import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { LifecycleHooks } from '@angular/compiler/src/lifecycle_reflector';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-reports',

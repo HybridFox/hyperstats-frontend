@@ -37,6 +37,9 @@
       "@shared/*": [
         "src/lib/shared/*"
       ],
+      "@ui/*": [
+        "src/lib/ui/*"
+      ],
     }
   },
 }
