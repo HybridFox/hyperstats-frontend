@@ -12,6 +12,7 @@ import { reportsReducer } from './store/reducers';
 import { ReportsServices } from './store';
 
 import { ReportsApiModule } from '@api/reports';
+import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
 
@@ -20,7 +21,8 @@ import { Pages } from './pages';
     CommonModule,
     ReportsRoutingModule,
     SharedModule,
-    ReportsApiModule
+    ReportsApiModule,
+    FormFieldsModule
   ],
   providers: [
     ReportsServices,
