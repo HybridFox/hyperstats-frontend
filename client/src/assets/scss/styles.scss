@@ -1,8 +1,8 @@
 // Base
 @import "./00_base/normalize";
-@import "./00_base/root";
 @import "./00_base/typography";
 @import "./00_base/colors";
+@import "./00_base/root";
 
 // Atoms
 @import "./01_atoms/a-buttons";
@@ -10,6 +10,7 @@
 
 // Molecules
 @import "./02_molecules/m-menu";
+@import "./02_molecules/m-page-title";
 
 // Organisms
 @import "./03_organisms/o-card-list";
