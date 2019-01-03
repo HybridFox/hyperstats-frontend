@@ -11,7 +11,7 @@
 @mixin respond-at($_min-width) {
         @media screen and (min-width: $_min-width) {
         @content;
-        }
+    }
 }
 
 @mixin respond-to($_max-width) {
