@@ -6,10 +6,12 @@
     &__copyright {
         display: inline-block;
         margin: $spacer-large $spacer-large $spacer-large 0;
+        text-transform: capitalize;
     }
 
     &__link {
         display: inline-block;
         margin: $spacer-large;
+        text-transform: capitalize;
     }
 }
