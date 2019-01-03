@@ -10,7 +10,14 @@ $font-size-xxxx-large: 96px;
 // Weights.
 $font-weight-light: 300;
 $font-weight-regular: 400;
+$font-weight-semi-bold: 500;
 $font-weight-bold: 700;
+
+$spacer-x-small: 1em / 2;
+$spacer-small: 1em / 1.5;
+$spacer: 1em;
+$spacer-large: 1em * 1.5;
+$spacer-x-large: 1em * 2;
 
 // Families.
 @font-face {
