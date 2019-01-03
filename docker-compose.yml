@@ -1,25 +1,53 @@
-version: '3.1'
+version: '3.2'
 services:
-  app:
+  server:
     build:
-      context: .
+      context: ./server
       args:
-        # Default docker-compose pinpoints to local environment
         - NODE_ENV=local
-    container_name: rare
-    command: ng serve --host=0.0.0.0
+    container_name: rare-server
+    command: /node_modules/.bin/nodemon --inspect=0.0.0.0:5858
     ports:
-      # App port
-      - 4350:4350
-      # Debug port
       - 4351:4351
+      # Debug port
+      - 5858:5858
     volumes:
-      # Delegated option for faster mounted volumes
-      - .:/app:delegated
-      # Because `npm install`
-      - ./package.json:/package.json
-      - ./package-lock.json:/package-lock.json
-      # Block local modules
-      - /app/node_modules/
+      - ./server:/app:delegated
+      - ./server/package.json:/package.json
+      - ./server/package-lock.json:/package-lock.json
+      - notused:/app/node_modules
+    environment:
+      - NODE_ENV=local
+  client:
+    build:
+      context: ./client
+    container_name: rare-client
+    ports:
+      - 4350:4350
+    volumes:
+      - ./client:/app:delegated
+      - ./client/package.json:/app/package.json
+      - ./client/package-lock.json:/app/package-lock.json
+      - notused:/app/node_modules
+    links:
+      - selenium-chrome-standalone
+      - server
+    depends_on:
+      - selenium-chrome-standalone
+  mongo:
+    image: mongo:4.0.4-xenial
+    container_name: rare-mongodb
+    environment:
+      - MONGO_DATA_DIR=/server/data/db
+      - MONGO_LOG_DIR=/server/dev/null
+    ports:
+      - 27011:27017
+    volumes:
+      - ./server/data/db:/server/data/db
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
+  selenium-chrome-standalone:
+    ports:
+     - 44444:4444
+    image: "selenium/standalone-chrome"
 volumes:
     notused:
