@@ -2,6 +2,11 @@ require("./src/helpers/environment")(process.env);
 
 const app = require("express")();
 const config = require(`${process.cwd()}/config`);
+const cors = require("cors");
+
+app.use(cors({
+	origin: "http://localhost:4351", // TODO: Make this dynamic
+}));
 
 require("./src/helpers/db");
 require("./src/middleware/global")(app);

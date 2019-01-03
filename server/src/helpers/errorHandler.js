@@ -1,4 +1,4 @@
-const get = require("lodash.get");
+const { pathOr } = require("ramda");
 const errors = {
 	ObjectValidationFailed: "OBJECT_VALIDATION_FAILED",
 	MissingAuthorization: "MISSING_AUTHORIZATION",
@@ -22,7 +22,7 @@ const errorHandler = (err) => {
 	switch (err.message) {
 		case errors.ObjectValidationFailed:
 			statusCode = 400;
-			msg = get(err, "validation.details", []).map(detail => {
+			msg = pathOr([], ["validation", "details"], err).map(detail => {
 				return {
 					err: detail.message,
 				};

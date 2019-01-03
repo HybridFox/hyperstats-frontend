@@ -6,8 +6,11 @@ const express = require("express");
 const path = require("path");
 
 const session = require("./session");
+const passportSetup = require("./passportSetup");
 
 module.exports = (app) => {
+    app.use(passportSetup());
+
 	app.use(cookieParser());
 
 	app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
@@ -29,5 +32,5 @@ module.exports = (app) => {
 	app.use(helmet.xssFilter());
 	app.use(helmet.noSniff());
 	app.use(helmet.ieNoOpen());
-	app.use(helmet.hidePoweredBy());
+    app.use(helmet.hidePoweredBy());
 };
