@@ -31,8 +31,6 @@ describe("LoginHandler", () => {
 		lastname: "lastname",
 	})).to.eventually.be.fulfilled);
 
-
-
 	it("Should be able to login user after registration", async() => {
 		const userToTest = {
 			email: "validuser3@example.com",
