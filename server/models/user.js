@@ -6,36 +6,41 @@ const UserSchema = mongoose.Schema({
 	data: {
 		email: {
 			type: String,
-			required: true
+			required: true,
 		},
 		password: {
 			type: String,
-			required: true
+			required: true,
 		},
 		firstname: {
 			type: String,
-			required: true
+			required: true,
 		},
 		lastname: {
 			type: String,
-			required: true
-		}
+			required: true,
+		},
 	},
 	meta: {
 		created: {
 			type: Date,
 			required: true,
-			default: Date.now
+			default: Date.now,
 		},
 		lastUpdated: {
 			type: Date,
 			required: true,
-			default: Date.now
-		}
-	}
+			default: Date.now,
+		},
+		validated: {
+			type: Boolean,
+			required: true,
+			default: false,
+		},
+	},
 });
 
-UserSchema.methods.generateHash = async (password) => {
+UserSchema.methods.generateHash = async(password) => {
 	const salt = await promisify(bcrypt.genSalt)(8);
 
 	return promisify(bcrypt.hash)(password, salt);

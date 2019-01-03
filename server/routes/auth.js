@@ -1,5 +1,6 @@
-const passport = require("passport");
 const validationHelper = require("../helpers/validation");
+const authController = require("../controllers/auth");
+const authValidations = require("../controllers/auth/validations");
 
 module.exports = (router) => {
 	/**
@@ -10,18 +11,17 @@ module.exports = (router) => {
 	 *     produces:
 	 *       - application/json
 	 *     responses:
-	 *       302:
+	 *       200:
 	 *         description: Redirect to dashboard
+	 *         schema:
+	 *           type: object
+	 *           properties:
+	 *             success:
+	 *               type: boolean
 	 */
 	router.route("/auth/login").post(
-		validationHelper.bodyMiddleware(validationHelper.schemas.auth.login),
-		(req, res, next) => passport.authenticate("local-login", (error) => {
-			if (error) {
-				return res.redirect("/login?failed=true");
-			}
-
-			return res.redirect("/dashboard");
-		})(req, res, next)
+		validationHelper.middleware(authValidations.login),
+		authController.login
 	);
 
 	/**
@@ -41,7 +41,23 @@ module.exports = (router) => {
 	 *               type: boolean
 	 */
 	router.route("/auth/register").post(
-		validationHelper.bodyMiddleware(validationHelper.schemas.auth.register),
-		(req, res, next) => passport.authenticate("local-register", (error) => res.json({ success: !error }))(req, res, next)
+		validationHelper.middleware(authValidations.register, false),
+		authController.register
+	);
+
+	/**
+	 * @swagger
+	 * /api/auth/verify:
+	 *   get:
+	 *     description: Verify user (email callback)
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       302:
+	 *         description: Redirect to verify landing page
+	 */
+	router.route("/auth/verify/:token").get(
+		validationHelper.middleware(authValidations.verify),
+		authController.verify
 	);
 };
