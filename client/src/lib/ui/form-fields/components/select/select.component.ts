@@ -16,7 +16,6 @@ import { Option } from './select.types';
   ],
 })
 export class SelectInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
-  @Input() placeholder = '';
   @Input() label?: string;
   @Input() description?: string;
   @Input() options: Option[];

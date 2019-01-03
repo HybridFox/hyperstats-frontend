@@ -1,27 +1,17 @@
-// Sizes.
-$font-size-small: 12px;
-$font-size-regular: 16px;
-$font-size-large: 24px;
-$font-size-x-large: 32px;
-$font-size-xx-large: 48px;
-$font-size-xxx-large: 64px;
-$font-size-xxxx-large: 96px;
-
-// Weights.
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-semi-bold: 500;
-$font-weight-bold: 700;
-
-$spacer-x-small: 1em / 2;
-$spacer-small: 1em / 1.5;
-$spacer: 1em;
-$spacer-large: 1em * 1.5;
-$spacer-x-large: 1em * 2;
-
 // Families.
 @font-face {
   font-family: Lato;
   src: url("/assets/fonts/Lato") format("ttf");
 }
-$font-family-lato: "Lato", sans-serif;
+
+//Icon font.
+@font-face {
+  font-family: 'icon-font';
+  src:  url('/assets/font/icon-font/icon-font.eot?9hm3r9');
+  src:  url('/assets/font/icon-font/icon-font.eot?9hm3r9#iefix') format('embedded-opentype'),
+    url('/assets/font/icon-font/icon-font.ttf?9hm3r9') format('truetype'),
+    url('/assets/font/icon-font/icon-font.woff?9hm3r9') format('woff'),
+    url('/assets/font/icon-font/icon-font.svg?9hm3r9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

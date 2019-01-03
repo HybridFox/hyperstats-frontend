@@ -1,5 +1,8 @@
 {
-    "somekey": {
-        "here": "Testing123"
+    "general": {
+        "labels": {
+            "copyright": "© 2018 Eucobat",
+            "privacy": "privacy"
+        }
     }
 }

@@ -27,12 +27,14 @@ import { AuthGuard } from '@guards/auth.guard';
 
 import { ErrorInterceptor } from '@helpers/error.interceptor';
 
+import { FooterModule } from '@ui/footer';
 @NgModule({
   declarations: [
     CoreComponent,
     Pages
   ],
   imports: [
+    FooterModule,
     StoreModule,
     BrowserModule,
     CoreRoutingModule,

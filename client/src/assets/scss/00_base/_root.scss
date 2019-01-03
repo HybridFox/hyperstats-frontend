@@ -1,4 +1,18 @@
+.root {
+    min-height: 100vh;
+    margin-bottom: -$footer-height;
+}
+
 * {
     font-family: $font-family-lato;
     box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }

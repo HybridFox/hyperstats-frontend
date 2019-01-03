@@ -1,5 +1,8 @@
 {
-	"somekey": {
-		"here": ""
+	"general": {
+		"labels": {
+			"copyright": "",
+			"privacy": ""
+		}
 	}
 }
