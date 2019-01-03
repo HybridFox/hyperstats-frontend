@@ -43,7 +43,7 @@ services:
     ports:
       - 27011:27017
     volumes:
-      - ./server/data/db:/server/data/db
+      - ./server/data/db:/server/data/db:delegated
     command: mongod --smallfiles --logpath=/dev/null # --quiet
   selenium-chrome-standalone:
     ports:
