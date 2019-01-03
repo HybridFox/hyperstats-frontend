@@ -45,6 +45,23 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
+	 * /api/auth/profile:
+	 *   get:
+	 *     description: Get user profile
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       200:
+	 *         description: User profile
+	 *         schema:
+	 *           $ref: '#/definitions/UserLoginResponse'
+	 */
+	router.route("/auth/profile").get(authController.profile);
+
+	/**
+	 * @swagger
 	 * /api/auth/login:
 	 *   get:
 	 *     description: Login user
@@ -68,6 +85,21 @@ module.exports = (router) => {
 		validationHelper.middleware(authValidations.login),
 		authController.login
 	);
+
+	/**
+	 * @swagger
+	 * /api/auth/logout:
+	 *   get:
+	 *     description: Logout user
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       201:
+	 *         description: Success
+	 */
+	router.route("/auth/logout").get(authController.logout);
 
 	/**
 	 * @swagger
