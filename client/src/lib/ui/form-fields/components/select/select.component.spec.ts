@@ -2,6 +2,7 @@ import { DebugElement } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { SelectInputComponent } from './select.component';
 
@@ -12,7 +13,10 @@ describe('SelectInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [
+        ReactiveFormsModule,
+        TranslateModule.forRoot(),
+      ],
       declarations: [SelectInputComponent]
     }).compileComponents();
   }));

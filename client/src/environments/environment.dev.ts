@@ -4,7 +4,7 @@
 
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://rare-o.studiohyperdrive.be/server/'
+  apiBaseUrl: 'https://rare-o.studiohyperdrive.be/api/'
 };
 
 /*
