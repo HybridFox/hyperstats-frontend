@@ -1,6 +1,6 @@
 {
-	"/server": {
-	   "target": "http://server",
+	"/api": {
+	   "target": "http://server:4351",
 	   "secure": false
 	}
  }
