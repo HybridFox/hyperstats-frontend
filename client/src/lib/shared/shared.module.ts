@@ -22,7 +22,7 @@ import { Services } from '@shared/services';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
   ],
   exports: [
     TranslateModule,

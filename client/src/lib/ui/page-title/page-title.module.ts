@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { TitleComponent } from './title.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+import { PageTitleComponent } from './page-title.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -11,13 +11,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
     ReactiveFormsModule,
   ],
   declarations: [
-    TitleComponent,
+    PageTitleComponent,
   ],
   exports: [
-    TitleComponent,
+    PageTitleComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ]
 })
-export class CasDateTimeModule { }
+export class PageTitleModule { }

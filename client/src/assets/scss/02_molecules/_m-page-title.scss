@@ -1,0 +1,25 @@
+.m-page-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__content {
+
+    }
+
+    &__title {
+        color: $zodiac;
+        margin: 0;
+        line-height: 50px;
+    }
+
+    &__description {
+        color: #444444;
+        margin: 0;
+        line-height: 21px;
+    }
+
+    &__action {
+        align-self: center;
+    }
+}

@@ -114,7 +114,8 @@
       "@shared/(.*)": "<rootDir>/src/lib/shared/$1",
       "@store/(.*)": "<rootDir>/src/lib/store/$1",
       "@api/(.*)": "<rootDir>/src/lib/api/$1",
-      "@core/(.*)": "<rootDir>/src/lib/core/$1"
+      "@core/(.*)": "<rootDir>/src/lib/core/$1",
+      "@ui/(.*)": "<rootDir>/src/lib/ui/$1"
     },
     "collectCoverageFrom": [
       "src/**/*.ts",
