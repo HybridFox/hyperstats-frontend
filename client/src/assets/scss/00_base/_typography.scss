@@ -18,3 +18,15 @@ $font-weight-bold: 700;
   src: url("/assets/fonts/Lato") format("ttf");
 }
 $font-family-lato: "Lato", sans-serif;
+
+//Icon font.
+@font-face {
+  font-family: 'icon-font';
+  src:  url('/assets/font/icon-font/icon-font.eot?9hm3r9');
+  src:  url('/assets/font/icon-font/icon-font.eot?9hm3r9#iefix') format('embedded-opentype'),
+    url('/assets/font/icon-font/icon-font.ttf?9hm3r9') format('truetype'),
+    url('/assets/font/icon-font/icon-font.woff?9hm3r9') format('woff'),
+    url('/assets/font/icon-font/icon-font.svg?9hm3r9#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -10,6 +10,9 @@
   text-decoration: none;
   margin-bottom: 16px;
   @include transition(all 0.5s ease-in-out);
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 // Button types.
