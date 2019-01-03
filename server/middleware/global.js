@@ -2,8 +2,6 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const docs = require("@studiohyperdrive/api-docs");
 const helmet = require("helmet");
-const express = require("express");
-const path = require("path");
 
 const session = require("./session");
 
@@ -15,10 +13,8 @@ module.exports = (app) => {
 
 	app.use(session);
 
-	app.use(express.static(path.resolve(process.cwd(), "dist")));
-
-	app.use("/server", docs({
-		path: "server/routes",
+	app.use(docs({
+		path: "./routes",
 		NODE_ENV: [
 			"local",
 			"test",

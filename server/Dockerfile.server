@@ -2,16 +2,19 @@ FROM node:dubnium
 
 RUN mkdir -p /app
 
-WORKDIR /app
+ARG NODE_ENV=local
+ENV NODE_ENV $NODE_ENV
 
 RUN npm i npm@latest -g
 
+WORKDIR /
 COPY package.json package-lock.json* .npmrc ./
 RUN npm install --silent
 ENV PATH /node_modules/.bin:$PATH
 
+WORKDIR /app
 COPY . /app
 
-EXPOSE 4350
+EXPOSE 4351
 
-CMD [ "npm", "start" ]
+CMD [ "node", "index.js" ]

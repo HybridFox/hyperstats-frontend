@@ -11,7 +11,6 @@ const errorHandler = (err, req, res, next) => {
 	if (typeof err === "string") {
 		err = new Error(err);
 	}
-
 	// Do not send multiple responses
 	if (res.headersSent) {
 		return;

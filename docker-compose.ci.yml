@@ -3,6 +3,7 @@ services:
   server:
     build:
       context: ./server
+      dockerfile: Dockerfile.server
       args:
         - NODE_ENV=${NODE_ENV}
     container_name: server-${NODE_ENV}

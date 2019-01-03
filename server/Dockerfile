@@ -1,4 +1,4 @@
-FROM node:carbon-alpine
+FROM node:dubnium
 
 RUN mkdir -p /app
 
@@ -14,6 +14,9 @@ ENV PATH /node_modules/.bin:$PATH
 
 WORKDIR /app
 COPY . /app
+
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
+RUN chmod +x /wait
 
 EXPOSE 4351
 

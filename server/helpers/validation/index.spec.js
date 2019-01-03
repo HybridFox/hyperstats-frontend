@@ -17,7 +17,7 @@ describe("Validator helper", () => {
 		const obj = {};
 
 		expect(() => {
-			ValidationHelper.validator(ValidationHelper.presets.check, "DEFINED_ERROR", obj);
+			ValidationHelper.validator(ValidationHelper.schemas.presets.check, "DEFINED_ERROR", obj);
 		}).to.throw(Error, "DEFINED_ERROR");
 
 		done();
@@ -27,7 +27,7 @@ describe("Validator helper", () => {
 		const obj = {
 			key: "value",
 		};
-		const validation = ValidationHelper.validator(ValidationHelper.presets.check, "DEFINED_ERROR", obj);
+		const validation = ValidationHelper.validator(ValidationHelper.schemas.presets.check, "DEFINED_ERROR", obj);
 
 		expect(validation).to.be.an("object");
 		expect(validation).to.have.property("key");
