@@ -28,7 +28,7 @@ services:
       - 4350:4350
     volumes:
       - ./client:/app:delegated
-      - /app/node_modules
+      - notused:/app/node_modules
     links:
       - selenium-chrome-standalone
       - server
