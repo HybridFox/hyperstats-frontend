@@ -2,14 +2,11 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const docs = require("@studiohyperdrive/api-docs");
 const helmet = require("helmet");
-const express = require("express");
-const path = require("path");
 
 const session = require("./session");
-const passportSetup = require("./passportSetup");
 
 module.exports = (app) => {
-    app.use(passportSetup());
+	app.use(passportSetup());
 
 	app.use(cookieParser());
 
@@ -18,10 +15,8 @@ module.exports = (app) => {
 
 	app.use(session);
 
-	app.use(express.static(path.resolve(process.cwd(), "dist")));
-
-	app.use("/server", docs({
-		path: "server/routes",
+	app.use(docs({
+		path: "./routes",
 		NODE_ENV: [
 			"local",
 			"test",
@@ -32,5 +27,5 @@ module.exports = (app) => {
 	app.use(helmet.xssFilter());
 	app.use(helmet.noSniff());
 	app.use(helmet.ieNoOpen());
-    app.use(helmet.hidePoweredBy());
+	app.use(helmet.hidePoweredBy());
 };

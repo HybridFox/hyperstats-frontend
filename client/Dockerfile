@@ -1,6 +1,7 @@
-FROM node:carbon
+FROM node:dubnium
 
 RUN mkdir -p /app
+
 WORKDIR /app
 
 RUN npm i npm@latest -g

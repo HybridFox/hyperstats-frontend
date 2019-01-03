@@ -16,6 +16,6 @@ module.exports = session({
 	secret: config.server.cookies.secret,
 	store: new MongoStore({
 		mongooseConnection: mongoose.connection,
-		collection: "session"
-	})
+		collection: "session",
+	}),
 });

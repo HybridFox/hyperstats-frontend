@@ -3,7 +3,7 @@ const CoreController = require("../controllers/core");
 module.exports = (router) => {
 	/**
 	 * @swagger
-	 * /server/status:
+	 * /api/status:
 	 *   get:
 	 *     description: Status call of the server
 	 *     produces:
@@ -19,5 +19,5 @@ module.exports = (router) => {
 	 *            version:
 	 *              type: string
 	 */
-	router.route("/status").get(CoreController.status);
+	router.route("/status").get((req, res, next) => next(), CoreController.status);
 };

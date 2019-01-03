@@ -1,15 +1,13 @@
 {
 	"include": [
-		"config/**/*.js",
-		"config/*.js",
-		"server/**/*.js",
-		"server/*.js"
+		"./**/*.js"
 	],
 	"exclude": [
-		"**/*.spec.js"
+		"**/*.spec.js",
+		"node_modules/**/*.js"
 	],
 	"require": [
-		"babel-register",
+		"@babel/register",
 		"mocha"
 	],
 	"sourceMap": false,

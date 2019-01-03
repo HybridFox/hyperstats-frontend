@@ -1,36 +1,83 @@
-const passport = require("passport");
 const validationHelper = require("../helpers/validation");
+const authController = require("../controllers/auth");
+const authValidations = require("../controllers/auth/validations");
 
 module.exports = (router) => {
 	/**
 	 * @swagger
-	 * /server/auth/login:
+	 * definitions:
+	 *   UserBody:
+	 *     type: object
+	 *     required:
+	 *       - email
+	 *       - password
+	 *       - firstname
+	 *       - lastname
+	 *     properties:
+	 *       email:
+	 *         type: string
+	 *       password:
+	 *         type: string
+	 *       firstname:
+	 *         type: string
+	 *       lastname:
+	 *         type: string
+	 *   UserLoginBody:
+	 *     type: object
+	 *     required:
+	 *       - email
+	 *       - password
+	 *     properties:
+	 *       email:
+	 *         type: string
+	 *       password:
+	 *         type: string
+	 */
+
+	/**
+	 * @swagger
+	 * /api/auth/login:
 	 *   get:
 	 *     description: Login user
+	 *     tags:
+	 *       - auth
+	 *     parameters:
+	 *       - in: body
+	 *         name: body
+	 *         required: true
+	 *         schema:
+	 *           $ref: '#/definitions/UserLoginBody'
 	 *     produces:
 	 *       - application/json
 	 *     responses:
-	 *       302:
+	 *       200:
 	 *         description: Redirect to dashboard
+	 *         schema:
+	 *           type: object
+	 *           properties:
+	 *             success:
+	 *               type: boolean
 	 */
 	router.route("/auth/login").post(
-		validationHelper.bodyMiddleware(validationHelper.schemas.auth.login),
-		(req, res, next) => passport.authenticate("local-login", function(error, user) {
-			if (error) {
-				return res.redirect("/login?failed=true");
-			}
-
-			return res.redirect("/dashboard");
-		})(req, res, next),
+		validationHelper.middleware(authValidations.login),
+		authController.login
 	);
 
 	/**
 	 * @swagger
-	 * /server/auth/register:
+	 * /api/auth/register:
 	 *   get:
 	 *     description: Login register
+	 *     tags:
+	 *       - auth
 	 *     produces:
 	 *       - application/json
+	 *     parameters:
+	 *       - in: body
+	 *         name: body
+	 *         required: true
+	 *         schema:
+	 *           $ref: '#/definitions/UserBody'
 	 *     responses:
 	 *       200:
 	 *         description: Registration success
@@ -41,7 +88,30 @@ module.exports = (router) => {
 	 *               type: boolean
 	 */
 	router.route("/auth/register").post(
-		validationHelper.bodyMiddleware(validationHelper.schemas.auth.register),
-		(req, res, next) => passport.authenticate("local-register", (error) => res.json({ success: !error }))(req, res, next)
+		validationHelper.middleware(authValidations.register, false),
+		authController.register
+	);
+
+	/**
+	 * @swagger
+	 * /api/auth/verify/{token}:
+	 *   get:
+	 *     description: Verify user (email callback)
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: token
+	 *         required: true
+	 *         type: string
+	 *     responses:
+	 *       302:
+	 *         description: Redirect to verify landing page
+	 */
+	router.route("/auth/verify/:token").get(
+		validationHelper.middleware(authValidations.verify),
+		authController.verify
 	);
 };
