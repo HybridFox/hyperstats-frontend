@@ -15,13 +15,13 @@ import { Services } from './services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './translations';
 
-import { PageTitleModule } from '@ui/page-title';
+import { FooterModule } from '@ui/footer';
 @NgModule({
   declarations: [
     CoreComponent
   ],
   imports: [
-    PageTitleModule,
+    FooterModule,
     StoreModule,
     BrowserModule,
     CoreRoutingModule,

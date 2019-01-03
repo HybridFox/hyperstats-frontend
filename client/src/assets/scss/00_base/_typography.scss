@@ -1,24 +1,8 @@
-// Sizes.
-$font-size-small: 12px;
-$font-size-regular: 16px;
-$font-size-large: 24px;
-$font-size-x-large: 32px;
-$font-size-xx-large: 48px;
-$font-size-xxx-large: 64px;
-$font-size-xxxx-large: 96px;
-
-// Weights.
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-semi-bold: 500;
-$font-weight-bold: 700;
-
 // Families.
 @font-face {
   font-family: Lato;
   src: url("/assets/fonts/Lato") format("ttf");
 }
-$font-family-lato: "Lato", sans-serif;
 
 //Icon font.
 @font-face {
