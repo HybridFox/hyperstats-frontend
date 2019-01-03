@@ -4,6 +4,7 @@
         color: $black;
         margin-bottom: $spacer;
         font-weight: $font-weight-semi-bold;
+        text-transform: capitalize;
     }
 
     &__field-container {
@@ -51,6 +52,7 @@
     }
 
     &__description {
+        text-transform: capitalize;
         display: block;
         color: $tundora;
         margin: $spacer-x-small 0 0 0;

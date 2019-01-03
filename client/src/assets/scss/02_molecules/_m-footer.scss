@@ -2,6 +2,9 @@
     width: 100%;
     border-top: 1.5px solid $mercury;
     height: $footer-height;
+    background-color: $white;
+    position: relative;
+    z-index: 50;
 
     &__copyright {
         display: inline-block;

@@ -28,6 +28,7 @@ import { AuthGuard } from '@guards/auth.guard';
 import { ErrorInterceptor } from '@helpers/error.interceptor';
 
 import { FooterModule } from '@ui/footer';
+import { FormFieldsModule } from '@ui/form-fields';
 @NgModule({
   declarations: [
     CoreComponent,
@@ -35,6 +36,7 @@ import { FooterModule } from '@ui/footer';
   ],
   imports: [
     FooterModule,
+    FormFieldsModule,
     StoreModule,
     BrowserModule,
     CoreRoutingModule,
