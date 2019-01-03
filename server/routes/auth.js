@@ -32,6 +32,15 @@ module.exports = (router) => {
 	 *         type: string
 	 *       password:
 	 *         type: string
+	 *   UserLoginResponse:
+	 *     type: object
+	 *     properties:
+	 *       email:
+	 *         type: string
+	 *       firstname:
+	 *         type: string
+	 *       lastname:
+	 *         type: string
 	 */
 
 	/**
@@ -53,10 +62,7 @@ module.exports = (router) => {
 	 *       200:
 	 *         description: Redirect to dashboard
 	 *         schema:
-	 *           type: object
-	 *           properties:
-	 *             success:
-	 *               type: boolean
+	 *           $ref: '#/definitions/UserLoginResponse'
 	 */
 	router.route("/auth/login").post(
 		validationHelper.middleware(authValidations.login),
