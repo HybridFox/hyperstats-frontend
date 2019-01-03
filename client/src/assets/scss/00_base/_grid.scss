@@ -1,0 +1,175 @@
+.l-grid {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+}
+
+[class*="l-grid__col"] {
+	flex-grow: 1;
+	flex-shrink: 1;
+	align-self: auto;
+}
+
+.l-grid__row{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	[class*="l-grid__col"]{
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}
+
+.l-grid__col-1-12{
+	width: $_grid-col-2;
+	@include respond-at($screen-m){width: $_grid-col-1;}
+}
+
+.l-grid__col-2-12{
+	width: $_grid-col-4;
+	@include respond-at($screen-m){width: $_grid-col-2;}
+}
+
+.l-grid__col-3-12{
+	width: $_grid-col-12;
+	@include respond-at($screen-s){width: $_grid-col-5;}
+	@include respond-at($screen-m){width: $_grid-col-3;}
+}
+
+.l-grid__col-4-12{
+	width: $_grid-col-12;
+	@include respond-at($screen-s){width: $_grid-col-6;}
+	@include respond-at($screen-m){width: $_grid-col-4;}
+}
+
+.l-grid__col-5-12{
+	width: $_grid-col-12;
+	@include respond-at($screen-s){width: $_grid-col-6;}
+	@include respond-at($screen-m){width: $_grid-col-5;}
+}
+
+.l-grid__col-6-12{
+	width: $_grid-col-12;
+	@include respond-at($screen-s){width: $_grid-col-6;}
+}
+
+.l-grid__col-7-12{
+  width: $_grid-col-12;
+  @include respond-at($screen-s){width: $_grid-col-6;}
+	@include respond-at($screen-m){width: $_grid-col-7;}
+}
+
+.l-grid__col-8-12{
+	width: $_grid-col-12;
+	@include respond-at($screen-s){width: $_grid-col-6;}
+	@include respond-at($screen-m){width: $_grid-col-8;}
+}
+
+.l-grid__col-9-12{
+	width: $_grid-col-12;
+	@include respond-at($screen-s){width: $_grid-col-7;}
+	@include respond-at($screen-m){width: $_grid-col-9;}
+}
+
+.l-grid__col-10-12{
+	width: $_grid-col-8;
+	@include respond-at($screen-m){width: $_grid-col-10;}
+}
+
+.l-grid__col-11-12{
+	width: $_grid-col-10;
+	@include respond-at($screen-m){width: $_grid-col-11;}
+}
+
+.l-grid__col-12-12{
+	width: $_grid-col-12;
+}
+
+// -------------------------------------------------------------------
+// :: EXTENDED GRID SYSTEM With Margins
+// -------------------------------------------------------------------
+// for use in page layouts
+
+.l-grid--with-margins {
+
+	width: calc(100% + #{$grid-gutter});
+	transform: translateX(-($grid-gutter / 2));
+
+	[class*="l-grid__col"] {
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin: #{$grid-gutter-row / 2};
+
+		@include respond-at($screen-m) {
+			margin: #{$grid-gutter-row / 2};
+		}
+	}
+
+	.l-grid__col-1-12{
+		width: calc(#{$_grid-col-2} - #{$grid-gutter});
+		@include respond-at($screen-m){width: calc(#{$_grid-col-1} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-2-12{
+		width: calc(#{$_grid-col-4} - #{$grid-gutter});
+		@include respond-at($screen-m){width: calc(#{$_grid-col-2} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-3-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-at($screen-s){width: calc(#{$_grid-col-5} - #{$grid-gutter});}
+		@include respond-at($screen-m){width: calc(#{$_grid-col-3} - #{$grid-gutter}) !important;}
+	}
+
+	.l-grid__col-4-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-at($screen-s){width: calc(#{$_grid-col-6} - #{$grid-gutter	});}
+		@include respond-at($screen-m){width: calc(#{$_grid-col-4} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-5-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-at($screen-s){width: calc(#{$_grid-col-5} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-6-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-at($screen-m){width: calc(#{$_grid-col-6} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-7-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-at($screen-s){width: calc(#{$_grid-col-7} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-8-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+		@include respond-at($screen-s){width: calc(#{$_grid-col-6} - #{$grid-gutter});}
+		@include respond-at($screen-m){width: calc(#{$_grid-col-8} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-9-12{
+    width: calc(#{$_grid-col-12} - #{$grid-gutter});
+    @include respond-at($screen-s){width: calc(#{$_grid-col-7} - #{$grid-gutter});}
+		@include respond-at($screen-m){width: calc(#{$_grid-col-9} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-10-12{
+		width: calc(#{$_grid-col-8} - #{$grid-gutter});
+		@include respond-at($screen-m){width: calc(#{$_grid-col-10} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-11-12{
+		width: calc(#{$_grid-col-10} - #{$grid-gutter});
+		@include respond-at($screen-m){width: calc(#{$_grid-col-11} - #{$grid-gutter});}
+	}
+
+	.l-grid__col-12-12{
+		width: calc(#{$_grid-col-12} - #{$grid-gutter});
+	}
+
+}
