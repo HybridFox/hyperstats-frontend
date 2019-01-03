@@ -6,8 +6,6 @@ const helmet = require("helmet");
 const session = require("./session");
 
 module.exports = (app) => {
-	app.use(passportSetup());
-
 	app.use(cookieParser());
 
 	app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
