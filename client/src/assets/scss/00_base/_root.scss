@@ -1,11 +1,18 @@
-$spacer-x-small: 1rem / 2;
-$spacer-small: 1rem / 1.5;
-$spacer: 1rem;
-$spacer-large: 1rem * 1.5;
-$spacer-x-large: 1rem * 2;
-$spacer-xx-large: 1rem * 3;
+.root {
+    min-height: 100vh;
+    margin-bottom: -$footer-height;
+}
 
 * {
     font-family: $font-family-lato;
     box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
