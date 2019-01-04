@@ -16,6 +16,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './translations';
 
 import { FooterModule } from '@ui/footer';
+import { MainMenuModule } from '@ui/main-menu';
+
 @NgModule({
   declarations: [
     CoreComponent
@@ -33,6 +35,7 @@ import { FooterModule } from '@ui/footer';
         useClass: WebpackTranslateLoader,
       },
     }),
+    MainMenuModule,
   ],
   providers: [
     StoreService,

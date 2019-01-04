@@ -5,11 +5,26 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-03T12:23:12.739Z\n"
-"PO-Revision-Date: 2019-01-03T12:23:12.740Z\n"
+"POT-Creation-Date: 2019-01-04T13:55:14.491Z\n"
+"PO-Revision-Date: 2019-01-04T13:55:14.491Z\n"
 
 msgid "general##labels##copyright"
 msgstr ""
 
 msgid "general##labels##privacy"
+msgstr ""
+
+msgid "general##mainMenu##auditTrail"
+msgstr ""
+
+msgid "general##mainMenu##proxies"
+msgstr ""
+
+msgid "general##mainMenu##recyclingPartners"
+msgstr ""
+
+msgid "general##mainMenu##recyclingProcesses"
+msgstr ""
+
+msgid "general##mainMenu##reports"
 msgstr ""
