@@ -3,6 +3,13 @@
 		"labels": {
 			"copyright": "",
 			"privacy": ""
-		}
+        },
+        "mainMenu": {
+            "reports": "",
+            "recyclingProcesses": "",
+            "recyclingPartners": "",
+            "proxies": "",
+            "auditTrail": ""
+        }
 	}
 }

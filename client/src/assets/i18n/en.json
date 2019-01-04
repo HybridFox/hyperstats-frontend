@@ -3,6 +3,13 @@
         "labels": {
             "copyright": "© 2018 Eucobat",
             "privacy": "privacy"
+        },
+        "mainMenu": {
+            "reports": "Reports",
+            "recyclingProcesses": "Recycling Processes",
+            "recyclingPartners": "Recycling Partners",
+            "proxies": "Proxies",
+            "auditTrail": "Audit Trail"
         }
     }
 }
