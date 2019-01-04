@@ -5,11 +5,11 @@
             "privacy": "privacy"
         },
         "mainMenu": {
-            "reports": "Reports",
-            "recyclingProcesses": "Recycling Processes",
-            "recyclingPartners": "Recycling Partners",
+            "auditTrail": "Audit Trail",
             "proxies": "Proxies",
-            "auditTrail": "Audit Trail"
+            "recyclingPartners": "Recycling Partners",
+            "recyclingProcesses": "Recycling Processes",
+            "reports": "Reports"
         }
     }
 }
