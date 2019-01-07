@@ -2,6 +2,7 @@
     &__link {
         position: relative;
         font-size: $font-size-regular;
+        font-weight: $font-weight-light;
         color: $white;
         line-height: 36px;
         padding: 0 4px;
@@ -31,6 +32,7 @@
 .m-menu--main {
     &__item {
         font-size: $font-size-regular;
+        font-weight: $font-weight-light;
         position: relative;
         color: $white;
         line-height: 36px;
@@ -61,40 +63,28 @@
 }
 
 .m-menu--user {
-    display: flex;
-    &__item {
-        margin: 0 10px;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+    position: relative;
     &__sub-menu {
-        position: relative;
-    }
-}
-
-.m-sub-menu {
-    position: absolute;
-    background-color: $white;
-    padding: 12px 18px;
-    border-radius: 0 0 4px 4px;
-    border: 1px solid $mercury;
-    width: max-content;
-    &__item {
-        list-style: none;
-        margin-bottom: 11px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-        &__link {
-            font-size: $font-size-regular;
-            color: $blue;
-            &:hover,
-            &:active {
-                text-decoration: none;
+        position: absolute;
+        background-color: $white;
+        padding: 12px 18px;
+        border-radius: 0 0 4px 4px;
+        border: 1px solid $mercury;
+        width: max-content;
+        &__item {
+            list-style: none;
+            margin-bottom: 11px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &__link {
+                font-size: $font-size-regular;
+                line-height: 19px;
+                color: $blue;
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                }
             }
         }
     }
