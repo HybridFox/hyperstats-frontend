@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
 })
 
 export class UserMenuComponent {
-    visible = false;
+    public visible = false;
 
-    toggle() {
+    public toggle() {
         this.visible = !this.visible;
     }
 }
