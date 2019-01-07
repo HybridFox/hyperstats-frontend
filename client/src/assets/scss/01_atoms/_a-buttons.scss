@@ -2,17 +2,16 @@
   font-family: $font-family-lato;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
-  line-height: 18px;
+  line-height: 15px;
   letter-spacing: 2.4px;
   border-radius: 4px;
-  padding: 9.6px 32px;
+  padding: $spacer-small $spacer-x-large;
   border: 1px solid;
   text-decoration: none;
   @include transition(all 0.5s ease-in-out);
   display: flex;
   align-items: center;
   position: relative;
-  height: 36px;
   cursor: pointer;
   &:hover,
   &:active {
@@ -21,7 +20,7 @@
   // Buttons with icon on right.
   .has-icon-after {
     .a-icon {
-      margin: 0 5px 0 2px;
+      margin: 0 $spacer-x-small / 2 0 $spacer-x-small / 4;
     }
   }
 }
@@ -89,7 +88,7 @@
     text-transform: none;
     font-size: $font-size-regular;
     font-weight: $font-weight-regular;
-    padding: 7px 0 7px 12px;
+    padding: $spacer-x-small 0 $spacer-x-small $spacer-small;
     letter-spacing: 1px;
     &:hover {
       background-color: $white;

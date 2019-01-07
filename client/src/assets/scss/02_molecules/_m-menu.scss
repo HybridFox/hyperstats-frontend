@@ -5,7 +5,7 @@
         font-weight: $font-weight-light;
         color: $white;
         line-height: 36px;
-        padding: 0 4px;
+        padding: 0 $spacer-x-small / 2;
         &:first-child {
             margin-left: 0;
         }
@@ -23,7 +23,7 @@
                 height: 3px;
                 background-color: $yellow;
                 left: 0;
-                bottom: -25px;
+                bottom: $spacer-x-large;
             }
         }
     }
@@ -36,8 +36,8 @@
         position: relative;
         color: $white;
         line-height: 36px;
-        padding: 0 4px;
-        margin: 0 10px;
+        padding: 0 $spacer-x-small / 2;
+        margin: 0 $spacer-small;
         text-decoration: none;
         &:first-child {
             margin-left: 0;
@@ -56,7 +56,7 @@
                 height: 3px;
                 background-color: $yellow;
                 left: 0;
-                bottom: -25px;
+                bottom: $spacer-x-large;
             }
         }
     }
@@ -67,13 +67,13 @@
     &__sub-menu {
         position: absolute;
         background-color: $white;
-        padding: 12px 18px;
+        padding: $spacer-small $spacer;
         border-radius: 0 0 4px 4px;
         border: 1px solid $mercury;
         width: max-content;
         &__item {
             list-style: none;
-            margin-bottom: 11px;
+            margin-bottom: $spacer-small;
             &:last-child {
                 margin-bottom: 0;
             }
