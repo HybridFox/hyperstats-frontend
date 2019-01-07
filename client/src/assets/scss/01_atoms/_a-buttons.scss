@@ -13,9 +13,16 @@
   align-items: center;
   position: relative;
   height: 36px;
+  cursor: pointer;
   &:hover,
   &:active {
     text-decoration: none;
+  }
+  // Buttons with icon on right.
+  .has-icon-after {
+    .a-icon {
+      margin: 0 5px 0 2px;
+    }
   }
 }
 
@@ -82,7 +89,7 @@
     text-transform: none;
     font-size: $font-size-regular;
     font-weight: $font-weight-regular;
-    padding: 9.6px 0 9.6px 12px;
+    padding: 7px 0 7px 12px;
     letter-spacing: 1px;
     &:hover {
       background-color: $white;
