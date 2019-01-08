@@ -9,8 +9,6 @@
  */
 
 .a-icon {
-    position: absolute;
-    left: $spacer;
     color:inherit;
     font-size: $font-size-large;
     /* use !important to prevent issues with browser extensions that change fonts */
