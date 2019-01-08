@@ -31,6 +31,7 @@ import { FooterModule } from '@ui/footer';
 import { FormFieldsModule } from '@ui/form-fields';
 import { MainMenuModule } from '@ui/main-menu';
 import { UserMenuModule } from '@ui/user-menu';
+import { PageTitleModule } from '@ui/page-title';
 
 import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
 
@@ -72,7 +73,8 @@ import { TranslateToastComponent } from './components/translate-toast/translate-
       },
     }),
     MainMenuModule,
-    UserMenuModule
+    UserMenuModule,
+    PageTitleModule
   ],
   providers: [
     StoreService,

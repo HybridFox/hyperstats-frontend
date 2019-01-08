@@ -13,7 +13,7 @@ import { AuthActions, AuthSelector } from '@store/auth';
 export class ProfilePageComponent implements OnInit, OnDestroy {
     @select(AuthSelector.register.loading) public loading$: boolean;
 
-    public registerForm: FormGroup;
+    public profileForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
@@ -23,7 +23,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit(): void {
-        this.registerForm = new FormGroup({
+        this.profileForm = new FormGroup({
             email: new FormControl('', Validators.required),
             firstname: new FormControl('', Validators.required),
             lastname: new FormControl('', Validators.required),
@@ -37,14 +37,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.register({
-            ...this.registerForm.value
-        }).then(() => {
-            // TODO: translate
-            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
-            this.registerForm.reset();
-        }).catch(() => {
-            this.toastrService.success('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
-        });
+
     }
 }

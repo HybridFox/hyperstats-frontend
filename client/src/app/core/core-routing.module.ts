@@ -18,7 +18,14 @@ const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
+      {
+        path: 'reports',
+        loadChildren: '../reports/reports.module#ReportsModule'
+      },
+      {
+        path: 'profile',
+        component: Pages.ProfilePageComponent
+      },
     ]
   }
 ];
