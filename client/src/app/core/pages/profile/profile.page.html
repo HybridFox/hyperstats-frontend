@@ -2,17 +2,17 @@
     <div class="container">
         <app-page-title title="PROFILE.TITLE"></app-page-title>
         <div class="m-card">
-            <form [formGroup]="registerForm" (ngSubmit)="submit()">
-                <div class="p-register__input">
+            <form [formGroup]="profileForm" (ngSubmit)="submit()">
+                <div class="p-profile__input">
                     <app-text-input formControlName="firstname" label="GENERAL.LABELS.FIRSTNAME"></app-text-input>
                 </div>
-                <div class="p-register__input">
+                <div class="p-profile__input">
                     <app-text-input formControlName="lastname" label="GENERAL.LABELS.LASTNAME"></app-text-input>
                 </div>
-                <div class="p-register__input">
+                <div class="p-profile__input">
                     <app-text-input formControlName="email" label="GENERAL.LABELS.EMAIL" type="email"></app-text-input>
                 </div>
-                <div class="p-register__input">
+                <div class="p-profile__input">
                     <app-text-input formControlName="password" label="GENERAL.LABELS.PASSWORD" type="password"></app-text-input>
                 </div>
                 <input type="submit" [value]="'GENERAL.LABELS.SAVE' | translate" class="a-button a-button--primary a-button--small">
