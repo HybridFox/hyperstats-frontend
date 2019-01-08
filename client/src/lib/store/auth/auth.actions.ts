@@ -7,6 +7,7 @@ import { EntitiesActions } from '@store/entities';
 
 import { ACTIONS } from './auth.action-types';
 import { AuthRepository } from './auth.repository';
+import { RegisterInterface, LoginInterface } from './auth.interface';
 
 @Injectable()
 export class AuthActions {
@@ -16,7 +17,7 @@ export class AuthActions {
     private entitiesActions: EntitiesActions
   ) {}
 
-  public login({ email, password }): Observable<any> {
+  public login({ email, password }: LoginInterface): Promise<any> {
     this.handler.dispatchStart(ACTIONS.LOGIN_USER);
 
     return this.authRepository
@@ -31,16 +32,40 @@ export class AuthActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.LOGIN_USER, {
-            payload: this.entitiesActions.normalize(response, EntitiesActions.schema.user)
+            payload: response
           });
         }),
         finalize(() => {
           this.handler.dispatchDone(ACTIONS.LOGIN_USER);
         }),
+      ).toPromise();
+  }
+
+  public fetchProfile(): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.FETCH_USER);
+
+    return this.authRepository
+      .fetchProfile()
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.FETCH_USER, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap((response: any) => {
+          this.handler.dispatchSuccess(ACTIONS.FETCH_USER, {
+            payload: response
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.FETCH_USER);
+        }),
       );
   }
 
-  public register({ firstname, lastname, email, password }): Observable<any>  {
+  public register({ firstname, lastname, email, password }: RegisterInterface): Promise<any>  {
     this.handler.dispatchStart(ACTIONS.REGISTER_USER);
 
     return this.authRepository
@@ -55,16 +80,12 @@ export class AuthActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.REGISTER_USER, {
-            payload: this.entitiesActions.normalize(response, EntitiesActions.schema.user)
+            payload: response
           });
         }),
         finalize(() => {
           this.handler.dispatchDone(ACTIONS.REGISTER_USER);
         }),
-      );
-  }
-
-  public isLoggedIn() {
-    return true;
+      ).toPromise();
   }
 }

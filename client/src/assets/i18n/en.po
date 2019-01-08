@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-03T13:41:58.008Z\n"
-"PO-Revision-Date: 2019-01-08 08:40+0100\n"
+"POT-Creation-Date: 2019-01-08T12:43:37.350Z\n"
+"PO-Revision-Date: 2019-01-08 13:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,41 +12,74 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 
-msgid "general##labels##copyright"
-msgstr "© 2018 Eucobat"
+msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr "© Eucobat 2018"
 
-msgid "general##labels##email"
-msgstr "email"
+msgid "GENERAL##LABELS##EMAIL"
+msgstr "Email"
 
-msgid "general##labels##forgot-password"
-msgstr "forgot password?"
+msgid "GENERAL##LABELS##FIRSTNAME"
+msgstr "Firstname"
 
-msgid "general##labels##login"
-msgstr "login"
+msgid "GENERAL##LABELS##FORGOT-PASSWORD"
+msgstr "Forgot Password"
 
-msgid "general##labels##password"
-msgstr "password"
+msgid "GENERAL##LABELS##LASTNAME"
+msgstr "Lastname"
 
-msgid "general##labels##privacy"
-msgstr "privacy"
+msgid "GENERAL##LABELS##LOGIN"
+msgstr "Login"
 
-msgid "general##labels##welcome"
-msgstr "welcome"
+msgid "GENERAL##LABELS##PASSWORD"
+msgstr "Password"
 
-msgid "general##mainMenu##auditTrail"
-msgstr "Audit Trail"
+msgid "GENERAL##LABELS##PRIVACY"
+msgstr "Privacy"
 
-msgid "general##mainMenu##proxies"
+msgid "GENERAL##LABELS##REGISTER"
+msgstr "Register"
+
+msgid "GENERAL##LABELS##WELCOME"
+msgstr "Welcome!"
+
+msgid "GENERAL##MENU##AUDITTRIAL"
+msgstr "Audit Trial"
+
+msgid "GENERAL##MENU##COMPANYINFORMATION"
+msgstr "Company information"
+
+msgid "GENERAL##MENU##HELP"
+msgstr "Help"
+
+msgid "GENERAL##MENU##LOGOFF"
+msgstr "Log off"
+
+msgid "GENERAL##MENU##NEWREPORT"
+msgstr "New report"
+
+msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
 
-msgid "general##mainMenu##recyclingPartners"
+msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr "Recycling Partners"
 
-msgid "general##mainMenu##recyclingProcesses"
+msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr "Recycling Processes"
 
-msgid "general##mainMenu##reports"
+msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
 
-#~ msgid "somekey##here"
-#~ msgstr "testing123"
+msgid "GENERAL##MENU##USERPROFILE"
+msgstr "User profile"
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr "Make sure you are using the correct details to login"
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr "Cannot login"
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr "Make sure all fields are filled in"
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr "Cannot register"

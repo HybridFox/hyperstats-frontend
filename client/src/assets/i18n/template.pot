@@ -5,41 +5,77 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-03T13:41:58.008Z\n"
-"PO-Revision-Date: 2019-01-03T13:41:58.009Z\n"
+"POT-Creation-Date: 2019-01-08T12:43:37.350Z\n"
+"PO-Revision-Date: 2019-01-08T12:43:37.350Z\n"
 
-msgid "general##labels##copyright"
+msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr ""
 
-msgid "general##labels##email"
+msgid "GENERAL##LABELS##EMAIL"
 msgstr ""
 
-msgid "general##labels##forgot-password"
+msgid "GENERAL##LABELS##FIRSTNAME"
 msgstr ""
 
-msgid "general##labels##login"
+msgid "GENERAL##LABELS##FORGOT-PASSWORD"
 msgstr ""
 
-msgid "general##labels##password"
+msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
-msgid "general##labels##privacy"
+msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
-msgid "general##labels##welcome"
+msgid "GENERAL##LABELS##PASSWORD"
 msgstr ""
 
-msgid "general##mainMenu##auditTrail"
+msgid "GENERAL##LABELS##PRIVACY"
 msgstr ""
 
-msgid "general##mainMenu##proxies"
+msgid "GENERAL##LABELS##REGISTER"
 msgstr ""
 
-msgid "general##mainMenu##recyclingPartners"
+msgid "GENERAL##LABELS##WELCOME"
 msgstr ""
 
-msgid "general##mainMenu##recyclingProcesses"
+msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
-msgid "general##mainMenu##reports"
+msgid "GENERAL##MENU##COMPANYINFORMATION"
+msgstr ""
+
+msgid "GENERAL##MENU##HELP"
+msgstr ""
+
+msgid "GENERAL##MENU##LOGOFF"
+msgstr ""
+
+msgid "GENERAL##MENU##NEWREPORT"
+msgstr ""
+
+msgid "GENERAL##MENU##PROXIES"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLINGPROCESSES"
+msgstr ""
+
+msgid "GENERAL##MENU##REPORTS"
+msgstr ""
+
+msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""

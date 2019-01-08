@@ -1,20 +1,42 @@
 {
-	"general": {
-		"labels": {
-			"copyright": "",
-			"email": "",
-			"forgot-password": "",
-			"login": "",
-			"password": "",
-			"privacy": "",
-			"welcome": ""
+	"GENERAL": {
+		"LABELS": {
+			"COPYRIGHT": "",
+			"EMAIL": "",
+			"FIRSTNAME": "",
+			"FORGOT-PASSWORD": "",
+			"LASTNAME": "",
+			"LOGIN": "",
+			"PASSWORD": "",
+			"PRIVACY": "",
+			"REGISTER": "",
+			"WELCOME": ""
 		},
-		"mainMenu": {
-			"auditTrail": "",
-			"proxies": "",
-			"recyclingPartners": "",
-			"recyclingProcesses": "",
-			"reports": ""
+		"MENU": {
+			"AUDITTRIAL": "",
+			"COMPANYINFORMATION": "",
+			"HELP": "",
+			"LOGOFF": "",
+			"NEWREPORT": "",
+			"PROXIES": "",
+			"RECYCLINGPARTNERS": "",
+			"RECYCLINGPROCESSES": "",
+			"REPORTS": "",
+			"USERPROFILE": ""
+		}
+	},
+	"TOAST": {
+		"LOGIN": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"REGISTER": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
 		}
 	}
 }
