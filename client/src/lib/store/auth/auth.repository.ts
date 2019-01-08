@@ -20,6 +20,13 @@ export class AuthRepository {
       });
   }
 
+  public fetchProfile() {
+    const url = this.apiConfig.baseUrl('/auth/profile');
+
+    return this.http
+      .get(url);
+  }
+
   public register({ firstname, lastname, email, password }): Observable<any> {
     const url = this.apiConfig.baseUrl('/auth/register');
 

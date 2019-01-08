@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-03T13:41:58.008Z\n"
-"PO-Revision-Date: 2019-01-08 08:40+0100\n"
+"POT-Creation-Date: 2019-01-08T09:54:19.522Z\n"
+"PO-Revision-Date: 2019-01-08 10:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,41 +12,62 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 
-msgid "general##labels##copyright"
-msgstr "© 2018 Eucobat"
+msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr "© Eucobat 2018"
 
-msgid "general##labels##email"
-msgstr "email"
+msgid "GENERAL##LABELS##EMAIL"
+msgstr "Email"
 
-msgid "general##labels##forgot-password"
-msgstr "forgot password?"
+msgid "GENERAL##LABELS##FIRSTNAME"
+msgstr "Firstname"
 
-msgid "general##labels##login"
-msgstr "login"
+msgid "GENERAL##LABELS##FORGOT-PASSWORD"
+msgstr "Forgot password?"
 
-msgid "general##labels##password"
-msgstr "password"
+msgid "GENERAL##LABELS##LASTNAME"
+msgstr "Lastname"
 
-msgid "general##labels##privacy"
-msgstr "privacy"
+msgid "GENERAL##LABELS##LOGIN"
+msgstr "Login"
+
+msgid "GENERAL##LABELS##PASSWORD"
+msgstr "Password"
+
+msgid "GENERAL##LABELS##PRIVACY"
+msgstr "Privacy"
+
+msgid "GENERAL##LABELS##REGISTER"
+msgstr "Register"
+
+msgid "GENERAL##LABELS##WELCOME"
+msgstr "Welcome!"
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr "Make sure you are using the correct details to login"
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr "Cannot login"
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr "Make sure all fields are filled in"
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr "Cannot register"
 
 msgid "general##labels##welcome"
 msgstr "welcome"
 
 msgid "general##mainMenu##auditTrail"
-msgstr "Audit Trail"
+msgstr "audit trail"
 
 msgid "general##mainMenu##proxies"
-msgstr "Proxies"
+msgstr "proxies"
 
 msgid "general##mainMenu##recyclingPartners"
-msgstr "Recycling Partners"
+msgstr "recycling partners"
 
 msgid "general##mainMenu##recyclingProcesses"
-msgstr "Recycling Processes"
+msgstr "recycling processes"
 
 msgid "general##mainMenu##reports"
-msgstr "Reports"
-
-#~ msgid "somekey##here"
-#~ msgstr "testing123"
+msgstr "reports"

@@ -32,10 +32,16 @@ import { FormFieldsModule } from '@ui/form-fields';
 import { MainMenuModule } from '@ui/main-menu';
 import { UserMenuModule } from '@ui/user-menu';
 
+import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
+
 @NgModule({
   declarations: [
     CoreComponent,
-    Pages
+    Pages,
+    TranslateToastComponent
+  ],
+  entryComponents: [
+    TranslateToastComponent,
   ],
   imports: [
     FooterModule,
@@ -54,7 +60,8 @@ import { UserMenuModule } from '@ui/user-menu';
     ToastrModule.forRoot({
       timeOut: 10000,
       progressBar: true,
-      positionClass: 'toast-bottom-right'
+      positionClass: 'toast-bottom-right',
+      toastComponent: TranslateToastComponent
     }),
 
     // Translations
