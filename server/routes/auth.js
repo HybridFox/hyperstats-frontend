@@ -32,12 +32,38 @@ module.exports = (router) => {
 	 *         type: string
 	 *       password:
 	 *         type: string
+	 *   UserLoginResponse:
+	 *     type: object
+	 *     properties:
+	 *       email:
+	 *         type: string
+	 *       firstname:
+	 *         type: string
+	 *       lastname:
+	 *         type: string
 	 */
 
 	/**
 	 * @swagger
-	 * /api/auth/login:
+	 * /api/auth/profile:
 	 *   get:
+	 *     description: Get user profile
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       200:
+	 *         description:
+	 *         schema:
+	 *           $ref: '#/definitions/UserLoginResponse'
+	 */
+	router.route("/auth/profile").get(authController.profile);
+
+	/**
+	 * @swagger
+	 * /api/auth/login:
+	 *   post:
 	 *     description: Login user
 	 *     tags:
 	 *       - auth
@@ -51,12 +77,9 @@ module.exports = (router) => {
 	 *       - application/json
 	 *     responses:
 	 *       200:
-	 *         description: Redirect to dashboard
+	 *         description: Login response
 	 *         schema:
-	 *           type: object
-	 *           properties:
-	 *             success:
-	 *               type: boolean
+	 *           $ref: '#/definitions/UserLoginResponse'
 	 */
 	router.route("/auth/login").post(
 		validationHelper.middleware(authValidations.login),
@@ -65,8 +88,23 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/auth/register:
+	 * /api/auth/logout:
 	 *   get:
+	 *     description: Logout user
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       201:
+	 *         description: Success
+	 */
+	router.route("/auth/logout").get(authController.logout);
+
+	/**
+	 * @swagger
+	 * /api/auth/register:
+	 *   post:
 	 *     description: Login register
 	 *     tags:
 	 *       - auth

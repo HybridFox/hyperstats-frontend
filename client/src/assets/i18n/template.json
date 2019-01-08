@@ -8,6 +8,13 @@
 			"password": "",
 			"privacy": "",
 			"welcome": ""
+		},
+		"mainMenu": {
+			"auditTrail": "",
+			"proxies": "",
+			"recyclingPartners": "",
+			"recyclingProcesses": "",
+			"reports": ""
 		}
 	}
 }
