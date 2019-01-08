@@ -3,6 +3,7 @@
     padding: $spacer 0;
     .container {
         display: flex;
+        align-items: center;
         .o-menu__left {
             flex-grow: 1;
         }
