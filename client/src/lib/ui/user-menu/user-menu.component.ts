@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-user-menu',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 })
 
 export class UserMenuComponent {
+    @Input() profile: any;
     public visible = false;
 
     public toggle() {
