@@ -3,11 +3,11 @@
         "labels": {
             "copyright": "© 2018 Eucobat",
             "email": "email",
-            "forgot-password": "forgot password",
+            "forgot-password": "forgot password?",
             "login": "login",
             "password": "password",
             "privacy": "privacy",
-            "welcome": "welcome!"
+            "welcome": "welcome"
         },
         "mainMenu": {
             "auditTrail": "Audit Trail",
