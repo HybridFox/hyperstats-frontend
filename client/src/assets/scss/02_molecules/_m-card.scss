@@ -1,5 +1,6 @@
-.m-card {
-    margin-bottom: $spacer;
-    background-color: $white;
+.m-card{
+    border: 1px solid $mercury;
     border-radius: $border-radius;
+    padding: $spacer-large;
+    background-color: $white;
 }
