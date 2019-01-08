@@ -50,17 +50,32 @@ msgstr ""
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
-msgid "general##mainMenu##auditTrail"
+msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
-msgid "general##mainMenu##proxies"
+msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr ""
 
-msgid "general##mainMenu##recyclingPartners"
+msgid "GENERAL##MENU##HELP"
 msgstr ""
 
-msgid "general##mainMenu##recyclingProcesses"
+msgid "GENERAL##MENU##LOGOFF"
 msgstr ""
 
-msgid "general##mainMenu##reports"
+msgid "GENERAL##MENU##NEWREPORT"
+msgstr ""
+
+msgid "GENERAL##MENU##PROXIES"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLINGPROCESSES"
+msgstr ""
+
+msgid "GENERAL##MENU##REPORTS"
+msgstr ""
+
+msgid "GENERAL##MENU##USERPROFILE"
 msgstr ""

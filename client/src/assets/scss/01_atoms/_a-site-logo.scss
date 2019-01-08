@@ -1,17 +1,21 @@
-.a-logo {
+.a-site-logo {
   background-image: url("/assets/images/logo.png");
   background-position: center;
   background-repeat: no-repeat;
+  width: 32px;
+  height: 36px;
+  float: left;
+  margin-right: $spacer-x-large;
 }
 
-.a-logo--small {
-  @extend .a-logo;
+.a-site-logo--small {
+  @extend .a-site-logo;
   width: 22px;
   height: 24px;
 }
 
-.a-logo--white {
-  @extend .a-logo;
+.a-site-logo--white {
+  @extend .a-site-logo;
   width: 112px;
   height: 26px;
   background-color: $white;

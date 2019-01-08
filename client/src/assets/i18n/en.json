@@ -28,12 +28,17 @@
         }
     },
     "general": {
-        "mainMenu": {
-            "auditTrail": "audit trail",
-            "proxies": "proxies",
-            "recyclingPartners": "recycling partners",
-            "recyclingProcesses": "recycling processes",
-            "reports": "reports"
+        "MENU": {
+            "AUDITTRIAL": "Audit Trail",
+            "COMPANYINFORMATION": "Company information",
+            "HELP": "Help",
+            "LOGOFF": "Log off",
+            "NEWREPORT": "New report",
+            "PROXIES": "Proxies",
+            "RECYCLINGPARTNERS": "Recycling Partners",
+            "RECYCLINGPROCESSES": "Recycling Processes",
+            "REPORTS": "Reports",
+            "USERPROFILE": "User profile"
         }
     }
 }
