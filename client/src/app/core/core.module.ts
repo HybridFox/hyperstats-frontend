@@ -29,6 +29,8 @@ import { ErrorInterceptor } from '@helpers/error.interceptor';
 
 import { FooterModule } from '@ui/footer';
 import { FormFieldsModule } from '@ui/form-fields';
+import { MainMenuModule } from '@ui/main-menu';
+
 @NgModule({
   declarations: [
     CoreComponent,
@@ -61,6 +63,7 @@ import { FormFieldsModule } from '@ui/form-fields';
         useClass: WebpackTranslateLoader,
       },
     }),
+    MainMenuModule,
   ],
   providers: [
     StoreService,

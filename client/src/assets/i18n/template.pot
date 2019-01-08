@@ -28,3 +28,18 @@ msgstr ""
 
 msgid "general##labels##welcome"
 msgstr ""
+
+msgid "general##mainMenu##auditTrail"
+msgstr ""
+
+msgid "general##mainMenu##proxies"
+msgstr ""
+
+msgid "general##mainMenu##recyclingPartners"
+msgstr ""
+
+msgid "general##mainMenu##recyclingProcesses"
+msgstr ""
+
+msgid "general##mainMenu##reports"
+msgstr ""

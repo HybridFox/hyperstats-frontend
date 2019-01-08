@@ -3,7 +3,6 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthActions } from '@store/auth';
 
 @Component({
-    selector: 'app-login-page',
     templateUrl: './login.page.html',
 })
 export class LoginPageComponent implements OnInit {

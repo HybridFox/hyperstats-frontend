@@ -7,7 +7,7 @@ WORKDIR /app
 RUN npm i npm@latest -g
 
 COPY package.json package-lock.json* .npmrc ./
-RUN npm install
+RUN npm install --silent
 ENV PATH /node_modules/.bin:$PATH
 
 COPY . /app

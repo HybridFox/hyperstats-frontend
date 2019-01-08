@@ -63,7 +63,7 @@ module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /api/auth/login:
-	 *   get:
+	 *   post:
 	 *     description: Login user
 	 *     tags:
 	 *       - auth
@@ -88,8 +88,23 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/auth/register:
+	 * /api/auth/logout:
 	 *   get:
+	 *     description: Logout user
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       201:
+	 *         description: Success
+	 */
+	router.route("/auth/logout").get(authController.logout);
+
+	/**
+	 * @swagger
+	 * /api/auth/register:
+	 *   post:
 	 *     description: Login register
 	 *     tags:
 	 *       - auth
