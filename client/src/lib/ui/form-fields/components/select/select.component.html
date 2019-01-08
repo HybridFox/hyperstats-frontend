@@ -1,9 +1,9 @@
 <div class="a-input">
-  <label *ngIf="label" class="a-input__label">{{ label }}</label>
+  <label *ngIf="label" class="a-input__label">{{ label | translate }}</label>
   <div class="a-input__field-container">
     <select [formControl]="value" class="a-input__field">
-      <option *ngFor="let option of options" [value]="option.value">{{ option.label }}</option>
+      <option *ngFor="let option of options" [value]="option.value">{{ option.label | translate }}</option>
     </select>
   </div>
-  <p *ngIf="description" class="a-input__description">{{ description }}</p>
+  <p *ngIf="description" class="a-input__description">{{ description | translate }}</p>
 </div>

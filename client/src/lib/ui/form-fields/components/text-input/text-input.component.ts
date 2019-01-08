@@ -20,6 +20,7 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
   @Input() label?: string;
   @Input() suffix?: string;
   @Input() description?: string;
+  @Input() type = 'text';
 
   public value: FormControl = new FormControl('');
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();

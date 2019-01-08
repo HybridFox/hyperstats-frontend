@@ -1,15 +1,29 @@
 {
+    "GENERAL": {
+        "LABELS": {
+            "COPYRIGHT": "",
+            "PRIVACY": ""
+        },
+        "MENU": {
+            "AUDITTRIAL": "",
+            "COMPANYINFORMATION": "",
+            "HELP": "",
+            "LOGOFF": "",
+            "NEWREPORT": "",
+            "PROXIES": "",
+            "RECYCLINGPARTNERS": "",
+            "RECYCLINGPROCESSES": "",
+            "REPORTS": "",
+            "USERPROFILE": ""
+        }
+    },
     "general": {
         "labels": {
-            "copyright": "",
-            "privacy": ""
-        },
-        "menu": {
-            "auditTrail": "",
-            "proxies": "",
-            "recyclingPartners": "",
-            "recyclingProcesses": "",
-            "reports": ""
+            "email": "",
+            "forgot-password": "",
+            "login": "",
+            "password": "",
+            "welcome": ""
         }
     }
 }

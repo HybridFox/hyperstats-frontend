@@ -16,5 +16,14 @@
 			"REPORTS": "",
 			"USERPROFILE": ""
 		}
+	},
+	"general": {
+		"labels": {
+			"email": "",
+			"forgot-password": "",
+			"login": "",
+			"password": "",
+			"welcome": ""
+		}
 	}
 }

@@ -1,19 +1,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-08T09:14:37.811Z\n"
-"PO-Revision-Date: 2019-01-08 10:16+0100\n"
+"POT-Creation-Date: 2019-01-08T09:46:42.107Z\n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "Copyright"
+msgstr "© 2018 Eucobat"
 
 msgid "GENERAL##LABELS##PRIVACY"
 msgstr "Privacy"
@@ -47,6 +47,21 @@ msgstr "Reports"
 
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
+
+msgid "general##labels##email"
+msgstr "email"
+
+msgid "general##labels##forgot-password"
+msgstr "forgot password"
+
+msgid "general##labels##login"
+msgstr "login"
+
+msgid "general##labels##password"
+msgstr "password"
+
+msgid "general##labels##welcome"
+msgstr "welcome"
 
 #~ msgid "somekey##here"
 #~ msgstr "testing123"

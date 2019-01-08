@@ -2,6 +2,7 @@ import { DebugElement } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { TextInputComponent } from './text-input.component';
 
@@ -12,8 +13,11 @@ describe('TextInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
-      declarations: [TextInputComponent]
+      imports: [
+        ReactiveFormsModule,
+        TranslateModule.forRoot(),
+      ],
+      declarations: [TextInputComponent],
     }).compileComponents();
   }));
 

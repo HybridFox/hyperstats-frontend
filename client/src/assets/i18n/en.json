@@ -1,7 +1,7 @@
 {
     "GENERAL": {
         "LABELS": {
-            "COPYRIGHT": "Copyright",
+            "COPYRIGHT": "© 2018 Eucobat",
             "PRIVACY": "Privacy"
         },
         "MENU": {
@@ -15,6 +15,15 @@
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REPORTS": "Reports",
             "USERPROFILE": "User profile"
+        }
+    },
+    "general": {
+        "labels": {
+            "email": "email",
+            "forgot-password": "forgot password",
+            "login": "login",
+            "password": "password",
+            "welcome": "welcome"
         }
     }
 }

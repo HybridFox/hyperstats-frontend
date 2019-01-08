@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-08T09:14:37.811Z\n"
-"PO-Revision-Date: 2019-01-08T09:14:37.811Z\n"
+"POT-Creation-Date: 2019-01-08T09:46:42.107Z\n"
+"PO-Revision-Date: 2019-01-08T09:46:42.107Z\n"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr ""
@@ -42,4 +42,19 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "general##labels##email"
+msgstr ""
+
+msgid "general##labels##forgot-password"
+msgstr ""
+
+msgid "general##labels##login"
+msgstr ""
+
+msgid "general##labels##password"
+msgstr ""
+
+msgid "general##labels##welcome"
 msgstr ""
