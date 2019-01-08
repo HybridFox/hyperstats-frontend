@@ -1,15 +1,20 @@
 {
-    "general": {
-        "labels": {
-            "copyright": "© 2018 Eucobat",
-            "privacy": "privacy"
+    "GENERAL": {
+        "LABELS": {
+            "COPYRIGHT": "Copyright",
+            "PRIVACY": "Privacy"
         },
-        "mainMenu": {
-            "auditTrail": "Audit Trail",
-            "proxies": "Proxies",
-            "recyclingPartners": "Recycling Partners",
-            "recyclingProcesses": "Recycling Processes",
-            "reports": "Reports"
+        "MENU": {
+            "AUDITTRIAL": "Audit Trail",
+            "COMPANYINFORMATION": "Company information",
+            "HELP": "Help",
+            "LOGOFF": "Log off",
+            "NEWREPORT": "New report",
+            "PROXIES": "Proxies",
+            "RECYCLINGPARTNERS": "Recycling Partners",
+            "RECYCLINGPROCESSES": "Recycling Processes",
+            "REPORTS": "Reports",
+            "USERPROFILE": "User profile"
         }
     }
 }
