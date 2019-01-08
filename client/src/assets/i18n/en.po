@@ -71,36 +71,3 @@ msgstr "recycling processes"
 
 msgid "general##mainMenu##reports"
 msgstr "reports"
-
-#~ msgid "general##labels##copyright"
-#~ msgstr "© 2018 Eucobat"
-
-#~ msgid "general##labels##forgot-password"
-#~ msgstr "forgot password"
-
-#~ msgid "general##labels##login"
-#~ msgstr "login"
-
-#~ msgid "general##labels##privacy"
-#~ msgstr "privacy"
-
-#~ msgid "general##labels##register"
-#~ msgstr "register"
-
-#~ msgid "general##labels##welcome"
-#~ msgstr "welcome"
-
-#~ msgid "general##labels##email"
-#~ msgstr "email"
-
-#~ msgid "general##labels##firstname"
-#~ msgstr "firstname"
-
-#~ msgid "general##labels##lastname"
-#~ msgstr "lastname"
-
-#~ msgid "general##labels##password"
-#~ msgstr "password"
-
-#~ msgid "somekey##here"
-#~ msgstr "testing123"
