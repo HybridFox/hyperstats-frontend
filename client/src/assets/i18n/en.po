@@ -54,6 +54,9 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
+msgid "general##labels##welcome"
+msgstr "welcome"
+
 msgid "general##mainMenu##auditTrail"
 msgstr "audit trail"
 
