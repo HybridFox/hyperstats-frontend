@@ -17,8 +17,6 @@ import { SafeHtml } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 import { ToastrService, IndividualConfig, ToastPackage } from 'ngx-toastr';
 
-
-
 @Component({
   selector: '[toast-component]', // tslint:disable-line
   templateUrl: './translate-toast.component.html',
@@ -42,12 +40,11 @@ export class TranslateToastComponent implements OnDestroy {
   message?: string | SafeHtml | null;
   title?: string;
   options: IndividualConfig;
-  /** width of progress bar */
   width = -1;
-  /** a combination of toast type and options.toastClass */
+
   @HostBinding('class') toastClasses = '';
-  /** controls animation */
   @HostBinding('@flyInOut') state = 'inactive';
+
   private timeout: any;
   private intervalId: any;
   private hideTime: number;
@@ -55,9 +52,9 @@ export class TranslateToastComponent implements OnDestroy {
   private sub1: Subscription;
 
   constructor(
-    protected toastrService: ToastrService,
-    public toastPackage: ToastPackage,
-    protected appRef: ApplicationRef
+    private toastrService: ToastrService,
+    private toastPackage: ToastPackage,
+    private appRef: ApplicationRef
   ) {
     this.message = toastPackage.message;
     this.title = toastPackage.title;
@@ -72,15 +69,14 @@ export class TranslateToastComponent implements OnDestroy {
       this.remove();
     });
   }
+
   ngOnDestroy() {
     this.sub.unsubscribe();
     this.sub1.unsubscribe();
     clearInterval(this.intervalId);
     clearTimeout(this.timeout);
   }
-  /**
-   * activates toast and sets timeout
-   */
+
   activateToast() {
     this.state = 'active';
     if (this.options.timeOut) {
@@ -96,9 +92,7 @@ export class TranslateToastComponent implements OnDestroy {
       this.appRef.tick();
     }
   }
-  /**
-   * updates progress bar width
-   */
+
   updateProgress() {
     if (this.width === 0 || this.width === 100 || !this.options.timeOut) {
       return;
@@ -117,9 +111,6 @@ export class TranslateToastComponent implements OnDestroy {
     }
   }
 
-  /**
-   * tells toastrService to remove this toast after animation time
-   */
   remove() {
     if (this.state === 'removed') {
       return;
@@ -131,6 +122,7 @@ export class TranslateToastComponent implements OnDestroy {
       300
     );
   }
+
   @HostListener('click')
   tapToast() {
     if (this.state === 'removed') {
@@ -141,6 +133,7 @@ export class TranslateToastComponent implements OnDestroy {
       this.remove();
     }
   }
+
   @HostListener('mouseenter')
   stickAround() {
     if (this.state === 'removed') {
@@ -154,6 +147,7 @@ export class TranslateToastComponent implements OnDestroy {
     clearInterval(this.intervalId);
     this.width = 0;
   }
+
   @HostListener('mouseleave')
   delayedHideToast() {
     if (this.options.extendedTimeOut === 0 || this.state === 'removed') {
