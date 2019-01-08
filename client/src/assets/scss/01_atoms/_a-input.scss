@@ -13,6 +13,9 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
 
             .a-input__checkbox {
                 position: absolute;
@@ -23,15 +26,26 @@
             }
 
             .a-input__fake-checkbox {
-                background-color: black;
+                font-family: 'icon-font' !important;
+                border: 1px solid $mercury;
+                background-color: $white;
                 height: 25px;
                 width: 25px;
                 border-radius: 4px;
                 display: block;
+                margin-right: $spacer-small;
             }
 
             .a-input__checkbox:checked ~ .a-input__fake-checkbox {
-                background-color: red;
+                border-color: $zodiac;
+                background-color: $zodiac;
+                position: relative;
+
+                &::after {
+                    color: #FFF;
+                    content: "\e905";
+                    font-size: 1.4em;
+                }
             }
         }
     }
