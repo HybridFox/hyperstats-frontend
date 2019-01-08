@@ -1,13 +1,43 @@
 .a-input {
     &__label {
-        display: block;
         color: $black;
-        margin-bottom: $spacer;
         font-weight: $font-weight-semi-bold;
         text-transform: capitalize;
     }
 
+    &__checkbox-container {
+        .a-input__label {
+            position: relative;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            .a-input__checkbox {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+            .a-input__fake-checkbox {
+                background-color: black;
+                height: 25px;
+                width: 25px;
+                border-radius: 4px;
+                display: block;
+            }
+
+            .a-input__checkbox:checked ~ .a-input__fake-checkbox {
+                background-color: red;
+            }
+        }
+    }
+
     &__field-container {
+        margin-top: $spacer;
         position: relative;
 
         .a-input__field {
