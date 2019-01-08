@@ -11,6 +11,18 @@
 			"PRIVACY": "",
 			"REGISTER": "",
 			"WELCOME": ""
+		},
+		"MENU": {
+			"AUDITTRIAL": "",
+			"COMPANYINFORMATION": "",
+			"HELP": "",
+			"LOGOFF": "",
+			"NEWREPORT": "",
+			"PROXIES": "",
+			"RECYCLINGPARTNERS": "",
+			"RECYCLINGPROCESSES": "",
+			"REPORTS": "",
+			"USERPROFILE": ""
 		}
 	},
 	"TOAST": {
@@ -25,15 +37,6 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
-		}
-	},
-	"general": {
-		"mainMenu": {
-			"auditTrail": "",
-			"proxies": "",
-			"recyclingPartners": "",
-			"recyclingProcesses": "",
-			"reports": ""
 		}
 	}
 }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-08T09:54:19.522Z\n"
-"PO-Revision-Date: 2019-01-08 10:55+0100\n"
+"POT-Creation-Date: 2019-01-08T12:43:37.350Z\n"
+"PO-Revision-Date: 2019-01-08 13:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -22,7 +22,7 @@ msgid "GENERAL##LABELS##FIRSTNAME"
 msgstr "Firstname"
 
 msgid "GENERAL##LABELS##FORGOT-PASSWORD"
-msgstr "Forgot password?"
+msgstr "Forgot Password"
 
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
@@ -42,6 +42,36 @@ msgstr "Register"
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
 
+msgid "GENERAL##MENU##AUDITTRIAL"
+msgstr "Audit Trial"
+
+msgid "GENERAL##MENU##COMPANYINFORMATION"
+msgstr "Company information"
+
+msgid "GENERAL##MENU##HELP"
+msgstr "Help"
+
+msgid "GENERAL##MENU##LOGOFF"
+msgstr "Log off"
+
+msgid "GENERAL##MENU##NEWREPORT"
+msgstr "New report"
+
+msgid "GENERAL##MENU##PROXIES"
+msgstr "Proxies"
+
+msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+msgstr "Recycling Partners"
+
+msgid "GENERAL##MENU##RECYCLINGPROCESSES"
+msgstr "Recycling Processes"
+
+msgid "GENERAL##MENU##REPORTS"
+msgstr "Reports"
+
+msgid "GENERAL##MENU##USERPROFILE"
+msgstr "User profile"
+
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr "Make sure you are using the correct details to login"
 
@@ -53,21 +83,3 @@ msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
-
-msgid "general##labels##welcome"
-msgstr "welcome"
-
-msgid "general##mainMenu##auditTrail"
-msgstr "audit trail"
-
-msgid "general##mainMenu##proxies"
-msgstr "proxies"
-
-msgid "general##mainMenu##recyclingPartners"
-msgstr "recycling partners"
-
-msgid "general##mainMenu##recyclingProcesses"
-msgstr "recycling processes"
-
-msgid "general##mainMenu##reports"
-msgstr "reports"
