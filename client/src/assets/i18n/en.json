@@ -1,11 +1,19 @@
 {
     "GENERAL": {
         "LABELS": {
-            "COPYRIGHT": "© 2018 Eucobat",
-            "PRIVACY": "Privacy"
+            "COPYRIGHT": "© Eucobat 2018",
+            "EMAIL": "Email",
+            "FIRSTNAME": "Firstname",
+            "FORGOT-PASSWORD": "Forgot Password",
+            "LASTNAME": "Lastname",
+            "LOGIN": "Login",
+            "PASSWORD": "Password",
+            "PRIVACY": "Privacy",
+            "REGISTER": "Register",
+            "WELCOME": "Welcome!"
         },
         "MENU": {
-            "AUDITTRIAL": "Audit Trail",
+            "AUDITTRIAL": "Audit Trial",
             "COMPANYINFORMATION": "Company information",
             "HELP": "Help",
             "LOGOFF": "Log off",
@@ -17,13 +25,18 @@
             "USERPROFILE": "User profile"
         }
     },
-    "general": {
-        "labels": {
-            "email": "email",
-            "forgot-password": "forgot password",
-            "login": "login",
-            "password": "password",
-            "welcome": "welcome"
+    "TOAST": {
+        "LOGIN": {
+            "ERROR": {
+                "DESCRIPTION": "Make sure you are using the correct details to login",
+                "TITLE": "Cannot login"
+            }
+        },
+        "REGISTER": {
+            "ERROR": {
+                "DESCRIPTION": "Make sure all fields are filled in",
+                "TITLE": "Cannot register"
+            }
         }
     }
 }

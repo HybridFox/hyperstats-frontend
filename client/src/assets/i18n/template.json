@@ -2,7 +2,15 @@
 	"GENERAL": {
 		"LABELS": {
 			"COPYRIGHT": "",
-			"PRIVACY": ""
+			"EMAIL": "",
+			"FIRSTNAME": "",
+			"FORGOT-PASSWORD": "",
+			"LASTNAME": "",
+			"LOGIN": "",
+			"PASSWORD": "",
+			"PRIVACY": "",
+			"REGISTER": "",
+			"WELCOME": ""
 		},
 		"MENU": {
 			"AUDITTRIAL": "",
@@ -17,13 +25,18 @@
 			"USERPROFILE": ""
 		}
 	},
-	"general": {
-		"labels": {
-			"email": "",
-			"forgot-password": "",
-			"login": "",
-			"password": "",
-			"welcome": ""
+	"TOAST": {
+		"LOGIN": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"REGISTER": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
 		}
 	}
 }
