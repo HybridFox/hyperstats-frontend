@@ -18,6 +18,7 @@ import { WebpackTranslateLoader } from './translations';
 import { FooterModule } from '@ui/footer';
 import { MainMenuModule } from '@ui/main-menu';
 import { UserMenuModule } from '@ui/user-menu';
+import { MenuModule } from '@ui/menu';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { UserMenuModule } from '@ui/user-menu';
       },
     }),
     MainMenuModule,
-    UserMenuModule
+    UserMenuModule,
+    MenuModule
   ],
   providers: [
     StoreService,
