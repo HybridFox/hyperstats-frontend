@@ -1,12 +1,12 @@
 import { progressReducer } from '@store/hor';
 
-import { ACTIONS, TYPE_USER } from '../auth.action-types';
+import { ACTIONS, TYPE_REGISTER } from '../auth.action-types';
 
 const reducer = (
   state = null,
   action,
 ) => {
-  if (action.type === ACTIONS.FETCH_USER) {
+  if (action.type === ACTIONS.LOGIN_USER) {
     return action.payload;
   }
 
@@ -18,6 +18,6 @@ const reducer = (
 };
 
 export const userReducer = progressReducer(
-  { entityType: TYPE_USER },
+  { entityType: TYPE_REGISTER },
   reducer,
 );
