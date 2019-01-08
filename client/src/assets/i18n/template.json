@@ -2,7 +2,12 @@
 	"general": {
 		"labels": {
 			"copyright": "",
-			"privacy": ""
+			"email": "",
+			"forgot-password": "",
+			"login": "",
+			"password": "",
+			"privacy": "",
+			"welcome": ""
 		},
 		"mainMenu": {
 			"auditTrail": "",

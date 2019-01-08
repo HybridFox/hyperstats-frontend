@@ -2,7 +2,12 @@
     "general": {
         "labels": {
             "copyright": "© 2018 Eucobat",
-            "privacy": "privacy"
+            "email": "email",
+            "forgot-password": "forgot password?",
+            "login": "login",
+            "password": "password",
+            "privacy": "privacy",
+            "welcome": "welcome"
         },
         "mainMenu": {
             "auditTrail": "Audit Trail",

@@ -5,13 +5,28 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-04T13:55:14.491Z\n"
-"PO-Revision-Date: 2019-01-04T13:55:14.491Z\n"
+"POT-Creation-Date: 2019-01-03T13:41:58.008Z\n"
+"PO-Revision-Date: 2019-01-03T13:41:58.009Z\n"
 
 msgid "general##labels##copyright"
 msgstr ""
 
+msgid "general##labels##email"
+msgstr ""
+
+msgid "general##labels##forgot-password"
+msgstr ""
+
+msgid "general##labels##login"
+msgstr ""
+
+msgid "general##labels##password"
+msgstr ""
+
 msgid "general##labels##privacy"
+msgstr ""
+
+msgid "general##labels##welcome"
 msgstr ""
 
 msgid "general##mainMenu##auditTrail"
