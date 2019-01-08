@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-04T13:55:14.491Z\n"
-"PO-Revision-Date: 2019-01-04 15:03+0100\n"
+"POT-Creation-Date: 2019-01-08T07:36:15.991Z\n"
+"PO-Revision-Date: 2019-01-08 08:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -15,23 +15,47 @@ msgstr ""
 msgid "general##labels##copyright"
 msgstr "© 2018 Eucobat"
 
+msgid "general##labels##email"
+msgstr "email"
+
+msgid "general##labels##firstname"
+msgstr "firstname"
+
+msgid "general##labels##forgot-password"
+msgstr "forgot password"
+
+msgid "general##labels##lastname"
+msgstr "lastname"
+
+msgid "general##labels##login"
+msgstr "login"
+
+msgid "general##labels##password"
+msgstr "password"
+
 msgid "general##labels##privacy"
 msgstr "privacy"
 
+msgid "general##labels##register"
+msgstr "register"
+
+msgid "general##labels##welcome"
+msgstr "welcome"
+
 msgid "general##mainMenu##auditTrail"
-msgstr "Audit Trail"
+msgstr "audit trail"
 
 msgid "general##mainMenu##proxies"
-msgstr "Proxies"
+msgstr "proxies"
 
 msgid "general##mainMenu##recyclingPartners"
-msgstr "Recycling Partners"
+msgstr "recycling partners"
 
 msgid "general##mainMenu##recyclingProcesses"
-msgstr "Recycling Processes"
+msgstr "recycling processes"
 
 msgid "general##mainMenu##reports"
-msgstr "Reports"
+msgstr "reports"
 
 #~ msgid "somekey##here"
 #~ msgstr "testing123"

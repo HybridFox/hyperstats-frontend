@@ -3,10 +3,13 @@
 		"labels": {
 			"copyright": "",
 			"email": "",
+			"firstname": "",
 			"forgot-password": "",
+			"lastname": "",
 			"login": "",
 			"password": "",
 			"privacy": "",
+			"register": "",
 			"welcome": ""
 		},
 		"mainMenu": {

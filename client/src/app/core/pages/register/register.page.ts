@@ -3,25 +3,27 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthActions } from '@store/auth';
 
 @Component({
-    templateUrl: './login.page.html',
+    templateUrl: './register.page.html',
 })
 export class RegisterPageComponent implements OnInit {
-    public loginForm: FormGroup;
+    public registerForm: FormGroup;
 
     constructor(
         private authAction: AuthActions
     ) { }
 
     ngOnInit(): void {
-        this.loginForm = new FormGroup({
+        this.registerForm = new FormGroup({
             email: new FormControl('', Validators.required),
+            firstname: new FormControl('', Validators.required),
+            lastname: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required)
         });
     }
 
     public submit() {
-        this.authAction.login({
-            ...this.loginForm.value
+        this.authAction.register({
+            ...this.registerForm.value
         }).subscribe();
     }
 }

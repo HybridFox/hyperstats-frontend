@@ -11,6 +11,10 @@ const routes: Routes = [
     component: Pages.LoginPageComponent
   },
   {
+    path: 'register',
+    component: Pages.RegisterPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
