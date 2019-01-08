@@ -1,17 +1,33 @@
 {
-    "general": {
-        "labels": {
-            "copyright": "© 2018 Eucobat",
-            "email": "email",
-            "firstname": "firstname",
-            "forgot-password": "forgot password",
-            "lastname": "lastname",
-            "login": "login",
-            "password": "password",
-            "privacy": "privacy",
-            "register": "register",
-            "welcome": "welcome"
+    "GENERAL": {
+        "LABELS": {
+            "COPYRIGHT": "© Eucobat 2018",
+            "EMAIL": "Email",
+            "FIRSTNAME": "Firstname",
+            "FORGOT-PASSWORD": "Forgot password?",
+            "LASTNAME": "Lastname",
+            "LOGIN": "Login",
+            "PASSWORD": "Password",
+            "PRIVACY": "Privacy",
+            "REGISTER": "Register",
+            "WELCOME": "Welcome!"
+        }
+    },
+    "TOAST": {
+        "LOGIN": {
+            "ERROR": {
+                "DESCRIPTION": "Make sure you are using the correct details to login",
+                "TITLE": "Cannot login"
+            }
         },
+        "REGISTER": {
+            "ERROR": {
+                "DESCRIPTION": "Make sure all fields are filled in",
+                "TITLE": "Cannot register"
+            }
+        }
+    },
+    "general": {
         "mainMenu": {
             "auditTrail": "audit trail",
             "proxies": "proxies",

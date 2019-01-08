@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-08T07:36:15.991Z\n"
-"PO-Revision-Date: 2019-01-08 08:38+0100\n"
+"POT-Creation-Date: 2019-01-08T09:54:19.522Z\n"
+"PO-Revision-Date: 2019-01-08 10:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,35 +12,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 
-msgid "general##labels##copyright"
-msgstr "© 2018 Eucobat"
+msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr "© Eucobat 2018"
 
-msgid "general##labels##email"
-msgstr "email"
+msgid "GENERAL##LABELS##EMAIL"
+msgstr "Email"
 
-msgid "general##labels##firstname"
-msgstr "firstname"
+msgid "GENERAL##LABELS##FIRSTNAME"
+msgstr "Firstname"
 
-msgid "general##labels##forgot-password"
-msgstr "forgot password"
+msgid "GENERAL##LABELS##FORGOT-PASSWORD"
+msgstr "Forgot password?"
 
-msgid "general##labels##lastname"
-msgstr "lastname"
+msgid "GENERAL##LABELS##LASTNAME"
+msgstr "Lastname"
 
-msgid "general##labels##login"
-msgstr "login"
+msgid "GENERAL##LABELS##LOGIN"
+msgstr "Login"
 
-msgid "general##labels##password"
-msgstr "password"
+msgid "GENERAL##LABELS##PASSWORD"
+msgstr "Password"
 
-msgid "general##labels##privacy"
-msgstr "privacy"
+msgid "GENERAL##LABELS##PRIVACY"
+msgstr "Privacy"
 
-msgid "general##labels##register"
-msgstr "register"
+msgid "GENERAL##LABELS##REGISTER"
+msgstr "Register"
 
-msgid "general##labels##welcome"
-msgstr "welcome"
+msgid "GENERAL##LABELS##WELCOME"
+msgstr "Welcome!"
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr "Make sure you are using the correct details to login"
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr "Cannot login"
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr "Make sure all fields are filled in"
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr "Cannot register"
 
 msgid "general##mainMenu##auditTrail"
 msgstr "audit trail"
@@ -56,6 +68,36 @@ msgstr "recycling processes"
 
 msgid "general##mainMenu##reports"
 msgstr "reports"
+
+#~ msgid "general##labels##copyright"
+#~ msgstr "© 2018 Eucobat"
+
+#~ msgid "general##labels##forgot-password"
+#~ msgstr "forgot password"
+
+#~ msgid "general##labels##login"
+#~ msgstr "login"
+
+#~ msgid "general##labels##privacy"
+#~ msgstr "privacy"
+
+#~ msgid "general##labels##register"
+#~ msgstr "register"
+
+#~ msgid "general##labels##welcome"
+#~ msgstr "welcome"
+
+#~ msgid "general##labels##email"
+#~ msgstr "email"
+
+#~ msgid "general##labels##firstname"
+#~ msgstr "firstname"
+
+#~ msgid "general##labels##lastname"
+#~ msgstr "lastname"
+
+#~ msgid "general##labels##password"
+#~ msgstr "password"
 
 #~ msgid "somekey##here"
 #~ msgstr "testing123"

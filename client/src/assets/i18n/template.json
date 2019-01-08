@@ -1,17 +1,33 @@
 {
-	"general": {
-		"labels": {
-			"copyright": "",
-			"email": "",
-			"firstname": "",
-			"forgot-password": "",
-			"lastname": "",
-			"login": "",
-			"password": "",
-			"privacy": "",
-			"register": "",
-			"welcome": ""
+	"GENERAL": {
+		"LABELS": {
+			"COPYRIGHT": "",
+			"EMAIL": "",
+			"FIRSTNAME": "",
+			"FORGOT-PASSWORD": "",
+			"LASTNAME": "",
+			"LOGIN": "",
+			"PASSWORD": "",
+			"PRIVACY": "",
+			"REGISTER": "",
+			"WELCOME": ""
+		}
+	},
+	"TOAST": {
+		"LOGIN": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
 		},
+		"REGISTER": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		}
+	},
+	"general": {
 		"mainMenu": {
 			"auditTrail": "",
 			"proxies": "",

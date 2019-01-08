@@ -41,10 +41,10 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
             ...this.registerForm.value
         }).then(() => {
             // TODO: translate
-            this.toastrService.success('Please use the link in your mail to verify your account', 'Successfully registered');
+            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
             this.registerForm.reset();
         }).catch(() => {
-            console.log('error');
+            this.toastrService.success('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
         });
     }
 }

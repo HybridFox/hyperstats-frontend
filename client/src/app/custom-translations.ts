@@ -1,8 +1,13 @@
 import { _ } from '@biesbjerg/ngx-translate-extract';
 
-_('general.labels.email');
-_('general.labels.firstname');
-_('general.labels.lastname');
-_('general.labels.password');
-_('general.labels.login');
-_('general.labels.register');
+_('GENERAL.LABELS.EMAIL');
+_('GENERAL.LABELS.FIRSTNAME');
+_('GENERAL.LABELS.LASTNAME');
+_('GENERAL.LABELS.PASSWORD');
+_('GENERAL.LABELS.LOGIN');
+_('GENERAL.LABELS.REGISTER');
+
+_('TOAST.REGISTER.ERROR.TITLE');
+_('TOAST.REGISTER.ERROR.DESCRIPTION');
+_('TOAST.LOGIN.ERROR.TITLE');
+_('TOAST.LOGIN.ERROR.DESCRIPTION');
