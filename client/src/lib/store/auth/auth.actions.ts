@@ -41,6 +41,30 @@ export class AuthActions {
       ).toPromise();
   }
 
+  public fetchProfile(): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.FETCH_USER);
+
+    return this.authRepository
+      .fetchProfile()
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.FETCH_USER, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap((response: any) => {
+          this.handler.dispatchSuccess(ACTIONS.FETCH_USER, {
+            payload: response
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.FETCH_USER);
+        }),
+      );
+  }
+
   public register({ firstname, lastname, email, password }: RegisterInterface): Promise<any>  {
     this.handler.dispatchStart(ACTIONS.REGISTER_USER);
 
@@ -63,9 +87,5 @@ export class AuthActions {
           this.handler.dispatchDone(ACTIONS.REGISTER_USER);
         }),
       ).toPromise();
-  }
-
-  public isLoggedIn() {
-    return true;
   }
 }

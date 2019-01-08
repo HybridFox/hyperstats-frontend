@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from './services';
+import { AuthActions } from '@store/auth';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ export class CoreComponent implements OnInit {
 
   constructor(
     private languageService: LanguageService,
+    private authActions: AuthActions
   ) {}
 
   public ngOnInit() {
