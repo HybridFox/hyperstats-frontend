@@ -38,4 +38,11 @@ export class AuthRepository {
         password
       });
   }
+
+  public logout() {
+    const url = this.apiConfig.baseUrl('/auth/logout');
+
+    return this.http
+      .get(url);
+  }
 }

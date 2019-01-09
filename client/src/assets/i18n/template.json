@@ -7,6 +7,7 @@
 		},
 		"LABELS": {
 			"ACCEPT-TERMS": "",
+			"ACCEPT_TERMS": "",
 			"COPYRIGHT": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
@@ -22,8 +23,8 @@
 			"AUDITTRIAL": "",
 			"COMPANYINFORMATION": "",
 			"HELP": "",
+			"LOGIN": "",
 			"LOGOFF": "",
-			"NEWREPORT": "",
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",

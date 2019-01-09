@@ -16,14 +16,15 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "WELCOME": "Welcome!"
+            "WELCOME": "Welcome!",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "AUDITTRIAL": "Audit Trial",
             "COMPANYINFORMATION": "Company information",
             "HELP": "Help",
-            "LOGOFF": "Log off",
-            "NEWREPORT": "New report",
+            "LOGIN": "Login",
+            "LOGOFF": "Logoff",
             "PROXIES": "Proxies",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
