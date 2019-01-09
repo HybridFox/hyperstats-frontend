@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-08T09:54:19.522Z\n"
-"PO-Revision-Date: 2019-01-08T09:54:19.523Z\n"
+"POT-Creation-Date: 2019-01-08T12:43:37.350Z\n"
+"PO-Revision-Date: 2019-01-08T12:43:37.350Z\n"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr ""
@@ -38,18 +38,6 @@ msgstr ""
 msgid "GENERAL##LABELS##WELCOME"
 msgstr ""
 
-msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
-msgstr ""
-
-msgid "TOAST##LOGIN##ERROR##TITLE"
-msgstr ""
-
-msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
-msgstr ""
-
-msgid "TOAST##REGISTER##ERROR##TITLE"
-msgstr ""
-
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
@@ -78,4 +66,16 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-08T09:14:37.811Z\n"
-"PO-Revision-Date: 2019-01-08 10:20+0100\n"
+"POT-Creation-Date: 2019-01-08T09:46:42.107Z\n"
+"PO-Revision-Date: 2019-01-08 10:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -46,4 +46,19 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "general##labels##email"
+msgstr ""
+
+msgid "general##labels##forgot-password"
+msgstr ""
+
+msgid "general##labels##login"
+msgstr ""
+
+msgid "general##labels##password"
+msgstr ""
+
+msgid "general##labels##welcome"
 msgstr ""

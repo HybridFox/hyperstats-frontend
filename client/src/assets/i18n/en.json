@@ -4,13 +4,25 @@
             "COPYRIGHT": "© Eucobat 2018",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
-            "FORGOT-PASSWORD": "Forgot password?",
+            "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
             "WELCOME": "Welcome!"
+        },
+        "MENU": {
+            "AUDITTRIAL": "Audit Trial",
+            "COMPANYINFORMATION": "Company information",
+            "HELP": "Help",
+            "LOGOFF": "Log off",
+            "NEWREPORT": "New report",
+            "PROXIES": "Proxies",
+            "RECYCLINGPARTNERS": "Recycling Partners",
+            "RECYCLINGPROCESSES": "Recycling Processes",
+            "REPORTS": "Reports",
+            "USERPROFILE": "User profile"
         }
     },
     "TOAST": {
@@ -27,18 +39,4 @@
             }
         }
     },
-    "general": {
-        "MENU": {
-            "AUDITTRIAL": "Audit Trail",
-            "COMPANYINFORMATION": "Company information",
-            "HELP": "Help",
-            "LOGOFF": "Log off",
-            "NEWREPORT": "New report",
-            "PROXIES": "Proxies",
-            "RECYCLINGPARTNERS": "Recycling Partners",
-            "RECYCLINGPROCESSES": "Recycling Processes",
-            "REPORTS": "Reports",
-            "USERPROFILE": "User profile"
-        }
-    }
 }
