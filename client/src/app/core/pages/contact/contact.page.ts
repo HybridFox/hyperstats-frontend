@@ -25,7 +25,8 @@ export class ContactPageComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.contactForm = new FormGroup({
             email: new FormControl('', Validators.required),
-            name: new FormControl('', Validators.required),
+            firstname: new FormControl('', Validators.required),
+            lastname: new FormControl('', Validators.required),
             message: new FormControl('', Validators.required),
         });
     }

@@ -11,6 +11,7 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "MESSAGE": "Message",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
@@ -28,6 +29,11 @@
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REPORTS": "Reports",
             "USERPROFILE": "User profile"
+        }
+    },
+    "PAGES": {
+        "CONTACT": {
+            "TITLE": "Contact"
         }
     },
     "TOAST": {

@@ -47,7 +47,7 @@
     }
 
     &__field-container {
-        margin-top: $spacer;
+        margin-top: $spacer-small;
         position: relative;
 
         .a-input__field {
@@ -58,7 +58,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            @include transition(border .2s ease);
 
             &::placeholder {
                 color: $tundora;
@@ -68,6 +68,14 @@
             &.ng-dirty.ng-invalid {
                 border: 1.5px solid $danger;
             }
+
+            &:focus {
+                border: 1.5px solid $nobel;
+            }
+        }
+
+        textarea.a-input__field {
+            height: 200px;
         }
 
         select.a-input__field {

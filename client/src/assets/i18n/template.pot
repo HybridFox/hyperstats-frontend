@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-09T10:23:23.700Z\n"
-"PO-Revision-Date: 2019-01-09T10:23:23.700Z\n"
+"POT-Creation-Date: 2019-01-09T12:40:20.748Z\n"
+"PO-Revision-Date: 2019-01-09T12:40:20.749Z\n"
 
 msgid "GENERAL##ERRORS##EMAIL"
 msgstr ""
@@ -30,6 +30,9 @@ msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##LOGIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##MESSAGE"
 msgstr ""
 
 msgid "GENERAL##LABELS##PASSWORD"
@@ -72,6 +75,9 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "PAGES##CONTACT##TITLE"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"

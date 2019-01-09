@@ -1,16 +1,41 @@
 <div class="p-contact">
     <div class="container">
         <app-page-title
-            [title]="'CONTACT.TITLE' | translate"
+            [title]="'PAGES.CONTACT.TITLE' | translate"
         ></app-page-title>
         <div class="m-card">
             <form [formGroup]="contactForm" (ngSubmit)="submit()">
+                <div class="l-grid l-grid--with-margins">
+                    <div class="l-grid__col-6-12">
+                        <div class="u-margin-bottom">
+                            <app-text-input
+                                [control]="contactForm.get('firstname')"
+                                [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
+                            ></app-text-input>
+                        </div>
+                    </div>
+                    <div class="l-grid__col-6-12">
+                        <div class="u-margin-bottom">
+                            <app-text-input
+                                [control]="contactForm.get('lastname')"
+                                [label]="'GENERAL.LABELS.LASTNAME' | translate"
+                            ></app-text-input>
+                        </div>
+                    </div>
+                </div>
                 <div class="u-margin-bottom">
                     <app-text-input
-                        [control]="email"
-                        label="GENERAL.LABELS.EMAIL"
+                        [control]="contactForm.get('email')"
+                        [label]="'GENERAL.LABELS.EMAIL' | translate"
                         type="email"
                     ></app-text-input>
+                </div>
+                <div class="u-margin-bottom">
+                    <app-textarea-input
+                        [control]="contactForm.get('message')"
+                        [label]="'GENERAL.LABELS.MESSAGE' | translate"
+                        type="email"
+                    ></app-textarea-input>
                 </div>
             </form>
         </div>
