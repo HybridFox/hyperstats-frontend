@@ -34,12 +34,15 @@ import { UserMenuModule } from '@ui/user-menu';
 import { MenuModule } from '@ui/menu';
 
 import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
+import { Components } from './components';
 
 @NgModule({
   declarations: [
     CoreComponent,
     Pages,
-    TranslateToastComponent
+    TranslateToastComponent,
+
+    ...Components,
   ],
   entryComponents: [
     TranslateToastComponent,
@@ -74,7 +77,7 @@ import { TranslateToastComponent } from './components/translate-toast/translate-
     }),
     MainMenuModule,
     UserMenuModule,
-    MenuModule
+    MenuModule,
   ],
   providers: [
     StoreService,

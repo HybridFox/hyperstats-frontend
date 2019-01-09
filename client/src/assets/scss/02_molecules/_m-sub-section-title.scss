@@ -1,0 +1,16 @@
+.m-sub-section-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $mercury;
+
+    &__title {
+        color: $zodiac;
+        margin: 0;
+        line-height: 50px;
+    }
+
+    &__action {
+        align-self: center;
+    }
+}
