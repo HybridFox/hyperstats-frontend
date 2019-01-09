@@ -1,4 +1,4 @@
-<div class="a-input">
+<div class="a-input" [class]="class">
   <label *ngIf="label" class="a-input__label">{{ label }}</label>
   <div class="a-input__field-container">
     <input [formControl]="control" [type]="type" class="a-input__field" [placeholder]="placeholder">

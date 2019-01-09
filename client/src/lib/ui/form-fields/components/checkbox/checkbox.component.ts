@@ -21,6 +21,7 @@ export class CheckboxInputComponent implements OnInit, OnDestroy, ControlValueAc
   @Input() suffix?: string;
   @Input() description?: string;
   @Input() type = 'text';
+  @Input() class?: string;
   @Input() control: FormControl = new FormControl('');
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
