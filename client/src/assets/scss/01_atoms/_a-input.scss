@@ -47,7 +47,7 @@
     }
 
     &__field-container {
-        margin-top: $spacer;
+        margin-top: $spacer-small;
         position: relative;
 
         .a-input__field {
@@ -94,7 +94,7 @@
     &__description {
         display: block;
         color: $tundora;
-        margin: $spacer-x-small 0 0 0;
+        margin: 0;
         font-size: $font-size-small;
     }
 
@@ -102,7 +102,7 @@
         position: absolute;
         display: block;
         color: $danger;
-        margin: $spacer-x-small 0 0 0;
+        margin: 0;
         font-size: $font-size-small;
     }
 }

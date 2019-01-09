@@ -27,10 +27,6 @@
         text-align: right;
         text-transform: capitalize;
     }
-
-    &__input {
-        margin-bottom: $spacer-x-large;
-    }
 }
 
 @media(max-width: 500px) {
