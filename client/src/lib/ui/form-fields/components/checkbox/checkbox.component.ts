@@ -21,14 +21,14 @@ export class CheckboxInputComponent implements OnInit, OnDestroy, ControlValueAc
   @Input() suffix?: string;
   @Input() description?: string;
   @Input() type = 'text';
+  @Input() control: FormControl = new FormControl('');
 
-  public value: FormControl = new FormControl('');
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
   public updateValue = (_: any) => {};
 
   public ngOnInit() {
-    this.value.valueChanges.pipe(
+    this.control.valueChanges.pipe(
       takeUntil(this.componentDestroyed$),
     ).subscribe((value) => {
       this.updateValue(value);
@@ -41,7 +41,7 @@ export class CheckboxInputComponent implements OnInit, OnDestroy, ControlValueAc
   }
 
   public writeValue(value: string) {
-    this.value.setValue(value);
+    this.control.setValue(value);
   }
 
   public registerOnChange(fn) {

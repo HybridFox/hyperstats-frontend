@@ -24,10 +24,11 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.registerForm = new FormGroup({
-            email: new FormControl('', Validators.required),
+            email: new FormControl('', Validators.email),
             firstname: new FormControl('', Validators.required),
             lastname: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required)
+            password: new FormControl('', Validators.required),
+            terms: new FormControl('', Validators.requiredTrue)
         });
     }
 
@@ -37,14 +38,18 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.register({
+        if (!this.registerForm.valid) {
+            return this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+        }
+
+        return this.authAction.register({
             ...this.registerForm.value
         }).then(() => {
             // TODO: translate
             this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
             this.registerForm.reset();
         }).catch(() => {
-            this.toastrService.success('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
         });
     }
 }

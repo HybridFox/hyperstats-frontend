@@ -22,6 +22,11 @@
       margin: 0 $spacer-x-small / 2 0 $spacer-x-small / 4;
     }
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
 }
 
 // Button types.
