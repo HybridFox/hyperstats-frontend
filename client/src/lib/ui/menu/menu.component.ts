@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ActionButton } from './menu.types';
 
 @Component({
@@ -9,4 +9,5 @@ import { ActionButton } from './menu.types';
 export class MenuComponent {
     @Input() actionButton: ActionButton;
     @Input() profile: any;
+    @Output() logout: EventEmitter<any> = new EventEmitter<any>();
 }

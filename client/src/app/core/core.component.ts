@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LanguageService } from './services';
 import { ActionButton } from '@ui/menu/menu.types';
 import { NgRedux } from '@angular-redux/store';
+import { AuthActions } from '@store/auth';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ export class CoreComponent implements OnInit {
   constructor(
     private languageService: LanguageService,
     private ngRedux: NgRedux<any>,
+    private authActions: AuthActions,
   ) {}
 
   public ngOnInit() {
@@ -22,5 +24,9 @@ export class CoreComponent implements OnInit {
     this.ngRedux.select(['auth', 'user', 'result']).subscribe((user) => {
       this.user = user;
     });
+  }
+
+  public logout() {
+    this.authActions.logout();
   }
 }
