@@ -15,6 +15,10 @@ const routes: Routes = [
     component: Pages.RegisterPageComponent
   },
   {
+    path: 'company-information',
+    component: Pages.CompanyPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [

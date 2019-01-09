@@ -1,0 +1,61 @@
+<div class="p-company container">
+    <h1 class="p-company__title">{{ 'PAGE.COMPANYINFORMATION.TITLE' | translate }}</h1>
+    <div class="m-card--primary">
+        <form [formGroup]="companyForm" (ngSubmit)="submit()">
+            <div class="l-grid__row l-grid--with-margins">
+                <div class="l-grid__col-6-12">
+                    <app-text-input
+                        [control]="companyForm.get('name')"
+                        [label]="'GENERAL.LABELS.COMPANYNAME' | translate"
+                    ></app-text-input>
+                </div>
+            </div>
+            <div class="l-grid__col-12-12">
+                <app-sub-section-title
+                    [title]="'PAGE.COMPANYINFORMATION.SUBTITLE' | translate">
+                </app-sub-section-title>
+                <p class="m-card--secondary">{{ 'PAGE.COMPANYINFORMATION.HELP' | translate }}</p>
+            </div>
+            <div class="l-grid__col-6-12">
+                <div class="l-grid__row l-grid--with-margins">
+                    <app-text-input class="l-grid__col-12-12"
+                        [control]="companyForm.get('street')"
+                        [label]="'GENERAL.LABELS.STREETNAME' | translate"
+                    ></app-text-input>
+                </div>
+            </div>
+            <div class="l-grid__col-6-12">
+                <div class="l-grid__row l-grid--with-margins">
+                    <app-text-input class="l-grid__col-6-12"
+                        [control]="companyForm.get('number')"
+                        [label]="'GENERAL.LABELS.NUMBER' | translate"
+                    ></app-text-input>
+                    <app-text-input class="l-grid__col-6-12"
+                        [control]="companyForm.get('box')"
+                        [label]="'GENERAL.LABELS.BOX' | translate"
+                    ></app-text-input>
+                </div>
+            </div>
+            <div class="l-grid__col-6-12">
+                <div class="l-grid__row l-grid--with-margins">
+                    <app-text-input class="l-grid__col-4-12"
+                        [control]="companyForm.get('zip')"
+                        [label]="'GENERAL.LABELS.ZIPCODE' | translate"
+                    ></app-text-input>
+                    <app-text-input class="l-grid__col-8-12"
+                        [control]="companyForm.get('city')"
+                        [label]="'GENERAL.LABELS.CITY' | translate"
+                    ></app-text-input>
+                </div>
+            </div>
+            <div class="">
+                <!-- <app-select-input
+                    [control]="companyForm.get('country')"
+                    [label]="GENERAL.LABELS.COUNTRY"
+                    [options]="[{label:'Belgium', value:'belgium'}, {label:'France', value:'france'}]"
+                ></app-select-input> -->
+            </div>
+            <input type="submit" [value]="'GENERAL.LABELS.SAVE' | translate" class="a-button a-button--primary a-button--small">
+        </form>
+    </div>
+</div>
