@@ -1,8 +1,5 @@
 {
 	"GENERAL": {
-		"ERRORS": {
-			"REQUIRED": ""
-		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
 			"PASSWORD": "",

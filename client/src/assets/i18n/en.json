@@ -1,8 +1,5 @@
 {
     "GENERAL": {
-        "ERRORS": {
-            "REQUIRED": "This field is required"
-        },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
