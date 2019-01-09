@@ -1,0 +1,18 @@
+<div class="p-contact">
+    <div class="container">
+        <app-page-title
+            [title]="'CONTACT.TITLE' | translate"
+        ></app-page-title>
+        <div class="m-card">
+            <form [formGroup]="contactForm" (ngSubmit)="submit()">
+                <div class="u-margin-bottom">
+                    <app-text-input
+                        [control]="email"
+                        label="GENERAL.LABELS.EMAIL"
+                        type="email"
+                    ></app-text-input>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
