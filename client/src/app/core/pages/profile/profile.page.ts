@@ -1,17 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { select } from '@angular-redux/store';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
 
 import { AuthActions, AuthSelector } from '@store/auth';
+import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
     templateUrl: './profile.page.html',
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
-    @select(AuthSelector.user.result) public user$;
+    @select(AuthSelector.user.result) public user$: Observable<UserInterface>;
 
     public profileForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
@@ -28,6 +28,9 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
             lastname: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required)
         });
+
+        this.user$
+            .subscribe((user) => this.profileForm.patchValue(user));
     }
 
     public ngOnDestroy() {

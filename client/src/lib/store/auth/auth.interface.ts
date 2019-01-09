@@ -9,3 +9,11 @@ export interface LoginInterface {
     email: string;
     password: string;
 }
+
+export interface UserInterface {
+    firstname: string;
+    lastname: string;
+    email: string;
+    created: string;
+    lastUpdated: string;
+}
