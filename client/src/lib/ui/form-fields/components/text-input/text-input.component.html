@@ -5,6 +5,5 @@
     <span *ngIf="suffix" class="a-input__suffix">{{ suffix }}</span>
   </div>
   <p *ngIf="description" class="a-input__description">{{ description }}</p>
-  <p *ngIf="control.errors?.required && control.dirty" class="a-input__error">{{ 'GENERAL.ERRORS.REQUIRED' | translate }}</p>
-  <p *ngIf="control.errors?.email && control.dirty" class="a-input__error">{{ 'GENERAL.ERRORS.EMAIL' | translate }}</p>
+  <p *ngIf="control.errors && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.' + firstError() | translate }}</p>
 </div>

@@ -18,20 +18,20 @@
                 <app-text-input
                     [control]="registerForm.get('email')"
                     [label]="'GENERAL.LABELS.EMAIL' | translate"
-                    [type]="email"
+                    type="email"
                 ></app-text-input>
             </div>
             <div class="p-register__input">
                 <app-text-input
                     [control]="registerForm.get('password')"
                     [label]="'GENERAL.LABELS.PASSWORD' | translate"
-                    [type]="password"
+                    type="password"
                 ></app-text-input>
             </div>
             <div class="p-register__input">
                 <app-checkbox-input
                     [control]="registerForm.get('terms')"
-                    [label]="'GENERAL.LABELS.ACCEPT_TERMS' | translate"
+                    [label]="'GENERAL.LABELS.ACCEPT-TERMS' | translate"
                 ></app-checkbox-input>
             </div>
             <input type="submit" [disabled]="!registerForm.valid" [value]="'GENERAL.LABELS.REGISTER' | translate" class="a-button a-button--primary a-button--small">

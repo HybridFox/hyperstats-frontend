@@ -48,5 +48,9 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
     this.updateValue = fn;
   }
 
+  public firstError(): string {
+    return Object.keys(this.control.errors)[0].toUpperCase();
+  }
+
   public registerOnTouched() {}
 }

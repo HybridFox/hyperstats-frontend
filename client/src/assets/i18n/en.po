@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-09T10:23:23.700Z\n"
-"PO-Revision-Date: 2019-01-09 11:23+0100\n"
+"POT-Creation-Date: 2019-01-09T13:46:32.663Z\n"
+"PO-Revision-Date: 2019-01-09 14:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,11 +12,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 
-msgid "GENERAL##ERRORS##EMAIL"
-msgstr "Fill in a valid email address"
-
 msgid "GENERAL##ERRORS##REQUIRED"
 msgstr "This field is required"
+
+msgid "GENERAL##FIELD-ERRORS##EMAIL"
+msgstr "Fill in a valid email address"
+
+msgid "GENERAL##FIELD-ERRORS##PASSWORD"
+msgstr "Your password needs one uppercase, one lowercase and a number"
+
+msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr "This field is required"
+
+msgid "GENERAL##LABELS##ACCEPT-TERMS"
+msgstr "I accept the terms and conditions"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr "© Eucobat 2018"
@@ -90,6 +99,6 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
-msgstr "I accept the terms and conditions"
+#~ msgctxt "TERMS"
+#~ msgid "GENERAL##LABELS##ACCEPT"
+#~ msgstr "I accept the terms and conditions"
