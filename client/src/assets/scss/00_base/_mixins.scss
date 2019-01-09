@@ -5,6 +5,13 @@
     transition:         $transition;
 }
 
+@mixin user-select($selection...) {
+    -moz-user-select:    $selection;
+    -o-user-select:      $selection;
+    -webkit-user-select: $selection;
+    user-select:         $selection;
+}
+
 // -------------------------------------------------------------------
 // :: BREAKPOINTS MIXINS
 // -------------------------------------------------------------------

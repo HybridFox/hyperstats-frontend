@@ -9,10 +9,7 @@
         .a-input__label {
             position: relative;
             cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
+            @include user-select(none);
             display: flex;
             flex-direction: row;
             align-items: center;
