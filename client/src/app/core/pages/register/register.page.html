@@ -28,6 +28,12 @@
                     type="password"
                 ></app-text-input>
             </div>
+            <div class="p-register__input">
+                <app-checkbox-input
+                    formControlName="terms"
+                    label="GENERAL.LABELS.ACCEPT_TERMS"
+                ></app-checkbox-input>
+            </div>
             <input type="submit" [value]="'GENERAL.LABELS.REGISTER' | translate" class="a-button a-button--primary a-button--small">
         </form>
     </div>

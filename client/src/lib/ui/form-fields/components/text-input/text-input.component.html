@@ -4,5 +4,6 @@
     <input [formControl]="value" [type]="type" class="a-input__field" [placeholder]="placeholder">
     <span *ngIf="suffix" class="a-input__suffix">{{ suffix }}</span>
   </div>
+  {{ value.errors | json }}
   <p *ngIf="description" class="a-input__description">{{ description | translate }}</p>
 </div>
