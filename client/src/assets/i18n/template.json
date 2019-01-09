@@ -1,11 +1,12 @@
 {
 	"GENERAL": {
-		"ERRORS": {
+		"FIELD-ERRORS": {
 			"EMAIL": "",
+			"PASSWORD": "",
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT_TERMS": "",
+			"ACCEPT-TERMS": "",
 			"COPYRIGHT": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",

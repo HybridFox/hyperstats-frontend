@@ -5,13 +5,19 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-09T10:23:23.700Z\n"
-"PO-Revision-Date: 2019-01-09T10:23:23.700Z\n"
+"POT-Creation-Date: 2019-01-09T13:49:00.159Z\n"
+"PO-Revision-Date: 2019-01-09T13:49:00.159Z\n"
 
-msgid "GENERAL##ERRORS##EMAIL"
+msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
 
-msgid "GENERAL##ERRORS##REQUIRED"
+msgid "GENERAL##FIELD-ERRORS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr ""
 
 msgid "GENERAL##LABELS##COPYRIGHT"
@@ -84,8 +90,4 @@ msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
-msgstr ""
-
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

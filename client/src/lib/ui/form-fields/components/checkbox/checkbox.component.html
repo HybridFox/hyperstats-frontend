@@ -4,6 +4,6 @@
       <input [formControl]="control" type="checkbox" class="a-input__checkbox">
       <span class="a-input__fake-checkbox"></span>{{ label }}
     </label>
-    <p *ngIf="control.errors?.required && control.dirty" class="a-input__error">{{ 'GENERAL.ERRORS.REQUIRED' | translate }}</p>
+    <p *ngIf="control.errors?.required && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.REQUIRED' | translate }}</p>
   </div>
 </div>
