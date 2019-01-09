@@ -11,7 +11,7 @@ import { AuthActions, AuthSelector } from '@store/auth';
     templateUrl: './profile.page.html',
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
-    @select(AuthSelector.register.loading) public loading$: boolean;
+    @select(AuthSelector.user.result) public user$;
 
     public profileForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
@@ -19,7 +19,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     constructor(
         private authAction: AuthActions,
         private toastrService: ToastrService,
-        private router: Router
     ) { }
 
     ngOnInit(): void {
