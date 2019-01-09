@@ -77,7 +77,7 @@ msgstr ""
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr ""
 
-msgid "PAGES##CONTACT##TITLE"
+msgid "PAGE##CONTACT##TITLE"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"

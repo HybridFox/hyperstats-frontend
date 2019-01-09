@@ -81,7 +81,7 @@ msgstr "Reports"
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
 
-msgid "PAGES##CONTACT##TITLE"
+msgid "PAGE##CONTACT##TITLE"
 msgstr "Contact"
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
