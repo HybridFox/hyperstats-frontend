@@ -5,13 +5,22 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-09T10:23:23.700Z\n"
-"PO-Revision-Date: 2019-01-09T10:23:23.700Z\n"
+"POT-Creation-Date: 2019-01-09T14:29:06.135Z\n"
+"PO-Revision-Date: 2019-01-09T14:29:06.135Z\n"
 
 msgid "GENERAL##ERRORS##EMAIL"
 msgstr ""
 
 msgid "GENERAL##ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##BOX"
+msgstr ""
+
+msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##COPYRIGHT"
@@ -32,6 +41,9 @@ msgstr ""
 msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
+msgid "GENERAL##LABELS##NUMBER"
+msgstr ""
+
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr ""
 
@@ -41,7 +53,16 @@ msgstr ""
 msgid "GENERAL##LABELS##REGISTER"
 msgstr ""
 
+msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
 msgid "GENERAL##LABELS##WELCOME"
+msgstr ""
+
+msgid "GENERAL##LABELS##ZIPCODE"
 msgstr ""
 
 msgid "GENERAL##MENU##AUDITTRIAL"
@@ -72,6 +93,15 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"

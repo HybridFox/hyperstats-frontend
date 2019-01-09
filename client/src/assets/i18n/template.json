@@ -6,16 +6,23 @@
 		},
 		"LABELS": {
 			"ACCEPT_TERMS": "",
+			"BOX": "",
+			"CITY": "",
+			"COMPANYNAME": "",
 			"COPYRIGHT": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
-			"WELCOME": ""
+			"SAVE": "",
+			"STREETNAME": "",
+			"WELCOME": "",
+			"ZIPCODE": ""
 		},
 		"MENU": {
 			"AUDITTRIAL": "",
@@ -28,6 +35,13 @@
 			"RECYCLINGPROCESSES": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
+		}
+	},
+	"PAGE": {
+		"COMPANYINFORMATION": {
+			"HELP": "",
+			"SUBTITLE": "",
+			"TITLE": ""
 		}
 	},
 	"TOAST": {
