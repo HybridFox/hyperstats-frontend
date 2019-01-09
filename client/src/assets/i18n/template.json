@@ -1,6 +1,13 @@
 {
 	"GENERAL": {
+		"FIELD-ERRORS": {
+			"EMAIL": "",
+			"PASSWORD": "",
+			"REQUIRED": ""
+		},
 		"LABELS": {
+			"ACCEPT-TERMS": "",
+			"ACCEPT_TERMS": "",
 			"COPYRIGHT": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",

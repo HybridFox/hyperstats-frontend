@@ -1,6 +1,12 @@
 {
     "GENERAL": {
+        "FIELD-ERRORS": {
+            "EMAIL": "Fill in a valid email address",
+            "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
+            "REQUIRED": "This field is required"
+        },
         "LABELS": {
+            "ACCEPT-TERMS": "I accept the terms and conditions",
             "COPYRIGHT": "© Eucobat 2018",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
@@ -10,7 +16,8 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "WELCOME": "Welcome!"
+            "WELCOME": "Welcome!",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "AUDITTRIAL": "Audit Trial",

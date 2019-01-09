@@ -4,18 +4,18 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-text-input',
-  templateUrl: './text-input.component.html',
-  styleUrls: ['./text-input.component.html'],
+  selector: 'app-checkbox-input',
+  templateUrl: './checkbox.component.html',
+  styleUrls: ['./checkbox.component.html'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => TextInputComponent),
+      useExisting: forwardRef(() => CheckboxInputComponent),
       multi: true,
     },
   ],
 })
-export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export class CheckboxInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() placeholder = '';
   @Input() label?: string;
   @Input() suffix?: string;
@@ -47,10 +47,6 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
 
   public registerOnChange(fn) {
     this.updateValue = fn;
-  }
-
-  public firstError(): string {
-    return Object.keys(this.control.errors)[0].toUpperCase();
   }
 
   public registerOnTouched() {}

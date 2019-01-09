@@ -8,6 +8,7 @@
 @import "./00_base/mixins";
 @import "./00_base/grid";
 @import "./00_base/container";
+@import "./00_base/utils";
 
 // Atoms
 @import "./01_atoms/a-buttons";
@@ -20,6 +21,8 @@
 @import "./02_molecules/m-footer";
 @import "./02_molecules/m-menu";
 @import "./02_molecules/m-page-title";
+@import "./02_molecules/m-section-title";
+@import "./02_molecules/m-sub-section-title";
 
 // Organisms
 @import "./03_organisms/o-card-list";
