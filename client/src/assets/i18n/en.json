@@ -1,5 +1,9 @@
 {
     "GENERAL": {
+        "ERRORS": {
+            "EMAIL": "Fill in a valid email address",
+            "REQUIRED": "This field is required"
+        },
         "LABELS": {
             "COPYRIGHT": "© Eucobat 2018",
             "EMAIL": "Email",
@@ -10,7 +14,8 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "WELCOME": "Welcome!"
+            "WELCOME": "Welcome!",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "AUDITTRIAL": "Audit Trial",
