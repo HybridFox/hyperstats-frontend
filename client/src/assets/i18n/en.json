@@ -1,5 +1,9 @@
 {
     "GENERAL": {
+        "ERRORS": {
+            "EMAIL": "Fill in a valid email address",
+            "REQUIRED": "This field is required"
+        },
         "LABELS": {
             "COPYRIGHT": "© Eucobat 2018",
             "EMAIL": "Email",

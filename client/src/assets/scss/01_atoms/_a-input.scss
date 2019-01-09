@@ -2,7 +2,6 @@
     &__label {
         color: $black;
         font-weight: $font-weight-semi-bold;
-        text-transform: capitalize;
     }
 
     &__checkbox-container {
@@ -93,9 +92,16 @@
     }
 
     &__description {
-        text-transform: capitalize;
         display: block;
         color: $tundora;
+        margin: $spacer-x-small 0 0 0;
+        font-size: $font-size-small;
+    }
+
+    &__error {
+        position: absolute;
+        display: block;
+        color: $danger;
         margin: $spacer-x-small 0 0 0;
         font-size: $font-size-small;
     }

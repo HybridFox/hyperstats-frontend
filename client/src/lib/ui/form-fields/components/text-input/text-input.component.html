@@ -1,9 +1,10 @@
 <div class="a-input">
-  <label *ngIf="label" class="a-input__label">{{ label | translate }}</label>
+  <label *ngIf="label" class="a-input__label">{{ label }}</label>
   <div class="a-input__field-container">
-    <input [formControl]="value" [type]="type" class="a-input__field" [placeholder]="placeholder">
+    <input [formControl]="control" [type]="type" class="a-input__field" [placeholder]="placeholder">
     <span *ngIf="suffix" class="a-input__suffix">{{ suffix }}</span>
   </div>
-  {{ value.errors | json }}
-  <p *ngIf="description" class="a-input__description">{{ description | translate }}</p>
+  <p *ngIf="description" class="a-input__description">{{ description }}</p>
+  <p *ngIf="control.errors?.required && control.dirty" class="a-input__error">{{ 'GENERAL.ERRORS.REQUIRED' | translate }}</p>
+  <p *ngIf="control.errors?.email && control.dirty" class="a-input__error">{{ 'GENERAL.ERRORS.EMAIL' | translate }}</p>
 </div>
