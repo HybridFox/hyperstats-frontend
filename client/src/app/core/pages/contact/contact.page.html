@@ -7,7 +7,7 @@
             <form [formGroup]="contactForm" (ngSubmit)="submit()">
                 <div class="l-grid l-grid--with-margins">
                     <div class="l-grid__col-6-12">
-                        <div class="u-margin-bottom">
+                        <div class="u-margin-bottom-large">
                             <app-text-input
                                 [control]="contactForm.get('firstname')"
                                 [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div class="l-grid__col-6-12">
-                        <div class="u-margin-bottom">
+                        <div class="u-margin-bottom-large">
                             <app-text-input
                                 [control]="contactForm.get('lastname')"
                                 [label]="'GENERAL.LABELS.LASTNAME' | translate"
@@ -23,20 +23,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="u-margin-bottom">
+                <div class="u-margin-bottom-large">
                     <app-text-input
                         [control]="contactForm.get('email')"
                         [label]="'GENERAL.LABELS.EMAIL' | translate"
                         type="email"
                     ></app-text-input>
                 </div>
-                <div class="u-margin-bottom">
+                <div class="u-margin-bottom-large">
                     <app-textarea-input
                         [control]="contactForm.get('message')"
                         [label]="'GENERAL.LABELS.MESSAGE' | translate"
                         type="email"
                     ></app-textarea-input>
                 </div>
+                <input type="submit" [disabled]="!contactForm.valid" [value]="'GENERAL.LABELS.SUBMIT' | translate" class="a-button a-button--primary a-button--small">
             </form>
         </div>
     </div>
