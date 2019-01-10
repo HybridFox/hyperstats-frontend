@@ -1,0 +1,18 @@
+<div class="p-contact">
+    <div class="container">
+        <app-page-title [title]="'PAGE.CONTACT.TITLE' | translate"></app-page-title>
+        <div class="m-card">
+            <app-section-title [title]="'PAGE.CONTACT.SUBTITLE' | translate"></app-section-title>
+            <p class="p-contact__section">
+                <span class="p-contact__section__line">{{ 'PAGE.CONTACT.STREET' | translate }}</span>
+                <span class="p-contact__section__item">{{ 'PAGE.CONTACT.CITY' | translate }}</span>
+                <span class="p-contact__section__item">{{ 'PAGE.CONTACT.COUNTRY' | translate }}</span>
+            </p>
+            <p class="p-contact__section">
+                <span class="p-contact__section__item">{{ 'GENERAL.LABELS.TELEPHONE' | translate }}: {{ 'PAGE.CONTACT.TELEPHONE' | translate }}</span>
+                <span class="p-contact__section__item">{{ 'GENERAL.LABELS.FAX' | translate }}: {{ 'PAGE.CONTACT.FAX' | translate }}</span>
+                <span class="p-contact__section__item">{{ 'GENERAL.LABELS.EMAIL' | translate }}: <a href="mailto:{{ 'PAGE.CONTACT.EMAIL' | translate }}">{{ 'PAGE.CONTACT.EMAIL' | translate }}</a></span>
+            </p>
+        </div>
+    </div>
+</div>
