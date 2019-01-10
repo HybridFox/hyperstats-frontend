@@ -14,6 +14,13 @@ const reducer = (
     return action.payload;
   }
 
+  if (action.type === ACTIONS.CLEAR_USER) {
+    return {
+      ...state,
+      result: null,
+    };
+  }
+
   return state;
 };
 

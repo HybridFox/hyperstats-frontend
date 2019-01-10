@@ -1,10 +1,12 @@
 {
 	"GENERAL": {
-		"ERRORS": {
+		"FIELD-ERRORS": {
 			"EMAIL": "",
+			"PASSWORD": "",
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"CITY": "",
@@ -28,8 +30,8 @@
 			"AUDITTRIAL": "",
 			"COMPANYINFORMATION": "",
 			"HELP": "",
+			"LOGIN": "",
 			"LOGOFF": "",
-			"NEWREPORT": "",
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
