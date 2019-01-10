@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-10T15:30:10.484Z\n"
-"PO-Revision-Date: 2019-01-10T15:30:10.484Z\n"
+"POT-Creation-Date: 2019-01-09T14:58:51.122Z\n"
+"PO-Revision-Date: 2019-01-09T14:58:51.122Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -24,9 +24,6 @@ msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr ""
 
 msgid "GENERAL##LABELS##EMAIL"
-msgstr ""
-
-msgid "GENERAL##LABELS##FAX"
 msgstr ""
 
 msgid "GENERAL##LABELS##FIRSTNAME"
@@ -48,9 +45,6 @@ msgid "GENERAL##LABELS##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##LABELS##REGISTER"
-msgstr ""
-
-msgid "GENERAL##LABELS##TELEPHONE"
 msgstr ""
 
 msgid "GENERAL##LABELS##WELCOME"
@@ -84,30 +78,6 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
-msgstr ""
-
-msgid "PAGE##CONTACT##CITY"
-msgstr ""
-
-msgid "PAGE##CONTACT##COUNTRY"
-msgstr ""
-
-msgid "PAGE##CONTACT##EMAIL"
-msgstr ""
-
-msgid "PAGE##CONTACT##FAX"
-msgstr ""
-
-msgid "PAGE##CONTACT##STREET"
-msgstr ""
-
-msgid "PAGE##CONTACT##SUBTITLE"
-msgstr ""
-
-msgid "PAGE##CONTACT##TELEPHONE"
-msgstr ""
-
-msgid "PAGE##CONTACT##TITLE"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
