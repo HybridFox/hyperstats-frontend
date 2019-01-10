@@ -2,13 +2,12 @@
     <div class="p-login__box">
         <h1 class="p-login__title">{{ 'GENERAL.LABELS.WELCOME' | translate }}</h1>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
-            <div class="p-login__input">
-                <app-text-input
-                    [control]="loginForm.get('email')"
-                    [label]="'GENERAL.LABELS.EMAIL' | translate"
-                    type="email"
-                ></app-text-input>
-            </div>
+            <app-text-input
+                class="u-margin-bottom-large"
+                [control]="loginForm.get('email')"
+                [label]="'GENERAL.LABELS.EMAIL' | translate"
+                type="email"
+            ></app-text-input>
             <app-text-input
                 [control]="loginForm.get('password')"
                 [label]="'GENERAL.LABELS.PASSWORD' | translate"

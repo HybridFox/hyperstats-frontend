@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
 import { AuthActions, AuthSelector } from '@store/auth';
+import { PasswordValidator } from '@helpers/validators/password.validator';
 
 @Component({
     templateUrl: './register.page.html',
@@ -24,10 +25,10 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.registerForm = new FormGroup({
-            email: new FormControl('', Validators.email),
+            email: new FormControl('', [Validators.email, Validators.required]),
             firstname: new FormControl('', Validators.required),
             lastname: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required),
+            password: new FormControl('', [PasswordValidator.strong, Validators.required]),
             terms: new FormControl('', Validators.requiredTrue)
         });
     }

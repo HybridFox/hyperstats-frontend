@@ -1,25 +1,30 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-09T10:23:23.700Z\n"
-"PO-Revision-Date: 2019-01-09 11:23+0100\n"
+"POT-Creation-Date: 2019-01-09T14:58:51.122Z\n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 
-msgid "GENERAL##ERRORS##EMAIL"
+msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
 
-msgid "GENERAL##ERRORS##REQUIRED"
+msgid "GENERAL##FIELD-ERRORS##PASSWORD"
+msgstr "Your password needs one uppercase, one lowercase and a number"
+
+msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##LABELS##ACCEPT-TERMS"
+msgstr "I accept the terms and conditions"
+
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "Â© Eucobat 2018"
+msgstr "© Eucobat 2018"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
@@ -57,11 +62,11 @@ msgstr "Company information"
 msgid "GENERAL##MENU##HELP"
 msgstr "Help"
 
-msgid "GENERAL##MENU##LOGOFF"
-msgstr "Log off"
+msgid "GENERAL##MENU##LOGIN"
+msgstr "Login"
 
-msgid "GENERAL##MENU##NEWREPORT"
-msgstr "New report"
+msgid "GENERAL##MENU##LOGOFF"
+msgstr "Logoff"
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
@@ -93,3 +98,9 @@ msgstr "Cannot register"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#~ msgid "GENERAL##MENU##NEWREPORT"
+#~ msgstr "New report"
+
+#~ msgid "GENERAL##ERRORS##REQUIRED"
+#~ msgstr "This field is required"
