@@ -3,6 +3,7 @@ jobs:
   test-client:
     docker:
       - image: circleci/node:10.15.0
+      - image: selenium/standalone-chrome
     steps:
       - checkout
       - restore_cache:
@@ -14,6 +15,9 @@ jobs:
           key: dependency-cache-{{ checksum "client/package.json" }}
           paths:
             - client/node_modules
+      - run:
+          name: Run tests
+          command: cd client && npm run test:ci
 
   deploy-develop:
     machine:
