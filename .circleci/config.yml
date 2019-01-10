@@ -23,7 +23,7 @@ jobs:
           command: cd client && npm run test
       - run:
           name: e2e tests
-          command: cd client && npm run e2e
+          command: cd client && npm run e2e -- --configuration=serve
 
   test-server:
     docker:
