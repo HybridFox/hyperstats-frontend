@@ -9,15 +9,21 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "client/package.json" }}
       - run:
-          name: Install npm
-          command: cd client && npm install
+          name: npm ci
+          command: cd client && npm ci
       - save_cache:
           key: dependency-cache-{{ checksum "client/package.json" }}
           paths:
             - client/node_modules
       - run:
-          name: Run tests
-          command: cd client && npm run test:ci
+          name: Linting
+          command: cd client && npm run lint
+      - run:
+          name: unit tests
+          command: cd client && npm run test
+      - run:
+          name: e2e tests
+          command: cd client && npm run e2e
 
   test-server:
     docker:
