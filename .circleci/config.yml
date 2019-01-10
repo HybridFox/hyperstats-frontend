@@ -1,20 +1,19 @@
 version: 2
 jobs:
   test-client:
-    working_directory: ~/client
     docker:
       - image: circleci/node:10.15.0
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "client/package.json" }}
       - run:
           name: Install npm
-          command: npm install
+          command: cd client && npm install
       - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
+          key: dependency-cache-{{ checksum "client/package.json" }}
           paths:
-            - node_modules
+            - client/node_modules
 
   deploy-develop:
     machine:
