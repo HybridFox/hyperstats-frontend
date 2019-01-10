@@ -19,6 +19,24 @@ jobs:
           name: Run tests
           command: cd client && npm run test:ci
 
+  test-server:
+    docker:
+      - image: circleci/node:10.15.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "server/package.json" }}
+      - run:
+          name: Install npm
+          command: cd server && npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "server/package.json" }}
+          paths:
+            - client/node_modules
+      - run:
+          name: Run tests
+          command: cd server && npm run test
+
   deploy-develop:
     machine:
       enabled: true
