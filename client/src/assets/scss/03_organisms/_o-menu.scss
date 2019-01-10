@@ -1,4 +1,4 @@
-.o-menu--primary {
+.o-menu--filled {
     background-color: $blue;
     padding: $spacer 0;
     .container {
@@ -20,7 +20,7 @@
     }
 }
 
-.o-menu--secondary {
+.o-menu--transparent {
     .container {
         position: relative;
         .o-menu__content {
