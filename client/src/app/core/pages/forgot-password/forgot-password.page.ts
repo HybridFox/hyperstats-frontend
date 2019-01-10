@@ -9,7 +9,7 @@ import { AuthActions } from '@store/auth';
 @Component({
     templateUrl: './forgot-password.page.html',
 })
-export class LoginPageComponent implements OnInit, OnDestroy {
+export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
     public loginForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 

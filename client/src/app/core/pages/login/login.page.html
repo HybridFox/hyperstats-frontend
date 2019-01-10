@@ -14,7 +14,7 @@
                 [label]="'GENERAL.LABELS.PASSWORD' | translate"
                 type="password"
             ></app-text-input>
-            <a [routerLink]="['forgot-password']" class="p-login__reset-password">{{ 'GENERAL.LABELS.FORGOT-PASSWORD' | translate }}</a>
+            <a [routerLink]="['/forgot-password']" class="p-login__reset-password">{{ 'GENERAL.LABELS.FORGOT-PASSWORD' | translate }}</a>
             <input type="submit" [disabled]="!loginForm.valid" [value]="'GENERAL.LABELS.LOGIN' | translate" class="a-button a-button--primary a-button--small">
         </form>
     </div>
