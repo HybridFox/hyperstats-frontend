@@ -3,8 +3,10 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { select } from '@angular-redux/store';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import countryList from 'country-list';
 
 import { AuthActions, AuthSelector } from '@store/auth';
+import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
     templateUrl: './company-information.page.html',
@@ -15,6 +17,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
 
     public companyForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public countryList: Option[];
 
     constructor(
         private authAction: AuthActions,
@@ -31,6 +34,11 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             city: new FormControl('', Validators.required),
             country: new FormControl('', Validators.required)
         });
+
+        this.countryList = countryList.getData().map(({code, name}) => ({
+            value: code,
+            label: name,
+        }));
     }
 
     public ngOnDestroy() {
