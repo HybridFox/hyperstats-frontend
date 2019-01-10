@@ -5,4 +5,5 @@
     <a *ngIf="profile" [routerLink]="['/proxies']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.PROXIES' | translate }}</a>
     <a *ngIf="profile" [routerLink]="['/audit-trail']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.AUDITTRIAL' | translate }}</a>
     <a *ngIf="!profile" [routerLink]="['/about']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.ABOUT' | translate }}</a>
+    <a *ngIf="!profile" [routerLink]="['/contact']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.CONTACT' | translate }}</a>
 </nav>

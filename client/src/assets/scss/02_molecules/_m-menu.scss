@@ -89,3 +89,11 @@
         }
     }
 }
+
+.o-menu--secondary {
+    .m-menu--main {
+        &__item {
+            color: $blue;
+        }
+    }
+}
