@@ -9,6 +9,7 @@
             "ACCEPT-TERMS": "I accept the terms and conditions",
             "COPYRIGHT": "© Eucobat 2018",
             "EMAIL": "Email",
+            "FAX": "Fax",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
@@ -16,6 +17,7 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
+            "TELEPHONE": "Tel.",
             "WELCOME": "Welcome!",
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
@@ -30,6 +32,18 @@
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REPORTS": "Reports",
             "USERPROFILE": "User profile"
+        }
+    },
+    "PAGE": {
+        "CONTACT": {
+            "CITY": "1930 Zaventem",
+            "COUNTRY": "Belgium",
+            "EMAIL": "info@eucobat.eu",
+            "FAX": "+32 2 720 20 60",
+            "STREET": "Excelsiorlaan 91",
+            "SUBTITLE": "Eucobat aisbl",
+            "TELEPHONE": "+32 2 720 40 80",
+            "TITLE": "Contact"
         }
     },
     "TOAST": {

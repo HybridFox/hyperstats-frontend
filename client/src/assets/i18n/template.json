@@ -10,6 +10,7 @@
 			"ACCEPT_TERMS": "",
 			"COPYRIGHT": "",
 			"EMAIL": "",
+			"FAX": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
@@ -17,6 +18,7 @@
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"TELEPHONE": "",
 			"WELCOME": ""
 		},
 		"MENU": {
@@ -30,6 +32,18 @@
 			"RECYCLINGPROCESSES": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
+		}
+	},
+	"PAGE": {
+		"CONTACT": {
+			"CITY": "",
+			"COUNTRY": "",
+			"EMAIL": "",
+			"FAX": "",
+			"STREET": "",
+			"SUBTITLE": "",
+			"TELEPHONE": "",
+			"TITLE": ""
 		}
 	},
 	"TOAST": {
