@@ -51,6 +51,9 @@ export class AuthRepository {
     const url = this.apiConfig.baseUrl('/auth/reset-password');
 
     return this.http
-      .get(url);
+      .put(url, {
+        password,
+        token
+      });
   }
 }
