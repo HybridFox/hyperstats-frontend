@@ -17,6 +17,7 @@
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"RESET-PASSWORD": "",
 			"WELCOME": ""
 		},
 		"MENU": {
@@ -32,15 +33,28 @@
 			"USERPROFILE": ""
 		}
 	},
+	"PAGE": {
+		"RESET-PASSWORD": {
+			"TITLE": ""
+		}
+	},
 	"TOAST": {
 		"LOGIN": {
 			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		},
 		"REGISTER": {
 			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}

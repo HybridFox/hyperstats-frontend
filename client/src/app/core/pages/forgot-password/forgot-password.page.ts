@@ -10,7 +10,7 @@ import { AuthActions } from '@store/auth';
     templateUrl: './forgot-password.page.html',
 })
 export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
-    public loginForm: FormGroup;
+    public resetPasswordForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
@@ -20,9 +20,8 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit(): void {
-        this.loginForm = new FormGroup({
-            email: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required)
+        this.resetPasswordForm = new FormGroup({
+            email: new FormControl('', [Validators.required, Validators.email]),
         });
     }
 
@@ -33,10 +32,10 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
 
     public submit() {
         this.authAction.login({
-            ...this.loginForm.value
+            ...this.resetPasswordForm.value
         }).then(() => {
             this.toastrService.success('An email has been send');
-            this.loginForm.reset();
+            this.resetPasswordForm.reset();
         }).catch(() => {
             this.toastrService.error('Make sure you used the correct combination', 'Something went wrong');
         });

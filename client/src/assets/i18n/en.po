@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-09T14:58:51.122Z\n"
+"POT-Creation-Date: 2019-01-10T08:26:53.198Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -50,6 +50,9 @@ msgstr "Privacy"
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
+msgid "GENERAL##LABELS##RESET-PASSWORD"
+msgstr "Reset"
+
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
 
@@ -83,17 +86,32 @@ msgstr "Reports"
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
 
+msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr "Reset your password"
+
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr "Make sure you are using the correct details to login"
 
 msgid "TOAST##LOGIN##ERROR##TITLE"
 msgstr "Cannot login"
 
+msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
+msgstr "You are now free to browse"
+
+msgid "TOAST##LOGIN##SUCCESS##TITLE"
+msgstr "Logged in!"
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
+
+msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for your verification mail"
+
+msgid "TOAST##REGISTER##SUCCESS##TITLE"
+msgstr "Successfully registered"
 
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"

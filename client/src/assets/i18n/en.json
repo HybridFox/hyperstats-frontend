@@ -16,6 +16,7 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
+            "RESET-PASSWORD": "Reset",
             "WELCOME": "Welcome!",
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
@@ -32,17 +33,30 @@
             "USERPROFILE": "User profile"
         }
     },
+    "PAGE": {
+        "RESET-PASSWORD": {
+            "TITLE": "Reset your password"
+        }
+    },
     "TOAST": {
         "LOGIN": {
             "ERROR": {
                 "DESCRIPTION": "Make sure you are using the correct details to login",
                 "TITLE": "Cannot login"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "You are now free to browse",
+                "TITLE": "Logged in!"
             }
         },
         "REGISTER": {
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for your verification mail",
+                "TITLE": "Successfully registered"
             }
         }
     }
