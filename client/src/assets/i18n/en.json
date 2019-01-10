@@ -20,8 +20,10 @@
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
+            "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
             "COMPANYINFORMATION": "Company information",
+            "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
             "LOGOFF": "Logoff",

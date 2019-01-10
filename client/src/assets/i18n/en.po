@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-09T14:58:51.122Z\n"
+"POT-Creation-Date: 2019-01-10T14:15:15.405Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -53,11 +53,17 @@ msgstr "Register"
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
 
+msgid "GENERAL##MENU##ABOUT"
+msgstr "About us"
+
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr "Company information"
+
+msgid "GENERAL##MENU##CONTACT"
+msgstr "Contact"
 
 msgid "GENERAL##MENU##HELP"
 msgstr "Help"

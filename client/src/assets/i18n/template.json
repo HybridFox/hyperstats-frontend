@@ -20,8 +20,10 @@
 			"WELCOME": ""
 		},
 		"MENU": {
+			"ABOUT": "",
 			"AUDITTRIAL": "",
 			"COMPANYINFORMATION": "",
+			"CONTACT": "",
 			"HELP": "",
 			"LOGIN": "",
 			"LOGOFF": "",
