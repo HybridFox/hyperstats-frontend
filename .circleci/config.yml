@@ -1,22 +1,19 @@
 version: 2
 jobs:
   test-client:
-    machine:
-      enabled: true
+    docker:
+      - image: circleci/node:10.15.0
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          name: Build docker image
-          command: docker-compose build
-      - run:
-          name: Bring docker image up
-          command: docker-compose up -d
-      - run:
-          name: Execute test:ci
-          command: docker-compose exec client npm run test:ci
-      - run:
-          name: Stop docker container
-          command: docker-compose down
+          name: Install npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
 
   deploy-develop:
     machine:
