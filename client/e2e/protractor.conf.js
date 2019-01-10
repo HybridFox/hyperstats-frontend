@@ -3,6 +3,8 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
+console.log(process.env)
+
 exports.config = {
   seleniumAddress: process.env.isCircleci ? 'http://localhost:4444/wd/hub' : 'http://selenium-chrome-standalone:4444/wd/hub',
   allScriptsTimeout: 11000,
