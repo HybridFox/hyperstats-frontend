@@ -3,10 +3,8 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
-console.log(process.env)
-
 exports.config = {
-  seleniumAddress: process.env.isCircleci ? 'http://localhost:4444/wd/hub' : 'http://selenium-chrome-standalone:4444/wd/hub',
+  seleniumAddress: process.env.CIRCLECI ? 'http://localhost:4444/wd/hub' : 'http://selenium-chrome-standalone:4444/wd/hub',
   allScriptsTimeout: 11000,
   specs: [
     './src/**/*.e2e-spec.ts'
@@ -18,7 +16,7 @@ exports.config = {
       args: ['--no-sandbox']
     }
   },
-  baseUrl: process.env.isCircleci ? 'http://localhost:4350/' : 'http://client:4350/',
+  baseUrl: process.env.CIRCLECI ? 'http://localhost:4350/' : 'http://client:4350/',
   framework: 'jasmine2',
   jasmineNodeOpts: {
     showColors: true,
