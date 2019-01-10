@@ -73,6 +73,7 @@ workflows:
       - deploy-develop:
           requires:
             - test-client
+            - test-server
           filters:
             branches:
               only: development
