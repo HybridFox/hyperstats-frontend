@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthActions } from '@store/auth';
 import { PasswordValidator } from '@helpers/validators/password.validator';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     templateUrl: './reset-password.page.html',
@@ -13,12 +14,19 @@ import { PasswordValidator } from '@helpers/validators/password.validator';
 export class ResetPasswordPageComponent implements OnInit, OnDestroy {
     public resetPasswordForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public token: string;
 
     constructor(
         private authAction: AuthActions,
         private toastrService: ToastrService,
-        private router: Router
-    ) { }
+        private route: ActivatedRoute
+    ) {
+        this.route.queryParams
+            .pipe(takeUntil(this.componentDestroyed$))
+            .subscribe(params => {
+                this.token = params.token;
+            });
+    }
 
     ngOnInit(): void {
         this.resetPasswordForm = new FormGroup({
@@ -32,8 +40,9 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.login({
-            ...this.resetPasswordForm.value
+        this.authAction.resetPassword({
+            password: this.resetPasswordForm.value.password,
+            token: this.token
         }).then(() => {
             this.toastrService.success('An email has been send');
             this.resetPasswordForm.reset();
