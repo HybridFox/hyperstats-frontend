@@ -19,6 +19,10 @@ const routes: Routes = [
     component: Pages.ForgotPasswordPageComponent
   },
   {
+    path: 'reset-password',
+    component: Pages.ResetPasswordPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
