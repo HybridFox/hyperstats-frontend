@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "client/package.json" }}
       - run:
-          name: npm ci
+          name: Run npm ci
           command: cd client && npm ci
       - save_cache:
           key: dependency-cache-{{ checksum "client/package.json" }}
@@ -19,10 +19,10 @@ jobs:
           name: Linting
           command: cd client && npm run lint
       - run:
-          name: unit tests
+          name: Run unit tests
           command: cd client && npm run test
       - run:
-          name: e2e tests
+          name: Run e2e tests
           command: cd client && npm run e2e -- --configuration=serve
 
   test-server:
@@ -38,7 +38,7 @@ jobs:
       - save_cache:
           key: dependency-cache-{{ checksum "server/package.json" }}
           paths:
-            - client/node_modules
+            - server/node_modules
       - run:
           name: Run tests
           command: cd server && npm run test
@@ -69,6 +69,7 @@ workflows:
   build-and-deploy:
     jobs:
       - test-client
+      - test-server
       - deploy-develop:
           requires:
             - test-client
