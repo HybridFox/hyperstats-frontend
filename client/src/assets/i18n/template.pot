@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-10T08:47:19.923Z\n"
-"PO-Revision-Date: 2019-01-10T08:47:19.923Z\n"
+"POT-Creation-Date: 2019-01-10T09:29:19.386Z\n"
+"PO-Revision-Date: 2019-01-10T09:29:19.386Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -30,6 +30,9 @@ msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr ""
+
+msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
 msgid "GENERAL##LABELS##EMAIL"
