@@ -62,14 +62,17 @@
                     </div>
                 </div>
             </div>
-            <div class="">
-                <!-- <app-select-input
-                    [control]="companyForm.get('country')"
-                    [label]="GENERAL.LABELS.COUNTRY"
-                    [options]="[{label:'Belgium', value:'belgium'}, {label:'France', value:'france'}]"
-                ></app-select-input> -->
+            <div class="l-grid__row">
+                <div class="l-grid__col-6-12">
+                    <app-select-input
+                        [control]="companyForm.get('country')"
+                        [label]="'GENERAL.LABELS.COUNTRY' | translate"
+                        [options]="[{label:'Belgium', value:'belgium'}, {label:'France', value:'france'}]"
+                    ></app-select-input>
+                </div>
             </div>
-            <input type="submit" [value]="'GENERAL.LABELS.SAVE' | translate" class="a-button a-button--primary a-button--small">
+
+            <input type="submit" [value]="'GENERAL.LABELS.SAVE' | translate" class="a-button a-button--primary a-button--small u-margin-top-large">
         </form>
     </div>
 </div>
