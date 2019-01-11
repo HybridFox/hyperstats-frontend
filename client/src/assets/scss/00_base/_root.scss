@@ -7,6 +7,10 @@ body {
     margin-bottom: -$footer-height;
 }
 
+p {
+    line-height: 30px;
+}
+
 * {
     font-family: $font-family-lato;
     box-sizing: border-box;
