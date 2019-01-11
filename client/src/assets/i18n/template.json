@@ -34,6 +34,15 @@
 			"USERPROFILE": ""
 		}
 	},
+	"PAGE": {
+		"ABOUT": {
+			"CONTENT-1": "",
+			"CONTENT-2": "",
+			"SECTION-1": "",
+			"SECTION-2": "",
+			"TITLE": ""
+		}
+	},
 	"TOAST": {
 		"LOGIN": {
 			"ERROR": {
