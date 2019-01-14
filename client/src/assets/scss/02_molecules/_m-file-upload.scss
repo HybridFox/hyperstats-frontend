@@ -25,13 +25,7 @@
         color: $blue;
         margin: $spacer 0;
         &__input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            cursor: pointer;
-            z-index: 9999;
-            font-size: $font-size-large;
+            display: none;
         }
         &__label {
             font-size: $font-size-small;
@@ -45,6 +39,7 @@
             color: $blue;
             text-decoration: underline;
             margin-right: $spacer;
+            cursor: pointer;
         }
     }
 }
