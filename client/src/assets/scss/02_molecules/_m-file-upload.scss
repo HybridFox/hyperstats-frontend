@@ -1,0 +1,50 @@
+.m-file-upload {
+    &__title {
+        font-size: $font-size-regular;
+        font-weight: $font-weight-bold;
+        color: $tundora;
+        margin-bottom: 0;
+    }
+    &__description {
+        font-size: $font-size-small;
+        color: $gray;
+        margin-top: 0;
+    }
+    &__details {
+        height: 200px;
+        resize: none;
+        background-color: $white;
+        border: 1px solid $mercury;
+        border-radius: 4px;
+        padding: 10px;
+        width: 500px;
+    }
+    &__action {
+        position: relative;
+        display: flex;
+        color: $blue;
+        margin: $spacer 0;
+        &__input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 9999;
+            font-size: $font-size-large;
+        }
+        &__label {
+            font-size: $font-size-small;
+            color: $gray;
+            display: inline-block;
+            line-height: 21px;
+        }
+        &__upload {
+            font-size: $font-size-regular;
+            text-transform: lowercase;
+            color: $blue;
+            text-decoration: underline;
+            margin-right: $spacer;
+        }
+    }
+}
