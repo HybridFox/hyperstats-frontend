@@ -7,7 +7,7 @@ const options = {
 
 mongoose.connect(config.server.mongo.url, options);
 
-mongoose.connection.on("error", (error) => console.log("Mongoose connection errror", error));
+mongoose.connection.on("error", (error) => console.log("Mongoose connection errror", error)); // eslint-disable-line
 
 mongoose.Promise = Promise;
 

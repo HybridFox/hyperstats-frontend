@@ -3,7 +3,7 @@ module.exports = {
 		test: true,
 	},
 	server: {
-		port: 4351,
+		port: 4352,
 		cookies: {
 			domain: "",
 		},
