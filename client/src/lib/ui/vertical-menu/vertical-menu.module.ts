@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { ListComponent } from './list.component';
+import { VerticalMenuComponent } from './vertical-menu.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -13,14 +13,14 @@ import { TranslateModule } from '@ngx-translate/core';
     RouterModule,
   ],
   declarations: [
-    ListComponent,
+    VerticalMenuComponent,
   ],
   exports: [
-    ListComponent,
+    VerticalMenuComponent,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
   ]
 })
 
-export class ListModule {}
+export class VerticalMenuModule {}

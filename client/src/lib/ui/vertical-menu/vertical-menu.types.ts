@@ -1,4 +1,4 @@
-export interface ListItem {
+export interface MenuItem {
     link: string;
     label: string;
 }
