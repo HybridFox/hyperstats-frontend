@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  apiBaseUrl: 'https://rare-o.studiohyperdrive.be/server/'
+  production: false,
+  apiBaseUrl: 'https://rare-o.studiohyperdrive.be/api/'
 };
 
 /*

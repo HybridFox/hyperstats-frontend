@@ -1,0 +1,91 @@
+.m-menu {
+    &__link {
+        position: relative;
+        font-size: $font-size-regular;
+        font-weight: $font-weight-light;
+        color: $white;
+        line-height: 36px;
+        padding: 0 $spacer-x-small / 2;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:hover,
+        &:active,
+        &:visited {
+            text-decoration: none;
+        }
+        &.active {
+            color: $yellow;
+            &:after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 3px;
+                background-color: $yellow;
+                left: 0;
+                bottom: -31px;
+            }
+        }
+    }
+}
+
+.m-menu--main {
+    &__item {
+        font-size: $font-size-regular;
+        font-weight: $font-weight-light;
+        position: relative;
+        color: $white;
+        line-height: 36px;
+        padding: 0 $spacer-x-small / 2;
+        margin: 0 $spacer-small;
+        text-decoration: none;
+        &:first-child {
+            margin-left: 0;
+        }
+        &:hover,
+        &:active,
+        &:visited {
+            text-decoration: none;
+        }
+        &.active {
+            color: $yellow;
+            &:after {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 3px;
+                background-color: $yellow;
+                left: 0;
+                bottom: -31px;
+            }
+        }
+    }
+}
+
+.m-menu--user {
+    position: relative;
+    &__sub-menu {
+        position: absolute;
+        background-color: $white;
+        padding: $spacer-small $spacer;
+        border-radius: 0 0 4px 4px;
+        border: 1px solid $mercury;
+        width: max-content;
+        &__item {
+            list-style: none;
+            margin-bottom: $spacer-small;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &__link {
+                font-size: $font-size-regular;
+                line-height: 19px;
+                color: $blue;
+                &:hover,
+                &:active {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

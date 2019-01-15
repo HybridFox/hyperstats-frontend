@@ -1,0 +1,20 @@
+<div *ngIf="profile" class="m-menu--user">
+    <span (click)="toggle()" class="m-menu--user__title a-button--secondary a-button-outline has-icon-after">
+        {{ profile.firstname }} {{ profile.lastname }}<i class="a-icon a-icon--arrow-bottom"></i>
+    </span>
+    <ul [hidden]="!visible" class="m-menu--user__sub-menu">
+        <li class="m-menu--user__sub-menu__item">
+            <a href="" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
+        </li>
+        <li class="m-menu--user__sub-menu__item">
+            <a href="" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
+        </li>
+        <li class="m-menu--user__sub-menu__item">
+            <a href="" (click)="logoff()" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.LOGOFF' | translate }}</a>
+        </li>
+    </ul>
+</div>
+
+<div *ngIf="!profile">
+    <a routerLink="/login" class="a-button--secondary a-button-outline">{{ 'GENERAL.MENU.LOGIN' | translate }}</a>
+</div>

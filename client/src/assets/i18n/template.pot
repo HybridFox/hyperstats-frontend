@@ -5,11 +5,141 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-03T12:23:12.739Z\n"
-"PO-Revision-Date: 2019-01-03T12:23:12.740Z\n"
+"POT-Creation-Date: 2019-01-15T10:09:39.956Z\n"
+"PO-Revision-Date: 2019-01-15T10:09:39.956Z\n"
 
-msgid "general##labels##copyright"
+msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
 
-msgid "general##labels##privacy"
+msgid "GENERAL##FIELD-ERRORS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACCEPT-TERMS"
+msgstr ""
+
+msgid "GENERAL##LABELS##BOX"
+msgstr ""
+
+msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr ""
+
+msgid "GENERAL##LABELS##COUNTRY"
+msgstr ""
+
+msgid "GENERAL##LABELS##EMAIL"
+msgstr ""
+
+msgid "GENERAL##LABELS##FIRSTNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##FORGOT-PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##LASTNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##LOGIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##NUMBER"
+msgstr ""
+
+msgid "GENERAL##LABELS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##PRIVACY"
+msgstr ""
+
+msgid "GENERAL##LABELS##REGISTER"
+msgstr ""
+
+msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##WELCOME"
+msgstr ""
+
+msgid "GENERAL##LABELS##ZIPCODE"
+msgstr ""
+
+msgid "GENERAL##MENU##AUDITTRIAL"
+msgstr ""
+
+msgid "GENERAL##MENU##COMPANYINFORMATION"
+msgstr ""
+
+msgid "GENERAL##MENU##HELP"
+msgstr ""
+
+msgid "GENERAL##MENU##LOGIN"
+msgstr ""
+
+msgid "GENERAL##MENU##LOGOFF"
+msgstr ""
+
+msgid "GENERAL##MENU##PROXIES"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLINGPROCESSES"
+msgstr ""
+
+msgid "GENERAL##MENU##REPORTS"
+msgstr ""
+
+msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "PAGE##ABOUT##CONTENT-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##CONTENT-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr ""
+
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

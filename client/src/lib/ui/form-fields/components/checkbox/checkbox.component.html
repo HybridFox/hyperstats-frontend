@@ -1,0 +1,9 @@
+<div class="a-input" [class]="class">
+  <div class="a-input__checkbox-container">
+    <label *ngIf="label" class="a-input__label">
+      <input [formControl]="control" type="checkbox" class="a-input__checkbox">
+      <span class="a-input__fake-checkbox"></span>{{ label }}
+    </label>
+    <p *ngIf="control.errors?.required && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.REQUIRED' | translate }}</p>
+  </div>
+</div>

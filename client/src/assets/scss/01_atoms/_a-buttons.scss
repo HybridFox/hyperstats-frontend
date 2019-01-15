@@ -2,17 +2,31 @@
   font-family: $font-family-lato;
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
-  line-height: 18px;
+  line-height: 21px;
   letter-spacing: 2.4px;
-  border-radius: 4px;
-  padding: $spacer $spacer-xx-large;
+  border-radius: $border-radius;
+  padding: $spacer-x-small $spacer-large;
   border: 1px solid;
   text-decoration: none;
-  margin-bottom: $spacer;
   @include transition(all 0.5s ease-in-out);
   display: flex;
-  align-items: center;
   position: relative;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+  // Buttons with icon on right.
+  .has-icon-after {
+    .a-icon {
+      margin: 0 $spacer-x-small / 2 0 $spacer-x-small / 4;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
 }
 
 // Button types.
@@ -25,6 +39,18 @@
   &:hover {
     background-color: rgba($blue, 0.8);
     border-color: rgba($blue, 0.8);
+  }
+}
+
+.a-button--secondary {
+  @extend .a-button;
+  background-color: $white;
+  border-color: $white;
+  color: $blue;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgba($white, 0.8);
+    border-color: rgba($white, 0.8);
   }
 }
 
@@ -60,6 +86,19 @@
       color: $white;
     }
   }
+  &.a-button--secondary {
+    background-color: transparent;
+    color: $white;
+    text-transform: none;
+    font-size: $font-size-regular;
+    font-weight: $font-weight-regular;
+    padding: $spacer-x-small 0 $spacer-x-small $spacer-small;
+    letter-spacing: 1px;
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
+  }
   &.a-button--success {
     background-color: $white;
     color: $success;
@@ -81,7 +120,7 @@
 // Button sizes.
 .a-button--small {
   padding: $spacer-x-small $spacer-small;
-  font-size: $font-size-regular;
+  font-size: $font-size-small;
   letter-spacing: 0.6px;
   line-height: 17px;
 }

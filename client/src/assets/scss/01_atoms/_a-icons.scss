@@ -1,13 +1,14 @@
 /*
+ * e900 = help
  * e901 = arrow-bottom
- * e902 = checkmark
- * e903 = help
- * e904 = plus
+ * e902 = arrow-left
+ * e903 = arrow-right
+ * e904 = calendar
+ * e905 = checkmark
+ * e906 = plus
  */
 
 .a-icon {
-    position: absolute;
-    left: 5px;
     color:inherit;
     font-size: $font-size-large;
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -22,6 +23,13 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.a-icon--help {
+    @extend .a-icon;
+    &::before {
+        content: "\e900";
+    }
+}
+
 .a-icon--arrow-bottom {
     @extend .a-icon;
     &::before {
@@ -29,22 +37,36 @@
     }
 }
 
-.a-icon--checkmark {
+.a-icon--arrow-left {
     @extend .a-icon;
     &::before {
         content: "\e902";
     }
 }
-.a-icon--plus {
+
+.a-icon--arrow-right {
     @extend .a-icon;
     &::before {
         content: "\e903";
     }
 }
 
-.a-icon--help {
+.a-icon--calendar {
     @extend .a-icon;
     &::before {
         content: "\e904";
+    }
+}
+
+.a-icon--checkmark {
+    @extend .a-icon;
+    &::before {
+        content: "\e905";
+    }
+}
+.a-icon--plus {
+    @extend .a-icon;
+    &::before {
+        content: "\e906";
     }
 }

@@ -28,7 +28,7 @@ services:
       - 4350:4350
     volumes:
       - ./client:/app:delegated
-      - /app/node_modules
+      - notused:/app/node_modules
     links:
       - selenium-chrome-standalone
       - server
@@ -43,7 +43,7 @@ services:
     ports:
       - 27011:27017
     volumes:
-      - ./server/data/db:/server/data/db
+      - ./server/data/db:/server/data/db:delegated
     command: mongod --smallfiles --logpath=/dev/null # --quiet
   selenium-chrome-standalone:
     ports:

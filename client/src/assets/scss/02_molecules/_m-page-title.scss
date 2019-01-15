@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: $spacer-x-large 0;
 
     &__title {
         color: $zodiac;
         margin: 0;
         line-height: 50px;
+        font-size: 2.5em;
     }
 
     &__description {

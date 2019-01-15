@@ -1,6 +1,14 @@
+body {
+    background-color: $grey;
+}
+
 .root {
     min-height: 100vh;
     margin-bottom: -$footer-height;
+}
+
+p {
+    line-height: 30px;
 }
 
 * {

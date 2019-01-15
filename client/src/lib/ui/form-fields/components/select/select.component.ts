@@ -19,14 +19,14 @@ export class SelectInputComponent implements OnInit, OnDestroy, ControlValueAcce
   @Input() label?: string;
   @Input() description?: string;
   @Input() options: Option[];
+  @Input() control: FormControl = new FormControl('');
 
-  public value: FormControl = new FormControl('');
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
   public updateValue = (_: any) => {};
 
   public ngOnInit() {
-    this.value.valueChanges.pipe(
+    this.control.valueChanges.pipe(
       takeUntil(this.componentDestroyed$),
     ).subscribe((value) => {
       this.updateValue(value);
@@ -39,7 +39,7 @@ export class SelectInputComponent implements OnInit, OnDestroy, ControlValueAcce
   }
 
   public writeValue(value: string) {
-    this.value.setValue(value);
+    this.control.setValue(value);
   }
 
   public registerOnChange(fn) {

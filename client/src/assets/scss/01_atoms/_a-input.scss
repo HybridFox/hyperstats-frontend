@@ -1,12 +1,53 @@
 .a-input {
     &__label {
-        display: block;
         color: $black;
-        margin-bottom: $spacer;
         font-weight: $font-weight-semi-bold;
     }
 
+    &__checkbox-container {
+        .a-input__label {
+            position: relative;
+            cursor: pointer;
+            @include user-select(none);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .a-input__checkbox {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+            .a-input__fake-checkbox {
+                font-family: 'icon-font' !important;
+                border: 1px solid $mercury;
+                background-color: $white;
+                height: 25px;
+                width: 25px;
+                border-radius: $border-radius;
+                display: block;
+                margin-right: $spacer-small;
+            }
+
+            .a-input__checkbox:checked ~ .a-input__fake-checkbox {
+                border-color: $zodiac;
+                background-color: $zodiac;
+                position: relative;
+
+                &::after {
+                    color: #FFF;
+                    content: "\e905";
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+
     &__field-container {
+        margin-top: $spacer-small;
         position: relative;
 
         .a-input__field {
@@ -14,7 +55,7 @@
             width: 100%;
             background: $white;
             border: 1.5px solid $mercury;
-            border-radius: 4px;
+            border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
             transition: border .5s ease;
@@ -35,6 +76,7 @@
             -moz-appearance: none;
             background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
             background-size: 10px;
+            padding: $spacer-x-small $spacer-small;
         }
 
         select.a-input__field::-ms-expand {
@@ -53,7 +95,15 @@
     &__description {
         display: block;
         color: $tundora;
-        margin: $spacer-x-small 0 0 0;
+        margin: 0;
+        font-size: $font-size-small;
+    }
+
+    &__error {
+        position: absolute;
+        display: block;
+        color: $danger;
+        margin: 0;
         font-size: $font-size-small;
     }
 }

@@ -17,7 +17,6 @@ export class ReportsPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    console.log('init page');
     this.reportsActions.fetchAll().subscribe();
   }
 }
