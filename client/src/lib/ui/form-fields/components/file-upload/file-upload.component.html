@@ -6,6 +6,7 @@
             type="file"
             name="fileToUpload"
             class="m-file-upload__action__input"
+            [formControl]="control"
             #fileInput>
         <i class="a-icon--upload"></i>
         <span (click)="fileInput.click()" class="m-file-upload__action__upload">Upload attachment</span>
