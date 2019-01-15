@@ -1,0 +1,16 @@
+.a-label {
+    padding: $spacer-xx-small $spacer-x-small;
+    color: $tundora;
+    border: 1px solid $tundora;
+    border-radius: $border-radius;
+
+    &.a-label--danger {
+        color: $danger;
+        border-color: $danger;
+    }
+
+    &.a-label--success {
+        color: $success;
+        border-color: $success;
+    }
+}
