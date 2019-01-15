@@ -7,16 +7,24 @@
         },
         "LABELS": {
             "ACCEPT-TERMS": "I accept the terms and conditions",
+            "BOX": "Box",
+            "CITY": "City",
+            "COMPANYNAME": "Company name",
             "COPYRIGHT": "© Eucobat 2018",
+            "COUNTRY": "Country",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "NUMBER": "Number",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
+            "SAVE": "Save",
+            "STREETNAME": "Street name",
             "WELCOME": "Welcome!",
+            "ZIPCODE": "Zip code",
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
@@ -41,6 +49,11 @@
             "SECTION-1": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing",
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
+        },
+        "COMPANYINFORMATION": {
+            "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
+            "SUBTITLE": "Address Information Recycling Plant",
+            "TITLE": "Company information"
         }
     },
     "TOAST": {

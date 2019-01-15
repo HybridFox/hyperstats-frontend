@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-11T14:36:36.407Z\n"
+"POT-Creation-Date: 2019-01-15T15:20:27.123Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
@@ -23,8 +23,20 @@ msgstr "This field is required"
 msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr "I accept the terms and conditions"
 
+msgid "GENERAL##LABELS##BOX"
+msgstr "Box"
+
+msgid "GENERAL##LABELS##CITY"
+msgstr "City"
+
+msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr "Company name"
+
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "© Eucobat 2018"
+msgstr "Â© Eucobat 2018"
+
+msgid "GENERAL##LABELS##COUNTRY"
+msgstr "Country"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
@@ -41,6 +53,9 @@ msgstr "Lastname"
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
 
+msgid "GENERAL##LABELS##NUMBER"
+msgstr "Number"
+
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr "Password"
 
@@ -50,8 +65,17 @@ msgstr "Privacy"
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
+msgid "GENERAL##LABELS##SAVE"
+msgstr "Save"
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr "Street name"
+
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
+
+msgid "GENERAL##LABELS##ZIPCODE"
+msgstr "Zip code"
 
 msgid "GENERAL##MENU##ABOUT"
 msgstr "About us"
@@ -130,6 +154,17 @@ msgstr ""
 
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+"Use here your legal address information, not the address from for instance a "
+"certain processing location or office."
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr "Address Information Recycling Plant"
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr "Company information"
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr "Make sure you are using the correct details to login"
