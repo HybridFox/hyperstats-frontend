@@ -4,7 +4,6 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { CdkStepperModule } from '@angular/cdk/stepper';
 
 import { ApiModule } from '@api/api';
 
@@ -58,7 +57,6 @@ import { Pages } from './pages';
 
     SharedModule,
     ReactiveFormsModule,
-    CdkStepperModule,
 
     // Toastr
     BrowserAnimationsModule,
