@@ -9,9 +9,9 @@ import { takeUntil } from 'rxjs/operators';
 })
 
 export class FileUploadComponent implements OnInit, OnDestroy {
-    @Input() title?: string;
+    @Input() title ?: string;
     @Input() description ?: string;
-    @Input() details?: string;
+    @Input() details ?: string;
     @Input() label ?: string;
     @Input() control: FormControl = new FormControl('');
 
