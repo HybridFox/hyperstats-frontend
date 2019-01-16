@@ -30,6 +30,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 import { MainMenuModule } from '@ui/main-menu';
 import { UserMenuModule } from '@ui/user-menu';
 import { MenuModule } from '@ui/menu';
+import { VerticalMenuModule } from '@ui/vertical-menu';
 
 import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
 import { Components } from './components';
@@ -77,6 +78,7 @@ import { Pages } from './pages';
     MainMenuModule,
     UserMenuModule,
     MenuModule,
+    VerticalMenuModule
   ],
   providers: [
     StoreService,
