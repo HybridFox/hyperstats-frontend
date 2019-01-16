@@ -36,6 +36,7 @@
     "@types/ramda": "^0.25.44",
     "core-js": "^2.5.4",
     "cors": "2.8.5",
+    "country-list": "2.1.0",
     "deep-extend": "^0.6.0",
     "i18next-conv": "^8.0.1",
     "ng-redux": "^4.1.0",

@@ -8,16 +8,24 @@
 		"LABELS": {
 			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
+			"BOX": "",
+			"CITY": "",
+			"COMPANYNAME": "",
 			"COPYRIGHT": "",
+			"COUNTRY": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
-			"WELCOME": ""
+			"SAVE": "",
+			"STREETNAME": "",
+			"WELCOME": "",
+			"ZIPCODE": ""
 		},
 		"MENU": {
 			"AUDITTRIAL": "",
@@ -38,6 +46,11 @@
 			"CONTENT-2": "",
 			"SECTION-1": "",
 			"SECTION-2": "",
+			"TITLE": ""
+		},
+		"COMPANYINFORMATION": {
+			"HELP": "",
+			"SUBTITLE": "",
 			"TITLE": ""
 		}
 	},
