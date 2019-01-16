@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
+import { VerticalMenuComponent } from './vertical-menu/vertical-menu.component';
 
 export const Components = [
     PageTitleComponent,
@@ -13,5 +14,6 @@ export const Components = [
     FooterComponent,
     MainMenuComponent,
     MenuComponent,
-    UserMenuComponent
+    UserMenuComponent,
+    VerticalMenuComponent
 ];
