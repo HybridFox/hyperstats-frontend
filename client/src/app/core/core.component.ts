@@ -9,7 +9,7 @@ import { AuthActions } from '@store/auth';
 })
 export class CoreComponent implements OnInit {
   title = 'rare';
-  public actionButton = {label: 'New report'};
+  public actionButton = {label: 'New report', link: '/new-report'};
   public user: any;
 
   constructor(
