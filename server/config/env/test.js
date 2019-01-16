@@ -8,7 +8,7 @@ module.exports = {
 			domain: "",
 		},
 		mongo: {
-			url: "mongodb://host.docker.internal:27011/rare",
+			url: process.env.CIRCLECI ? "mongodb://localhost:27017/rare" : "mongodb://mongodb-rare/rare",
 		},
 	},
 };

@@ -23,7 +23,7 @@ describe("Integration", () => {
 				email: "passwordreset@example.com",
 			});
 
-			await supertest(server).get("/api/auth/logout").end();
+			await supertest(server).get("/api/auth/logout");
 		});
 
 		afterEach(() => reset());
@@ -69,8 +69,6 @@ describe("Integration", () => {
 					const match = myRegexp.exec(sentMail[0].html);
 
 					token = match[1];
-
-					console.log(token);
 				});
 
 			await supertest(server)
