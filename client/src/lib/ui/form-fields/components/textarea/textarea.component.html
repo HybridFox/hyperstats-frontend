@@ -1,0 +1,9 @@
+<div class="a-input" [class]="class">
+  <label *ngIf="label" class="a-input__label">{{ label }}</label>
+  <div class="a-input__field-container">
+    <textarea [formControl]="control" [type]="type" class="a-input__field" [placeholder]="placeholder"></textarea>
+    <span *ngIf="suffix" class="a-input__suffix">{{ suffix }}</span>
+  </div>
+  <p *ngIf="description" class="a-input__description">{{ description }}</p>
+  <p *ngIf="control.errors && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.' + firstError() | translate }}</p>
+</div>
