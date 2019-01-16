@@ -27,19 +27,9 @@ import { AuthGuard } from '@guards/auth.guard';
 import { ErrorInterceptor } from '@helpers/error.interceptor';
 
 import { FormFieldsModule } from '@ui/form-fields';
-<<<<<<< Updated upstream
-import { MainMenuModule } from '@ui/main-menu';
-import { UserMenuModule } from '@ui/user-menu';
-import { MenuModule } from '@ui/menu';
-
-import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
-import { Components } from './components';
-=======
 
 import { Pages } from './pages';
-import { CodesService } from './services/codes/codes.service';
 import { TranslateToastComponent } from '@shared/components/translate-toast/translate-toast.component';
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
