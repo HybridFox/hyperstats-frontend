@@ -24,7 +24,7 @@ export class InputFractionPageComponent implements OnInit {
   }
 
   public addElement() {
-    this.formData.addOutputElement();
+    this.formData.addInputElement();
   }
 
   public previousStep() {

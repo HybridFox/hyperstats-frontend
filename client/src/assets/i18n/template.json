@@ -75,6 +75,7 @@
 	"WIZARD": {
 		"ADDITIONAL-INFORMATION": {
 			"TITLES": {
+				"ADDITIONAL-INFORMATION": "",
 				"FILE-UPLOADS": ""
 			}
 		},
@@ -156,6 +157,15 @@
 				"CALCULATED-EFFICIENCY": "",
 				"OVERVIEW-ELEMENTS": ""
 			}
+		},
+		"TITLES": {
+			"ADDITIONAL-INFORMATION": "",
+			"ADDITIVES": "",
+			"FILE-REPORT": "",
+			"INPUT-FRACTION": "",
+			"NEW-REPORT": "",
+			"OUTPUT-FRACTION": "",
+			"RECYCLING-EFFICIENCY": ""
 		}
 	}
 }

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-16T11:46:13.166Z\n"
-"PO-Revision-Date: 2019-01-16T11:46:13.167Z\n"
+"POT-Creation-Date: 2019-01-16T13:01:01.164Z\n"
+"PO-Revision-Date: 2019-01-16T13:01:01.164Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -152,6 +152,9 @@ msgstr ""
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
+msgstr ""
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr ""
 
@@ -288,6 +291,27 @@ msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##CALCULATED-EFFICIENCY"
 msgstr ""
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##OVERVIEW-ELEMENTS"
+msgstr ""
+
+msgid "WIZARD##TITLES##ADDITIONAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##TITLES##ADDITIVES"
+msgstr ""
+
+msgid "WIZARD##TITLES##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##TITLES##INPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##TITLES##NEW-REPORT"
+msgstr ""
+
+msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr ""
 
 msgctxt "TERMS"

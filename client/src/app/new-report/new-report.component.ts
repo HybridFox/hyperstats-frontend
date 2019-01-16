@@ -14,10 +14,11 @@ export class NewReportComponent implements OnInit, OnDestroy, AfterContentInit {
   public data: FormGroup;
   public steps: any[]; // TODO: Type
   public selectedIndex = 0;
+  public currentTitle: string;
   public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   constructor(
-    private formData: FormDataService,
+    public formData: FormDataService,
     private router: Router
   ) {}
 
@@ -29,38 +30,41 @@ export class NewReportComponent implements OnInit, OnDestroy, AfterContentInit {
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
           const route = event.url.split('/').slice(-1)[0];
-          this.selectedIndex = this.steps.reduce((acc, step, index) => step.route === route ? index : acc, 0);
+          [this.selectedIndex, this.currentTitle] = this.steps.reduce((acc, step, index) => step.route === route ? [
+            index,
+            step.name
+          ] : acc, []);
         }
       });
 
     this.data = this.formData.getFormData();
     this.steps = [
       {
-        name: 'New Report',
+        name: 'WIZARD.TITLES.NEW-REPORT',
         route: 'information'
       },
       {
-        name: 'Input Fraction',
+        name: 'WIZARD.TITLES.INPUT-FRACTION',
         route: 'input-fraction'
       },
       {
-        name: 'Additives',
+        name: 'WIZARD.TITLES.ADDITIVES',
         route: 'additives'
       },
       {
-        name: 'Output Fraction',
+        name: 'WIZARD.TITLES.OUTPUT-FRACTION',
         route: 'output-fraction'
       },
       {
-        name: 'Recycling Efficiency',
+        name: 'WIZARD.TITLES.RECYCLING-EFFICIENCY',
         route: 'recycling-efficiency'
       },
       {
-        name: 'Add. Information',
+        name: 'WIZARD.TITLES.ADDITIONAL-INFORMATION',
         route: 'additional-information'
       },
       {
-        name: 'File Report',
+        name: 'WIZARD.TITLES.FILE-REPORT',
         route: 'file-report'
       },
     ];
@@ -73,5 +77,7 @@ export class NewReportComponent implements OnInit, OnDestroy, AfterContentInit {
 
   public ngAfterContentInit(): void {
     this.selectedIndex = this.steps.reduce((acc, step, index) => step.route === this.router.url.split('/').slice(-1)[0] ? index : acc, 0);
+    this.currentTitle = this.steps.reduce((acc, step) =>
+      step.route === this.router.url.split('/').slice(-1)[0] ? step.name : acc, '');
   }
 }

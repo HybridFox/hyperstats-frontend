@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Injectable()
 export class FormDataService {
     private formGroup: any;
+    public currentTitle: string;
 
     constructor(
         private formBuilder: FormBuilder
@@ -19,7 +20,11 @@ export class FormDataService {
                 weightInput: ['', Validators.required],
                 shareOfBatteryType: ['', Validators.required],
                 weightBatteryType: ['', Validators.required],
-                elements: this.formBuilder.array([this.createInputElement()])
+                elements: this.formBuilder.array([this.createInputElement()]),
+                descriptionOfMethodologyShare: ['', Validators.required],
+                descriptionOfMethodologyChemicalComposition: ['', Validators.required],
+                massOfExternalJacket: ['', Validators.required],
+                massOfOuterCasings: ['', Validators.required],
             }),
             additives: this.formBuilder.array([this.createAdditive()]),
             outputFraction: this.formBuilder.array([this.createOutputElement()]),

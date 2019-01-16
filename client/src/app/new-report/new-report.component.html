@@ -1,4 +1,7 @@
 <div class="container u-margin-bottom-x-large">
+  <app-page-title
+    [title]="currentTitle | translate"
+  ></app-page-title>
   <div class="m-card--primary u-margin-top">
     <pre style="display: none;">{{ data.value | json }}</pre>
     <div class="m-card">
@@ -12,7 +15,7 @@
               <span class="a-icon a-icon--checkmark"></span>
             </div>
             <div class="m-steps__step-text">
-              {{ step.name }}
+              {{ step.name | translate }}
             </div>
           </a>
         </div>

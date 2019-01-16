@@ -58,7 +58,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            transition: border .2s ease;
 
             &::placeholder {
                 color: $tundora;
@@ -67,6 +67,11 @@
 
             &.ng-dirty.ng-invalid {
                 border: 1.5px solid $danger;
+            }
+
+            &:focus {
+                border: 1.5px solid rgba($gray, 0.5);
+                outline-width: 0;
             }
         }
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-16T11:46:13.166Z\n"
+"POT-Creation-Date: 2019-01-16T13:01:01.164Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -184,6 +184,11 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
+#, fuzzy
+#| msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Addition information"
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"
 
@@ -338,6 +343,27 @@ msgstr "Calculated recycling efficiency"
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##OVERVIEW-ELEMENTS"
 msgstr "Overview elements"
+
+msgid "WIZARD##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Add. Information"
+
+msgid "WIZARD##TITLES##ADDITIVES"
+msgstr "Additives"
+
+msgid "WIZARD##TITLES##FILE-REPORT"
+msgstr "File Report"
+
+msgid "WIZARD##TITLES##INPUT-FRACTION"
+msgstr "Input Fraction"
+
+msgid "WIZARD##TITLES##NEW-REPORT"
+msgstr "New Report"
+
+msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+msgstr "Output Fraction"
+
+msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+msgstr "Recycling Efficiency"
 
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"

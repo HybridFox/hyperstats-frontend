@@ -75,6 +75,7 @@
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
+                "ADDITIONAL-INFORMATION": "Addition information",
                 "FILE-UPLOADS": "File uploads"
             }
         },
@@ -147,7 +148,7 @@
         },
         "RECYCLING-EFFICIENCY": {
             "LABELS": {
-                "EFFICIENCY": "Recycling efficienc",
+                "EFFICIENCY": "Recycling efficiency",
                 "ELEMENTS": "Elements",
                 "INPUT": "Input",
                 "OUTPUT": "Output"
@@ -156,6 +157,15 @@
                 "CALCULATED-EFFICIENCY": "Calculated recycling efficiency",
                 "OVERVIEW-ELEMENTS": "Overview elements"
             }
+        },
+        "TITLES": {
+            "ADDITIONAL-INFORMATION": "Add. Information",
+            "ADDITIVES": "Additives",
+            "FILE-REPORT": "File Report",
+            "INPUT-FRACTION": "Input Fraction",
+            "NEW-REPORT": "New Report",
+            "OUTPUT-FRACTION": "Output Fraction",
+            "RECYCLING-EFFICIENCY": "Recycling Efficiency"
         }
     }
 }
