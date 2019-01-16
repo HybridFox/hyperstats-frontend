@@ -14,7 +14,6 @@ const searchCache = module.exports.searchCache = (moduleName, callback) => {
 	// Check if the module has been resolved and found within
 	// the cache
 	if (mod && ((mod = require.cache[mod]) !== undefined)) {
-		console.log("found");
 		// Recursively go over the results
 		(function traverse(m) {
 			visited[m.id] = true;
