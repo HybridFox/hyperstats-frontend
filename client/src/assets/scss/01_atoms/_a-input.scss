@@ -71,12 +71,17 @@
         }
 
         select.a-input__field {
+            overflow: visible;
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
             background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
             background-size: 10px;
+<<<<<<< Updated upstream
             padding: $spacer-x-small $spacer-small;
+=======
+            padding: 0 $spacer-small;
+>>>>>>> Stashed changes
         }
 
         select.a-input__field::-ms-expand {

@@ -1,0 +1,10 @@
+<div class="m-card u-margin-top">
+    <div class="m-card m-card--dark u-margin-top" *ngFor="let outputElement of formGroup.controls; let i = index">
+        <app-text-input label="Test" [control]="outputElement.get('name')"></app-text-input>
+    </div>
+    <a
+        class="u-margin-top a-button--primary a-button-outline has-icon-after"
+        (click)="addItem()">
+            AND ANOTHER ONE <i class="a-icon a-icon--plus"></i>
+    </a>
+</div>

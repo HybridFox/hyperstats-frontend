@@ -35,6 +35,11 @@ import { MenuModule } from '@ui/menu';
 
 import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
 import { Components } from './components';
+<<<<<<< Updated upstream
+=======
+import { Pages } from './pages';
+import { CodesService } from './services/codes/codes.service';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -81,6 +86,7 @@ import { Components } from './components';
   ],
   providers: [
     StoreService,
+    CodesService,
     Services,
     AuthGuard,
 

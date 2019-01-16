@@ -27,6 +27,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
+      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
     ]
   }
 ];

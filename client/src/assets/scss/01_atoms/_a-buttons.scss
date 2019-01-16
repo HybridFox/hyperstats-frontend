@@ -76,6 +76,16 @@
   }
 }
 
+.a-button--link {
+  @extend .a-button;
+  background: transparent;
+  border: none;
+  color: $blue;
+  letter-spacing: 0;
+  font-size: .9em;
+  text-decoration: underline;
+}
+
 // Button outline colors.
 .a-button-outline {
   &.a-button--primary {
