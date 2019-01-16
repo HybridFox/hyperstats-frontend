@@ -9,6 +9,7 @@ RUN npm i npm@latest -g
 
 WORKDIR /
 COPY package.json package-lock.json* .npmrc ./
+ENV MONGOMS_DISABLE_POSTINSTALL true
 RUN npm install --silent
 ENV PATH /node_modules/.bin:$PATH
 
