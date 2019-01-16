@@ -6,9 +6,9 @@ import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  templateUrl: './input-fraction.page.html',
+  templateUrl: './additives.page.html',
 })
-export class InputFractionPageComponent implements OnInit {
+export class AdditivesPageComponent implements OnInit {
   public form: any;
 
   constructor(
@@ -20,22 +20,22 @@ export class InputFractionPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.form = this.formData.getFormData().get('inputFraction');
+    this.form = this.formData.getFormData().get('additives');
   }
 
-  public addElement() {
-    this.formData.addOutputElement();
+  public addAdditive() {
+    this.formData.addAdditive();
   }
 
   public previousStep() {
-    this.router.navigate(['../information'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['../input-fraction'], {relativeTo: this.activatedRoute});
   }
 
   public nextStep() {
     FormHelper.markAsDirty(this.form);
 
     if (this.form.valid) {
-      this.router.navigate(['../additives'], {relativeTo: this.activatedRoute});
+      this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
     } else {
       this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
     }

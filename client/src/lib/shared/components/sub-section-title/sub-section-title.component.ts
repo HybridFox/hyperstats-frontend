@@ -6,4 +6,5 @@ import { Component, Input } from '@angular/core';
 })
 export class SubSectionTitleComponent {
   @Input() title: string;
+  @Input() class = '';
 }

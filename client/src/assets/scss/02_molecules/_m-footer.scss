@@ -8,13 +8,13 @@
 
     &__copyright {
         display: inline-block;
-        margin: $spacer-large $spacer-large $spacer-large 0;
+        margin: $spacer $spacer $spacer 0;
         text-transform: capitalize;
     }
 
     &__link {
         display: inline-block;
-        margin: $spacer-large;
+        margin: $spacer;
         text-transform: capitalize;
     }
 }

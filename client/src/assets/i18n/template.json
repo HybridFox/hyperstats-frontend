@@ -9,6 +9,7 @@
 			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
 			"BOX": "",
+			"CANCEL": "",
 			"CITY": "",
 			"COMPANYNAME": "",
 			"COPYRIGHT": "",
@@ -18,11 +19,14 @@
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"NEXT-STEP": "",
 			"NUMBER": "",
 			"PASSWORD": "",
+			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
 			"SAVE": "",
+			"SELECT-OPTION": "",
 			"STREETNAME": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
@@ -65,6 +69,92 @@
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
+			}
+		}
+	},
+	"WIZARD": {
+		"ADDITIONAL-INFORMATION": {
+			"TITLES": {
+				"FILE-UPLOADS": ""
+			}
+		},
+		"ADDITIVES": {
+			"LABELS": {
+				"ADD-ADDITIONAL-ADDITIVE": "",
+				"TYPE": "",
+				"WEIGHT": ""
+			},
+			"TITLES": {
+				"OVERVIEW": ""
+			}
+		},
+		"INPUT-FRACTION": {
+			"LABELS": {
+				"ADD-ADDITIONAL-ELEMENT": "",
+				"ELEMENTS": "",
+				"IMPURITIES": "",
+				"MASS": "",
+				"MASS-JACKET": "",
+				"MASS-OUTER-CASINGS": "",
+				"METHODOLOG-CHEMICAL": "",
+				"METHODOLOG-WASTE": "",
+				"PACKAGING-CASING": "",
+				"PROCESS-CHEMESTRY": "",
+				"SHARE-BATTERY": "",
+				"SHARE-INPUT-FRACTION": "",
+				"WEIGHT-BATTERY": "",
+				"WEIGHT-INPUT-FRACTION": ""
+			},
+			"TITLES": {
+				"ADDITIONAL-INFORMATION": "",
+				"ELEMENTS-COMPONENTS": "",
+				"EXCESS-MATERIAL": ""
+			}
+		},
+		"NEW-REPORT": {
+			"DESCRIPTION": {
+				"RECYCLING-PROCESS": "",
+				"REPORT-NAME": "",
+				"REPORT-RECEIVER": "",
+				"REPORTING-YEAR": ""
+			},
+			"LABELS": {
+				"RECYCLING-PROCESS": "",
+				"REPORT-NAME": "",
+				"REPORT-RECEIVER": "",
+				"REPORTING-YEAR": ""
+			},
+			"TITLES": {
+				"GENERAL-INFORMATION": ""
+			}
+		},
+		"OUTPUT-FRACTION": {
+			"DESCRIPTIONS": {
+				"OF-ELEMENT": "",
+				"ON-DRY-WEIGHT-BASIS": ""
+			},
+			"LABELS": {
+				"ADD-ADDITIONAL-ELEMENT": "",
+				"CLASSIFICATION": "",
+				"ELEMENT": "",
+				"MASS": "",
+				"REPLACED-VIRGIN-MATERIAL": "",
+				"SHARE-OUTPUT-FRACTION": ""
+			},
+			"TITLES": {
+				"OVERVIEW": ""
+			}
+		},
+		"RECYCLING-EFFICIENCY": {
+			"LABELS": {
+				"EFFICIENCY": "",
+				"ELEMENTS": "",
+				"INPUT": "",
+				"OUTPUT": ""
+			},
+			"TITLES": {
+				"CALCULATED-EFFICIENCY": "",
+				"OVERVIEW-ELEMENTS": ""
 			}
 		}
 	}

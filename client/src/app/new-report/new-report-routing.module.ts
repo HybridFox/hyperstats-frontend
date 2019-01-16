@@ -22,6 +22,22 @@ const routes: Routes = [
       {
         path: 'input-fraction',
         component: Pages.InputFractionPageComponent
+      },
+      {
+        path: 'additives',
+        component: Pages.AdditivesPageComponent
+      },
+      {
+        path: 'output-fraction',
+        component: Pages.OutputFractionPageComponent
+      },
+      {
+        path: 'recycling-efficiency',
+        component: Pages.RecyclingEfficiencyPageComponent
+      },
+      {
+        path: 'additional-information',
+        component: Pages.AdditionalInformationPageComponent
       }
     ]
   }

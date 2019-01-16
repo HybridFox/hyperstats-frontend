@@ -1,0 +1,77 @@
+<div class="m-card--primary u-margin-top">
+    <app-sub-section-title
+        class="u-margin-bottom"
+        [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate"
+    ></app-sub-section-title>
+    <div class="m-card--secondary u-margin-bottom" *ngFor="let outputFraction of form.controls; let i = index">
+        <div class="l-grid__row l-grid--with-margins">
+            <div class="l-grid__col-6-12">
+                <app-select-input
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
+                    [control]="outputFraction.get('element')"
+                    [options]="codesService.elements()"
+                ></app-select-input>
+            </div>
+            <div class="l-grid__col-3-12">
+                <app-text-input
+                    suffix="%"
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.SHARE-OUTPUT-FRACTION' | translate"
+                    [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.ON-DRY-WEIGHT-BASIS' | translate"
+                    [control]="outputFraction.get('share')"
+                ></app-text-input>
+            </div>
+            <div class="l-grid__col-3-12">
+                <app-text-input
+                    suffix="kg"
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.MASS' | translate"
+                    [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.ON-DRY-WEIGHT-BASIS' | translate"
+                    [control]="outputFraction.get('mass')"
+                ></app-text-input>
+            </div>
+        </div>
+        <div class="l-grid__row l-grid--with-margins">
+            <div class="l-grid__col-6-12">
+                <app-select-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.CLASSIFICATION' | translate"
+                    [control]="outputFraction.get('classification')"
+                    [options]="codesService.elements()"
+                ></app-select-input>
+            </div>
+            <div class="l-grid__col-6-12">
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.REPLACED-VIRGIN-MATERIAL' | translate"
+                    [control]="outputFraction.get('replacedMaterial')"
+                ></app-text-input>
+            </div>
+        </div>
+        <div class="l-grid__row l-grid--with-margins">
+            <div class="l-grid__col-6-12">
+                <app-select-input
+                    class="u-margin-top-x-large u-margin-bottom"
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
+                    [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.OF-ELEMENT' | translate"
+                    [control]="outputFraction.get('elementClassification')"
+                    [options]="codesService.elements()"
+                ></app-select-input>
+            </div>
+            <div class="l-grid__col-6-12">
+                <app-text-input
+                    class="u-margin-top-x-large u-margin-bottom"
+                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.SHARE-OUTPUT-FRACTION' | translate"
+                    [control]="outputFraction.get('elementReplacedMaterial')"
+                ></app-text-input>
+            </div>
+        </div>
+    </div>
+    <a
+        class="a-button--primary a-button-outline has-icon-after"
+        (click)="addOutputFraction()">
+            {{ 'WIZARD.OUTPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
+    </a>
+    <div class="u-margin-top-large">
+        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+        <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
+    </div>
+</div>

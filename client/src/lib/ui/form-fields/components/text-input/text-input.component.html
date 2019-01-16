@@ -4,6 +4,6 @@
     <input [formControl]="control" [type]="type" class="a-input__field" [placeholder]="placeholder">
     <span *ngIf="suffix" class="a-input__suffix">{{ suffix }}</span>
   </div>
-  <p *ngIf="description" class="a-input__description">{{ description }}</p>
+  <p *ngIf="description && (!control.errors || !control.dirty)" class="a-input__description">{{ description }}</p>
   <p *ngIf="control.errors && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.' + firstError() | translate }}</p>
 </div>

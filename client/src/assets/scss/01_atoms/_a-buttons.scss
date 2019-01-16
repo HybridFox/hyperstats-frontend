@@ -9,7 +9,7 @@
   border: 1px solid;
   text-decoration: none;
   @include transition(all 0.5s ease-in-out);
-  display: flex;
+  display: inline-flex;
   position: relative;
   cursor: pointer;
   &:hover,
@@ -39,6 +39,18 @@
   &:hover {
     background-color: rgba($blue, 0.8);
     border-color: rgba($blue, 0.8);
+  }
+}
+
+.a-button--ghost {
+  @extend .a-button;
+  background-color: $white;
+  border-color: $blue;
+  color: $blue;
+  text-transform: uppercase;
+  &:hover {
+    border-color: rgba($blue, 0.5);
+    color: rgba($blue, 0.5);
   }
 }
 

@@ -1,1 +1,1 @@
-export * from './new.page';
+export * from './additives.page';
