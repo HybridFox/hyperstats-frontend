@@ -6,7 +6,7 @@ mongoose.Promise = Promise;
 module.exports = async() => {
 	const mongoServer = new MongoMemoryServer({
 		binary: {
-			version: '4.0.0',
+			version: "4.0.0",
 		}
 	});
 	const mongoUri = await mongoServer.getConnectionString();
