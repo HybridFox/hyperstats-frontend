@@ -6,6 +6,7 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
 import { MenuComponent } from './menu/menu.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { VerticalMenuComponent } from './vertical-menu/vertical-menu.component';
+import { StepsComponent } from './steps/steps.component';
 
 export const Components = [
     PageTitleComponent,
@@ -15,5 +16,6 @@ export const Components = [
     MainMenuComponent,
     MenuComponent,
     UserMenuComponent,
-    VerticalMenuComponent
+    VerticalMenuComponent,
+    StepsComponent
 ];
