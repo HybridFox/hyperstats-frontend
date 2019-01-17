@@ -35,8 +35,6 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
     ).subscribe((value) => {
       this.updateValue(value);
     });
-
-    console.log(this.disabled);
   }
 
   public ngOnDestroy() {
