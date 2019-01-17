@@ -14,6 +14,7 @@ export class FileUploadComponent implements OnInit, OnDestroy {
     @Input() details?: string;
     @Input() label?: string;
     @Input() control: FormControl = new FormControl('');
+    @Input() multiple: boolean;
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 

@@ -58,7 +58,7 @@
     }
 }
 
-.m-file-upload--browse {
+.m-file-upload--single-file {
     position: relative;
     display: flex;
     color: $blue;
@@ -70,9 +70,4 @@
     border: 1px solid $dusty-gray;
     border-radius: 4px;
     text-align: center;
-    .m-file-upload__action {
-        justify-content: center;
-        margin: 0;
-        color: $tundora;
-    }
 }
