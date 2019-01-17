@@ -22,6 +22,11 @@
       margin: 0 $spacer-x-small / 2 0 $spacer-x-small / 4;
     }
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
 }
 
 // Button types.
@@ -87,7 +92,6 @@
     text-transform: none;
     font-size: $font-size-regular;
     font-weight: $font-weight-regular;
-    padding: $spacer-x-small 0 $spacer-x-small $spacer-small;
     letter-spacing: 1px;
     &:hover {
       background-color: $white;
@@ -118,4 +122,8 @@
   font-size: $font-size-small;
   letter-spacing: 0.6px;
   line-height: 17px;
+}
+
+.a-button--has-icon-after {
+  padding: $spacer-x-small 0 $spacer-x-small $spacer-small;
 }

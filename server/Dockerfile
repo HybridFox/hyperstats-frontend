@@ -9,7 +9,7 @@ RUN npm i npm@latest -g
 
 WORKDIR /
 COPY package.json package-lock.json* .npmrc ./
-RUN npm install --silent
+RUN MONGOMS_VERSION=4.0.0 npm install --silent
 ENV PATH /node_modules/.bin:$PATH
 
 WORKDIR /app

@@ -1,28 +1,57 @@
 {
 	"GENERAL": {
+		"FIELD-ERRORS": {
+			"EMAIL": "",
+			"PASSWORD": "",
+			"REQUIRED": ""
+		},
 		"LABELS": {
+			"ACCEPT-TERMS": "",
+			"ACCEPT_TERMS": "",
+			"BOX": "",
+			"CITY": "",
+			"COMPANYNAME": "",
 			"COPYRIGHT": "",
+			"COUNTRY": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
-			"WELCOME": ""
+			"SAVE": "",
+			"STREETNAME": "",
+			"WELCOME": "",
+			"ZIPCODE": ""
 		},
 		"MENU": {
 			"AUDITTRIAL": "",
 			"COMPANYINFORMATION": "",
 			"HELP": "",
+			"LOGIN": "",
 			"LOGOFF": "",
-			"NEWREPORT": "",
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
+		}
+	},
+	"PAGE": {
+		"ABOUT": {
+			"CONTENT-1": "",
+			"CONTENT-2": "",
+			"SECTION-1": "",
+			"SECTION-2": "",
+			"TITLE": ""
+		},
+		"COMPANYINFORMATION": {
+			"HELP": "",
+			"SUBTITLE": "",
+			"TITLE": ""
 		}
 	},
 	"TOAST": {

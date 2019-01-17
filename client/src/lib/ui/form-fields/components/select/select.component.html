@@ -1,7 +1,7 @@
 <div class="a-input">
   <label *ngIf="label" class="a-input__label">{{ label | translate }}</label>
   <div class="a-input__field-container">
-    <select [formControl]="value" class="a-input__field">
+    <select [formControl]="control" class="a-input__field">
       <option *ngFor="let option of options" [value]="option.value">{{ option.label | translate }}</option>
     </select>
   </div>

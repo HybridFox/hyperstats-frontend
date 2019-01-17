@@ -88,4 +88,13 @@ export class AuthActions {
         }),
       ).toPromise();
   }
+
+  public logout() {
+    return this.authRepository
+      .logout()
+      .toPromise()
+      .then(() =>
+        this.handler.dispatch(ACTIONS.CLEAR_USER)
+      );
+  }
 }
