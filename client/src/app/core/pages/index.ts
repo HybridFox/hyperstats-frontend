@@ -17,7 +17,6 @@ export const Pages = [
     LoginPageComponent,
     RegisterPageComponent,
     CompanyPageComponent,
-    CompanyPageComponent,
     VerificationSucceededPageComponent,
     VerificationFailedPageComponent
 ];
