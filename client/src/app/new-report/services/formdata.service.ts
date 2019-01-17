@@ -90,4 +90,8 @@ export class FormDataService {
     public getFormData(): FormGroup {
         return this.formGroup;
     }
+
+    public getRecyclingProcess(): string {
+        return this.formGroup.controls.information.controls.recyclingProcess.value;
+    }
 }

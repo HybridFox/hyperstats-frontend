@@ -1,4 +1,5 @@
 <div class="m-card--primary u-margin-top">
+    {{ formData.getRecyclingProcess() }}
     <app-sub-section-title
         [title]="'WIZARD.NEW-REPORT.TITLES.GENERAL-INFORMATION' | translate"
     ></app-sub-section-title>
@@ -7,7 +8,7 @@
             <app-select-input
                 class="u-margin-top-x-large"
                 [label]="'WIZARD.NEW-REPORT.LABELS.REPORTING-YEAR' | translate"
-                [control]="formData.getFormData().get('information').get('reportingYear')"
+                [control]="form.get('reportingYear')"
                 [options]="codesService.years()"
             ></app-select-input>
         </div>

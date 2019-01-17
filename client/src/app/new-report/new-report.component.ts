@@ -5,6 +5,8 @@ import { Router, NavigationStart } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import { Step } from './store/types';
+
 @Component({
   selector: 'app-new-report',
   encapsulation: ViewEncapsulation.None,
@@ -12,7 +14,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class NewReportComponent implements OnInit, OnDestroy, AfterContentInit {
   public data: FormGroup;
-  public steps: any[]; // TODO: Type
+  public steps: Step[];
   public selectedIndex = 0;
   public currentTitle: string;
   public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
