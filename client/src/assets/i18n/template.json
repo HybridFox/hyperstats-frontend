@@ -22,8 +22,10 @@
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"TRY-AGAIN": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
@@ -52,17 +54,62 @@
 			"HELP": "",
 			"SUBTITLE": "",
 			"TITLE": ""
+		},
+		"RESET-PASSWORD": {
+			"TITLE": ""
+		},
+		"VERIFICATION-FAILED": {
+			"CONTENT": "",
+			"TITLE": ""
+		},
+		"VERIFICATION-SUCCEEDED": {
+			"CONTENT": "",
+			"TITLE": ""
 		}
 	},
 	"TOAST": {
+		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"GENERAL": {
+			"INVALID": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"LOGIN": {
 			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		},
 		"REGISTER": {
 			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RESET-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}

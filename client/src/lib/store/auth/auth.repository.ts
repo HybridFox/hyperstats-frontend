@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config.service';
 import { Observable } from 'rxjs';
-import { ProfileInterface, RegisterInterface } from './auth.interface';
+import { ProfileInterface, RegisterInterface, RequestPasswordResetInterface } from './auth.interface';
 
 @Injectable()
 export class AuthRepository {
@@ -22,7 +22,7 @@ export class AuthRepository {
   }
 
   public fetchProfile() {
-    const url = this.apiConfig.baseUrl('/auth/profile');
+    const url = this.apiConfig.baseUrl('/profile');
 
     return this.http
       .get(url);
@@ -37,6 +37,15 @@ export class AuthRepository {
         firstname,
         lastname,
         password
+      });
+  }
+
+  public requestPasswordReset({ email }: RequestPasswordResetInterface) {
+    const url = this.apiConfig.baseUrl('/auth/request-password-reset');
+
+    return this.http
+      .post(url, {
+        email
       });
   }
 

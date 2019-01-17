@@ -24,3 +24,7 @@ export interface UserInterface {
     created: string;
     lastUpdated: string;
 }
+
+export interface RequestPasswordResetInterface {
+    email: string;
+}

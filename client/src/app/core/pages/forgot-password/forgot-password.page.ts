@@ -1,29 +1,25 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthActions } from '@store/auth';
 
 @Component({
-    templateUrl: './login.page.html',
+    templateUrl: './forgot-password.page.html',
 })
-export class LoginPageComponent implements OnInit, OnDestroy {
-    public loginForm: FormGroup;
+export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
+    public resetPasswordForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
         private authAction: AuthActions,
         private toastrService: ToastrService,
-        private router: Router
     ) { }
 
     ngOnInit(): void {
-        this.loginForm = new FormGroup({
-            email: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required)
+        this.resetPasswordForm = new FormGroup({
+            email: new FormControl('', [Validators.required, Validators.email]),
         });
     }
 
@@ -33,13 +29,13 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.login({
-            ...this.loginForm.value
+        this.authAction.requestPasswordReset({
+            ...this.resetPasswordForm.value
         }).then(() => {
-            this.toastrService.success('TOAST.LOGIN.SUCCESS.TITLE');
-            this.router.navigate(['/']);
+            this.toastrService.error('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION', 'TOAST.RESET-PASSWORD.SUCCESS.TITLE');
+            this.resetPasswordForm.reset();
         }).catch(() => {
-            this.toastrService.success('TOAST.LOGIN.ERROR.DESCRIPTION', 'TOAST.LOGIN.ERROR.TITLE');
+            this.toastrService.error('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION', 'TOAST.RESET-PASSWORD.ERROR.TITLE');
         });
     }
 }
