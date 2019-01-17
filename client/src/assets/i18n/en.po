@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-15T10:09:39.956Z\n"
+"POT-Creation-Date: 2019-01-17T12:42:05.564Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -64,6 +64,9 @@ msgstr "Privacy"
 
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
+
+msgid "GENERAL##LABELS##RESET-PASSWORD"
+msgstr "Reset"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
@@ -166,6 +169,24 @@ msgstr "Company information"
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
 
+msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgstr "Please try again later"
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgstr "Could not register"
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgstr "Please check your inbox for a verification email"
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr "Registration successfull"
+
+msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
+msgstr "Please check if all fields are correct"
+
+msgid "TOAST##GENERAL##INVALID##TITLE"
+msgstr "Incorrect form state"
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr "We are having trouble verifying your email, please try again later"
 
@@ -185,11 +206,35 @@ msgstr "Make sure you are using the correct details to login"
 msgid "TOAST##LOGIN##ERROR##TITLE"
 msgstr "Cannot login"
 
+msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
+msgstr "You are now free to browse"
+
+msgid "TOAST##LOGIN##SUCCESS##TITLE"
+msgstr "Logged in!"
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
+
+msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for your verification mail"
+
+msgid "TOAST##REGISTER##SUCCESS##TITLE"
+msgstr "Successfully registered"
+
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not request a password reset"
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
 
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"

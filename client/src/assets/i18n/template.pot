@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-15T10:09:39.956Z\n"
-"PO-Revision-Date: 2019-01-15T10:09:39.956Z\n"
+"POT-Creation-Date: 2019-01-17T12:42:05.564Z\n"
+"PO-Revision-Date: 2019-01-17T12:42:05.565Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -60,6 +60,9 @@ msgid "GENERAL##LABELS##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##LABELS##REGISTER"
+msgstr ""
+
+msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr ""
 
 msgid "GENERAL##LABELS##SAVE"
@@ -176,16 +179,61 @@ msgstr ""
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr ""
 
+msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##TITLE"
+msgstr ""
+
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##TITLE"
 msgstr ""
 
+msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##SUCCESS##TITLE"
+msgstr ""
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
 msgctxt "TERMS"

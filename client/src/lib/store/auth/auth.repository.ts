@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config.service';
 import { Observable } from 'rxjs';
+import { RequestPasswordResetInterface } from './auth.interface';
 
 @Injectable()
 export class AuthRepository {
@@ -25,6 +26,15 @@ export class AuthRepository {
 
     return this.http
       .get(url);
+  }
+
+  public requestPasswordReset({ email }: RequestPasswordResetInterface) {
+    const url = this.apiConfig.baseUrl('/auth/request-password-reset');
+
+    return this.http
+      .post(url, {
+        email
+      });
   }
 
   public register({ firstname, lastname, email, password }): Observable<any> {

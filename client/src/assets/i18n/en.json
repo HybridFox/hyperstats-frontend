@@ -21,6 +21,7 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
+            "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
             "TRY-AGAIN": "Try again",
@@ -67,16 +68,50 @@
         }
     },
     "TOAST": {
+        "COMPANY-INFORMATION": {
+            "ERROR": {
+                "DESCRIPTION": "Please try again later",
+                "TITLE": "Could not register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your inbox for a verification email",
+                "TITLE": "Registration successfull"
+            }
+        },
+        "GENERAL": {
+            "INVALID": {
+                "DESCRIPTION": "Please check if all fields are correct",
+                "TITLE": "Incorrect form state"
+            }
+        },
         "LOGIN": {
             "ERROR": {
                 "DESCRIPTION": "Make sure you are using the correct details to login",
                 "TITLE": "Cannot login"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "You are now free to browse",
+                "TITLE": "Logged in!"
             }
         },
         "REGISTER": {
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for your verification mail",
+                "TITLE": "Successfully registered"
+            }
+        },
+        "RESET-PASSWORD": {
+            "ERROR": {
+                "DESCRIPTION": "Could not request a password reset",
+                "TITLE": "Something went wrong"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
             }
         }
     }
