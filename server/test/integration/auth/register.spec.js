@@ -2,6 +2,7 @@ const supertest = require("supertest");
 const startServer = require("../../mocks/startServer");
 const { expect } = require("chai");
 const { omit } = require("ramda");
+const removeTestUsers = require("../../helpers/removeTestUsers");
 
 describe("Integration", () => {
 	describe("Register", () => {
@@ -20,7 +21,10 @@ describe("Integration", () => {
 
 		afterEach(() => reset());
 
-		after(() => closeServer());
+		after(async() => {
+			await closeServer();
+			await removeTestUsers(["otherUser@example.com"]);
+		});
 
 		it("Should not be able to get register user with an email that already exists", () => {
 			return supertest(server)

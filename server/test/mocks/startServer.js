@@ -1,6 +1,7 @@
-const createTestUser = require("./createTestUser");
+const createTestUser = require("../helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
+const removeTestUsers = require("../helpers/removeTestUsers");
 
 module.exports = async() => {
 	mockery.enable({ warnOnUnregistered: false });
@@ -13,9 +14,11 @@ module.exports = async() => {
 	const reset = () => {
 		nodemailerMock.mock.reset();
 	};
-	const closeServer = () => {
+	const closeServer = async() => {
 		mockery.deregisterAll();
 		mockery.disable();
+
+		await removeTestUsers(["validuser@example.com"]);
 	};
 
 	return { server, reset, closeServer, nodemailerMock };

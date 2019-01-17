@@ -2,7 +2,8 @@ const supertest = require("supertest");
 const { expect } = require("chai");
 const startServer = require("../../mocks/startServer");
 const { omit } = require("ramda");
-const createTestUser = require("../../mocks/createTestUser");
+const createTestUser = require("../../helpers/createTestUser");
+const removeTestUsers = require("../../helpers/removeTestUsers");
 
 describe("Integration", () => {
 	describe("Reset password", () => {
@@ -19,16 +20,17 @@ describe("Integration", () => {
 			nodemailerMock = n;
 
 			// Create password modify test user
-			createTestUser({
-				email: "passwordreset@example.com",
-			});
+			createTestUser({ email: "passwordreset@example.com" });
 
 			await supertest(server).get("/api/auth/logout");
 		});
 
 		afterEach(() => reset());
 
-		after(() => closeServer());
+		after(async() => {
+			await closeServer();
+			await removeTestUsers(["passwordreset@example.com"]);
+		});
 
 		it("Should not be able to request a new password when no email is provided", () => {
 			return supertest(server)

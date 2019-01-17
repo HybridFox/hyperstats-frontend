@@ -1,6 +1,8 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
-const { mockMongoose, createTestUser } = require("../../../test/mocks");
+const { mockMongoose } = require("../../../test/mocks");
+const removeTestUsers = require("../../../test/helpers/removeTestUsers");
+const createTestUser = require("../../../test/helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
 
@@ -25,10 +27,12 @@ describe("RegisterHandler", () => {
 
 	afterEach(() => nodemailerMock.mock.reset());
 
-	after(() => {
+	after(async() => {
 		mockery.deregisterAll();
 		mockery.disable();
 		mongoServer.stop();
+
+		await removeTestUsers(["validuser@example.com"]);
 	});
 
 	it("Should error email is already registered", () => expect(registerHandler({
