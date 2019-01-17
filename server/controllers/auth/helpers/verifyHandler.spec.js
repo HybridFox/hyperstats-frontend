@@ -1,7 +1,6 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
-const removeTestUsers = require("../../../test/helpers/removeTestUsers");
 const createTestUser = require("../../../test/helpers/createTestUser");
 
 should();
@@ -19,10 +18,8 @@ describe("Verify handler", () => {
 		});
 	});
 
-	after(async() => {
+	after(() => {
 		mongoServer.stop();
-
-		await removeTestUsers(["validuser@example.com"]);
 	});
 
 	it("Should fail to verify the user if the token is wrong", () => {

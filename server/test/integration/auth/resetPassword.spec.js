@@ -20,7 +20,7 @@ describe("Integration", () => {
 			nodemailerMock = n;
 
 			// Create password modify test user
-			createTestUser({ email: "passwordreset@example.com" });
+			await createTestUser({ email: "passwordreset@example.com" });
 
 			await supertest(server).get("/api/auth/logout");
 		});
