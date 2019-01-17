@@ -1,10 +1,9 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
 const startServer = require("../../mocks/startServer");
-const { omit } = require("ramda");
 
 describe("Integration", () => {
-	describe("Profile get", () => {
+	describe("Profile update", () => {
 		let server;
 		let closeServer;
 		let reset;

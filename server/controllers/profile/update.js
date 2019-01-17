@@ -1,6 +1,6 @@
 const profileHelper = require("../../helpers/profile");
 const helpers = require("./helpers");
-const { prop, compose, curry, __, tap } = require("ramda");
+const { prop, compose, curry, __ } = require("ramda");
 
 module.exports = async(req, res, next) => {
 	try {
