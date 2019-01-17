@@ -22,6 +22,7 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
   @Input() description?: string;
   @Input() type = 'text';
   @Input() class?: string;
+  @Input() disabled = false;
   @Input() control: FormControl = new FormControl('');
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -34,6 +35,8 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
     ).subscribe((value) => {
       this.updateValue(value);
     });
+
+    console.log(this.disabled);
   }
 
   public ngOnDestroy() {

@@ -7,19 +7,26 @@
         },
         "LABELS": {
             "ACCEPT-TERMS": "I accept the terms and conditions",
-            "COPYRIGHT": "© Eucobat 2018",
+            "BOX": "Box",
+            "CITY": "City",
+            "COMPANYNAME": "Company naem",
+            "COPYRIGHT": "ï¿½ Eucobat 2018",
+            "COUNTRY": "Country",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
             "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "TOKEN": "Token",
             "WELCOME": "Welcome!",
+            "ZIPCODE": "Zipcode",
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
@@ -63,6 +70,16 @@
                 "TITLE": "Registration successfull"
             }
         },
+        "FORGOT-PASSWORD": {
+            "ERROR": {
+                "DESCRIPTION": "Could not request a password reset",
+                "TITLE": "Something went wrong"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
+            }
+        },
         "GENERAL": {
             "INVALID": {
                 "DESCRIPTION": "Please check if all fields are correct",
@@ -91,12 +108,12 @@
         },
         "RESET-PASSWORD": {
             "ERROR": {
-                "DESCRIPTION": "Could not request a password reset",
+                "DESCRIPTION": "Could not reset your password, try again later",
                 "TITLE": "Something went wrong"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your email for the link to reset your password",
-                "TITLE": "Password reset requested"
+                "DESCRIPTION": "You can now use your new password to login",
+                "TITLE": "Success!"
             }
         }
     }

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-10T08:26:53.198Z\n"
+"POT-Creation-Date: 2019-01-17T13:12:10.224Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,8 +23,20 @@ msgstr "This field is required"
 msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr "I accept the terms and conditions"
 
+msgid "GENERAL##LABELS##BOX"
+msgstr "Box"
+
+msgid "GENERAL##LABELS##CITY"
+msgstr "City"
+
+msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr "Company naem"
+
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr "� Eucobat 2018"
+
+msgid "GENERAL##LABELS##COUNTRY"
+msgstr "Country"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
@@ -40,6 +52,9 @@ msgstr "Lastname"
 
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
+
+msgid "GENERAL##LABELS##NUMBER"
+msgstr "Tel. nr"
 
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr "Password"
@@ -59,8 +74,14 @@ msgstr "Save"
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
 
+msgid "GENERAL##LABELS##TOKEN"
+msgstr "Token"
+
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
+
+msgid "GENERAL##LABELS##ZIPCODE"
+msgstr "Zipcode"
 
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
@@ -160,6 +181,18 @@ msgstr "Please check your inbox for a verification email"
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr "Registration successfull"
 
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not request a password reset"
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
+
 msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
 msgstr "Please check if all fields are correct"
 
@@ -191,16 +224,16 @@ msgid "TOAST##REGISTER##SUCCESS##TITLE"
 msgstr "Successfully registered"
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
-msgstr "Could not request a password reset"
+msgstr "Could not reset your password, try again later"
 
 msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
 msgstr "Something went wrong"
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "Please check your email for the link to reset your password"
+msgstr "You can now use your new password to login"
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
-msgstr "Password reset requested"
+msgstr "Success!"
 
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"

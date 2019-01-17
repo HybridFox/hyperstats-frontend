@@ -8,19 +8,25 @@
 		"LABELS": {
 			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
+			"BOX": "",
+			"CITY": "",
+			"COMPANYNAME": "",
 			"COPYRIGHT": "",
+			"COUNTRY": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
 			"REGISTER": "",
 			"RESET-PASSWORD": "",
-			"WELCOME": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"TOKEN": "",
+			"WELCOME": "",
 			"ZIPCODE": ""
 		},
 		"MENU": {
@@ -55,6 +61,16 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"FORGOT-PASSWORD": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
