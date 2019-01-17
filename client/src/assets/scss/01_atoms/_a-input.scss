@@ -76,6 +76,7 @@
             -moz-appearance: none;
             background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
             background-size: 10px;
+            padding: 0 $spacer-small;
         }
 
         select.a-input__field::-ms-expand {
@@ -89,6 +90,10 @@
             margin: $spacer-small;
             pointer-events: none;
         }
+    }
+
+    textarea.a-input__field {
+        height: 150px;
     }
 
     &__description {

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from './services';
-import { ActionButton } from '@ui/menu/menu.types';
 import { NgRedux } from '@angular-redux/store';
 import { AuthActions } from '@store/auth';
 
@@ -10,7 +9,7 @@ import { AuthActions } from '@store/auth';
 })
 export class CoreComponent implements OnInit {
   title = 'rare';
-  public actionButton: ActionButton = {label: 'New report'};
+  public actionButton = {label: 'New report'};
   public user: any;
 
   constructor(

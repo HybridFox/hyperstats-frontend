@@ -34,7 +34,7 @@ jobs:
           key: dependency-cache-{{ checksum "server/package.json" }}
       - run:
           name: Install npm
-          command: cd server && npm install
+          command: cd server && MONGOMS_VERSION=4.0.0 npm install
       - save_cache:
           key: dependency-cache-{{ checksum "server/package.json" }}
           paths:

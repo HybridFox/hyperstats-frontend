@@ -11,6 +11,10 @@ const routes: Routes = [
     component: Pages.LoginPageComponent
   },
   {
+    path: 'about',
+    component: Pages.AboutPageComponent
+  },
+  {
     path: 'register',
     component: Pages.RegisterPageComponent
   },
@@ -21,6 +25,10 @@ const routes: Routes = [
   {
     path: 'reset-password',
     component: Pages.ResetPasswordPageComponent
+  },
+  {
+    path: 'company-information',
+    component: Pages.CompanyPageComponent
   },
   {
     path: '',
