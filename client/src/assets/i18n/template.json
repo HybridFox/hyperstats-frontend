@@ -24,6 +24,7 @@
 			"REGISTER": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"TRY-AGAIN": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
@@ -51,6 +52,17 @@
 		"COMPANYINFORMATION": {
 			"HELP": "",
 			"SUBTITLE": "",
+			"TITLE": ""
+		},
+		"RESET-PASSWORD": {
+			"TITLE": ""
+		},
+		"VERIFICATION-FAILED": {
+			"CONTENT": "",
+			"TITLE": ""
+		},
+		"VERIFICATION-SUCCEEDED": {
+			"CONTENT": "",
 			"TITLE": ""
 		}
 	},
