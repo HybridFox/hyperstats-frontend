@@ -28,6 +28,7 @@ jobs:
   test-server:
     docker:
       - image: circleci/node:10.15.0
+      - image: mongo:4.0.4-xenial
     steps:
       - checkout
       - restore_cache:

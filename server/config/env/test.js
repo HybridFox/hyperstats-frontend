@@ -3,12 +3,12 @@ module.exports = {
 		test: true,
 	},
 	server: {
-		port: 4351,
+		port: 4352,
 		cookies: {
 			domain: "",
 		},
 		mongo: {
-			url: "mongodb://host.docker.internal:27011/rare",
+			url: process.env.CIRCLECI ? "mongodb://localhost:27017/rare" : "mongodb://mongodb-rare/rare",
 		},
 	},
 };

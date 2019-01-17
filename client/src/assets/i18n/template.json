@@ -18,7 +18,10 @@
 			"PRIVACY": "",
 			"REGISTER": "",
 			"RESET-PASSWORD": "",
-			"WELCOME": ""
+			"WELCOME": "",
+			"SAVE": "",
+			"STREETNAME": "",
+			"ZIPCODE": ""
 		},
 		"MENU": {
 			"AUDITTRIAL": "",
@@ -34,11 +37,39 @@
 		}
 	},
 	"PAGE": {
+		"ABOUT": {
+			"CONTENT-1": "",
+			"CONTENT-2": "",
+			"SECTION-1": "",
+			"SECTION-2": "",
+			"TITLE": ""
+		},
+		"COMPANYINFORMATION": {
+			"HELP": "",
+			"SUBTITLE": "",
+			"TITLE": ""
+		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
 		}
 	},
 	"TOAST": {
+		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"GENERAL": {
+			"INVALID": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"LOGIN": {
 			"ERROR": {
 				"DESCRIPTION": "",
@@ -50,6 +81,16 @@
 			}
 		},
 		"REGISTER": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RESET-PASSWORD": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

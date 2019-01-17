@@ -32,10 +32,27 @@ const UserSchema = mongoose.Schema({
 			required: true,
 			default: Date.now,
 		},
-		validated: {
-			type: Boolean,
-			required: true,
-			default: false,
+		validation: {
+			isValidated: {
+				type: Boolean,
+				required: true,
+				default: false,
+			},
+			token: {
+				type: String,
+				required: false,
+			},
+		},
+		passwordReset: {
+			token: {
+				type: String,
+				required: false,
+			},
+			expireDate: {
+				type: Date,
+				required: false,
+			},
+			required: false,
 		},
 	},
 });

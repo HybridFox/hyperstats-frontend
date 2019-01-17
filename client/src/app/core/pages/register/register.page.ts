@@ -40,7 +40,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     public submit() {
         if (!this.registerForm.valid) {
-            return this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            return this.toastrService.error('TOAST.GENERAL.INVALID.DESCRIPTION', 'TOAST.GENERAL.INVALID.TITLE');
         }
 
         return this.authAction.register({

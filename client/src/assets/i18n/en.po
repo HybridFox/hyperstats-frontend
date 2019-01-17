@@ -24,7 +24,7 @@ msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr "I accept the terms and conditions"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "© Eucobat 2018"
+msgstr "ï¿½ Eucobat 2018"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
@@ -52,6 +52,12 @@ msgstr "Register"
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr "Reset"
+
+msgid "GENERAL##LABELS##SAVE"
+msgstr "Save"
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr "Street name"
 
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
@@ -86,8 +92,79 @@ msgstr "Reports"
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
 
+msgid "PAGE##ABOUT##CONTENT-1"
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse "
+"cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat "
+"non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
+"Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, "
+"condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum "
+"ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, "
+"pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac "
+"nisi. Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum "
+"fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit "
+"amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus "
+"mauris vitae nisi. Cras laoreet ultrices"
+
+msgid "PAGE##ABOUT##CONTENT-2"
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse "
+"cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat "
+"non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
+"Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, "
+"condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum "
+"ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, "
+"pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac "
+"nisi. Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum "
+"fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci"
+
+msgid "PAGE##ABOUT##SECTION-1"
+msgstr "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing"
+
+msgid "PAGE##ABOUT##SECTION-2"
+msgstr ""
+"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem"
+
+msgid "PAGE##ABOUT##TITLE"
+msgstr "About"
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+"Use here your legal address information, not the address from for instance a "
+"certain processing location or office."
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr "Address Information Recycling Plant"
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr "Company information"
+
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgstr "Please try again later"
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgstr "Could not register"
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgstr "Please check your inbox for a verification email"
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr "Registration successfull"
+
+msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
+msgstr "Please check if all fields are correct"
+
+msgid "TOAST##GENERAL##INVALID##TITLE"
+msgstr "Incorrect form state"
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr "Make sure you are using the correct details to login"
@@ -112,6 +189,18 @@ msgstr "Please check your email for your verification mail"
 
 msgid "TOAST##REGISTER##SUCCESS##TITLE"
 msgstr "Successfully registered"
+
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not request a password reset"
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
 
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"

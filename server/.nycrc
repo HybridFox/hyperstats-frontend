@@ -1,17 +1,19 @@
 {
-	"include": [
-		"./**/*.js"
+	"includes": [
+		"**/*.js"
 	],
 	"exclude": [
 		"**/*.spec.js",
-		"node_modules/**/*.js"
+		"coverage/**/*",
+		"node_modules/**/*.js",
+		"test/{,!(integration)/}**/*.js",
+		"{,!(index)*}.js",
+		"config/env/**/*"
 	],
-	"require": [
-		"@babel/register",
-		"mocha"
-	],
+	"require": [],
+	"cache": false,
+	"all": true,
 	"sourceMap": false,
-	"instrument": false,
 	"reporter": [
 		"lcov",
 		"text-summary"
