@@ -27,6 +27,14 @@ const routes: Routes = [
     component: Pages.CompanyPageComponent
   },
   {
+    path: 'verification-succeeded',
+    component: Pages.VerificationSucceededPageComponent
+  },
+  {
+    path: 'verification-failed',
+    component: Pages.VerificationFailedPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [

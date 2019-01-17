@@ -25,6 +25,7 @@
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"TRY-AGAIN": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
@@ -55,6 +56,14 @@
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
+			"TITLE": ""
+		},
+		"VERIFICATION-FAILED": {
+			"CONTENT": "",
+			"TITLE": ""
+		},
+		"VERIFICATION-SUCCEEDED": {
+			"CONTENT": "",
 			"TITLE": ""
 		}
 	},

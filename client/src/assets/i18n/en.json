@@ -24,6 +24,7 @@
             "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "TRY-AGAIN": "Try again",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zip code",
             "ACCEPT_TERMS": "I accept the terms and conditions"
@@ -56,6 +57,14 @@
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
+        },
+        "VERIFICATION-FAILED": {
+            "CONTENT": "We are having trouble verifying your email, please try again later",
+            "TITLE": "Something went wrong"
+        },
+        "VERIFICATION-SUCCEEDED": {
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
+            "TITLE": "Success!"
         }
     },
     "TOAST": {
