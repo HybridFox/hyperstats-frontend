@@ -1,22 +1,48 @@
 version: 2
 jobs:
   test-client:
-    machine:
-      enabled: true
+    docker:
+      - image: circleci/node:10.15.0
+      - image: selenium/standalone-chrome
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "client/package.json" }}
       - run:
-          name: Build docker image
-          command: docker-compose build
+          name: Run npm ci
+          command: cd client && npm ci
+      - save_cache:
+          key: dependency-cache-{{ checksum "client/package.json" }}
+          paths:
+            - client/node_modules
       - run:
-          name: Bring docker image up
-          command: docker-compose up -d
+          name: Linting
+          command: cd client && npm run lint
       - run:
-          name: Execute test:ci
-          command: docker-compose exec client npm run test:ci
+          name: Run unit tests
+          command: cd client && npm run test
       - run:
-          name: Stop docker container
-          command: docker-compose down
+          name: Run e2e tests
+          command: cd client && npm run e2e -- --configuration=serve
+
+  test-server:
+    docker:
+      - image: circleci/node:10.15.0
+      - image: mongo:4.0.4-xenial
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "server/package.json" }}
+      - run:
+          name: Install npm
+          command: cd server && npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "server/package.json" }}
+          paths:
+            - server/node_modules
+      - run:
+          name: Run tests
+          command: cd server && npm run test
 
   deploy-develop:
     machine:
@@ -44,9 +70,11 @@ workflows:
   build-and-deploy:
     jobs:
       - test-client
+      - test-server
       - deploy-develop:
           requires:
             - test-client
+            - test-server
           filters:
             branches:
               only: development

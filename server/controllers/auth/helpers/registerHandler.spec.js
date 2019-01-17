@@ -1,20 +1,38 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
-const { mockMongoose, createTestUser } = require("../../../test/mocks");
+const { mockMongoose } = require("../../../test/mocks");
+const removeTestUsers = require("../../../test/helpers/removeTestUsers");
+const createTestUser = require("../../../test/helpers/createTestUser");
+const nodemailerMock = require("nodemailer-mock");
+const mockery = require("mockery");
 
 should();
 use(chaiAsPromised);
 
-const registerHandler = require("./registerHandler");
 const loginHandler = require("./loginHandler");
 
-describe("LoginHandler", () => {
+describe("RegisterHandler", () => {
+	let registerHandler;
 	let mongoServer;
 
 	before(async() => {
-		mongoServer = await mockMongoose();
+		mockery.enable({ warnOnUnregistered: false });
+		mockery.registerMock("nodemailer", nodemailerMock);
 
+		mongoServer = await mockMongoose();
 		await createTestUser();
+
+		registerHandler = require("./registerHandler");
+	});
+
+	afterEach(() => nodemailerMock.mock.reset());
+
+	after(async() => {
+		mockery.deregisterAll();
+		mockery.disable();
+		mongoServer.stop();
+
+		await removeTestUsers(["validuser@example.com"]);
 	});
 
 	it("Should error email is already registered", () => expect(registerHandler({
@@ -31,7 +49,7 @@ describe("LoginHandler", () => {
 		lastname: "lastname",
 	})).to.eventually.be.fulfilled);
 
-	it("Should be able to login user after registration", async() => {
+	it("Should not be able to login user after registration (validation required)", async() => {
 		const userToTest = {
 			email: "validuser3@example.com",
 			password: "validPassword3",
@@ -40,11 +58,6 @@ describe("LoginHandler", () => {
 		};
 		await registerHandler(userToTest);
 
-		return expect(loginHandler(userToTest.email, userToTest.password)).to.eventually.be.fulfilled;
-	});
-
-	after((done) => {
-		mongoServer.stop();
-		done();
+		return expect(loginHandler(userToTest.email, userToTest.password)).to.eventually.rejectedWith(Error);
 	});
 });

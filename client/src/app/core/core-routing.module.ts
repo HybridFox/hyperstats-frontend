@@ -11,12 +11,20 @@ const routes: Routes = [
     component: Pages.LoginPageComponent
   },
   {
+    path: 'about',
+    component: Pages.AboutPageComponent
+  },
+  {
     path: 'register',
     component: Pages.RegisterPageComponent
   },
   {
     path: 'forgot-password',
     component: Pages.ForgotPasswordPageComponent
+  },
+  {
+    path: 'company-information',
+    component: Pages.CompanyPageComponent
   },
   {
     path: '',

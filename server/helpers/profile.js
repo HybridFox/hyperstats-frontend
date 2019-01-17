@@ -9,15 +9,37 @@ const {
 	always,
 } = require("ramda");
 
-module.exports.get = (req) => req.session.safeProfile;
+/**
+ * @module ProfileHelper
+ */
 
-module.exports.getFull = (req) => req.session.profile;
+/**
+ * @function get Get safe profile (no password an validated props)
+ * @param {Object} req Express request object
+ * @returns {Object} User Profile
+ */
+module.exports.get = (req) => path(["session", "safeProfile"])(req);
 
+/**
+ * @function get Get full profile
+ * @param {Object} req Express request object
+ * @returns {Object} Full ser Profile
+ */
+module.exports.getFull = (req) => path(["session", "profile"])(req);
+
+/**
+ * @function unset Unset profile props in session
+ * @param {Object} req Express request object
+ */
 module.exports.unset = (req) => {
 	delete req.session.profile;
 	delete req.session.safeProfile;
 };
 
+/**
+ * @function set Set user on session
+ * @param {Object} req Express request object
+ */
 module.exports.set = (req, user) => {
 	req.session.profile = user;
 	req.session.safeProfile = compose(
@@ -26,7 +48,7 @@ module.exports.set = (req, user) => {
 			merge,
 			[
 				compose(omit(["password"]), path(["session", "profile", "data"])),
-				compose(omit(["validated"]), path(["session", "profile", "meta"])),
+				compose(omit(["validation", "passwordReset"]), path(["session", "profile", "meta"])),
 			]
 		)
 	)(req);
