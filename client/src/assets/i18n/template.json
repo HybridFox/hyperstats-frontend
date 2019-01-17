@@ -25,7 +25,6 @@
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"STREETNAME": "",
-			"TRY-AGAIN": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
@@ -43,6 +42,9 @@
 		}
 	},
 	"PAGE": {
+		"RESET-PASSWORD": {
+            "TITLE": ""
+        },
 		"ABOUT": {
 			"CONTENT-1": "",
 			"CONTENT-2": "",
@@ -53,17 +55,6 @@
 		"COMPANYINFORMATION": {
 			"HELP": "",
 			"SUBTITLE": "",
-			"TITLE": ""
-		},
-		"RESET-PASSWORD": {
-			"TITLE": ""
-		},
-		"VERIFICATION-FAILED": {
-			"CONTENT": "",
-			"TITLE": ""
-		},
-		"VERIFICATION-SUCCEEDED": {
-			"CONTENT": "",
 			"TITLE": ""
 		}
 	},
