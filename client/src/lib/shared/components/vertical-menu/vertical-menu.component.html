@@ -1,0 +1,3 @@
+<nav class="m-menu--vertical">
+    <a *ngFor="let item of menuItems" [routerLink]="item.link" routerLinkActive="active" class="m-menu--vertical__item">{{ item.label }}</a>
+</nav>
