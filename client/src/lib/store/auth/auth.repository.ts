@@ -23,7 +23,7 @@ export class AuthRepository {
   }
 
   public fetchProfile() {
-    const url = this.apiConfig.baseUrl('/auth/profile');
+    const url = this.apiConfig.baseUrl('/profile');
 
     return this.http
       .get(url);

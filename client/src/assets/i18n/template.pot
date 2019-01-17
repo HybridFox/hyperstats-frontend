@@ -74,6 +74,15 @@ msgstr ""
 msgid "GENERAL##LABELS##TOKEN"
 msgstr ""
 
+msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr ""
+
 msgid "GENERAL##LABELS##WELCOME"
 msgstr ""
 
@@ -114,6 +123,45 @@ msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
 
 msgid "PAGE##ABOUT##CONTENT-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##CONTENT-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
+msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-FAILED##CONTENT"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-FAILED##TITLE"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##ABOUT##SECTION-1"

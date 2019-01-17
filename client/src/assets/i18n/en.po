@@ -77,6 +77,9 @@ msgstr "Street name"
 msgid "GENERAL##LABELS##TOKEN"
 msgstr "Token"
 
+msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr "Try again"
+
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
 
@@ -198,6 +201,18 @@ msgstr "Please check if all fields are correct"
 
 msgid "TOAST##GENERAL##INVALID##TITLE"
 msgstr "Incorrect form state"
+msgid "PAGE##VERIFICATION-FAILED##CONTENT"
+msgstr "We are having trouble verifying your email, please try again later"
+
+msgid "PAGE##VERIFICATION-FAILED##TITLE"
+msgstr "Something went wrong"
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
+msgstr ""
+"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr "Success!"
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr "Make sure you are using the correct details to login"
