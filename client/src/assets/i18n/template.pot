@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-10T08:26:53.198Z\n"
-"PO-Revision-Date: 2019-01-10T08:26:53.198Z\n"
+"POT-Creation-Date: 2019-01-17T12:42:05.564Z\n"
+"PO-Revision-Date: 2019-01-17T12:42:05.565Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -20,7 +20,19 @@ msgstr ""
 msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr ""
 
+msgid "GENERAL##LABELS##BOX"
+msgstr ""
+
+msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr ""
+
 msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr ""
+
+msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
 msgid "GENERAL##LABELS##EMAIL"
@@ -38,6 +50,9 @@ msgstr ""
 msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
+msgid "GENERAL##LABELS##NUMBER"
+msgstr ""
+
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr ""
 
@@ -50,7 +65,16 @@ msgstr ""
 msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr ""
 
+msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
 msgid "GENERAL##LABELS##WELCOME"
+msgstr ""
+
+msgid "GENERAL##LABELS##ZIPCODE"
 msgstr ""
 
 msgid "GENERAL##MENU##AUDITTRIAL"
@@ -83,7 +107,49 @@ msgstr ""
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr ""
 
+msgid "PAGE##ABOUT##CONTENT-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##CONTENT-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
 msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##TITLE"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
@@ -108,6 +174,18 @@ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##REGISTER##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
 msgctxt "TERMS"

@@ -36,10 +36,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         this.authAction.login({
             ...this.loginForm.value
         }).then(() => {
-            this.toastrService.success('Successfully logged in');
+            this.toastrService.success('TOAST.LOGIN.SUCCESS.TITLE');
             this.router.navigate(['/']);
         }).catch(() => {
-            this.toastrService.error('Make sure you used the correct combination', 'Something went wrong');
+            this.toastrService.success('TOAST.LOGIN.ERROR.DESCRIPTION', 'TOAST.LOGIN.ERROR.TITLE');
         });
     }
 }

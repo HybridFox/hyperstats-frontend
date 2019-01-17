@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
@@ -16,7 +15,6 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
     constructor(
         private authAction: AuthActions,
         private toastrService: ToastrService,
-        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -31,13 +29,13 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.login({
+        this.authAction.requestPasswordReset({
             ...this.resetPasswordForm.value
         }).then(() => {
-            this.toastrService.success('An email has been send');
+            this.toastrService.error('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION', 'TOAST.RESET-PASSWORD.SUCCESS.TITLE');
             this.resetPasswordForm.reset();
         }).catch(() => {
-            this.toastrService.error('Make sure you used the correct combination', 'Something went wrong');
+            this.toastrService.error('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION', 'TOAST.RESET-PASSWORD.ERROR.TITLE');
         });
     }
 }
