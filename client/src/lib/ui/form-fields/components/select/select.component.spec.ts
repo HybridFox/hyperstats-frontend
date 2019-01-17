@@ -79,7 +79,7 @@ describe('SelectInputComponent', () => {
       fixture.detectChanges();
 
       const options = fixture.nativeElement.querySelectorAll('.a-input__field option');
-      expect(options.length).toEqual(4); // 3 + the default option
+      expect(options.length).toEqual(3);
       expect(options[0].value).toEqual('test-value-1');
       expect(options[0].textContent).toEqual('test-label-1');
       expect(options[1].value).toEqual('test-value-2');
