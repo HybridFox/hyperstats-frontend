@@ -1,7 +1,6 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
-const removeTestUsers = require("../../../test/helpers/removeTestUsers");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const UserModel = require("../../../models/user");
 
@@ -28,10 +27,8 @@ describe("Reset password", () => {
 		});
 	});
 
-	after(async() => {
+	after(() => {
 		mongoServer.stop();
-
-		await removeTestUsers(["validuser@example.com"]);
 	});
 
 	it("Should fail to reset password when passing an invalid token", () => {
