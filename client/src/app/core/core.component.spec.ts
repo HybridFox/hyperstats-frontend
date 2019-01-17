@@ -3,18 +3,12 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './services/language';
 import { CoreComponent } from './core.component';
-import { FooterComponent } from '@ui/footer/footer.component';
-import { MainMenuComponent } from '@ui/main-menu/main-menu.component';
-import { UserMenuComponent } from '@ui/user-menu/user-menu.component';
-import { MenuComponent } from '@ui/menu/menu.component';
+import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NgReduxTestingModule } from '@angular-redux/store/testing';
 import { AuthActions } from '@store/auth';
-
-class MockNgRedux {
-  select(selector) {
-    return {};
-  }
-}
+import { MenuComponent } from '@shared/components/menu/menu.component';
+import { MainMenuComponent } from '@shared/components/main-menu/main-menu.component';
+import { UserMenuComponent } from '@shared/components/user-menu/user-menu.component';
 
 class MockLanguageService {
   initLanguage() {}

@@ -18,7 +18,6 @@ import { Services } from './services';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { WebpackTranslateLoader } from './translations';
 
-import { Pages } from './pages';
 import { AuthActions } from '@store/auth';
 import { AuthRepository } from '@store/auth/auth.repository';
 import { SharedModule } from '@shared/shared.module';
@@ -27,28 +26,21 @@ import { AuthGuard } from '@guards/auth.guard';
 
 import { ErrorInterceptor } from '@helpers/error.interceptor';
 
-import { FooterModule } from '@ui/footer';
 import { FormFieldsModule } from '@ui/form-fields';
-import { MainMenuModule } from '@ui/main-menu';
-import { UserMenuModule } from '@ui/user-menu';
-import { MenuModule } from '@ui/menu';
 
-import { TranslateToastComponent } from './components/translate-toast/translate-toast.component';
-import { Components } from './components';
+import { Pages } from './pages';
+import { TranslateToastComponent } from '@shared/components/translate-toast/translate-toast.component';
 
 @NgModule({
   declarations: [
     CoreComponent,
     Pages,
     TranslateToastComponent,
-
-    ...Components,
   ],
   entryComponents: [
     TranslateToastComponent,
   ],
   imports: [
-    FooterModule,
     FormFieldsModule,
     StoreModule,
     BrowserModule,
@@ -75,9 +67,6 @@ import { Components } from './components';
         useClass: WebpackTranslateLoader,
       },
     }),
-    MainMenuModule,
-    UserMenuModule,
-    MenuModule,
   ],
   providers: [
     StoreService,
