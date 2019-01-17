@@ -7,7 +7,7 @@ const UserModel = require("../../../models/user");
  * @returns {Promise} User
  */
 module.exports = async(email, password) => {
-	const user = await UserModel.findOne({ "data.email": email }).exec();
+	const user = await UserModel.findOne({ "data.email": email, "meta.validation.isValidated": true }).exec();
 
 	if (!user) {
 		throw new Error({ type: 404, msg: "User not found" });

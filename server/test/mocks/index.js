@@ -1,7 +1,7 @@
-const createTestUser = require("./createTestUser");
+const startServer = require("./startServer");
 const mockMongoose = require("./mockMongoose");
 
 module.exports = {
-	createTestUser,
+	startServer,
 	mockMongoose,
 };
