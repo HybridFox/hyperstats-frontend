@@ -10,27 +10,69 @@
         color: $gray;
         margin-top: 0;
     }
-    &__action {
-        position: relative;
-        display: flex;
+    &__input {
+        display: none;
+    }
+    &__label {
+        font-size: $font-size-small;
+        color: $gray;
+        display: inline-block;
+        line-height: 21px;
+    }
+    &__upload {
+        font-size: $font-size-regular;
+        text-transform: lowercase;
         color: $blue;
-        margin: $spacer 0;
-        &__input {
-            display: none;
+        text-decoration: underline;
+        margin-right: $spacer;
+        cursor: pointer;
+    }
+    &__progress {
+        color: $blue;
+        max-width: 278px;
+        &__file-name {
+            color: $tundora;
+            display: block;
+            margin-top: -$spacer-xx-small;
+            margin-bottom: $spacer-xx-small;
         }
-        &__label {
+        &__bar {
+            display: block;
+            width: 203px;
+            height: 5px;
+            -webkit-appearance: none;
+            appearance: none;
+            &::-webkit-progress-bar {
+                height: 5px;
+                background-color: $athens-gray;
+            }
+            &::-webkit-progress-value {
+                height: 5px;
+                background-color: $blue;
+                @include transition(width 2s ease-in-out);
+            }
+        }
+        &__percentage {
             font-size: $font-size-small;
-            color: $gray;
-            display: inline-block;
-            line-height: 21px;
         }
-        &__upload {
-            font-size: $font-size-regular;
-            text-transform: lowercase;
-            color: $blue;
-            text-decoration: underline;
-            margin-right: $spacer;
-            cursor: pointer;
-        }
+    }
+}
+
+.m-file-upload--browse {
+    position: relative;
+    display: flex;
+    color: $blue;
+    margin: $spacer 0;
+}
+
+.m-file-upload--drag-and-drop {
+    background-color: $athens-gray;
+    border: 1px solid $dusty-gray;
+    border-radius: 4px;
+    text-align: center;
+    .m-file-upload__action {
+        justify-content: center;
+        margin: 0;
+        color: $tundora;
     }
 }

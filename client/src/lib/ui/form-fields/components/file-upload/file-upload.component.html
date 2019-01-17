@@ -1,15 +1,42 @@
 <div class="m-file-upload">
     <p *ngIf="title" class="m-file-upload__title">{{ title }}</p>
     <p *ngIf="description" class="m-file-upload__description">{{ description }}</p>
-    <div class="m-file-upload__action">
-        <input
-            type="file"
-            name="fileToUpload"
-            class="m-file-upload__action__input"
-            [formControl]="control"
-            #fileInput>
-        <i class="a-icon--upload"></i>
-        <span (click)="fileInput.click()" class="m-file-upload__action__upload">Upload attachment</span>
-        <label *ngIf="label" for="file" class="m-file-upload__action__label">{{ label }}</label>
+    <div class="m-file-upload__action u-margin-bottom">
+        <div class="m-file-upload--browse">
+            <input
+                type="file"
+                name="fileToUpload"
+                class="m-file-upload__input"
+                [formControl]="control"
+                #fileInput>
+            <i class="a-icon--upload"></i>
+            <span (click)="fileInput.click()" class="m-file-upload__upload">Upload attachment</span>
+            <label *ngIf="label" for="file" class="m-file-upload__label">{{ label }}</label>
+        </div>
+
+        <div class="m-file-upload--drag-and-drop">
+            <input
+                type="file"
+                name="filesToUpload"
+                class="m-file-upload__input"
+                [formControl]="control"
+                #filesInput>
+            <p>{{ 'GENERAL.LABELS.DRAGANDDROP' | translate }} <a href="#" (click)="filesInput.click()" class="m-file-upload__upload">{{ 'GENERAL.LABELS.BROWSE' | translate }}</a></p>
+        </div>
     </div>
+
+    <ul class="m-file-upload__progress">
+        <li class="l-grid__row u-margin-bottom">
+            <div class="l-grid__col-1-12">
+                <i class="a-icon--file"></i>
+            </div>
+            <div class="l-grid__col-10-12">
+                <span class="m-file-upload__progress__file-name">ecotest_nthl_24524523.pdf</span>
+                <progress max="100" value="62" class="m-file-upload__progress__bar"></progress>
+            </div>
+            <div class="l-grid__col-1-12">
+                <span class="m-file-upload__progress__percentage">62%</span>
+            </div>
+        </li>
+    </ul>
 </div>
