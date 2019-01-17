@@ -201,6 +201,7 @@ msgstr "Please check if all fields are correct"
 
 msgid "TOAST##GENERAL##INVALID##TITLE"
 msgstr "Incorrect form state"
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr "We are having trouble verifying your email, please try again later"
 
