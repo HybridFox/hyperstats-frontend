@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config.service';
 import { Observable } from 'rxjs';
+import { ProfileInterface, RegisterInterface } from './auth.interface';
 
 @Injectable()
 export class AuthRepository {
@@ -27,7 +28,19 @@ export class AuthRepository {
       .get(url);
   }
 
-  public register({ firstname, lastname, email, password }): Observable<any> {
+  public updateProfile({ email, firstname, lastname, password }: ProfileInterface) {
+    const url = this.apiConfig.baseUrl('/auth/profile');
+
+    return this.http
+      .put(url, {
+        email,
+        firstname,
+        lastname,
+        password
+      });
+  }
+
+  public register({ firstname, lastname, email, password }: RegisterInterface): Observable<any> {
     const url = this.apiConfig.baseUrl('/auth/register');
 
     return this.http

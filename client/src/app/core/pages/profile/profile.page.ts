@@ -39,6 +39,18 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
+        if (!this.profileForm.valid) {
+            return this.toastrService.error('TOAST.GENERAL.INVALID.DESCRIPTION', 'TOAST.GENERAL.INVALID.TITLE');
+        }
 
+        return this.authAction.updateProfile({
+            ...this.profileForm.value
+        }).then(() => {
+            // TODO: translate
+            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
+            this.profileForm.reset();
+        }).catch(() => {
+            this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+        });
     }
 }

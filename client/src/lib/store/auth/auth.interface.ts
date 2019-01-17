@@ -5,6 +5,13 @@ export interface RegisterInterface {
     email: string;
 }
 
+export interface ProfileInterface {
+    firstname: string;
+    lastname: string;
+    password: string;
+    email: string;
+}
+
 export interface LoginInterface {
     email: string;
     password: string;
