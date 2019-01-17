@@ -37,12 +37,12 @@ export class CodesService {
   public recyclingProcesses() {
     return [
       {
-        label: 'Normal',
-        value: 'normal'
+        label: 'Alkaline - Nickel Metal',
+        value: 'Alkaline - Nickel Metal'
       },
       {
-        label: 'Advanced',
-        value: 'advanced'
+        label: 'Nikel - Alkaline Metal',
+        value: 'Nikel - Alkaline Metal'
       },
     ];
   }
