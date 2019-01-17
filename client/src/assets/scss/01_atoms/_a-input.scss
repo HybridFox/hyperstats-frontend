@@ -92,6 +92,10 @@
         }
     }
 
+    textarea.a-input__field {
+        height: 150px;
+    }
+
     &__description {
         display: block;
         color: $tundora;
