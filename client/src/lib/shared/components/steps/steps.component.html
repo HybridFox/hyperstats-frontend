@@ -1,0 +1,24 @@
+<div class="m-steps">
+    <div class="m-steps__step" *ngFor="let step of _steps; let i = index;" [ngClass]="{'m-steps__step--selected': i === selectedIndex}">
+        <div *ngIf="selectedIndex <= i" class="m-steps__step-icon" [ngClass]="{'m-steps__step-icon--selected': i === selectedIndex}">
+            <span>{{i + 1}}</span>
+        </div>
+        <div *ngIf="selectedIndex > i" class="m-steps__step-icon m-steps__step-icon--passed">
+            <span class="a-icon a-icon--checkmark"></span>
+        </div>
+        <div class="m-steps__step-text">
+            <ng-container [ngTemplateOutlet]="step.stepLabel.template"></ng-container>
+        </div>
+    </div>
+</div>
+
+<section *ngFor="let step of _steps; let i = index; let isLast = last">
+    <div [style.display]="selectedIndex === i ? 'block' : 'none'">
+        <ng-container [ngTemplateOutlet]="step.content"></ng-container>
+    </div>
+</section>
+
+<footer>
+    <button cdkStepperPrevious>Previous</button>
+    <button cdkStepperNext>Next</button>
+</footer>

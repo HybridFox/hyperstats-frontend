@@ -7,7 +7,7 @@ import { EntitiesActions } from '@store/entities';
 
 import { ACTIONS } from './auth.action-types';
 import { AuthRepository } from './auth.repository';
-import { RegisterInterface, LoginInterface } from './auth.interface';
+import { RegisterInterface, LoginInterface, RequestPasswordResetInterface } from './auth.interface';
 
 @Injectable()
 export class AuthActions {
@@ -87,6 +87,14 @@ export class AuthActions {
           this.handler.dispatchDone(ACTIONS.REGISTER_USER);
         }),
       ).toPromise();
+  }
+
+  public requestPasswordReset({ email }: RequestPasswordResetInterface): Promise<any>  {
+    this.handler.dispatchStart(ACTIONS.REGISTER_USER);
+
+    return this.authRepository
+      .requestPasswordReset({ email })
+      .toPromise();
   }
 
   public logout() {

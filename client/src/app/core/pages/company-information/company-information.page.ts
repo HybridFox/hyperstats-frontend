@@ -51,10 +51,10 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             ...this.companyForm.value
         }).then(() => {
             // TODO: translate
-            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
+            this.toastrService.success('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.SUCCESS.TITLE');
             this.companyForm.reset();
         }).catch(() => {
-            this.toastrService.success('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            this.toastrService.success('TOAST.COMPANY-INFORMATION.ERROR.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.ERROR.TITLE');
         });
     }
 }
