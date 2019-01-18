@@ -20,6 +20,7 @@
 
 // Molecules
 @import "./02_molecules/m-card";
+@import "./02_molecules/m-file-upload";
 @import "./02_molecules/m-footer";
 @import "./02_molecules/m-menu";
 @import "./02_molecules/m-page-title";
@@ -39,3 +40,5 @@
 @import "./05_pages/p-home";
 @import "./05_pages/p-login";
 @import "./05_pages/p-register";
+@import "./05_pages/p-forgot-password";
+@import "./05_pages/p-verification";

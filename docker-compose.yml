@@ -13,6 +13,8 @@ services:
       - 5858:5858
     volumes:
       - ./server:/app:delegated
+      - ./server/package.json:/package.json
+      - ./server/package-lock.json:/package-lock.json
       - notused:/app/node_modules
     environment:
       - WAIT_HOSTS=mongodb-rare:27017
@@ -20,6 +22,7 @@ services:
       - NODE_ENV=local
     depends_on:
       - mongodb-rare
+
   client:
     build:
       context: ./client
@@ -34,20 +37,22 @@ services:
       - server
     depends_on:
       - selenium-chrome-standalone
+
   mongodb-rare:
     image: mongo:4.0.4-xenial
     container_name: rare-mongodb
     environment:
-      - MONGO_DATA_DIR=/server/data/db
       - MONGO_LOG_DIR=/server/dev/null
     ports:
       - 27011:27017
     volumes:
-      - ./server/data/db:/server/data/db:delegated
+      - ./server/data/db:/data/db:delegated
     command: mongod --smallfiles --logpath=/dev/null # --quiet
+
   selenium-chrome-standalone:
     ports:
      - 44444:4444
     image: "selenium/standalone-chrome"
+
 volumes:
     notused:

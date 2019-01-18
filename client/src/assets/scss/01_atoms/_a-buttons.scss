@@ -1,6 +1,6 @@
 .a-button {
   font-family: $font-family-lato;
-  font-size: $font-size-small;
+  font-size: $font-size-x-small;
   font-weight: $font-weight-bold;
   line-height: 21px;
   letter-spacing: 2.4px;
@@ -9,7 +9,7 @@
   border: 1px solid;
   text-decoration: none;
   @include transition(all 0.5s ease-in-out);
-  display: flex;
+  display: inline-flex;
   position: relative;
   cursor: pointer;
   &:hover,
@@ -119,7 +119,7 @@
 // Button sizes.
 .a-button--small {
   padding: $spacer-x-small $spacer-small;
-  font-size: $font-size-small;
+  font-size: $font-size-x-small;
   letter-spacing: 0.6px;
   line-height: 17px;
 }

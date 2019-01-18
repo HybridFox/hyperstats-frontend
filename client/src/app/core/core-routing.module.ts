@@ -19,8 +19,20 @@ const routes: Routes = [
     component: Pages.RegisterPageComponent
   },
   {
+    path: 'forgot-password',
+    component: Pages.ForgotPasswordPageComponent
+  },
+  {
     path: 'company-information',
     component: Pages.CompanyPageComponent
+  },
+  {
+    path: 'verification-succeeded',
+    component: Pages.VerificationSucceededPageComponent
+  },
+  {
+    path: 'verification-failed',
+    component: Pages.VerificationFailedPageComponent
   },
   {
     path: '',
