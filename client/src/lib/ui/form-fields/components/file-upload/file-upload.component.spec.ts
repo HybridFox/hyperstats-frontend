@@ -1,6 +1,7 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { FileUploadComponent } from './file-upload.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('FileUploadComponent', () => {
     let fixture: ComponentFixture<FileUploadComponent>;
@@ -8,7 +9,10 @@ describe('FileUploadComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [ ReactiveFormsModule ],
+            imports: [
+                TranslateModule.forRoot(),
+                ReactiveFormsModule,
+            ],
             declarations: [ FileUploadComponent ]
         })
         .compileComponents();
