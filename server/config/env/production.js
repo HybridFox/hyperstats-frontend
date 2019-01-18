@@ -8,4 +8,5 @@ module.exports = {
 			url: "mongodb://host.docker.internal:27011/rare",
 		},
 	},
+	gmail: {},
 };
