@@ -23,8 +23,10 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
+            "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "TRY-AGAIN": "Try again",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zip code",
             "ACCEPT_TERMS": "I accept the terms and conditions"
@@ -54,19 +56,64 @@
             "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
+        },
+        "RESET-PASSWORD": {
+            "TITLE": "Reset your password"
+        },
+        "VERIFICATION-FAILED": {
+            "CONTENT": "We are having trouble verifying your email, please try again later",
+            "TITLE": "Something went wrong"
+        },
+        "VERIFICATION-SUCCEEDED": {
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
+            "TITLE": "Success!"
         }
     },
     "TOAST": {
+        "COMPANY-INFORMATION": {
+            "ERROR": {
+                "DESCRIPTION": "Please try again later",
+                "TITLE": "Could not register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your inbox for a verification email",
+                "TITLE": "Registration successfull"
+            }
+        },
+        "GENERAL": {
+            "INVALID": {
+                "DESCRIPTION": "Please check if all fields are correct",
+                "TITLE": "Incorrect form state"
+            }
+        },
         "LOGIN": {
             "ERROR": {
                 "DESCRIPTION": "Make sure you are using the correct details to login",
                 "TITLE": "Cannot login"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "You are now free to browse",
+                "TITLE": "Logged in!"
             }
         },
         "REGISTER": {
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for your verification mail",
+                "TITLE": "Successfully registered"
+            }
+        },
+        "RESET-PASSWORD": {
+            "ERROR": {
+                "DESCRIPTION": "Could not request a password reset",
+                "TITLE": "Something went wrong"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
             }
         }
     }

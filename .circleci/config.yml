@@ -28,13 +28,14 @@ jobs:
   test-server:
     docker:
       - image: circleci/node:10.15.0
+      - image: mongo:4.0.4-xenial
     steps:
       - checkout
       - restore_cache:
           key: dependency-cache-{{ checksum "server/package.json" }}
       - run:
           name: Install npm
-          command: cd server && npm install
+          command: cd server && MONGOMS_VERSION=4.0.0 npm install
       - save_cache:
           key: dependency-cache-{{ checksum "server/package.json" }}
           paths:
