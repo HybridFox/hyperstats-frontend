@@ -57,23 +57,6 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/auth/profile:
-	 *   get:
-	 *     description: Get user profile
-	 *     tags:
-	 *       - auth
-	 *     produces:
-	 *       - application/json
-	 *     responses:
-	 *       200:
-	 *         description: User profile
-	 *         schema:
-	 *           $ref: '#/definitions/UserLoginResponse'
-	 */
-	router.route("/auth/profile").get(authController.profile);
-
-	/**
-	 * @swagger
 	 * /api/auth/login:
 	 *   post:
 	 *     description: Login user
