@@ -100,7 +100,7 @@
         display: block;
         color: $tundora;
         margin: 0;
-        font-size: $font-size-small;
+        font-size: $font-size-x-small;
     }
 
     &__error {
@@ -108,6 +108,6 @@
         display: block;
         color: $danger;
         margin: 0;
-        font-size: $font-size-small;
+        font-size: $font-size-x-small;
     }
 }
