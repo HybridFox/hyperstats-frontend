@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: 'page',
-        component: ReportsPageComponent
+        component: ReportsPageComponent,
       }
     ]
   }

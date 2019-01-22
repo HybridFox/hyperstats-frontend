@@ -6,7 +6,6 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"BROWSE": "",
@@ -27,6 +26,7 @@
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"TOKEN": "",
 			"TRY-AGAIN": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
@@ -82,6 +82,16 @@
 				"TITLE": ""
 			}
 		},
+		"FORGOT-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"GENERAL": {
 			"INVALID": {
 				"DESCRIPTION": "",
@@ -94,7 +104,6 @@
 				"TITLE": ""
 			},
 			"SUCCESS": {
-				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		},

@@ -30,6 +30,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
 import { TranslateToastComponent } from '@shared/components/translate-toast/translate-toast.component';
+import { StoreRouterModule } from '@core/store-router';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,8 @@ import { TranslateToastComponent } from '@shared/components/translate-toast/tran
 
     SharedModule,
     ReactiveFormsModule,
+
+    StoreRouterModule,
 
     // Toastr
     BrowserAnimationsModule,

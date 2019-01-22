@@ -7,7 +7,8 @@ import { EntitiesActions } from '@store/entities';
 
 import { ACTIONS } from './auth.action-types';
 import { AuthRepository } from './auth.repository';
-import { RegisterInterface, LoginInterface, RequestPasswordResetInterface } from './auth.interface';
+
+import { RegisterInterface, LoginInterface, ResetPasswordInterface, RequestPasswordResetInterface } from './auth.interface';
 
 @Injectable()
 export class AuthActions {
@@ -97,12 +98,17 @@ export class AuthActions {
       .toPromise();
   }
 
-  public logout() {
+  public logout(): Promise<any> {
     return this.authRepository
       .logout()
       .toPromise()
-      .then(() =>
-        this.handler.dispatch(ACTIONS.CLEAR_USER)
-      );
+      .then(() => this.handler.dispatch(ACTIONS.CLEAR_USER));
+  }
+
+  public resetPassword({ password, token }: ResetPasswordInterface): Promise<any> {
+    return this.authRepository
+      .resetPassword({ password, token })
+      .toPromise()
+      .then(() => this.handler.dispatch(ACTIONS.CLEAR_USER));
   }
 }
