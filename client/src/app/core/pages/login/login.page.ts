@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
-import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { takeUntil } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 import { AuthActions } from '@store/auth';
@@ -36,13 +36,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         this.authAction.login({
             ...this.loginForm.value
         }).then(() => {
-            this.toastrService.success(ngxExtract('TOAST.LOGIN.SUCCESS.TITLE') as string);
+            this.toastrService.success('TOAST.LOGIN.SUCCESS.TITLE');
             this.router.navigate(['/']);
         }).catch(() => {
-            this.toastrService.success(
-                ngxExtract('TOAST.LOGIN.ERROR.DESCRIPTION') as string,
-                ngxExtract('TOAST.LOGIN.ERROR.TITLE') as string
-            );
+            this.toastrService.success('TOAST.LOGIN.ERROR.DESCRIPTION', 'TOAST.LOGIN.ERROR.TITLE');
         });
     }
 }

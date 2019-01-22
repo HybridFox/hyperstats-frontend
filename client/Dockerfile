@@ -1,8 +1,8 @@
-FROM node:dubnium
+FROM node:dubnium-alpine
 
 RUN mkdir -p /app
 
-RUN npm i npm@  latest -g
+RUN npm i npm@latest -g
 
 WORKDIR /
 COPY package.json package-lock.json* .npmrc ./

@@ -4,7 +4,6 @@ import { select } from '@angular-redux/store';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import countryList from 'country-list';
-import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { AuthActions, AuthSelector } from '@store/auth';
 import { Option } from '@ui/form-fields/components/select/select.types';
@@ -52,16 +51,10 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             ...this.companyForm.value
         }).then(() => {
             // TODO: translate
-            this.toastrService.success(
-                ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.TITLE') as string
-            );
+            this.toastrService.success('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.SUCCESS.TITLE');
             this.companyForm.reset();
         }).catch(() => {
-            this.toastrService.success(
-                ngxExtract('TOAST.COMPANY-INFORMATION.ERROR.DESCRIPTION') as string,
-                ngxExtract('TOAST.COMPANY-INFORMATION.ERROR.TITLE') as string
-            );
+            this.toastrService.success('TOAST.COMPANY-INFORMATION.ERROR.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.ERROR.TITLE');
         });
     }
 }

@@ -3,7 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { select } from '@angular-redux/store';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { Router } from '@angular/router';
 
 import { AuthActions, AuthSelector } from '@store/auth';
 import { PasswordValidator } from '@helpers/validators/password.validator';
@@ -19,7 +19,8 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     constructor(
         private authAction: AuthActions,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -39,26 +40,17 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     public submit() {
         if (!this.registerForm.valid) {
-            return this.toastrService.error(
-                ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
-                ngxExtract('TOAST.GENERAL.INVALID.TITLE') as string
-            );
+            return this.toastrService.error('TOAST.GENERAL.INVALID.DESCRIPTION', 'TOAST.GENERAL.INVALID.TITLE');
         }
 
         return this.authAction.register({
             ...this.registerForm.value
         }).then(() => {
             // TODO: translate
-            this.toastrService.success(
-                ngxExtract('TOAST.REGISTER.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.REGISTER.SUCCESS.TITLE') as string
-            );
+            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
             this.registerForm.reset();
         }).catch(() => {
-            this.toastrService.error(
-                ngxExtract('TOAST.REGISTER.ERROR.DESCRIPTION') as string,
-                ngxExtract('TOAST.REGISTER.ERROR.TITLE') as string
-            );
+            this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
         });
     }
 }
