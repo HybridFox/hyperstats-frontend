@@ -26,4 +26,9 @@
 .o-menu--transparent {
     position: absolute;
     width: 100%;
+    .container {
+        .o-menu__content {
+            width: calc(100% - #{$spacer-x-large});
+        }
+    }
 }
