@@ -4,10 +4,10 @@ import { path } from 'ramda';
 
 const json: any = {
     reports: { nl: 'Reports'},
-    recyclingprocesses: { nl: 'Recycling Processes' },
-    recyclingpartners: { nl: 'Recycling Partners'},
+    'recycling-processes': { nl: 'Recycling Processes' },
+    'recycling-partners': { nl: 'Recycling Partners'},
     proxies: { nl: 'Proxies'},
-    audittrial: { nl: 'Audit Trial'},
+    'audit-trial': { nl: 'Audit Trial'},
     fallback: { nl: 'No page content available' }
 };
 
@@ -24,12 +24,22 @@ export class HelpSectionPageComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.text = path([this.router.snapshot.params['section'], 'nl'], json);
+        this.setText(this.router.snapshot.params);
+        this.watchOnSlugChanges();
+    }
+
+     private watchOnSlugChanges() {
+         this.router.params.subscribe((params) => this.setText(params));
+     }
+
+     private setText(params) {
+        if (params['section']) {
+            this.text = path([params['section'].toLowerCase(), 'nl'], json);
+        }
 
         if (!this.text) {
             this.text = json.fallback.nl;
         }
      }
-
 
 }
