@@ -9,7 +9,10 @@ import { CoreComponent } from './core.component';
 const routes: Routes = [
   {
     path: 'login',
-    component: Pages.LoginPageComponent
+    component: Pages.LoginPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: 'about',
@@ -17,11 +20,17 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: Pages.RegisterPageComponent
+    component: Pages.RegisterPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: 'forgot-password',
-    component: Pages.ForgotPasswordPageComponent
+    component: Pages.ForgotPasswordPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: 'reset-password',
@@ -33,11 +42,17 @@ const routes: Routes = [
   },
   {
     path: 'verification-succeeded',
-    component: Pages.VerificationSucceededPageComponent
+    component: Pages.VerificationSucceededPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: 'verification-failed',
-    component: Pages.VerificationFailedPageComponent
+    component: Pages.VerificationFailedPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: '',
