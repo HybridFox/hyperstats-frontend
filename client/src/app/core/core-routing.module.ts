@@ -23,6 +23,10 @@ const routes: Routes = [
     component: Pages.ForgotPasswordPageComponent
   },
   {
+    path: 'reset-password',
+    component: Pages.ResetPasswordPageComponent
+  },
+  {
     path: 'company-information',
     component: Pages.CompanyPageComponent
   },
