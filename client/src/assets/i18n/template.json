@@ -6,7 +6,6 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"BROWSE": "",
@@ -105,7 +104,6 @@
 				"TITLE": ""
 			},
 			"SUCCESS": {
-				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		},
