@@ -6,6 +6,7 @@ export * from './reset-password';
 export * from './company-information';
 export * from './verification-succeeded';
 export * from './verification-failed';
+export * from './privacy';
 
 import { AboutPageComponent } from './about';
 import { LoginPageComponent } from './login';
@@ -15,6 +16,7 @@ import { ResetPasswordPageComponent } from './reset-password';
 import { CompanyPageComponent } from './company-information';
 import { VerificationSucceededPageComponent } from './verification-succeeded';
 import { VerificationFailedPageComponent } from './verification-failed';
+import { PrivacyPageComponent } from './privacy';
 
 export const Pages = [
     AboutPageComponent,
@@ -24,5 +26,6 @@ export const Pages = [
     ResetPasswordPageComponent,
     CompanyPageComponent,
     VerificationSucceededPageComponent,
-    VerificationFailedPageComponent
+    VerificationFailedPageComponent,
+    PrivacyPageComponent
 ];

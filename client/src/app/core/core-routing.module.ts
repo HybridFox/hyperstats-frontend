@@ -59,6 +59,10 @@ const routes: Routes = [
     children: [
       { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
     ]
+  },
+  {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
   }
 ];
 
