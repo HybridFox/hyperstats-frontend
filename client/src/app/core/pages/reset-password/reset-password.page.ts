@@ -46,7 +46,7 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
             password: this.resetPasswordForm.value.password,
             token: this.token
         }).then(() => {
-            this.toastrService.error('TOAST.SUCCESS.ERROR.DESCRIPTION', 'TOAST.SUCCESS.ERROR.TITLE');
+            this.toastrService.error('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION', 'TOAST.RESET-PASSWORD.SUCCESS.TITLE');
             this.resetPasswordForm.reset();
         }).catch(() => {
             this.toastrService.error('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION', 'TOAST.RESET-PASSWORD.ERROR.TITLE');
