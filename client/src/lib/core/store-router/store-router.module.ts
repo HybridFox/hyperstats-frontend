@@ -1,6 +1,5 @@
-import { NgModule, ViewContainerRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { NgReduxModule } from '@angular-redux/store';
-import {  } from 'rxjs';
 
 import { Services } from '@store/services';
 import { StoreService } from '@store/store.service';
