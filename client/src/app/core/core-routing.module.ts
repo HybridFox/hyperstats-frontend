@@ -35,6 +35,10 @@ const routes: Routes = [
     component: Pages.VerificationFailedPageComponent
   },
   {
+    path: 'help',
+    component: Pages.HelpPageComponent,
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
