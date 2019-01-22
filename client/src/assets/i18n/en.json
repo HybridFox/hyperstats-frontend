@@ -8,10 +8,12 @@
         "LABELS": {
             "ACCEPT-TERMS": "I accept the terms and conditions",
             "BOX": "Box",
+            "BROWSE": "Browse",
             "CITY": "City",
             "COMPANYNAME": "Company naem",
             "COPYRIGHT": "ï¿½ Eucobat 2018",
             "COUNTRY": "Country",
+            "DRAGANDDROP": "Drag files here or",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
@@ -31,8 +33,10 @@
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
+            "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
             "COMPANYINFORMATION": "Company information",
+            "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
             "LOGOFF": "Logoff",

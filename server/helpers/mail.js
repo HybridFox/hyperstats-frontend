@@ -5,12 +5,14 @@ const compiler = require("./compiler");
 const config = require("../config");
 
 const transporter = createTransport({
-	host: "smtp.sendgrid.net",
+	host: "smtp.gmail.com",
 	port: 465,
 	secure: true,
+	service: "Gmail",
 	auth: {
-		user: "apikey",
-		pass: "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",
+		...config.gmail,
+		type: "OAuth2",
+		expires: new Date().getTime() + 2000,
 	},
 });
 
@@ -42,6 +44,5 @@ module.exports = async({
 		to, // user.data.email,
 		subject, // "Registration confirmation",
 		html: parsedTemplate, //`Complete registration <a href="${config.server.frontendHostname}/api/auth/verify?token=${user.meta.validation.token}">here</a>`,
-
 	});
 };

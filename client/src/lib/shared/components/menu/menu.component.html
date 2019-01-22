@@ -1,14 +1,23 @@
-<div class="o-menu">
+<div *ngIf="profile" class="o-menu--filled">
     <div class="container">
         <div class="o-menu__left">
             <a routerLink="/" class="a-site-logo"></a>
-            <app-main-menu></app-main-menu>
+            <app-main-menu [profile]="profile"></app-main-menu>
         </div>
 
         <div class="o-menu__right">
             <a *ngIf="actionButton" [href]="actionButton.link" class="a-button--secondary">{{ actionButton.label }}</a>
             <app-user-menu [profile]="profile" (logout)="logout.emit()"></app-user-menu>
             <a href="" class="m-menu--main__item">{{ 'GENERAL.MENU.HELP' | translate }}</a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!profile" class="o-menu--transparent">
+    <div class="container">
+        <div class="o-menu__content">
+            <a routerLink="/" class="a-site-logo--full"></a>
+            <app-main-menu [profile]="profile"></app-main-menu>
         </div>
     </div>
 </div>

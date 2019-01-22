@@ -4,7 +4,7 @@ const startServer = require("../../mocks/startServer");
 const { omit } = require("ramda");
 
 describe("Integration", () => {
-	describe("Profile", () => {
+	describe("Profile get", () => {
 		let server;
 		let closeServer;
 		let reset;
@@ -22,7 +22,7 @@ describe("Integration", () => {
 
 		it("Should not be able to get profile when not loggedIn", () => {
 			return supertest(server)
-				.get("/api/auth/profile")
+				.get("/api/profile")
 				.expect("Content-Type", /json/)
 				.expect(403);
 		});
@@ -41,7 +41,7 @@ describe("Integration", () => {
 				.then((res) => cookie = res.header["set-cookie"][0]);
 
 			return supertest(server)
-				.get("/api/auth/profile")
+				.get("/api/profile")
 				.set("cookie", cookie)
 				.expect("Content-Type", /json/)
 				.expect(200)

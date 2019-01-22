@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-main-menu',
     templateUrl: './main-menu.component.html',
 })
 
-export class MainMenuComponent {}
+export class MainMenuComponent {
+    @Input() profile: any;
+}

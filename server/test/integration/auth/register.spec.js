@@ -129,7 +129,7 @@ describe("Integration", () => {
 
 			// Check if user is logged in
 			return supertest(server)
-				.get("/api/auth/profile")
+				.get("/api/profile")
 				.set("cookie", cookie)
 				.expect("Content-Type", /json/)
 				.expect(200)
