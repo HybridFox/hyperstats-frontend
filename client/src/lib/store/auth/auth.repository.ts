@@ -2,7 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config.service';
 import { Observable } from 'rxjs';
-import { ProfileInterface, RegisterInterface, RequestPasswordResetInterface } from './auth.interface';
+
+import {
+  ResetPasswordInterface,
+  RegisterInterface,
+  LoginInterface,
+  RequestPasswordResetInterface,
+  ProfileInterface
+} from './auth.interface';
 
 @Injectable()
 export class AuthRepository {
@@ -11,7 +18,7 @@ export class AuthRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public login({ email, password }) {
+  public login({ email, password }: LoginInterface) {
     const url = this.apiConfig.baseUrl('/auth/login');
 
     return this.http
@@ -66,5 +73,15 @@ export class AuthRepository {
 
     return this.http
       .get(url);
+  }
+
+  public resetPassword({ password, token }: ResetPasswordInterface) {
+    const url = this.apiConfig.baseUrl('/auth/reset-password');
+
+    return this.http
+      .put(url, {
+        password,
+        token
+      });
   }
 }

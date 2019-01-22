@@ -11,7 +11,7 @@
     "test": "jest --collectCoverage --outputFile=test_results/jest/results.xml --reporters=default --reporters=jest-junit",
     "test:watch": "jest --watch",
     "test:ci": "npm run lint && npm run test && npm run e2e",
-    "translate:extract": "ngx-translate-extract --input ./src -m _ -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
+    "translate:extract": "ngx-translate-extract --input ./src -m ngxExtract -o ./src/assets/i18n/template.json --clean --sort -f namespaced-json && npm run translate:jsonToPot",
     "translate:poToJson": "node ./scripts/poToJson.js",
     "translate:jsonToPot": "node ./scripts/jsonToPot.js",
     "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json --theme material"
@@ -34,6 +34,7 @@
     "@studiohyperdrive/api-docs": "1.0.0",
     "@types/lodash-es": "^4.17.1",
     "@types/ramda": "^0.25.44",
+    "@types/yargs": "12.0.5",
     "core-js": "^2.5.4",
     "cors": "2.8.5",
     "country-list": "2.1.0",

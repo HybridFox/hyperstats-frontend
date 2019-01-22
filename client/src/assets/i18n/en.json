@@ -8,30 +8,35 @@
         "LABELS": {
             "ACCEPT-TERMS": "I accept the terms and conditions",
             "BOX": "Box",
+            "BROWSE": "Browse",
             "CITY": "City",
-            "COMPANYNAME": "Company name",
-            "COPYRIGHT": "© Eucobat 2018",
+            "COMPANYNAME": "Company naem",
+            "COPYRIGHT": "ï¿½ Eucobat 2018",
             "COUNTRY": "Country",
+            "DRAGANDDROP": "Drag files here or",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
-            "NUMBER": "Number",
+            "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
             "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zip code",
+            "ZIPCODE": "Zipcode",
             "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
+            "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
             "COMPANYINFORMATION": "Company information",
+            "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
             "LOGOFF": "Logoff",
@@ -78,6 +83,16 @@
                 "TITLE": "Registration successfull"
             }
         },
+        "FORGOT-PASSWORD": {
+            "ERROR": {
+                "DESCRIPTION": "Could not request a password reset",
+                "TITLE": "Something went wrong"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
+            }
+        },
         "GENERAL": {
             "INVALID": {
                 "DESCRIPTION": "Please check if all fields are correct",
@@ -106,12 +121,12 @@
         },
         "RESET-PASSWORD": {
             "ERROR": {
-                "DESCRIPTION": "Could not request a password reset",
+                "DESCRIPTION": "Could not reset your password, try again later",
                 "TITLE": "Something went wrong"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your email for the link to reset your password",
-                "TITLE": "Password reset requested"
+                "DESCRIPTION": "You can now use your new password to login",
+                "TITLE": "Success!"
             }
         }
     }

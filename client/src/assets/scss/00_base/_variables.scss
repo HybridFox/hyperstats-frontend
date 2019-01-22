@@ -13,7 +13,7 @@ $screen-m: 60rem;
 $screen-l: 77.5rem;
 // 1240px
 
-$footer-height: 66px;
+$footer-height: 80px;
 
 // -------------------------------------------------------------------
 // :: GRID
@@ -39,7 +39,8 @@ $_grid-col-12: 100%;
 // -------------------------------------------------------------------
 // :: FONT SIZES
 // -------------------------------------------------------------------
-$font-size-small: 12px;
+$font-size-x-small: 12px;
+$font-size-small: 14px;
 $font-size-regular: 16px;
 $font-size-large: 24px;
 $font-size-x-large: 32px;

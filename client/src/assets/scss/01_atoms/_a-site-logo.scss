@@ -20,3 +20,12 @@
   height: 26px;
   background-color: $white;
 }
+
+.a-site-logo--full {
+  background-image: url("/assets/images/logo-full.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 170px;
+  height: 40px;
+  margin-right: $spacer-x-large;
+}

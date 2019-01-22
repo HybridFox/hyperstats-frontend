@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { AuthActions } from '@store/auth';
 
@@ -32,10 +33,17 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
         this.authAction.requestPasswordReset({
             ...this.resetPasswordForm.value
         }).then(() => {
-            this.toastrService.error('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION', 'TOAST.RESET-PASSWORD.SUCCESS.TITLE');
+            this.toastrService.success(
+                ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.TITLE') as string
+            );
             this.resetPasswordForm.reset();
         }).catch(() => {
-            this.toastrService.error('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION', 'TOAST.RESET-PASSWORD.ERROR.TITLE');
+            this.toastrService.error(
+                ngxExtract('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.RESET-PASSWORD.ERROR.TITLE') as string
+            );
+            this.resetPasswordForm.reset();
         });
     }
 }
