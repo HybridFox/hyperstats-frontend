@@ -32,7 +32,7 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
         this.authAction.requestPasswordReset({
             ...this.resetPasswordForm.value
         }).then(() => {
-            this.toastrService.error('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION', 'TOAST.FORGOT-PASSWORD.SUCCESS.TITLE');
+            this.toastrService.success('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION', 'TOAST.FORGOT-PASSWORD.SUCCESS.TITLE');
             this.resetPasswordForm.reset();
         }).catch(() => {
             this.toastrService.error('TOAST.FORGOT-PASSWORD.ERROR.DESCRIPTION', 'TOAST.FORGOT-PASSWORD.ERROR.TITLE');

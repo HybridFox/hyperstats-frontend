@@ -54,7 +54,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             this.toastrService.success('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.SUCCESS.TITLE');
             this.companyForm.reset();
         }).catch(() => {
-            this.toastrService.success('TOAST.COMPANY-INFORMATION.ERROR.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.ERROR.TITLE');
+            this.toastrService.error('TOAST.COMPANY-INFORMATION.ERROR.DESCRIPTION', 'TOAST.COMPANY-INFORMATION.ERROR.TITLE');
         });
     }
 }
