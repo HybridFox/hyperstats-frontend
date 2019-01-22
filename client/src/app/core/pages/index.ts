@@ -14,7 +14,7 @@ import { ForgotPasswordPageComponent } from './forgot-password';
 import { CompanyPageComponent } from './company-information';
 import { VerificationSucceededPageComponent } from './verification-succeeded';
 import { VerificationFailedPageComponent } from './verification-failed';
-import { HelpPageComponent } from './help';
+import { HelpPageComponent, HelpSectionPageComponent } from './help';
 
 export const Pages = [
     AboutPageComponent,
@@ -24,5 +24,6 @@ export const Pages = [
     CompanyPageComponent,
     VerificationSucceededPageComponent,
     VerificationFailedPageComponent,
-    HelpPageComponent
+    HelpPageComponent,
+    HelpSectionPageComponent
 ];

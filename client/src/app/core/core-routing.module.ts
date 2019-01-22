@@ -37,6 +37,9 @@ const routes: Routes = [
   {
     path: 'help',
     component: Pages.HelpPageComponent,
+    children: [
+      { path: ':section', component: Pages.HelpSectionPageComponent },
+    ]
   },
   {
     path: '',
