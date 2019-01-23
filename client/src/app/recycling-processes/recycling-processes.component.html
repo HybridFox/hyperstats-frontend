@@ -3,7 +3,7 @@
         [title]="'PAGE.RECYCLING-PROCESSES.TITLE' | translate"
     ></app-page-title>
     <div class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-3-12">
+        <div class="l-grid__col-4-12">
             <div class="m-card--primary">
                 <app-vertical-menu
                     [menuItems]="[
@@ -25,11 +25,11 @@
                     class="a-button--primary a-button-outline has-icon-after"
                 >{{ 'GENERAL.LABELS.ADD-RECYCLING-PROCESS' }}</button>
                 <p class="u-text-description">
-                    {{ 'PAGE.RECYCLING-PROCESSES-DESCRIPTION' | translate }}
+                    {{ 'PAGE.RECYCLING-PROCESSES.DESCRIPTION' | translate }}
                 </p>
             </div>
         </div>
-        <div class="l-grid__col-9-12">
+        <div class="l-grid__col-8-12">
             <router-outlet></router-outlet>
         </div>
     </div>

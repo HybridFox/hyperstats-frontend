@@ -59,6 +59,25 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"RECYCLING-PROCESSES": {
+			"DESCRIPTION": "",
+			"LABELS": {
+				"DESCRIPTION": "",
+				"DESCRIPTION-DESCRIPTION": "",
+				"NAME": "",
+				"PRECEDING-STEP": "",
+				"PROCESSING-METHOD": "",
+				"QUALITATIVE-DESCRIPTION": "",
+				"QUALITATIVE-DESCRIPTION-DESCRIPTION": "",
+				"RECYCLING-SITE-OWNER": "",
+				"SCHEMATIC-OVERVIEW": "",
+				"SCHEMATIC-OVERVIEW-DESCRIPTION": ""
+			},
+			"PROCESS-DESCRIPTION": "",
+			"PROCESS-TITLE": "",
+			"RECYCLING-STEP": "",
+			"TITLE": ""
+		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
 		},
@@ -73,16 +92,6 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
-			"ERROR": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			},
-			"SUCCESS": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			}
-		},
-		"FORGOT-PASSWORD": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

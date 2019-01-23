@@ -1,1 +1,47 @@
-TEST
+<div class="m-card--primary u-margin-bottom-large">
+    <app-section-title
+        title="Alkaline - Nickel Metal"
+        class="u-margin-bottom"
+    ></app-section-title>
+    <app-text-input
+        [label]="'PAGE.RECYCLING-PROCESSES.LABELS.NAME' | translate"
+        class="u-margin-bottom-x-large"
+    ></app-text-input>
+    <div class="m-card--secondary u-margin-bottom-x-large">
+        <p class="u-no-margin u-margin-bottom"><b>{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-TITLE' | translate }}</b></p>
+        <p class="u-no-margin">{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-DESCRIPTION' | translate }}</p>
+    </div>
+    <div>
+        <app-sub-section-title
+            [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate"
+            class="u-margin-bottom-large"
+        ></app-sub-section-title>
+        <app-text-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PRECEDING-STEP' | translate"
+            class="u-margin-bottom-x-large"
+        ></app-text-input>
+        <app-text-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.DESCRIPTION' | translate"
+            [description]="'PAGE.RECYCLING-PROCESSES.LABELS.DESCRIPTION-DESCRIPTION' | translate"
+            class="u-margin-bottom-x-large"
+        ></app-text-input>
+        <app-text-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.RECYCLING-SITE-OWNER' | translate"
+            class="u-margin-bottom-large"
+        ></app-text-input>
+        <app-text-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PROCESSING-METHOD' | translate"
+            class="u-margin-bottom-large"
+        ></app-text-input>
+        <app-textarea-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION' | translate"
+            [description]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION-DESCRIPTION' | translate"
+            class="u-margin-bottom-large"
+        ></app-textarea-input>
+        <app-text-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
+            [description]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate"
+            class="u-margin-bottom-large"
+        ></app-text-input>
+    </div>
+</div>

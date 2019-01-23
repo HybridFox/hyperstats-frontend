@@ -90,6 +90,10 @@
             display: none;
         }
 
+        textarea.a-input__field {
+            height: 150px;
+        }
+
         .a-input__suffix {
             position: absolute;
             right: 0;
@@ -99,14 +103,12 @@
         }
     }
 
-    textarea.a-input__field {
-        height: 150px;
-    }
-
     &__description {
         display: block;
         color: $tundora;
         margin: 0;
+        line-height: 20px;
+        margin-top: $spacer-xx-small;
         font-size: $font-size-x-small;
     }
 
