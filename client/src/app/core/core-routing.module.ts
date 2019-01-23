@@ -73,6 +73,10 @@ const routes: Routes = [
         component: Pages.ProfilePageComponent
       },
     ]
+  },
+  {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
   }
 ];
 

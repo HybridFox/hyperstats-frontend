@@ -7,6 +7,7 @@ export * from './reset-password';
 export * from './company-information';
 export * from './verification-succeeded';
 export * from './verification-failed';
+export * from './privacy';
 export * from './help';
 
 import { AboutPageComponent } from './about';
@@ -18,6 +19,7 @@ import { ResetPasswordPageComponent } from './reset-password';
 import { CompanyPageComponent } from './company-information';
 import { VerificationSucceededPageComponent } from './verification-succeeded';
 import { VerificationFailedPageComponent } from './verification-failed';
+import { PrivacyPageComponent } from './privacy';
 import { HelpPageComponent, HelpSectionPageComponent } from './help';
 
 export const Pages = [
@@ -30,6 +32,7 @@ export const Pages = [
     CompanyPageComponent,
     VerificationSucceededPageComponent,
     VerificationFailedPageComponent,
+    PrivacyPageComponent,
     HelpPageComponent,
     HelpSectionPageComponent
 ];
