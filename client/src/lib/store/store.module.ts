@@ -5,7 +5,6 @@ import { environment } from '@environments/environment';
 
 import { Services } from '@store/services';
 import { StoreService } from '@store/store.service';
-import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -14,8 +13,7 @@ import { CookieService } from 'ngx-cookie-service';
   ],
   providers: [
     StoreService,
-    Services,
-    CookieService
+    Services
   ],
 })
 export class StoreModule {

@@ -41,7 +41,6 @@
     "deep-extend": "^0.6.0",
     "i18next-conv": "^8.0.1",
     "ng-redux": "^4.1.0",
-    "ngx-cookie-service": "2.1.0",
     "ngx-toastr": "9.1.1",
     "normalizr": "^3.3.0",
     "ramda": "^0.26.1",

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { catchError, tap, finalize } from 'rxjs/operators';
 import { throwError as _throw, Observable } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
 
 import { Handler } from '@store/handler';
 
@@ -14,8 +13,7 @@ import { RegisterInterface, LoginInterface, ResetPasswordInterface, RequestPassw
 export class AuthActions {
   constructor(
     private authRepository: AuthRepository,
-    private handler: Handler,
-    private cookieService: CookieService
+    private handler: Handler
   ) {}
 
   public login({ email, password }: LoginInterface): Promise<any> {
@@ -103,7 +101,6 @@ export class AuthActions {
       .logout()
       .toPromise()
       .then(() => {
-        this.cookieService.delete('rare-app');
         return this.handler.dispatch(ACTIONS.CLEAR_USER);
       });
   }
