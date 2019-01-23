@@ -18,7 +18,6 @@
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
-			"LEAVE-EMPTY-TO-NOT-CHANGE": "",
 			"LOGIN": "",
 			"NUMBER": "",
 			"PASSWORD": "",
@@ -29,6 +28,7 @@
 			"STREETNAME": "",
 			"TOKEN": "",
 			"TRY-AGAIN": "",
+			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
@@ -81,6 +81,16 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"FORGOT-PASSWORD": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

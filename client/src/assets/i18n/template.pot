@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-23T07:53:42.125Z\n"
-"PO-Revision-Date: 2019-01-23T07:53:42.125Z\n"
+"POT-Creation-Date: 2019-01-23T09:06:33.141Z\n"
+"PO-Revision-Date: 2019-01-23T09:06:33.142Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -53,9 +53,6 @@ msgstr ""
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
-msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
-msgstr ""
-
 msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
@@ -84,6 +81,9 @@ msgid "GENERAL##LABELS##TOKEN"
 msgstr ""
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr ""
 
 msgid "GENERAL##LABELS##WELCOME"
@@ -122,9 +122,6 @@ msgstr ""
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr ""
 
-msgid "GENERAL##MENU##REGISTER"
-msgstr ""
-
 msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
@@ -153,9 +150,6 @@ msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
 msgstr ""
 
 msgid "PAGE##COMPANYINFORMATION##TITLE"
-msgstr ""
-
-msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr ""
 
 msgid "PAGE##PROFILE##TITLE"
@@ -231,6 +225,12 @@ msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"

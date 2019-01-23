@@ -21,14 +21,14 @@
                             type="email"
                             class="u-margin-bottom-large"
                         ></app-text-input>
-                        <app-text-input
-                            [control]="profileForm.get('password')"
-                            [label]="'GENERAL.LABELS.PASSWORD' | translate"
-                            [description]="'GENERAL.LABELS.LEAVE-EMPTY-TO-NOT-CHANGE' | translate"
-                            type="password"
-                            class="u-margin-bottom-large"
-                        ></app-text-input>
-                        <input type="submit" [value]="'GENERAL.LABELS.SAVE' | translate" class="a-button a-button--primary a-button--small">
+                        <input type="submit" [value]="'GENERAL.LABELS.UPDATE-PROFILE' | translate" class="a-button a-button--primary a-button--small">
+                        <button
+                            type="button"
+                            class="a-button u-margin-left-x-large a-button--secondary a-button--small"
+                            (click)="resetPassword()"
+                        >
+                            {{ 'GENERAL.LABELS.RESET-PASSWORD' | translate }}
+                        </button>
                     </div>
                 </div>
             </form>

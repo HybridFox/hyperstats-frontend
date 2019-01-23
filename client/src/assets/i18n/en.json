@@ -17,17 +17,17 @@
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
-            "LEAVE-EMPTY-TO-NOT-CHANGE": "Leave this field empty to not change",
             "LOGIN": "Login",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset",
+            "RESET-PASSWORD": "Reset Password",
             "SAVE": "Save",
             "STREETNAME": "Street name",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
+            "UPDATE-PROFILE": "Update Profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode"
         },
@@ -87,6 +87,16 @@
             "SUCCESS": {
                 "DESCRIPTION": "Please check your inbox for a verification email",
                 "TITLE": "Registration successfull"
+            }
+        },
+        "FORGOT-PASSWORD": {
+            "ERROR": {
+                "DESCRIPTION": "Could not request a password reset",
+                "TITLE": "Something went wrong"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
             }
         },
         "GENERAL": {
