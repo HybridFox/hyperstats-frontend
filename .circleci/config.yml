@@ -105,7 +105,6 @@ workflows:
             - test-client
             - test-server
       - deploy-acc:
-          type: approval
           requires:
             - approve-acc
 
