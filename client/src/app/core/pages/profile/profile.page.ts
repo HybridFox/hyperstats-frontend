@@ -1,11 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { select } from '@angular-redux/store';
 import { Subject, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { AuthActions, AuthSelector } from '@store/auth';
 import { UserInterface } from '@store/auth/auth.interface';
+import { FormHelper } from '@helpers/form.helper';
 
 @Component({
     templateUrl: './profile.page.html',
@@ -19,14 +21,15 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     constructor(
         private authAction: AuthActions,
         private toastrService: ToastrService,
+        private formBuilder: FormBuilder,
     ) { }
 
     ngOnInit(): void {
-        this.profileForm = new FormGroup({
-            email: new FormControl('', Validators.required),
-            firstname: new FormControl('', Validators.required),
-            lastname: new FormControl('', Validators.required),
-            password: new FormControl('', Validators.required)
+        this.profileForm = this.formBuilder.group({
+            email: ['', Validators.required],
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+            password: ['']
         });
 
         this.user$
@@ -39,18 +42,26 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
+        FormHelper.markAsDirty(this.profileForm);
         if (!this.profileForm.valid) {
-            return this.toastrService.error('TOAST.GENERAL.INVALID.DESCRIPTION', 'TOAST.GENERAL.INVALID.TITLE');
+            return this.toastrService.error(
+                ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
+                ngxExtract('TOAST.GENERAL.INVALID.TITLE') as string
+            );
         }
 
         return this.authAction.updateProfile({
             ...this.profileForm.value
         }).then(() => {
-            // TODO: translate
-            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
-            this.profileForm.reset();
+            this.toastrService.success(
+                ngxExtract('TOAST.PROFILE.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.PROFILE.SUCCESS.TITLE') as string
+            );
         }).catch(() => {
-            this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            return this.toastrService.error(
+                ngxExtract('TOAST.PROFILE.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.PROFILE.ERROR.TITLE') as string
+            );
         });
     }
 }
