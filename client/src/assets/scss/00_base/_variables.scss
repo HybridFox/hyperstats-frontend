@@ -1,0 +1,71 @@
+// -------------------------------------------------------------------
+// :: BREAKPOINTS
+// -------------------------------------------------------------------
+$screen-xs: 30rem;
+// 480px
+
+$screen-s: 45rem;
+// 720px
+
+$screen-m: 60rem;
+// 960px
+
+$screen-l: 77.5rem;
+// 1240px
+
+$footer-height: 80px;
+
+// -------------------------------------------------------------------
+// :: GRID
+// -------------------------------------------------------------------
+$font-family-lato: "Lato", sans-serif;
+
+$grid-gutter: 36px !default;
+$grid-gutter-row: $grid-gutter !default;
+
+$_grid-col-1: 100% / 12;
+$_grid-col-2: 100% / 6;
+$_grid-col-3: 100% / 4;
+$_grid-col-4: 33.3%;
+$_grid-col-5: 100% / 12 * 5;
+$_grid-col-6: 49.9%;
+$_grid-col-7: 100% / 12 * 7;
+$_grid-col-8: 66.5%;
+$_grid-col-9: 100% / 12 * 9;
+$_grid-col-10: 100% / 12 * 10;
+$_grid-col-11: 100% / 12 * 11;
+$_grid-col-12: 100%;
+
+// -------------------------------------------------------------------
+// :: FONT SIZES
+// -------------------------------------------------------------------
+$font-size-x-small: 12px;
+$font-size-small: 14px;
+$font-size-regular: 16px;
+$font-size-large: 24px;
+$font-size-x-large: 32px;
+$font-size-xx-large: 48px;
+$font-size-xxx-large: 64px;
+$font-size-xxxx-large: 96px;
+
+// -------------------------------------------------------------------
+// :: FONT WEIGHTS
+// -------------------------------------------------------------------
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semi-bold: 500;
+$font-weight-bold: 700;
+
+// -------------------------------------------------------------------
+// :: SPACERS
+// -------------------------------------------------------------------
+$spacer-xx-small: 1rem / 3;
+$spacer-x-small: 1rem / 2;
+$spacer-small: 1rem / 1.5;
+$spacer: 1rem;
+$spacer-large: 1rem * 1.5;
+$spacer-x-large: 1rem * 2;
+$spacer-xx-large: 1rem * 3;
+$spacer-xxx-large: 1rem * 4;
+
+$border-radius: 4px;

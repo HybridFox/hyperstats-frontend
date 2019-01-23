@@ -1,0 +1,22 @@
+{
+	"includes": [
+		"**/*.js"
+	],
+	"exclude": [
+		"**/*.spec.js",
+		"coverage/**/*",
+		"node_modules/**/*.js",
+		"test/{,!(integration)/}**/*.js",
+		"{,!(index)*}.js",
+		"config/env/**/*"
+	],
+	"require": [],
+	"cache": false,
+	"all": true,
+	"sourceMap": false,
+	"reporter": [
+		"lcov",
+		"text-summary"
+	],
+	"reportDir": "./test/coverage"
+}

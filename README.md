@@ -1,4 +1,5 @@
 [![CircleCI](https://circleci.com/bb/district01/rare_app_nodejs.svg?style=svg&circle-token=dfcb57f788ad4324fe27ad6ec8bbe89a90edea9e)](https://circleci.com/bb/district01/rare_app_nodejs)
+
 # R.A.R.E. v1.0.0 #
 Eucobat Rare
 
@@ -20,7 +21,6 @@ Eucobat Rare
 * [Project Context](#project-context)
     * [Details](#details)
     * [Team](#team)
-
 
 ---
 ## Setup ##
@@ -69,6 +69,7 @@ This project implements several external services:
 | translate:extract     | Extract all translations
 | translate:jsonToPot   | json to pot
 | translate:poToJson    | po to json
+| compodoc              | generate angular compodocs in ./documentation
 
 All commands are executable by running ``docker-compose exec app `npm run [COMMAND-NAME]` ``.
 ---

@@ -1,0 +1,36 @@
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin user-select($selection...) {
+    -moz-user-select:    $selection;
+    -o-user-select:      $selection;
+    -webkit-user-select: $selection;
+    user-select:         $selection;
+}
+
+// -------------------------------------------------------------------
+// :: BREAKPOINTS MIXINS
+// -------------------------------------------------------------------
+@mixin respond-at($_min-width) {
+        @media screen and (min-width: $_min-width) {
+        @content;
+    }
+}
+
+@mixin respond-to($_max-width) {
+    $_max-width-fix: $_max-width - rem(1px);
+
+    @media screen and (max-width: $_max-width-fix) {
+        @content;
+    }
+}
+
+@mixin respond-between($_min-width, $_max-width) {
+    @media screen and (min-width: $_min-width) and (max-width: $_max-width) {
+        @content;
+    }
+}

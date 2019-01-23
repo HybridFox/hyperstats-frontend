@@ -1,0 +1,15 @@
+<nav class="m-menu--main">
+    <div *ngIf="profile; else loggedOut">
+        <a [routerLink]="['/reports']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.REPORTS' | translate }}</a>
+        <a [routerLink]="['/recycling-processes']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.RECYCLINGPROCESSES' | translate }}</a>
+        <a [routerLink]="['/recycling-partners']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.RECYCLINGPARTNERS' | translate }}</a>
+        <a [routerLink]="['/proxies']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.PROXIES' | translate }}</a>
+        <a [routerLink]="['/audit-trail']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.AUDITTRIAL' | translate }}</a>
+    </div>
+
+    <ng-template #loggedOut>
+        <a [routerLink]="['/about']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.ABOUT' | translate }}</a>
+        <a [routerLink]="['/contact']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.CONTACT' | translate }}</a>
+        <a [routerLink]="['/register']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.REGISTER' | translate }}</a>
+    </ng-template>
+</nav>

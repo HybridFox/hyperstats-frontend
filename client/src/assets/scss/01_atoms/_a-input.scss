@@ -1,0 +1,120 @@
+.a-input {
+    &__label {
+        color: $black;
+        font-weight: $font-weight-semi-bold;
+    }
+
+    &__checkbox-container {
+        .a-input__label {
+            position: relative;
+            cursor: pointer;
+            @include user-select(none);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .a-input__checkbox {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+            .a-input__fake-checkbox {
+                font-family: 'icon-font' !important;
+                border: 1px solid $mercury;
+                background-color: $white;
+                height: 25px;
+                width: 25px;
+                border-radius: $border-radius;
+                display: block;
+                margin-right: $spacer-small;
+            }
+
+            .a-input__checkbox:checked ~ .a-input__fake-checkbox {
+                border-color: $zodiac;
+                background-color: $zodiac;
+                position: relative;
+
+                &::after {
+                    color: #FFF;
+                    content: "\e905";
+                    font-size: 1.4em;
+                }
+            }
+        }
+    }
+
+    &__field-container {
+        margin-top: $spacer-small;
+        position: relative;
+
+        .a-input__field {
+            display: block;
+            width: 100%;
+            background: $white;
+            border: 1.5px solid $mercury;
+            border-radius: $border-radius;
+            padding: $spacer-small;
+            height: 40px;
+            transition: border .5s ease;
+
+            &:disabled {
+                cursor: not-allowed;
+                background-color: $mercury;
+                border-color: rgba($gray, 0.3);
+                color: $gray;
+            }
+
+            &::placeholder {
+                color: $tundora;
+                opacity: 1;
+            }
+
+            &.ng-dirty.ng-invalid {
+                border: 1.5px solid $danger;
+            }
+        }
+
+        select.a-input__field {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
+            background-size: 10px;
+            padding: 0 $spacer-small;
+        }
+
+        select.a-input__field::-ms-expand {
+            display: none;
+        }
+
+        .a-input__suffix {
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: $spacer-small;
+            pointer-events: none;
+        }
+    }
+
+    textarea.a-input__field {
+        height: 150px;
+    }
+
+    &__description {
+        display: block;
+        color: $tundora;
+        margin: 0;
+        font-size: $font-size-x-small;
+    }
+
+    &__error {
+        position: absolute;
+        display: block;
+        color: $danger;
+        margin: 0;
+        font-size: $font-size-x-small;
+    }
+}

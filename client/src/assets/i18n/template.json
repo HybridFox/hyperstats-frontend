@@ -1,0 +1,135 @@
+{
+	"GENERAL": {
+		"FIELD-ERRORS": {
+			"EMAIL": "",
+			"PASSWORD": "",
+			"REQUIRED": ""
+		},
+		"LABELS": {
+			"ACCEPT-TERMS": "",
+			"BOX": "",
+			"BROWSE": "",
+			"CITY": "",
+			"COMPANYNAME": "",
+			"COPYRIGHT": "",
+			"COUNTRY": "",
+			"DRAGANDDROP": "",
+			"EMAIL": "",
+			"FIRSTNAME": "",
+			"FORGOT-PASSWORD": "",
+			"LASTNAME": "",
+			"LEAVE-EMPTY-TO-NOT-CHANGE": "",
+			"LOGIN": "",
+			"NUMBER": "",
+			"PASSWORD": "",
+			"PRIVACY": "",
+			"REGISTER": "",
+			"RESET-PASSWORD": "",
+			"SAVE": "",
+			"STREETNAME": "",
+			"TOKEN": "",
+			"TRY-AGAIN": "",
+			"WELCOME": "",
+			"ZIPCODE": ""
+		},
+		"MENU": {
+			"ABOUT": "",
+			"AUDITTRIAL": "",
+			"COMPANYINFORMATION": "",
+			"CONTACT": "",
+			"HELP": "",
+			"LOGIN": "",
+			"LOGOFF": "",
+			"PROXIES": "",
+			"RECYCLINGPARTNERS": "",
+			"RECYCLINGPROCESSES": "",
+			"REGISTER": "",
+			"REPORTS": "",
+			"USERPROFILE": ""
+		}
+	},
+	"PAGE": {
+		"ABOUT": {
+			"CONTENT-1": "",
+			"CONTENT-2": "",
+			"SECTION-1": "",
+			"SECTION-2": "",
+			"TITLE": ""
+		},
+		"COMPANYINFORMATION": {
+			"HELP": "",
+			"SUBTITLE": "",
+			"TITLE": ""
+		},
+		"REGISTER": {
+			"VERIFY-EMAIL": ""
+		},
+		"PROFILE": {
+			"TITLE": ""
+		},
+		"RESET-PASSWORD": {
+			"TITLE": ""
+		},
+		"VERIFICATION-FAILED": {
+			"CONTENT": "",
+			"TITLE": ""
+		},
+		"VERIFICATION-SUCCEEDED": {
+			"CONTENT": "",
+			"TITLE": ""
+		}
+	},
+	"TOAST": {
+		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"GENERAL": {
+			"INVALID": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"LOGIN": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"TITLE": ""
+			}
+		},
+		"PROFILE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"REGISTER": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RESET-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		}
+	}
+}

@@ -1,0 +1,129 @@
+.a-button {
+  font-family: $font-family-lato;
+  font-size: $font-size-x-small;
+  font-weight: $font-weight-bold;
+  line-height: 21px;
+  letter-spacing: 2.4px;
+  border-radius: $border-radius;
+  padding: $spacer-x-small $spacer-large;
+  border: 1px solid;
+  text-decoration: none;
+  @include transition(all 0.5s ease-in-out);
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+  // Buttons with icon on right.
+  .has-icon-after {
+    .a-icon {
+      margin: 0 $spacer-x-small / 2 0 $spacer-x-small / 4;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+}
+
+// Button types.
+.a-button--primary {
+  @extend .a-button;
+  background-color: $blue;
+  border-color: $blue;
+  color: $white;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgba($blue, 0.8);
+    border-color: rgba($blue, 0.8);
+  }
+}
+
+.a-button--secondary {
+  @extend .a-button;
+  background-color: $white;
+  border-color: $white;
+  color: $blue;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgba($white, 0.8);
+    border-color: rgba($white, 0.8);
+  }
+}
+
+.a-button--success {
+  @extend .a-button;
+  background-color: $success;
+  border-color: $success;
+  color: $white;
+  &:hover {
+    background-color: rgba($success, 0.8);
+    border-color: rgba($success, 0.8);
+  }
+}
+
+.a-button--danger {
+  @extend .a-button;
+  background-color: $danger;
+  border-color: $danger;
+  color: $white;
+  &:hover {
+    background-color: rgba($danger, 0.8);
+    border-color: rgba($danger, 0.8);
+  }
+}
+
+// Button outline colors.
+.a-button-outline {
+  &.a-button--primary {
+    background-color: $white;
+    color: $blue;
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+  &.a-button--secondary {
+    background-color: transparent;
+    color: $white;
+    text-transform: none;
+    font-size: $font-size-regular;
+    font-weight: $font-weight-regular;
+    letter-spacing: 1px;
+    &:hover {
+      background-color: $white;
+      color: $blue;
+    }
+  }
+  &.a-button--success {
+    background-color: $white;
+    color: $success;
+    &:hover {
+      background-color: $success;
+      color: $white;
+    }
+  }
+  &.a-button--danger {
+    background-color: $white;
+    color: $danger;
+    &:hover {
+      background-color: $danger;
+      color: $white;
+    }
+  }
+}
+
+// Button sizes.
+.a-button--small {
+  padding: $spacer-x-small $spacer-small;
+  font-size: $font-size-x-small;
+  letter-spacing: 0.6px;
+  line-height: 17px;
+}
+
+.a-button--has-icon-after {
+  padding: $spacer-x-small 0 $spacer-x-small $spacer-small;
+}

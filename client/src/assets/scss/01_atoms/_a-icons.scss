@@ -1,0 +1,88 @@
+/*
+ * e900 = help
+ * e901 = arrow-bottom
+ * e902 = arrow-left
+ * e903 = arrow-right
+ * e904 = calendar
+ * e905 = checkmark
+ * e906 = plus
+ * e907 = upload
+ * e908 = file
+ */
+
+.a-icon {
+    color:inherit;
+    font-size: $font-size-large;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icon-font' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.a-icon--help {
+    @extend .a-icon;
+    &::before {
+        content: "\e900";
+    }
+}
+
+.a-icon--arrow-bottom {
+    @extend .a-icon;
+    &::before {
+        content: "\e901";
+    }
+}
+
+.a-icon--arrow-left {
+    @extend .a-icon;
+    &::before {
+        content: "\e902";
+    }
+}
+
+.a-icon--arrow-right {
+    @extend .a-icon;
+    &::before {
+        content: "\e903";
+    }
+}
+
+.a-icon--calendar {
+    @extend .a-icon;
+    &::before {
+        content: "\e904";
+    }
+}
+
+.a-icon--checkmark {
+    @extend .a-icon;
+    &::before {
+        content: "\e905";
+    }
+}
+.a-icon--plus {
+    @extend .a-icon;
+    &::before {
+        content: "\e906";
+    }
+}
+
+.a-icon--upload {
+    @extend .a-icon;
+    &::before {
+        content: "\e907";
+    }
+}
+
+.a-icon--file {
+    @extend .a-icon;
+    &::before {
+        content: "\e908";
+    }
+}

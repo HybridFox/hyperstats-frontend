@@ -1,0 +1,32 @@
+.a-site-logo {
+  background-image: url("/assets/images/logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 36px;
+  float: left;
+  margin-right: $spacer-x-large;
+}
+
+.a-site-logo--small {
+  @extend .a-site-logo;
+  width: 22px;
+  height: 24px;
+}
+
+.a-site-logo--white {
+  @extend .a-site-logo;
+  width: 112px;
+  height: 26px;
+  background-color: $white;
+}
+
+.a-site-logo--full {
+  display: block;
+  background-image: url("/assets/images/logo-full.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 170px;
+  height: 40px;
+  margin-right: $spacer-x-large;
+}
