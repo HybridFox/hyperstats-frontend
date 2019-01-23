@@ -65,6 +65,27 @@ jobs:
             docker-compose down
             NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
 
+  deploy-acc:
+    machine:
+      enabled: true
+    environment:
+      SERVER: "198.211.127.249"
+    steps:
+      - run: ssh-keyscan $SERVER >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - "4c:c1:4b:cc:68:68:fe:84:b7:2b:ad:93:44:d0:f7:10"
+      - run:
+          name: Deploy to acc server
+          command: |
+            ssh shd@$SERVER "NODE_ENV=master" bash -c '
+            cd /var/www/rare_app_nodejs
+            git checkout .
+            git checkout development
+            git pull
+            docker-compose down
+            NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
+
 workflows:
   version: 2
   build-and-deploy:
@@ -78,3 +99,8 @@ workflows:
           filters:
             branches:
               only: development
+      - deploy-acc:
+          type: approval
+          requires:
+            - test-client
+            - test-server
