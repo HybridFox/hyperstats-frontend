@@ -71,7 +71,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etcâ¦",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
             "TITLE": "Success!"
         }
     },
