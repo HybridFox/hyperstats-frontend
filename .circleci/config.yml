@@ -78,13 +78,13 @@ jobs:
       - run:
           name: Deploy to acc server
           command: |
-            ssh shd@$SERVER "NODE_ENV=master" bash -c '
+            ssh shd@$SERVER "NODE_ENV=production" bash -c '
             cd /var/www/rare_app_nodejs
             git checkout .
-            git checkout development
+            git checkout master
             git pull
             docker-compose down
-            NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
+            NODE_ENV=production docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
 
 workflows:
   version: 2
