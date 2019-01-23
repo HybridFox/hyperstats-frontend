@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-22T08:19:14.991Z\n"
-"PO-Revision-Date: 2019-01-22T08:19:14.991Z\n"
+"POT-Creation-Date: 2019-01-23T09:23:06.849Z\n"
+"PO-Revision-Date: 2019-01-23T09:23:06.849Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -74,6 +74,9 @@ msgstr ""
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr ""
 
+msgid "GENERAL##LABELS##TOKEN"
+msgstr ""
+
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr ""
 
@@ -111,6 +114,9 @@ msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr ""
 
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
+msgstr ""
+
+msgid "GENERAL##MENU##REGISTER"
 msgstr ""
 
 msgid "GENERAL##MENU##REPORTS"

@@ -42,6 +42,7 @@
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
+			"REGISTER": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
 		}
@@ -73,16 +74,6 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
-			"ERROR": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			},
-			"SUCCESS": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			}
-		},
-		"FORGOT-PASSWORD": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
