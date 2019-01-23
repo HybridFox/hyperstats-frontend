@@ -1,6 +1,5 @@
 const supertest = require("supertest");
 
-
 module.exports = async(server, {
 	email = "validuser@example.com",
 	password = "validPassword",

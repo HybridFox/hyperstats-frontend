@@ -5,6 +5,7 @@ const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const companyTestHelper = require("../../helpers/testCompany");
 const companyMock = require("../../mocks/company");
+const loginUser = require("../../helpers/loginUser");
 
 describe("Integration", () => {
 	describe("Company update", () => {
@@ -26,17 +27,7 @@ describe("Integration", () => {
 				company: companyMock._id,
 			});
 
-			await supertest(server)
-				.post("/api/auth/login")
-				.send({
-					email: "validuser@example.com",
-					password: "validPassword",
-				})
-				.expect(200)
-				.expect("Content-Type", /json/)
-				.then(({ headers }) => {
-					cookie = headers["set-cookie"][0];
-				});
+			cookie = (await loginUser(server, { email: "test_company_user@example.com" })).cookie;
 		});
 
 		afterEach(() => reset());
@@ -56,7 +47,7 @@ describe("Integration", () => {
 						street: "updated street",
 						number: "updated number",
 						box: "updated box",
-						zipCode: 0,
+						zipCode: "0",
 						city: "wahala",
 						country: "WA",
 					},
@@ -74,7 +65,7 @@ describe("Integration", () => {
 						street: "updated street",
 						number: "updated number",
 						box: "updated box",
-						zipCode: 0,
+						zipCode: "0",
 						city: "wahala",
 						country: "WA",
 					},
@@ -93,7 +84,7 @@ describe("Integration", () => {
 					address: {
 						number: "updated number",
 						box: "updated box",
-						zipCode: 0,
+						zipCode: "0",
 						city: "wahala",
 						country: "WA",
 					},
@@ -112,7 +103,7 @@ describe("Integration", () => {
 					address: {
 						street: "updated street",
 						box: "updated box",
-						zipCode: 0,
+						zipCode: "0",
 						city: "wahala",
 						country: "WA",
 					},
@@ -184,10 +175,10 @@ describe("Integration", () => {
 				.put("/api/profile/company")
 				.set("cookie", cookie)
 				.send({
-					name: "firstnameUpdated",
+					name: "updated name",
 					address: {
 						street: "updated street",
-						number: "updated number",
+						number: companyMock.data.address.number,
 						box: "updated box",
 						zipCode: "0",
 						city: "wahala",
@@ -195,9 +186,15 @@ describe("Integration", () => {
 					},
 				})
 				.expect("Content-Type", /json/)
-				// .expect(200)
+				.expect(200)
 				.then(({ body }) => {
-					console.log(body);
+					expect(body).to.be.an("object");
+					expect(body.data).to.be.an("object");
+					expect(body.meta).to.be.an("object");
+					expect(body.data.name).to.equal("updated name");
+					expect(body.data.address).to.be.an("object");
+					expect(body.data.address.street).to.equal("updated street");
+					expect(body.data.address.number).to.equal(companyMock.data.address.number);
 				});
 		});
 	});
