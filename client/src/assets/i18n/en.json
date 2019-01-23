@@ -6,7 +6,6 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
-            "ACCEPT-TERMS": "I accept the terms and conditions",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CITY": "City",
@@ -60,6 +59,9 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
+        "REGISTER": {
+            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
+        },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
         },
@@ -68,7 +70,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc",
             "TITLE": "Success!"
         }
     },
@@ -105,7 +107,6 @@
                 "TITLE": "Cannot login"
             },
             "SUCCESS": {
-                "DESCRIPTION": "You are now free to browse",
                 "TITLE": "Logged in!"
             }
         },
@@ -113,10 +114,6 @@
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
-            },
-            "SUCCESS": {
-                "DESCRIPTION": "Please check your email for your verification mail",
-                "TITLE": "Successfully registered"
             }
         },
         "RESET-PASSWORD": {

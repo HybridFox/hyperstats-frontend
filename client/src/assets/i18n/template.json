@@ -59,6 +59,9 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"REGISTER": {
+			"VERIFY-EMAIL": ""
+		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
 		},
@@ -109,10 +112,6 @@
 		},
 		"REGISTER": {
 			"ERROR": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			},
-			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
