@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { catchError, tap, finalize } from 'rxjs/operators';
 import { throwError as _throw, Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 import { Handler } from '@store/handler';
-import { EntitiesActions } from '@store/entities';
 
 import { ACTIONS } from './auth.action-types';
 import { AuthRepository } from './auth.repository';
@@ -15,7 +15,7 @@ export class AuthActions {
   constructor(
     private authRepository: AuthRepository,
     private handler: Handler,
-    private entitiesActions: EntitiesActions
+    private cookieService: CookieService
   ) {}
 
   public login({ email, password }: LoginInterface): Promise<any> {
@@ -102,7 +102,10 @@ export class AuthActions {
     return this.authRepository
       .logout()
       .toPromise()
-      .then(() => this.handler.dispatch(ACTIONS.CLEAR_USER));
+      .then(() => {
+        this.cookieService.delete('rare-app');
+        return this.handler.dispatch(ACTIONS.CLEAR_USER);
+      });
   }
 
   public resetPassword({ password, token }: ResetPasswordInterface): Promise<any> {
