@@ -104,10 +104,10 @@ workflows:
           requires:
             - test-client
             - test-server
-      - deploy-acc:
-          requires:
-            - approve-acc
           filters:
             branches:
               only: master
+      - deploy-acc:
+          requires:
+            - approve-acc
 
