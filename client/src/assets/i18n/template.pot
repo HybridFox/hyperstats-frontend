@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-23T06:50:55.023Z\n"
-"PO-Revision-Date: 2019-01-23T06:50:55.023Z\n"
+"POT-Creation-Date: 2019-01-23T09:23:06.849Z\n"
+"PO-Revision-Date: 2019-01-23T09:23:06.849Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -120,6 +120,9 @@ msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr ""
 
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
+msgstr ""
+
+msgid "GENERAL##MENU##REGISTER"
 msgstr ""
 
 msgid "GENERAL##MENU##REPORTS"
