@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-23T06:50:55.023Z\n"
+"POT-Creation-Date: 2019-01-23T09:06:33.141Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,9 +56,6 @@ msgstr "Forgot Password"
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
 
-msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
-msgstr "Leave this field empty to not change"
-
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
 
@@ -75,7 +72,7 @@ msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
-msgstr "Reset"
+msgstr "Reset Password"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
@@ -88,6 +85,9 @@ msgstr "Token"
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
+
+msgid "GENERAL##LABELS##UPDATE-PROFILE"
+msgstr "Update Profile"
 
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
@@ -216,6 +216,18 @@ msgstr "Please check your inbox for a verification email"
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr "Registration successfull"
 
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not request a password reset"
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
+
 msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
 msgstr "Please check if all fields are correct"
 
@@ -267,21 +279,12 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+#~ msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
+#~ msgstr "Leave this field empty to not change"
+
 #~ msgctxt "TERMS"
 #~ msgid "GENERAL##LABELS##ACCEPT"
 #~ msgstr "I accept the terms and conditions"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
-#~ msgstr "Could not request a password reset"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
-#~ msgstr "Something went wrong"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-#~ msgstr "Please check your email for the link to reset your password"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
-#~ msgstr "Password reset requested"
 
 #~ msgid "GENERAL##MENU##NEWREPORT"
 #~ msgstr "New report"
