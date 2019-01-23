@@ -99,8 +99,13 @@ workflows:
           filters:
             branches:
               only: development
-      - deploy-acc:
+      - approve-acc:
           type: approval
           requires:
             - test-client
             - test-server
+      - deploy-acc:
+          type: approval
+          requires:
+            - approve-acc
+
