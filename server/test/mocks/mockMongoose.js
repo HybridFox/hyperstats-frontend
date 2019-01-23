@@ -7,7 +7,7 @@ module.exports = async() => {
 	const mongoServer = new MongoMemoryServer({
 		binary: {
 			version: "4.0.0",
-		}
+		},
 	});
 	const mongoUri = await mongoServer.getConnectionString();
 	const mongooseOpts = { // options for mongoose 4.11.3 and above

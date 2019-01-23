@@ -22,14 +22,14 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset",
+            "RESET-PASSWORD": "Reset Password",
             "SAVE": "Save",
             "STREETNAME": "Street name",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
+            "UPDATE-PROFILE": "Update Profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode",
-            "ACCEPT_TERMS": "I accept the terms and conditions"
+            "ZIPCODE": "Zipcode"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -42,6 +42,7 @@
             "PROXIES": "Proxies",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
+            "REGISTER": "Register",
             "REPORTS": "Reports",
             "USERPROFILE": "User profile"
         }
@@ -77,6 +78,12 @@
             "PROCESS-TITLE": "Process Description - Recycling Steps",
             "RECYCLING-STEP": "Recycling Step",
             "TITLE": "Recycling Processes"
+        },
+        "REGISTER": {
+            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
+        },
+        "PROFILE": {
+            "TITLE": "Profile"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -116,14 +123,20 @@
                 "TITLE": "Logged in!"
             }
         },
+        "PROFILE": {
+            "ERROR": {
+                "DESCRIPTION": "Something went wrong while updating your profile",
+                "TITLE": "Error!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "TITLE": "Success!"
+            }
+        },
         "REGISTER": {
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
-            },
-            "SUCCESS": {
-                "DESCRIPTION": "Please check your email for your verification mail",
-                "TITLE": "Successfully registered"
             }
         },
         "RESET-PASSWORD": {

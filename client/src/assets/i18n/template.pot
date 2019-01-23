@@ -17,6 +17,9 @@ msgstr ""
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr ""
 
+msgid "GENERAL##LABELS##ACCEPT-TERMS"
+msgstr ""
+
 msgid "GENERAL##LABELS##BOX"
 msgstr ""
 
@@ -78,6 +81,9 @@ msgid "GENERAL##LABELS##TOKEN"
 msgstr ""
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr ""
 
 msgid "GENERAL##LABELS##WELCOME"
@@ -191,6 +197,9 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr ""
 
+msgid "PAGE##PROFILE##TITLE"
+msgstr ""
+
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr ""
 
@@ -218,6 +227,18 @@ msgstr ""
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
 msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
 msgstr ""
 
@@ -231,6 +252,18 @@ msgid "TOAST##LOGIN##ERROR##TITLE"
 msgstr ""
 
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##PROFILE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
@@ -255,8 +288,4 @@ msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
-msgstr ""
-
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

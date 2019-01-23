@@ -54,10 +54,24 @@ const routes: Routes = [
     }
   },
   {
+    path: 'help',
+    component: Pages.HelpPageComponent,
+    children: [
+      { path: ':section', component: Pages.HelpSectionPageComponent },
+    ]
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
+      {
+        path: 'reports',
+        loadChildren: '../reports/reports.module#ReportsModule'
+      },
+      {
+        path: 'profile',
+        component: Pages.ProfilePageComponent
+      },
     ]
   },
   {
@@ -66,6 +80,10 @@ const routes: Routes = [
     children: [
       { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
     ]
+  },
+  {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
   }
 ];
 

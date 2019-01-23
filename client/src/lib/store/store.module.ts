@@ -13,7 +13,7 @@ import { StoreService } from '@store/store.service';
   ],
   providers: [
     StoreService,
-    Services,
+    Services
   ],
 })
 export class StoreModule {

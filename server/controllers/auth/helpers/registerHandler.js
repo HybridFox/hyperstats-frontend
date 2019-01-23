@@ -2,6 +2,7 @@ const path = require("path");
 const uuid = require("node-uuid").v4;
 const UserModel = require("../../../models/user");
 const mailer = require("../../../helpers/mail");
+const ResponseError = require("../../../helpers/errors/responseError");
 
 /**
  * @function registerHandler Handles passport login
@@ -12,7 +13,7 @@ module.exports = async(body) => {
 	const user = await UserModel.findOne({ "data.email": body.email }).exec();
 
 	if (user) {
-		throw new Error({ type: 409, msg: "Email already taken" });
+		throw new ResponseError({ type: 409, msg: "Email already taken" });
 	}
 
 	const newUser = new UserModel({
@@ -41,7 +42,7 @@ module.exports = async(body) => {
 	}).catch(async(error) => {
 		await newUser.remove();
 
-		throw new Error({ type: 500, msg: "Sending mail failed", error });
+		throw new ResponseError({ type: 500, msg: "Sending mail failed", error });
 	});
 
 	return newUser.toObject();

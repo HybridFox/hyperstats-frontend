@@ -138,6 +138,7 @@ describe("Integration", () => {
 					expect(omit(["created", "lastUpdated"], res.body)).to.deep.equal({
 						email: "otherUser@example.com",
 						firstname: "Jef",
+						isAdmin: false,
 						lastname: "Awesome",
 					});
 				});

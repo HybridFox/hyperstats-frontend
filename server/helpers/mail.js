@@ -26,6 +26,7 @@ const readFile = promisify(fs.readFile).bind(fs);
  * @param {String} [option.template] Template to render
  * @param {String} [options.templatePath] path to template file
  * @param {Object} [options.data] Data for render
+ * @param {String} [options.replyTo] Reply to email
  */
 module.exports = async({
 	to,
@@ -33,6 +34,7 @@ module.exports = async({
 	template,
 	templatePath,
 	data,
+	replyTo,
 }) => {
 	const rawTemplate = templatePath ? await readFile(templatePath) : template;
 	const parsedTemplate = await compiler(rawTemplate.toString(), {
@@ -43,6 +45,7 @@ module.exports = async({
 	return transporter.sendMail({
 		to, // user.data.email,
 		subject, // "Registration confirmation",
+		replyTo,
 		html: parsedTemplate, //`Complete registration <a href="${config.server.frontendHostname}/api/auth/verify?token=${user.meta.validation.token}">here</a>`,
 	});
 };
