@@ -42,6 +42,16 @@
   }
 }
 
+.a-button--link {
+  @extend .a-button;
+  background: transparent;
+  border: none;
+  color: $blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .a-button--secondary {
   @extend .a-button;
   background-color: $white;

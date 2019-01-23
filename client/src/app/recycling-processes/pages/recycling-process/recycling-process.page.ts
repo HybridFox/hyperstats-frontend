@@ -19,8 +19,19 @@ export class RecyclingProcessPageComponent implements OnInit {
         });
     }
 
-    public getStepKey(key) {
-        return parseInt(key, 2) + 1;
+    public getStepKey(key: string) {
+        return parseInt(key, 16) + 1;
+    }
+
+    public deleteStep(key: number) {
+        this.recyclingProcessForm.controls.steps.controls.splice(key, 1);
+        console.log(this.recyclingProcessForm.controls.steps.controls);
+    }
+
+    public duplicateStep(key: number) {
+        const newStep = this.createStep();
+        newStep.patchValue(this.recyclingProcessForm.controls.steps.controls[key].value);
+        this.recyclingProcessForm.controls.steps.push(newStep);
     }
 
     public addStep(): void {
@@ -29,7 +40,7 @@ export class RecyclingProcessPageComponent implements OnInit {
 
     private createStep(): FormGroup {
         return this.formBuilder.group({
-            precedingStep: ['', Validators.required],
+            precedingStep: [''],
             description: ['', Validators.required],
             recyclingSiteOwner: ['', Validators.required],
             methodOfProcessing: ['', Validators.required],

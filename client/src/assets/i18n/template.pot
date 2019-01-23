@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-23T13:46:41.739Z\n"
-"PO-Revision-Date: 2019-01-23T13:46:41.739Z\n"
+"POT-Creation-Date: 2019-01-23T14:13:17.040Z\n"
+"PO-Revision-Date: 2019-01-23T14:13:17.041Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -35,7 +35,13 @@ msgstr ""
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
+msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr ""
+
 msgid "GENERAL##LABELS##DRAGANDDROP"
+msgstr ""
+
+msgid "GENERAL##LABELS##DUPLICATE-STEP"
 msgstr ""
 
 msgid "GENERAL##LABELS##EMAIL"
