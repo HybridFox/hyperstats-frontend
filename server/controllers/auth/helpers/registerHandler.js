@@ -17,10 +17,14 @@ module.exports = async(body) => {
 	}
 
 	const newUser = new UserModel({
-		data: body,
+		data: {
+			...body,
+			company: "5c485d0029abc50032947f91",
+		},
 		meta: {
 			validation: {
 				isValidated: false,
+				companyName: body.companyName,
 				token: `${uuid()}-${uuid()}`,
 			},
 		},

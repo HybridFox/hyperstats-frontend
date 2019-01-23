@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const { promisify } = require("util");
+const CompanyModel = require("./company");
 
 const UserSchema = mongoose.Schema({
 	data: {
@@ -19,6 +20,10 @@ const UserSchema = mongoose.Schema({
 		lastname: {
 			type: String,
 			required: true,
+		},
+		company: {
+			type: String,
+			ref: CompanyModel,
 		},
 	},
 	meta: {
@@ -42,6 +47,9 @@ const UserSchema = mongoose.Schema({
 				type: Boolean,
 				required: true,
 				default: false,
+			},
+			requestedCompany: {
+				type: String,
 			},
 			token: {
 				type: String,

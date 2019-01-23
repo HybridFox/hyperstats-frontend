@@ -8,6 +8,8 @@ module.exports = async({
 	isValidated = true,
 	passwordResetExpire = new Date(new Date().getTime() + 60000), // valid for 1 min
 	passwordResetToken = "somePasswordToken",
+	companyName = "Test company",
+	company = null,
 	isAdmin = false,
 } = {}) => {
 	const testUser = new UserModel({
@@ -16,10 +18,12 @@ module.exports = async({
 			firstname,
 			lastname,
 			password,
+			company,
 		},
 		meta: {
 			validation: {
 				isValidated,
+				companyName,
 				token: "someToken",
 			},
 			passwordReset: {
