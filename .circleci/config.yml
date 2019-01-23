@@ -107,4 +107,7 @@ workflows:
       - deploy-acc:
           requires:
             - approve-acc
+          filters:
+            branches:
+              only: master
 
