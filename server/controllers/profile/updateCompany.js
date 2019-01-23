@@ -9,5 +9,5 @@ module.exports = (req, res, next) => {
 
 			res.status(200).json(omit(["__v"])(company));
 		})
-		.catch((error) => console.log(error) || next(error));
+		.catch((error) => next(error));
 };

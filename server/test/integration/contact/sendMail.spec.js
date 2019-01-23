@@ -34,8 +34,6 @@ describe("Integration", () => {
 			reset = r;
 
 			cookie = (await loginUser(server)).cookie;
-
-			console.log(cookie);
 		});
 
 		afterEach(() => reset());
