@@ -42,7 +42,7 @@ describe("Integration", () => {
 					lastname: "lastnameUpdated",
 				})
 				.expect("Content-Type", /json/)
-				.expect(500);
+				.expect(403);
 		});
 
 		it("Should return a validation error when no firstname is passed", () => {

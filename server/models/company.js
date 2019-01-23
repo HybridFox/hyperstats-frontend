@@ -19,7 +19,7 @@ const CompanySchema = mongoose.Schema({
 				type: String,
 			},
 			zipCode: {
-				type: Number,
+				type: String,
 				required: true,
 			},
 			city: {
@@ -27,6 +27,23 @@ const CompanySchema = mongoose.Schema({
 				required: true,
 			},
 			country: {
+				type: String,
+			},
+		},
+		contactPerson: {
+			name: {
+				type: String,
+			},
+			function: {
+				type: String,
+			},
+			phone: {
+				type: String,
+			},
+			mobile: {
+				type: String,
+			},
+			email: {
 				type: String,
 			},
 		},
@@ -44,7 +61,10 @@ const CompanySchema = mongoose.Schema({
 		},
 		type: {
 			type: String,
-			enum: ["R", "CO"],
+			// R => Recycler
+			// RP => Recycler Partner
+			// CO => Complience organization
+			enum: ["R", "RP", "CO"],
 		},
 	},
 });
