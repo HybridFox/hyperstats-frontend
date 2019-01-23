@@ -59,6 +59,13 @@ const routes: Routes = [
     children: [
       { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
     ]
+  },
+  {
+    path: '',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
+    ]
   }
 ];
 
