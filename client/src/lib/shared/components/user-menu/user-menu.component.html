@@ -4,10 +4,10 @@
     </span>
     <ul [hidden]="!visible" class="m-menu--user__sub-menu">
         <li class="m-menu--user__sub-menu__item">
-            <a href="" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
+            <a routerLink="/profile" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">
-            <a href="" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
+            <a routerLink="/company" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">
             <a href="#" (click)="logoff()" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.LOGOFF' | translate }}</a>

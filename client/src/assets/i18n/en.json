@@ -6,7 +6,6 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
-            "ACCEPT-TERMS": "I accept the terms and conditions",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CITY": "City",
@@ -18,6 +17,7 @@
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
+            "LEAVE-EMPTY-TO-NOT-CHANGE": "Leave this field empty to not change",
             "LOGIN": "Login",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
@@ -29,8 +29,7 @@
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode",
-            "ACCEPT_TERMS": "I accept the terms and conditions"
+            "ZIPCODE": "Zipcode"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -43,6 +42,7 @@
             "PROXIES": "Proxies",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
+            "REGISTER": "Register",
             "REPORTS": "Reports",
             "USERPROFILE": "User profile"
         }
@@ -60,6 +60,12 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
+        "REGISTER": {
+            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
+        },
+        "PROFILE": {
+            "TITLE": "Profile"
+        },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
         },
@@ -68,7 +74,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc",
             "TITLE": "Success!"
         }
     },
@@ -83,16 +89,6 @@
                 "TITLE": "Registration successfull"
             }
         },
-        "FORGOT-PASSWORD": {
-            "ERROR": {
-                "DESCRIPTION": "Could not request a password reset",
-                "TITLE": "Something went wrong"
-            },
-            "SUCCESS": {
-                "DESCRIPTION": "Please check your email for the link to reset your password",
-                "TITLE": "Password reset requested"
-            }
-        },
         "GENERAL": {
             "INVALID": {
                 "DESCRIPTION": "Please check if all fields are correct",
@@ -105,18 +101,23 @@
                 "TITLE": "Cannot login"
             },
             "SUCCESS": {
-                "DESCRIPTION": "You are now free to browse",
                 "TITLE": "Logged in!"
+            }
+        },
+        "PROFILE": {
+            "ERROR": {
+                "DESCRIPTION": "Something went wrong while updating your profile",
+                "TITLE": "Error!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "TITLE": "Success!"
             }
         },
         "REGISTER": {
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
-            },
-            "SUCCESS": {
-                "DESCRIPTION": "Please check your email for your verification mail",
-                "TITLE": "Successfully registered"
             }
         },
         "RESET-PASSWORD": {

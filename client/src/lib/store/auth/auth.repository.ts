@@ -3,7 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config.service';
 import { Observable } from 'rxjs';
 
-import { ResetPasswordInterface, RegisterInterface, LoginInterface, RequestPasswordResetInterface } from './auth.interface';
+import {
+  ResetPasswordInterface,
+  RegisterInterface,
+  LoginInterface,
+  RequestPasswordResetInterface,
+  ProfileInterface
+} from './auth.interface';
 
 @Injectable()
 export class AuthRepository {
@@ -27,6 +33,18 @@ export class AuthRepository {
 
     return this.http
       .get(url);
+  }
+
+  public updateProfile({ email, firstname, lastname, password }: ProfileInterface) {
+    const url = this.apiConfig.baseUrl('/profile');
+
+    return this.http
+      .put(url, {
+        email,
+        firstname,
+        lastname,
+        password
+      });
   }
 
   public requestPasswordReset({ email }: RequestPasswordResetInterface) {
