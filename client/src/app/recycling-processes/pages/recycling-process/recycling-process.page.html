@@ -23,11 +23,12 @@
                 <button class="a-button--link a-button--small" (click)="duplicateStep(step.key)">{{ 'GENERAL.LABELS.DUPLICATE-STEP' | translate }}</button>
             </div>
         </app-sub-section-title>
-        <app-text-input
+        <app-select-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PRECEDING-STEP' | translate"
             [control]="step.value.get('precedingStep')"
+            [options]="precedingSteps()"
             class="u-margin-bottom-x-large"
-        ></app-text-input>
+        ></app-select-input>
         <app-text-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.DESCRIPTION' | translate"
             [description]="'PAGE.RECYCLING-PROCESSES.LABELS.DESCRIPTION-DESCRIPTION' | translate"
@@ -60,6 +61,6 @@
         ></app-file-upload>
     </div>
     <button class="a-button--primary a-button-outline has-icon-after" (click)="addStep()">
-        {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' }}
+        {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' | translate }}
     </button>
 </div>
