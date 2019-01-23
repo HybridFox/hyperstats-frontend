@@ -63,7 +63,7 @@ jobs:
             git checkout development
             git pull
             NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml build
-            NODE_ENV=acceptance docker-compose up --force-recreate -d'
+            NODE_ENV=development docker-compose up --force-recreate -d'
 
   deploy-acc:
     machine:
