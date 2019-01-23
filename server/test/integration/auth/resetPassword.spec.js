@@ -94,7 +94,7 @@ describe("Integration", () => {
 				.expect(200)
 				.then((res) => {
 					expect(res.body).to.be.an("object");
-					expect(omit(["created", "lastUpdated"], res.body)).to.deep.equal({
+					expect(omit(["created", "lastUpdated", "company"], res.body)).to.deep.equal({
 						firstname: "validUser",
 						lastname: "Smith",
 						isAdmin: false,

@@ -133,14 +133,18 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.expect("Content-Type", /json/)
 				.expect(200)
-				.then((res) => {
-					expect(res.body).to.be.an("object");
-					expect(omit(["created", "lastUpdated", "company"], res.body)).to.deep.equal({
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(omit(["created", "lastUpdated", "company"], body)).to.deep.equal({
 						email: "otherUser@example.com",
 						firstname: "Jef",
 						isAdmin: false,
 						lastname: "Awesome",
 					});
+
+					expect(body.company).to.be.an("object");
+					expect(body.company.data).to.be.an("object");
+					expect(body.company.data.name).to.equal("Default company");
 				});
 		});
 
