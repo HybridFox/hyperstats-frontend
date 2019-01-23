@@ -34,14 +34,14 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
             ...this.resetPasswordForm.value
         }).then(() => {
             this.toastrService.success(
-                ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.TITLE') as string
+                ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.TITLE') as string
             );
             this.resetPasswordForm.reset();
         }).catch(() => {
             this.toastrService.error(
-                ngxExtract('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION') as string,
-                ngxExtract('TOAST.RESET-PASSWORD.ERROR.TITLE') as string
+                ngxExtract('TOAST.FORGOT-PASSWORD.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.FORGOT-PASSWORD.ERROR.TITLE') as string
             );
             this.resetPasswordForm.reset();
         });
