@@ -23,7 +23,7 @@ describe("Integration", () => {
 
 		after(async() => {
 			await closeServer();
-			await removeTestUsers(["otherUser@example.com"]);
+			await removeTestUsers(["otherUser@example.com"], false);
 		});
 
 		it("Should not be able to get register user with an email that already exists", () => {
