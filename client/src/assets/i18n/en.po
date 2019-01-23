@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-17T13:12:10.224Z\n"
+"POT-Creation-Date: 2019-01-23T07:53:42.125Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
@@ -19,9 +19,6 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
-
-msgid "GENERAL##LABELS##ACCEPT-TERMS"
-msgstr "I accept the terms and conditions"
 
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
@@ -36,7 +33,7 @@ msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company naem"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "� Eucobat 2018"
+msgstr "© Eucobat 2018"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -55,6 +52,9 @@ msgstr "Forgot Password"
 
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
+
+msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
+msgstr "Leave this field empty to not change"
 
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
@@ -122,6 +122,9 @@ msgstr "Recycling Partners"
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr "Recycling Processes"
 
+msgid "GENERAL##MENU##REGISTER"
+msgstr "Register"
+
 msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
 
@@ -181,6 +184,13 @@ msgstr "Address Information Recycling Plant"
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr "Company information"
 
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr ""
+"Please verify your email with the email that has been send to your email box"
+
+msgid "PAGE##PROFILE##TITLE"
+msgstr "Profile"
+
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
 
@@ -192,7 +202,8 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 msgstr ""
-"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
+"Your email is now validated you can now login lorem ipsum doler sit amet "
+"etc…"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success!"
@@ -209,18 +220,6 @@ msgstr "Please check your inbox for a verification email"
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr "Registration successfull"
 
-msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
-msgstr "Could not request a password reset"
-
-msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
-msgstr "Something went wrong"
-
-msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "Please check your email for the link to reset your password"
-
-msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
-msgstr "Password reset requested"
-
 msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
 msgstr "Please check if all fields are correct"
 
@@ -233,23 +232,26 @@ msgstr "Make sure you are using the correct details to login"
 msgid "TOAST##LOGIN##ERROR##TITLE"
 msgstr "Cannot login"
 
-msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
-msgstr "You are now free to browse"
-
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr "Logged in!"
+
+msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
+msgstr "Something went wrong while updating your profile"
+
+msgid "TOAST##PROFILE##ERROR##TITLE"
+msgstr "Error!"
+
+msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
+msgstr "Your profile has been succcessfully updated"
+
+msgid "TOAST##PROFILE##SUCCESS##TITLE"
+msgstr "Success!"
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
-
-msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-msgstr "Please check your email for your verification mail"
-
-msgid "TOAST##REGISTER##SUCCESS##TITLE"
-msgstr "Successfully registered"
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"
@@ -263,9 +265,51 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
-msgstr "I accept the terms and conditions"
+#~ msgctxt "TERMS"
+#~ msgid "GENERAL##LABELS##ACCEPT"
+#~ msgstr "I accept the terms and conditions"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+#~ msgstr "Could not request a password reset"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+#~ msgstr "Something went wrong"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+#~ msgstr "Please check your email for the link to reset your password"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+#~ msgstr "Password reset requested"
+
+#~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
+#~ msgstr "I accept the terms and conditions"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+#~ msgstr "Could not request a password reset"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+#~ msgstr "Something went wrong"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+#~ msgstr "Please check your email for the link to reset your password"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+#~ msgstr "Password reset requested"
+
+#~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
+#~ msgstr "You are now free to browse"
+
+#~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
+#~ msgstr "I accept the terms and conditions"
+
+#~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
+#~ msgstr "You are now free to browse"
+
+#~ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+#~ msgstr "Please check your email for your verification mail"
+
+#~ msgid "TOAST##REGISTER##SUCCESS##TITLE"
+#~ msgstr "Successfully registered"
 
 #~ msgid "GENERAL##MENU##NEWREPORT"
 #~ msgstr "New report"

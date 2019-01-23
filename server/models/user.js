@@ -32,6 +32,11 @@ const UserSchema = mongoose.Schema({
 			required: true,
 			default: Date.now,
 		},
+		isAdmin: {
+			type: Boolean,
+			required: true,
+			default: false,
+		},
 		validation: {
 			isValidated: {
 				type: Boolean,
