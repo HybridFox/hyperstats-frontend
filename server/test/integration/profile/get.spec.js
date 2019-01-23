@@ -55,7 +55,7 @@ describe("Integration", () => {
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");
-					expect(body.company.data.name).to.equal("Default company");
+					expect(body.company.data.name).to.equal("Company for user");
 				});
 		});
 	});

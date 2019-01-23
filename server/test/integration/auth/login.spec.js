@@ -11,6 +11,7 @@ describe("Integration", () => {
 
 		before(async() => {
 			const { server: s, closeServer: c, reset: r } = await startServer();
+
 			server = s;
 			closeServer = c;
 			reset = r;
@@ -39,7 +40,7 @@ describe("Integration", () => {
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");
-					expect(body.company.data.name).to.equal("Default company");
+					expect(body.company.data.name).to.equal("Company for user");
 				});
 		});
 
