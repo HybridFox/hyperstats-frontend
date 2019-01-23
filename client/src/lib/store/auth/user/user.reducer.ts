@@ -15,10 +15,7 @@ const reducer = (
   }
 
   if (action.type === ACTIONS.CLEAR_USER) {
-    return {
-      ...state,
-      result: null,
-    };
+    return null;
   }
 
   return state;

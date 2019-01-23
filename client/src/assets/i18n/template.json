@@ -43,6 +43,7 @@
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
+			"REGISTER": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
 		}
@@ -59,6 +60,9 @@
 			"HELP": "",
 			"SUBTITLE": "",
 			"TITLE": ""
+		},
+		"REGISTER": {
+			"VERIFY-EMAIL": ""
 		},
 		"PROFILE": {
 			"TITLE": ""
@@ -123,10 +127,6 @@
 		},
 		"REGISTER": {
 			"ERROR": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			},
-			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
