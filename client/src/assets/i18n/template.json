@@ -6,7 +6,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT_TERMS": "",
+			"ACCEPT-TERMS": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CITY": "",
@@ -28,6 +28,7 @@
 			"STREETNAME": "",
 			"TOKEN": "",
 			"TRY-AGAIN": "",
+			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
@@ -42,6 +43,7 @@
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
+			"REGISTER": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
 		}
@@ -57,6 +59,12 @@
 		"COMPANYINFORMATION": {
 			"HELP": "",
 			"SUBTITLE": "",
+			"TITLE": ""
+		},
+		"REGISTER": {
+			"VERIFY-EMAIL": ""
+		},
+		"PROFILE": {
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
@@ -107,12 +115,18 @@
 				"TITLE": ""
 			}
 		},
-		"REGISTER": {
+		"PROFILE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
 			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"REGISTER": {
+			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}

@@ -1,5 +1,7 @@
 module.exports = {
 	server: {
+		hostname: "http://rare-a.studiohyperdrive.be",
+		frontendHostname: "http://rare-a.studiohyperdrive.be",
 		port: 4351,
 		cookies: {
 			domain: "",

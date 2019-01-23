@@ -8,6 +8,7 @@ module.exports = async({
 	isValidated = true,
 	passwordResetExpire = new Date(new Date().getTime() + 60000), // valid for 1 min
 	passwordResetToken = "somePasswordToken",
+	isAdmin = false,
 } = {}) => {
 	const testUser = new UserModel({
 		data: {
@@ -25,6 +26,7 @@ module.exports = async({
 				token: passwordResetToken,
 				expireDate: passwordResetExpire,
 			},
+			isAdmin,
 		},
 	});
 

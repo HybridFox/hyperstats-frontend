@@ -16,6 +16,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     public registerForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public registerSucceeded = false;
 
     constructor(
         private authAction: AuthActions,
@@ -48,12 +49,7 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
         return this.authAction.register({
             ...this.registerForm.value
         }).then(() => {
-            // TODO: translate
-            this.toastrService.success(
-                ngxExtract('TOAST.REGISTER.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.REGISTER.SUCCESS.TITLE') as string
-            );
-            this.registerForm.reset();
+            this.registerSucceeded = true;
         }).catch(() => {
             this.toastrService.error(
                 ngxExtract('TOAST.REGISTER.ERROR.DESCRIPTION') as string,

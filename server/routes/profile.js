@@ -43,7 +43,7 @@ module.exports = (router) => {
 	 *       200:
 	 *         description: User profile
 	 *         schema:
-	 *           $ref: '#/definitions/ProfileResposne'
+	 *           $ref: '#/definitions/UserProfileResponse'
 	 *   put:
 	 *     description: Update profile
 	 *     tags:
@@ -54,7 +54,7 @@ module.exports = (router) => {
 	 *       200:
 	 *         description: User profile
 	 *         schema:
-	 *           $ref: '#/definitions/ProfileResposne'
+	 *           $ref: '#/definitions/UserProfileResponse'
 	 */
 	router.route("/profile")
 		.get(profileController.get)

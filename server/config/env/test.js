@@ -11,7 +11,5 @@ module.exports = {
 			url: process.env.CIRCLECI ? "mongodb://localhost:27017/rare" : "mongodb://mongodb-rare/rare",
 		},
 	},
-	gmail: {
-
-	},
+	gmail: {},
 };
