@@ -40,7 +40,7 @@ jobs:
           key: dependency-cache-{{ checksum "server/package.json" }}
           paths:
             - server/node_modules
-      - remove_docker_cache:
+      - run:
          name: Remove docker cache
          command: docker images --no-trunc --format '{{.ID}}' | xargs docker rmi
       - run:
