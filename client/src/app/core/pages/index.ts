@@ -1,13 +1,38 @@
 export * from './contact';
+export * from './about';
 export * from './login';
 export * from './register';
+export * from './profile';
+export * from './forgot-password';
+export * from './reset-password';
+export * from './company-information';
+export * from './verification-succeeded';
+export * from './verification-failed';
+export * from './help';
 
 import { ContactPageComponent } from './contact';
+import { AboutPageComponent } from './about';
 import { LoginPageComponent } from './login';
 import { RegisterPageComponent } from './register';
+import { ProfilePageComponent } from './profile';
+import { ForgotPasswordPageComponent } from './forgot-password';
+import { ResetPasswordPageComponent } from './reset-password';
+import { CompanyPageComponent } from './company-information';
+import { VerificationSucceededPageComponent } from './verification-succeeded';
+import { VerificationFailedPageComponent } from './verification-failed';
+import { HelpPageComponent, HelpSectionPageComponent } from './help';
 
 export const Pages = [
+    AboutPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    ProfilePageComponent,
+    ForgotPasswordPageComponent,
+    ResetPasswordPageComponent,
+    CompanyPageComponent,
+    VerificationSucceededPageComponent,
+    VerificationFailedPageComponent,
+    HelpPageComponent,
+    HelpSectionPageComponent
 ];

@@ -1,22 +1,48 @@
 version: 2
 jobs:
   test-client:
-    machine:
-      enabled: true
+    docker:
+      - image: circleci/node:10.15.0
+      - image: selenium/standalone-chrome
     steps:
       - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "client/package.json" }}
       - run:
-          name: Build docker image
-          command: docker-compose build
+          name: Run npm ci
+          command: cd client && npm ci
+      - save_cache:
+          key: dependency-cache-{{ checksum "client/package.json" }}
+          paths:
+            - client/node_modules
       - run:
-          name: Bring docker image up
-          command: docker-compose up -d
+          name: Linting
+          command: cd client && npm run lint
       - run:
-          name: Execute test:ci
-          command: docker-compose exec client npm run test:ci
+          name: Run unit tests
+          command: cd client && npm run test
       - run:
-          name: Stop docker container
-          command: docker-compose down
+          name: Run e2e tests
+          command: cd client && npm run e2e -- --configuration=serve
+
+  test-server:
+    docker:
+      - image: circleci/node:10.15.0
+      - image: mongo:4.0.4-xenial
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "server/package.json" }}
+      - run:
+          name: Install npm
+          command: cd server && MONGOMS_VERSION=4.0.0 npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "server/package.json" }}
+          paths:
+            - server/node_modules
+      - run:
+          name: Run tests
+          command: cd server && npm run test
 
   deploy-develop:
     machine:
@@ -39,14 +65,49 @@ jobs:
             docker-compose down
             NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
 
+  deploy-acc:
+    machine:
+      enabled: true
+    environment:
+      SERVER: "198.211.127.249"
+    steps:
+      - run: ssh-keyscan $SERVER >> ~/.ssh/known_hosts
+      - add_ssh_keys:
+          fingerprints:
+            - "4c:c1:4b:cc:68:68:fe:84:b7:2b:ad:93:44:d0:f7:10"
+      - run:
+          name: Deploy to acc server
+          command: |
+            ssh shd@$SERVER "NODE_ENV=acceptance" bash -c '
+            cd /var/www/rare_app_nodejs
+            git checkout .
+            git checkout master
+            git pull
+            docker-compose down
+            NODE_ENV=acceptance docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
+
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - test-client
+      - test-server
       - deploy-develop:
           requires:
             - test-client
+            - test-server
           filters:
             branches:
               only: development
+      - approve-acc:
+          type: approval
+          requires:
+            - test-client
+            - test-server
+          filters:
+            branches:
+              only: master
+      - deploy-acc:
+          requires:
+            - approve-acc
+

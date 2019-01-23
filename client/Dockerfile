@@ -2,14 +2,14 @@ FROM node:dubnium
 
 RUN mkdir -p /app
 
-WORKDIR /app
+RUN npm i npm@  latest -g
 
-RUN npm i npm@latest -g
-
+WORKDIR /
 COPY package.json package-lock.json* .npmrc ./
-RUN npm install --silent
+RUN npm ci
 ENV PATH /node_modules/.bin:$PATH
 
+WORKDIR /app
 COPY . /app
 
 EXPOSE 4350

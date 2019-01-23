@@ -8,13 +8,37 @@ msgstr ""
 "POT-Creation-Date: 2019-01-09T12:40:20.748Z\n"
 "PO-Revision-Date: 2019-01-09T12:40:20.749Z\n"
 
-msgid "GENERAL##ERRORS##EMAIL"
+msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
 
-msgid "GENERAL##ERRORS##REQUIRED"
+msgid "GENERAL##FIELD-ERRORS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACCEPT-TERMS"
+msgstr ""
+
+msgid "GENERAL##LABELS##BOX"
+msgstr ""
+
+msgid "GENERAL##LABELS##BROWSE"
+msgstr ""
+
+msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##COPYRIGHT"
+msgstr ""
+
+msgid "GENERAL##LABELS##COUNTRY"
+msgstr ""
+
+msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr ""
 
 msgid "GENERAL##LABELS##EMAIL"
@@ -35,6 +59,9 @@ msgstr ""
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr ""
 
+msgid "GENERAL##LABELS##NUMBER"
+msgstr ""
+
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr ""
 
@@ -44,7 +71,31 @@ msgstr ""
 msgid "GENERAL##LABELS##REGISTER"
 msgstr ""
 
+msgid "GENERAL##LABELS##RESET-PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##TOKEN"
+msgstr ""
+
+msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##UPDATE-PROFILE"
+msgstr ""
+
 msgid "GENERAL##LABELS##WELCOME"
+msgstr ""
+
+msgid "GENERAL##LABELS##ZIPCODE"
+msgstr ""
+
+msgid "GENERAL##MENU##ABOUT"
 msgstr ""
 
 msgid "GENERAL##MENU##AUDITTRIAL"
@@ -53,13 +104,16 @@ msgstr ""
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr ""
 
+msgid "GENERAL##MENU##CONTACT"
+msgstr ""
+
 msgid "GENERAL##MENU##HELP"
 msgstr ""
 
-msgid "GENERAL##MENU##LOGOFF"
+msgid "GENERAL##MENU##LOGIN"
 msgstr ""
 
-msgid "GENERAL##MENU##NEWREPORT"
+msgid "GENERAL##MENU##LOGOFF"
 msgstr ""
 
 msgid "GENERAL##MENU##PROXIES"
@@ -80,10 +134,97 @@ msgstr ""
 msgid "PAGE##CONTACT##TITLE"
 msgstr ""
 
+msgid "PAGE##ABOUT##CONTENT-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##CONTENT-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-1"
+msgstr ""
+
+msgid "PAGE##ABOUT##SECTION-2"
+msgstr ""
+
+msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
+msgid "PAGE##PROFILE##TITLE"
+msgstr ""
+
+msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-FAILED##CONTENT"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-FAILED##TITLE"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##TITLE"
+msgstr ""
+
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##LOGIN##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##PROFILE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
@@ -93,5 +234,25 @@ msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
 msgctxt "TERMS"
+msgstr ""
+
 msgid "GENERAL##LABELS##ACCEPT"
+msgstr ""
+
+msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""

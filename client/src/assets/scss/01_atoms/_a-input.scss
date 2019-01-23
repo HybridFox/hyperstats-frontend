@@ -58,7 +58,14 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            @include transition(border .2s ease);
+            transition: border .5s ease;
+
+            &:disabled {
+                cursor: not-allowed;
+                background-color: $mercury;
+                border-color: rgba($gray, 0.3);
+                color: $gray;
+            }
 
             &::placeholder {
                 color: $tundora;
@@ -68,14 +75,6 @@
             &.ng-dirty.ng-invalid {
                 border: 1.5px solid $danger;
             }
-
-            &:focus {
-                border: 1.5px solid $nobel;
-            }
-        }
-
-        textarea.a-input__field {
-            height: 200px;
         }
 
         select.a-input__field {
@@ -84,6 +83,7 @@
             -moz-appearance: none;
             background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
             background-size: 10px;
+            padding: 0 $spacer-small;
         }
 
         select.a-input__field::-ms-expand {
@@ -99,11 +99,15 @@
         }
     }
 
+    textarea.a-input__field {
+        height: 150px;
+    }
+
     &__description {
         display: block;
-        margin: 0;
         color: $tundora;
-        font-size: $font-size-small;
+        margin: 0;
+        font-size: $font-size-x-small;
     }
 
     &__error {
@@ -111,6 +115,6 @@
         display: block;
         color: $danger;
         margin: 0;
-        font-size: $font-size-small;
+        font-size: $font-size-x-small;
     }
 }

@@ -1,0 +1,55 @@
+.m-steps {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .m-steps__step {
+        position: relative;
+        text-align: center;
+        flex: 1;
+
+        &.m-steps__step--selected {
+            .m-steps__step-text {
+                color: $zodiac;
+                font-weight: bold;
+            }
+        }
+
+        &:not(:first-of-type)::after {
+            background-color: $mercury;
+            content: "";
+            height: 1.5px;
+            position: absolute;
+            right: calc(50% + #{$spacer-x-large});
+            top: calc(35px / 2);
+            width: calc(100% - #{$spacer-xxx-large});
+        }
+
+        .m-steps__step-icon {
+            margin: 0 auto $spacer-small;
+            border: 2px solid $zodiac;
+            color: $zodiac;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+
+            &.m-steps__step-icon--selected {
+                color: $white;
+                background: $zodiac;
+            }
+
+            &.m-steps__step-icon--passed {
+                color: $white;
+                background: $zodiac;
+            }
+        }
+
+        .m-steps__step-text {
+            color: $tundora;
+        }
+    }
+}

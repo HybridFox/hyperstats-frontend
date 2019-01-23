@@ -1,14 +1,6 @@
-import { _ } from '@biesbjerg/ngx-translate-extract';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
-_('GENERAL.LABELS.EMAIL');
-_('GENERAL.LABELS.FIRSTNAME');
-_('GENERAL.LABELS.LASTNAME');
-_('GENERAL.LABELS.PASSWORD');
-_('GENERAL.LABELS.LOGIN');
-_('GENERAL.LABELS.REGISTER');
-_('GENERAL.LABELS.ACCEPT_TERMS');
+ngxExtract('GENERAL.FIELD-ERRORS.REQUIRED');
+ngxExtract('GENERAL.FIELD-ERRORS.EMAIL');
+ngxExtract('GENERAL.FIELD-ERRORS.PASSWORD');
 
-_('TOAST.REGISTER.ERROR.TITLE');
-_('TOAST.REGISTER.ERROR.DESCRIPTION');
-_('TOAST.LOGIN.ERROR.TITLE');
-_('TOAST.LOGIN.ERROR.DESCRIPTION');

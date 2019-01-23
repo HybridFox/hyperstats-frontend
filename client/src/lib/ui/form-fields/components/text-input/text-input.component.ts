@@ -21,6 +21,8 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
   @Input() suffix?: string;
   @Input() description?: string;
   @Input() type = 'text';
+  @Input() class?: string;
+  @Input() disabled = false;
   @Input() control: FormControl = new FormControl('');
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -46,6 +48,10 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
 
   public registerOnChange(fn) {
     this.updateValue = fn;
+  }
+
+  public firstError(): string {
+    return Object.keys(this.control.errors)[0].toUpperCase();
   }
 
   public registerOnTouched() {}

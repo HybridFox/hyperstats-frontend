@@ -11,7 +11,7 @@
 
     &__box {
         display: flex;
-        background-color: $grey;
+        background-color: $athens-gray;
         min-height: calc(100vh - #{$footer-height});
         justify-content: center;
         flex-direction: column;
@@ -26,10 +26,6 @@
         margin: $spacer-small 0;
         text-align: right;
         text-transform: capitalize;
-    }
-
-    &__input {
-        margin-bottom: $spacer-x-large;
     }
 }
 

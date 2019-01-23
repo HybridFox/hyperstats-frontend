@@ -3,6 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfigService } from '@api/config.service';
 import { Observable } from 'rxjs';
 
+import {
+  ResetPasswordInterface,
+  RegisterInterface,
+  LoginInterface,
+  RequestPasswordResetInterface,
+  ProfileInterface
+} from './auth.interface';
+
 @Injectable()
 export class AuthRepository {
   constructor(
@@ -10,7 +18,7 @@ export class AuthRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public login({ email, password }) {
+  public login({ email, password }: LoginInterface) {
     const url = this.apiConfig.baseUrl('/auth/login');
 
     return this.http
@@ -21,13 +29,34 @@ export class AuthRepository {
   }
 
   public fetchProfile() {
-    const url = this.apiConfig.baseUrl('/auth/profile');
+    const url = this.apiConfig.baseUrl('/profile');
 
     return this.http
       .get(url);
   }
 
-  public register({ firstname, lastname, email, password }): Observable<any> {
+  public updateProfile({ email, firstname, lastname, password }: ProfileInterface) {
+    const url = this.apiConfig.baseUrl('/profile');
+
+    return this.http
+      .put(url, {
+        email,
+        firstname,
+        lastname,
+        password
+      });
+  }
+
+  public requestPasswordReset({ email }: RequestPasswordResetInterface) {
+    const url = this.apiConfig.baseUrl('/auth/request-password-reset');
+
+    return this.http
+      .post(url, {
+        email
+      });
+  }
+
+  public register({ firstname, lastname, email, password }: RegisterInterface): Observable<any> {
     const url = this.apiConfig.baseUrl('/auth/register');
 
     return this.http
@@ -36,6 +65,23 @@ export class AuthRepository {
         firstname,
         lastname,
         password
+      });
+  }
+
+  public logout() {
+    const url = this.apiConfig.baseUrl('/auth/logout');
+
+    return this.http
+      .get(url);
+  }
+
+  public resetPassword({ password, token }: ResetPasswordInterface) {
+    const url = this.apiConfig.baseUrl('/auth/reset-password');
+
+    return this.http
+      .put(url, {
+        password,
+        token
       });
   }
 }

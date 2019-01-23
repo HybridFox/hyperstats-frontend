@@ -1,6 +1,16 @@
-.m-card{
-    border: 1px solid $mercury;
+.m-card {
     border-radius: $border-radius;
     padding: $spacer-large;
+}
+
+.m-card--primary {
+    @extend .m-card;
     background-color: $white;
+    border: 1px solid $mercury;
+}
+
+.m-card--secondary {
+    @extend .m-card;
+    background-color: $athens-gray;
+    color: $tundora;
 }

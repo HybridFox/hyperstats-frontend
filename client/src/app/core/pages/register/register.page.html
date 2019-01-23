@@ -1,40 +1,42 @@
 <div class="p-register">
     <div class="p-register__box">
-        <h1 class="p-register__title">{{ 'GENERAL.LABELS.WELCOME' | translate }}</h1>
-        <form [formGroup]="registerForm" (ngSubmit)="submit()">
-            <div class="p-register__input">
+        <div *ngIf="!registerSucceeded">
+            <h1 class="p-register__title">{{ 'GENERAL.LABELS.WELCOME' | translate }}</h1>
+            <form [formGroup]="registerForm" (ngSubmit)="submit()">
                 <app-text-input
+                    class="u-margin-bottom-large"
                     [control]="registerForm.get('firstname')"
                     [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
                 ></app-text-input>
-            </div>
-            <div class="p-register__input">
                 <app-text-input
+                    class="u-margin-bottom-large"
                     [control]="registerForm.get('lastname')"
                     [label]="'GENERAL.LABELS.LASTNAME' | translate"
                 ></app-text-input>
-            </div>
-            <div class="p-register__input">
                 <app-text-input
+                    class="u-margin-bottom-large"
                     [control]="registerForm.get('email')"
                     [label]="'GENERAL.LABELS.EMAIL' | translate"
-                    [type]="email"
+                    type="email"
                 ></app-text-input>
-            </div>
-            <div class="p-register__input">
                 <app-text-input
+                    class="u-margin-bottom-large"
                     [control]="registerForm.get('password')"
                     [label]="'GENERAL.LABELS.PASSWORD' | translate"
-                    [type]="password"
+                    type="password"
                 ></app-text-input>
-            </div>
-            <div class="p-register__input">
                 <app-checkbox-input
+                    class="u-margin-bottom-large"
                     [control]="registerForm.get('terms')"
                     [label]="'GENERAL.LABELS.ACCEPT_TERMS' | translate"
                 ></app-checkbox-input>
-            </div>
-            <input type="submit" [disabled]="!registerForm.valid" [value]="'GENERAL.LABELS.REGISTER' | translate" class="a-button a-button--primary a-button--small">
-        </form>
+                <input type="submit" [disabled]="!registerForm.valid" [value]="'GENERAL.LABELS.REGISTER' | translate" class="a-button a-button--primary a-button--small">
+            </form>
+        </div>
+        <div *ngIf="registerSucceeded">
+            <p>
+                {{ 'PAGE.REGISTER.VERIFY-EMAIL' | translate }}
+            </p>
+        </div>
     </div>
 </div>

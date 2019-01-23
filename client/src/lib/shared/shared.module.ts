@@ -12,6 +12,8 @@ import { Services } from '@shared/services';
 import { AuthActions } from '@store/auth';
 import { AuthRepository } from '@store/auth/auth.repository';
 
+import { Components } from './components';
+
 @NgModule({
   providers: [
     Services,
@@ -30,7 +32,11 @@ import { AuthRepository } from '@store/auth/auth.repository';
     FormsModule,
     TranslateModule.forChild(),
   ],
+  declarations: [
+    ...Components,
+  ],
   exports: [
+    ...Components,
     TranslateModule,
   ]
 })

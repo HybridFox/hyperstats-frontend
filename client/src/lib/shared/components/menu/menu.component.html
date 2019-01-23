@@ -1,0 +1,25 @@
+<div [ngClass]="{
+    'o-menu--transparent': (routeData$ | async)?.menuState === 'transparant',
+    'o-menu--filled': (routeData$ | async)?.menuState !== 'transparant'
+}">
+    <div class="container" *ngIf="!profile">
+        <div class="o-menu__left">
+            <a routerLink="/" class="a-site-logo--full"></a>
+        </div>
+        <div class="o-menu__right">
+            <app-main-menu [profile]="profile"></app-main-menu>
+        </div>
+    </div>
+    <div class="container" *ngIf="profile">
+        <div class="o-menu__left">
+            <a routerLink="/" class="a-site-logo"></a>
+            <app-main-menu [profile]="profile"></app-main-menu>
+        </div>
+
+        <div class="o-menu__right">
+            <a *ngIf="actionButton" [href]="actionButton.link" class="a-button--secondary">{{ actionButton.label }}</a>
+            <app-user-menu [profile]="profile" (logout)="logout.emit()"></app-user-menu>
+            <a routerLink="help" class="m-menu--main__item">{{ 'GENERAL.MENU.HELP' | translate }}</a>
+        </div>
+    </div>
+</div>

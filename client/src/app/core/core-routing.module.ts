@@ -8,11 +8,57 @@ import * as Pages from './pages';
 const routes: Routes = [
   {
     path: 'login',
-    component: Pages.LoginPageComponent
+    component: Pages.LoginPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'about',
+    component: Pages.AboutPageComponent
   },
   {
     path: 'register',
-    component: Pages.RegisterPageComponent
+    component: Pages.RegisterPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'forgot-password',
+    component: Pages.ForgotPasswordPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'reset-password',
+    component: Pages.ResetPasswordPageComponent
+  },
+  {
+    path: 'company-information',
+    component: Pages.CompanyPageComponent
+  },
+  {
+    path: 'verification-succeeded',
+    component: Pages.VerificationSucceededPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'verification-failed',
+    component: Pages.VerificationFailedPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'help',
+    component: Pages.HelpPageComponent,
+    children: [
+      { path: ':section', component: Pages.HelpSectionPageComponent },
+    ]
   },
   {
     path: 'contact',
@@ -22,7 +68,14 @@ const routes: Routes = [
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
+      {
+        path: 'reports',
+        loadChildren: '../reports/reports.module#ReportsModule'
+      },
+      {
+        path: 'profile',
+        component: Pages.ProfilePageComponent
+      },
     ]
   }
 ];

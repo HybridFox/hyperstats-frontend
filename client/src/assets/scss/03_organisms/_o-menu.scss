@@ -1,5 +1,4 @@
-.o-menu {
-    background-color: $blue;
+.o-menu--filled, .o-menu--transparent {
     padding: $spacer 0;
     .container {
         display: flex;
@@ -16,6 +15,20 @@
                 margin-right: 0;
                 padding-right: 0;
             }
+        }
+    }
+}
+
+.o-menu--filled {
+    background-color: $blue;
+}
+
+.o-menu--transparent {
+    position: absolute;
+    width: 100%;
+    .container {
+        .o-menu__content {
+            width: calc(100% - #{$spacer-x-large});
         }
     }
 }
