@@ -141,10 +141,6 @@ describe("Integration", () => {
 						isAdmin: false,
 						lastname: "Awesome",
 					});
-
-					expect(body.company).to.be.an("object");
-					expect(body.company.data).to.be.an("object");
-					expect(body.company.data.name).to.equal("Default company");
 				});
 		});
 
