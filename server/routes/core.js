@@ -19,5 +19,5 @@ module.exports = (router) => {
 	 *            version:
 	 *              type: string
 	 */
-	router.route("/status").get((req, res, next) => next(), CoreController.status);
+	router.route("/status").get(CoreController.status);
 };
