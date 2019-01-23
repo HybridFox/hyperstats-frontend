@@ -53,6 +53,9 @@ msgstr "Forgot Password"
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
 
+msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
+msgstr "Leave this field empty to not change"
+
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
 
@@ -181,6 +184,9 @@ msgstr "Address Information Recycling Plant"
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr "Company information"
 
+msgid "PAGE##PROFILE##TITLE"
+msgstr "Profile"
+
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
 
@@ -192,7 +198,8 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 msgstr ""
-"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
+"Your email is now validated you can now login lorem ipsum doler sit amet "
+"etc…"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success!"
@@ -224,6 +231,18 @@ msgstr "Cannot login"
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr "Logged in!"
 
+msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
+msgstr "Something went wrong while updating your profile"
+
+msgid "TOAST##PROFILE##ERROR##TITLE"
+msgstr "Error!"
+
+msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
+msgstr "Your profile has been succcessfully updated"
+
+msgid "TOAST##PROFILE##SUCCESS##TITLE"
+msgstr "Success!"
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
 
@@ -248,9 +267,21 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
-msgstr "I accept the terms and conditions"
+#~ msgctxt "TERMS"
+#~ msgid "GENERAL##LABELS##ACCEPT"
+#~ msgstr "I accept the terms and conditions"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+#~ msgstr "Could not request a password reset"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+#~ msgstr "Something went wrong"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+#~ msgstr "Please check your email for the link to reset your password"
+
+#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+#~ msgstr "Password reset requested"
 
 #~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
 #~ msgstr "I accept the terms and conditions"

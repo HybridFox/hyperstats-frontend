@@ -17,6 +17,7 @@
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
+            "LEAVE-EMPTY-TO-NOT-CHANGE": "Leave this field empty to not change",
             "LOGIN": "Login",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
@@ -28,8 +29,7 @@
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode",
-            "ACCEPT_TERMS": "I accept the terms and conditions"
+            "ZIPCODE": "Zipcode"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -59,6 +59,9 @@
             "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
+        },
+        "PROFILE": {
+            "TITLE": "Profile"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -96,6 +99,16 @@
             },
             "SUCCESS": {
                 "TITLE": "Logged in!"
+            }
+        },
+        "PROFILE": {
+            "ERROR": {
+                "DESCRIPTION": "Something went wrong while updating your profile",
+                "TITLE": "Error!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "TITLE": "Success!"
             }
         },
         "REGISTER": {
