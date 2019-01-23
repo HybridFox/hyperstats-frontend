@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-23T10:28:53.572Z\n"
-"PO-Revision-Date: 2019-01-23T10:28:53.572Z\n"
+"POT-Creation-Date: 2019-01-23T13:46:41.739Z\n"
+"PO-Revision-Date: 2019-01-23T13:46:41.739Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -15,9 +15,6 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
-msgstr ""
-
-msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr ""
 
 msgid "GENERAL##LABELS##BOX"
@@ -122,6 +119,9 @@ msgstr ""
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr ""
 
+msgid "GENERAL##MENU##REGISTER"
+msgstr ""
+
 msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
@@ -150,6 +150,9 @@ msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
 msgstr ""
 
 msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
+msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
@@ -185,6 +188,9 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
 msgstr ""
 
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
+msgstr ""
+
 msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
 msgstr ""
 
@@ -197,7 +203,7 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr ""
 
-msgid "PAGE##PROFILE##TITLE"
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
@@ -272,12 +278,6 @@ msgstr ""
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
-msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-msgstr ""
-
-msgid "TOAST##REGISTER##SUCCESS##TITLE"
-msgstr ""
-
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -288,4 +288,8 @@ msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

@@ -11,9 +11,9 @@
         <p class="u-no-margin u-margin-bottom"><b>{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-TITLE' | translate }}</b></p>
         <p class="u-no-margin">{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-DESCRIPTION' | translate }}</p>
     </div>
-    <div *ngFor="let step of recyclingProcessForm.controls.steps.controls">
+    <div *ngFor="let step of recyclingProcessForm.controls.steps.controls | keyvalue">
         <app-sub-section-title
-            [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate"
+            [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{key: getStepKey(step.key)}"
             class="u-margin-bottom-large"
         ></app-sub-section-title>
         <app-text-input
@@ -36,13 +36,16 @@
         <app-textarea-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION' | translate"
             [description]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION-DESCRIPTION' | translate"
-            class="u-margin-bottom-large"
         ></app-textarea-input>
-        <app-text-input
-            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
+        <app-file-upload
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
+            class="u-margin-bottom-x-large"
+        ></app-file-upload>
+        <app-file-upload
+            [title]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
             [description]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate"
             class="u-margin-bottom-large"
-        ></app-text-input>
+        ></app-file-upload>
     </div>
     <button class="a-button--primary a-button-outline has-icon-after" (click)="addStep()">
         {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' }}

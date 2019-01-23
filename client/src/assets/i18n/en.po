@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-23T10:28:53.572Z\n"
+"POT-Creation-Date: 2019-01-23T13:46:41.739Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -122,6 +122,9 @@ msgstr "Recycling Partners"
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr "Recycling Processes"
 
+msgid "GENERAL##MENU##REGISTER"
+msgstr "Register"
+
 msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
 
@@ -181,6 +184,9 @@ msgstr "Address Information Recycling Plant"
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr "Company information"
 
+msgid "PAGE##PROFILE##TITLE"
+msgstr "Profile"
+
 msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgstr ""
 "Add all the different battery chemistry types you process. Per battery type "
@@ -223,6 +229,9 @@ msgstr ""
 "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
 "Tempor Incididunt Ut Labore Et Dolor"
 
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
+msgstr "(upload a file with further details on your recycling process)"
+
 msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
 msgstr ""
 "Add every recycling step that makes up your recycling process. Per recycling "
@@ -232,13 +241,13 @@ msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
 msgstr "Process Description - Recycling Steps"
 
 msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
-msgstr "Recycling Step"
+msgstr "Recycling Step {{ key }}"
 
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr "Recycling Processes"
 
-msgid "PAGE##PROFILE##TITLE"
-msgstr "Profile"
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr "Verify email"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
@@ -268,6 +277,18 @@ msgstr "Please check your inbox for a verification email"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr "Registration successfull"
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not request a password reset"
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
 
 msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
 msgstr "Please check if all fields are correct"
@@ -302,12 +323,6 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
-msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-msgstr "Please check your email for your verification mail"
-
-msgid "TOAST##REGISTER##SUCCESS##TITLE"
-msgstr "Successfully registered"
-
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"
 
@@ -320,27 +335,21 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
+msgstr "I accept the terms and conditions"
+
+#~ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+#~ msgstr "Please check your email for your verification mail"
+
+#~ msgid "TOAST##REGISTER##SUCCESS##TITLE"
+#~ msgstr "Successfully registered"
+
 #~ msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
 #~ msgstr "Leave this field empty to not change"
 
-#~ msgctxt "TERMS"
-#~ msgid "GENERAL##LABELS##ACCEPT"
-#~ msgstr "I accept the terms and conditions"
-
 #~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
 #~ msgstr "I accept the terms and conditions"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
-#~ msgstr "Could not request a password reset"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
-#~ msgstr "Something went wrong"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-#~ msgstr "Please check your email for the link to reset your password"
-
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
-#~ msgstr "Password reset requested"
 
 #~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
 #~ msgstr "You are now free to browse"

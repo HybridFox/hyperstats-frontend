@@ -6,7 +6,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT-TERMS": "",
+			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CITY": "",
@@ -61,6 +61,9 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"PROFILE": {
+			"TITLE": ""
+		},
 		"RECYCLING-PROCESSES": {
 			"DESCRIPTION": "",
 			"LABELS": {
@@ -73,17 +76,16 @@
 				"QUALITATIVE-DESCRIPTION-DESCRIPTION": "",
 				"RECYCLING-SITE-OWNER": "",
 				"SCHEMATIC-OVERVIEW": "",
-				"SCHEMATIC-OVERVIEW-DESCRIPTION": ""
+				"SCHEMATIC-OVERVIEW-DESCRIPTION": "",
+				"UPLOAD-FILE-WITH-FURTHER-DETAILS": ""
 			},
 			"PROCESS-DESCRIPTION": "",
 			"PROCESS-TITLE": "",
-			"RECYCLING-STEP": ""
-        },
+			"RECYCLING-STEP": "",
+			"TITLE": ""
+		},
 		"REGISTER": {
 			"VERIFY-EMAIL": ""
-		},
-		"PROFILE": {
-			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
@@ -99,6 +101,16 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"FORGOT-PASSWORD": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

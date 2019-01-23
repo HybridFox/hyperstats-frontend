@@ -29,7 +29,8 @@
             "TRY-AGAIN": "Try again",
             "UPDATE-PROFILE": "Update Profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode"
+            "ZIPCODE": "Zipcode",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -60,6 +61,9 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
+        "PROFILE": {
+            "TITLE": "Profile"
+        },
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
             "LABELS": {
@@ -72,18 +76,16 @@
                 "QUALITATIVE-DESCRIPTION-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
                 "RECYCLING-SITE-OWNER": "Is this your recycling site or from one of your partners?",
                 "SCHEMATIC-OVERVIEW": "Schematic overview of process",
-                "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor"
+                "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
+                "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
-            "RECYCLING-STEP": "Recycling Step",
+            "RECYCLING-STEP": "Recycling Step {{ key }}",
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
-            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
-        },
-        "PROFILE": {
-            "TITLE": "Profile"
+            "VERIFY-EMAIL": "Verify email"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -106,6 +108,16 @@
             "SUCCESS": {
                 "DESCRIPTION": "Please check your inbox for a verification email",
                 "TITLE": "Registration successfull"
+            }
+        },
+        "FORGOT-PASSWORD": {
+            "ERROR": {
+                "DESCRIPTION": "Could not request a password reset",
+                "TITLE": "Something went wrong"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
             }
         },
         "GENERAL": {

@@ -19,6 +19,10 @@ export class RecyclingProcessPageComponent implements OnInit {
         });
     }
 
+    public getStepKey(key) {
+        return parseInt(key, 2) + 1;
+    }
+
     public addStep(): void {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
     }

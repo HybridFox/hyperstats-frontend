@@ -1,7 +1,8 @@
 .a-input {
     &__label {
-        color: $black;
-        font-weight: $font-weight-semi-bold;
+        font-size: $font-size-regular;
+        font-weight: $font-weight-bold;
+        color: $tundora;
     }
 
     &__checkbox-container {
