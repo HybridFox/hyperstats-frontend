@@ -11,7 +11,7 @@
         <p class="u-no-margin u-margin-bottom"><b>{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-TITLE' | translate }}</b></p>
         <p class="u-no-margin">{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-DESCRIPTION' | translate }}</p>
     </div>
-    <div>
+    <div *ngFor="let step of recyclingProcessForm.controls.steps.controls">
         <app-sub-section-title
             [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate"
             class="u-margin-bottom-large"
@@ -44,4 +44,7 @@
             class="u-margin-bottom-large"
         ></app-text-input>
     </div>
+    <button class="a-button--primary a-button-outline has-icon-after" (click)="addStep()">
+        {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' }}
+    </button>
 </div>
