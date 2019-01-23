@@ -10,6 +10,11 @@ export interface LoginInterface {
     password: string;
 }
 
+export interface ResetPasswordInterface {
+    token: string;
+    password: string;
+}
+
 export interface RequestPasswordResetInterface {
     email: string;
 }

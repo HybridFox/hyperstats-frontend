@@ -60,6 +60,13 @@
             height: 40px;
             transition: border .5s ease;
 
+            &:disabled {
+                cursor: not-allowed;
+                background-color: $mercury;
+                border-color: rgba($gray, 0.3);
+                color: $gray;
+            }
+
             &::placeholder {
                 color: $tundora;
                 opacity: 1;
