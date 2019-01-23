@@ -1,0 +1,37 @@
+<div class="p-profile">
+    <div class="container">
+        <app-page-title [title]="'PAGE.PROFILE.TITLE' | translate"></app-page-title>
+        <div class="m-card--primary">
+            <form [formGroup]="profileForm" (ngSubmit)="submit()">
+                <div class="l-grid__row">
+                    <div class="l-grid__col-6-12">
+                        <app-text-input
+                            [control]="profileForm.get('firstname')"
+                            [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
+                            class="u-margin-bottom-large"
+                        ></app-text-input>
+                        <app-text-input
+                            [control]="profileForm.get('lastname')"
+                            [label]="'GENERAL.LABELS.LASTNAME' | translate"
+                            class="u-margin-bottom-large"
+                        ></app-text-input>
+                        <app-text-input
+                            [control]="profileForm.get('email')"
+                            [label]="'GENERAL.LABELS.EMAIL' | translate"
+                            type="email"
+                            class="u-margin-bottom-large"
+                        ></app-text-input>
+                        <app-text-input
+                            [control]="profileForm.get('password')"
+                            [label]="'GENERAL.LABELS.PASSWORD' | translate"
+                            [description]="'GENERAL.LABELS.LEAVE-EMPTY-TO-NOT-CHANGE' | translate"
+                            type="password"
+                            class="u-margin-bottom-large"
+                        ></app-text-input>
+                        <input type="submit" [value]="'GENERAL.LABELS.SAVE' | translate" class="a-button a-button--primary a-button--small">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

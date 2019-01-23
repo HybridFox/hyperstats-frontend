@@ -1,6 +1,7 @@
 export * from './about';
 export * from './login';
 export * from './register';
+export * from './profile';
 export * from './forgot-password';
 export * from './reset-password';
 export * from './company-information';
@@ -10,6 +11,7 @@ export * from './verification-failed';
 import { AboutPageComponent } from './about';
 import { LoginPageComponent } from './login';
 import { RegisterPageComponent } from './register';
+import { ProfilePageComponent } from './profile';
 import { ForgotPasswordPageComponent } from './forgot-password';
 import { ResetPasswordPageComponent } from './reset-password';
 import { CompanyPageComponent } from './company-information';
@@ -20,6 +22,7 @@ export const Pages = [
     AboutPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    ProfilePageComponent,
     ForgotPasswordPageComponent,
     ResetPasswordPageComponent,
     CompanyPageComponent,
