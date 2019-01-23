@@ -23,7 +23,6 @@ export const Pages = [
     LoginPageComponent,
     RegisterPageComponent,
     ProfilePageComponent,
-    CompanyPageComponent,
     ForgotPasswordPageComponent,
     ResetPasswordPageComponent,
     CompanyPageComponent,
