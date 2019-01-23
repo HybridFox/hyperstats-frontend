@@ -23,14 +23,17 @@
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset Password",
+            "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "SUBJECT": "Subject",
+            "SUBMIT": "Submit",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
-            "UPDATE-PROFILE": "Update Profile",
+            "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode"
+            "ZIPCODE": "Zipcode",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -49,9 +52,6 @@
         }
     },
     "PAGE": {
-        "CONTACT": {
-            "TITLE": "Contact"
-        },
         "ABOUT": {
             "CONTENT-1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac nisi. Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus mauris vitae nisi. Cras laoreet ultrices",
             "CONTENT-2": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac nisi. Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci",
@@ -64,11 +64,14 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
-        "REGISTER": {
-            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
+        "CONTACT": {
+            "TITLE": "About"
         },
         "PROFILE": {
-            "TITLE": "Profile"
+            "TITLE": "About"
+        },
+        "REGISTER": {
+            "VERIFY-EMAIL": ""
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -78,7 +81,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etcâ¦",
             "TITLE": "Success!"
         }
     },
@@ -91,6 +94,16 @@
             "SUCCESS": {
                 "DESCRIPTION": "Please check your inbox for a verification email",
                 "TITLE": "Registration successfull"
+            }
+        },
+        "CONTACT": {
+            "ERROR": {
+                "DESCRIPTION": "There was en error sending your message",
+                "TITLE": "Error"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Success!",
+                "TITLE": "Thank you for your message"
             }
         },
         "FORGOT-PASSWORD": {
@@ -120,11 +133,11 @@
         },
         "PROFILE": {
             "ERROR": {
-                "DESCRIPTION": "Something went wrong while updating your profile",
-                "TITLE": "Error!"
+                "DESCRIPTION": "There was an error when updating your profile",
+                "TITLE": "Cannot update"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "DESCRIPTION": "Your profile has been saved!",
                 "TITLE": "Success!"
             }
         },

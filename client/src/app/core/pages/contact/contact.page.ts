@@ -1,33 +1,32 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
-import { select } from '@angular-redux/store';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
-import { AuthActions, AuthSelector } from '@store/auth';
+import { FormHelper } from '@helpers/form.helper';
+import { ContactRepository } from '@api/contact';
 
 @Component({
     templateUrl: './contact.page.html',
 })
 export class ContactPageComponent implements OnInit, OnDestroy {
-    @select(AuthSelector.register.loading) public loading$: boolean;
-
     public contactForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
-        private authAction: AuthActions,
+        private formBuilder: FormBuilder,
+        private contactRepository: ContactRepository,
         private toastrService: ToastrService,
-        private router: Router
     ) { }
 
     ngOnInit(): void {
-        this.contactForm = new FormGroup({
-            email: new FormControl('', Validators.required),
-            firstname: new FormControl('', Validators.required),
-            lastname: new FormControl('', Validators.required),
-            message: new FormControl('', Validators.required),
+        this.contactForm = this.formBuilder.group({
+            email: ['', [Validators.required, Validators.email]],
+            firstname: ['', Validators.required],
+            lastname: ['', Validators.required],
+            body: ['', Validators.required],
+            subject: ['', Validators.required],
         });
     }
 
@@ -37,14 +36,27 @@ export class ContactPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.register({
+        FormHelper.markAsDirty(this.contactForm);
+        if (!this.contactForm.valid) {
+            return this.toastrService.error(
+                ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
+                ngxExtract('TOAST.GENERAL.INVALID.TITLE') as string
+            );
+        }
+
+        this.contactRepository.sendMail({
             ...this.contactForm.value
         }).then(() => {
-            // TODO: translate
-            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
+            this.toastrService.success(
+                ngxExtract('TOAST.CONTACT.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.CONTACT.SUCCESS.TITLE') as string
+            );
             this.contactForm.reset();
         }).catch(() => {
-            this.toastrService.success('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            this.toastrService.error(
+                ngxExtract('TOAST.CONTACT.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.CONTACT.ERROR.TITLE') as string
+            );
         });
     }
 }

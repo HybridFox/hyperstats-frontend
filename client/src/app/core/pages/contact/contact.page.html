@@ -3,41 +3,41 @@
         <app-page-title
             [title]="'PAGE.CONTACT.TITLE' | translate"
         ></app-page-title>
-        <div class="m-card">
+        <div class="m-card--primary">
             <form [formGroup]="contactForm" (ngSubmit)="submit()">
                 <div class="l-grid l-grid--with-margins">
                     <div class="l-grid__col-6-12">
-                        <div class="u-margin-bottom-large">
-                            <app-text-input
-                                [control]="contactForm.get('firstname')"
-                                [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
-                            ></app-text-input>
-                        </div>
+                        <app-text-input
+                            class="u-margin-bottom-x-large"
+                            [control]="contactForm.get('firstname')"
+                            [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
+                        ></app-text-input>
                     </div>
                     <div class="l-grid__col-6-12">
-                        <div class="u-margin-bottom-large">
-                            <app-text-input
-                                [control]="contactForm.get('lastname')"
-                                [label]="'GENERAL.LABELS.LASTNAME' | translate"
-                            ></app-text-input>
-                        </div>
+                        <app-text-input
+                            class="u-margin-bottom-x-large"
+                            [control]="contactForm.get('lastname')"
+                            [label]="'GENERAL.LABELS.LASTNAME' | translate"
+                        ></app-text-input>
                     </div>
                 </div>
-                <div class="u-margin-bottom-large">
-                    <app-text-input
-                        [control]="contactForm.get('email')"
-                        [label]="'GENERAL.LABELS.EMAIL' | translate"
-                        type="email"
-                    ></app-text-input>
-                </div>
-                <div class="u-margin-bottom-large">
-                    <app-textarea-input
-                        [control]="contactForm.get('message')"
-                        [label]="'GENERAL.LABELS.MESSAGE' | translate"
-                        type="email"
-                    ></app-textarea-input>
-                </div>
-                <input type="submit" [disabled]="!contactForm.valid" [value]="'GENERAL.LABELS.SUBMIT' | translate" class="a-button a-button--primary a-button--small">
+                <app-text-input
+                    class="u-margin-bottom-x-large"
+                    [control]="contactForm.get('email')"
+                    [label]="'GENERAL.LABELS.EMAIL' | translate"
+                    type="email"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-bottom-x-large"
+                    [control]="contactForm.get('subject')"
+                    [label]="'GENERAL.LABELS.SUBJECT' | translate"
+                ></app-text-input>
+                <app-textarea-input
+                    class="u-margin-bottom-x-large"
+                    [control]="contactForm.get('body')"
+                    [label]="'GENERAL.LABELS.MESSAGE' | translate"
+                ></app-textarea-input>
+                <input type="submit" [value]="'GENERAL.LABELS.SUBMIT' | translate" class="a-button a-button--primary a-button--small">
             </form>
         </div>
     </div>

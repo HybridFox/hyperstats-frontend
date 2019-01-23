@@ -73,7 +73,7 @@
             }
 
             &:focus {
-                border: 1.5px solid $nobel;
+                border: 1.5px solid $tundora;
             }
 
             &.ng-dirty.ng-invalid {
@@ -94,6 +94,10 @@
             display: none;
         }
 
+        textarea.a-input__field {
+            height: 150px;
+        }
+
         .a-input__suffix {
             position: absolute;
             right: 0;
@@ -101,10 +105,6 @@
             margin: $spacer-small;
             pointer-events: none;
         }
-    }
-
-    textarea.a-input__field {
-        height: 150px;
     }
 
     &__description {
