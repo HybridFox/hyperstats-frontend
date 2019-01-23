@@ -4,6 +4,7 @@ const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
+const ResponseError = require("../../../helpers/errors/responseError");
 
 should();
 use(chaiAsPromised);
@@ -20,7 +21,6 @@ describe("RegisterHandler", () => {
 
 		mongoServer = await mockMongoose();
 		await createTestUser();
-
 		registerHandler = require("./registerHandler");
 	});
 
@@ -55,6 +55,6 @@ describe("RegisterHandler", () => {
 		};
 		await registerHandler(userToTest);
 
-		return expect(loginHandler(userToTest.email, userToTest.password)).to.eventually.rejectedWith(Error);
+		return expect(loginHandler(userToTest.email, userToTest.password)).to.eventually.rejectedWith(ResponseError);
 	});
 });
