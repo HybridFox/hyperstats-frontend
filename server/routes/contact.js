@@ -43,5 +43,5 @@ module.exports = (router) => {
 	 *                type: boolean
 	 */
 	router.route("/contact/send-mail")
-		.post(authMiddleware.isLoggedIn, validationHelper.middleware(contactValidations.sendMail), contactController.sendMail);
+		.post(validationHelper.middleware(contactValidations.sendMail), contactController.sendMail);
 };
