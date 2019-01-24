@@ -23,6 +23,7 @@
                     <app-text-input
                         [control]="companyForm.get('street')"
                         [label]="'GENERAL.LABELS.STREETNAME' | translate"
+                        class="u-margin-bottom-x-large"
                     ></app-text-input>
                 </div>
             </div>
@@ -33,12 +34,14 @@
                             <app-text-input
                                 [control]="companyForm.get('number')"
                                 [label]="'GENERAL.LABELS.NUMBER' | translate"
+                                class="u-margin-bottom-x-large"
                             ></app-text-input>
                         </div>
                         <div class="l-grid__col-6-12">
                             <app-text-input
                                 [control]="companyForm.get('box')"
                                 [label]="'GENERAL.LABELS.BOX' | translate"
+                                class="u-margin-bottom-x-large"
                             ></app-text-input>
                         </div>
                     </div>
@@ -51,12 +54,14 @@
                             <app-text-input
                                 [control]="companyForm.get('zip')"
                                 [label]="'GENERAL.LABELS.ZIPCODE' | translate"
+                                class="u-margin-bottom-x-large"
                             ></app-text-input>
                         </div>
                         <div class="l-grid__col-8-12">
                             <app-text-input
                                 [control]="companyForm.get('city')"
                                 [label]="'GENERAL.LABELS.CITY' | translate"
+                                class="u-margin-bottom-x-large"
                             ></app-text-input>
                         </div>
                     </div>
@@ -68,6 +73,7 @@
                         [control]="companyForm.get('country')"
                         [label]="'GENERAL.LABELS.COUNTRY' | translate"
                         [options]="countryList"
+                        class="u-margin-bottom-x-large"
                     ></app-select-input>
                 </div>
             </div>
