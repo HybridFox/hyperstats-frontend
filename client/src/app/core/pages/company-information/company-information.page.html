@@ -21,7 +21,7 @@
             <div class="l-grid__row">
                 <div class="l-grid__col-6-12">
                     <app-text-input
-                        [control]="companyForm.get('street')"
+                        [control]="companyForm.controls.address.get('street')"
                         [label]="'GENERAL.LABELS.STREETNAME' | translate"
                         class="u-margin-bottom-x-large"
                     ></app-text-input>
@@ -32,14 +32,14 @@
                     <div class="l-grid__row l-grid--with-margins">
                         <div class="l-grid__col-6-12">
                             <app-text-input
-                                [control]="companyForm.get('number')"
+                                [control]="companyForm.controls.address.get('number')"
                                 [label]="'GENERAL.LABELS.NUMBER' | translate"
                                 class="u-margin-bottom-x-large"
                             ></app-text-input>
                         </div>
                         <div class="l-grid__col-6-12">
                             <app-text-input
-                                [control]="companyForm.get('box')"
+                                [control]="companyForm.controls.address.get('box')"
                                 [label]="'GENERAL.LABELS.BOX' | translate"
                                 class="u-margin-bottom-x-large"
                             ></app-text-input>
@@ -52,14 +52,14 @@
                     <div class="l-grid__row l-grid--with-margins">
                         <div class="l-grid__col-4-12">
                             <app-text-input
-                                [control]="companyForm.get('zip')"
+                                [control]="companyForm.controls.address.get('zipCode')"
                                 [label]="'GENERAL.LABELS.ZIPCODE' | translate"
                                 class="u-margin-bottom-x-large"
                             ></app-text-input>
                         </div>
                         <div class="l-grid__col-8-12">
                             <app-text-input
-                                [control]="companyForm.get('city')"
+                                [control]="companyForm.controls.address.get('city')"
                                 [label]="'GENERAL.LABELS.CITY' | translate"
                                 class="u-margin-bottom-x-large"
                             ></app-text-input>
@@ -70,7 +70,7 @@
             <div class="l-grid__row">
                 <div class="l-grid__col-6-12">
                     <app-select-input
-                        [control]="companyForm.get('country')"
+                        [control]="companyForm.controls.address.get('country')"
                         [label]="'GENERAL.LABELS.COUNTRY' | translate"
                         [options]="countryList"
                         class="u-margin-bottom-x-large"

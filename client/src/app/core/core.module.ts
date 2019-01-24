@@ -29,6 +29,7 @@ import { CodesService } from './services/codes/codes.service';
 import { Services } from './services';
 import { Pages } from './pages';
 import { StoreRouterModule } from '@core/store-router';
+import { CompanyRepository } from '@api/company';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { StoreRouterModule } from '@core/store-router';
     AuthActions,
     AuthRepository,
     ContactRepository,
+    CompanyRepository,
 
     { provide: LOCALE_ID, useValue: 'en' },
     {
