@@ -61,6 +61,10 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'contact',
+    component: Pages.ContactPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
@@ -77,6 +81,13 @@ const routes: Routes = [
         path: 'profile',
         component: Pages.ProfilePageComponent
       },
+    ]
+  },
+  {
+    path: '',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
     ]
   },
   {

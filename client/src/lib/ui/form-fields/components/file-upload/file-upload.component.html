@@ -1,4 +1,4 @@
-<div class="m-file-upload">
+<div [ngClass]="['m-file-upload', class]">
     <p *ngIf="title" class="m-file-upload__title">{{ title }}</p>
     <p *ngIf="description" class="m-file-upload__description">{{ description }}</p>
     <div class="m-file-upload__action u-margin-bottom">
@@ -25,7 +25,7 @@
         </ng-template>
     </div>
 
-    <ul class="m-file-upload__progress">
+    <ul class="m-file-upload__progress" *ngIf="false">
         <li class="l-grid__row u-margin-bottom">
             <div class="l-grid__col-1-12">
                 <i class="a-icon--file"></i>

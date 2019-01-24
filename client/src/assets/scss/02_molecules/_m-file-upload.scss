@@ -7,6 +7,8 @@
     }
     &__description {
         font-size: $font-size-small;
+        font-weight: $font-weight-regular;
+        line-height: 21px;
         color: $gray;
         margin-top: 0;
     }
@@ -15,6 +17,7 @@
     }
     &__label {
         font-size: $font-size-small;
+        font-weight: $font-weight-regular;
         color: $gray;
         display: inline-block;
         line-height: 21px;

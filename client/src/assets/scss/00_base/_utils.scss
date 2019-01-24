@@ -3,6 +3,10 @@
  * -------------------------------------------------------------------
  */
 
+.u-no-margin {
+    margin: 0;
+}
+
 .u-margin-x-large {
     margin: $spacer-x-large;
 }
@@ -123,4 +127,14 @@
 
 .u-user-logged-in {
     padding-bottom: $footer-height;
+}
+
+/**
+ * TEXT
+ * -------------------------------------------------------------------
+ */
+
+.u-text-description {
+    color: $boulder;
+    font-size: .8em;
 }

@@ -1,7 +1,8 @@
 .a-input {
     &__label {
-        color: $black;
-        font-weight: $font-weight-semi-bold;
+        font-size: $font-size-regular;
+        font-weight: $font-weight-bold;
+        color: $tundora;
     }
 
     &__checkbox-container {
@@ -58,7 +59,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            @include transition(border .2s ease);
 
             &:disabled {
                 cursor: not-allowed;
@@ -70,6 +71,10 @@
             &::placeholder {
                 color: $tundora;
                 opacity: 1;
+            }
+
+            &:focus {
+                border: 1.5px solid $tundora;
             }
 
             &.ng-dirty.ng-invalid {
@@ -90,6 +95,10 @@
             display: none;
         }
 
+        textarea.a-input__field {
+            height: 150px;
+        }
+
         .a-input__suffix {
             position: absolute;
             right: 0;
@@ -99,14 +108,12 @@
         }
     }
 
-    textarea.a-input__field {
-        height: 150px;
-    }
-
     &__description {
         display: block;
         color: $tundora;
         margin: 0;
+        line-height: 20px;
+        margin-top: $spacer-xx-small;
         font-size: $font-size-x-small;
     }
 

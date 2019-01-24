@@ -1,3 +1,4 @@
+export * from './contact';
 export * from './about';
 export * from './login';
 export * from './register';
@@ -11,6 +12,7 @@ export * from './reports';
 export * from './privacy';
 export * from './help';
 
+import { ContactPageComponent } from './contact';
 import { AboutPageComponent } from './about';
 import { LoginPageComponent } from './login';
 import { RegisterPageComponent } from './register';
@@ -28,6 +30,7 @@ export const Pages = [
     AboutPageComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    ContactPageComponent,
     ProfilePageComponent,
     ForgotPasswordPageComponent,
     ResetPasswordPageComponent,

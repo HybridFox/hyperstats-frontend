@@ -22,6 +22,7 @@
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"MESSAGE": "",
 			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
@@ -30,6 +31,8 @@
 			"SAVE": "",
 			"SORTBY": "",
 			"STREETNAME": "",
+			"SUBJECT": "",
+			"SUBMIT": "",
 			"TOKEN": "",
 			"TRY-AGAIN": "",
 			"UPDATE-PROFILE": "",
@@ -65,7 +68,30 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"CONTACT": {
+			"TITLE": ""
+		},
 		"PROFILE": {
+			"TITLE": ""
+		},
+		"RECYCLING-PROCESSES": {
+			"DESCRIPTION": "",
+			"LABELS": {
+				"DESCRIPTION": "",
+				"DESCRIPTION-DESCRIPTION": "",
+				"NAME": "",
+				"PRECEDING-STEP": "",
+				"PROCESSING-METHOD": "",
+				"QUALITATIVE-DESCRIPTION": "",
+				"QUALITATIVE-DESCRIPTION-DESCRIPTION": "",
+				"RECYCLING-SITE-OWNER": "",
+				"SCHEMATIC-OVERVIEW": "",
+				"SCHEMATIC-OVERVIEW-DESCRIPTION": "",
+				"UPLOAD-FILE-WITH-FURTHER-DETAILS": ""
+			},
+			"PROCESS-DESCRIPTION": "",
+			"PROCESS-TITLE": "",
+			"RECYCLING-STEP": "",
 			"TITLE": ""
 		},
 		"REGISTER": {
@@ -90,6 +116,16 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"CONTACT": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

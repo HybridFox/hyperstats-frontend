@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { ApiModule } from '@api/api';
+import { ContactRepository } from '@api/contact';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
@@ -78,6 +79,7 @@ import { StoreRouterModule } from '@core/store-router';
 
     AuthActions,
     AuthRepository,
+    ContactRepository,
 
     { provide: LOCALE_ID, useValue: 'en' },
     {

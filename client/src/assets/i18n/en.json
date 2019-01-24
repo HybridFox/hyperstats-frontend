@@ -21,17 +21,20 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "MESSAGE": "Message",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset Password",
+            "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "SORTBY": "Sort by",
             "STREETNAME": "Street name",
+            "SUBJECT": "Subject",
+            "SUBMIT": "Submit",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
-            "UPDATE-PROFILE": "Update Profile",
+            "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
             "ACCEPT_TERMS": "I accept the terms and conditions"
@@ -65,11 +68,34 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
+        "CONTACT": {
+            "TITLE": "Contact"
+        },
         "PROFILE": {
             "TITLE": "Profile"
         },
+        "RECYCLING-PROCESSES": {
+            "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
+            "LABELS": {
+                "DESCRIPTION": "Choose a description for this recycling step",
+                "DESCRIPTION-DESCRIPTION": "This is the identifier you typically use in your organisation for this recycling step. Take something that everyone in your organisation understands",
+                "NAME": "Choose a name for this recycling process",
+                "PRECEDING-STEP": "If any, choose a preceding step",
+                "PROCESSING-METHOD": "Method of processing",
+                "QUALITATIVE-DESCRIPTION": "Qualitative description of the operations",
+                "QUALITATIVE-DESCRIPTION-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
+                "RECYCLING-SITE-OWNER": "Is this your recycling site or from one of your partners?",
+                "SCHEMATIC-OVERVIEW": "Schematic overview of process",
+                "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
+                "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
+            },
+            "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
+            "PROCESS-TITLE": "Process Description - Recycling Steps",
+            "RECYCLING-STEP": "Recycling Step {{ key }}",
+            "TITLE": "Recycling Processes"
+        },
         "REGISTER": {
-            "VERIFY-EMAIL": ""
+            "VERIFY-EMAIL": "Verify email"
         },
         "REPORTS": {
             "DRAFT": "Draft",
@@ -84,7 +110,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etcâ¦",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
             "TITLE": "Success!"
         }
     },
@@ -97,6 +123,16 @@
             "SUCCESS": {
                 "DESCRIPTION": "Please check your inbox for a verification email",
                 "TITLE": "Registration successfull"
+            }
+        },
+        "CONTACT": {
+            "ERROR": {
+                "DESCRIPTION": "There was en error sending your message",
+                "TITLE": "Error"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Success!",
+                "TITLE": "Thank you for your message"
             }
         },
         "FORGOT-PASSWORD": {
@@ -126,11 +162,11 @@
         },
         "PROFILE": {
             "ERROR": {
-                "DESCRIPTION": "Something went wrong while updating your profile",
-                "TITLE": "Error!"
+                "DESCRIPTION": "There was an error when updating your profile",
+                "TITLE": "Cannot update"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "DESCRIPTION": "Your profile has been saved!",
                 "TITLE": "Success!"
             }
         },
