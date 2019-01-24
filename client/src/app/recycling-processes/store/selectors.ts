@@ -1,10 +1,24 @@
-import { selectDenormalized } from '@store/utils/selector';
-import * as schema from '@core/schemas';
+import {
+  detail,
+  detailLoading,
+  detailError,
+} from './detail/selectors';
 
-export const RecyclingProcessesSelector = {
-  loading: ['cds', 'endpoint', 'loading'],
-  result: selectDenormalized({
-    schema: schema.recyclingProcess,
-    selector: 'recyclingProcesses.result',
-  })
+import {
+  list,
+  listLoading,
+  listError,
+} from './list/selectors';
+
+export const CustomsOfficesSelector = {
+  detail: {
+    result: detail,
+    loading: detailLoading,
+    error: detailError,
+  },
+  list: {
+    result: list,
+    loading: listLoading,
+    error: listError,
+  },
 };

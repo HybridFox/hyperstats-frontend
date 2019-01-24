@@ -1,22 +1,8 @@
-import { ACTIONS } from './action-types';
-import { progressReducer } from '@store/hor';
+import { combineReducers } from 'redux';
+import { listReducer } from './list/reducers';
+import { detailReducer } from './detail/reducers';
 
-import { TYPE_LIST } from './action-types';
-
-export const reducer = (
-  state = null,
-  action,
-) => {
-  if (action.type === ACTIONS.FETCH) {
-    return [
-      ...action.payload,
-    ];
-  }
-
-  return state;
-};
-
-export const recyclingProcessesReducer = progressReducer(
-  { entityType: TYPE_LIST },
-  reducer,
-);
+export const customsOfficesReducers = combineReducers({
+  list: listReducer,
+  detail: detailReducer,
+});
