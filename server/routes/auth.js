@@ -1,6 +1,7 @@
 const validationHelper = require("../helpers/validation");
 const authController = require("../controllers/auth");
 const authValidations = require("../controllers/auth/validations");
+const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
 	/**
@@ -41,24 +42,19 @@ module.exports = (router) => {
 	 *         type: string
 	 *       lastname:
 	 *         type: string
+	 *   ResetBody:
+	 *     type: object
+	 *     properties:
+	 *       password:
+	 *         type: string
+	 *       token:
+	 *         type: string
+	 *   ResetRequestBody:
+	 *     type: object
+	 *     properties:
+	 *       email:
+	 *         type: string
 	 */
-
-	/**
-	 * @swagger
-	 * /api/auth/profile:
-	 *   get:
-	 *     description: Get user profile
-	 *     tags:
-	 *       - auth
-	 *     produces:
-	 *       - application/json
-	 *     responses:
-	 *       200:
-	 *         description:
-	 *         schema:
-	 *           $ref: '#/definitions/UserLoginResponse'
-	 */
-	router.route("/auth/profile").get(authController.profile);
 
 	/**
 	 * @swagger
@@ -99,7 +95,7 @@ module.exports = (router) => {
 	 *       201:
 	 *         description: Success
 	 */
-	router.route("/auth/logout").get(authController.logout);
+	router.route("/auth/logout").get(authMiddleware.isLoggedIn, authController.logout);
 
 	/**
 	 * @swagger
@@ -132,7 +128,7 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/auth/verify/{token}:
+	 * /api/auth/verify?{token}:
 	 *   get:
 	 *     description: Verify user (email callback)
 	 *     tags:
@@ -146,10 +142,58 @@ module.exports = (router) => {
 	 *         type: string
 	 *     responses:
 	 *       302:
-	 *         description: Redirect to verify landing page
+	 *         description: Redirect to verify landing page (/verification-succeeded or /verification-failed)
 	 */
-	router.route("/auth/verify/:token").get(
+	router.route("/auth/verify").get(
 		validationHelper.middleware(authValidations.verify),
 		authController.verify
+	);
+
+	/**
+	 * @swagger
+	 * /api/auth/request-password-reset:
+	 *   post:
+	 *     description: Request user password reset
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: body
+	 *         name: body
+	 *         required: true
+	 *         schema:
+	 *           $ref: '#/definitions/ResetRequestBody'
+	 *     responses:
+	 *       200:
+	 *         description: Success
+	 */
+	router.route("/auth/request-password-reset").post(
+		validationHelper.middleware(authValidations.requestPasswordReset),
+		authController.requestPasswordReset
+	);
+
+	/**
+	 * @swagger
+	 * /api/auth/reset-password:
+	 *   put:
+	 *     description: Reset user password
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: body
+	 *         name: body
+	 *         required: true
+	 *         schema:
+	 *           $ref: '#/definitions/ResetBody'
+	 *     responses:
+	 *       200:
+	 *         description: Success
+	 */
+	router.route("/auth/reset-password").put(
+		validationHelper.middleware(authValidations.resetPassword),
+		authController.resetPassword
 	);
 };

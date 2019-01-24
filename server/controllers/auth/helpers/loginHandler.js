@@ -1,4 +1,5 @@
 const UserModel = require("../../../models/user");
+const ResponseError = require("../../../helpers/errors/responseError");
 
 /**
  * @function loginHandler Handles passport login
@@ -7,15 +8,17 @@ const UserModel = require("../../../models/user");
  * @returns {Promise} User
  */
 module.exports = async(email, password) => {
-	const user = await UserModel.findOne({ "data.email": email }).exec();
+	const user = await UserModel.findOne({ "data.email": email, "meta.validation.isValidated": true }).exec();
 
 	if (!user) {
-		throw new Error({ type: 404, msg: "User not found" });
+		throw new ResponseError({ type: 404, msg: "User not found" });
 	}
 
 	if (!await user.validatePassword(password)) {
-		throw new Error({ type: 400, msg: "Invalid password" });
+		throw new ResponseError({ type: 400, msg: "Invalid password" });
 	}
+
+	await user.populateCompany();
 
 	return user.toObject();
 };

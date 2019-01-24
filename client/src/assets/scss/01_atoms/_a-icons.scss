@@ -6,6 +6,8 @@
  * e904 = calendar
  * e905 = checkmark
  * e906 = plus
+ * e907 = upload
+ * e908 = file
  */
 
 .a-icon {
@@ -68,5 +70,19 @@
     @extend .a-icon;
     &::before {
         content: "\e906";
+    }
+}
+
+.a-icon--upload {
+    @extend .a-icon;
+    &::before {
+        content: "\e907";
+    }
+}
+
+.a-icon--file {
+    @extend .a-icon;
+    &::before {
+        content: "\e908";
     }
 }

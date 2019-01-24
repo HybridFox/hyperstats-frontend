@@ -1,6 +1,6 @@
 .m-card {
     border-radius: $border-radius;
-    padding: $spacer-large;
+    padding: $spacer-large $spacer-x-large;
 }
 
 .m-card--primary {
@@ -11,6 +11,6 @@
 
 .m-card--secondary {
     @extend .m-card;
-    background-color: $grey;
+    background-color: $athens-gray;
     color: $tundora;
 }

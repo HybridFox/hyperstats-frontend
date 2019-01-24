@@ -6,40 +6,51 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT-TERMS": "",
 			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"CANCEL": "",
+			"BROWSE": "",
 			"CITY": "",
 			"COMPANYNAME": "",
 			"COPYRIGHT": "",
 			"COUNTRY": "",
+			"DRAGANDDROP": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
 			"NEXT-STEP": "",
+			"MESSAGE": "",
 			"NUMBER": "",
 			"PASSWORD": "",
 			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"SELECT-OPTION": "",
 			"STREETNAME": "",
+			"SUBJECT": "",
+			"SUBMIT": "",
+			"TOKEN": "",
+			"TRY-AGAIN": "",
+			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
 		},
 		"MENU": {
+			"ABOUT": "",
 			"AUDITTRIAL": "",
 			"COMPANYINFORMATION": "",
+			"CONTACT": "",
 			"HELP": "",
 			"LOGIN": "",
 			"LOGOFF": "",
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
+			"REGISTER": "",
 			"REPORTS": "",
 			"USERPROFILE": ""
 		}
@@ -56,17 +67,116 @@
 			"HELP": "",
 			"SUBTITLE": "",
 			"TITLE": ""
+		},
+		"PROFILE": {
+			"TITLE": ""
+		},
+		"RECYCLING-PROCESSES": {
+			"DESCRIPTION": "",
+			"LABELS": {
+				"DESCRIPTION": "",
+				"DESCRIPTION-DESCRIPTION": "",
+				"NAME": "",
+				"PRECEDING-STEP": "",
+				"PROCESSING-METHOD": "",
+				"QUALITATIVE-DESCRIPTION": "",
+				"QUALITATIVE-DESCRIPTION-DESCRIPTION": "",
+				"RECYCLING-SITE-OWNER": "",
+				"SCHEMATIC-OVERVIEW": "",
+				"SCHEMATIC-OVERVIEW-DESCRIPTION": "",
+				"UPLOAD-FILE-WITH-FURTHER-DETAILS": ""
+			},
+			"PROCESS-DESCRIPTION": "",
+			"PROCESS-TITLE": "",
+			"RECYCLING-STEP": "",
+			"TITLE": ""
+		},
+		"CONTACT": {
+			"TITLE": ""
+		},
+		"REGISTER": {
+			"VERIFY-EMAIL": ""
+		},
+		"RESET-PASSWORD": {
+			"TITLE": ""
+		},
+		"VERIFICATION-FAILED": {
+			"CONTENT": "",
+			"TITLE": ""
+		},
+		"VERIFICATION-SUCCEEDED": {
+			"CONTENT": "",
+			"TITLE": ""
 		}
 	},
 	"TOAST": {
+		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"CONTACT": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"FORGOT-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"GENERAL": {
+			"INVALID": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"LOGIN": {
 			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"TITLE": ""
+			}
+		},
+		"PROFILE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		},
 		"REGISTER": {
 			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RESET-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}

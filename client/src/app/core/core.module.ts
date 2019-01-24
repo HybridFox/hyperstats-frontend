@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { ApiModule } from '@api/api';
+import { ContactRepository } from '@api/contact';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
@@ -27,6 +28,7 @@ import { WebpackTranslateLoader } from './translations';
 import { CodesService } from './services/codes/codes.service';
 import { Services } from './services';
 import { Pages } from './pages';
+import { StoreRouterModule } from '@core/store-router';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { Pages } from './pages';
 
     SharedModule,
     ReactiveFormsModule,
+
+    StoreRouterModule,
 
     // Toastr
     BrowserAnimationsModule,
@@ -73,6 +77,7 @@ import { Pages } from './pages';
 
     AuthActions,
     AuthRepository,
+    ContactRepository,
 
     { provide: LOCALE_ID, useValue: 'en' },
     {

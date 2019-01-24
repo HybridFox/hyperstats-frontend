@@ -3,7 +3,7 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { select } from '@angular-redux/store';
 import { Subject } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 import { AuthActions, AuthSelector } from '@store/auth';
 import { PasswordValidator } from '@helpers/validators/password.validator';
@@ -16,11 +16,11 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     public registerForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public registerSucceeded = false;
 
     constructor(
         private authAction: AuthActions,
-        private toastrService: ToastrService,
-        private router: Router
+        private toastrService: ToastrService
     ) { }
 
     ngOnInit(): void {
@@ -40,17 +40,21 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
 
     public submit() {
         if (!this.registerForm.valid) {
-            return this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            return this.toastrService.error(
+                ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
+                ngxExtract('TOAST.GENERAL.INVALID.TITLE') as string
+            );
         }
 
         return this.authAction.register({
             ...this.registerForm.value
         }).then(() => {
-            // TODO: translate
-            this.toastrService.success('TOAST.REGISTER.SUCCESS.DESCRIPTION', 'TOAST.REGISTER.SUCCESS.TITLE');
-            this.registerForm.reset();
+            this.registerSucceeded = true;
         }).catch(() => {
-            this.toastrService.error('TOAST.REGISTER.ERROR.DESCRIPTION', 'TOAST.REGISTER.ERROR.TITLE');
+            this.toastrService.error(
+                ngxExtract('TOAST.REGISTER.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.REGISTER.ERROR.TITLE') as string
+            );
         });
     }
 }

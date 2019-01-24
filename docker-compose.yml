@@ -13,6 +13,8 @@ services:
       - 5858:5858
     volumes:
       - ./server:/app:delegated
+      - ./server/package.json:/package.json
+      - ./server/package-lock.json:/package-lock.json
       - notused:/app/node_modules
     environment:
       - WAIT_HOSTS=mongodb-rare:27017

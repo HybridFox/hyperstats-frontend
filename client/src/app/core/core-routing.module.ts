@@ -8,7 +8,10 @@ import * as Pages from './pages';
 const routes: Routes = [
   {
     path: 'login',
-    component: Pages.LoginPageComponent
+    component: Pages.LoginPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: 'about',
@@ -16,11 +19,50 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    component: Pages.RegisterPageComponent
+    component: Pages.RegisterPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'forgot-password',
+    component: Pages.ForgotPasswordPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'reset-password',
+    component: Pages.ResetPasswordPageComponent
   },
   {
     path: 'company-information',
     component: Pages.CompanyPageComponent
+  },
+  {
+    path: 'verification-succeeded',
+    component: Pages.VerificationSucceededPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'verification-failed',
+    component: Pages.VerificationFailedPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
+  },
+  {
+    path: 'help',
+    component: Pages.HelpPageComponent,
+    children: [
+      { path: ':section', component: Pages.HelpSectionPageComponent },
+    ]
+  },
+  {
+    path: 'contact',
+    component: Pages.ContactPageComponent
   },
   {
     path: '',
@@ -28,7 +70,26 @@ const routes: Routes = [
     children: [
       { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule'},
       { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
+      {
+        path: 'reports',
+        loadChildren: '../reports/reports.module#ReportsModule'
+      },
+      {
+        path: 'profile',
+        component: Pages.ProfilePageComponent
+      },
     ]
+  },
+  {
+    path: '',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
+    ]
+  },
+  {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
   }
 ];
 
