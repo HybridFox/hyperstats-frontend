@@ -49,7 +49,7 @@ module.exports = async(body) => {
 		throw new ResponseError({ type: 500, msg: "Sending mail failed", error });
 	});
 
-	await user.populateCompany();
+	await newUser.populateCompany();
 
 	return newUser.toObject();
 };
