@@ -64,6 +64,9 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"CONTACT": {
+			"TITLE": ""
+		},
 		"PROFILE": {
 			"TITLE": ""
 		},
@@ -85,9 +88,6 @@
 			"PROCESS-DESCRIPTION": "",
 			"PROCESS-TITLE": "",
 			"RECYCLING-STEP": "",
-			"TITLE": ""
-		},
-		"CONTACT": {
 			"TITLE": ""
 		},
 		"REGISTER": {
