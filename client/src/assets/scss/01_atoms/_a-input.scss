@@ -58,7 +58,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            @include transition(border .2s ease);
 
             &:disabled {
                 cursor: not-allowed;
@@ -70,6 +70,10 @@
             &::placeholder {
                 color: $tundora;
                 opacity: 1;
+            }
+
+            &:focus {
+                border: 1.5px solid $tundora;
             }
 
             &.ng-dirty.ng-invalid {
@@ -90,6 +94,10 @@
             display: none;
         }
 
+        textarea.a-input__field {
+            height: 150px;
+        }
+
         .a-input__suffix {
             position: absolute;
             right: 0;
@@ -97,10 +105,6 @@
             margin: $spacer-small;
             pointer-events: none;
         }
-    }
-
-    textarea.a-input__field {
-        height: 150px;
     }
 
     &__description {

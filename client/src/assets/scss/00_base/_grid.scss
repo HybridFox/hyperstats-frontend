@@ -13,7 +13,7 @@
 	align-self: auto;
 }
 
-.l-grid__row{
+.l-grid__row {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -102,10 +102,12 @@
 	[class*="l-grid__col"] {
 		flex-grow: 0;
 		flex-shrink: 0;
-		margin: #{$grid-gutter-row / 2};
+		margin-left: #{$grid-gutter-row / 2};
+		margin-right: #{$grid-gutter-row / 2};
 
 		@include respond-at($screen-m) {
-			margin: #{$grid-gutter-row / 2};
+            margin-left: #{$grid-gutter-row / 2};
+            margin-right: #{$grid-gutter-row / 2};
 		}
 	}
 

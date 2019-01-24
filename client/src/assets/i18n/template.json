@@ -6,7 +6,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT-TERMS": "",
+			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CITY": "",
@@ -19,6 +19,7 @@
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"MESSAGE": "",
 			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
@@ -26,6 +27,8 @@
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"SUBJECT": "",
+			"SUBMIT": "",
 			"TOKEN": "",
 			"TRY-AGAIN": "",
 			"UPDATE-PROFILE": "",
@@ -61,11 +64,14 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
-		"REGISTER": {
-			"VERIFY-EMAIL": ""
+		"CONTACT": {
+			"TITLE": ""
 		},
 		"PROFILE": {
 			"TITLE": ""
+		},
+		"REGISTER": {
+			"VERIFY-EMAIL": ""
 		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
@@ -81,6 +87,16 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"CONTACT": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

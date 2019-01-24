@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-23T09:06:33.141Z\n"
-"PO-Revision-Date: 2019-01-23T09:06:33.142Z\n"
+"POT-Creation-Date: 2019-01-23T13:12:16.650Z\n"
+"PO-Revision-Date: 2019-01-23T13:12:16.651Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -15,9 +15,6 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
-msgstr ""
-
-msgid "GENERAL##LABELS##ACCEPT-TERMS"
 msgstr ""
 
 msgid "GENERAL##LABELS##BOX"
@@ -56,6 +53,9 @@ msgstr ""
 msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
+msgid "GENERAL##LABELS##MESSAGE"
+msgstr ""
+
 msgid "GENERAL##LABELS##NUMBER"
 msgstr ""
 
@@ -75,6 +75,12 @@ msgid "GENERAL##LABELS##SAVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##SUBJECT"
+msgstr ""
+
+msgid "GENERAL##LABELS##SUBMIT"
 msgstr ""
 
 msgid "GENERAL##LABELS##TOKEN"
@@ -122,6 +128,9 @@ msgstr ""
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr ""
 
+msgid "GENERAL##MENU##REGISTER"
+msgstr ""
+
 msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
@@ -152,7 +161,13 @@ msgstr ""
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr ""
 
+msgid "PAGE##CONTACT##TITLE"
+msgstr ""
+
 msgid "PAGE##PROFILE##TITLE"
+msgstr ""
+
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
@@ -180,6 +195,18 @@ msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##CONTACT##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##CONTACT##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
@@ -227,12 +254,6 @@ msgstr ""
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
-msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-msgstr ""
-
-msgid "TOAST##REGISTER##SUCCESS##TITLE"
-msgstr ""
-
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -243,4 +264,8 @@ msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

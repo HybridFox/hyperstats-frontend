@@ -18,18 +18,22 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "MESSAGE": "Message",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset Password",
+            "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "SUBJECT": "Subject",
+            "SUBMIT": "Submit",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
-            "UPDATE-PROFILE": "Update Profile",
+            "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode"
+            "ZIPCODE": "Zipcode",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -60,11 +64,14 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
-        "REGISTER": {
-            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
+        "CONTACT": {
+            "TITLE": "About"
         },
         "PROFILE": {
-            "TITLE": "Profile"
+            "TITLE": "About"
+        },
+        "REGISTER": {
+            "VERIFY-EMAIL": ""
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -74,7 +81,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etcâ¦",
             "TITLE": "Success!"
         }
     },
@@ -87,6 +94,16 @@
             "SUCCESS": {
                 "DESCRIPTION": "Please check your inbox for a verification email",
                 "TITLE": "Registration successfull"
+            }
+        },
+        "CONTACT": {
+            "ERROR": {
+                "DESCRIPTION": "There was en error sending your message",
+                "TITLE": "Error"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Success!",
+                "TITLE": "Thank you for your message"
             }
         },
         "FORGOT-PASSWORD": {
@@ -116,11 +133,11 @@
         },
         "PROFILE": {
             "ERROR": {
-                "DESCRIPTION": "Something went wrong while updating your profile",
-                "TITLE": "Error!"
+                "DESCRIPTION": "There was an error when updating your profile",
+                "TITLE": "Cannot update"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "DESCRIPTION": "Your profile has been saved!",
                 "TITLE": "Success!"
             }
         },
