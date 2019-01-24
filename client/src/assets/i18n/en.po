@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-16T13:01:01.164Z\n"
+"POT-Creation-Date: 2019-01-24T14:24:14.844Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
 
@@ -23,11 +23,11 @@ msgstr "This field is required"
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
 
-msgid "GENERAL##LABELS##CANCEL"
-msgstr "Cancel"
-
 msgid "GENERAL##LABELS##BROWSE"
 msgstr "Browse"
+
+msgid "GENERAL##LABELS##CANCEL"
+msgstr "Cancel"
 
 msgid "GENERAL##LABELS##CITY"
 msgstr "City"
@@ -36,7 +36,7 @@ msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company naem"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "� Eucobat 2018"
+msgstr "© Eucobat 2018"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -59,11 +59,11 @@ msgstr "Lastname"
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
 
-msgid "GENERAL##LABELS##NEXT-STEP"
-msgstr "Next step"
-
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr "Message"
+
+msgid "GENERAL##LABELS##NEXT-STEP"
+msgstr "Next step"
 
 msgid "GENERAL##LABELS##NUMBER"
 msgstr "Tel. nr"
@@ -205,18 +205,11 @@ msgstr "Address Information Recycling Plant"
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr "Company information"
 
-#, fuzzy
-#| msgid "PAGE##ABOUT##TITLE"
 msgid "PAGE##CONTACT##TITLE"
-msgstr "About"
+msgstr "Contact"
 
-#, fuzzy
-#| msgid "PAGE##ABOUT##TITLE"
 msgid "PAGE##PROFILE##TITLE"
-msgstr "About"
-
-msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr ""
+msgstr "Profile"
 
 msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgstr ""
@@ -291,8 +284,7 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 msgstr ""
-"Your email is now validated you can now login lorem ipsum doler sit amet "
-"etc…"
+"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success!"
@@ -366,8 +358,18 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
-#, fuzzy
-#| msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not reset your password, try again later"
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "You can now use your new password to login"
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr "Success!"
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Addition information"
 
@@ -547,106 +549,6 @@ msgstr "Output Fraction"
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr "Recycling Efficiency"
 
-msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
-msgstr "Could not reset your password, try again later"
-
-msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
-msgstr "Something went wrong"
-
-msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "You can now use your new password to login"
-
-msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
-msgstr "Success!"
-
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
-
-#, fuzzy
-#~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
-#~ msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##GENERAL-INFORMATION"
-#~ msgstr "General information"
-
-#~ msgid "WIZARD##NEW-REPORT##TITLES##CALCULATED-EFFICIENCY"
-#~ msgstr "Calculated efficiency"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
-#~ msgstr ""
-#~ "Add all the different battery chemistry types you process. Per battery "
-#~ "type define which recycling site sare involved and provide some "
-#~ "additional information regarding the recycling process."
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
-#~ msgstr "Choose a description for this recycling step"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
-#~ msgstr ""
-#~ "This is the identifier you typically use in your organisation for this "
-#~ "recycling step. Take something that everyone in your organisation "
-#~ "understands"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##NAME"
-#~ msgstr "Choose a name for this recycling process"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##PRECEDING-STEP"
-#~ msgstr "If any, choose a preceding step"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##PROCESSING-METHOD"
-#~ msgstr "Method of processing"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
-#~ msgstr "Qualitative description of the operations"
-
-#~ msgid ""
-#~ "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
-#~ msgstr ""
-#~ "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
-#~ "Tempor Incididunt Ut Labore Et Dolor"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
-#~ msgstr "Is this your recycling site or from one of your partners?"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
-#~ msgstr "Schematic overview of process"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
-#~ msgstr ""
-#~ "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
-#~ "Tempor Incididunt Ut Labore Et Dolor"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
-#~ msgstr ""
-#~ "Add every recycling step that makes up your recycling process. Per "
-#~ "recycling step you can define the recycling site and provide a process "
-#~ "description."
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
-#~ msgstr "Process Description - Recycling Steps"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
-#~ msgstr "Recycling Step"
-
-#~ msgid "PAGE##RECYCLING-PROCESSES##TITLE"
-#~ msgstr "Recycling Processes"
-
-#~ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-#~ msgstr "Please check your email for your verification mail"
-
-#~ msgid "TOAST##REGISTER##SUCCESS##TITLE"
-#~ msgstr "Successfully registered"
-
-#~ msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
-#~ msgstr "Leave this field empty to not change"
-
-#~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
-#~ msgstr "I accept the terms and conditions"
-
-#~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
-#~ msgstr "You are now free to browse"
-
-#~ msgid "GENERAL##MENU##NEWREPORT"
-#~ msgstr "New report"
-
-#~ msgid "GENERAL##ERRORS##REQUIRED"
-#~ msgstr "This field is required"
