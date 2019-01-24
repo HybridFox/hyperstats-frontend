@@ -1,0 +1,26 @@
+<div class="container u-margin-bottom-x-large">
+  <app-page-title
+    [title]="currentTitle | translate"
+  ></app-page-title>
+  <div class="m-card--primary u-margin-top">
+    <pre style="display: none;">{{ data.value | json }}</pre>
+    <div class="m-card">
+      <div class="m-steps">
+        <div class="m-steps__step" *ngFor="let step of steps; let i = index;" [ngClass]="{'m-steps__step--selected': i === selectedIndex}">
+          <a [routerLink]="step.route">
+            <div *ngIf="selectedIndex <= i" class="m-steps__step-icon" [ngClass]="{'m-steps__step-icon--selected': i === selectedIndex}">
+              <span>{{i + 1}}</span>
+            </div>
+            <div *ngIf="selectedIndex > i" class="m-steps__step-icon m-steps__step-icon--passed">
+              <span class="a-icon a-icon--checkmark"></span>
+            </div>
+            <div class="m-steps__step-text">
+              {{ step.name | translate }}
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
