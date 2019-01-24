@@ -1,4 +1,4 @@
-<div class="m-sub-section-title">
+<div [ngClass]="['m-sub-section-title', class]">
   <h3 class="m-sub-section-title__title">{{ title }}</h3>
   <div class="m-sub-section-title__action">
     <ng-content select="[action]"></ng-content>

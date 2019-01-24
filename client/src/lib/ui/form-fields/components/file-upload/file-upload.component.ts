@@ -13,6 +13,7 @@ export class FileUploadComponent implements OnInit, OnDestroy {
     @Input() description?: string;
     @Input() details?: string;
     @Input() label?: string;
+    @Input() class = '';
     @Input() control: FormControl = new FormControl('');
     @Input() multiple: boolean;
 

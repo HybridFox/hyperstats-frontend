@@ -11,6 +11,7 @@ describe("Integration", () => {
 
 		before(async() => {
 			const { server: s, closeServer: c, reset: r } = await startServer();
+
 			server = s;
 			closeServer = c;
 			reset = r;
@@ -29,14 +30,17 @@ describe("Integration", () => {
 				})
 				.expect("Content-Type", /json/)
 				.expect(200)
-				.then((res) => {
-					expect(res.body).to.be.an("object");
-					expect(omit(["created", "lastUpdated"], res.body)).to.deep.equal({
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(omit(["created", "lastUpdated", "company"], body)).to.deep.equal({
 						firstname: "validUser",
 						lastname: "Smith",
 						isAdmin: false,
 						email: "validuser@example.com",
 					});
+					expect(body.company).to.be.an("object");
+					expect(body.company.data).to.be.an("object");
+					expect(body.company.data.name).to.equal("Company for user");
 				});
 		});
 

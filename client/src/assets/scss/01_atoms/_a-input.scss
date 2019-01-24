@@ -1,7 +1,8 @@
 .a-input {
     &__label {
-        color: $black;
-        font-weight: $font-weight-semi-bold;
+        font-size: $font-size-regular;
+        font-weight: $font-weight-bold;
+        color: $tundora;
     }
 
     &__checkbox-container {
@@ -58,7 +59,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            @include transition(border .2s ease);
 
             &:disabled {
                 cursor: not-allowed;
@@ -72,22 +73,36 @@
                 opacity: 1;
             }
 
+            &:focus {
+                border: 1.5px solid $tundora;
+            }
+
             &.ng-dirty.ng-invalid {
                 border: 1.5px solid $danger;
+            }
+
+            &:focus {
+                border: 1.5px solid rgba($gray, 0.5);
+                outline-width: 0;
             }
         }
 
         select.a-input__field {
+            overflow: visible;
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
+            background: url("/assets/images/arrow_down.png") right $spacer center no-repeat, $white;
             background-size: 10px;
             padding: 0 $spacer-small;
         }
 
         select.a-input__field::-ms-expand {
             display: none;
+        }
+
+        textarea.a-input__field {
+            height: 150px;
         }
 
         .a-input__suffix {
@@ -99,14 +114,13 @@
         }
     }
 
-    textarea.a-input__field {
-        height: 150px;
-    }
-
     &__description {
+        position: absolute;
         display: block;
         color: $tundora;
         margin: 0;
+        line-height: 20px;
+        margin-top: $spacer-xx-small;
         font-size: $font-size-x-small;
     }
 
@@ -116,5 +130,16 @@
         color: $danger;
         margin: 0;
         font-size: $font-size-x-small;
+    }
+}
+
+.a-input--inline {
+    display: flex;
+    align-items: center;
+    .a-input__label {
+        margin-right: $spacer;
+    }
+    .a-input__field-container {
+        margin-top: 0;
     }
 }

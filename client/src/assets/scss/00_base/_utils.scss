@@ -3,6 +3,10 @@
  * -------------------------------------------------------------------
  */
 
+.u-no-margin {
+    margin: 0;
+}
+
 .u-margin-x-large {
     margin: $spacer-x-large;
 }
@@ -101,4 +105,36 @@
 
 .u-margin-left-small {
     margin-left: $spacer-small;
+}
+
+/**
+ * FLOATS
+ * -------------------------------------------------------------------
+ */
+
+.u-pull-right {
+    float: right;
+}
+
+.u-pull-left {
+    float: left;
+}
+
+ /**
+ * USER
+ * -------------------------------------------------------------------
+ */
+
+.u-user-logged-in {
+    padding-bottom: $footer-height * 1.5;
+}
+
+/**
+ * TEXT
+ * -------------------------------------------------------------------
+ */
+
+.u-text-description {
+    color: $boulder;
+    font-size: .8em;
 }

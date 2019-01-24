@@ -6,6 +6,9 @@ const config = require(`${process.cwd()}/config`);
 require("./helpers/db");
 require("./middleware/global")(app);
 
+// Run fixtures
+require("./fixtures")();
+
 app.use("/api", require("./routes"));
 
 app.route(["/*", "*"]).all(require("./routes/fallback"));

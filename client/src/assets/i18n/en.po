@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-23T07:53:42.125Z\n"
+"POT-Creation-Date: 2019-01-24T16:45:17.558Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr "Create new report"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
@@ -20,17 +23,29 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr "Add additional step"
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
+msgstr "Add recycling partner"
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
+msgstr "Add Recycling Process"
+
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
 
 msgid "GENERAL##LABELS##BROWSE"
 msgstr "Browse"
 
+msgid "GENERAL##LABELS##CANCEL"
+msgstr "Cancel"
+
 msgid "GENERAL##LABELS##CITY"
 msgstr "City"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
-msgstr "Company naem"
+msgstr "Company name"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr "© Eucobat 2018"
@@ -38,8 +53,14 @@ msgstr "© Eucobat 2018"
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
 
+msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr "Delete step"
+
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
+
+msgid "GENERAL##LABELS##DUPLICATE-STEP"
+msgstr "Duplicate step"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
@@ -50,20 +71,38 @@ msgstr "Firstname"
 msgid "GENERAL##LABELS##FORGOT-PASSWORD"
 msgstr "Forgot Password"
 
+msgid "GENERAL##LABELS##FUNCTION"
+msgstr "Function"
+
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
 
-msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
-msgstr "Leave this field empty to not change"
-
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
+
+msgid "GENERAL##LABELS##MESSAGE"
+msgstr "Message"
+
+msgid "GENERAL##LABELS##MOBILEPHONE"
+msgstr "Mobile phone"
+
+msgid "GENERAL##LABELS##NAME"
+msgstr "Name"
+
+msgid "GENERAL##LABELS##NEXT-STEP"
+msgstr "Next step"
 
 msgid "GENERAL##LABELS##NUMBER"
 msgstr "Tel. nr"
 
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr "Password"
+
+msgid "GENERAL##LABELS##PHONE"
+msgstr "Phone"
+
+msgid "GENERAL##LABELS##PREVIOUS-STEP"
+msgstr "Previous step"
 
 msgid "GENERAL##LABELS##PRIVACY"
 msgstr "Privacy"
@@ -77,14 +116,32 @@ msgstr "Reset"
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
 
+msgid "GENERAL##LABELS##SELECT-OPTION"
+msgstr "Select a option"
+
+msgid "GENERAL##LABELS##SORTBY"
+msgstr "Sort by"
+
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
+
+msgid "GENERAL##LABELS##STREETNUMBER"
+msgstr "Number"
+
+msgid "GENERAL##LABELS##SUBJECT"
+msgstr "Subject"
+
+msgid "GENERAL##LABELS##SUBMIT"
+msgstr "Submit"
 
 msgid "GENERAL##LABELS##TOKEN"
 msgstr "Token"
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
+
+msgid "GENERAL##LABELS##UPDATE-PROFILE"
+msgstr "Update profile"
 
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
@@ -184,12 +241,100 @@ msgstr "Address Information Recycling Plant"
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr "Company information"
 
-msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr ""
-"Please verify your email with the email that has been send to your email box"
+msgid "PAGE##CONTACT##TITLE"
+msgstr "Contact"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
+
+msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
+msgstr "Address Information Recycling Plant"
+
+msgid "PAGE##RECYCLING-PARTNERS##CONTACTPERSON"
+msgstr "Contact Person"
+
+msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
+msgstr ""
+"Add here the legal information for all the different recycling partners you "
+"work with. Only add the address information where the actual recycling "
+"plants are located."
+
+msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
+msgstr "Remove recycling partner"
+
+msgid "PAGE##RECYCLING-PARTNERS##TITLE"
+msgstr "Recycling Partners"
+
+msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
+msgstr ""
+"Add all the different battery chemistry types you process. Per battery type "
+"define which recycling site sare involved and provide some additional "
+"information regarding the recycling process."
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
+msgstr "Choose a description for this recycling step"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
+msgstr ""
+"This is the identifier you typically use in your organisation for this "
+"recycling step. Take something that everyone in your organisation understands"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##NAME"
+msgstr "Choose a name for this recycling process"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##PRECEDING-STEP"
+msgstr "If any, choose a preceding step"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##PROCESSING-METHOD"
+msgstr "Method of processing"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
+msgstr "Qualitative description of the operations"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
+msgstr ""
+"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+"Tempor Incididunt Ut Labore Et Dolor"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
+msgstr "Is this your recycling site or from one of your partners?"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
+msgstr "Schematic overview of process"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
+msgstr ""
+"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+"Tempor Incididunt Ut Labore Et Dolor"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
+msgstr "(upload a file with further details on your recycling process)"
+
+msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
+msgstr ""
+"Add every recycling step that makes up your recycling process. Per recycling "
+"step you can define the recycling site and provide a process description."
+
+msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
+msgstr "Process Description - Recycling Steps"
+
+msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
+msgstr "Recycling Step {{ key }}"
+
+msgid "PAGE##RECYCLING-PROCESSES##TITLE"
+msgstr "Recycling Processes"
+
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr "Verify email"
+
+msgid "PAGE##REPORTS##DRAFT"
+msgstr "Draft"
+
+msgid "PAGE##REPORTS##FILLED"
+msgstr "Filed"
+
+msgid "PAGE##REPORTS##TITLE"
+msgstr "Reports"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
@@ -202,8 +347,7 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 msgstr ""
-"Your email is now validated you can now login lorem ipsum doler sit amet "
-"etc…"
+"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success!"
@@ -219,6 +363,30 @@ msgstr "Please check your inbox for a verification email"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr "Registration successfull"
+
+msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
+msgstr "There was en error sending your message"
+
+msgid "TOAST##CONTACT##ERROR##TITLE"
+msgstr "Error"
+
+msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
+msgstr "Success!"
+
+msgid "TOAST##CONTACT##SUCCESS##TITLE"
+msgstr "Thank you for your message"
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr "Could not request a password reset"
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr "Something went wrong"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
 
 msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
 msgstr "Please check if all fields are correct"
@@ -236,13 +404,13 @@ msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr "Logged in!"
 
 msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
-msgstr "Something went wrong while updating your profile"
+msgstr "There was an error when updating your profile"
 
 msgid "TOAST##PROFILE##ERROR##TITLE"
-msgstr "Error!"
+msgstr "Cannot update"
 
 msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
-msgstr "Your profile has been succcessfully updated"
+msgstr "Your profile has been saved!"
 
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
@@ -265,54 +433,185 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
-#~ msgctxt "TERMS"
-#~ msgid "GENERAL##LABELS##ACCEPT"
-#~ msgstr "I accept the terms and conditions"
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Addition information"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
-#~ msgstr "Could not request a password reset"
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
+msgstr "File uploads"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
-#~ msgstr "Something went wrong"
+msgid "WIZARD##ADDITIVES##LABELS##ADD-ADDITIONAL-ADDITIVE"
+msgstr "Add aditional additive"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-#~ msgstr "Please check your email for the link to reset your password"
+msgid "WIZARD##ADDITIVES##LABELS##TYPE"
+msgstr "Type of additive"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
-#~ msgstr "Password reset requested"
+msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
+msgstr "Input weight"
 
-#~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
-#~ msgstr "I accept the terms and conditions"
+msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr "Overview additives"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
-#~ msgstr "Could not request a password reset"
+msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
+msgstr "Add additional element"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
-#~ msgstr "Something went wrong"
+msgid "WIZARD##INPUT-FRACTION##LABELS##ELEMENTS"
+msgstr "Elements"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-#~ msgstr "Please check your email for the link to reset your password"
+msgid "WIZARD##INPUT-FRACTION##LABELS##IMPURITIES"
+msgstr "Impurities"
 
-#~ msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
-#~ msgstr "Password reset requested"
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS"
+msgstr "Mass (t) on a dry weight basis"
 
-#~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
-#~ msgstr "You are now free to browse"
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS-JACKET"
+msgstr ""
+"Mass of external jacket of waste batteries and accumulators (kg) (to be "
+"included in the input fraction)"
 
-#~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
-#~ msgstr "I accept the terms and conditions"
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS-OUTER-CASINGS"
+msgstr ""
+"Mass of outer casings belonging to battery pack (kg) (to be excluded from "
+"the input fraction)"
 
-#~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
-#~ msgstr "You are now free to browse"
+msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-CHEMICAL"
+msgstr ""
+"Description of methodology to determine the share of different types of "
+"waste battery or accumulator present in an input fraction"
 
-#~ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-#~ msgstr "Please check your email for your verification mail"
+msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-WASTE"
+msgstr ""
+"Description of the methodology to determine the chemical composition of the "
+"batteries"
 
-#~ msgid "TOAST##REGISTER##SUCCESS##TITLE"
-#~ msgstr "Successfully registered"
+msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
+msgstr "Packaging material / outer casing"
 
-#~ msgid "GENERAL##MENU##NEWREPORT"
-#~ msgstr "New report"
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgstr "Process chemestry"
 
-#~ msgid "GENERAL##ERRORS##REQUIRED"
-#~ msgstr "This field is required"
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
+msgstr "Share of battery type in input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+msgstr "Share of input fraction (%)"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
+msgstr "Weight battery type in input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-INPUT-FRACTION"
+msgstr "Weight input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Addition information"
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##ELEMENTS-COMPONENTS"
+msgstr "Elements or components, which are part of the input fractions"
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##EXCESS-MATERIAL"
+msgstr "Excess material received"
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##RECYCLING-PROCESS"
+msgstr ""
+"Choose the recycling process and accompanying battery chemistry type for "
+"which you can to file a report."
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-NAME"
+msgstr ""
+"Give this report a name. This can be the name of the process like “Nickel "
+"Cadnium 2017” or you can include the name of the receiver, like for instance "
+"“Nickel Cadnium processing for Name Client “."
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
+msgstr ""
+"If this report is only intended for a specific organisation you can choose "
+"this organisation from the list."
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORTING-YEAR"
+msgstr ""
+"Choose the year for which you want to file a report. The reporting year is "
+"the year over which you are declaring, not the actual year."
+
+msgid "WIZARD##NEW-REPORT##LABELS##RECYCLING-PROCESS"
+msgstr "Recycling process"
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORT-NAME"
+msgstr "Name this report"
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
+msgstr "Receiver of this report"
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
+msgstr "Reporting year"
+
+msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr "General information"
+
+msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
+msgstr "Of the element/compound"
+
+msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##ON-DRY-WEIGHT-BASIS"
+msgstr "On a dry weight basis"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
+msgstr "Add additional element/compound"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
+msgstr "Classification"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
+msgstr "Element or compound"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
+msgstr "Mass (t)"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
+msgstr "Replaced virgin material"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##SHARE-OUTPUT-FRACTION"
+msgstr "Share output fraction"
+
+msgid "WIZARD##OUTPUT-FRACTION##TITLES##OVERVIEW"
+msgstr "Overview output elements"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
+msgstr "Recycling efficiency"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##ELEMENTS"
+msgstr "Elements"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##INPUT"
+msgstr "Input"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##OUTPUT"
+msgstr "Output"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##CALCULATED-EFFICIENCY"
+msgstr "Calculated recycling efficiency"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##OVERVIEW-ELEMENTS"
+msgstr "Overview elements"
+
+msgid "WIZARD##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Add. Information"
+
+msgid "WIZARD##TITLES##ADDITIVES"
+msgstr "Additives"
+
+msgid "WIZARD##TITLES##FILE-REPORT"
+msgstr "File Report"
+
+msgid "WIZARD##TITLES##INPUT-FRACTION"
+msgstr "Input Fraction"
+
+msgid "WIZARD##TITLES##NEW-REPORT"
+msgstr "New Report"
+
+msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+msgstr "Output Fraction"
+
+msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+msgstr "Recycling Efficiency"
+
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
+msgstr "I accept the terms and conditions"

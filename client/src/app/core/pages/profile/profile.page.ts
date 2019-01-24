@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { select } from '@angular-redux/store';
 import { Subject, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
@@ -16,6 +16,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
     @select(AuthSelector.user.result) public user$: Observable<UserInterface>;
 
     public profileForm: FormGroup;
+    public user: UserInterface;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
@@ -28,12 +29,30 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
         this.profileForm = this.formBuilder.group({
             email: ['', Validators.required],
             firstname: ['', Validators.required],
-            lastname: ['', Validators.required],
-            password: ['']
+            lastname: ['', Validators.required]
         });
 
         this.user$
-            .subscribe((user) => this.profileForm.patchValue(user));
+            .subscribe((user) => {
+                this.profileForm.patchValue(user);
+                this.user = user;
+            });
+    }
+
+    public resetPassword(): Promise<any> {
+        return this.authAction.requestPasswordReset({
+            email: this.user.email
+        }).then(() => {
+            this.toastrService.success(
+                ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.TITLE') as string
+            );
+        }).catch(() => {
+            return this.toastrService.error(
+                ngxExtract('TOAST.FORGOT-PASSWORD.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.FORGOT-PASSWORD.ERROR.TITLE') as string
+            );
+        });
     }
 
     public ngOnDestroy() {

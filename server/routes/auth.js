@@ -1,6 +1,7 @@
 const validationHelper = require("../helpers/validation");
 const authController = require("../controllers/auth");
 const authValidations = require("../controllers/auth/validations");
+const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
 	/**
@@ -94,7 +95,7 @@ module.exports = (router) => {
 	 *       201:
 	 *         description: Success
 	 */
-	router.route("/auth/logout").get(authController.logout);
+	router.route("/auth/logout").get(authMiddleware.isLoggedIn, authController.logout);
 
 	/**
 	 * @swagger

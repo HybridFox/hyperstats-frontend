@@ -36,10 +36,6 @@ const routes: Routes = [
     component: Pages.ResetPasswordPageComponent
   },
   {
-    path: 'company-information',
-    component: Pages.CompanyPageComponent
-  },
-  {
     path: 'verification-succeeded',
     component: Pages.VerificationSucceededPageComponent,
     data: {
@@ -61,18 +57,44 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'contact',
+    component: Pages.ContactPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
+      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
+      {
+        path: '',
+        redirectTo: 'reports',
+        pathMatch: 'full',
+      },
       {
         path: 'reports',
-        loadChildren: '../reports/reports.module#ReportsModule'
+        component: Pages.ReportsPageComponent
       },
       {
         path: 'profile',
         component: Pages.ProfilePageComponent
       },
+      {
+        path: 'company-information',
+        component: Pages.CompanyPageComponent
+      },
     ]
+  },
+  {
+    path: '',
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
+      { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule'},
+    ]
+  },
+  {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
   }
 ];
 
