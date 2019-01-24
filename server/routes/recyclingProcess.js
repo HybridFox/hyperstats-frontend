@@ -1,6 +1,6 @@
 const validationHelper = require("../helpers/validation");
 const recyclingProcess = require("../controllers/recyclingProcess");
-// const profileValidations = require("../controllers/profile/validations");
+const recyclingProcessValidations = require("../controllers/recyclingProcess/validations");
 const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
@@ -56,5 +56,9 @@ module.exports = (router) => {
 	 */
 	router.route("/recycling-processes")
 		// .get(authMiddleware.isLoggedIn, recyclingProcess.getAll);
-		.get(recyclingProcess.getAll);
+		.get(recyclingProcess.getAll)
+		.post(
+			validationHelper.middleware(recyclingProcessValidations.create, false),
+			recyclingProcess.create
+		);
 };
