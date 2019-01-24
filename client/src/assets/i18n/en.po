@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-16T13:01:01.164Z\n"
+"POT-Creation-Date: 2019-01-23T14:46:19.199Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,6 +19,9 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
+
+msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr "Add additional step"
 
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
@@ -41,8 +44,14 @@ msgstr "� Eucobat 2018"
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
 
+msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr "Delete step"
+
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
+
+msgid "GENERAL##LABELS##DUPLICATE-STEP"
+msgstr "Duplicate step"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"

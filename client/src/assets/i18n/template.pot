@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-24T14:06:25.327Z\n"
-"PO-Revision-Date: 2019-01-24T14:06:25.327Z\n"
+"POT-Creation-Date: 2019-01-23T14:46:19.199Z\n"
+"PO-Revision-Date: 2019-01-23T14:46:19.199Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -15,6 +15,9 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr ""
 
 msgid "GENERAL##LABELS##BOX"
@@ -35,7 +38,13 @@ msgstr ""
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
+msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr ""
+
 msgid "GENERAL##LABELS##DRAGANDDROP"
+msgstr ""
+
+msgid "GENERAL##LABELS##DUPLICATE-STEP"
 msgstr ""
 
 msgid "GENERAL##LABELS##EMAIL"

@@ -1,5 +1,5 @@
 <div class="a-input" [class]="class">
-  <label *ngIf="label" class="a-input__label">{{ label }}</label>
+  <label *ngIf="label" class="a-input__label">{{ label | translate }}</label>
   <div class="a-input__field-container">
     <select [formControl]="control" class="a-input__field">
       <option value="" disabled selected>{{ 'GENERAL.LABELS.SELECT-OPTION' | translate }}</option>
