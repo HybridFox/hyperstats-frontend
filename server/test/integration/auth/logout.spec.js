@@ -40,9 +40,9 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.expect("Content-Type", /json/)
 				.expect(200)
-				.then((res) => {
-					expect(res.body).to.be.an("object");
-					expect(omit(["created", "lastUpdated"], res.body)).to.deep.equal({
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(omit(["created", "lastUpdated", "company"], body)).to.deep.equal({
 						firstname: "validUser",
 						lastname: "Smith",
 						isAdmin: false,
