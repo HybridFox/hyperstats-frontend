@@ -8,6 +8,7 @@ const {
 	isEmpty,
 	always,
 } = require("ramda");
+const UserModel = require("../models/user");
 
 /**
  * @module ProfileHelper
@@ -40,7 +41,7 @@ module.exports.unset = (req) => {
  * @function set Set user on session
  * @param {Object} req Express request object
  */
-module.exports.set = (req, user) => {
+const set = module.exports.set = (req, user) => {
 	req.session.profile = user;
 	req.session.safeProfile = compose(
 		when(isEmpty, always(null)),
@@ -52,4 +53,16 @@ module.exports.set = (req, user) => {
 			]
 		)
 	)(req);
+};
+
+module.exports.reload = async(req) => {
+	if (!path(["session", "profile", "_id"])(req)) {
+		return;
+	}
+
+	const updatedUser = await UserModel.findOne({ _id: req.session.profile._id });
+
+	await updatedUser.populateCompany();
+
+	set(req, updatedUser.toObject());
 };

@@ -18,5 +18,7 @@ module.exports = async(email, password) => {
 		throw new ResponseError({ type: 400, msg: "Invalid password" });
 	}
 
+	await user.populateCompany();
+
 	return user.toObject();
 };

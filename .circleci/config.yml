@@ -62,8 +62,8 @@ jobs:
             git checkout .
             git checkout development
             git pull
-            docker-compose down
-            NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
+            NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml build
+            NODE_ENV=development docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --force-recreate -d'
 
   deploy-acc:
     machine:
@@ -83,8 +83,8 @@ jobs:
             git checkout .
             git checkout master
             git pull
-            docker-compose down
-            NODE_ENV=acceptance docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --build -d'
+            NODE_ENV=acceptance docker-compose -f docker-compose.yml -f docker-compose.ci.yml build
+            NODE_ENV=acceptance docker-compose -f docker-compose.yml -f docker-compose.ci.yml up --force-recreate -d'
 
 workflows:
   version: 2
