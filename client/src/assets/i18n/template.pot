@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-24T16:37:57.641Z\n"
-"PO-Revision-Date: 2019-01-24T16:37:57.641Z\n"
+"POT-Creation-Date: 2019-01-24T16:45:17.558Z\n"
+"PO-Revision-Date: 2019-01-24T16:45:17.558Z\n"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr ""
@@ -21,6 +21,9 @@ msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"

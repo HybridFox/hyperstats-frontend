@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-24T16:37:57.641Z\n"
+"POT-Creation-Date: 2019-01-24T16:45:17.558Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,6 +25,9 @@ msgstr "This field is required"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
+msgstr "Add recycling partner"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
 msgstr "Add Recycling Process"
