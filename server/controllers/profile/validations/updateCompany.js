@@ -6,7 +6,7 @@ module.exports = joi.object().keys({
 		address: joi.object().keys({
 			street: joi.string().required(),
 			number: joi.string().required(),
-			box: joi.string().optional(),
+			box: joi.string().allow("").optional(),
 			zipCode: joi.string().required(),
 			city: joi.string().required(),
 			country: joi.string().required(),
