@@ -8,11 +8,11 @@
         "LABELS": {
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "BOX": "Box",
-            "CANCEL": "Cancel",
             "BROWSE": "Browse",
+            "CANCEL": "Cancel",
             "CITY": "City",
+            "COPYRIGHT": "© Eucobat 2018",
             "COMPANYNAME": "Company name",
-            "COPYRIGHT": "ï¿½ Eucobat 2018",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
@@ -22,8 +22,8 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
-            "NEXT-STEP": "Next step",
             "MESSAGE": "Message",
+            "NEXT-STEP": "Next step",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PREVIOUS-STEP": "Previous step",
@@ -72,10 +72,10 @@
             "TITLE": "Company information"
         },
         "CONTACT": {
-            "TITLE": "About"
+            "TITLE": "Contact"
         },
         "PROFILE": {
-            "TITLE": "About"
+            "TITLE": "Profile"
         },
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
@@ -108,7 +108,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etcâ¦",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
             "TITLE": "Success!"
         }
     },
