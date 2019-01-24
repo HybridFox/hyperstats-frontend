@@ -1,5 +1,8 @@
 {
     "GENERAL": {
+        "BUTTONS": {
+            "CREATENEWREPORT": "Create new report"
+        },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
@@ -7,6 +10,7 @@
         },
         "LABELS": {
             "ADD-ADDITIONAL-STEP": "Add additional step",
+            "ADD-RECYCLING-PROCESS": "Add Recycling Process",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
@@ -32,6 +36,7 @@
             "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "SELECT-OPTION": "Select a option",
+            "SORTBY": "Sort by",
             "STREETNAME": "Street name",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
@@ -99,6 +104,11 @@
         },
         "REGISTER": {
             "VERIFY-EMAIL": "Verify email"
+        },
+        "REPORTS": {
+            "DRAFT": "Draft",
+            "FILLED": "Filed",
+            "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
