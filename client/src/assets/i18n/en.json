@@ -70,8 +70,28 @@
         "PROFILE": {
             "TITLE": "About"
         },
+        "RECYCLING-PROCESSES": {
+            "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
+            "LABELS": {
+                "DESCRIPTION": "Choose a description for this recycling step",
+                "DESCRIPTION-DESCRIPTION": "This is the identifier you typically use in your organisation for this recycling step. Take something that everyone in your organisation understands",
+                "NAME": "Choose a name for this recycling process",
+                "PRECEDING-STEP": "If any, choose a preceding step",
+                "PROCESSING-METHOD": "Method of processing",
+                "QUALITATIVE-DESCRIPTION": "Qualitative description of the operations",
+                "QUALITATIVE-DESCRIPTION-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
+                "RECYCLING-SITE-OWNER": "Is this your recycling site or from one of your partners?",
+                "SCHEMATIC-OVERVIEW": "Schematic overview of process",
+                "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
+                "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
+            },
+            "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
+            "PROCESS-TITLE": "Process Description - Recycling Steps",
+            "RECYCLING-STEP": "Recycling Step {{ key }}",
+            "TITLE": "Recycling Processes"
+        },
         "REGISTER": {
-            "VERIFY-EMAIL": ""
+            "VERIFY-EMAIL": "Verify email"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"

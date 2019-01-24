@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-23T13:12:16.650Z\n"
+"POT-Creation-Date: 2019-01-23T13:46:41.739Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -131,8 +131,6 @@ msgstr "Recycling Partners"
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr "Recycling Processes"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##REGISTER"
 msgid "GENERAL##MENU##REGISTER"
 msgstr "Register"
 
@@ -207,6 +205,68 @@ msgstr "About"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
+msgstr ""
+"Add all the different battery chemistry types you process. Per battery type "
+"define which recycling site sare involved and provide some additional "
+"information regarding the recycling process."
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
+msgstr "Choose a description for this recycling step"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
+msgstr ""
+"This is the identifier you typically use in your organisation for this "
+"recycling step. Take something that everyone in your organisation understands"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##NAME"
+msgstr "Choose a name for this recycling process"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##PRECEDING-STEP"
+msgstr "If any, choose a preceding step"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##PROCESSING-METHOD"
+msgstr "Method of processing"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
+msgstr "Qualitative description of the operations"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
+msgstr ""
+"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+"Tempor Incididunt Ut Labore Et Dolor"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
+msgstr "Is this your recycling site or from one of your partners?"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
+msgstr "Schematic overview of process"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
+msgstr ""
+"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+"Tempor Incididunt Ut Labore Et Dolor"
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
+msgstr "(upload a file with further details on your recycling process)"
+
+msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
+msgstr ""
+"Add every recycling step that makes up your recycling process. Per recycling "
+"step you can define the recycling site and provide a process description."
+
+msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
+msgstr "Process Description - Recycling Steps"
+
+msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
+msgstr "Recycling Step {{ key }}"
+
+msgid "PAGE##RECYCLING-PROCESSES##TITLE"
+msgstr "Recycling Processes"
+
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr "Verify email"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
@@ -375,8 +435,14 @@ msgstr "I accept the terms and conditions"
 #~ msgid "TOAST##REGISTER##SUCCESS##TITLE"
 #~ msgstr "Successfully registered"
 
+#~ msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
+#~ msgstr "Leave this field empty to not change"
+
 #~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
 #~ msgstr "I accept the terms and conditions"
+
+#~ msgid "TOAST##LOGIN##SUCCESS##DESCRIPTION"
+#~ msgstr "You are now free to browse"
 
 #~ msgid "GENERAL##MENU##NEWREPORT"
 #~ msgstr "New report"

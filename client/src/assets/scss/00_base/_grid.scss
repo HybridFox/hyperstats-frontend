@@ -102,8 +102,8 @@
 	[class*="l-grid__col"] {
 		flex-grow: 0;
 		flex-shrink: 0;
-		margin-left: #{$grid-gutter-row / 2};
-		margin-right: #{$grid-gutter-row / 2};
+        margin-left: #{$grid-gutter-row / 2};
+        margin-right: #{$grid-gutter-row / 2};
 
 		@include respond-at($screen-m) {
             margin-left: #{$grid-gutter-row / 2};

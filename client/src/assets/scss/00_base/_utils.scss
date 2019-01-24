@@ -3,6 +3,10 @@
  * -------------------------------------------------------------------
  */
 
+.u-no-margin {
+    margin: 0;
+}
+
 .u-margin-x-large {
     margin: $spacer-x-large;
 }
@@ -101,4 +105,14 @@
 
 .u-margin-left-small {
     margin-left: $spacer-small;
+}
+
+/**
+ * TEXT
+ * -------------------------------------------------------------------
+ */
+
+.u-text-description {
+    color: $boulder;
+    font-size: .8em;
 }
