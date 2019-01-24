@@ -1,3 +1,5 @@
+import { CompanyInterface } from '@api/company/company.interface';
+
 export interface RegisterInterface {
     firstname: string;
     lastname: string;
@@ -23,17 +25,7 @@ export interface UserInterface {
     email: string;
     created: string;
     lastUpdated: string;
-    company: {
-        name: string;
-        address: {
-            street: string;
-            number: string;
-            box: string;
-            zipCode: number;
-            city: string;
-            country: string;
-        }
-    };
+    company: CompanyInterface;
 }
 
 export interface ResetPasswordInterface {

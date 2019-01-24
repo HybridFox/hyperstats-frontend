@@ -3,7 +3,7 @@ export interface CompanyInterface {
   address: {
     street: string;
     number: string;
-    box: string;
+    box?: string;
     zipCode: number;
     city: string;
     country: string;
