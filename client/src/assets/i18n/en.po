@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-24T14:24:14.844Z\n"
+"POT-Creation-Date: 2019-01-24T15:21:58.299Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,6 +10,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2\n"
+
+msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr "Create new report"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
@@ -22,6 +25,9 @@ msgstr "This field is required"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
+msgstr "Add Recycling Process"
 
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
@@ -97,6 +103,9 @@ msgstr "Save"
 
 msgid "GENERAL##LABELS##SELECT-OPTION"
 msgstr "Select a option"
+
+msgid "GENERAL##LABELS##SORTBY"
+msgstr "Sort by"
 
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
@@ -281,6 +290,15 @@ msgstr "Recycling Processes"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr "Verify email"
+
+msgid "PAGE##REPORTS##DRAFT"
+msgstr "Draft"
+
+msgid "PAGE##REPORTS##FILLED"
+msgstr "Filed"
+
+msgid "PAGE##REPORTS##TITLE"
+msgstr "Reports"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
