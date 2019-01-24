@@ -13,6 +13,7 @@ export class SelectInputComponent implements OnInit, OnDestroy {
   @Input() class = '';
   @Input() options: Option[];
   @Input() control: FormControl = new FormControl('');
+  @Input() inlineLabel = false;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 

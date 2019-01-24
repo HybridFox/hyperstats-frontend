@@ -66,8 +66,13 @@ const routes: Routes = [
     children: [
       { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
+        path: '',
+        redirectTo: 'reports',
+        pathMatch: 'full',
+      },
+      {
         path: 'reports',
-        loadChildren: '../reports/reports.module#ReportsModule'
+        component: Pages.ReportsPageComponent
       },
       {
         path: 'profile',

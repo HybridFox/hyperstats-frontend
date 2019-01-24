@@ -1,5 +1,8 @@
 {
 	"GENERAL": {
+		"BUTTONS": {
+			"CREATENEWREPORT": ""
+		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
 			"PASSWORD": "",
@@ -33,6 +36,7 @@
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"SELECT-OPTION": "",
+			"SORTBY": "",
 			"STREETNAME": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
@@ -99,6 +103,11 @@
 		},
 		"REGISTER": {
 			"VERIFY-EMAIL": ""
+		},
+		"REPORTS": {
+			"DRAFT": "",
+			"FILLED": "",
+			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
