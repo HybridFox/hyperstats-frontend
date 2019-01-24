@@ -89,6 +89,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
+      { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule'},
     ]
   },
   {

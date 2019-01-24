@@ -1,12 +1,94 @@
-<div class="m-card--primary u-margin-bottom-large">
-    <app-section-title
-        title="Alkaline - Nickel Metal"
-        class="u-margin-bottom"
-    ></app-section-title>
+<div class="m-card--primary">
+    <div class="u-pull-right">
+        <a href="#" class="a-link">{{ 'PAGE.RECYCLING-PARTNERS.REMOVEPARTNER' | translate }}</a>
+    </div>
+
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col-8-12">
+            <app-text-input
+                [label]="'GENERAL.LABELS.COMPANYNAME' | translate"
+                class="u-margin-bottom-x-large"
+            ></app-text-input>
+        </div>
+    </div>
+
     <app-sub-section-title
-        [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{key: getStepKey(step.key)}"
+        [title]="'PAGE.RECYCLING-PARTNERS.ADDRESSINFORMATION' | translate"
         class="u-margin-bottom-large"
     ></app-sub-section-title>
+
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col-8-12">
+            <app-text-input
+                [label]="'GENERAL.LABELS.STREETNAME' | translate"
+                class="u-margin-bottom-large"
+            ></app-text-input>
+            <div class="l-grid__row l-grid--with-margins">
+                <div class="l-grid__col-6-12">
+                    <app-text-input
+                        [label]="'GENERAL.LABELS.STREETNUMBER' | translate"
+                        class="u-margin-bottom-large"
+                    ></app-text-input>
+                </div>
+                <div class="l-grid__col-6-12">
+                    <app-text-input
+                        [label]="'GENERAL.LABELS.BOX' | translate"
+                        class="u-margin-bottom-large"
+                    ></app-text-input>
+                </div>
+            </div>
+            <div class="l-grid__row l-grid--with-margins">
+                <div class="l-grid__col-4-12">
+                    <app-text-input
+                        [label]="'GENERAL.LABELS.ZIPCODE' | translate"
+                        class="u-margin-bottom-large"
+                    ></app-text-input>
+                </div>
+                <div class="l-grid__col-8-12">
+                    <app-text-input
+                        [label]="'GENERAL.LABELS.CITY' | translate"
+                        class="u-margin-bottom-large"
+                    ></app-text-input>
+                </div>
+            </div>
+            <app-select-input
+                [label]="'GENERAL.LABELS.COUNTRY' | translate"
+                [options]="countryList"
+                class="u-margin-bottom-x-large"
+            ></app-select-input>
+        </div>
+    </div>
+
+    <app-sub-section-title
+        [title]="'PAGE.RECYCLING-PARTNERS.CONTACTPERSON' | translate"
+        class="u-margin-bottom-large"
+    ></app-sub-section-title>
+
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col-8-12">
+            <app-text-input
+                [label]="'GENERAL.LABELS.NAME' | translate"
+                class="u-margin-bottom-large"
+            ></app-text-input>
+            <app-text-input
+                [label]="'GENERAL.LABELS.FUNCTION' | translate"
+                class="u-margin-bottom-large"
+            ></app-text-input>
+            <app-text-input
+                [label]="'GENERAL.LABELS.PHONE' | translate"
+                class="u-margin-bottom-large"
+            ></app-text-input>
+            <app-text-input
+                [label]="'GENERAL.LABELS.MOBILEPHONE' | translate"
+                class="u-margin-bottom-large"
+            ></app-text-input>
+            <app-text-input
+                [label]="'GENERAL.LABELS.EMAIL' | translate"
+                class="u-margin-bottom-large"
+            ></app-text-input>
+        </div>
+    </div>
+
     <button class="a-button--primary a-button-outline has-icon-after" (click)="submit()">
         {{ 'GENERAL.LABELS.SAVE' }}
     </button>
