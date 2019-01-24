@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-23T13:46:41.739Z\n"
+"POT-Creation-Date: 2019-01-16T13:01:01.164Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,6 +22,9 @@ msgstr "This field is required"
 
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
+
+msgid "GENERAL##LABELS##CANCEL"
+msgstr "Cancel"
 
 msgid "GENERAL##LABELS##BROWSE"
 msgstr "Browse"
@@ -56,6 +59,9 @@ msgstr "Lastname"
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
 
+msgid "GENERAL##LABELS##NEXT-STEP"
+msgstr "Next step"
+
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr "Message"
 
@@ -64,6 +70,9 @@ msgstr "Tel. nr"
 
 msgid "GENERAL##LABELS##PASSWORD"
 msgstr "Password"
+
+msgid "GENERAL##LABELS##PREVIOUS-STEP"
+msgstr "Previous step"
 
 msgid "GENERAL##LABELS##PRIVACY"
 msgstr "Privacy"
@@ -76,6 +85,9 @@ msgstr "Reset"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
+
+msgid "GENERAL##LABELS##SELECT-OPTION"
+msgstr "Select a option"
 
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
@@ -354,6 +366,187 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
+#, fuzzy
+#| msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Addition information"
+
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
+msgstr "File uploads"
+
+msgid "WIZARD##ADDITIVES##LABELS##ADD-ADDITIONAL-ADDITIVE"
+msgstr "Add aditional additive"
+
+msgid "WIZARD##ADDITIVES##LABELS##TYPE"
+msgstr "Type of additive"
+
+msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
+msgstr "Input weight"
+
+msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr "Overview additives"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
+msgstr "Add additional element"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##ELEMENTS"
+msgstr "Elements"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##IMPURITIES"
+msgstr "Impurities"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS"
+msgstr "Mass (t) on a dry weight basis"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS-JACKET"
+msgstr ""
+"Mass of external jacket of waste batteries and accumulators (kg) (to be "
+"included in the input fraction)"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS-OUTER-CASINGS"
+msgstr ""
+"Mass of outer casings belonging to battery pack (kg) (to be excluded from "
+"the input fraction)"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-CHEMICAL"
+msgstr ""
+"Description of methodology to determine the share of different types of "
+"waste battery or accumulator present in an input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-WASTE"
+msgstr ""
+"Description of the methodology to determine the chemical composition of the "
+"batteries"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
+msgstr "Packaging material / outer casing"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgstr "Process chemestry"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
+msgstr "Share of battery type in input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+msgstr "Share of input fraction (%)"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
+msgstr "Weight battery type in input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-INPUT-FRACTION"
+msgstr "Weight input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Addition information"
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##ELEMENTS-COMPONENTS"
+msgstr "Elements or components, which are part of the input fractions"
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##EXCESS-MATERIAL"
+msgstr "Excess material received"
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##RECYCLING-PROCESS"
+msgstr ""
+"Choose the recycling process and accompanying battery chemistry type for "
+"which you can to file a report."
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-NAME"
+msgstr ""
+"Give this report a name. This can be the name of the process like “Nickel "
+"Cadnium 2017” or you can include the name of the receiver, like for instance "
+"“Nickel Cadnium processing for Name Client “."
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
+msgstr ""
+"If this report is only intended for a specific organisation you can choose "
+"this organisation from the list."
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORTING-YEAR"
+msgstr ""
+"Choose the year for which you want to file a report. The reporting year is "
+"the year over which you are declaring, not the actual year."
+
+msgid "WIZARD##NEW-REPORT##LABELS##RECYCLING-PROCESS"
+msgstr "Recycling process"
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORT-NAME"
+msgstr "Name this report"
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
+msgstr "Receiver of this report"
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
+msgstr "Reporting year"
+
+msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr "General information"
+
+msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
+msgstr "Of the element/compound"
+
+msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##ON-DRY-WEIGHT-BASIS"
+msgstr "On a dry weight basis"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
+msgstr "Add additional element/compound"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
+msgstr "Classification"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
+msgstr "Element or compound"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
+msgstr "Mass (t)"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
+msgstr "Replaced virgin material"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##SHARE-OUTPUT-FRACTION"
+msgstr "Share output fraction"
+
+msgid "WIZARD##OUTPUT-FRACTION##TITLES##OVERVIEW"
+msgstr "Overview output elements"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
+msgstr "Recycling efficiency"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##ELEMENTS"
+msgstr "Elements"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##INPUT"
+msgstr "Input"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##OUTPUT"
+msgstr "Output"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##CALCULATED-EFFICIENCY"
+msgstr "Calculated recycling efficiency"
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##OVERVIEW-ELEMENTS"
+msgstr "Overview elements"
+
+msgid "WIZARD##TITLES##ADDITIONAL-INFORMATION"
+msgstr "Add. Information"
+
+msgid "WIZARD##TITLES##ADDITIVES"
+msgstr "Additives"
+
+msgid "WIZARD##TITLES##FILE-REPORT"
+msgstr "File Report"
+
+msgid "WIZARD##TITLES##INPUT-FRACTION"
+msgstr "Input Fraction"
+
+msgid "WIZARD##TITLES##NEW-REPORT"
+msgstr "New Report"
+
+msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+msgstr "Output Fraction"
+
+msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+msgstr "Recycling Efficiency"
+
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"
 
@@ -369,6 +562,14 @@ msgstr "Success!"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#, fuzzy
+#~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+#~ msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##GENERAL-INFORMATION"
+#~ msgstr "General information"
+
+#~ msgid "WIZARD##NEW-REPORT##TITLES##CALCULATED-EFFICIENCY"
+#~ msgstr "Calculated efficiency"
 
 #~ msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 #~ msgstr ""
