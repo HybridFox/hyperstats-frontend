@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-23T09:06:33.141Z\n"
+"POT-Creation-Date: 2019-01-24T09:10:17.869Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr "Create new report"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
@@ -19,9 +22,6 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
-
-msgid "GENERAL##LABELS##ACCEPT-TERMS"
-msgstr "I accept the terms and conditions"
 
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
@@ -36,7 +36,7 @@ msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company naem"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "� Eucobat 2018"
+msgstr "@ Eucobat 2018"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -76,6 +76,9 @@ msgstr "Reset Password"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
+
+msgid "GENERAL##LABELS##SORTBY"
+msgstr "Sort by"
 
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
@@ -124,6 +127,11 @@ msgstr "Recycling Partners"
 
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr "Recycling Processes"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##REGISTER"
+msgid "GENERAL##MENU##REGISTER"
+msgstr "Register"
 
 msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
@@ -186,6 +194,18 @@ msgstr "Company information"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
+
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr ""
+
+msgid "PAGE##REPORTS##DRAFT"
+msgstr "Draft"
+
+msgid "PAGE##REPORTS##FILLED"
+msgstr "Filled"
+
+msgid "PAGE##REPORTS##TITLE"
+msgstr "Overview Reports"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
@@ -261,12 +281,6 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
-msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
-msgstr "Please check your email for your verification mail"
-
-msgid "TOAST##REGISTER##SUCCESS##TITLE"
-msgstr "Successfully registered"
-
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"
 
@@ -279,15 +293,21 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
-#~ msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
-#~ msgstr "Leave this field empty to not change"
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
+msgstr "I accept the terms and conditions"
 
-#~ msgctxt "TERMS"
-#~ msgid "GENERAL##LABELS##ACCEPT"
+#~ msgid "GENERAL##LABELS##ACCEPT-TERMS"
 #~ msgstr "I accept the terms and conditions"
 
-#~ msgid "GENERAL##MENU##NEWREPORT"
-#~ msgstr "New report"
+#~ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
+#~ msgstr "Please check your email for your verification mail"
+
+#~ msgid "TOAST##REGISTER##SUCCESS##TITLE"
+#~ msgstr "Successfully registered"
+
+#~ msgid "GENERAL##LABELS##LEAVE-EMPTY-TO-NOT-CHANGE"
+#~ msgstr "Leave this field empty to not change"
 
 #~ msgid "GENERAL##ERRORS##REQUIRED"
 #~ msgstr "This field is required"

@@ -1,5 +1,8 @@
 {
     "GENERAL": {
+        "BUTTONS": {
+            "CREATENEWREPORT": "Create new report"
+        },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
@@ -10,7 +13,7 @@
             "BROWSE": "Browse",
             "CITY": "City",
             "COMPANYNAME": "Company naem",
-            "COPYRIGHT": "ï¿½ Eucobat 2018",
+            "COPYRIGHT": "@ Eucobat 2018",
             "COUNTRY": "Country",
             "DRAGANDDROP": "Drag files here or",
             "EMAIL": "Email",
@@ -24,12 +27,14 @@
             "REGISTER": "Register",
             "RESET-PASSWORD": "Reset Password",
             "SAVE": "Save",
+            "SORTBY": "Sort by",
             "STREETNAME": "Street name",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
             "UPDATE-PROFILE": "Update Profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode"
+            "ZIPCODE": "Zipcode",
+            "ACCEPT_TERMS": "I accept the terms and conditions"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -60,11 +65,16 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
-        "REGISTER": {
-            "VERIFY-EMAIL": "Please verify your email with the email that has been send to your email box"
-        },
         "PROFILE": {
             "TITLE": "Profile"
+        },
+        "REGISTER": {
+            "VERIFY-EMAIL": ""
+        },
+        "REPORTS": {
+            "DRAFT": "Draft",
+            "FILLED": "Filled",
+            "TITLE": "Overview Reports"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -74,7 +84,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc",
+            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etcâ¦",
             "TITLE": "Success!"
         }
     },

@@ -1,12 +1,15 @@
 {
 	"GENERAL": {
+		"BUTTONS": {
+			"CREATENEWREPORT": ""
+		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
 			"PASSWORD": "",
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT-TERMS": "",
+			"ACCEPT_TERMS": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CITY": "",
@@ -25,6 +28,7 @@
 			"REGISTER": "",
 			"RESET-PASSWORD": "",
 			"SAVE": "",
+			"SORTBY": "",
 			"STREETNAME": "",
 			"TOKEN": "",
 			"TRY-AGAIN": "",
@@ -61,10 +65,15 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"PROFILE": {
+			"TITLE": ""
+		},
 		"REGISTER": {
 			"VERIFY-EMAIL": ""
 		},
-		"PROFILE": {
+		"REPORTS": {
+			"DRAFT": "",
+			"FILLED": "",
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
