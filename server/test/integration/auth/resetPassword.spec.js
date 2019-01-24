@@ -81,7 +81,6 @@ describe("Integration", () => {
 				})
 				// .expect(200)
 				.then(({ body }) => {
-					console.log(body);
 					expect(body).to.be.an("object");
 					expect(body.success).to.be.true;
 				});
