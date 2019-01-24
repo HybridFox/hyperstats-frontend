@@ -1,13 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 import { select } from '@angular-redux/store';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import countryList from 'country-list';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
-import { AuthActions, AuthSelector } from '@store/auth';
+import { AuthSelector } from '@store/auth';
 import { Option } from '@ui/form-fields/components/select/select.types';
+import { UserInterface } from '@store/auth/auth.interface';
+import { CompanyRepository } from '@api/company';
+import { FormHelper } from '@helpers/form.helper';
 
 @Component({
     templateUrl: './company-information.page.html',
@@ -15,25 +18,37 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 
 export class CompanyPageComponent implements OnInit, OnDestroy {
     @select(AuthSelector.register.loading) public loading$: boolean;
+    @select(AuthSelector.user.result) public user$: Observable<any>;
 
     public companyForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
     public countryList: Option[];
 
     constructor(
-        private authAction: AuthActions,
+        private formBuilder: FormBuilder,
+        private companyRepository: CompanyRepository,
         private toastrService: ToastrService,
     ) { }
 
     ngOnInit(): void {
-        this.companyForm = new FormGroup({
-            name: new FormControl('', Validators.required),
-            street: new FormControl('', Validators.required),
-            number: new FormControl('', Validators.required),
-            box: new FormControl('', Validators.required),
-            zip: new FormControl('', Validators.required),
-            city: new FormControl('', Validators.required),
-            country: new FormControl('', Validators.required)
+        this.companyForm = this.formBuilder.group({
+            name: ['', Validators.required],
+            address: this.formBuilder.group({
+                street: ['', Validators.required],
+                number: ['', Validators.required],
+                box: ['', Validators.required],
+                zipCode: ['', Validators.required],
+                city: ['', Validators.required],
+                country: ['', Validators.required]
+            })
+        });
+
+        console.log(this.companyForm.controls.address.get('street'));
+
+        this.user$.subscribe((user) => {
+            if (user && user.company && user.company.data) {
+                this.companyForm.patchValue(user.company.data);
+            }
         });
 
         this.countryList = countryList.getData().map(({code, name}) => ({
@@ -48,10 +63,17 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.register({
+        FormHelper.markAsDirty(this.companyForm);
+        if (!this.companyForm.valid) {
+            return this.toastrService.error(
+                ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
+                ngxExtract('TOAST.GENERAL.INVALID.TITLE') as string
+            );
+        }
+
+        this.companyRepository.update({
             ...this.companyForm.value
         }).then(() => {
-            // TODO: translate
             this.toastrService.success(
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.TITLE') as string

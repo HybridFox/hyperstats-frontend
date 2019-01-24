@@ -32,6 +32,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 import { Pages } from './pages';
 import { TranslateToastComponent } from '@shared/components/translate-toast/translate-toast.component';
 import { StoreRouterModule } from '@core/store-router';
+import { CompanyRepository } from '@api/company';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { StoreRouterModule } from '@core/store-router';
     AuthActions,
     AuthRepository,
     ContactRepository,
+    CompanyRepository,
 
     { provide: LOCALE_ID, useValue: 'en' },
     {

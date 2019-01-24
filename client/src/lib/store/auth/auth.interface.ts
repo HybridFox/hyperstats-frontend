@@ -23,6 +23,17 @@ export interface UserInterface {
     email: string;
     created: string;
     lastUpdated: string;
+    company: {
+        name: string;
+        address: {
+            street: string;
+            number: string;
+            box: string;
+            zipCode: number;
+            city: string;
+            country: string;
+        }
+    };
 }
 
 export interface ResetPasswordInterface {
