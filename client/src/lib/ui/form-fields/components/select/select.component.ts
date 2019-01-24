@@ -1,28 +1,25 @@
-import { Component, forwardRef, OnInit, OnDestroy, Input } from '@angular/core';
-import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Option } from './select.types';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Option } from './select.types';
 @Component({
   selector: 'app-select-input',
   templateUrl: './select.component.html',
-  styleUrls: ['./select.component.html'],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SelectInputComponent),
-      multi: true,
-    },
-  ],
 })
-export class SelectInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export class SelectInputComponent implements OnInit, OnDestroy {
   @Input() label?: string;
+  @Input() class?: string;
   @Input() description?: string;
   @Input() class = '';
   @Input() options: Option[];
   @Input() control: FormControl = new FormControl('');
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+
+  trackOption(index, option) {
+    return option ? option.value : undefined;
+  }
 
   public updateValue = (_: any) => {};
 
@@ -45,6 +42,10 @@ export class SelectInputComponent implements OnInit, OnDestroy, ControlValueAcce
 
   public registerOnChange(fn) {
     this.updateValue = fn;
+  }
+
+  public firstError(): string {
+    return Object.keys(this.control.errors)[0].toUpperCase();
   }
 
   public registerOnTouched() {}

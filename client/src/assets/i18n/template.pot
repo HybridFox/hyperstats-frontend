@@ -62,6 +62,9 @@ msgstr ""
 msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
+msgid "GENERAL##LABELS##MESSAGE"
+msgstr ""
+
 msgid "GENERAL##LABELS##NUMBER"
 msgstr ""
 
@@ -81,6 +84,12 @@ msgid "GENERAL##LABELS##SAVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##SUBJECT"
+msgstr ""
+
+msgid "GENERAL##LABELS##SUBMIT"
 msgstr ""
 
 msgid "GENERAL##LABELS##TOKEN"
@@ -159,6 +168,9 @@ msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
 msgstr ""
 
 msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
+msgid "PAGE##CONTACT##TITLE"
 msgstr ""
 
 msgid "PAGE##PROFILE##TITLE"
@@ -240,6 +252,18 @@ msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##CONTACT##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##CONTACT##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"

@@ -17,7 +17,7 @@
         </div>
 
         <div class="o-menu__right">
-            <a *ngIf="actionButton" [href]="actionButton.link" class="a-button--secondary">{{ actionButton.label }}</a>
+            <a *ngIf="actionButton" [routerLink]="actionButton.link" class="a-button--secondary">{{ actionButton.label }}</a>
             <app-user-menu [profile]="profile" (logout)="logout.emit()"></app-user-menu>
             <a routerLink="help" class="m-menu--main__item">{{ 'GENERAL.MENU.HELP' | translate }}</a>
         </div>

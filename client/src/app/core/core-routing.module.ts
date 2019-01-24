@@ -36,10 +36,6 @@ const routes: Routes = [
     component: Pages.ResetPasswordPageComponent
   },
   {
-    path: 'company-information',
-    component: Pages.CompanyPageComponent
-  },
-  {
     path: 'verification-succeeded',
     component: Pages.VerificationSucceededPageComponent,
     data: {
@@ -61,9 +57,14 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'contact',
+    component: Pages.ContactPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
+      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
         path: 'reports',
         loadChildren: '../reports/reports.module#ReportsModule'
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path: 'profile',
         component: Pages.ProfilePageComponent
+      },
+      {
+        path: 'company-information',
+        component: Pages.CompanyPageComponent
       },
     ]
   },

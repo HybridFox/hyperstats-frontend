@@ -1,17 +1,21 @@
-<h1>{{ 'GENERAL.MENU.HELP' | translate }}</h1>
+<div class="container">
+    <app-page-title
+        [title]="'GENERAL.MENU.HELP' | translate"
+    ></app-page-title>
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="m-card--primary l-grid__col-3-12">
+            <nav class="m-menu--vertical">
+                <a routerLink="/help/reports" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.REPORTS' | translate }}</a>
+                <a routerLink="/help/recycling-processes" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.RECYCLINGPROCESSES' | translate }}</a>
+                <a routerLink="/help/recycling-partners" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.RECYCLINGPARTNERS' | translate }}</a>
+                <a routerLink="/help/proxies" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.PROXIES' | translate }}</a>
+                <a routerLink="/help/audit-trial" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.AUDITTRIAL' | translate }}</a>
+            </nav>
+        </div>
 
-<div class="l-grid__row l-grid--with-margins">
-    <div class="m-card--primary l-grid__col-3-12">
-        <nav class="m-menu--vertical">
-            <a routerLink="/help/reports" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.REPORTS' | translate }}</a>
-            <a routerLink="/help/recycling-processes" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.RECYCLINGPROCESSES' | translate }}</a>
-            <a routerLink="/help/recycling-partners" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.RECYCLINGPARTNERS' | translate }}</a>
-            <a routerLink="/help/proxies" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.PROXIES' | translate }}</a>
-            <a routerLink="/help/audit-trial" routerLinkActive="active" class="m-menu--vertical__item">{{ 'GENERAL.MENU.AUDITTRIAL' | translate }}</a>
-        </nav>
+        <div class="m-card--primary l-grid__col-9-12">
+            <router-outlet></router-outlet>
+        </div>
     </div>
 
-    <div class="m-card--primary l-grid__col-9-12">
-        <router-outlet></router-outlet>
-    </div>
 </div>

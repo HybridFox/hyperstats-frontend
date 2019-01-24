@@ -18,24 +18,24 @@ export class RecyclingProcessesActions {
   ) {}
 
   public fetchAll(): Observable<any> {
-    this.handler.dispatchStart(ACTIONS.FETCH);
+    this.handler.dispatchStart(ACTIONS.FETCH_ALL);
 
     return this.reportsRepository.fetchAll()
       .pipe(
         catchError((error) => {
-          this.handler.dispatchError(ACTIONS.FETCH, {
+          this.handler.dispatchError(ACTIONS.FETCH_ALL, {
             message: error.message,
           });
 
           return _throw(error);
         }),
         tap((response: any) => {
-          this.handler.dispatchSuccess(ACTIONS.FETCH, {
-            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.user])
+          this.handler.dispatchSuccess(ACTIONS.FETCH_ALL, {
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.recyclingProcess])
           });
         }),
         finalize(() => {
-          this.handler.dispatchDone(ACTIONS.FETCH);
+          this.handler.dispatchDone(ACTIONS.FETCH_ALL);
         }),
       );
   }

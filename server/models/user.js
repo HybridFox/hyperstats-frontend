@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const { promisify } = require("util");
 
+require("./company");
+
 const UserSchema = mongoose.Schema({
 	data: {
 		email: {
@@ -19,6 +21,10 @@ const UserSchema = mongoose.Schema({
 		lastname: {
 			type: String,
 			required: true,
+		},
+		company: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Company",
 		},
 	},
 	meta: {
@@ -42,6 +48,9 @@ const UserSchema = mongoose.Schema({
 				type: Boolean,
 				required: true,
 				default: false,
+			},
+			requestedCompany: {
+				type: String,
 			},
 			token: {
 				type: String,
@@ -70,6 +79,13 @@ UserSchema.methods.generateHash = async(password) => {
 
 UserSchema.methods.validatePassword = function(password) {
 	return promisify(bcrypt.compare)(password, this.data.password);
+};
+
+UserSchema.methods.populateCompany = function() {
+	return this.populate({
+		path: "data.company",
+		select: "-__v",
+	}).execPopulate();
 };
 
 module.exports = mongoose.model("User", UserSchema);

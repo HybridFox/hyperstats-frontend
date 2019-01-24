@@ -59,7 +59,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            @include transition(border .2s ease);
 
             &:disabled {
                 cursor: not-allowed;
@@ -73,16 +73,26 @@
                 opacity: 1;
             }
 
+            &:focus {
+                border: 1.5px solid $tundora;
+            }
+
             &.ng-dirty.ng-invalid {
                 border: 1.5px solid $danger;
+            }
+
+            &:focus {
+                border: 1.5px solid rgba($gray, 0.5);
+                outline-width: 0;
             }
         }
 
         select.a-input__field {
+            overflow: visible;
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background: url("/assets/images/arrow_down.png") right $spacer center no-repeat;
+            background: url("/assets/images/arrow_down.png") right $spacer center no-repeat, $white;
             background-size: 10px;
             padding: 0 $spacer-small;
         }
@@ -105,6 +115,7 @@
     }
 
     &__description {
+        position: absolute;
         display: block;
         color: $tundora;
         margin: 0;

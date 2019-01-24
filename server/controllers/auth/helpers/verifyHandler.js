@@ -16,5 +16,7 @@ module.exports = async(token) => {
 
 	await user.save();
 
+	await user.populateCompany();
+
 	return user.toObject();
 };
