@@ -65,8 +65,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
+        path: '',
+        redirectTo: 'reports',
+        pathMatch: 'full',
+      },
+      {
         path: 'reports',
-        loadChildren: '../reports/reports.module#ReportsModule'
+        component: Pages.ReportsPageComponent
       },
       {
         path: 'profile',
