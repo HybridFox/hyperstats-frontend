@@ -108,10 +108,19 @@
  * -------------------------------------------------------------------
  */
 
- .u-pull-right {
-     float: right;
- }
+.u-pull-right {
+    float: right;
+}
 
- .u-pull-left {
+.u-pull-left {
     float: left;
- }
+}
+
+ /**
+ * USER
+ * -------------------------------------------------------------------
+ */
+
+.u-user-logged-in {
+    padding-bottom: $footer-height;
+}
