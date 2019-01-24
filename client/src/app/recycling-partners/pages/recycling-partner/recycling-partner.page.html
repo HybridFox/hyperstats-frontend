@@ -1,0 +1,13 @@
+<div class="m-card--primary u-margin-bottom-large">
+    <app-section-title
+        title="Alkaline - Nickel Metal"
+        class="u-margin-bottom"
+    ></app-section-title>
+    <app-sub-section-title
+        [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{key: getStepKey(step.key)}"
+        class="u-margin-bottom-large"
+    ></app-sub-section-title>
+    <button class="a-button--primary a-button-outline has-icon-after" (click)="submit()">
+        {{ 'GENERAL.LABELS.SAVE' }}
+    </button>
+</div>
