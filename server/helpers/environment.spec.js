@@ -50,9 +50,9 @@ describe("Environment helper", () => {
 		done();
 	});
 
-	it("Should see if the `staging` environment is valid", (done) => {
+	it("Should see if the `acceptance` environment is valid", (done) => {
 		const env = {
-			NODE_ENV: "staging",
+			NODE_ENV: "acceptance",
 		};
 
 		expect(() => {
