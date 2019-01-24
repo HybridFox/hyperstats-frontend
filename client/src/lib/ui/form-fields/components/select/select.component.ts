@@ -9,8 +9,8 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class SelectInputComponent implements OnInit, OnDestroy {
   @Input() label?: string;
-  @Input() class?: string;
   @Input() description?: string;
+  @Input() class = '';
   @Input() options: Option[];
   @Input() control: FormControl = new FormControl('');
 

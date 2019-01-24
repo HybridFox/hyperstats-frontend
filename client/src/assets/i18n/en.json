@@ -6,14 +6,17 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ADD-ADDITIONAL-STEP": "Add additional step",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
             "CITY": "City",
-            "COMPANYNAME": "Company naem",
             "COPYRIGHT": "© Eucobat 2018",
+            "COMPANYNAME": "Company name",
             "COUNTRY": "Country",
+            "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
+            "DUPLICATE-STEP": "Duplicate step",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",

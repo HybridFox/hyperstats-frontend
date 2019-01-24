@@ -20,6 +20,9 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr "Add additional step"
+
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
 
@@ -33,7 +36,7 @@ msgid "GENERAL##LABELS##CITY"
 msgstr "City"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
-msgstr "Company naem"
+msgstr "Company name"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr "© Eucobat 2018"
@@ -41,8 +44,14 @@ msgstr "© Eucobat 2018"
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
 
+msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr "Delete step"
+
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
+
+msgid "GENERAL##LABELS##DUPLICATE-STEP"
+msgstr "Duplicate step"
 
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
