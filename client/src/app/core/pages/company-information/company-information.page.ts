@@ -36,7 +36,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             address: this.formBuilder.group({
                 street: ['', Validators.required],
                 number: ['', Validators.required],
-                box: ['', Validators.required],
+                box: [''],
                 zipCode: ['', Validators.required],
                 city: ['', Validators.required],
                 country: ['', Validators.required]
