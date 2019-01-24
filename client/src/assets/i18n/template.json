@@ -8,8 +8,8 @@
 		"LABELS": {
 			"ACCEPT_TERMS": "",
 			"BOX": "",
-			"CANCEL": "",
 			"BROWSE": "",
+			"CANCEL": "",
 			"CITY": "",
 			"COMPANYNAME": "",
 			"COPYRIGHT": "",
@@ -20,8 +20,8 @@
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
-			"NEXT-STEP": "",
 			"MESSAGE": "",
+			"NEXT-STEP": "",
 			"NUMBER": "",
 			"PASSWORD": "",
 			"PREVIOUS-STEP": "",
@@ -68,6 +68,9 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"CONTACT": {
+			"TITLE": ""
+		},
 		"PROFILE": {
 			"TITLE": ""
 		},
@@ -89,9 +92,6 @@
 			"PROCESS-DESCRIPTION": "",
 			"PROCESS-TITLE": "",
 			"RECYCLING-STEP": "",
-			"TITLE": ""
-		},
-		"CONTACT": {
 			"TITLE": ""
 		},
 		"REGISTER": {

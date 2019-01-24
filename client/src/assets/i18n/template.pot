@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-23T13:46:41.739Z\n"
-"PO-Revision-Date: 2019-01-23T13:46:41.739Z\n"
+"POT-Creation-Date: 2019-01-24T13:28:58.428Z\n"
+"PO-Revision-Date: 2019-01-24T13:28:58.428Z\n"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
@@ -56,10 +56,10 @@ msgstr ""
 msgid "GENERAL##LABELS##LOGIN"
 msgstr ""
 
-msgid "GENERAL##LABELS##NEXT-STEP"
+msgid "GENERAL##LABELS##MESSAGE"
 msgstr ""
 
-msgid "GENERAL##LABELS##MESSAGE"
+msgid "GENERAL##LABELS##NEXT-STEP"
 msgstr ""
 
 msgid "GENERAL##LABELS##NUMBER"
@@ -314,6 +314,18 @@ msgstr ""
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr ""
 
@@ -474,16 +486,6 @@ msgid "WIZARD##TITLES##OUTPUT-FRACTION"
 msgstr ""
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
-msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
-msgstr ""
-
-msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
-msgstr ""
-
-msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr ""
-
-msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
 msgctxt "TERMS"
