@@ -1,8 +1,22 @@
-<h1>Overview Reports</h1>
+<h1>{{ 'PAGE.REPORTS.TITLE' | translate}}</h1>
 
 <div class="l-grid__row l-grid--with-margins">
-    <div class="l-grid__col-3-12 m-card--primary">
-        <app-vertical-menu [menuItems]="[{link: '/', label: 'Alkaline - Nickel Metal'}]"></app-vertical-menu>
+    <div class="l-grid__col-3-12"></div>
+    <div class="l-grid__col-9-12">
+        <div class="m-filter u-pull-right">
+            <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
+        </div>
+        <button class="a-button--primary">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</button>
+    </div>
+</div>
+
+<div class="l-grid__row l-grid--with-margins">
+    <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
+        <app-vertical-menu [menuItems]="[
+            {link: '/', label: 'Alkaline - Nickel Metal'},
+            {link: '/zinc', label: 'Zinc Carbon'},
+            {link: '/nickel', label: 'Nickel Cadmium'}
+        ]"></app-vertical-menu>
     </div>
     <div class="l-grid__col-9-12 m-card--primary">
         <ul>
@@ -15,7 +29,7 @@
                     <a href="" class="a-link">Export</a>
                 </div>
                 <div class="m-report__state">
-                <button class="a-button--danger a-button-outline">Draft</button>
+                <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
                 </div>
             </li>
             <li class="m-report">
@@ -27,7 +41,55 @@
                     <a href="" class="a-link">Export</a>
                 </div>
                 <div class="m-report__state">
-                <button class="a-button--danger a-button-outline">Draft</button>
+                <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                <button class="a-button--success a-button-outline">{{ 'PAGE.REPORTS.FILLED' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
                 </div>
             </li>
         </ul>

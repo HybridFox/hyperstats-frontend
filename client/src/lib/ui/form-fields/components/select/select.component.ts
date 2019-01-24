@@ -20,6 +20,7 @@ export class SelectInputComponent implements OnInit, OnDestroy, ControlValueAcce
   @Input() description?: string;
   @Input() options: Option[];
   @Input() control: FormControl = new FormControl('');
+  @Input() inlineLabel = false;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 

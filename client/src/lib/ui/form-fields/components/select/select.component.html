@@ -1,4 +1,7 @@
-<div class="a-input">
+<div [ngClass]="{
+    'a-input': true,
+    'a-input--inline': inlineLabel
+  }" >
   <label *ngIf="label" class="a-input__label">{{ label | translate }}</label>
   <div class="a-input__field-container">
     <select [formControl]="control" class="a-input__field">

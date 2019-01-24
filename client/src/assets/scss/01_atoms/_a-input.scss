@@ -118,3 +118,14 @@
         font-size: $font-size-x-small;
     }
 }
+
+.a-input--inline {
+    display: flex;
+    align-items: center;
+    .a-input__label {
+        margin-right: $spacer;
+    }
+    .a-input__field-container {
+        margin-top: 0;
+    }
+}

@@ -30,10 +30,12 @@
 @import "./02_molecules/m-sub-section-title";
 @import "./02_molecules/m-table";
 @import "./02_molecules/m-report";
+@import "./02_molecules/m-filter";
 
 // Organisms
 @import "./03_organisms/o-card-list";
 @import "./03_organisms/o-menu";
+@import "./03_organisms/o-region";
 
 // Templates
 @import "./04_templates/t-section";
