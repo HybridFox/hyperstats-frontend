@@ -25,12 +25,16 @@
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
+			"FUNCTION": "",
 			"LASTNAME": "",
 			"LOGIN": "",
 			"MESSAGE": "",
+			"MOBILEPHONE": "",
+			"NAME": "",
 			"NEXT-STEP": "",
 			"NUMBER": "",
 			"PASSWORD": "",
+			"PHONE": "",
 			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
@@ -39,6 +43,7 @@
 			"SELECT-OPTION": "",
 			"SORTBY": "",
 			"STREETNAME": "",
+			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
 			"TOKEN": "",
@@ -80,6 +85,13 @@
 			"TITLE": ""
 		},
 		"PROFILE": {
+			"TITLE": ""
+		},
+		"RECYCLING-PARTNERS": {
+			"ADDRESSINFORMATION": "",
+			"CONTACTPERSON": "",
+			"DESCRIPTION": "",
+			"REMOVEPARTNER": "",
 			"TITLE": ""
 		},
 		"RECYCLING-PROCESSES": {

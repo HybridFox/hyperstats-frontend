@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-24T15:21:58.299Z\n"
-"PO-Revision-Date: 2019-01-24T15:21:58.300Z\n"
+"POT-Creation-Date: 2019-01-24T16:37:57.641Z\n"
+"PO-Revision-Date: 2019-01-24T16:37:57.641Z\n"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr ""
@@ -65,6 +65,9 @@ msgstr ""
 msgid "GENERAL##LABELS##FORGOT-PASSWORD"
 msgstr ""
 
+msgid "GENERAL##LABELS##FUNCTION"
+msgstr ""
+
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
@@ -74,6 +77,12 @@ msgstr ""
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr ""
 
+msgid "GENERAL##LABELS##MOBILEPHONE"
+msgstr ""
+
+msgid "GENERAL##LABELS##NAME"
+msgstr ""
+
 msgid "GENERAL##LABELS##NEXT-STEP"
 msgstr ""
 
@@ -81,6 +90,9 @@ msgid "GENERAL##LABELS##NUMBER"
 msgstr ""
 
 msgid "GENERAL##LABELS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##PHONE"
 msgstr ""
 
 msgid "GENERAL##LABELS##PREVIOUS-STEP"
@@ -105,6 +117,9 @@ msgid "GENERAL##LABELS##SORTBY"
 msgstr ""
 
 msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNUMBER"
 msgstr ""
 
 msgid "GENERAL##LABELS##SUBJECT"
@@ -195,6 +210,21 @@ msgid "PAGE##CONTACT##TITLE"
 msgstr ""
 
 msgid "PAGE##PROFILE##TITLE"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##CONTACTPERSON"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##TITLE"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
