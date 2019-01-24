@@ -30,7 +30,7 @@ msgid "GENERAL##LABELS##CITY"
 msgstr "City"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
-msgstr "Company naem"
+msgstr "Company name"
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr "� Eucobat 2018"
