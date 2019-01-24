@@ -1,6 +1,11 @@
-<div class="root">
+<div [ngClass]="{
+    'root': true,
+    'u-user-logged-in': user
+}">
   <app-menu [actionButton]="actionButton" [profile]="user" (logout)="logout()"></app-menu>
-  <router-outlet></router-outlet>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 <app-footer></app-footer>
