@@ -1,34 +1,37 @@
 {
     "GENERAL": {
-        "BUTTONS": {
-            "CREATENEWREPORT": "Create new report"
-        },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ADD-ADDITIONAL-STEP": "Add additional step",
             "BOX": "Box",
             "BROWSE": "Browse",
+            "CANCEL": "Cancel",
             "CITY": "City",
-            "COMPANYNAME": "Company naem",
-            "COPYRIGHT": "@ Eucobat 2018",
+            "COMPANYNAME": "Company name",
+            "COPYRIGHT": "© Eucobat 2018",
             "COUNTRY": "Country",
+            "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
+            "DUPLICATE-STEP": "Duplicate step",
             "EMAIL": "Email",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
             "MESSAGE": "Message",
+            "NEXT-STEP": "Next step",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
+            "PREVIOUS-STEP": "Previous step",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
             "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
-            "SORTBY": "Sort by",
+            "SELECT-OPTION": "Select a option",
             "STREETNAME": "Street name",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
@@ -96,11 +99,6 @@
         },
         "REGISTER": {
             "VERIFY-EMAIL": "Verify email"
-        },
-        "REPORTS": {
-            "DRAFT": "Draft",
-            "FILLED": "Filled",
-            "TITLE": "Overview Reports"
         },
         "RESET-PASSWORD": {
             "TITLE": "Reset your password"
@@ -185,6 +183,102 @@
                 "DESCRIPTION": "You can now use your new password to login",
                 "TITLE": "Success!"
             }
+        }
+    },
+    "WIZARD": {
+        "ADDITIONAL-INFORMATION": {
+            "TITLES": {
+                "ADDITIONAL-INFORMATION": "Addition information",
+                "FILE-UPLOADS": "File uploads"
+            }
+        },
+        "ADDITIVES": {
+            "LABELS": {
+                "ADD-ADDITIONAL-ADDITIVE": "Add aditional additive",
+                "TYPE": "Type of additive",
+                "WEIGHT": "Input weight"
+            },
+            "TITLES": {
+                "OVERVIEW": "Overview additives"
+            }
+        },
+        "INPUT-FRACTION": {
+            "LABELS": {
+                "ADD-ADDITIONAL-ELEMENT": "Add additional element",
+                "ELEMENTS": "Elements",
+                "IMPURITIES": "Impurities",
+                "MASS": "Mass (t) on a dry weight basis",
+                "MASS-JACKET": "Mass of external jacket of waste batteries and accumulators (kg) (to be included in the input fraction)",
+                "MASS-OUTER-CASINGS": "Mass of outer casings belonging to battery pack (kg) (to be excluded from the input fraction)",
+                "METHODOLOG-CHEMICAL": "Description of methodology to determine the share of different types of waste battery or accumulator present in an input fraction",
+                "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
+                "PACKAGING-CASING": "Packaging material / outer casing",
+                "PROCESS-CHEMESTRY": "Process chemestry",
+                "SHARE-BATTERY": "Share of battery type in input fraction",
+                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
+                "WEIGHT-BATTERY": "Weight battery type in input fraction",
+                "WEIGHT-INPUT-FRACTION": "Weight input fraction"
+            },
+            "TITLES": {
+                "ADDITIONAL-INFORMATION": "Addition information",
+                "ELEMENTS-COMPONENTS": "Elements or components, which are part of the input fractions",
+                "EXCESS-MATERIAL": "Excess material received"
+            }
+        },
+        "NEW-REPORT": {
+            "DESCRIPTION": {
+                "RECYCLING-PROCESS": "Choose the recycling process and accompanying battery chemistry type for which you can to file a report.",
+                "REPORT-NAME": "Give this report a name. This can be the name of the process like “Nickel Cadnium 2017” or you can include the name of the receiver, like for instance “Nickel Cadnium processing for Name Client “.",
+                "REPORT-RECEIVER": "If this report is only intended for a specific organisation you can choose this organisation from the list.",
+                "REPORTING-YEAR": "Choose the year for which you want to file a report. The reporting year is the year over which you are declaring, not the actual year."
+            },
+            "LABELS": {
+                "RECYCLING-PROCESS": "Recycling process",
+                "REPORT-NAME": "Name this report",
+                "REPORT-RECEIVER": "Receiver of this report",
+                "REPORTING-YEAR": "Reporting year"
+            },
+            "TITLES": {
+                "GENERAL-INFORMATION": "General information"
+            }
+        },
+        "OUTPUT-FRACTION": {
+            "DESCRIPTIONS": {
+                "OF-ELEMENT": "Of the element/compound",
+                "ON-DRY-WEIGHT-BASIS": "On a dry weight basis"
+            },
+            "LABELS": {
+                "ADD-ADDITIONAL-ELEMENT": "Add additional element/compound",
+                "CLASSIFICATION": "Classification",
+                "ELEMENT": "Element or compound",
+                "MASS": "Mass (t)",
+                "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
+                "SHARE-OUTPUT-FRACTION": "Share output fraction"
+            },
+            "TITLES": {
+                "OVERVIEW": "Overview output elements"
+            }
+        },
+        "RECYCLING-EFFICIENCY": {
+            "LABELS": {
+                "EFFICIENCY": "Recycling efficiency",
+                "ELEMENTS": "Elements",
+                "INPUT": "Input",
+                "OUTPUT": "Output"
+            },
+            "TITLES": {
+                "CALCULATED-EFFICIENCY": "Calculated recycling efficiency",
+                "OVERVIEW-ELEMENTS": "Overview elements"
+            }
+        },
+        "TITLES": {
+            "ADDITIONAL-INFORMATION": "Add. Information",
+            "ADDITIVES": "Additives",
+            "FILE-REPORT": "File Report",
+            "INPUT-FRACTION": "Input Fraction",
+            "NEW-REPORT": "New Report",
+            "OUTPUT-FRACTION": "Output Fraction",
+            "RECYCLING-EFFICIENCY": "Recycling Efficiency"
         }
     }
 }

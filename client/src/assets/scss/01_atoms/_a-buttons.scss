@@ -42,6 +42,28 @@
   }
 }
 
+.a-button--link {
+  @extend .a-button;
+  background: transparent;
+  border: none;
+  color: $blue;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.a-button--ghost {
+  @extend .a-button;
+  background-color: $white;
+  border-color: $blue;
+  color: $blue;
+  text-transform: uppercase;
+  &:hover {
+    border-color: rgba($blue, 0.5);
+    color: rgba($blue, 0.5);
+  }
+}
+
 .a-button--secondary {
   @extend .a-button;
   background-color: $white;
@@ -76,6 +98,16 @@
     background-color: rgba($danger, 0.8);
     border-color: rgba($danger, 0.8);
   }
+}
+
+.a-button--link {
+  @extend .a-button;
+  background: transparent;
+  border: none;
+  color: $blue;
+  letter-spacing: 0;
+  font-size: .9em;
+  text-decoration: underline;
 }
 
 // Button outline colors.
