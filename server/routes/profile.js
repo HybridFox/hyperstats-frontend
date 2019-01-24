@@ -1,6 +1,7 @@
 const validationHelper = require("../helpers/validation");
 const profileController = require("../controllers/profile");
 const profileValidations = require("../controllers/profile/validations");
+const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
 	/**
@@ -57,6 +58,9 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/UserProfileResponse'
 	 */
 	router.route("/profile")
-		.get(profileController.get)
-		.put(validationHelper.middleware(profileValidations.update), profileController.update);
+		.get(authMiddleware.isLoggedIn, profileController.get)
+		.put(authMiddleware.isLoggedIn, validationHelper.middleware(profileValidations.update), profileController.update);
+
+	router.route("/profile/company")
+		.put(authMiddleware.isLoggedIn, validationHelper.middleware(profileValidations.updateCompany), profileController.updateCompany);
 };

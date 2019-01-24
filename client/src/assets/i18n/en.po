@@ -56,6 +56,9 @@ msgstr "Lastname"
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
 
+msgid "GENERAL##LABELS##MESSAGE"
+msgstr "Message"
+
 msgid "GENERAL##LABELS##NUMBER"
 msgstr "Tel. nr"
 
@@ -69,13 +72,19 @@ msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
-msgstr "Reset Password"
+msgstr "Reset"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
 
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
+
+msgid "GENERAL##LABELS##SUBJECT"
+msgstr "Subject"
+
+msgid "GENERAL##LABELS##SUBMIT"
+msgstr "Submit"
 
 msgid "GENERAL##LABELS##TOKEN"
 msgstr "Token"
@@ -84,7 +93,7 @@ msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
 
 msgid "GENERAL##LABELS##UPDATE-PROFILE"
-msgstr "Update Profile"
+msgstr "Update profile"
 
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
@@ -184,8 +193,18 @@ msgstr "Address Information Recycling Plant"
 msgid "PAGE##COMPANYINFORMATION##TITLE"
 msgstr "Company information"
 
+#, fuzzy
+#| msgid "PAGE##ABOUT##TITLE"
+msgid "PAGE##CONTACT##TITLE"
+msgstr "About"
+
+#, fuzzy
+#| msgid "PAGE##ABOUT##TITLE"
 msgid "PAGE##PROFILE##TITLE"
-msgstr "Profile"
+msgstr "About"
+
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgstr ""
@@ -278,6 +297,18 @@ msgstr "Please check your inbox for a verification email"
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgstr "Registration successfull"
 
+msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
+msgstr "There was en error sending your message"
+
+msgid "TOAST##CONTACT##ERROR##TITLE"
+msgstr "Error"
+
+msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
+msgstr "Success!"
+
+msgid "TOAST##CONTACT##SUCCESS##TITLE"
+msgstr "Thank you for your message"
+
 msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not request a password reset"
 
@@ -306,13 +337,13 @@ msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr "Logged in!"
 
 msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
-msgstr "Something went wrong while updating your profile"
+msgstr "There was an error when updating your profile"
 
 msgid "TOAST##PROFILE##ERROR##TITLE"
-msgstr "Error!"
+msgstr "Cannot update"
 
 msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
-msgstr "Your profile has been succcessfully updated"
+msgstr "Your profile has been saved!"
 
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
@@ -338,6 +369,65 @@ msgstr "Success!"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
+#~ msgstr ""
+#~ "Add all the different battery chemistry types you process. Per battery "
+#~ "type define which recycling site sare involved and provide some "
+#~ "additional information regarding the recycling process."
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
+#~ msgstr "Choose a description for this recycling step"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
+#~ msgstr ""
+#~ "This is the identifier you typically use in your organisation for this "
+#~ "recycling step. Take something that everyone in your organisation "
+#~ "understands"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##NAME"
+#~ msgstr "Choose a name for this recycling process"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##PRECEDING-STEP"
+#~ msgstr "If any, choose a preceding step"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##PROCESSING-METHOD"
+#~ msgstr "Method of processing"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
+#~ msgstr "Qualitative description of the operations"
+
+#~ msgid ""
+#~ "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
+#~ msgstr ""
+#~ "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+#~ "Tempor Incididunt Ut Labore Et Dolor"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
+#~ msgstr "Is this your recycling site or from one of your partners?"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
+#~ msgstr "Schematic overview of process"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
+#~ msgstr ""
+#~ "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+#~ "Tempor Incididunt Ut Labore Et Dolor"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
+#~ msgstr ""
+#~ "Add every recycling step that makes up your recycling process. Per "
+#~ "recycling step you can define the recycling site and provide a process "
+#~ "description."
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
+#~ msgstr "Process Description - Recycling Steps"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
+#~ msgstr "Recycling Step"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##TITLE"
+#~ msgstr "Recycling Processes"
 
 #~ msgid "TOAST##REGISTER##SUCCESS##DESCRIPTION"
 #~ msgstr "Please check your email for your verification mail"

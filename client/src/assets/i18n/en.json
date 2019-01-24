@@ -18,16 +18,19 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "MESSAGE": "Message",
             "NUMBER": "Tel. nr",
             "PASSWORD": "Password",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset Password",
+            "RESET-PASSWORD": "Reset",
             "SAVE": "Save",
             "STREETNAME": "Street name",
+            "SUBJECT": "Subject",
+            "SUBMIT": "Submit",
             "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
-            "UPDATE-PROFILE": "Update Profile",
+            "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
             "ACCEPT_TERMS": "I accept the terms and conditions"
@@ -61,8 +64,11 @@
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
+        "CONTACT": {
+            "TITLE": "About"
+        },
         "PROFILE": {
-            "TITLE": "Profile"
+            "TITLE": "About"
         },
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
@@ -110,6 +116,16 @@
                 "TITLE": "Registration successfull"
             }
         },
+        "CONTACT": {
+            "ERROR": {
+                "DESCRIPTION": "There was en error sending your message",
+                "TITLE": "Error"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Success!",
+                "TITLE": "Thank you for your message"
+            }
+        },
         "FORGOT-PASSWORD": {
             "ERROR": {
                 "DESCRIPTION": "Could not request a password reset",
@@ -137,11 +153,11 @@
         },
         "PROFILE": {
             "ERROR": {
-                "DESCRIPTION": "Something went wrong while updating your profile",
-                "TITLE": "Error!"
+                "DESCRIPTION": "There was an error when updating your profile",
+                "TITLE": "Cannot update"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Your profile has been succcessfully updated",
+                "DESCRIPTION": "Your profile has been saved!",
                 "TITLE": "Success!"
             }
         },

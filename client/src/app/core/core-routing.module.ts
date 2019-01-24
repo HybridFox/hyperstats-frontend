@@ -61,6 +61,10 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'contact',
+    component: Pages.ContactPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [

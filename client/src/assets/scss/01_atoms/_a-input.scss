@@ -59,7 +59,7 @@
             border-radius: $border-radius;
             padding: $spacer-small;
             height: 40px;
-            transition: border .5s ease;
+            @include transition(border .2s ease);
 
             &:disabled {
                 cursor: not-allowed;
@@ -71,6 +71,10 @@
             &::placeholder {
                 color: $tundora;
                 opacity: 1;
+            }
+
+            &:focus {
+                border: 1.5px solid $tundora;
             }
 
             &.ng-dirty.ng-invalid {

@@ -19,6 +19,7 @@
 			"FORGOT-PASSWORD": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"MESSAGE": "",
 			"NUMBER": "",
 			"PASSWORD": "",
 			"PRIVACY": "",
@@ -26,6 +27,8 @@
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"STREETNAME": "",
+			"SUBJECT": "",
+			"SUBMIT": "",
 			"TOKEN": "",
 			"TRY-AGAIN": "",
 			"UPDATE-PROFILE": "",
@@ -84,6 +87,9 @@
 			"RECYCLING-STEP": "",
 			"TITLE": ""
 		},
+		"CONTACT": {
+			"TITLE": ""
+		},
 		"REGISTER": {
 			"VERIFY-EMAIL": ""
 		},
@@ -101,6 +107,16 @@
 	},
 	"TOAST": {
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"CONTACT": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
