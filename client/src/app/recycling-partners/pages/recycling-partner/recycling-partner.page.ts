@@ -26,4 +26,6 @@ export class RecyclingPartnerPageComponent implements OnInit {
             label: name,
         }));
     }
+
+    public submit() {}
 }
