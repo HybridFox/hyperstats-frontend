@@ -1,6 +1,8 @@
 const recyclingProcessManager = require('./helpers/recyclingProcessManager');
 
-module.exports = async (req, res, next) => {
-	const data = await recyclingProcessManager.create(req.body);
-	res.status(201).json(data);
+module.exports = (req, res, next) => {
+	recyclingProcessManager.create(req.body)
+		.then((data) => {
+			res.status(201).json(data);
+		}, next);
 }
