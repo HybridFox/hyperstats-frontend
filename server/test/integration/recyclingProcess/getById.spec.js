@@ -46,25 +46,32 @@ describe("Integration", () => {
 		});
 
 		describe("When not logged in", () => {
-			it("Should not fetch recycling processes", () => {
+			it("Should not fetch recycling process by id", () => {
 				return supertest(server)
-					.get("/api/recycling-processes")
+					.get(`/api/recycling-processes/${mockRecyclingProcesses[0]._id}`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 		});
 
 		describe("When logged in", () => {
-			it("Should fetch recycling processes", async() => {
+			it("Should return 404 if recycling process doesn't exist", () => {
 				return supertest(server)
-					.get("/api/recycling-processes")
+					.get("/api/recycling-processes/2l42wkewe1fs4g3c734y5043")
+					.expect("Content-Type", /json/)
+					.expect(403);
+			});
+
+			it("Should fetch recycling process by id", async() => {
+				return supertest(server)
+					.get(`/api/recycling-processes/${mockRecyclingProcesses[0]._id}`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
-						expect(body).to.be.an("array").to.have.lengthOf(mockRecyclingProcesses.length);
-						expect(omit(["__v"], body[0])).to.deep.equal({
-							"_id": "5c49ccebe9fe3f0a757f0001",
+						expect(body).to.be.an("object");
+						expect(omit(["__v"], body)).to.deep.equal({
+							"_id": `${mockRecyclingProcesses[0]._id}`,
 							"data": {
 								"name": "Test 1",
 								"steps": [
