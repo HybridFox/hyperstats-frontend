@@ -1,4 +1,5 @@
 const RecyclingProcessModel = require("../../../models/recyclingProcess");
+const Errors = require("../../../helpers/errorHandler");
 
 module.exports = {
 	create: (recyclingProcess) => {
@@ -8,16 +9,27 @@ module.exports = {
 		return RecyclingProcessModel.find({}).exec();
 	},
 	getById: (id) => {
-		return RecyclingProcessModel.findOne({ _id: id }).exec();
+		return RecyclingProcessModel.findOne({ _id: id }).exec()
+			.then((data) => {
+				if (!data) {
+					throw Errors.ItemNotFound;
+				}
+
+				return data;
+			});
 	},
-	update: (recyclingProcess) => {
-		return RecyclingProcessModel.update(
-			{ _id: recyclingProcess._id },
-			{
-				$set: {
-					...recyclingProcess,
-				},
-			}
-		).exec();
+	update: (id, recyclingProcess) => {
+		return RecyclingProcessModel.findOneAndUpdate(
+			{ _id: id },
+			{ ...recyclingProcess },
+			{ new: true },
+		).exec()
+			.then((data) => {
+				if (!data) {
+					throw Errors.ItemNotFound;
+				}
+
+				return data;
+			});
 	},
 };
