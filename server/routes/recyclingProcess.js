@@ -1,8 +1,9 @@
+const AuthMiddleware = require("../middleware/auth");
 const DataMiddleware = require("../middleware/data");
-const validationHelper = require("../helpers/validation");
-const recyclingProcess = require("../controllers/recyclingProcess");
-const recyclingProcessValidations = require("../controllers/recyclingProcess/validations");
-const authMiddleware = require("../middleware/auth");
+const Errors = require("../helpers/errorHandler");
+const Controller = require("../controllers/recyclingProcess");
+const Validations = require("../controllers/recyclingProcess/validations");
+
 
 module.exports = (router) => {
 	/**
@@ -67,11 +68,15 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/RecyclingProcess'
 	 */
 	router.route("/recycling-processes")
-		// .get(authMiddleware.isLoggedIn, recyclingProcess.getAll);
-		.get(recyclingProcess.getAll)
+		.get(
+			AuthMiddleware.isLoggedIn,
+			Controller.getAll
+		)
 		.post(
-			validationHelper.middleware(recyclingProcessValidations.create, false),
-			recyclingProcess.create
+			AuthMiddleware.isLoggedIn,
+			DataMiddleware.copy,
+			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			Controller.create
 		);
 
 	/**
@@ -108,11 +113,16 @@ module.exports = (router) => {
 	 */
 	router.route("/recycling-processes/:id")
 		.get(
+			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			recyclingProcess.getById
+			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			Controller.getById
 		)
-		.post(
-			validationHelper.middleware(recyclingProcessValidations.update, false),
-			recyclingProcess.update
+		.put(
+			AuthMiddleware.isLoggedIn,
+			DataMiddleware.copy,
+			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
+			Controller.update
 		);
 };

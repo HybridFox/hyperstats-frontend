@@ -1,7 +1,7 @@
 const copy = require("./copy");
-// const validate = require("./validate");
+const validate = require("./validate");
 
 module.exports = {
 	copy,
-	// validate,
+	validate,
 };

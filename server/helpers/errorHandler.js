@@ -10,6 +10,8 @@ const errorHandler = (err) => {
 	let statusCode;
 	let msg = "";
 
+	console.log(err);
+
 	// If the err name is defined, we should not check for our own custom errors
 	if (err.name && err.name !== "Error" && err.name !== "ValidationError") {
 		statusCode = 400;
