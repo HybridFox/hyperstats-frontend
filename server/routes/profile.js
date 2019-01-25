@@ -115,7 +115,11 @@ module.exports = (router) => {
 	 */
 	router.route("/profile")
 		.get(authMiddleware.isLoggedIn, profileController.get)
-		.put(authMiddleware.isLoggedIn, validationHelper.middleware(profileValidations.update), profileController.update);
+		.put(
+			authMiddleware.isLoggedIn,
+			validationHelper.middleware(profileValidations.update),
+			profileController.update
+		);
 
 	/**
 	 * @swagger
@@ -139,5 +143,9 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/CompanyUpdateResponse'
 	 */
 	router.route("/profile/company")
-		.put(authMiddleware.isLoggedIn, validationHelper.middleware(profileValidations.updateCompany), profileController.updateCompany);
+		.put(
+			authMiddleware.isLoggedIn,
+			validationHelper.middleware(profileValidations.updateCompany),
+			profileController.updateCompany
+		);
 };

@@ -53,6 +53,8 @@ const set = module.exports.set = (req, user) => {
 			]
 		)
 	)(req);
+
+	req.session.save();
 };
 
 module.exports.reload = async(req) => {

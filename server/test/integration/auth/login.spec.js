@@ -73,7 +73,7 @@ describe("Integration", () => {
 					email: "validuser@example.com",
 				})
 				.expect("Content-Type", /json/)
-				.expect(404);
+				.expect(400);
 		});
 
 		it("Should fail to login the user when no email is set", () => {
@@ -83,7 +83,7 @@ describe("Integration", () => {
 					password: "validPassword",
 				})
 				.expect("Content-Type", /json/)
-				.expect(404);
+				.expect(400);
 		});
 	});
 });
