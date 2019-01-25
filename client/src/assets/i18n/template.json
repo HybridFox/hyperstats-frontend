@@ -1,5 +1,8 @@
 {
 	"GENERAL": {
+		"BUTTONS": {
+			"CREATENEWREPORT": ""
+		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
 			"PASSWORD": "",
@@ -7,26 +10,41 @@
 		},
 		"LABELS": {
 			"ACCEPT_TERMS": "",
+			"ADD-ADDITIONAL-STEP": "",
+			"ADD-RECYCLING-PARTNER": "",
+			"ADD-RECYCLING-PROCESS": "",
 			"BOX": "",
 			"BROWSE": "",
+			"CANCEL": "",
 			"CITY": "",
 			"COMPANYNAME": "",
 			"COPYRIGHT": "",
 			"COUNTRY": "",
+			"DELETE-STEP": "",
 			"DRAGANDDROP": "",
+			"DUPLICATE-STEP": "",
 			"EMAIL": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
+			"FUNCTION": "",
 			"LASTNAME": "",
 			"LOGIN": "",
 			"MESSAGE": "",
+			"MOBILEPHONE": "",
+			"NAME": "",
+			"NEXT-STEP": "",
 			"NUMBER": "",
 			"PASSWORD": "",
+			"PHONE": "",
+			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
 			"RESET-PASSWORD": "",
 			"SAVE": "",
+			"SELECT-OPTION": "",
+			"SORTBY": "",
 			"STREETNAME": "",
+			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
 			"TOKEN": "",
@@ -64,7 +82,17 @@
 			"SUBTITLE": "",
 			"TITLE": ""
 		},
+		"CONTACT": {
+			"TITLE": ""
+		},
 		"PROFILE": {
+			"TITLE": ""
+		},
+		"RECYCLING-PARTNERS": {
+			"ADDRESSINFORMATION": "",
+			"CONTACTPERSON": "",
+			"DESCRIPTION": "",
+			"REMOVEPARTNER": "",
 			"TITLE": ""
 		},
 		"RECYCLING-PROCESSES": {
@@ -87,11 +115,13 @@
 			"RECYCLING-STEP": "",
 			"TITLE": ""
 		},
-		"CONTACT": {
-			"TITLE": ""
-		},
 		"REGISTER": {
 			"VERIFY-EMAIL": ""
+		},
+		"REPORTS": {
+			"DRAFT": "",
+			"FILLED": "",
+			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"TITLE": ""
@@ -176,6 +206,102 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		}
+	},
+	"WIZARD": {
+		"ADDITIONAL-INFORMATION": {
+			"TITLES": {
+				"ADDITIONAL-INFORMATION": "",
+				"FILE-UPLOADS": ""
+			}
+		},
+		"ADDITIVES": {
+			"LABELS": {
+				"ADD-ADDITIONAL-ADDITIVE": "",
+				"TYPE": "",
+				"WEIGHT": ""
+			},
+			"TITLES": {
+				"OVERVIEW": ""
+			}
+		},
+		"INPUT-FRACTION": {
+			"LABELS": {
+				"ADD-ADDITIONAL-ELEMENT": "",
+				"ELEMENTS": "",
+				"IMPURITIES": "",
+				"MASS": "",
+				"MASS-JACKET": "",
+				"MASS-OUTER-CASINGS": "",
+				"METHODOLOG-CHEMICAL": "",
+				"METHODOLOG-WASTE": "",
+				"PACKAGING-CASING": "",
+				"PROCESS-CHEMESTRY": "",
+				"SHARE-BATTERY": "",
+				"SHARE-INPUT-FRACTION": "",
+				"WEIGHT-BATTERY": "",
+				"WEIGHT-INPUT-FRACTION": ""
+			},
+			"TITLES": {
+				"ADDITIONAL-INFORMATION": "",
+				"ELEMENTS-COMPONENTS": "",
+				"EXCESS-MATERIAL": ""
+			}
+		},
+		"NEW-REPORT": {
+			"DESCRIPTION": {
+				"RECYCLING-PROCESS": "",
+				"REPORT-NAME": "",
+				"REPORT-RECEIVER": "",
+				"REPORTING-YEAR": ""
+			},
+			"LABELS": {
+				"RECYCLING-PROCESS": "",
+				"REPORT-NAME": "",
+				"REPORT-RECEIVER": "",
+				"REPORTING-YEAR": ""
+			},
+			"TITLES": {
+				"GENERAL-INFORMATION": ""
+			}
+		},
+		"OUTPUT-FRACTION": {
+			"DESCRIPTIONS": {
+				"OF-ELEMENT": "",
+				"ON-DRY-WEIGHT-BASIS": ""
+			},
+			"LABELS": {
+				"ADD-ADDITIONAL-ELEMENT": "",
+				"CLASSIFICATION": "",
+				"ELEMENT": "",
+				"MASS": "",
+				"REPLACED-VIRGIN-MATERIAL": "",
+				"SHARE-OUTPUT-FRACTION": ""
+			},
+			"TITLES": {
+				"OVERVIEW": ""
+			}
+		},
+		"RECYCLING-EFFICIENCY": {
+			"LABELS": {
+				"EFFICIENCY": "",
+				"ELEMENTS": "",
+				"INPUT": "",
+				"OUTPUT": ""
+			},
+			"TITLES": {
+				"CALCULATED-EFFICIENCY": "",
+				"OVERVIEW-ELEMENTS": ""
+			}
+		},
+		"TITLES": {
+			"ADDITIONAL-INFORMATION": "",
+			"ADDITIVES": "",
+			"FILE-REPORT": "",
+			"INPUT-FRACTION": "",
+			"NEW-REPORT": "",
+			"OUTPUT-FRACTION": "",
+			"RECYCLING-EFFICIENCY": ""
 		}
 	}
 }

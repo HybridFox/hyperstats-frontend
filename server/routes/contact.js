@@ -1,7 +1,6 @@
 const validationHelper = require("../helpers/validation");
 const contactController = require("../controllers/contact");
 const contactValidations = require("../controllers/contact/validations");
-const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
 	/**
@@ -43,5 +42,5 @@ module.exports = (router) => {
 	 *                type: boolean
 	 */
 	router.route("/contact/send-mail")
-		.post(authMiddleware.isLoggedIn, validationHelper.middleware(contactValidations.sendMail), contactController.sendMail);
+		.post(validationHelper.middleware(contactValidations.sendMail), contactController.sendMail);
 };

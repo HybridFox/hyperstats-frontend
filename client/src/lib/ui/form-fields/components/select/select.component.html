@@ -1,9 +1,14 @@
-<div class="a-input">
+<div [ngClass]="{
+    'a-input': true,
+    'a-input--inline': inlineLabel
+  }" [class]="class">
   <label *ngIf="label" class="a-input__label">{{ label | translate }}</label>
   <div class="a-input__field-container">
     <select [formControl]="control" class="a-input__field">
-      <option *ngFor="let option of options" [value]="option.value">{{ option.label | translate }}</option>
+      <option value="" disabled selected>{{ 'GENERAL.LABELS.SELECT-OPTION' | translate }}</option>
+      <option *ngFor="let option of options; trackBy: trackOption" [value]="option.value">{{ option.label | translate }}</option>
     </select>
   </div>
-  <p *ngIf="description" class="a-input__description">{{ description | translate }}</p>
+  <p *ngIf="description && (!control.errors || !control.dirty)" class="a-input__description">{{ description | translate }}</p>
+  <p *ngIf="control.errors && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.' + firstError() | translate }}</p>
 </div>

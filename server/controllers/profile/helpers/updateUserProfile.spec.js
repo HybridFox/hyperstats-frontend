@@ -1,16 +1,12 @@
 
-const { expect, use, should } = require("chai");
-const chaiAsPromised = require("chai-as-promised");
+const { expect } = require("chai");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const UserModel = require("../../../models/user");
 
-should();
-use(chaiAsPromised);
-
 const updateUserProfile = require("./updateUserProfile");
 
-describe("LoginHandler", () => {
+describe("Update user profile", () => {
 	let mongoServer;
 
 	before(async() => {

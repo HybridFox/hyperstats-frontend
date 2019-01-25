@@ -7,7 +7,7 @@ module.exports = {
 			domain: "",
 		},
 		mongo: {
-			url: "mongodb://host.docker.internal:27011/rare",
+			url: "mongodb://mongodb-rare/rare",
 		},
 	},
 	gmail: {

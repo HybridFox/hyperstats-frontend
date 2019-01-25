@@ -3,7 +3,9 @@ const profile = require("./profile");
 
 const setupReqObject = () => {
 	return {
-		session: {},
+		session: {
+			save: () => {},
+		},
 	};
 };
 
