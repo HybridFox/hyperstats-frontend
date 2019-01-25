@@ -79,7 +79,7 @@ describe("Integration", () => {
 					password: "newPassword",
 					token,
 				})
-				// .expect(200)
+				.expect(200)
 				.then(({ body }) => {
 					expect(body).to.be.an("object");
 					expect(body.success).to.be.true;
