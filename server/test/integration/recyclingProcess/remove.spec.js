@@ -1,6 +1,5 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
-const { omit } = require("ramda");
 const startServer = require("../../mocks/startServer");
 const mockRecyclingProcesses = require("../../mocks/recyclingProcesses");
 const createTestUser = require("../../helpers/createTestUser");
