@@ -115,13 +115,13 @@ module.exports = (router) => {
 		.get(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
 			Controller.getById
 		)
 		.put(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
 			Controller.update
 		);
