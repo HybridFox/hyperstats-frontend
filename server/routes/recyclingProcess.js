@@ -75,7 +75,7 @@ module.exports = (router) => {
 		.post(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("body", Validations.create, Errors.ObjectValidationFailed),
 			Controller.create
 		);
 
@@ -124,5 +124,11 @@ module.exports = (router) => {
 			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
 			Controller.update
+		)
+		.delete(
+			AuthMiddleware.isLoggedIn,
+			DataMiddleware.copy,
+			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
+			Controller.remove
 		);
 };

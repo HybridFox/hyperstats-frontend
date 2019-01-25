@@ -18,6 +18,9 @@ module.exports = {
 				return data;
 			});
 	},
+	remove: (id) => {
+		return RecyclingProcessModel.findOneAndRemove({ _id: id }).exec();
+	},
 	update: (id, recyclingProcess) => {
 		return RecyclingProcessModel.findOneAndUpdate(
 			{ _id: id },
