@@ -16,8 +16,8 @@ module.exports = {
 			{
 				$set: {
 					...recyclingProcess,
-				}
+				},
 			}
 		).exec();
-	}
-}
+	},
+};

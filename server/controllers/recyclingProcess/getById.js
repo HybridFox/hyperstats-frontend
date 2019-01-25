@@ -1,4 +1,4 @@
-const recyclingProcessManager = require('./helpers/recyclingProcessManager');
+const recyclingProcessManager = require("./helpers/recyclingProcessManager");
 
 module.exports = (req, res, next) => {
 	const id = req.data.params.id;
@@ -6,4 +6,4 @@ module.exports = (req, res, next) => {
 		.then((data) => {
 			res.status(201).json(data);
 		}, next);
-}
+};

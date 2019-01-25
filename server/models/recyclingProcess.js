@@ -20,11 +20,11 @@ const RecyclingStepSchema = mongoose.Schema({
 		asset: {
 			type: String,
 
-		}
+		},
 	},
 	schematicOverview: {
 		type: String,
-	}
+	},
 });
 
 const RecyclingProcessSchema = mongoose.Schema({
