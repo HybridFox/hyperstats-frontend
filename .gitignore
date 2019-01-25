@@ -269,7 +269,7 @@ test/coverage
 
 # Sessions on the filesystem
 .sessions
-data
+server/data
 dist
 test-results
 
