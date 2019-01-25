@@ -1,4 +1,6 @@
 module.exports = {
-	getAll: require('./getAll'),
 	create: require('./create'),
+	getAll: require('./getAll'),
+	getById: require('./getById'),
+	update: require('./update'),
 }

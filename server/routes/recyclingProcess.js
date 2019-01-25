@@ -1,3 +1,4 @@
+const DataMiddleware = require("../middleware/data");
 const validationHelper = require("../helpers/validation");
 const recyclingProcess = require("../controllers/recyclingProcess");
 const recyclingProcessValidations = require("../controllers/recyclingProcess/validations");
@@ -50,7 +51,18 @@ module.exports = (router) => {
 	 *       - application/json
 	 *     responses:
 	 *       200:
-	 *         description: User profile
+	 *         description: Recycling Processes
+	 *         schema:
+	 *           $ref: '#/definitions/RecyclingProcess'
+	 *   post:
+	 *     description: Create new recycling process
+	 *     tags:
+	 *       - recycling-processes
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       201:
+	 *         description: New Recycling Process
 	 *         schema:
 	 *           $ref: '#/definitions/RecyclingProcess'
 	 */
@@ -60,5 +72,47 @@ module.exports = (router) => {
 		.post(
 			validationHelper.middleware(recyclingProcessValidations.create, false),
 			recyclingProcess.create
+		);
+
+	/**
+	 * @swagger
+	 * /api/recycling-processes/{id}:
+	 *   parameters:
+	 *     - in: path
+	 *       name: id
+	 *       required: true
+	 *       description: uuid
+	 *       type: string
+	 *   get:
+	 *     description: Get recycling process by id
+	 *     tags:
+	 *       - recycling-processes
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       200:
+	 *         description: Recycling Process
+	 *         schema:
+	 *           $ref: '#/definitions/RecyclingProcess'
+	 *   put:
+	 *     description: update recycling process by id
+	 *     tags:
+	 *       - recycling-processes
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       200:
+	 *         description: Updated Recycling Process
+	 *         schema:
+	 *           $ref: '#/definitions/RecyclingProcess'
+	 */
+	router.route("/recycling-processes/:id")
+		.get(
+			DataMiddleware.copy,
+			recyclingProcess.getById
+		)
+		.post(
+			validationHelper.middleware(recyclingProcessValidations.update, false),
+			recyclingProcess.update
 		);
 };
