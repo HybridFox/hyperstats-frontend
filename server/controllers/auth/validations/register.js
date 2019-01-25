@@ -6,7 +6,7 @@ module.exports = joi.object().keys({
 		password: joi.string().required(),
 		firstname: joi.string().required(),
 		lastname: joi.string().required(),
-		companyName: joi.string().optional(),
+		companyName: joi.string().allow("").optional(),
 	}),
 	query: joi.object(),
 });

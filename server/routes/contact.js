@@ -1,7 +1,6 @@
 const validationHelper = require("../helpers/validation");
 const contactController = require("../controllers/contact");
 const contactValidations = require("../controllers/contact/validations");
-const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
 	/**

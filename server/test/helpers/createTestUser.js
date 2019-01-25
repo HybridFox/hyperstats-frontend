@@ -51,4 +51,6 @@ module.exports = async({
 	testUser.data.password = await testUser.generateHash(password);
 
 	await testUser.save();
+
+	return testUser.toObject();
 };

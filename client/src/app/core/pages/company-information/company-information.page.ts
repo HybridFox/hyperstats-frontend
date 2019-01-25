@@ -6,9 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 import countryList from 'country-list';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
-import { AuthSelector } from '@store/auth';
+import { AuthSelector, AuthActions } from '@store/auth';
 import { Option } from '@ui/form-fields/components/select/select.types';
-import { UserInterface } from '@store/auth/auth.interface';
 import { CompanyRepository } from '@api/company';
 import { FormHelper } from '@helpers/form.helper';
 
@@ -28,6 +27,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
         private formBuilder: FormBuilder,
         private companyRepository: CompanyRepository,
         private toastrService: ToastrService,
+        private authActions: AuthActions
     ) { }
 
     ngOnInit(): void {
@@ -42,8 +42,6 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
                 country: ['', Validators.required]
             })
         });
-
-        console.log(this.companyForm.controls.address.get('street'));
 
         this.user$.subscribe((user) => {
             if (user && user.company && user.company.data) {
@@ -73,12 +71,13 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
 
         this.companyRepository.update({
             ...this.companyForm.value
-        }).then(() => {
+        }).then((company) => {
             this.toastrService.success(
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.TITLE') as string
             );
-            this.companyForm.reset();
+            this.authActions.fetchProfile();
+            this.companyForm.setValue(company.data);
         }).catch(() => {
             this.toastrService.error(
                 ngxExtract('TOAST.COMPANY-INFORMATION.ERROR.DESCRIPTION') as string,

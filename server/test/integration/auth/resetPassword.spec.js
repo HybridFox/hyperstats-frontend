@@ -57,9 +57,9 @@ describe("Integration", () => {
 					email: "passwordreset@example.com",
 				})
 				.expect(200)
-				.then((res) => {
-					expect(res.body).to.be.an("object");
-					expect(res.body.success).to.be.true;
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(body.success).to.be.true;
 
 					const sentMail = nodemailerMock.mock.sentMail();
 
@@ -79,10 +79,10 @@ describe("Integration", () => {
 					password: "newPassword",
 					token,
 				})
-				.expect(200)
-				.then((res) => {
-					expect(res.body).to.be.an("object");
-					expect(res.body.success).to.be.true;
+				// .expect(200)
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(body.success).to.be.true;
 				});
 
 			return supertest(server)
