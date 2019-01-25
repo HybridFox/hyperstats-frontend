@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-24T16:45:17.558Z\n"
+"POT-Creation-Date: 2019-01-25T09:08:55.445Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -111,7 +111,7 @@ msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
-msgstr "Reset"
+msgstr "Reset password"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
