@@ -31,7 +31,6 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
             firstname: ['', Validators.required],
             lastname: ['', Validators.required]
         });
-        this.profileForm.get('email').disable();
         this.user$
             .subscribe((user) => {
                 this.profileForm.patchValue(user);
