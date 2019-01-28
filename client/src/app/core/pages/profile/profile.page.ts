@@ -27,11 +27,10 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.profileForm = this.formBuilder.group({
-            email: ['', Validators.required],
+            email: this.formBuilder.control({ value: '', disabled: true }, Validators.required),
             firstname: ['', Validators.required],
             lastname: ['', Validators.required]
         });
-
         this.user$
             .subscribe((user) => {
                 this.profileForm.patchValue(user);
