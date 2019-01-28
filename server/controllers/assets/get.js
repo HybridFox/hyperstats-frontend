@@ -31,8 +31,4 @@ module.exports = (req, res, next) => {
 				.pipe(res);
 		})
 		.catch(next);
-
-
-
-
 };
