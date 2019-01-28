@@ -1,4 +1,4 @@
 module.exports = {
-	byId: require('./byId'),
-	query: require('./query'),
+	byId: require("./byId"),
+	query: require("./query"),
 };
