@@ -1,4 +1,4 @@
-import { Component, forwardRef, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, forwardRef, OnInit, OnDestroy, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -15,7 +15,7 @@ import { takeUntil } from 'rxjs/operators';
     },
   ],
 })
-export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export class TextInputComponent implements OnInit, OnChanges, OnDestroy, ControlValueAccessor {
   @Input() placeholder = '';
   @Input() label?: string;
   @Input() suffix?: string;
@@ -37,6 +37,12 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
     });
   }
 
+  public ngOnChanges(changes: SimpleChanges) {
+    if (changes.disabled) {
+      this.setDisabledState(this.disabled);
+    }
+  }
+
   public ngOnDestroy() {
     this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
@@ -48,6 +54,14 @@ export class TextInputComponent implements OnInit, OnDestroy, ControlValueAccess
 
   public registerOnChange(fn) {
     this.updateValue = fn;
+  }
+
+  public setDisabledState(isDisabled: boolean) {
+    if (isDisabled) {
+      this.control.disable();
+    } else {
+      this.control.enable();
+    }
   }
 
   public firstError(): string {

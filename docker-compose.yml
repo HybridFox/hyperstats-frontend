@@ -6,7 +6,7 @@ services:
       args:
         - NODE_ENV=local
     container_name: rare-server
-    command: sh -c "/wait && /node_modules/.bin/nodemon --inspect=0.0.0.0:5858"
+    command: sh -c "/wait && /app/node_modules/.bin/nodemon --inspect=0.0.0.0:5858"
     ports:
       - 4351:4351
       # Debug port
