@@ -5,8 +5,8 @@ const { MongoGridFS } = require("mongo-gridfs");
 module.exports = (req, res, next) => {
 	const gridFS = new MongoGridFS(mongoose.connection.db, "fs");
 
-	const id = req.params.id;
-	const query = req.query;
+	const id = req.data.params.id;
+	const query = req.data.query;
 
 	gridFS.findById(id)
 		.then((item) => {
@@ -20,7 +20,7 @@ module.exports = (req, res, next) => {
 				});
 			}
 
-			return gridFS.readFileStream(req.params.id);
+			return gridFS.readFileStream(id);
 		})
 		.then((item) => {
 			item
