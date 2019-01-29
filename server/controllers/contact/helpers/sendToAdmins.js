@@ -1,13 +1,21 @@
 const UserModel = require("../../../models/user");
 const MailHelper = require("../../../helpers/mail");
+const path = require("path");
 
-module.exports = async({ email, subject, body }) => {
+module.exports = async(body) => {
 	const admins = await UserModel.find({ "meta.isAdmin": true }, { "data.email": 1 }).lean().exec();
 
 	return Promise.all(admins.map((admin) => MailHelper({
 		to: admin.data.email,
-		subject,
-		template: body,
-		replyTo: email,
+		subject: "Rare | New contact message",
+		templatePath: path.resolve(process.cwd(), "controllers/contact/templates/sendToAdmins.html"),
+		data: {
+			firstname: body.firstname,
+			lastname: body.lastname,
+			email: body.email,
+			subject: body.subject,
+			body: body.body,
+		},
+		replyTo: body.email,
 	})));
 };
