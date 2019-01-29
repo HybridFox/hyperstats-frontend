@@ -34,7 +34,7 @@ describe("Send to admins", () => {
 	});
 
 	it("Should send contact emails to admins", async() => {
-		await sendToAdmins({ email: "reply-email@example.com", subject: "Some subject", body: "Some body" });
+		await sendToAdmins({ email: "reply-email@example.com", subject: "Rare | New contact message", body: "Some body" });
 
 		// get the array of emails we sent
 		const sentMail = nodemailerMock.mock.sentMail();
