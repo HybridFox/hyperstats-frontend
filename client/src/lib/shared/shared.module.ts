@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+
 // Components
 import { Services } from '@shared/services';
 import { AuthActions } from '@store/auth';
@@ -31,6 +34,8 @@ import { Components } from './components';
     ReactiveFormsModule,
     FormsModule,
     TranslateModule.forChild(),
+    MatMenuModule,
+    MatButtonModule,
   ],
   declarations: [
     ...Components,

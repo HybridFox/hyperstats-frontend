@@ -1,10 +1,10 @@
 .o-menu--filled, .o-menu--transparent {
-    padding: $spacer 0;
     .container {
         display: flex;
         align-items: center;
         .o-menu__left {
             flex-grow: 1;
+            width: 50%;
         }
         .o-menu__right {
             display: flex;

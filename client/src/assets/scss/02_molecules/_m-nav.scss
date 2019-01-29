@@ -1,0 +1,36 @@
+.m-navigation-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.m-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.m-navigation__item {
+    font-size: $font-size-regular;
+    font-weight: $font-weight-light;
+    padding: 0 $spacer-x-small / 2;
+    margin: 0 $spacer-small;
+    white-space: nowrap;
+    color: $white;
+    padding: 26px 0 26px 0;
+    border-bottom: 3px solid transparent;
+
+    &.active {
+        color: $yellow;
+        border-color: $yellow;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .mat-button {
+        color: inherit;
+        background-color: inherit;
+        line-height: inherit;
+    }
+}
