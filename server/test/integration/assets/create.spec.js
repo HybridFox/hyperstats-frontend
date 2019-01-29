@@ -1,5 +1,7 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
+const mongodb = require("mongodb");
+const mongoose = require("mongoose");
 const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
@@ -25,6 +27,10 @@ describe("Integration", () => {
 		after(async() => {
 			await removeTestUsers(["test1@example.com", "test2@example.com"]);
 			await closeServer();
+
+			// Clear file storage
+			const bucket = new mongodb.GridFSBucket(mongoose.connection.db);
+			await bucket.drop();
 		});
 
 		describe("When not logged in", () => {

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { MongoGridFS } = require("mongo-gridfs");
-
+const Errors = require("../../helpers/errorHandler");
 
 module.exports = (req, res, next) => {
 	const gridFS = new MongoGridFS(mongoose.connection.db, "fs");
@@ -15,8 +15,9 @@ module.exports = (req, res, next) => {
 			});
 
 			if (Object.keys(query).indexOf("download") !== -1) {
+				const name = item.metadata ? item.metadata.originalname || "download" : "download";
 				res.set({
-					"Content-Disposition": `attachment; filename="${item.metadata.originalname}"`,
+					"Content-Disposition": `attachment; filename="${name}"`,
 				});
 			}
 
@@ -29,5 +30,11 @@ module.exports = (req, res, next) => {
 				})
 				.pipe(res);
 		})
-		.catch(next);
+		.catch((err) => {
+			if (err.message === "No Object found") {
+				return next(Errors.ItemNotFound);
+			}
+
+			next(err);
+		});
 };

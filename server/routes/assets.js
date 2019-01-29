@@ -73,6 +73,6 @@ module.exports = (router) => {
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("query", Validations.query, Errors.ObjectValidationFailed),
-			Controller.get,
+			Controller.getById,
 		);
 };

@@ -1,4 +1,4 @@
 module.exports = {
 	create: require("./create"),
-	get: require("./get"),
+	getById: require("./getById"),
 };
