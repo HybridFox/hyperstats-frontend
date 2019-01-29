@@ -18,8 +18,8 @@ before(async() => {
 
 	console.log("Cleaning up DB ..."); // eslint-disable-line no-console
 
-	await CompanyModel.remove({}).exec();
-	await UserModel.remove({}).exec();
+	await CompanyModel.remove({ _id: { $ne: "5c485d0029abc50032947f91" } }).exec();
+	await UserModel.remove({ "data.firstname": "__firstname_test-user__remove_identifier__" }).exec();
 
 	console.log("DB cleaned!"); // eslint-disable-line no-console
 
