@@ -13,4 +13,7 @@ module.exports = {
 			country: "BE",
 		},
 	},
+	meta: {
+		type: "R",
+	},
 };

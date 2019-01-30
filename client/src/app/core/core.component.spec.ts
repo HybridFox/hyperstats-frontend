@@ -1,5 +1,7 @@
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './services/language';
 import { CoreComponent } from './core.component';
@@ -27,7 +29,9 @@ describe('CoreComponent', () => {
       imports: [
         TranslateModule.forRoot(),
         NgReduxTestingModule,
-        RouterTestingModule
+        RouterTestingModule,
+        MatMenuModule,
+        MatButtonModule,
       ],
       declarations: [
         CoreComponent,

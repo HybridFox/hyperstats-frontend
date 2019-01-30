@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-30T14:08:24.981Z\n"
+"POT-Creation-Date: 2019-01-30T14:16:17.917Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -166,6 +166,9 @@ msgstr "Login"
 
 msgid "GENERAL##MENU##LOGOFF"
 msgstr "Logoff"
+
+msgid "GENERAL##MENU##MORE"
+msgstr "More..."
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
