@@ -47,7 +47,6 @@
 			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
-			"TOKEN": "",
 			"TRY-AGAIN": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
@@ -124,6 +123,7 @@
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
+			"ISRESET": "",
 			"TITLE": ""
 		},
 		"VERIFICATION-FAILED": {

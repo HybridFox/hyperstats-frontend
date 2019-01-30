@@ -46,7 +46,6 @@
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
-            "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
@@ -124,6 +123,7 @@
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
+            "ISRESET": "Your password has been reset",
             "TITLE": "Reset your password"
         },
         "VERIFICATION-FAILED": {

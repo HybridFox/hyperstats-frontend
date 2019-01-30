@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-25T09:08:55.445Z\n"
-"PO-Revision-Date: 2019-01-25T09:08:55.445Z\n"
+"POT-Creation-Date: 2019-01-30T10:44:17.365Z\n"
+"PO-Revision-Date: 2019-01-30T10:44:17.365Z\n"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr ""
@@ -129,9 +129,6 @@ msgid "GENERAL##LABELS##SUBJECT"
 msgstr ""
 
 msgid "GENERAL##LABELS##SUBMIT"
-msgstr ""
-
-msgid "GENERAL##LABELS##TOKEN"
 msgstr ""
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
@@ -288,6 +285,9 @@ msgid "PAGE##REPORTS##FILLED"
 msgstr ""
 
 msgid "PAGE##REPORTS##TITLE"
+msgstr ""
+
+msgid "PAGE##RESET-PASSWORD##ISRESET"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
