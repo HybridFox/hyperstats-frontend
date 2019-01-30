@@ -1,8 +1,12 @@
 const joi = require("joi");
+const { schemas } = require("../../../helpers/validation");
 
-module.exports = joi.object().keys({
-	body: joi.object().keys({
-		token: joi.string().required(),
-		password: joi.string().required(),
-	}),
+const schema = joi.object().keys({
+	token: joi.string().required(),
+	password: joi.string().required(),
 });
+
+module.exports = {
+	options: schemas.presets.options.stripUnknown,
+	schema,
+};

@@ -1,4 +1,5 @@
-const validationHelper = require("../helpers/validation");
+const dataMiddleware = require("../middleware/data");
+const Errors = require("../helpers/errorHandler");
 const profileController = require("../controllers/profile");
 const profileValidations = require("../controllers/profile/validations");
 const authMiddleware = require("../middleware/auth");
@@ -117,7 +118,8 @@ module.exports = (router) => {
 		.get(authMiddleware.isLoggedIn, profileController.get)
 		.put(
 			authMiddleware.isLoggedIn,
-			validationHelper.middleware(profileValidations.update),
+			dataMiddleware.copy,
+			dataMiddleware.validate("body", profileValidations.update, Errors.ObjectValidationFailed),
 			profileController.update
 		);
 
@@ -145,7 +147,8 @@ module.exports = (router) => {
 	router.route("/profile/company")
 		.put(
 			authMiddleware.isLoggedIn,
-			validationHelper.middleware(profileValidations.updateCompany),
+			dataMiddleware.copy,
+			dataMiddleware.validate("body", profileValidations.updateCompany, Errors.ObjectValidationFailed),
 			profileController.updateCompany
 		);
 };

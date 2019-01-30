@@ -1,11 +1,9 @@
-const { clone } = require("ramda");
-
 module.exports = (req, res, next) => {
 	req.data = {
-		body: clone(req.body),
-		headers: clone(req.headers),
-		params: clone(req.params),
-		query: clone(req.query),
+		body: req.body,
+		headers: req.headers,
+		params: req.params,
+		query: req.query,
 	};
 	next();
 };
