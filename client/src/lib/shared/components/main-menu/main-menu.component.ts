@@ -1,5 +1,7 @@
-import { Component, Input, HostListener, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { dropLast, takeLast } from 'ramda';
+import { Component, Input, HostListener, ViewChild, ElementRef, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+import { dropLast, takeLast, take, drop } from 'ramda';
+import { Subject } from 'rxjs';
+import { debounceTime, takeUntil } from 'rxjs/operators';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 @Component({
@@ -7,10 +9,10 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
     templateUrl: './main-menu.component.html',
 })
 
-export class MainMenuComponent implements AfterViewInit {
+export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
     @Input() profile: any;
     @ViewChild('container') public container: ElementRef;
-    // @ViewChild('nav') public nav: ElementRef;
+    @ViewChild('nav') public nav: ElementRef;
 
     public navItems = [
         { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/reports'] },
@@ -19,44 +21,79 @@ export class MainMenuComponent implements AfterViewInit {
         { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/proxies'] },
         { title: ngxExtract('GENERAL.MENU.AUDITTRIAL'), link: ['/audit-trail'] },
     ];
-    public filteredNavItems = [...this.navItems];
-    public extra = [];
+    public filteredNavItems: any[] = [...this.navItems];
+    public extra: any[] = [];
+    public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public containerWidth: Subject<number> = new Subject<number>();
+    public navWidth: Subject<number> = new Subject<number>();
+
+    public ngOnInit() {
+        this.containerWidth
+            .pipe(
+                debounceTime(100),
+                takeUntil(this.componentDestroyed$),
+            )
+            .subscribe((containerWidth) => {
+                const navWidth = this.nav.nativeElement.offsetWidth;
+
+                if (navWidth > containerWidth) {
+                    this.removeItem();
+                } else if (this.extra.length > 0) {
+                   this.addItem();
+                }
+            });
+    }
 
     public ngAfterViewInit() {
-        console.log('ngAfterViewInit');
-
         setTimeout(() => {
-            this.addItem();
-        }, 100);
+            this.setWidth();
+        }, 50);
+    }
 
+    public ngOnDestroy() {
+        this.componentDestroyed$.next(true);
+        this.componentDestroyed$.complete();
     }
 
     @HostListener('window:resize', ['$event'])
     public onResize(event) {
-
-        this.addItem();
-        // console.log(containerWidth);
-        // console.log(navWidth);
-        // console.log(this.container.nativeElement.scrollWidth);
-        // // console.log(event.target.innerWidth);
+        this.setWidth();
     }
 
-    public addItem() {
-        if (!this.container) {
-            return;
+    public setWidth() {
+        if (this.container && this.nav) {
+            this.containerWidth.next(this.container.nativeElement.offsetWidth);
+            this.navWidth.next(this.nav.nativeElement.offsetWidth);
         }
+    }
 
-        const containerWidth = this.container.nativeElement.offsetWidth;
-        const scrollContainerWidth = this.container.nativeElement.scrollWidth;
+    private removeItem() {
+        this.filteredNavItems = dropLast(1, this.filteredNavItems);
+        this.extra = takeLast(this.navItems.length - this.filteredNavItems.length, this.navItems);
 
-        console.log(scrollContainerWidth > containerWidth);
-        if (scrollContainerWidth > containerWidth) {
-            this.filteredNavItems = dropLast(1, this.filteredNavItems);
-            this.extra = takeLast(this.navItems.length - this.filteredNavItems.length, this.navItems);
+        setTimeout(() => {
+            const containerWidth = this.container.nativeElement.offsetWidth;
+            const navWidth = this.nav.nativeElement.offsetWidth;
 
-            setTimeout(() => {
+            if (navWidth > containerWidth) {
+                this.removeItem();
+            }
+        }, 1);
+    }
+
+    private addItem() {
+        this.filteredNavItems = [...this.filteredNavItems, ...take(1, this.extra)];
+        this.extra = drop(1, this.extra);
+
+        setTimeout(() => {
+            const containerWidth = this.container.nativeElement.offsetWidth;
+            const navWidth = this.nav.nativeElement.offsetWidth;
+
+            if (this.extra.length > 0 && navWidth < containerWidth) {
                 this.addItem();
-            });
-        }
+            } else if (navWidth > containerWidth) {
+                this.removeItem();
+            }
+        }, 1);
     }
 }

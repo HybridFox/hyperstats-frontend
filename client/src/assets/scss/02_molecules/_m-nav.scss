@@ -1,6 +1,7 @@
 .m-navigation-container {
     max-width: 100%;
     overflow: hidden;
+    display: flex;
 }
 
 .m-navigation {
@@ -32,5 +33,15 @@
         color: inherit;
         background-color: inherit;
         line-height: inherit;
+    }
+}
+
+.m-sub-navigation__item {
+    padding: 0 10px;
+    line-height: 2;
+
+    a {
+        color: $black;
+        text-decoration: none;
     }
 }
