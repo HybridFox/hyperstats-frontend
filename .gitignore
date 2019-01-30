@@ -270,6 +270,7 @@ test/coverage
 # Sessions on the filesystem
 .sessions
 server/data
+data
 dist
 test-results
 
