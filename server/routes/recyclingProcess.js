@@ -74,7 +74,6 @@ module.exports = (router) => {
 		)
 		.post(
 			AuthMiddleware.isLoggedIn,
-			DataMiddleware.copy,
 			DataMiddleware.validate("body", Validations.create, Errors.ObjectValidationFailed),
 			Controller.create
 		);
@@ -114,20 +113,17 @@ module.exports = (router) => {
 	router.route("/recycling-processes/:id")
 		.get(
 			AuthMiddleware.isLoggedIn,
-			DataMiddleware.copy,
 			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
 			Controller.getById
 		)
 		.put(
 			AuthMiddleware.isLoggedIn,
-			DataMiddleware.copy,
 			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
 			Controller.update
 		)
 		.delete(
 			AuthMiddleware.isLoggedIn,
-			DataMiddleware.copy,
 			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
 			Controller.remove
 		);
