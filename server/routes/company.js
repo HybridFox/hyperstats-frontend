@@ -165,7 +165,7 @@ module.exports = (router) => {
 	 *         required: true
 	 *         type: string
 	 *     responses:
-	 *       201:
+	 *       204:
 	 *         description: Company
 	 */
 	router.route("/company/:id")
