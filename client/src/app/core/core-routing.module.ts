@@ -51,6 +51,7 @@ const routes: Routes = [
   },
   {
     path: 'help',
+    canActivate: [AuthGuard],
     component: Pages.HelpPageComponent,
     children: [
       { path: ':section', component: Pages.HelpSectionPageComponent },

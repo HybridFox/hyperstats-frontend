@@ -28,6 +28,7 @@ const CompanySchema = mongoose.Schema({
 			},
 			country: {
 				type: String,
+				required: true,
 			},
 		},
 		contactPerson: {
@@ -58,6 +59,10 @@ const CompanySchema = mongoose.Schema({
 			type: Date,
 			required: true,
 			default: Date.now,
+		},
+		managedBy: {
+			type: String,
+			ref: "Company",
 		},
 		type: {
 			type: String,
