@@ -14,7 +14,7 @@ module.exports = async(body) => {
 			lastname: body.lastname,
 			email: body.email,
 			subject: body.subject,
-			body: body.body,
+			body: body.body.replace(/\n\r?/g, '<br>'),
 		},
 		replyTo: body.email,
 	})));
