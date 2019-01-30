@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-30T10:44:17.365Z\n"
+"POT-Creation-Date: 2019-01-30T14:08:24.981Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -240,6 +240,16 @@ msgstr "Company information"
 
 msgid "PAGE##CONTACT##TITLE"
 msgstr "Contact"
+
+#, fuzzy
+#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+#, fuzzy
+#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"

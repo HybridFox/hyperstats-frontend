@@ -84,6 +84,12 @@
 		"CONTACT": {
 			"TITLE": ""
 		},
+		"FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"PROFILE": {
 			"TITLE": ""
 		},
