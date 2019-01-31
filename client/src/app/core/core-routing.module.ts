@@ -33,7 +33,10 @@ const routes: Routes = [
   },
   {
     path: 'reset-password',
-    component: Pages.ResetPasswordPageComponent
+    component: Pages.ResetPasswordPageComponent,
+    data: {
+      menuState: 'transparant'
+    }
   },
   {
     path: 'verification-succeeded',

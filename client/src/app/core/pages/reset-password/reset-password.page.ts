@@ -16,6 +16,7 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
     public resetPasswordForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
     public token: string;
+    public isReset = false;
 
     constructor(
         private authAction: AuthActions,
@@ -51,6 +52,7 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.TITLE') as string
             );
+            this.isReset = true;
             this.resetPasswordForm.reset();
         }).catch(() => {
             this.toastrService.error(
