@@ -38,20 +38,24 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/users:
+	 * /api/users/{id}:
+	 *   parameters:
+	 *     - in: path
+	 *       name: id
+	 *       required: true
+	 *       description: uuid
+	 *       type: string
 	 *   get:
-	 *     description: Get all users
+	 *     description: Get user by id
 	 *     tags:
 	 *       - users
 	 *     produces:
 	 *       - application/json
 	 *     responses:
 	 *       200:
-	 *         description: Users
+	 *         description: User
 	 *         schema:
-	 *           type: array
-	 *           items:
-	 *             $ref: '#/definitions/User'
+	 *           $ref: '#/definitions/User'
 	 */
 	router.route("/users")
 		.get(
