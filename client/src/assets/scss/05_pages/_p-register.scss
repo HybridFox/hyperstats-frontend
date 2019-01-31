@@ -27,6 +27,10 @@
         text-align: right;
         text-transform: capitalize;
     }
+
+    &__visual {
+        max-width: 350px;
+    }
 }
 
 @media(max-width: 500px) {
