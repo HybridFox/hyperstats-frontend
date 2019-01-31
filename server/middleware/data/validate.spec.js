@@ -12,22 +12,24 @@ describe("Validate data middleware", () => {
 				number: Joi.number().required(),
 			}),
 		};
-		const req =  {
-			body: {
-				string: "value",
-				number: 1,
+		const req = {
+			data: {
+				body: {
+					string: "value",
+					number: 1,
+				},
 			},
 		};
 		const res = {};
 
 		validate("data", preset, Errors.ObjectValidationFailed, req, res, (err) => {
 			expect(err).to.be.undefined;
-			expect(req.body).to.have.all.keys([
+			expect(req.data.body).to.have.all.keys([
 				"string",
 				"number",
 			]);
-			expect(req.body.string).to.be.a("string");
-			expect(req.body.number).to.be.a("number");
+			expect(req.data.body.string).to.be.a("string");
+			expect(req.data.body.number).to.be.a("number");
 			done();
 		});
 	});
@@ -40,8 +42,10 @@ describe("Validate data middleware", () => {
 			}),
 		};
 		const req = {
-			body: {
-				value: "string",
+			data: {
+				body: {
+					value: "string",
+				},
 			},
 		};
 		const res = {};
@@ -62,8 +66,10 @@ describe("Validate data middleware", () => {
 			}),
 		};
 		const req = {
-			body: {
-				value: "string",
+			data: {
+				body: {
+					value: "string",
+				},
 			},
 		};
 		const res = {};

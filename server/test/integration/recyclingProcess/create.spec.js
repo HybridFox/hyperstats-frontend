@@ -79,6 +79,7 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(400)
 					.then(({ body }) => {
+						console.log(body);
 						expect(body).to.be.an("object");
 						expect(body.err[0].err).to.equal('"name" is required');
 					});

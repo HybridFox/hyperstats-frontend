@@ -75,6 +75,7 @@ module.exports = (router) => {
 		)
 		.post(
 			AuthMiddleware.isLoggedIn,
+			DataMiddleware.copy,
 			DataMiddleware.validate("body", Validations.create, Errors.ObjectValidationFailed),
 			Controller.create
 		);
