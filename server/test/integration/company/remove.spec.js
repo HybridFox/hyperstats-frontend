@@ -1,5 +1,5 @@
 const supertest = require("supertest");
-const { expect } = require("chai");
+require("chai");
 const { dissoc } = require("ramda");
 const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");

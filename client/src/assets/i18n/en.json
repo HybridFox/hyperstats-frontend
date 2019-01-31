@@ -46,7 +46,6 @@
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
-            "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
@@ -85,6 +84,12 @@
         },
         "CONTACT": {
             "TITLE": "Contact"
+        },
+        "FORGOT-PASSWORD": {
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
+            }
         },
         "PROFILE": {
             "TITLE": "Profile"
@@ -125,6 +130,7 @@
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
+            "ISRESET": "Your password has been reset",
             "TITLE": "Reset your password"
         },
         "VERIFICATION-FAILED": {

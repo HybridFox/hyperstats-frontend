@@ -3,6 +3,7 @@ const DataMiddleware = require("../middleware/data");
 const Errors = require("../helpers/errorHandler");
 const Controller = require("../controllers/recyclingProcess");
 const Validations = require("../controllers/recyclingProcess/validations");
+const ValidationPresets = require("../helpers/validation/presets");
 
 
 module.exports = (router) => {
@@ -115,20 +116,20 @@ module.exports = (router) => {
 		.get(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
+			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			Controller.getById
 		)
 		.put(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
+			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
 			Controller.update
 		)
 		.delete(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ItemNotFound),
+			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			Controller.remove
 		);
 };

@@ -12,6 +12,7 @@ import { AuthActions } from '@store/auth';
 export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
     public resetPasswordForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public isSent = false;
 
     constructor(
         private authAction: AuthActions,
@@ -37,6 +38,7 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.TITLE') as string
             );
+            this.isSent = true;
             this.resetPasswordForm.reset();
         }).catch(() => {
             this.toastrService.error(
