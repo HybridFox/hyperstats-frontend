@@ -29,6 +29,12 @@
   }
 }
 
+.mat-button {
+  line-height: 21px !important;
+  border: 1px solid !important;
+  padding: $spacer-x-small $spacer-large !important;
+}
+
 // Button types.
 .a-button--primary {
   @extend .a-button;
