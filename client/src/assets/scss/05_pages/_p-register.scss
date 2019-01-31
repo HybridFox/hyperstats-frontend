@@ -29,7 +29,9 @@
     }
 
     &__visual {
-        max-width: 350px;
+        max-width: 200px;
+        display: block;
+        margin: 0 auto $spacer-xx-large auto;
     }
 }
 

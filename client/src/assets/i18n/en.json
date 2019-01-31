@@ -138,8 +138,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your registration is now complete, please login to continue",
-            "TITLE": "Success!"
+            "TITLE": "Success! Your registration is now complete, please login to continue"
         }
     },
     "TOAST": {

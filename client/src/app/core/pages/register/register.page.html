@@ -33,7 +33,7 @@
                 <input type="submit" [disabled]="!registerForm.valid" [value]="'GENERAL.LABELS.REGISTER' | translate" class="a-button a-button--primary a-button--small">
             </form>
         </div>
-        <div *ngIf="registerSucceeded">
+        <div *ngIf="registerSucceeded" class="u-align-center">
             <img src="./assets/images/mail_sent.svg" alt="Mail sent" class="p-register__visual">
             <h1 class="p-register__title">{{ 'PAGE.REGISTER.VERIFY-EMAIL' | translate }}</h1>
         </div>
