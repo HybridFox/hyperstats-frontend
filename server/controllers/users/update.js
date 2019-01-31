@@ -1,9 +1,9 @@
-const recyclingProcessManager = require("./helpers/recyclingProcessManager");
+const Manager = require("./helpers/userManager");
 const ResponseHandler = require("./helpers/responseManager");
 
 module.exports = (req, res, next) => {
 	const id = req.data.params.id;
-	recyclingProcessManager.getById(id)
+	Manager.update(id, req.data.body)
 		.then((data) => {
 			try {
 				res.status(200).json(ResponseHandler.formatUser(data));
