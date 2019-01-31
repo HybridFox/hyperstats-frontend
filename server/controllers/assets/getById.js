@@ -5,8 +5,8 @@ const Errors = require("../../helpers/errorHandler");
 module.exports = (req, res, next) => {
 	const gridFS = new MongoGridFS(mongoose.connection.db, "fs");
 
-	const id = req.params.id;
-	const query = req.query;
+	const id = req.data.params.id;
+	const query = req.data.query;
 
 	gridFS.findById(id)
 		.then((item) => {
