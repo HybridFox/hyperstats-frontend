@@ -122,7 +122,7 @@
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
-            "VERIFY-EMAIL": "Verify email"
+            "VERIFY-EMAIL": "An email has been send to you"
         },
         "REPORTS": {
             "DRAFT": "Draft",
@@ -138,7 +138,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
+            "CONTENT": "Your registration is now complete, please login to continue",
             "TITLE": "Success!"
         }
     },

@@ -335,7 +335,7 @@ msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr "Recycling Processes"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr "Verify email"
+msgstr "An email has been send to you"
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
@@ -361,8 +361,7 @@ msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
-msgstr ""
-"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
+msgstr "Your registration is now complete, please login to continue"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success!"
