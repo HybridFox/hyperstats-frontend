@@ -4,7 +4,7 @@ const chaiAsPromised = require("chai-as-promised");
 const Model = require("../../../../models/user");
 const { mockMongoose } = require("../../../../test/mocks");
 const Users = require("../../../../test/mocks/users");
-const Errors = require("../../../../helpers/errorHandler");
+// const Errors = require("../../../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
