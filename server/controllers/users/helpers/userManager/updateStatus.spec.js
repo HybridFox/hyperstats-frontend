@@ -4,6 +4,7 @@ const chaiAsPromised = require("chai-as-promised");
 const Model = require("../../../../models/user");
 const { mockMongoose } = require("../../../../test/mocks");
 const Users = require("../../../../test/mocks/users");
+const Errors = require("../../../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
@@ -37,4 +38,11 @@ describe("Get User", () => {
 		expect(result.data.email).to.equal(Users[0].data.email);
 		expect(result.meta.status).to.equal("DEACTIVATED");
 	});
+
+	// Todo: change Error string to new Error
+	// it("Should throw error if user id doesn't exist,", async() => {
+	// 	const result = await updateStatus("507f191e810c19729de860ea", "DEACTIVATED");
+
+	// 	expect(result).to.throw(Errors.ItemNotFound);
+	// });
 });
