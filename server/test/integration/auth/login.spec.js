@@ -37,6 +37,9 @@ describe("Integration", () => {
 						lastname: "Smith",
 						isAdmin: false,
 						email: "validuser@example.com",
+						status: {
+							type: "ACTIVATED",
+						},
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");
