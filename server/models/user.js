@@ -38,6 +38,13 @@ const UserSchema = mongoose.Schema({
 			required: true,
 			default: Date.now,
 		},
+		status: {
+			type: {
+				type: String,
+				enum: ["ACTIVATED", "DEACTIVATED"],
+				default: "ACTIVATED",
+			},
+		},
 		isAdmin: {
 			type: Boolean,
 			required: true,
