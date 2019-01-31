@@ -130,7 +130,7 @@
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
-            "ISRESET": "Your password has been reset",
+            "ISRESET": "Your password has been reset! Please login to continiou",
             "TITLE": "Reset your password"
         },
         "VERIFICATION-FAILED": {

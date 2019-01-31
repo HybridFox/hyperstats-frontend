@@ -346,10 +346,8 @@ msgstr "Filed"
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
 
-#, fuzzy
-#| msgid "PAGE##RESET-PASSWORD##TITLE-ISRESET"
 msgid "PAGE##RESET-PASSWORD##ISRESET"
-msgstr "Your password has been reset"
+msgstr "Your password has been reset! Please login to continiou"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
