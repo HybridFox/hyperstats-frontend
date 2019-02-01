@@ -8,10 +8,10 @@ import { SharedModule } from '@shared/shared.module';
 import { ReportsRoutingModule } from './recycling-partners-routing.module';
 
 import { StoreService } from '@store/store.service';
-import { recyclingProcessesReducer } from './store/reducers';
+import { recyclingPartnerReducer } from './store/reducers';
 import { ReportsServices } from './store';
 
-import { ReportsApiModule } from '@api/reports';
+import { RecyclingPartnerApiModule } from '@api/recycling-partner';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
@@ -21,7 +21,7 @@ import { Pages } from './pages';
     CommonModule,
     ReportsRoutingModule,
     SharedModule,
-    ReportsApiModule,
+    RecyclingPartnerApiModule,
     FormFieldsModule
   ],
   providers: [
@@ -36,6 +36,6 @@ export class RecyclingPartnersModule {
   constructor(
     private storeService: StoreService,
   ) {
-    this.storeService.injectAsyncReducer('recyclingPartners', recyclingProcessesReducer);
+    this.storeService.injectAsyncReducer('recyclingPartners', recyclingPartnerReducer);
   }
 }

@@ -1,5 +1,5 @@
-export const TYPE_LIST = 'RECYCLING_PROCESSES';
-export const TYPE_DETAIL = 'RECYCLING_PROCESS';
+export const TYPE_LIST = 'RECYCLING_PARTNER';
+export const TYPE_DETAIL = 'RECYCLING_PARTNER';
 
 export const ACTIONS = {
   FETCH_ALL: `${TYPE_LIST}/FETCH`,
