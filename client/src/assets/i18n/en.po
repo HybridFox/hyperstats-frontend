@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-30T14:16:17.917Z\n"
+"POT-Creation-Date: 2019-01-31T15:02:46.612Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -335,7 +335,7 @@ msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr "Recycling Processes"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr "Verify email"
+msgstr "An email has been send to you"
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
@@ -346,10 +346,8 @@ msgstr "Filed"
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
 
-#, fuzzy
-#| msgid "PAGE##RESET-PASSWORD##TITLE-ISRESET"
 msgid "PAGE##RESET-PASSWORD##ISRESET"
-msgstr "Your password has been reset"
+msgstr "Your password has been reset! Please login to continiou"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
@@ -360,12 +358,8 @@ msgstr "We are having trouble verifying your email, please try again later"
 msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr "Something went wrong"
 
-msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
-msgstr ""
-"Your email is now validated you can now login lorem ipsum doler sit amet etc…"
-
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
-msgstr "Success!"
+msgstr "Success! Your registration is now complete, please login to continue"
 
 msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
 msgstr "Please try again later"
@@ -630,6 +624,9 @@ msgstr "Recycling Efficiency"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#~ msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
+#~ msgstr "Your registration is now complete, please login to continue"
 
 #~ msgid "GENERAL##LABELS##TOKEN"
 #~ msgstr "Token"

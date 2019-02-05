@@ -97,6 +97,9 @@ describe("Integration", () => {
 					expect(omit(["created", "lastUpdated", "company"], res.body)).to.deep.equal({
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
+						status: {
+							type: "ACTIVATED",
+						},
 						isAdmin: false,
 						email: "passwordreset@example.com",
 					});

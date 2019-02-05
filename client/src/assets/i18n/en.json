@@ -122,7 +122,7 @@
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
-            "VERIFY-EMAIL": "Verify email"
+            "VERIFY-EMAIL": "An email has been send to you"
         },
         "REPORTS": {
             "DRAFT": "Draft",
@@ -130,7 +130,7 @@
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
-            "ISRESET": "Your password has been reset",
+            "ISRESET": "Your password has been reset! Please login to continiou",
             "TITLE": "Reset your password"
         },
         "VERIFICATION-FAILED": {
@@ -138,8 +138,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
-            "TITLE": "Success!"
+            "TITLE": "Success! Your registration is now complete, please login to continue"
         }
     },
     "TOAST": {
