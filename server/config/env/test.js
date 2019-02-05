@@ -8,7 +8,7 @@ module.exports = {
 			domain: "",
 		},
 		mongo: {
-			url: process.env.CIRCLECI ? "mongodb://localhost:27017/rare" : "mongodb://mongodb-rare/rare",
+			url: process.env.CIRCLECI ? "mongodb://localhost:27017/rare" : "mongodb://mongodb-rare/rare-test",
 		},
 	},
 	gmail: {},

@@ -60,7 +60,7 @@ module.exports = (router) => {
 	 *       - any
 	 *     parameters:
 	 *       - in: query
-	 *         name: doanlow
+	 *         name: download
 	 *         type: boolean
 	 *     responses:
 	 *       200:

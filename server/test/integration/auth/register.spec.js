@@ -140,6 +140,9 @@ describe("Integration", () => {
 						firstname: "Jef",
 						isAdmin: false,
 						lastname: "Awesome",
+						status: {
+							type: "ACTIVATED",
+						},
 					});
 				});
 		});
