@@ -43,7 +43,7 @@ describe("Integration", () => {
 		describe("When not logged in", () => {
 			it("Should not fetch user by id", () => {
 				return supertest(server)
-					.get("/api/users")
+					.get(`/api/users/${userId}`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
