@@ -9,7 +9,7 @@ const Users = require("../../../../test/mocks/users");
 should();
 use(chaiAsPromised);
 
-describe("Get User", () => {
+describe("Update User Status", () => {
 	let updateStatus;
 	let mongoServer;
 	let processId;
