@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-30T14:16:17.917Z\n"
-"PO-Revision-Date: 2019-01-30T14:16:17.917Z\n"
+"POT-Creation-Date: 2019-01-31T15:11:41.004Z\n"
+"PO-Revision-Date: 2019-01-31T15:11:41.004Z\n"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr ""
@@ -306,9 +306,6 @@ msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-FAILED##TITLE"
-msgstr ""
-
-msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"

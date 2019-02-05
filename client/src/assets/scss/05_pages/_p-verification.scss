@@ -20,6 +20,12 @@
         width: 40%;
         min-width: 600px;
     }
+
+    &__visual {
+        max-width: 200px;
+        display: block;
+        margin: 0 auto $spacer-xx-large auto;
+    }
 }
 
 @media(max-width: 500px) {
