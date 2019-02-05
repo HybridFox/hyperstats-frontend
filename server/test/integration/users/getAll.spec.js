@@ -87,7 +87,7 @@ describe("Integration", () => {
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(7);
 						expect(body[0].data).to.deep.equal({
-							email: "test1@example.com",
+							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
@@ -103,7 +103,7 @@ describe("Integration", () => {
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(3);
 						expect(body[0].data).to.deep.equal({
-							email: "test1@example.com",
+							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
