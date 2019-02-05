@@ -33,10 +33,10 @@ describe("Company", () => {
 		it("Should get companies managed by the user", async() => {
 			const companies = await getCompanies({ type: "R", companyOfUser });
 
-			expect(companies).to.have.lengthOf(2);
+			expect(companies).to.have.lengthOf(3);
 			expect(companies[0]).to.be.an("object");
 			expect(companies[0].data).to.be.an("object");
-			expect(companies[0].data.name).to.equal("Some company");
+			expect(companies[0].data.name).to.equal("Company for user");
 		});
 
 		it("Should get no complience organization companies because the user does not maintain any", async() => {

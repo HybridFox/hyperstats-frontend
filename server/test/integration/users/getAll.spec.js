@@ -1,9 +1,12 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
+const { dissoc, set, lensPath } = require("ramda");
 const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
+const testCompany = require("../../helpers/testCompany");
+const companyMock = require("../../mocks/company");
 
 describe("Integration", () => {
 	describe("Users", () => {
@@ -11,8 +14,21 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let rp;
+		let co;
 
 		before(async() => {
+			const { server: s, closeServer: c, reset: r } = await startServer();
+
+			server = s;
+			closeServer = c;
+			reset = r;
+
+			const baseCompany = dissoc("_id", companyMock);
+
+			rp = await testCompany.create(set(lensPath(["meta", "type"]), "RP")(baseCompany));
+			co = await testCompany.create(set(lensPath(["meta", "type"]), "CO")(baseCompany));
+
 			await createTestUser({
 				email: "test1@example.com",
 				isAdmin: true,
@@ -24,17 +40,23 @@ describe("Integration", () => {
 			await createTestUser({
 				email: "test3@example.com",
 				isAdmin: false,
+				company: rp._id,
 			});
 			await createTestUser({
 				email: "test4@example.com",
 				isAdmin: false,
+				company: rp._id,
 			});
-
-			const { server: s, closeServer: c, reset: r } = await startServer();
-
-			server = s;
-			closeServer = c;
-			reset = r;
+			await createTestUser({
+				email: "test5@example.com",
+				isAdmin: false,
+				company: co._id,
+			});
+			await createTestUser({
+				email: "test6@example.com",
+				isAdmin: false,
+				company: co._id,
+			});
 
 			cookie = (await loginUser(server)).cookie;
 		});
@@ -42,7 +64,7 @@ describe("Integration", () => {
 		afterEach(() => reset());
 
 		after(async() => {
-			await removeTestUsers(["test1@example.com", "test2@example.com", "test3@example.com", "test4@example.com"]);
+			await removeTestUsers(["test1@example.com", "test2@example.com", "test3@example.com", "test4@example.com", "test5@example.com", "test6@example.com"]);
 			await closeServer();
 		});
 
@@ -63,9 +85,57 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
-						expect(body).to.be.an("array").to.have.lengthOf(5);
+						expect(body).to.be.an("array").to.have.lengthOf(7);
 						expect(body[0].data).to.deep.equal({
 							email: "test1@example.com",
+							firstname: "__firstname_test-user__remove_identifier__",
+							lastname: "Smith",
+						});
+					});
+			});
+
+			it("Should fetch users by recycler type", () => {
+				return supertest(server)
+					.get("/api/users?type=R")
+					.set("cookie", cookie)
+					.expect("Content-Type", /json/)
+					.expect(200)
+					.then(({ body }) => {
+						expect(body).to.be.an("array").to.have.lengthOf(3);
+						expect(body[0].data).to.deep.equal({
+							email: "test1@example.com",
+							firstname: "__firstname_test-user__remove_identifier__",
+							lastname: "Smith",
+						});
+					});
+			});
+
+			it("Should fetch users by recycler partner type", () => {
+				return supertest(server)
+					.get("/api/users?type=RP")
+					.set("cookie", cookie)
+					.expect("Content-Type", /json/)
+					.expect(200)
+					.then(({ body }) => {
+						expect(body).to.be.an("array").to.have.lengthOf(2);
+						expect(body[0].data).to.deep.equal({
+							email: "test3@example.com",
+							firstname: "__firstname_test-user__remove_identifier__",
+							lastname: "Smith",
+						});
+					});
+			});
+
+			it("Should fetch users by recycler process type", () => {
+				return supertest(server)
+					.get("/api/users?type=CO")
+					.set("cookie", cookie)
+					.expect("Content-Type", /json/)
+					.expect(200)
+					.then(({ body }) => {
+						expect(body).to.be.an("array").to.have.lengthOf(2);
+						expect(body[0].data).to.deep.equal({
+							email: "test5@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});

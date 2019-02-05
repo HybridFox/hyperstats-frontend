@@ -1,5 +1,5 @@
 module.exports = {
-	byId: require("./byId"),
+	filters: require("./filters"),
 	response: require("./response"),
 	update: require("./update"),
 	updateStatus: require("./updateStatus"),
