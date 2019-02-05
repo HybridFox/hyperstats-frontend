@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-29T13:51:33.617Z\n"
+"POT-Creation-Date: 2019-01-30T14:16:17.917Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
@@ -134,9 +134,6 @@ msgstr "Subject"
 msgid "GENERAL##LABELS##SUBMIT"
 msgstr "Submit"
 
-msgid "GENERAL##LABELS##TOKEN"
-msgstr "Token"
-
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
 
@@ -247,6 +244,16 @@ msgstr "Company information"
 msgid "PAGE##CONTACT##TITLE"
 msgstr "Contact"
 
+#, fuzzy
+#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "Please check your email for the link to reset your password"
+
+#, fuzzy
+#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
+
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
 
@@ -338,6 +345,11 @@ msgstr "Filed"
 
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
+
+#, fuzzy
+#| msgid "PAGE##RESET-PASSWORD##TITLE-ISRESET"
+msgid "PAGE##RESET-PASSWORD##ISRESET"
+msgstr "Your password has been reset"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
@@ -618,3 +630,6 @@ msgstr "Recycling Efficiency"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#~ msgid "GENERAL##LABELS##TOKEN"
+#~ msgstr "Token"

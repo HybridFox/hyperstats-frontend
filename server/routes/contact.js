@@ -1,4 +1,5 @@
-const validationHelper = require("../helpers/validation");
+const dataMiddleware = require("../middleware/data");
+const Errors = require("../helpers/errorHandler");
 const contactController = require("../controllers/contact");
 const contactValidations = require("../controllers/contact/validations");
 
@@ -42,5 +43,9 @@ module.exports = (router) => {
 	 *                type: boolean
 	 */
 	router.route("/contact/send-mail")
-		.post(validationHelper.middleware(contactValidations.sendMail), contactController.sendMail);
+		.post(
+			dataMiddleware.copy,
+			dataMiddleware.validate("body", contactValidations.sendMail, Errors.ObjectValidationFailed),
+			contactController.sendMail
+		);
 };

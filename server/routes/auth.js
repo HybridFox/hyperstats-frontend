@@ -1,4 +1,5 @@
-const validationHelper = require("../helpers/validation");
+const dataMiddleware = require("../middleware/data");
+const Errors = require("../helpers/errorHandler");
 const authController = require("../controllers/auth");
 const authValidations = require("../controllers/auth/validations");
 const authMiddleware = require("../middleware/auth");
@@ -78,7 +79,8 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/UserLoginResponse'
 	 */
 	router.route("/auth/login").post(
-		validationHelper.middleware(authValidations.login),
+		dataMiddleware.copy,
+		dataMiddleware.validate("body", authValidations.login, Errors.ObjectValidationFailed),
 		authController.login
 	);
 
@@ -95,7 +97,10 @@ module.exports = (router) => {
 	 *       201:
 	 *         description: Success
 	 */
-	router.route("/auth/logout").get(authMiddleware.isLoggedIn, authController.logout);
+	router.route("/auth/logout").get(
+		authMiddleware.isLoggedIn,
+		authController.logout
+	);
 
 	/**
 	 * @swagger
@@ -122,7 +127,8 @@ module.exports = (router) => {
 	 *               type: boolean
 	 */
 	router.route("/auth/register").post(
-		validationHelper.middleware(authValidations.register, false),
+		dataMiddleware.copy,
+		dataMiddleware.validate("body", authValidations.register, Errors.ObjectValidationFailed),
 		authController.register
 	);
 
@@ -145,7 +151,8 @@ module.exports = (router) => {
 	 *         description: Redirect to verify landing page (/verification-succeeded or /verification-failed)
 	 */
 	router.route("/auth/verify").get(
-		validationHelper.middleware(authValidations.verify),
+		dataMiddleware.copy,
+		dataMiddleware.validate("query", authValidations.verify, Errors.ObjectValidationFailed),
 		authController.verify
 	);
 
@@ -169,7 +176,8 @@ module.exports = (router) => {
 	 *         description: Success
 	 */
 	router.route("/auth/request-password-reset").post(
-		validationHelper.middleware(authValidations.requestPasswordReset),
+		dataMiddleware.copy,
+		dataMiddleware.validate("body", authValidations.requestPasswordReset, Errors.ObjectValidationFailed),
 		authController.requestPasswordReset
 	);
 
@@ -193,7 +201,8 @@ module.exports = (router) => {
 	 *         description: Success
 	 */
 	router.route("/auth/reset-password").put(
-		validationHelper.middleware(authValidations.resetPassword),
+		dataMiddleware.copy,
+		dataMiddleware.validate("body", authValidations.resetPassword, Errors.ObjectValidationFailed),
 		authController.resetPassword
 	);
 };

@@ -39,7 +39,6 @@ module.exports = (router) => {
 	router.route("/assets")
 		.post(
 			AuthMiddleware.isLoggedIn,
-			DataMiddleware.copy,
 			// can't validate multipart with joi
 			...Controller.create,
 		);

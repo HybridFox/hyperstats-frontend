@@ -1,4 +1,6 @@
-const validationHelper = require("../helpers/validation");
+const dataMiddleware = require("../middleware/data");
+const validationPresets = require("../helpers/validation/presets");
+const Errors = require("../helpers/errorHandler");
 const companyController = require("../controllers/company");
 const companyValidations = require("../controllers/company/validations");
 const authMiddleware = require("../middleware/auth");
@@ -110,8 +112,15 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/CompanyResponse'
 	 */
 	router.route("/company/type/:type")
-		.get(companyController.getAll)
-		.post(validationHelper.middleware(companyValidations.company), companyController.create);
+		.get(
+			dataMiddleware.copy,
+			companyController.getAll
+		)
+		.post(
+			dataMiddleware.copy,
+			dataMiddleware.validate("body", companyValidations.company, Errors.ObjectValidationFailed),
+			companyController.create
+		);
 
 	/**
 	 * @swagger
@@ -169,7 +178,20 @@ module.exports = (router) => {
 	 *         description: Company
 	 */
 	router.route("/company/:id")
-		.get(companyController.getOne)
-		.put(validationHelper.middleware(companyValidations.company), companyController.update)
-		.delete(companyController.remove);
+		.get(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			companyController.getOne
+		)
+		.put(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			dataMiddleware.validate("body", companyValidations.company, Errors.ObjectValidationFailed),
+			companyController.update
+		)
+		.delete(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			companyController.remove
+		);
 };
