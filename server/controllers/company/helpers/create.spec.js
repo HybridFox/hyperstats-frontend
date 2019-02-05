@@ -2,7 +2,7 @@ const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
-const createCompany = require("./createCompany");
+const createCompany = require("./create");
 
 should();
 use(chaiAsPromised);

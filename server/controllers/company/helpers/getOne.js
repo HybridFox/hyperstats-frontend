@@ -1,13 +1,13 @@
 const CompanyModel = require("../../../models/company");
 const ResponseError = require("../../../helpers/errors/responseError");
-const getCompanyQuery = require("./getCompanyQuery");
+const getCompanyQuery = require("./getQuery");
 
 module.exports = async({ _id, companyOfUser } = {}) => {
-	const response = await CompanyModel.remove(getCompanyQuery(_id, companyOfUser)).exec();
+	const company = await CompanyModel.findOne(getCompanyQuery(_id, companyOfUser)).lean().exec();
 
-	if (response.n === 0) {
+	if (!company) {
 		throw new ResponseError({ type: 404, msg: "Company not found", error: `Company not found for id: ${_id}` });
 	}
 
-	return;
+	return company;
 };
