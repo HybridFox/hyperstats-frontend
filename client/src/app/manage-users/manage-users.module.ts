@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 import { StoreService } from '@store/store.service';
+import { LoadingModule } from '@ui/loading';
 
 import { ManageUsersRoutingModule } from './manage-users-routing.module';
 
@@ -19,6 +20,7 @@ import { Pages } from './pages';
     HttpClientModule,
 
     ManageUsersRoutingModule,
+    LoadingModule,
   ],
   providers: [
     Services,

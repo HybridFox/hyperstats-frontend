@@ -1,0 +1,4 @@
+<cas-loading-template [loading]="(isLoading$ | async)" [type]="type"></cas-loading-template>
+
+
+<ng-content *ngIf="!(isLoading$ | async)"></ng-content>
