@@ -14,8 +14,14 @@ export class RecyclingPartnerRepository {
   public fetchAll(): Observable<any> {
     const url = this.apiConfig.baseUrl('/company/type/RP');
 
-    const test= this.http.get(url);
+    return this.http
+      .get(url);
+  }
 
-    return test;
+  public fetchDetail(id: string): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/company/${id}`);
+
+    return this.http
+      .get(url);
   }
 }

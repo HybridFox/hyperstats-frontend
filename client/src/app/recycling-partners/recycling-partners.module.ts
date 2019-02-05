@@ -15,6 +15,7 @@ import { RecyclingPartnerApiModule } from '@api/recycling-partner';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
+import { Components } from './components';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { Pages } from './pages';
   ],
   declarations: [
     Pages,
-    RecyclingPartnersComponent
+    RecyclingPartnersComponent,
+    Components
   ],
 })
 export class RecyclingPartnersModule {

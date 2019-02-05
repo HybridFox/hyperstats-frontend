@@ -1,31 +1,44 @@
-import { Component, OnInit, } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import countryList from 'country-list';
+import { ActivatedRoute } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
+import { select } from '@angular-redux/store';
+import { Observable, Subject } from 'rxjs';
+
+import { RecyclingPartnerActions, RecyclingPartnerSelector } from '../../store';
 import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
   selector: 'app-recycling-partner-page',
   templateUrl: './recycling-partner.page.html',
 })
-export class RecyclingPartnerPageComponent implements OnInit {
-    public recyclingPartnerForm: any;
-    public countryList: Option[];
+export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
+  @select(RecyclingPartnerSelector.detail.result) public recyclingPartner$: Observable<any>;
 
-    constructor(
-        private formBuilder: FormBuilder,
-    ) {}
+  public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+  public countryList: Option[];
 
-    public ngOnInit() {
-        this.recyclingPartnerForm = this.formBuilder.group({
-            name: ['', Validators.required],
-            country: ['', Validators.required],
-        });
+  constructor(
+    private recyclingPartnerActions: RecyclingPartnerActions,
+    private route: ActivatedRoute,
+  ) {}
 
-        this.countryList = countryList.getData().map(({code, name}) => ({
-            value: code,
-            label: name,
-        }));
-    }
+  public ngOnInit() {
+    this.countryList = countryList.getData().map(({code, name}) => ({
+      value: code,
+      label: name,
+  }));
 
-    public submit() {}
+  this.route.params
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe(params => {
+          this.recyclingPartnerActions.fetchDetail(params.recyclingPartner).toPromise();
+      });
+  }
+
+  public ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
+  }
+
 }

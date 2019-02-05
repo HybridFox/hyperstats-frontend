@@ -31,11 +31,34 @@ export class RecyclingPartnerActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.FETCH_ALL, {
-            payload: response,//this.entitiesActions.normalize(response, [EntitiesActions.schema.recyclingPartner])
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.recyclingPartner])
           });
         }),
         finalize(() => {
           this.handler.dispatchDone(ACTIONS.FETCH_ALL);
+        }),
+      );
+  }
+
+  public fetchDetail(id: string): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.FETCH);
+
+    return this.recyclingPartnerRepository.fetchDetail(id)
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.FETCH, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap((response: any) => {
+          this.handler.dispatchSuccess(ACTIONS.FETCH, {
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.recyclingPartner])
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.FETCH);
         }),
       );
   }
