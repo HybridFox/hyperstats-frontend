@@ -97,6 +97,10 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'admin',
+    loadChildren: '../admin/admin.module#AdminModule',
+  },
+  {
     path: 'privacy',
     component: Pages.PrivacyPageComponent
   }
