@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: Pages.OverviewPageComponent,
   },
+  {
+    path: ':id',
+    component: Pages.DetailPageComponent,
+  },
 ];
 
 @NgModule({

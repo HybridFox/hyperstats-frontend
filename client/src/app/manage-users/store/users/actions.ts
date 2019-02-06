@@ -39,4 +39,27 @@ export class UsersActions {
                 })
             );
     }
+
+    public fetchById(id: string): Observable<any> {
+        this.handler.dispatchStart(ACTIONS.DETAIL.FETCH);
+
+        return this.usersRepository.fetchById(id)
+            .pipe(
+                catchError((error) => {
+                    this.handler.dispatchError(ACTIONS.DETAIL.FETCH, {
+                      message: error.message,
+                    });
+
+                    return throwError(error);
+                }),
+                tap((response) => {
+                    this.handler.dispatchSuccess(ACTIONS.DETAIL.FETCH, {
+                        payload: this.entitiesActions.normalize(response, EntitiesActions.schema.user),
+                    });
+                }),
+                finalize(() => {
+                    this.handler.dispatchDone(ACTIONS.DETAIL.FETCH);
+                })
+            );
+    }
 }

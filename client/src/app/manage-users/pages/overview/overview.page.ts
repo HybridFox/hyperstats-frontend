@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
 
 import { UsersActions } from '../../store/users/actions';
 import { UserSelector } from '../../store/users/selectors';
@@ -8,8 +9,8 @@ import { UserSelector } from '../../store/users/selectors';
     templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit {
-    @select(UserSelector.result) public users$;
-    @select(UserSelector.loading) public loading$;
+    @select(UserSelector.overview.result) public users$: Observable<any>;
+    @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
 
     constructor(
         public usersActions: UsersActions,

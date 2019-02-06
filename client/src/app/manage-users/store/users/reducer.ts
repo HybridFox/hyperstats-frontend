@@ -14,10 +14,25 @@ const OverviewReducer = (
     return state;
 };
 
+const DetailReducer = (
+    state = null,
+    action,
+) => {
+    if (action.type === ACTIONS.DETAIL.FETCH) {
+        return action.payload;
+    }
+
+    return state;
+};
+
 
 export const Reducer = combineReducers({
     overview: progressReducer(
         { entityType: `${MODULE}/${OVERVIEW}` },
         OverviewReducer,
+    ),
+    detail: progressReducer(
+        { entityType: `${MODULE}/${OVERVIEW}` },
+        DetailReducer,
     ),
 });
