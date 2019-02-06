@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Option } from '@ui/form-fields/components/select/select.types';
 
@@ -7,7 +7,7 @@ import { Option } from '@ui/form-fields/components/select/select.types';
     templateUrl: './recycling-partner-form.html'
 })
 
-export class RecyclingPartnerFormComponent implements OnInit, OnDestroy {
+export class RecyclingPartnerFormComponent implements OnInit {
     @Input() public countryList: Option[];
     @Input() public recyclingPartner: any;
     public recyclingPartnerForm: FormGroup;
@@ -21,19 +21,56 @@ export class RecyclingPartnerFormComponent implements OnInit, OnDestroy {
     }
 
     private buildForm(value) {
+        console.log(value);
         this.recyclingPartnerForm = this.formBuilder.group({
-            company: ['', Validators.required],
-            street: ['', Validators.required],
-            number: ['', Validators.required],
-            box: ['', ''],
-            zipcode: ['', Validators.required],
-            city: ['', Validators.required],
-            country: ['', Validators.required],
-            name: ['', Validators.required],
-            function: ['', Validators.required],
-            phone: ['', Validators.required],
-            mobile: ['', Validators.required],
-            email: ['', Validators.required],
+            company: [
+                value.data.name,
+                Validators.required
+            ],
+            street: [
+                value.data.address.street,
+                Validators.required
+            ],
+            number: [
+                value.data.address.number,
+                Validators.required
+            ],
+            box: [
+                value.data.address.box,
+                ''
+            ],
+            zipcode: [
+                value.data.address.zipCode,
+                Validators.required
+            ],
+            city: [
+                value.data.address.city,
+                Validators.required
+            ],
+            country: [
+                value.data.address.country,
+                Validators.required
+            ],
+            name: [
+                value.data.contactPerson.name,
+                Validators.required
+            ],
+            function: [
+                value.data.contactPerson.function,
+                Validators.required
+            ],
+            phone: [
+                value.data.contactPerson.phone,
+                Validators.required
+            ],
+            mobile: [
+                value.data.contactPerson.mobile,
+                Validators.required
+            ],
+            email: [
+                value.data.contactPerson.email,
+                Validators.required
+            ],
         });
     }
 
