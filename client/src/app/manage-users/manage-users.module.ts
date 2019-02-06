@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { StoreService } from '@store/store.service';
 import { LoadingModule } from '@ui/loading';
+import { SharedModule } from '@shared/shared.module';
 
 import { ManageUsersRoutingModule } from './manage-users-routing.module';
 
@@ -20,6 +21,7 @@ import { Pages } from './pages';
     HttpClientModule,
 
     ManageUsersRoutingModule,
+    SharedModule,
     LoadingModule,
   ],
   providers: [

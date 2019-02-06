@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-01-31T15:11:41.004Z\n"
-"PO-Revision-Date: 2019-01-31T15:11:41.004Z\n"
+"POT-Creation-Date: 2019-02-06T07:59:36.781Z\n"
+"PO-Revision-Date: 2019-02-06T07:59:36.782Z\n"
+
+msgid "GENERAL##BUTTONS##CANCEL"
+msgstr ""
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr ""
@@ -27,6 +30,9 @@ msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADMIN"
 msgstr ""
 
 msgid "GENERAL##LABELS##BOX"
@@ -216,6 +222,9 @@ msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr ""
 
 msgid "PAGE##PROFILE##TITLE"

@@ -1,3 +1,43 @@
-<app-loading [loading]="loading$ | async">
-    <pre class="a-pre">{{ users$ | async | json }}</pre>
-</app-loading>
+<app-page-title
+    [title]="'PAGE.MANAGE-USERS.TITLE' | translate"
+></app-page-title>
+<div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-4-12">
+        <div class="m-card--primary">
+
+        </div>
+    </div>
+    <div class="l-grid__col-8-12">
+        <div class="m-card--primary u-margin-bottom-large">
+            <app-loading [loading]="loading$ | async">
+                <div class="a-table-wrapper">
+                    <table class="a-table">
+                        <thead>
+                            <tr>
+                                <th>{{ "GENERAL.LABELS.FIRSTNAME" | translate }}</th>
+                                <th>{{ "GENERAL.LABELS.LASTNAME" | translate }}</th>
+                                <th>{{ "GENERAL.LABELS.EMAIL" | translate }}</th>
+                                <th class="a-table__cell--center">{{ "GENERAL.LABELS.ADMIN" | translate }}</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of users$ | async">
+                                <td>{{ user.data.firstname }}</td>
+                                <td>{{ user.data.lastname }}</td>
+                                <td>{{ user.data.email }}</td>
+                                <td class="a-table__cell--center">
+                                    <span *ngIf="!user.meta.isAdmin" class="fa fa-circle-o"></span>
+                                    <span *ngIf="user.meta.isAdmin" class="fa fa-dot-circle-o"></span>
+                                </td>
+                                <td>
+                                    <a [routerLink]="user._id" class="a-link">View</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </app-loading>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@
     </div>
     <div class="m-loading__message">
       <div class="m-loading__title">{{ messages?.long.title | translate }}</div>
-      <p>{{ messages?.long.message | translate }}<ng-container *ngIf="cancelable"> {{ messages?.long.cancel | translate }}: <button (click)="emitCancel()">{{ 'general.labels.cancel' | translate }}</button> </ng-container></p>
+      <p>{{ messages?.long.message | translate }}<ng-container *ngIf="cancelable"> {{ messages?.long.cancel | translate }}: <button (click)="emitCancel()">{{ 'GENERAL.BUTTONS.CANCEL' | translate }}</button> </ng-container></p>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 {
     "GENERAL": {
         "BUTTONS": {
+            "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report"
         },
         "FIELD-ERRORS": {
@@ -12,6 +13,7 @@
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
+            "ADMIN": "Admin",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
@@ -90,6 +92,9 @@
                 "DESCRIPTION": "Please check your email for the link to reset your password",
                 "TITLE": "Password reset requested"
             }
+        },
+        "MANAGE-USERS": {
+            "TITLE": "Manage users"
         },
         "PROFILE": {
             "TITLE": "Profile"

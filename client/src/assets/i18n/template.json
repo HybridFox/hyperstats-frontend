@@ -1,6 +1,7 @@
 {
 	"GENERAL": {
 		"BUTTONS": {
+			"CANCEL": "",
 			"CREATENEWREPORT": ""
 		},
 		"FIELD-ERRORS": {
@@ -13,6 +14,7 @@
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
+			"ADMIN": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CANCEL": "",
@@ -90,6 +92,9 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"MANAGE-USERS": {
+			"TITLE": ""
 		},
 		"PROFILE": {
 			"TITLE": ""
