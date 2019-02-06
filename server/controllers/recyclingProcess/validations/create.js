@@ -11,9 +11,9 @@ const schema = Joi.object().keys({
 			methodOfProcessing: Joi.string(),
 			qualitativeDescription: Joi.object().keys({
 				text: Joi.string(),
-				asset: Joi.string(),
+				asset: Joi.string().optional().allow(""),
 			}),
-			schematicOverview: Joi.string(),
+			schematicOverview: Joi.string().optional().allow(""),
 		})),
 	}),
 });

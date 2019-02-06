@@ -14,7 +14,7 @@
     </div>
     <div *ngFor="let step of recyclingProcessForm.controls.steps.controls | keyvalue">
         <app-sub-section-title
-            [title]="'PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{key: getStepKey(step.key)}"
+            [title]="step.value.get('description').value || ('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{ key: getStepKey(step.key) })"
             class="u-margin-bottom-large"
         >
             <div action>
@@ -36,7 +36,7 @@
         ></app-text-input>
         <app-text-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.RECYCLING-SITE-OWNER' | translate"
-            [control]="step.value.get('recyclingSiteOwner')"
+            [control]="step.value.get('site')"
             class="u-margin-bottom-large"
         ></app-text-input>
         <app-text-input
@@ -47,7 +47,7 @@
         <app-textarea-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION' | translate"
             [description]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION-DESCRIPTION' | translate"
-            [control]="step.value.get('qualitativeDescription')"
+            [control]="step.value.get('qualitativeDescription').get('text')"
         ></app-textarea-input>
         <app-file-upload
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
@@ -61,5 +61,12 @@
     </div>
     <button class="a-button--primary a-button-outline has-icon-after" (click)="addStep()">
         {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' | translate }}
+    </button>
+    <button class="a-button--primary has-icon-after" (click)="save()">
+        {{ 'GENERAL.LABELS.SAVE' | translate }}
+    </button>
+
+    <button class="a-button--danger has-icon-after" (click)="remove()">
+        {{ 'GENERAL.LABELS.REMOVE' | translate }}
     </button>
 </div>

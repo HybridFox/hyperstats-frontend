@@ -6,5 +6,5 @@ export const list = selectDenormalized({
   selector: 'recyclingProcesses.list.result',
 });
 
-export const listLoading = ['customsOffices', 'list', 'loading'];
-export const listError = ['customsOffices', 'list', 'error'];
+export const listLoading = ['recyclingProcesses', 'list', 'loading'];
+export const listError = ['recyclingProcesses', 'list', 'error'];

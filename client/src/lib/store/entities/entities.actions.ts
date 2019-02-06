@@ -14,7 +14,7 @@ export class EntitiesActions {
     private ngRedux: NgRedux<any>,
   ) {}
 
-  public normalize(data: any, entitySchema: Schema, overwrite = true) {
+  public normalize(data: any, entitySchema: Schema, overwrite = false) {
     const normalizedData = normalize(data, entitySchema);
 
     Object.keys(normalizedData.entities).forEach((entityName) => {

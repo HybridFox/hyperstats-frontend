@@ -1,4 +1,4 @@
-import { path } from 'ramda';
+import { path, mergeDeepLeft } from 'ramda';
 import * as deepExtend from 'deep-extend';
 
 import { ACTIONS } from './entities.action-types';
@@ -7,7 +7,7 @@ import { INITIAL_STATE } from './entities.initial-state';
 export const EntitiesReducer = (state = INITIAL_STATE, action) => {
 
   if (action.type === ACTIONS.NORMALIZE_OVERWRITE) {
-    const originalEntities: any = path(action.payload.name, state);
+    const originalEntities: any = path([action.payload.name], state);
     const payload = path(['payload', 'entities'], action);
 
     return {
@@ -20,8 +20,8 @@ export const EntitiesReducer = (state = INITIAL_STATE, action) => {
   }
 
   if (action.type === ACTIONS.NORMALIZE_MERGE) {
-    const data = path(action.payload.name, state) ?
-      deepExtend(path(action.payload.name, state), path(['payload', 'entities'], action)) :
+    const data = path([action.payload.name], state) ?
+      mergeDeepLeft(path([action.payload.name], state), path(['payload', 'entities'], action)) :
       path(['payload', 'entities'], action);
 
     return Object.assign({}, state, {
@@ -30,15 +30,15 @@ export const EntitiesReducer = (state = INITIAL_STATE, action) => {
   }
 
   if (action.type === ACTIONS.PATCH) {
-    const entities = path(action.payload.entity, state);
-    const entity = path(action.payload.id, entities);
+    const entities = path([action.payload.entity], state);
+    const entity = path([action.payload.id], entities);
     const patchedEntity = Object.assign({}, entity, action.payload.patchData);
     const patchedEntities = Object.assign({}, entities, { [action.payload.id]: patchedEntity });
     return Object.assign({}, state, { [action.payload.entity]: patchedEntities });
   }
 
   if (action.type === ACTIONS.REMOVE) {
-    const entities = path(action.payload.entity, state);
+    const entities = path([action.payload.entity], state);
 
     const filteredEntities = Object.assign({}, ...Object.keys(entities).filter((id) => {
         return id !== action.payload.id;
