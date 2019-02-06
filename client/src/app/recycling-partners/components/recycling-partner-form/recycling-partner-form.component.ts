@@ -21,7 +21,6 @@ export class RecyclingPartnerFormComponent implements OnInit {
     }
 
     private buildForm(value) {
-        console.log(value);
         this.recyclingPartnerForm = this.formBuilder.group({
             company: [
                 value.data.name,

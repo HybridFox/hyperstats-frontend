@@ -2,8 +2,8 @@ import { selectDenormalized } from '@store/utils/selector';
 import * as schema from '@core/schemas';
 
 export const list = selectDenormalized({
-  schema: schema.recyclingProcess,
-  selector: 'recyclingProcesses.list.result',
+  schema: schema.recyclingPartner,
+  selector: 'recyclingPartners.list.result',
 });
 
 export const listLoading = ['recyclingPartners', 'list', 'loading'];
