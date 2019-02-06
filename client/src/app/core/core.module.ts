@@ -28,6 +28,7 @@ import { WebpackTranslateLoader } from './translations';
 import { CodesService } from './services/codes/codes.service';
 import { Services } from './services';
 import { Pages } from './pages';
+import { Guards } from './guards';
 import { StoreRouterModule } from '@core/store-router';
 import { CompanyRepository } from '@api/company';
 
@@ -74,6 +75,7 @@ import { CompanyRepository } from '@api/company';
     StoreService,
     CodesService,
     Services,
+    Guards,
     AuthGuard,
 
     AuthActions,
