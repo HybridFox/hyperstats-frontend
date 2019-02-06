@@ -20,6 +20,6 @@
         ></app-text-input>
     </ng-container>
 
-    <button class="a-button--primary a-button--small u-margin-top-large u-margin-right-large">{{ 'GENERAL.BUTTONS.SAVE' | translate }}</button>
+    <button class="a-button--primary a-button--small u-margin-top-large u-margin-right-large" [disabled]="!form?.valid">{{ 'GENERAL.BUTTONS.SAVE' | translate }}</button>
     <a class="a-link" [routerLink]="['../']">{{ 'GENERAL.BUTTONS.CANCEL' | translate }}</a>
 </form>

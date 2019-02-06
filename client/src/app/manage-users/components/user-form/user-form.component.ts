@@ -18,6 +18,9 @@ export class UserFormComponent implements OnChanges {
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.user && this.user) {
             this.form = this.createForm(this.user);
+
+            // Temp disable this form until the edit page is implemented
+            this.form.disable();
         }
     }
 
