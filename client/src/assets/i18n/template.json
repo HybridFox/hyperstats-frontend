@@ -2,7 +2,8 @@
 	"GENERAL": {
 		"BUTTONS": {
 			"CANCEL": "",
-			"CREATENEWREPORT": ""
+			"CREATENEWREPORT": "",
+			"SAVE": ""
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",

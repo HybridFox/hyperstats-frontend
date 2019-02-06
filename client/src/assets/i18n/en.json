@@ -2,7 +2,8 @@
     "GENERAL": {
         "BUTTONS": {
             "CANCEL": "Cancel",
-            "CREATENEWREPORT": "Create new report"
+            "CREATENEWREPORT": "Create new report",
+            "SAVE": "Save"
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
