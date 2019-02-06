@@ -1,4 +1,4 @@
-export const TYPE_LIST = 'RECYCLING_PARTNER';
+export const TYPE_LIST = 'RECYCLING_PARTNERS';
 export const TYPE_DETAIL = 'RECYCLING_PARTNER';
 
 export const ACTIONS = {

@@ -1,19 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { RecyclingPartnersComponent } from './recycling-partners.component';
-
+import { FormFieldsModule } from '@ui/form-fields';
+import { StoreService } from '@store/store.service';
 import { SharedModule } from '@shared/shared.module';
 
+import { RecyclingPartnersComponent } from './recycling-partners.component';
 import { ReportsRoutingModule } from './recycling-partners-routing.module';
-
-import { StoreService } from '@store/store.service';
 import { recyclingPartnerReducer } from './store/reducers';
-import { ReportsServices } from './store';
-
-import { RecyclingPartnerApiModule } from '@api/recycling-partner';
-import { FormFieldsModule } from '@ui/form-fields';
-
+import { RecyclingPartnersServices } from './store';
 import { Pages } from './pages';
 import { Components } from './components';
 
@@ -22,11 +16,10 @@ import { Components } from './components';
     CommonModule,
     ReportsRoutingModule,
     SharedModule,
-    RecyclingPartnerApiModule,
     FormFieldsModule
   ],
   providers: [
-    ReportsServices,
+    RecyclingPartnersServices,
   ],
   declarations: [
     Pages,

@@ -6,7 +6,7 @@ import { throwError as _throw } from 'rxjs';
 import { EntitiesActions } from '@store/entities';
 import { Handler } from '@store/handler';
 
-import { RecyclingPartnerRepository } from '@api/recycling-partner';
+import { RecyclingPartnerRepository } from './repository';
 import { ACTIONS } from './action-types';
 
 @Injectable()
@@ -54,7 +54,7 @@ export class RecyclingPartnerActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.FETCH, {
-            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.recyclingPartner])
+            payload: this.entitiesActions.normalize(response, EntitiesActions.schema.recyclingPartner)
           });
         }),
         finalize(() => {
