@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from '@guards/auth.guard';
-import { AdminGuard } from './guards';
+import { AuthGuard, AdminGuard } from './guards';
 
 import * as Pages from './pages';
 

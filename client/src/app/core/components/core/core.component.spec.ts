@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService } from './services/language';
+import { LanguageService } from '../../services/language';
 import { CoreComponent } from './core.component';
 import { FooterComponent } from '@shared/components/footer/footer.component';
 import { NgReduxTestingModule } from '@angular-redux/store/testing';

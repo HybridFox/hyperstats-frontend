@@ -40,9 +40,6 @@
       "@ui/*": [
         "src/lib/ui/*"
       ],
-      "@guards/*": [
-        "src/lib/guards/*"
-      ],
     }
   },
 }

@@ -9,7 +9,7 @@ const initialState: ProgressState<any> = {
   result: null,
   error: null,
   startFetch: null,
-  stopFetch: null,
+  doneFetch: null,
 };
 
 export const progressReducer = (options: ProgressOptions, reducer) => {
