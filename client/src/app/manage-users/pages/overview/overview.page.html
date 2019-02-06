@@ -1,1 +1,3 @@
-<pre class="a-pre">{{ users$ | async | json }}</pre>
+<app-loading [loading]="loading$ | async">
+    <pre class="a-pre">{{ users$ | async | json }}</pre>
+</app-loading>
