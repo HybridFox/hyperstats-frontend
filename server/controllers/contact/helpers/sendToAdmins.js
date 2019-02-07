@@ -9,7 +9,7 @@ module.exports = async(body) => {
 		"<": "&lt",
 		">": "&gt",
 		"\"": "&quot",
-		"'": "&#39"
+		"'": "&#39",
 	};
 	const message = body.body
 		.replace(new RegExp(`(${Object.keys(conversionMap).join("|")})`, "g"), (match) => conversionMap[match])

@@ -43,10 +43,13 @@ describe("Reset password", () => {
 		await expect(resetPassword("newPassword", "somePasswordToken")).to.be.fulfilled;
 		const user = await UserModel.findOne({ "data.email": "validuser@example.com" }).exec();
 
-		expect(user).to.be.an("object");
-		expect(user.meta).to.be.an("object");
-		expect(user.toObject().meta.passwordReset).to.equal(null);
-		expect(user.data).to.be.an("object");
+		const userObj = user.toObject();
+
+		expect(userObj).to.be.an("object");
+		expect(userObj.meta).to.be.an("object");
+		expect(user.meta.passwordReset).to.be.an("object");
+		expect(userObj.meta.passwordReset).to.deep.undefined;
+		expect(userObj.data).to.be.an("object");
 		expect(await user.validatePassword("newPassword")).to.equal(true);
 	});
 
