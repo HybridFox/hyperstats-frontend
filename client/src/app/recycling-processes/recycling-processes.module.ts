@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RecyclingProcessesComponent } from './recycling-processes.component';
+import { RecyclingProcessesPageComponent } from './recycling-processes.page';
 
 import { SharedModule } from '@shared/shared.module';
 
@@ -29,7 +29,7 @@ import { Pages } from './pages';
   ],
   declarations: [
     Pages,
-    RecyclingProcessesComponent
+    RecyclingProcessesPageComponent
   ],
 })
 export class RecyclingProcessesModule {

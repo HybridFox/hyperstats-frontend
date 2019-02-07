@@ -7,9 +7,9 @@ import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-recycling-processes',
-  templateUrl: './recycling-processes.component.html',
+  templateUrl: './recycling-processes.page.html',
 })
-export class RecyclingProcessesComponent implements OnInit {
+export class RecyclingProcessesPageComponent implements OnInit {
   @select(RecyclingProcessesSelectors.list.result) $processes: Observable<any[]>;
 
   public menuItems: MenuItem[] = [];
