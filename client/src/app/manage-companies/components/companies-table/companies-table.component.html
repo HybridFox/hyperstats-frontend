@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let company of companies">
-                <td>{{ company?.data.name }}</td>
+                <td>{{ company?.data?.name }}</td>
                 <td>{{ company?.data?.address?.street }} {{ company?.data?.address?.number }}</td>
                 <td>{{ company?.data?.address?.city }}</td>
                 <td>
