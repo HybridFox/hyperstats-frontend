@@ -1,9 +1,10 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { RecyclingPartnerActions, RecyclingPartnerSelector } from './store';
-import { select } from '@angular-redux/store';
+import { select$ } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+
+import { RecyclingPartnerActions, RecyclingPartnerSelector } from './store';
+import { recyclingPartners } from './recycling-partners.helper';
 
 @Component({
   selector: 'app-recycling-partners',
@@ -11,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 
 export class RecyclingPartnersComponent implements OnInit, OnDestroy {
-  @select(RecyclingPartnerSelector.list.result) public recyclingPartners$: Observable<any>;
+  @select$(RecyclingPartnerSelector.list.result, recyclingPartners) public recyclingPartners$: Observable<any>;
 
   private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
@@ -24,17 +25,6 @@ export class RecyclingPartnersComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
     this.recyclingPartnerActions.fetchAll().toPromise();
-    this.recyclingPartners$
-    .pipe(takeUntil(this.componentDestroyed$))
-    .subscribe((recyclingPartners) => {
-      if (!Array.isArray(recyclingPartners)) {
-        return;
-      }
-      this.recyclingPartners = recyclingPartners;
-      this.recyclingPartnersLinks = this.recyclingPartners.map((partner) => {
-        return {'link': partner._id, 'label': partner.data.name};
-      });
-    });
   }
 
   public ngOnDestroy() {
