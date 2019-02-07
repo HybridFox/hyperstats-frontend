@@ -45,10 +45,10 @@ module.exports = (router) => {
 	 *     tags:
 	 *       - users
 	 *     produces:
-	 *       - application/jso
+	 *       - application/json
 	 *     parameters:
 	 *       - in: query
-	 *         name: type
+	 *         name: companyType
 	 *         required: false
 	 *         type: string
 	 *         description: >
