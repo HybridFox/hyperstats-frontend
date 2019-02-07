@@ -43,11 +43,6 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
             this.navItems = [
                 { title: ngxExtract('GENERAL.MENU.USERS'), link: ['/admin/users'] },
             ];
-            this.filteredNavItems = [...this.navItems];
-
-            setTimeout(() => {
-                this.setWidth();
-            }, 50);
         } else {
             this.navItems = [
                 { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/reports'] },
@@ -56,12 +51,13 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
                 { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/proxies'] },
                 { title: ngxExtract('GENERAL.MENU.AUDITTRIAL'), link: ['/audit-trail'] },
             ];
-            this.filteredNavItems = [...this.navItems];
-
-            setTimeout(() => {
-                this.setWidth();
-            }, 50);
         }
+
+        this.filteredNavItems = [...this.navItems];
+
+        setTimeout(() => {
+            this.setWidth();
+        }, 50);
     }
 
     public ngAfterViewInit() {
