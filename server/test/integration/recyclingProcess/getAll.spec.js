@@ -70,6 +70,7 @@ describe("Integration", () => {
 								"steps": [
 									{
 										"_id": "5c49bbebe9fe3f0a757f0001",
+										"uuid": "a991ec11-2ed6-4d04-a724-b8ba74b7ba7e",
 										"description": "description 1",
 										"methodOfProcessing": "methodOfProcessing 1",
 										"precedingStep": "precedingStep 1",

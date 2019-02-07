@@ -9,7 +9,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.0.8\n"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
+msgstr "Recycling"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
+msgstr "Sorting"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
+msgstr "Transport"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr "Cancel"
@@ -118,6 +127,9 @@ msgstr "Privacy"
 
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
+
+msgid "GENERAL##LABELS##REMOVE"
+msgstr "Remove"
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr "Reset password"
@@ -350,6 +362,9 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
 msgstr "(upload a file with further details on your recycling process)"
 
+msgid "PAGE##RECYCLING-PROCESSES##PRECEDING-STEP##NONE"
+msgstr "None"
+
 msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
 msgstr ""
 "Add every recycling step that makes up your recycling process. Per recycling "
@@ -453,6 +468,34 @@ msgstr "Your profile has been saved!"
 
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+"Could not remove the recycling process. \n"
+"Please try again later or contact the administrator."
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##TITLE"
+msgstr "Removing recycling-process failed!"
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
+msgstr "The recycling process has been removed successfully."
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
+msgstr "Recycling-process removed!"
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+"Could not save the recycling process. \n"
+"Please try again later or contact the administrator."
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##TITLE"
+msgstr "Saving recycling-process failed!"
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
+msgstr "The recycling process has been saved successfully."
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
+msgstr "Recycling-process saved!"
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
@@ -654,6 +697,19 @@ msgstr "Recycling Efficiency"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#, fuzzy
+#~| msgid "PAGE##RECYCLING-PARTNERS##TITLE"
+#~ msgid "TOAST##RECYCLING##TITLE"
+#~ msgstr "Recycling Partners"
+
+#, fuzzy
+#~| msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
+#~ msgid "TOAST##RECYCLING##DESCRIPTION"
+#~ msgstr ""
+#~ "Add here the legal information for all the different recycling partners "
+#~ "you work with. Only add the address information where the actual "
+#~ "recycling plants are located."
 
 #~ msgid "GENERAL##LABELS##COPYRIGHT"
 #~ msgstr "© Eucobat 2018"

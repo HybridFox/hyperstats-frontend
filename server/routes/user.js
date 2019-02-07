@@ -193,7 +193,7 @@ module.exports = (router) => {
 		.patch(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.updateCompany, Errors.ObjectValidationFailed),
 			Controller.updateCompany,
 		);
