@@ -7,7 +7,6 @@ import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
 
 @Component({
-  selector: 'app-recycling-processes',
   templateUrl: './recycling-processes.page.html',
 })
 export class RecyclingProcessesPageComponent implements OnInit {
