@@ -1,11 +1,12 @@
 <app-page-title
     [title]="'PAGE.RECYCLING-PARTNERS.TITLE' | translate"
 ></app-page-title>
+
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-4-12">
         <div class="m-card--primary">
             <app-vertical-menu
-                [menuItems]="recyclingPartnersLinks"
+                [menuItems]="recyclingPartners$ | async"
             ></app-vertical-menu>
             <button class="a-button--primary a-button-outline has-icon-after">
                 {{ 'GENERAL.LABELS.ADD-RECYCLING-PARTNER' | translate }}
