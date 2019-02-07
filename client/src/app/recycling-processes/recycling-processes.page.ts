@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { select } from '@angular-redux/store';
+import { select$ } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
+import { processToMenuItemObservableHandler } from './recycling-processes.helpers';
 
 @Component({
   templateUrl: './recycling-processes.page.html',
 })
 export class RecyclingProcessesPageComponent implements OnInit {
-  @select(RecyclingProcessesSelectors.list.result) $processes: Observable<any[]>;
+  @select$(RecyclingProcessesSelectors.list.result, processToMenuItemObservableHandler) public $processMenuItems: Observable<any[]>;
 
   public menuItems: MenuItem[] = [];
 
@@ -22,16 +23,6 @@ export class RecyclingProcessesPageComponent implements OnInit {
 
   ngOnInit() {
     this.recyclingProcessesActions.fetchAll().toPromise();
-
-    this.$processes
-      .pipe(takeUntil(this.componentDestroyed$))
-      .pipe(filter((processes) => Array.isArray(processes)))
-      .subscribe((processes) => {
-        this.menuItems = processes.reduce((acc, process) => process ? acc.concat({
-          label: process.data.name,
-          link: process._id
-        } as MenuItem) : acc, []);
-      });
   }
 
   ngOnDesroy() {

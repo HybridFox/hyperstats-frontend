@@ -5,7 +5,7 @@
     <div class="l-grid__col-4-12">
         <div class="m-card--primary">
             <app-vertical-menu
-                [menuItems]="menuItems"
+                [menuItems]="($processMenuItems | async)"
             ></app-vertical-menu>
             <button class="a-button--primary a-button-outline has-icon-after" routerLink="new">
                 {{ 'GENERAL.LABELS.ADD-RECYCLING-PROCESS' | translate }}

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RecyclingProcessesPageComponent } from './recycling-processes.page';
+import { RecyclingProcessPageComponent } from './pages';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: ':recyclingProcess',
-        component: RecyclingProcessesPageComponent,
+        component: RecyclingProcessPageComponent,
       }
     ]
   }
