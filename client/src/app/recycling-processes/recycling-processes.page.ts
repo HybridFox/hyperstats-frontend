@@ -14,7 +14,7 @@ export class RecyclingProcessesPageComponent implements OnInit {
 
   public menuItems: MenuItem[] = [];
 
-  private _componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
   constructor(
     private recyclingProcessesActions: RecyclingProcessesActions
@@ -24,7 +24,7 @@ export class RecyclingProcessesPageComponent implements OnInit {
     this.recyclingProcessesActions.fetchAll().toPromise();
 
     this.$processes
-      .pipe(takeUntil(this._componentDestroyed$))
+      .pipe(takeUntil(this.componentDestroyed$))
       .pipe(filter((processes) => Array.isArray(processes)))
       .subscribe((processes) => {
         this.menuItems = processes.reduce((acc, process) => process ? acc.concat({
@@ -35,7 +35,7 @@ export class RecyclingProcessesPageComponent implements OnInit {
   }
 
   ngOnDesroy() {
-    this._componentDestroyed$.next(true);
-    this._componentDestroyed$.complete();
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
   }
 }

@@ -12,64 +12,64 @@ import { ACTIONS } from './action-types';
 @Injectable()
 export class RecyclingProcessesActions {
   constructor(
-    private _handler: Handler,
-    private _entitiesActions: EntitiesActions,
-    private _recyclingProcessesRepository: RecyclingProcessesRepository,
+    private handler: Handler,
+    private entitiesActions: EntitiesActions,
+    private recyclingProcessesRepository: RecyclingProcessesRepository,
   ) {}
 
   public fetchAll(): Observable<any> {
-    this._handler.dispatchStart(ACTIONS.FETCH_ALL);
+    this.handler.dispatchStart(ACTIONS.FETCH_ALL);
 
-    return this._recyclingProcessesRepository.fetchAll()
+    return this.recyclingProcessesRepository.fetchAll()
       .pipe(
         catchError((error) => {
-          this._handler.dispatchError(ACTIONS.FETCH_ALL, {
+          this.handler.dispatchError(ACTIONS.FETCH_ALL, {
             message: error.message,
           });
 
           return _throw(error);
         }),
         tap((response: any) => {
-          this._handler.dispatchSuccess(ACTIONS.FETCH_ALL, {
-            payload: this._entitiesActions.normalize(response, [EntitiesActions.schema.recyclingProcess])
+          this.handler.dispatchSuccess(ACTIONS.FETCH_ALL, {
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.recyclingProcess])
           });
         }),
         finalize(() => {
-          this._handler.dispatchDone(ACTIONS.FETCH_ALL);
+          this.handler.dispatchDone(ACTIONS.FETCH_ALL);
         }),
       );
   }
 
   public fetchById(id: string) {
-    this._handler.dispatchStart(ACTIONS.FETCH);
+    this.handler.dispatchStart(ACTIONS.FETCH);
 
-    return this._recyclingProcessesRepository.fetchById(id)
+    return this.recyclingProcessesRepository.fetchById(id)
       .pipe(
         catchError((error) => {
-          this._handler.dispatchError(ACTIONS.FETCH, {
+          this.handler.dispatchError(ACTIONS.FETCH, {
             message: error.message,
           });
 
           return _throw(error);
         }),
         tap((response: any) => {
-          this._handler.dispatchSuccess(ACTIONS.FETCH, {
-            payload: this._entitiesActions.normalize(response, EntitiesActions.schema.recyclingProcess)
+          this.handler.dispatchSuccess(ACTIONS.FETCH, {
+            payload: this.entitiesActions.normalize(response, EntitiesActions.schema.recyclingProcess)
           });
         }),
         finalize(() => {
-          this._handler.dispatchDone(ACTIONS.FETCH);
+          this.handler.dispatchDone(ACTIONS.FETCH);
         }),
       );
   }
 
   public create(process: any) {
-    return this._recyclingProcessesRepository.create(process)
+    return this.recyclingProcessesRepository.create(process)
       .pipe(
         tap((response: any) => {
-          const normalizedPayload = this._entitiesActions.normalize(response, EntitiesActions.schema.recyclingProcess);
+          const normalizedPayload = this.entitiesActions.normalize(response, EntitiesActions.schema.recyclingProcess);
 
-          this._handler.dispatch(ACTIONS.ADD_TO_LIST, {
+          this.handler.dispatch(ACTIONS.ADD_TO_LIST, {
             payload: normalizedPayload,
           });
         })
@@ -77,23 +77,23 @@ export class RecyclingProcessesActions {
   }
 
   public update(process: any) {
-    return this._recyclingProcessesRepository.update(process)
+    return this.recyclingProcessesRepository.update(process)
       .pipe(
         tap((response: any) => {
-          this._handler.dispatch(ACTIONS.UPDATE, {
-            payload: this._entitiesActions.patch('recyclingProcesses', response._id, response)
+          this.handler.dispatch(ACTIONS.UPDATE, {
+            payload: this.entitiesActions.patch('recyclingProcesses', response._id, response)
           });
         })
       );
   }
 
   public delete(id: string) {
-    return this._recyclingProcessesRepository.remove(id)
+    return this.recyclingProcessesRepository.remove(id)
       .pipe(
         tap(() => {
-          const normalizedPayload = this._entitiesActions.remove('recyclingProcesses', id);
+          const normalizedPayload = this.entitiesActions.remove('recyclingProcesses', id);
 
-          this._handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
+          this.handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
             payload: normalizedPayload,
           });
         })

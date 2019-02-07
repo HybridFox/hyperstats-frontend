@@ -23,36 +23,36 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     public process: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
 
-    private _recyclingProcessId: string;
-    private _processSubscription: Subscription;
-    private _componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+    private recyclingProcessId: string;
+    private processSubscription: Subscription;
+    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
     constructor(
-        private _processActions: RecyclingProcessesActions,
-        private _formBuilder: FormBuilder,
-        private _route: ActivatedRoute,
-        private _router: Router,
-        private _toastrService: ToastrService,
-        private _translateService: TranslateService,
+        private processActions: RecyclingProcessesActions,
+        private formBuilder: FormBuilder,
+        private route: ActivatedRoute,
+        private router: Router,
+        private toastrService: ToastrService,
+        private translateService: TranslateService,
     ) {}
 
     public ngOnInit() {
-        this._setupForm();
-        this._route.params
+        this.setupForm();
+        this.route.params
             .pipe(
-                takeUntil(this._componentDestroyed$),
+                takeUntil(this.componentDestroyed$),
                 distinctUntilChanged()
             )
             .subscribe((params) => {
-                this._recyclingProcessId = params.recyclingProcess;
+                this.recyclingProcessId = params.recyclingProcess;
 
-                this._fetchProcessIfNeeded();
+                this.fetchProcessIfNeeded();
             });
     }
 
     public ngOnDestroy() {
-        this._componentDestroyed$.next(true);
-        this._componentDestroyed$.complete();
+        this.componentDestroyed$.next(true);
+        this.componentDestroyed$.complete();
     }
 
     public getStepKey(key: string) {
@@ -64,7 +64,7 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     }
 
     public duplicateStep(key: number) {
-        const newStep = this._createStep();
+        const newStep = this.createStep();
         newStep.patchValue(
             omit(['uuid'], this.recyclingProcessForm.controls.steps.controls[key].value)
         );
@@ -72,7 +72,7 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     }
 
     public addStep(): void {
-        this.recyclingProcessForm.controls.steps.push(this._createStep());
+        this.recyclingProcessForm.controls.steps.push(this.createStep());
     }
 
     public precedingSteps(step: FormControl) {
@@ -83,7 +83,7 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
 
             acc.push({
                 label: x.value.description ||
-                    `${this._translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
+                    `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
                 value: x.value.uuid
             });
 
@@ -108,23 +108,23 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
         };
         let promise;
 
-        if (this._recyclingProcessId !== 'new') {
-            promise = this._processActions.update(toSave).toPromise();
+        if (this.recyclingProcessId !== 'new') {
+            promise = this.processActions.update(toSave).toPromise();
         } else {
-            promise = this._processActions.create(toSave).toPromise();
+            promise = this.processActions.create(toSave).toPromise();
         }
 
         promise
             .then((response) => {
-                this._toastrService.success(
+                this.toastrService.success(
                     ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.SUCCESS.DESCRIPTION') as string,
                     ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.SUCCESS.TITLE') as string
                 );
 
-                this._router.navigate([`../${response._id}`], { relativeTo: this._route });
+                this.router.navigate([`../${response._id}`], { relativeTo: this.route });
             })
             .catch(() => {
-                this._toastrService.error(
+                this.toastrService.error(
                     ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.ERROR.DESCRIPTION') as string,
                     ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.ERROR.TITLE') as string
                 );
@@ -132,44 +132,44 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     }
 
     public remove() {
-        if (this._recyclingProcessId === 'new') {
+        if (this.recyclingProcessId === 'new') {
             return;
         }
 
-        this._processActions.delete(this.process._id)
+        this.processActions.delete(this.process._id)
             .toPromise()
             .then((response) => {
-                this._toastrService.success(
+                this.toastrService.success(
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.SUCCESS.DESCRIPTION') as string,
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.SUCCESS.TITLE') as string
                 );
 
-                this._router.navigate(['../'], { relativeTo: this._route });
+                this.router.navigate(['../'], { relativeTo: this.route });
             })
             .catch(() => {
-                this._toastrService.error(
+                this.toastrService.error(
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.DESCRIPTION') as string,
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.TITLE') as string
                 );
             });
     }
 
-    private _setupForm(process?: any): void {
-        this.recyclingProcessForm = this._formBuilder.group({
+    private setupForm(process?: any): void {
+        this.recyclingProcessForm = this.formBuilder.group({
             name: [pathOr('', ['data', 'name'])(process), Validators.required],
-            steps: this._createStepFormGroups(pathOr([], ['data', 'steps'])(process))
+            steps: this.createStepFormGroups(pathOr([], ['data', 'steps'])(process))
         });
     }
 
-    private _createStepFormGroups(steps: any[]): FormArray {
+    private createStepFormGroups(steps: any[]): FormArray {
         if (!steps.length) {
-            return this._formBuilder.array([this._createStep()]);
+            return this.formBuilder.array([this.createStep()]);
         }
 
-        return this._formBuilder.array(steps.map((step) => this._createStep(step)));
+        return this.formBuilder.array(steps.map((step) => this.createStep(step)));
     }
 
-    private _createStep(step = {
+    private createStep(step = {
         uuid: uuid.v4(),
         precedingStep: 0,
         description: '',
@@ -181,13 +181,13 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
         },
         schematicOverview: ''
     }): FormGroup {
-        return this._formBuilder.group({
+        return this.formBuilder.group({
             uuid: [step.uuid],
             precedingStep: [step.precedingStep],
             description: [step.description, Validators.required],
             site: [step.site, Validators.required],
             methodOfProcessing: [step.methodOfProcessing, Validators.required],
-            qualitativeDescription: this._formBuilder.group({
+            qualitativeDescription: this.formBuilder.group({
                 text: [step.qualitativeDescription.text, Validators.required],
                 asset: [step.qualitativeDescription.asset]
             }),
@@ -195,27 +195,27 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
         });
     }
 
-    private _fetchProcessIfNeeded(): void {
-        if (!this._recyclingProcessId || (this.process && prop('_id', this.process) === this._recyclingProcessId)) {
+    private fetchProcessIfNeeded(): void {
+        if (!this.recyclingProcessId || (this.process && prop('_id', this.process) === this.recyclingProcessId)) {
             return;
         }
 
-        if (this._processSubscription) {
-            this._processSubscription.unsubscribe();
+        if (this.processSubscription) {
+            this.processSubscription.unsubscribe();
         }
 
-        if (this._recyclingProcessId === 'new') {
-            return this._setupForm();
+        if (this.recyclingProcessId === 'new') {
+            return this.setupForm();
         }
 
-        this._processActions.fetchById(this._recyclingProcessId).toPromise();
-        this._processSubscription = this.$process
-            .pipe(takeUntil(this._componentDestroyed$))
+        this.processActions.fetchById(this.recyclingProcessId).toPromise();
+        this.processSubscription = this.$process
+            .pipe(takeUntil(this.componentDestroyed$))
             .pipe(filter((process) => process && !equals(process, this.process)))
             .subscribe((process) => {
                 this.process = process;
 
-                this._setupForm(this.process);
+                this.setupForm(this.process);
             });
     }
 }
