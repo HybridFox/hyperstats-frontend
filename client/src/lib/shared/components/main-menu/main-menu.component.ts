@@ -42,6 +42,7 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
         if (this.profile && this.profile.isAdmin) {
             this.navItems = [
                 { title: ngxExtract('GENERAL.MENU.USERS'), link: ['/admin/users'] },
+                { title: ngxExtract('GENERAL.MENU.COMPANIES'), link: ['/admin/companies'] },
             ];
             this.filteredNavItems = [...this.navItems];
 

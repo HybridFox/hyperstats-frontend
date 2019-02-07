@@ -34,6 +34,7 @@ import { Components } from './components';
 })
 export class ManageComapniesModule {
   constructor(private storeService: StoreService) {
+    console.log('company-management');
     this.storeService.injectAsyncReducer('company-management', Reducer);
   }
 }
