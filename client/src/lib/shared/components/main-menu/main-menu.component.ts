@@ -30,7 +30,6 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
             .subscribe((containerWidth) => {
                 const navWidth = this.nav.nativeElement.offsetWidth;
 
-                console.log('OK');
                 if (navWidth > containerWidth) {
                     this.removeItem();
                 } else if (this.extra.length > 0) {
