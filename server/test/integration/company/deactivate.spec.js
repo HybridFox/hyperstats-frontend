@@ -34,14 +34,14 @@ describe("Integration", () => {
 
 			it("Should not deactivate company when not logged in", () => {
 				return supertest(server)
-					.put(`/api/company/${companyId}/deactivate`)
+					.patch(`/api/company/${companyId}/deactivate`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 
 			it("Should not deactivate a compnay when a malformed id is passed", () => {
 				return supertest(server)
-					.put("/api/company/malformedId/deactivate")
+					.patch("/api/company/malformedId/deactivate")
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(403);
@@ -49,7 +49,7 @@ describe("Integration", () => {
 
 			it("Should return a not found error when id doesn't exist", () => {
 				return supertest(server)
-					.put(`/api/company/${Types.ObjectId()}/deactivate`)
+					.patch(`/api/company/${Types.ObjectId()}/deactivate`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(403);
@@ -57,7 +57,7 @@ describe("Integration", () => {
 
 			it("Should deactivate a company", () => {
 				return supertest(server)
-					.put(`/api/company/${companyId}/deactivate`)
+					.patch(`/api/company/${companyId}/deactivate`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(403);
