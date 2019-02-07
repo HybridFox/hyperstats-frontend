@@ -9,7 +9,7 @@ const initialState: ProgressState<any> = {
   result: null,
   error: null,
   startFetch: null,
-  stopFetch: null,
+  doneFetch: null,
 };
 
 export const progressReducer = (options: ProgressOptions, reducer) => {
@@ -17,9 +17,9 @@ export const progressReducer = (options: ProgressOptions, reducer) => {
     state: ProgressState = initialState,
     action: ProgressAction,
   ) => {
-    const [ entityType, type, response ] = action.type.split('/');
+    const [type, response] = action.type.split('@');
 
-    if (options.entityType === entityType) {
+    if (type.indexOf(options.entityType) !== -1) {
       if (response === 'START') {
         return Object.assign({}, state, {
           loading: true,
@@ -43,7 +43,7 @@ export const progressReducer = (options: ProgressOptions, reducer) => {
 
       return Object.assign({}, state, {
         result: reducer(state.result, Object.assign({}, action, {
-          type: `${entityType}/${type}`,
+          type,
         })),
       });
     }

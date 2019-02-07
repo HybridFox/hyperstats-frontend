@@ -1,4 +1,4 @@
-import { Component, Input, HostListener, ViewChild, ElementRef, AfterViewInit, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, HostListener, ViewChild, ElementRef, AfterViewInit, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { dropLast, takeLast, take, drop } from 'ramda';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -9,19 +9,13 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
     templateUrl: './main-menu.component.html',
 })
 
-export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
+export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
     @Input() profile: any;
     @ViewChild('container') public container: ElementRef;
     @ViewChild('nav') public nav: ElementRef;
 
-    public navItems = [
-        { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/reports'] },
-        { title: ngxExtract('GENERAL.MENU.RECYCLINGPROCESSES'), link: ['/recycling-processes'] },
-        { title: ngxExtract('GENERAL.MENU.RECYCLINGPARTNERS'), link: ['/recycling-partners'] },
-        { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/proxies'] },
-        { title: ngxExtract('GENERAL.MENU.AUDITTRIAL'), link: ['/audit-trail'] },
-    ];
-    public filteredNavItems: any[] = [...this.navItems];
+    public navItems = [];
+    public filteredNavItems: any[] = [];
     public extra: any[] = [];
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
     public containerWidth: Subject<number> = new Subject<number>();
@@ -44,10 +38,30 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnDestroy {
             });
     }
 
-    public ngAfterViewInit() {
+    public ngOnChanges() {
+        if (this.profile && this.profile.isAdmin) {
+            this.navItems = [
+                { title: ngxExtract('GENERAL.MENU.USERS'), link: ['/admin/users'] },
+            ];
+        } else {
+            this.navItems = [
+                { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/reports'] },
+                { title: ngxExtract('GENERAL.MENU.RECYCLINGPROCESSES'), link: ['/recycling-processes'] },
+                { title: ngxExtract('GENERAL.MENU.RECYCLINGPARTNERS'), link: ['/recycling-partners'] },
+                { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/proxies'] },
+                { title: ngxExtract('GENERAL.MENU.AUDITTRIAL'), link: ['/audit-trail'] },
+            ];
+        }
+
+        this.filteredNavItems = [...this.navItems];
+
         setTimeout(() => {
             this.setWidth();
         }, 50);
+    }
+
+    public ngAfterViewInit() {
+
     }
 
     public ngOnDestroy() {
