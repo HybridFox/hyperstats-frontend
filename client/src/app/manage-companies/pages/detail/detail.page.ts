@@ -4,21 +4,21 @@ import { select } from '@angular-redux/store';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-// import { UsersActions } from '../../store/users/actions';
-// import { UserSelector } from '../../store/users/selectors';
+import { CompaniesActions } from '../../store/companies/actions';
+import { CompanySelector } from '../../store/companies/selectors';
 
 @Component({
     templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
-    // @select(UserSelector.detail.result) public user$: Observable<any>;
-    // @select(UserSelector.detail.loading) public loading$: Observable<boolean>;
+    @select(CompanySelector.detail.result) public company$: Observable<any>;
+    @select(CompanySelector.detail.loading) public loading$: Observable<boolean>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
         public route: ActivatedRoute,
-        // public usersActions: UsersActions,
+        public companiesActions: CompaniesActions,
     ) {}
 
     public ngOnInit() {
@@ -27,7 +27,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             takeUntil(this.componentDestroyed$),
         )
         .subscribe(({ id }) => {
-            // this.usersActions.fetchById(id).subscribe();
+            this.companiesActions.fetchById(id).subscribe();
         });
     }
 
