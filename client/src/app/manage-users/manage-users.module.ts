@@ -32,7 +32,7 @@ import { Components } from './components';
     Services,
   ],
 })
-export class AdminModule {
+export class ManageUsersModule {
   constructor(private storeService: StoreService) {
     this.storeService.injectAsyncReducer('user-management', Reducer);
   }

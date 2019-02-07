@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    loadChildren: '../manage-users/manage-users.module#AdminModule',
+    loadChildren: '../manage-users/manage-users.module#ManageUsersModule',
   },
 ];
 
