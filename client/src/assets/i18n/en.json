@@ -100,6 +100,9 @@
         "MANAGE-USERS": {
             "TITLE": "Manage users"
         },
+        "MANAGE-COMPANIES": {
+            "TITLE": "Manage Companies"
+        },
         "PROFILE": {
             "TITLE": "Profile"
         },

@@ -275,6 +275,9 @@ msgstr "Password reset requested"
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
 
+msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgstr "Manage Companies"
+
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
 

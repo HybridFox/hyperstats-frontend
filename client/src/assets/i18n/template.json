@@ -45,8 +45,8 @@
 			"SAVE": "",
 			"SELECT-OPTION": "",
 			"SORTBY": "",
-			"STREET": "",
 			"SPONSOREDBY": "",
+			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
 			"SUBJECT": "",
@@ -96,6 +96,9 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"MANAGE-COMPANIES": {
+			"TITLE": ""
 		},
 		"MANAGE-USERS": {
 			"TITLE": ""

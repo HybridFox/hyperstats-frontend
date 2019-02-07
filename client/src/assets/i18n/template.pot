@@ -5,9 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-
-"POT-Creation-Date: 2019-02-07T12:38:16.048Z\n"
-"PO-Revision-Date: 2019-02-07T12:38:16.048Z\n"
+"POT-Creation-Date: 2019-02-07T16:47:19.622Z\n"
+"PO-Revision-Date: 2019-02-07T16:47:19.622Z\n"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
@@ -126,11 +125,10 @@ msgstr ""
 msgid "GENERAL##LABELS##SORTBY"
 msgstr ""
 
-<<<<<<< HEAD
-msgid "GENERAL##LABELS##STREET"
-=======
 msgid "GENERAL##LABELS##SPONSOREDBY"
->>>>>>> 1849c025fb32dcfe9e37a7e78773940630d66de0
+msgstr ""
+
+msgid "GENERAL##LABELS##STREET"
 msgstr ""
 
 msgid "GENERAL##LABELS##STREETNAME"
@@ -236,6 +234,9 @@ msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-USERS##TITLE"
