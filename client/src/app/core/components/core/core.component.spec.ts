@@ -1,23 +1,22 @@
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgReduxTestingModule } from '@angular-redux/store/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
+import { of } from 'rxjs';
+
+import { AuthActions } from '@store/auth';
 import { LanguageService } from '../../services/language';
 import { CoreComponent } from './core.component';
-import { FooterComponent } from '@shared/components/footer/footer.component';
-import { NgReduxTestingModule } from '@angular-redux/store/testing';
-import { AuthActions } from '@store/auth';
-import { MenuComponent } from '@shared/components/menu/menu.component';
-import { MainMenuComponent } from '@shared/components/main-menu/main-menu.component';
-import { UserMenuComponent } from '@shared/components/user-menu/user-menu.component';
 
 class MockLanguageService {
   initLanguage() {}
 }
 
 class MockAuthActions {
-
+  public fetchProfile() {
+    return of();
+  }
 }
 
 describe('CoreComponent', () => {
@@ -30,20 +29,15 @@ describe('CoreComponent', () => {
         TranslateModule.forRoot(),
         NgReduxTestingModule,
         RouterTestingModule,
-        MatMenuModule,
-        MatButtonModule,
       ],
       declarations: [
         CoreComponent,
-        FooterComponent,
-        MainMenuComponent,
-        UserMenuComponent,
-        MenuComponent,
       ],
       providers: [
         { provide: LanguageService, useClass: MockLanguageService },
         { provide: AuthActions, useClass: MockAuthActions }
       ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
 
