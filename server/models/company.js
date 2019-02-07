@@ -64,6 +64,10 @@ const CompanySchema = mongoose.Schema({
 			type: String,
 			ref: "Company",
 		},
+		activated: {
+			type: Boolean,
+			default: false,
+		},
 		type: {
 			type: String,
 			// R => Recycler

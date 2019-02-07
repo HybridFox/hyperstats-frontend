@@ -57,4 +57,26 @@ describe("RegisterHandler", () => {
 
 		return expect(loginHandler(userToTest.email, userToTest.password)).to.eventually.rejectedWith(ResponseError);
 	});
+
+	it("Should not fail when user register itself twice before validation", async() => {
+		const userToTest = {
+			email: "validuser4@example.com",
+			password: "validPassword4",
+			firstname: "firstname4",
+			lastname: "lastname4",
+		};
+		await registerHandler(userToTest);
+		const response = await registerHandler(userToTest);
+
+		expect(response).to.be.an("object");
+		expect(response.data).to.be.an("object");
+		expect(response.data.email).to.equal("validuser4@example.com");
+		expect(response.meta).to.be.an("object");
+
+		const sentMail = nodemailerMock.mock.sentMail();
+
+		expect(sentMail).to.have.lengthOf(2);
+		expect(sentMail[0].to).to.equal("validuser4@example.com");
+		expect(sentMail[1].to).to.equal("validuser4@example.com");
+	});
 });

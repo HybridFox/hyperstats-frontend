@@ -194,4 +194,58 @@ module.exports = (router) => {
 			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
 			companyController.remove
 		);
+
+	/**
+	 * @swagger
+	 * /api/company/{id}/activate:
+	 *   patch:
+	 *     description: Activate a company by Id
+	 *     tags:
+	 *       - company
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         type: string
+	 *     responses:
+	 *       200:
+	 *         description: Company
+	 *         properties:
+	 *           success:
+	 *              type: boolean
+	 */
+	router.route("/company/:id/activate").patch(
+		dataMiddleware.copy,
+		dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+		companyController.activate
+	);
+
+	/**
+	 * @swagger
+	 * /api/company/{id}/deactivate:
+	 *   patch:
+	 *     description: Deactivate a company by Id
+	 *     tags:
+	 *       - company
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         type: string
+	 *     responses:
+	 *       200:
+	 *         description: Company
+	 *         properties:
+	 *           success:
+	 *              type: boolean
+	 */
+	router.route("/company/:id/deactivate").patch(
+		dataMiddleware.copy,
+		dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+		companyController.deactivate
+	);
 };
