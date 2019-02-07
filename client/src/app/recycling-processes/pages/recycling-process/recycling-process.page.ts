@@ -1,12 +1,16 @@
 import { Component, OnInit, OnDestroy, } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import * as uuid from 'uuid';
 import { omit, prop, pathOr, equals } from 'ramda';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { select } from '@angular-redux/store';
-import { Observable, Subscription } from 'rxjs';
-import { filter, distinctUntilChanged } from 'rxjs/operators';
+import { Observable, Subscription, Subject } from 'rxjs';
+import { filter, distinctUntilChanged, takeUntil } from 'rxjs/operators';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
+import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 
 @Component({
   selector: 'app-recycling-process-page',
@@ -17,20 +21,25 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
 
     public recyclingProcessForm: any;
     public process: any;
+    public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
 
     private _recyclingProcessId: string;
     private _processSubscription: Subscription;
+    private _componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
     constructor(
         private _processActions: RecyclingProcessesActions,
         private _formBuilder: FormBuilder,
         private _route: ActivatedRoute,
-        private _router: Router
+        private _router: Router,
+        private _toastrService: ToastrService,
+        private _translateService: TranslateService,
     ) {}
 
     public ngOnInit() {
         this._setupForm();
         this._route.params
+            .pipe(takeUntil(this._componentDestroyed$))
             .pipe(distinctUntilChanged())
             .subscribe((params) => {
                 this._recyclingProcessId = params.recyclingProcess;
@@ -59,20 +68,23 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
         this.recyclingProcessForm.controls.steps.push(this._createStep());
     }
 
-    public precedingSteps() {
+    public precedingSteps(step: FormControl) {
         return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
-            // TODO: Find a way to efficiently translate this. Not in the select component.
+            if (step.value.value.uuid === x.value.uuid) {
+                return acc;
+            }
+
             acc.push({
-                label: x.value.description || `Recycling Step ${key + 1}`,
+                label: x.value.description ||
+                    `${this._translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
                 value: x.value.uuid
             });
+
             return acc;
-        }, [
-            {
-                label: 'None',
-                value: null
-            }
-        ]);
+        }, [{
+            label: ngxExtract('PAGE.RECYCLING-PROCESSES.PRECEDING-STEP.NONE'),
+            value: null
+        }]);
     }
 
     public save() {
@@ -95,9 +107,21 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             promise = this._processActions.create(toSave).toPromise();
         }
 
-        // TODO: Visual state management
+        promise
+            .then((response) => {
+                this._toastrService.success(
+                    ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.SUCCESS.DESCRIPTION') as string,
+                    ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.SUCCESS.TITLE') as string
+                );
 
-        promise.then((response) => this._router.navigate([`../${response._id}`], { relativeTo: this._route }));
+                this._router.navigate([`../${response._id}`], { relativeTo: this._route });
+            })
+            .catch(() => {
+                this._toastrService.error(
+                    ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.ERROR.DESCRIPTION') as string,
+                    ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.ERROR.TITLE') as string
+                );
+            });
     }
 
     public remove() {
@@ -105,11 +129,22 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             return;
         }
 
-        this._processActions.delete(this.process._id).toPromise();
+        this._processActions.delete(this.process._id)
+            .toPromise()
+            .then((response) => {
+                this._toastrService.success(
+                    ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.SUCCESS.DESCRIPTION') as string,
+                    ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.SUCCESS.TITLE') as string
+                );
 
-        // TODO: Visual state management
-
-        this._router.navigate(['../'], { relativeTo: this._route });
+                this._router.navigate(['../'], { relativeTo: this._route });
+            })
+            .catch(() => {
+                this._toastrService.error(
+                    ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.DESCRIPTION') as string,
+                    ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.TITLE') as string
+                );
+            });
     }
 
     private _setupForm(process?: any): void {
@@ -168,6 +203,7 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
 
         this._processActions.fetch(this._recyclingProcessId).toPromise();
         this._processSubscription = this.$process
+            .pipe(takeUntil(this._componentDestroyed$))
             .pipe(filter((process) => !equals(process, this.process)))
             .subscribe((process) => {
                 if (!process) {
@@ -181,9 +217,10 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        if (this._processSubscription) {
-            this._processSubscription.unsubscribe();
-            this._processSubscription = null;
-        }
+        this._componentDestroyed$.next(true);
+        this._componentDestroyed$.complete();
     }
 }
+
+
+

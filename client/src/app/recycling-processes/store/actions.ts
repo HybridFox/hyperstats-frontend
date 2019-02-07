@@ -69,10 +69,6 @@ export class RecyclingProcessesActions {
         tap((response: any) => {
           const normalizedPayload = this._entitiesActions.normalize(response, EntitiesActions.schema.recyclingProcess);
 
-          this._handler.dispatch(ACTIONS.CREATE, {
-            payload: normalizedPayload,
-          });
-
           this._handler.dispatch(ACTIONS.ADD_TO_LIST, {
             payload: normalizedPayload,
           });
@@ -98,9 +94,6 @@ export class RecyclingProcessesActions {
           const normalizedPayload = this._entitiesActions.remove('recyclingProcesses', id);
 
           this._handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
-            payload: normalizedPayload,
-          });
-          this._handler.dispatch(ACTIONS.REMOVE, {
             payload: normalizedPayload,
           });
         })
