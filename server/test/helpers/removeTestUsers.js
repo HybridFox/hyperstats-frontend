@@ -9,7 +9,7 @@ module.exports = async(emails, removeLinkedCompanies = true) => {
 		const companies = compose(
 			filter((comp) => !!comp),
 			uniq,
-			map((user) => user.data.company.toString())
+			map((user) => user.data.company ? user.data.company.toString() : null)
 		)(users);
 
 		await CompanyModel.remove({ _id: { $in: companies } });

@@ -4,6 +4,7 @@ const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
+const UserModel = require("../../../models/user");
 
 describe("Integration", () => {
 	describe("Users", () => {
@@ -36,39 +37,35 @@ describe("Integration", () => {
 		afterEach(() => reset());
 
 		after(async() => {
-			await removeTestUsers(["test2@example.com", "joske.janssens.be"]);
+			await removeTestUsers(["test1@example.com", "test2@example.com"]);
 			await closeServer();
 		});
 
 		describe("When not logged in", () => {
-			it("Should update user by id", () => {
+			it("Should update user company by id", () => {
 				return supertest(server)
-					.put(`/api/users/${userId}`)
+					.patch(`/api/users/${userId}/company`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 		});
 
 		describe("When logged in", () => {
-			it("Should update user by id", async() => {
+			it("Should update user company by id", async() => {
 				return supertest(server)
-					.put(`/api/users/${userId}`)
+					.patch(`/api/users/${userId}/company`)
 					.set("cookie", cookie)
 					.send({
-						"data": {
-							"firstname": "__firstname_test-user__remove_identifier__",
-							"lastname": "Janssens",
-							"email": "joske.janssens.be",
-						},
+						company: "507f1f77bcf86cd799439011",
 					})
 					.expect("Content-Type", /json/)
 					.expect(200)
-					.then(({ body }) => {
+					.then(async({ body }) => {
 						expect(body).to.be.an("object");
 						expect(body._id).to.equal(userId.toString());
-						expect(body.data.email).to.equal("joske.janssens.be");
-						expect(body.data.firstname).to.equal("__firstname_test-user__remove_identifier__");
-						expect(body.data.lastname).to.equal("Janssens");
+
+						const res = await UserModel.findOne({ _id: userId }).lean().exec();
+						expect(res.data.company.toString()).to.equal("507f1f77bcf86cd799439011");
 					});
 			});
 		});
