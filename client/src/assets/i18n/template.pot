@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-07T16:47:19.622Z\n"
-"PO-Revision-Date: 2019-02-07T16:47:19.622Z\n"
+"POT-Creation-Date: 2019-02-07T16:58:35.224Z\n"
+"PO-Revision-Date: 2019-02-07T16:58:35.224Z\n"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
@@ -24,6 +24,9 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
@@ -144,6 +147,9 @@ msgid "GENERAL##LABELS##SUBMIT"
 msgstr ""
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##TYPE"
 msgstr ""
 
 msgid "GENERAL##LABELS##UPDATE-PROFILE"

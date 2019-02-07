@@ -12,6 +12,7 @@
 		},
 		"LABELS": {
 			"ACCEPT_TERMS": "",
+			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
@@ -52,6 +53,7 @@
 			"SUBJECT": "",
 			"SUBMIT": "",
 			"TRY-AGAIN": "",
+			"TYPE": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
