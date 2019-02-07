@@ -1,6 +1,6 @@
 module.exports =  {
 	create: require("./create"),
-	get: require("./get"),
+	getAll: require("./getAll"),
 	getOne: require("./getOne"),
 	getCompanyIdOfUser: require("./getCompanyIdOfUser"),
 	remove: require("./remove"),
