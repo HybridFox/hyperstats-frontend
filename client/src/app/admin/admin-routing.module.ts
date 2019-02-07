@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'users',
     loadChildren: '../manage-users/manage-users.module#ManageUsersModule',
   },
+  {
+    path: 'companies',
+    loadChildren: '../manage-companies/manage-companies.module#ManageComapniesModule',
+  },
 ];
 
 @NgModule({
