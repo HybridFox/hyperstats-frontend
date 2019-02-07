@@ -46,6 +46,7 @@
 			"SAVE": "",
 			"SELECT-OPTION": "",
 			"SORTBY": "",
+			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
 			"SUBJECT": "",
@@ -58,6 +59,7 @@
 		"MENU": {
 			"ABOUT": "",
 			"AUDITTRIAL": "",
+			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
 			"CONTACT": "",
 			"HELP": "",
