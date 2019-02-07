@@ -36,7 +36,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             )
             .subscribe((params) => {
                 // Todo: Use multiple params!
-                const type = params ? (params.types.length > 0 ? params.types[0] : null) : null;
+                const type = params && params.types && params.types.length > 0 ? params.types[0] : CompanyType.R;
                 this.companiesActions.fetchByType(type).subscribe();
             });
 
@@ -69,10 +69,12 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     private setFilterForm (): void {
         const originalParams = this.route.snapshot.queryParams;
+        const types = originalParams.types || [CompanyType.R, CompanyType.RP, CompanyType.CO];
+
         this.filter = this.createFilterForm([
-            { value: CompanyType.R, label: 'Recycler', selected: originalParams.types.indexOf(CompanyType.R) !== -1 },
-            { value: CompanyType.RP, label: 'Recycling Partner', selected: originalParams.types.indexOf(CompanyType.RP) !== -1 },
-            { value: CompanyType.CO, label: 'Compliance organisation', selected: originalParams.types.indexOf(CompanyType.CO) !== -1 }
+            { value: CompanyType.R, label: 'Recycler', selected: types.indexOf(CompanyType.R) !== -1 },
+            { value: CompanyType.RP, label: 'Recycling Partner', selected: types.indexOf(CompanyType.RP) !== -1 },
+            { value: CompanyType.CO, label: 'Compliance organisation', selected: types.indexOf(CompanyType.CO) !== -1 }
         ]);
     }
 
