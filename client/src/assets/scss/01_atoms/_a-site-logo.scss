@@ -17,10 +17,5 @@
 
 .a-site-logo--full {
   display: block;
-  background-image: url("/assets/images/logo-full.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 170px;
-  height: 40px;
-  margin-right: $spacer-x-large;
+  margin: 0 $spacer-x-large;
 }
