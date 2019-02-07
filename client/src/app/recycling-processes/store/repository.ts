@@ -18,7 +18,7 @@ export class RecyclingProcessesRepository {
       .get(url);
   }
 
-  public fetch(id: string): Observable<any> {
+  public fetchById(id: string): Observable<any> {
     const url = this.apiConfig.baseUrl(`/recycling-processes/${id}`);
 
     return this.http

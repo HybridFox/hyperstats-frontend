@@ -14,7 +14,6 @@ import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../st
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 
 @Component({
-  selector: 'app-recycling-process-page',
   templateUrl: './recycling-process.page.html',
 })
 export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
@@ -209,15 +208,11 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             return this._setupForm();
         }
 
-        this._processActions.fetch(this._recyclingProcessId).toPromise();
+        this._processActions.fetchById(this._recyclingProcessId).toPromise();
         this._processSubscription = this.$process
             .pipe(takeUntil(this._componentDestroyed$))
-            .pipe(filter((process) => !equals(process, this.process)))
+            .pipe(filter((process) => process && !equals(process, this.process)))
             .subscribe((process) => {
-                if (!process) {
-                    return;
-                }
-
                 this.process = process;
 
                 this._setupForm(this.process);

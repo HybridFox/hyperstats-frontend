@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, filter } from 'rxjs/operators';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
@@ -25,11 +25,8 @@ export class RecyclingProcessesPageComponent implements OnInit {
 
     this.$processes
       .pipe(takeUntil(this._componentDestroyed$))
+      .pipe(filter((processes) => Array.isArray(processes)))
       .subscribe((processes) => {
-        if (!Array.isArray(processes)) {
-          return;
-        }
-
         this.menuItems = processes.reduce((acc, process) => process ? acc.concat({
           label: process.data.name,
           link: process._id

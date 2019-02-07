@@ -40,7 +40,7 @@ export class RecyclingProcessesActions {
       );
   }
 
-  public fetch(id: string) {
+  public fetchById(id: string) {
     this._handler.dispatchStart(ACTIONS.FETCH);
 
     return this._recyclingProcessesRepository.fetch(id)
