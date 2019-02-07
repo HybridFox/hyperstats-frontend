@@ -8,7 +8,9 @@
 	},
 	"GENERAL": {
 		"BUTTONS": {
-			"CREATENEWREPORT": ""
+			"CANCEL": "",
+			"CREATENEWREPORT": "",
+			"SAVE": ""
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
@@ -20,12 +22,12 @@
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
+			"ADMIN": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CANCEL": "",
 			"CITY": "",
 			"COMPANYNAME": "",
-			"COPYRIGHT": "",
 			"COUNTRY": "",
 			"DELETE-STEP": "",
 			"DRAGANDDROP": "",
@@ -51,6 +53,7 @@
 			"SAVE": "",
 			"SELECT-OPTION": "",
 			"SORTBY": "",
+			"SPONSOREDBY": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
 			"SUBJECT": "",
@@ -74,7 +77,8 @@
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
 			"REPORTS": "",
-			"USERPROFILE": ""
+			"USERPROFILE": "",
+			"USERS": ""
 		}
 	},
 	"PAGE": {
@@ -98,6 +102,9 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"MANAGE-USERS": {
+			"TITLE": ""
 		},
 		"PROFILE": {
 			"TITLE": ""

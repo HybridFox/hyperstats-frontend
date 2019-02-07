@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-07T13:44:26.046Z\n"
+"POT-Creation-Date: 2019-02-07T13:55:56.795Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,8 +20,14 @@ msgstr "Sorting"
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
 msgstr "Transport"
 
+msgid "GENERAL##BUTTONS##CANCEL"
+msgstr "Cancel"
+
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
+
+msgid "GENERAL##BUTTONS##SAVE"
+msgstr "Save"
 
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
@@ -41,6 +47,9 @@ msgstr "Add recycling partner"
 msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
 msgstr "Add Recycling Process"
 
+msgid "GENERAL##LABELS##ADMIN"
+msgstr "Admin"
+
 msgid "GENERAL##LABELS##BOX"
 msgstr "Box"
 
@@ -55,9 +64,6 @@ msgstr "City"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company name"
-
-msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "© Eucobat 2018"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -134,6 +140,9 @@ msgstr "Select a option"
 msgid "GENERAL##LABELS##SORTBY"
 msgstr "Sort by"
 
+msgid "GENERAL##LABELS##SPONSOREDBY"
+msgstr "Sponsored by"
+
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
 
@@ -200,6 +209,9 @@ msgstr "Reports"
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
 
+msgid "GENERAL##MENU##USERS"
+msgstr "Users"
+
 msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
@@ -265,6 +277,9 @@ msgstr "Please check your email for the link to reset your password"
 #| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
+
+msgid "PAGE##MANAGE-USERS##TITLE"
+msgstr "Manage users"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
@@ -680,6 +695,9 @@ msgstr "I accept the terms and conditions"
 #~ "Add here the legal information for all the different recycling partners "
 #~ "you work with. Only add the address information where the actual "
 #~ "recycling plants are located."
+
+#~ msgid "GENERAL##LABELS##COPYRIGHT"
+#~ msgstr "© Eucobat 2018"
 
 #~ msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 #~ msgstr "Your registration is now complete, please login to continue"

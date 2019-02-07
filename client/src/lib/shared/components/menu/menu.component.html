@@ -4,7 +4,9 @@
 }">
     <div class="container" *ngIf="!profile">
         <div class="o-menu__left">
-            <a routerLink="/" class="a-site-logo--full"></a>
+            <a *ngIf="!(routeData$ | async)?.hideLogo" routerLink="/" class="a-site-logo">
+                <img src="/assets/images/logo.png" alt="Site logo">
+            </a>
         </div>
         <div class="o-menu__right">
             <app-main-menu [profile]="profile"></app-main-menu>

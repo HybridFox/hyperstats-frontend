@@ -2,8 +2,10 @@ export * from './actions';
 export * from './reducers';
 export * from './selectors';
 
-import { RecyclingProcessesActions } from './actions';
+import { RecyclingPartnerActions } from './actions';
+import { RecyclingPartnerRepository } from './repository';
 
-export const ReportsServices = [
-  RecyclingProcessesActions
+export const RecyclingPartnersServices = [
+  RecyclingPartnerActions,
+  RecyclingPartnerRepository
 ];

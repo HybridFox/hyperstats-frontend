@@ -49,6 +49,10 @@ const RecyclingProcessSchema = mongoose.Schema({
 			type: Date,
 			default: Date.now,
 		},
+		activated: {
+			type: Boolean,
+			default: false,
+		},
 	},
 });
 

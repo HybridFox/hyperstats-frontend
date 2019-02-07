@@ -1,0 +1,33 @@
+.a-table-wrapper {
+    overflow-x: auto;
+}
+
+.a-table {
+    width: 100%;
+    text-align: left;
+
+    td:not(:last-child),
+    th:not(:last-child) {
+        padding: 1.5rem 1.5rem 1.5rem 0;
+    }
+
+    td:last-child {
+        text-align: right;
+    }
+
+    thead {
+        tr {
+            border-bottom: 1px solid #E1E1E1;
+        }
+    }
+
+    tbody {
+        tr:not(:last-child) {
+            border-bottom: 1px solid #E1E1E1;
+        }
+    }
+}
+
+.a-table__cell--center {
+    text-align: center;
+}

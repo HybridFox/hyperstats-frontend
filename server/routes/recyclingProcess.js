@@ -132,4 +132,58 @@ module.exports = (router) => {
 			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			Controller.remove
 		);
+
+	/**
+	 * @swagger
+	 * /api/recycling-processes/{id}/activate:
+	 *   patch:
+	 *     description: Activate a recycling-process by Id
+	 *     tags:
+	 *       - recycling-processes
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         type: string
+	 *     responses:
+	 *       200:
+	 *         description: Response
+	 *         properties:
+	 *           success:
+	 *              type: boolean
+	 */
+	router.route("/recycling-processes/:id/activate").patch(
+		DataMiddleware.copy,
+		DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
+		Controller.activate
+	);
+
+	/**
+	 * @swagger
+	 * /api/company/{id}/deactivate:
+	 *   put:
+	 *     description: Deactivate a recycling-process by Id
+	 *     tags:
+	 *       - recycling-processes
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         required: true
+	 *         type: string
+	 *     responses:
+	 *       200:
+	 *         description: Response
+	 *         properties:
+	 *           success:
+	 *              type: boolean
+	 */
+	router.route("/recycling-processes/:id/deactivate").patch(
+		DataMiddleware.copy,
+		DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
+		Controller.deactivate
+	);
 };

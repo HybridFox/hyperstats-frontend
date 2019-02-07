@@ -1,0 +1,27 @@
+<div class="a-table-wrapper">
+    <table class="a-table">
+        <thead>
+            <tr>
+                <th>{{ "GENERAL.LABELS.FIRSTNAME" | translate }}</th>
+                <th>{{ "GENERAL.LABELS.LASTNAME" | translate }}</th>
+                <th>{{ "GENERAL.LABELS.EMAIL" | translate }}</th>
+                <th class="a-table__cell--center">{{ "GENERAL.LABELS.ADMIN" | translate }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user?.data.firstname }}</td>
+                <td>{{ user?.data.lastname }}</td>
+                <td>{{ user?.data.email }}</td>
+                <td class="a-table__cell--center">
+                    <span *ngIf="!user?.meta?.isAdmin" class="fa fa-circle-o"></span>
+                    <span *ngIf="user?.meta?.isAdmin" class="fa fa-dot-circle-o"></span>
+                </td>
+                <td>
+                    <a [routerLink]="user?._id" class="a-link">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -9,7 +9,6 @@ import { ApiModule } from '@api/api';
 import { ContactRepository } from '@api/contact';
 
 import { CoreRoutingModule } from './core-routing.module';
-import { CoreComponent } from './core.component';
 
 import { StoreModule } from '@store/store.module';
 import { StoreService } from '@store/store.service';
@@ -19,21 +18,26 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { AuthActions } from '@store/auth';
 import { AuthRepository } from '@store/auth/auth.repository';
 import { SharedModule } from '@shared/shared.module';
-import { AuthGuard } from '@guards/auth.guard';
 import { ErrorInterceptor } from '@helpers/error.interceptor';
 import { TranslateToastComponent } from '@shared/components/translate-toast/translate-toast.component';
 import { FormFieldsModule } from '@ui/form-fields';
+import { LoadingModule } from '@ui/loading';
 
-import { WebpackTranslateLoader } from './translations';
-import { CodesService } from './services/codes/codes.service';
-import { Services } from './services';
-import { Pages } from './pages';
 import { StoreRouterModule } from '@core/store-router';
 import { CompanyRepository } from '@api/company';
 
+import { WebpackTranslateLoader } from './translations';
+import { CodesService } from './services/codes/codes.service';
+
+import { Services } from './services';
+import { Components, CoreComponent } from './components';
+import { Pages } from './pages';
+import { Guards } from './guards';
+
+
 @NgModule({
   declarations: [
-    CoreComponent,
+    Components,
     Pages,
     TranslateToastComponent,
   ],
@@ -50,6 +54,7 @@ import { CompanyRepository } from '@api/company';
 
     SharedModule,
     ReactiveFormsModule,
+    LoadingModule,
 
     StoreRouterModule,
 
@@ -74,7 +79,7 @@ import { CompanyRepository } from '@api/company';
     StoreService,
     CodesService,
     Services,
-    AuthGuard,
+    Guards,
 
     AuthActions,
     AuthRepository,

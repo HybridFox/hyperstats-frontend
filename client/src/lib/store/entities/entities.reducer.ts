@@ -1,5 +1,4 @@
 import { path, mergeDeepLeft } from 'ramda';
-import * as deepExtend from 'deep-extend';
 
 import { ACTIONS } from './entities.action-types';
 import { INITIAL_STATE } from './entities.initial-state';
