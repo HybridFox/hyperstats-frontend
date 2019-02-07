@@ -51,7 +51,7 @@ export class EntitiesActions {
     });
   }
 
-  public remove(entity: string, id: string): void {
+  public remove(entity: string, id: string): string {
     this.ngRedux.dispatch({
       type: ACTIONS.REMOVE,
       payload: {
@@ -59,5 +59,7 @@ export class EntitiesActions {
         id,
       },
     });
+
+    return id;
   }
 }

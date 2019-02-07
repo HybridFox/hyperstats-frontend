@@ -1,5 +1,6 @@
 <app-recycling-partner-form
-    *ngIf="recyclingPartner$ | async"
-    [recyclingPartner]="recyclingPartner$ | async"
+    [recyclingPartner]="partner"
     [countryList]="countryList"
+    (submit)="save($event)"
+    (remove)="remove($event)"
 ></app-recycling-partner-form>
