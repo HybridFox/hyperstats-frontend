@@ -2,11 +2,11 @@ const CompanyModel = require("../../../models/company");
 const errors = require("../../../helpers/errorHandler");
 
 module.exports = async(_id, bool) => {
-	const updateResult = await CompanyModel.update({ _id }, { $set: { "meta.activated": bool } }).exec();
+	const company = await CompanyModel.findOneAndUpdate({ _id }, { $set: { "meta.activated": bool } }, { new: true }).exec();
 
-	if (updateResult.nModified === 0) {
+	if (!company) {
 		throw errors.ItemNotFound;
 	}
 
-	return;
+	return company.toObject();
 };

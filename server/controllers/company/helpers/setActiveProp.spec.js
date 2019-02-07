@@ -26,23 +26,28 @@ describe("Company", () => {
 		});
 
 		it("Should activate a company", async() => {
-			await setActiveProp(company._id, true);
+			const result = await setActiveProp(company._id, true);
 
-			const result = await CompanyModel.findOne({ _id: company._id }).lean().exec();
+			const dbResult = await CompanyModel.findOne({ _id: company._id }).lean().exec();
 
 			expect(result).to.be.an("object");
 			expect(result.meta).to.be.an("object");
 			expect(result.meta.activated).to.be.true;
+			expect(dbResult).to.be.an("object");
+			expect(dbResult.meta).to.be.an("object");
+			expect(dbResult.meta.activated).to.be.false;
 		});
 
 		it("Should deactivate a company", async() => {
-			await setActiveProp(company._id, false);
-
-			const result = await CompanyModel.findOne({ _id: company._id }).lean().exec();
+			const result = await setActiveProp(company._id, false);
+			const dbResult = await CompanyModel.findOne({ _id: company._id }).lean().exec();
 
 			expect(result).to.be.an("object");
 			expect(result.meta).to.be.an("object");
 			expect(result.meta.activated).to.be.false;
+			expect(dbResult).to.be.an("object");
+			expect(dbResult.meta).to.be.an("object");
+			expect(dbResult.meta.activated).to.be.false;
 		});
 
 
