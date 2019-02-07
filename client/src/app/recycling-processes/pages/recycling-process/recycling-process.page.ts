@@ -1,15 +1,16 @@
 import { Component, OnInit, OnDestroy, } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { select } from '@angular-redux/store';
 import * as uuid from 'uuid';
 import { omit, prop, pathOr, equals } from 'ramda';
-import { ActivatedRoute, Router } from '@angular/router';
-import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
-import { select } from '@angular-redux/store';
 import { Observable, Subscription, Subject } from 'rxjs';
 import { filter, distinctUntilChanged, takeUntil } from 'rxjs/operators';
-import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { ToastrService } from 'ngx-toastr';
-import { TranslateService } from '@ngx-translate/core';
+
+import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 
 @Component({
@@ -48,6 +49,11 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
 
                 this._fetchProcessIfNeeded();
             });
+    }
+
+    public ngOnDestroy() {
+        this._componentDestroyed$.next(true);
+        this._componentDestroyed$.complete();
     }
 
     public getStepKey(key: string) {
@@ -216,11 +222,6 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
 
                 this._setupForm(this.process);
             });
-    }
-
-    ngOnDestroy() {
-        this._componentDestroyed$.next(true);
-        this._componentDestroyed$.complete();
     }
 }
 

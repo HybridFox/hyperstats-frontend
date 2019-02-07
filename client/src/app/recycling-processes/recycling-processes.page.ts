@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
 import { select } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
-import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { takeUntil } from 'rxjs/operators';
+
+import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
+import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
 
 @Component({
   selector: 'app-recycling-processes',
