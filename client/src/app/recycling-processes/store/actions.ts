@@ -43,7 +43,7 @@ export class RecyclingProcessesActions {
   public fetchById(id: string) {
     this._handler.dispatchStart(ACTIONS.FETCH);
 
-    return this._recyclingProcessesRepository.fetch(id)
+    return this._recyclingProcessesRepository.fetchById(id)
       .pipe(
         catchError((error) => {
           this._handler.dispatchError(ACTIONS.FETCH, {
