@@ -18,4 +18,8 @@
 .a-site-logo--full {
   display: block;
   margin-left: $spacer;
+  height: 20px;
+  img {
+    height: inherit;
+  }
 }

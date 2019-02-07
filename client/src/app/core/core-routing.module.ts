@@ -10,7 +10,8 @@ const routes: Routes = [
     path: 'login',
     component: Pages.LoginPageComponent,
     data: {
-      menuState: 'transparant'
+      menuState: 'transparant',
+      hideLogo: true,
     }
   },
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     path: 'register',
     component: Pages.RegisterPageComponent,
     data: {
-      menuState: 'transparant'
+      menuState: 'transparant',
+      hideLogo: true,
     }
   },
   {
