@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { LanguageService } from './services';
-import { NgRedux } from '@angular-redux/store';
-import { AuthActions } from '@store/auth';
 import { Router } from '@angular/router';
+import { NgRedux } from '@angular-redux/store';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
+
+import { AuthActions } from '@store/auth';
+import { LanguageService } from '../../services';
 
 @Component({
   selector: 'app-root',
   templateUrl: './core.component.html',
 })
 export class CoreComponent implements OnInit {
-  title = 'rare';
-  public actionButton = {label: 'New report', link: '/new-report'};
-  public user: any;
+  @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  @select(['auth', 'user', 'loading']) public loading$: Observable<any>;
+  public actionButton = { label: 'New report', link: '/new-report' };
 
   constructor(
     private languageService: LanguageService,
-    private ngRedux: NgRedux<any>,
     private authActions: AuthActions,
-    private router: Router
+    private router: Router,
   ) {}
 
   public ngOnInit() {
     this.languageService.initLanguage();
-    this.ngRedux.select(['auth', 'user', 'result']).subscribe((user) => {
-      this.user = user;
-    });
+    this.authActions.fetchProfile().subscribe(() => {}, () => {});
   }
 
   public logout() {

@@ -9,7 +9,7 @@ export interface ProgressState<T = any> {
   error: any;
   result: T;
   startFetch: number;
-  stopFetch: number;
+  doneFetch: number;
 }
 
 export type ProgressReducer<T = any> = (state: T, action: Action) => T;

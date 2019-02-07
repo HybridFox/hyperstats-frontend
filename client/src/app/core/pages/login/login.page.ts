@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { select } from '@angular-redux/store';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { ToastrService } from 'ngx-toastr';
 
@@ -11,6 +12,8 @@ import { AuthActions } from '@store/auth';
     templateUrl: './login.page.html',
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
+    @select(['auth', 'user', 'result']) private user$: Observable<any>;
+
     public loginForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
@@ -21,6 +24,12 @@ export class LoginPageComponent implements OnInit, OnDestroy {
     ) { }
 
     ngOnInit(): void {
+        this.user$.subscribe((user) => {
+            if (user) {
+                this.router.navigate(['/']);
+            }
+        });
+
         this.loginForm = new FormGroup({
             email: new FormControl('', Validators.required),
             password: new FormControl('', Validators.required)

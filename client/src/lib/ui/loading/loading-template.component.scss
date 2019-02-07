@@ -1,0 +1,33 @@
+@import "00_base/_variables.scss";
+
+.m-loading {
+  padding: $spacer-x-large;
+  border-radius: 10px;
+  border: 1px solid #c0c0c0;
+  background-color: #fafafa;
+}
+
+.m-loading--short {
+  text-align: center;
+}
+
+.m-loading--middle {
+  display: flex;
+
+  button {
+    display: inline;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+    color: #4a98ee;
+  }
+}
+
+.m-loading__icon {
+  padding-right: 2rem;
+}
+
+.m-loading__title {
+  font-weight: 700;
+  margin-bottom: 20px;
+}

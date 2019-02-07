@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard } from '@guards/auth.guard';
+import { AuthGuard, AdminGuard } from './guards';
 
 import * as Pages from './pages';
 
@@ -53,27 +53,23 @@ const routes: Routes = [
     }
   },
   {
-    path: 'help',
-    canActivate: [AuthGuard],
-    component: Pages.HelpPageComponent,
-    children: [
-      { path: ':section', component: Pages.HelpSectionPageComponent },
-    ]
-  },
-  {
     path: 'contact',
     component: Pages.ContactPageComponent
+  },
+  {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
   },
   {
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
         path: '',
-        redirectTo: 'reports',
         pathMatch: 'full',
+        component: Pages.LandingPageComponent,
       },
+      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
         path: 'reports',
         component: Pages.ReportsPageComponent
@@ -86,20 +82,16 @@ const routes: Routes = [
         path: 'company-information',
         component: Pages.CompanyPageComponent
       },
-    ]
-  },
-  {
-    path: '',
-    canActivate: [AuthGuard],
-    children: [
+      { path: 'help', loadChildren: '../help/help.module#HelpModule'},
       { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
       { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule'},
     ]
   },
   {
-    path: 'privacy',
-    component: Pages.PrivacyPageComponent
-  }
+    path: 'admin',
+    canActivate: [AuthGuard, AdminGuard],
+    loadChildren: '../admin/admin.module#AdminModule',
+  },
 ];
 
 @NgModule({
