@@ -1,5 +1,5 @@
 <h1>Detail page</h1>
 
 <div class="m-card--primary u-margin-bottom-large">
-    <pre class="a-pre">{{ company$ | async | json }}</pre>
+    <app-company-form [company]="company$ | async"></app-company-form>
 </div>
