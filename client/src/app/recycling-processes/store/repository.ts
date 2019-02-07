@@ -12,9 +12,37 @@ export class RecyclingProcessesRepository {
   ) {}
 
   public fetchAll(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/5c23844b2f00006c00049604');
+    const url = this.apiConfig.baseUrl('/recycling-processes');
 
     return this.http
       .get(url);
+  }
+
+  public fetchById(id: string): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/recycling-processes/${id}`);
+
+    return this.http
+      .get(url);
+  }
+
+  public create(process: any): Observable<any> {
+    const url = this.apiConfig.baseUrl('/recycling-processes');
+
+    return this.http
+      .post(url, process);
+  }
+
+  public update(process: any): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/recycling-processes/${process._id}`);
+
+    return this.http
+      .put(url, process);
+  }
+
+  public remove(id: string): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/recycling-processes/${id}`);
+
+    return this.http
+      .delete(url);
   }
 }

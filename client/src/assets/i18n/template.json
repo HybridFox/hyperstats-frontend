@@ -1,4 +1,11 @@
 {
+	"CONSTANTS": {
+		"METHODS-OF-PROCESSING": {
+			"RECYCLING": "",
+			"SORTING": "",
+			"TRANSPORT": ""
+		}
+	},
 	"GENERAL": {
 		"BUTTONS": {
 			"CANCEL": "",
@@ -41,6 +48,7 @@
 			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"REMOVE": "",
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"SELECT-OPTION": "",
@@ -123,6 +131,9 @@
 				"SCHEMATIC-OVERVIEW-DESCRIPTION": "",
 				"UPLOAD-FILE-WITH-FURTHER-DETAILS": ""
 			},
+			"PRECEDING-STEP": {
+				"NONE": ""
+			},
 			"PROCESS-DESCRIPTION": "",
 			"PROCESS-TITLE": "",
 			"RECYCLING-STEP": "",
@@ -195,6 +206,26 @@
 			}
 		},
 		"PROFILE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-SAVE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

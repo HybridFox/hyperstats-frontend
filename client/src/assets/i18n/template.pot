@@ -5,8 +5,17 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-07T13:55:56.795Z\n"
-"PO-Revision-Date: 2019-02-07T13:55:56.795Z\n"
+"POT-Creation-Date: 2019-02-07T13:44:26.046Z\n"
+"PO-Revision-Date: 2019-02-07T13:44:26.046Z\n"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
+msgstr ""
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
+msgstr ""
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
+msgstr ""
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
@@ -111,6 +120,9 @@ msgid "GENERAL##LABELS##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##LABELS##REGISTER"
+msgstr ""
+
+msgid "GENERAL##LABELS##REMOVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
@@ -287,6 +299,9 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
 msgstr ""
 
+msgid "PAGE##RECYCLING-PROCESSES##PRECEDING-STEP##NONE"
+msgstr ""
+
 msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
 msgstr ""
 
@@ -387,6 +402,30 @@ msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"

@@ -7,6 +7,10 @@ export const reducer = (state = null, action) => {
     return action.payload;
   }
 
+  if (action.type === ACTIONS.REMOVE) {
+    return null;
+  }
+
   return state;
 };
 
