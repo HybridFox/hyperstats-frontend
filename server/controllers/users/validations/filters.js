@@ -1,9 +1,8 @@
 const Joi = require("joi");
-Joi.objectId = require("joi-objectid")(Joi);
 const { schemas } = require("../../../helpers/validation");
 
 const schema = Joi.object().keys({
-	id: Joi.objectId().required(),
+	type: Joi.string().valid(["R", "RP", "CO"]).optional(),
 });
 
 module.exports = {
