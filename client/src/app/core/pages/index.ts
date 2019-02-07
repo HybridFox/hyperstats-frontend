@@ -1,44 +1,46 @@
-export * from './contact';
-export * from './about';
-export * from './login';
-export * from './register';
-export * from './profile';
-export * from './forgot-password';
-export * from './reset-password';
-export * from './company-information';
-export * from './verification-succeeded';
-export * from './verification-failed';
-export * from './reports';
-export * from './privacy';
-export * from './help';
-
-import { ContactPageComponent } from './contact';
 import { AboutPageComponent } from './about';
-import { LoginPageComponent } from './login';
-import { RegisterPageComponent } from './register';
-import { ProfilePageComponent } from './profile';
-import { ForgotPasswordPageComponent } from './forgot-password';
-import { ResetPasswordPageComponent } from './reset-password';
+export { AboutPageComponent } from './about';
 import { CompanyPageComponent } from './company-information';
-import { VerificationSucceededPageComponent } from './verification-succeeded';
-import { VerificationFailedPageComponent } from './verification-failed';
-import { ReportsPageComponent } from './reports';
-import { PrivacyPageComponent } from './privacy';
+export { CompanyPageComponent } from './company-information';
+import { ContactPageComponent } from './contact';
+export { ContactPageComponent } from './contact';
+import { ForgotPasswordPageComponent } from './forgot-password';
+export { ForgotPasswordPageComponent } from './forgot-password';
 import { HelpPageComponent, HelpSectionPageComponent } from './help';
+export { HelpPageComponent, HelpSectionPageComponent } from './help';
+import { LandingPageComponent } from './landing';
+export { LandingPageComponent } from './landing';
+import { LoginPageComponent } from './login';
+export { LoginPageComponent } from './login';
+import { PrivacyPageComponent } from './privacy';
+export { PrivacyPageComponent } from './privacy';
+import { ProfilePageComponent } from './profile';
+export { ProfilePageComponent } from './profile';
+import { RegisterPageComponent } from './register';
+export { RegisterPageComponent } from './register';
+import { ReportsPageComponent } from './reports';
+export { ReportsPageComponent } from './reports';
+import { ResetPasswordPageComponent } from './reset-password';
+export { ResetPasswordPageComponent } from './reset-password';
+import { VerificationFailedPageComponent } from './verification-failed';
+export { VerificationFailedPageComponent } from './verification-failed';
+import { VerificationSucceededPageComponent } from './verification-succeeded';
+export { VerificationSucceededPageComponent } from './verification-succeeded';
 
 export const Pages = [
     AboutPageComponent,
-    LoginPageComponent,
-    RegisterPageComponent,
-    ContactPageComponent,
-    ProfilePageComponent,
-    ForgotPasswordPageComponent,
-    ResetPasswordPageComponent,
     CompanyPageComponent,
-    VerificationSucceededPageComponent,
-    VerificationFailedPageComponent,
-    ReportsPageComponent,
-    PrivacyPageComponent,
+    ContactPageComponent,
+    ForgotPasswordPageComponent,
     HelpPageComponent,
-    HelpSectionPageComponent
+    HelpSectionPageComponent,
+    LandingPageComponent,
+    LoginPageComponent,
+    PrivacyPageComponent,
+    ProfilePageComponent,
+    RegisterPageComponent,
+    ReportsPageComponent,
+    ResetPasswordPageComponent,
+    VerificationFailedPageComponent,
+    VerificationSucceededPageComponent,
 ];

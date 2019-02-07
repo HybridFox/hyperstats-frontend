@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { select } from '@angular-redux/store';
-import { Observable, combineLatest, Subject } from 'rxjs';
-import { map, tap, filter, skipUntil, skip } from 'rxjs/operators';
+import { Observable, combineLatest } from 'rxjs';
+import { map, tap, filter } from 'rxjs/operators';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

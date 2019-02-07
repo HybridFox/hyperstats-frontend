@@ -65,15 +65,19 @@ const routes: Routes = [
     component: Pages.ContactPageComponent
   },
   {
+    path: 'privacy',
+    component: Pages.PrivacyPageComponent
+  },
+  {
     path: '',
     canActivate: [AuthGuard],
     children: [
-      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
         path: '',
-        redirectTo: 'reports',
         pathMatch: 'full',
+        component: Pages.LandingPageComponent,
       },
+      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
         path: 'reports',
         component: Pages.ReportsPageComponent
@@ -86,12 +90,6 @@ const routes: Routes = [
         path: 'company-information',
         component: Pages.CompanyPageComponent
       },
-    ]
-  },
-  {
-    path: '',
-    canActivate: [AuthGuard],
-    children: [
       { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
       { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule'},
     ]
@@ -101,10 +99,6 @@ const routes: Routes = [
     canActivate: [AuthGuard, AdminGuard],
     loadChildren: '../admin/admin.module#AdminModule',
   },
-  {
-    path: 'privacy',
-    component: Pages.PrivacyPageComponent
-  }
 ];
 
 @NgModule({
