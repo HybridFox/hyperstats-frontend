@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr "Cancel"
@@ -55,9 +55,6 @@ msgstr "City"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company name"
-
-msgid "GENERAL##LABELS##COPYRIGHT"
-msgstr "© Eucobat 2018"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -133,6 +130,9 @@ msgstr "Sort by"
 
 msgid "GENERAL##LABELS##STREET"
 msgstr "Street name"
+
+msgid "GENERAL##LABELS##SPONSOREDBY"
+msgstr "Sponsored by"
 
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
@@ -645,6 +645,9 @@ msgstr "Recycling Efficiency"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
+
+#~ msgid "GENERAL##LABELS##COPYRIGHT"
+#~ msgstr "© Eucobat 2018"
 
 #~ msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
 #~ msgstr "Your registration is now complete, please login to continue"
