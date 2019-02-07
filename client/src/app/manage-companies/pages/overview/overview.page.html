@@ -4,7 +4,7 @@
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-4-12">
         <div class="m-card--primary">
-            <div *ngFor="let type of filter.get('types').controls">
+            <div *ngFor="let type of filter.get('types')['controls']">
                 <app-checkbox-input
                     class="u-margin-bottom-large"
                     [control]="type.get('selected')"
