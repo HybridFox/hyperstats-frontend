@@ -4,8 +4,13 @@
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-4-12">
         <div class="m-card--primary">
-            <!-- Todo: add filters in next ticket -->
-            Filters not available
+            <div *ngFor="let type of filter.get('types').controls">
+                <app-checkbox-input
+                    class="u-margin-bottom-large"
+                    [control]="type.get('selected')"
+                    [label]="type.value.label"
+                ></app-checkbox-input>
+            </div>
         </div>
     </div>
     <div class="l-grid__col-8-12">
