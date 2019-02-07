@@ -36,7 +36,7 @@ describe("Integration", () => {
 		afterEach(() => reset());
 
 		after(async() => {
-			await removeTestUsers(["test1@example.com", "test2@example.com"]);
+			await removeTestUsers(["test2@example.com", "joske.janssens.be"]);
 			await closeServer();
 		});
 
@@ -56,7 +56,7 @@ describe("Integration", () => {
 					.set("cookie", cookie)
 					.send({
 						"data": {
-							"firstname": "Joske",
+							"firstname": "__firstname_test-user__remove_identifier__",
 							"lastname": "Janssens",
 							"email": "joske.janssens.be",
 						},
@@ -67,7 +67,7 @@ describe("Integration", () => {
 						expect(body).to.be.an("object");
 						expect(body._id).to.equal(userId.toString());
 						expect(body.data.email).to.equal("joske.janssens.be");
-						expect(body.data.firstname).to.equal("Joske");
+						expect(body.data.firstname).to.equal("__firstname_test-user__remove_identifier__");
 						expect(body.data.lastname).to.equal("Janssens");
 					});
 			});

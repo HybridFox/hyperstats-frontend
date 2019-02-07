@@ -1,6 +1,6 @@
 const CompanyModel = require("../../../models/company");
 const ResponseError = require("../../../helpers/errors/responseError");
-const getCompanyQuery = require("./getCompanyQuery");
+const getCompanyQuery = require("./getQuery");
 
 module.exports = async({ _id, companyOfUser, update } = {}) => {
 	const updatedCompany = await CompanyModel.findOneAndUpdate(getCompanyQuery(_id, companyOfUser), { $set: { data: update } }, { new: true });
