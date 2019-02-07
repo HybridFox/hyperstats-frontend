@@ -11,10 +11,12 @@ import { ManageComapniesRoutingModule } from './manage-companies-routing.module'
 
 import { Services, Reducer } from './store';
 import { Pages } from './pages';
+import { Components } from './components';
 
 @NgModule({
   declarations: [
     Pages,
+    Components,
   ],
   entryComponents: [],
   imports: [

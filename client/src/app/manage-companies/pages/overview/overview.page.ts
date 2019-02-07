@@ -2,21 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
 
-// import { UsersActions } from '../../store/users/actions';
-// import { UserSelector } from '../../store/users/selectors';
+import { CompaniesActions } from '../../store/companies/actions';
+import { CompanySelector } from '../../store/companies/selectors';
+import { CompanyType } from '../../store/companies/types';
 
 @Component({
     templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit {
-    // @select(UserSelector.overview.result) public users$: Observable<any>;
-    // @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
+    @select(CompanySelector.overview.result) public companies$: Observable<any>;
+    @select(CompanySelector.overview.loading) public loading$: Observable<boolean>;
 
     constructor(
-        // public usersActions: UsersActions,
+        public companiesActions: CompaniesActions,
     ) {}
 
     public ngOnInit() {
-        // this.usersActions.fetchAll().subscribe();
+        this.companiesActions.fetchByType(CompanyType.R).subscribe();
     }
 }

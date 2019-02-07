@@ -1,1 +1,18 @@
-<h1>Overview</h1>
+<app-page-title
+    [title]="'PAGE.MANAGE-USERS.TITLE' | translate"
+></app-page-title>
+<div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-4-12">
+        <div class="m-card--primary">
+            <!-- Todo: add filters in next ticket -->
+            Filters not available
+        </div>
+    </div>
+    <div class="l-grid__col-8-12">
+        <div class="m-card--primary u-margin-bottom-large">
+            <app-loading [loading]="loading$ | async">
+                <app-companies-table *ngIf="companies$ | async" [companies]="companies$ | async"></app-companies-table>
+            </app-loading>
+        </div>
+    </div>
+</div>

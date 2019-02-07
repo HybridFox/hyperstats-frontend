@@ -7,6 +7,7 @@ import { EntitiesActions } from '@store/entities';
 
 import { CompaniesRepository } from './repository';
 import { ACTIONS } from './action-types';
+import { CompanyType } from './types';
 
 @Injectable()
 export class CompaniesActions {
@@ -16,10 +17,10 @@ export class CompaniesActions {
         private usersRepository: CompaniesRepository,
     ) { }
 
-    public fetchAll(): Observable<any> {
+    public fetchByType(type: CompanyType): Observable<any> {
         this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
-        return this.usersRepository.fetchAll()
+        return this.usersRepository.fetchByType(type)
             .pipe(
                 catchError((error) => {
                     this.handler.dispatchError(ACTIONS.OVERVIEW.FETCH, {
@@ -30,7 +31,7 @@ export class CompaniesActions {
                 }),
                 tap((response) => {
                     this.handler.dispatchSuccess(ACTIONS.OVERVIEW.FETCH, {
-                        payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.user]),
+                        payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.company]),
                         pagination: null,
                     });
                 }),
@@ -54,7 +55,7 @@ export class CompaniesActions {
                 }),
                 tap((response) => {
                     this.handler.dispatchSuccess(ACTIONS.DETAIL.FETCH, {
-                        payload: this.entitiesActions.normalize(response, EntitiesActions.schema.user),
+                        payload: this.entitiesActions.normalize(response, EntitiesActions.schema.company),
                     });
                 }),
                 finalize(() => {

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ApiConfigService } from '@api/config.service';
+import { CompanyType } from './types';
 
 @Injectable()
 export class CompaniesRepository {
@@ -11,11 +12,11 @@ export class CompaniesRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchAll(): Observable<any> {
-    return this.http.get(this.apiConfig.baseUrl('/companies'));
+  public fetchByType(type: CompanyType): Observable<any> {
+    return this.http.get(this.apiConfig.baseUrl(`/company/type/${type}`));
   }
 
   public fetchById(id: string): Observable<any> {
-    return this.http.get(this.apiConfig.baseUrl(`/companies/${id}`));
+    return this.http.get(this.apiConfig.baseUrl(`/company/${id}`));
   }
 }
