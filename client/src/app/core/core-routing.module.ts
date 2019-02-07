@@ -69,13 +69,6 @@ const routes: Routes = [
         pathMatch: 'full',
         component: Pages.LandingPageComponent,
       },
-      {
-        path: 'help',
-        component: Pages.HelpPageComponent,
-        children: [
-          { path: ':section', component: Pages.HelpSectionPageComponent },
-        ]
-      },
       { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
         path: 'reports',
@@ -89,6 +82,7 @@ const routes: Routes = [
         path: 'company-information',
         component: Pages.CompanyPageComponent
       },
+      { path: 'help', loadChildren: '../help/help.module#HelpModule'},
       { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
       { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule'},
     ]
