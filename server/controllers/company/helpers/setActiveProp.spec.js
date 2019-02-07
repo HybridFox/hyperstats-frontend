@@ -35,7 +35,7 @@ describe("Company", () => {
 			expect(result.meta.activated).to.be.true;
 			expect(dbResult).to.be.an("object");
 			expect(dbResult.meta).to.be.an("object");
-			expect(dbResult.meta.activated).to.be.false;
+			expect(dbResult.meta.activated).to.be.true;
 		});
 
 		it("Should deactivate a company", async() => {
