@@ -3,8 +3,6 @@
 const UserModel = require("../../../../models/user");
 
 module.exports = (type) => {
-	console.log(type);
-
 	return UserModel.aggregate([{
 		$lookup: {
 			from: "companies",
