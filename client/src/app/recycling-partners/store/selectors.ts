@@ -10,7 +10,7 @@ import {
   listError,
 } from './list/selectors';
 
-export const CustomsOfficesSelector = {
+export const RecyclingPartnerSelector = {
   detail: {
     result: detail,
     loading: detailLoading,

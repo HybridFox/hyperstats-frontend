@@ -27,7 +27,6 @@ export class RecyclingProcessPageComponent implements OnInit {
 
     public deleteStep(key: number) {
         this.recyclingProcessForm.controls.steps.controls.splice(key, 1);
-        console.log(this.recyclingProcessForm.controls.steps.controls);
     }
 
     public duplicateStep(key: number) {
