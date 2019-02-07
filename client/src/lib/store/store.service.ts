@@ -22,7 +22,7 @@ export class StoreService {
 
   public injectAsyncReducer(name, reducer) {
     const lens = lensProp(name.toString());
-    const result = set(lens, reducer, this.asyncReducers);
-    this.ngRedux.replaceReducer(this.createReducer(result));
+    this.asyncReducers = set(lens, reducer, this.asyncReducers);
+    this.ngRedux.replaceReducer(this.createReducer(this.asyncReducers));
   }
 }

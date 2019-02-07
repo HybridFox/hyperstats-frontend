@@ -18,6 +18,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
@@ -53,11 +54,13 @@
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
+            "STREET": "Street name",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
             "TRY-AGAIN": "Try again",
+            "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
@@ -66,6 +69,7 @@
         "MENU": {
             "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
+            "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
             "CONTACT": "Contact",
             "HELP": "Help",
@@ -102,6 +106,9 @@
                 "DESCRIPTION": "Please check your email for the link to reset your password",
                 "TITLE": "Password reset requested"
             }
+        },
+        "MANAGE-COMPANIES": {
+            "TITLE": "Manage Companies"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"

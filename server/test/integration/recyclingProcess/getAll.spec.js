@@ -84,6 +84,7 @@ describe("Integration", () => {
 								],
 							},
 							"meta": {
+								"activated": false,
 								"created": "2019-01-24T14:34:19.351Z",
 								"lastUpdated": "2019-01-24T14:34:19.351Z",
 							},

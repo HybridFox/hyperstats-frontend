@@ -35,6 +35,9 @@ msgstr ""
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr ""
 
+msgid "GENERAL##LABELS##ACTIVE"
+msgstr ""
+
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr ""
 
@@ -140,6 +143,9 @@ msgstr ""
 msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr ""
 
+msgid "GENERAL##LABELS##STREET"
+msgstr ""
+
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr ""
 
@@ -155,6 +161,9 @@ msgstr ""
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr ""
 
+msgid "GENERAL##LABELS##TYPE"
+msgstr ""
+
 msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr ""
 
@@ -168,6 +177,9 @@ msgid "GENERAL##MENU##ABOUT"
 msgstr ""
 
 msgid "GENERAL##MENU##AUDITTRIAL"
+msgstr ""
+
+msgid "GENERAL##MENU##COMPANIES"
 msgstr ""
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
@@ -240,6 +252,9 @@ msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-USERS##TITLE"
