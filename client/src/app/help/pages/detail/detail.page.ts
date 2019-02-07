@@ -12,10 +12,9 @@ const json: any = {
 };
 
 @Component({
-    templateUrl: './help-section.page.html',
+    templateUrl: './detail.page.html',
 })
-
-export class HelpSectionPageComponent implements OnInit {
+export class DetailPageComponent implements OnInit {
 
     public text: string;
 

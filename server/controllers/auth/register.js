@@ -3,7 +3,7 @@ const errors = require("../../helpers/errorHandler");
 
 module.exports = async(req, res, next) => {
 	try {
-		const user = await registerHandler(req.body);
+		const user = await registerHandler(req.data.body);
 
 		req.session.profile = user;
 
