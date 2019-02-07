@@ -25,21 +25,21 @@ export class RecyclingProcessesRepository {
       .get(url);
   }
 
-  public create(process: any) {
+  public create(process: any): Observable<any> {
     const url = this.apiConfig.baseUrl('/recycling-processes');
 
     return this.http
       .post(url, process);
   }
 
-  public update(process: any) {
+  public update(process: any): Observable<any> {
     const url = this.apiConfig.baseUrl(`/recycling-processes/${process._id}`);
 
     return this.http
       .put(url, process);
   }
 
-  public remove(id: string) {
+  public remove(id: string): Observable<any> {
     const url = this.apiConfig.baseUrl(`/recycling-processes/${id}`);
 
     return this.http
