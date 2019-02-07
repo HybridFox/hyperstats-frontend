@@ -14,7 +14,8 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
   @select(RecyclingPartnerSelector.detail.result) public recyclingPartner$: Observable<any>;
 
-  public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+
   public countryList: Option[];
 
   constructor(
@@ -26,9 +27,9 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
     this.countryList = countryList.getData().map(({code, name}) => ({
       value: code,
       label: name,
-  }));
+    }));
 
-  this.route.params
+    this.route.params
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe(params => {
         this.recyclingPartnerActions.fetchDetail(params.recyclingPartner).toPromise();
