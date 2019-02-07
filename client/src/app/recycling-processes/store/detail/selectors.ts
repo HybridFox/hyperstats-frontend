@@ -6,5 +6,5 @@ export const detail = selectDenormalized({
   selector: 'recyclingProcesses.detail.result',
 });
 
-export const detailLoading = ['customsOffices', 'detail', 'loading'];
-export const detailError = ['customsOffices', 'detail', 'error'];
+export const detailLoading = ['recyclingProcesses', 'detail', 'loading'];
+export const detailError = ['recyclingProcesses', 'detail', 'error'];

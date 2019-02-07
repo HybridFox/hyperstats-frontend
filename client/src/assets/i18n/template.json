@@ -1,7 +1,16 @@
 {
+	"CONSTANTS": {
+		"METHODS-OF-PROCESSING": {
+			"RECYCLING": "",
+			"SORTING": "",
+			"TRANSPORT": ""
+		}
+	},
 	"GENERAL": {
 		"BUTTONS": {
-			"CREATENEWREPORT": ""
+			"CANCEL": "",
+			"CREATENEWREPORT": "",
+			"SAVE": ""
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
@@ -10,15 +19,16 @@
 		},
 		"LABELS": {
 			"ACCEPT_TERMS": "",
+			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
+			"ADMIN": "",
 			"BOX": "",
 			"BROWSE": "",
 			"CANCEL": "",
 			"CITY": "",
 			"COMPANYNAME": "",
-			"COPYRIGHT": "",
 			"COUNTRY": "",
 			"DELETE-STEP": "",
 			"DRAGANDDROP": "",
@@ -39,16 +49,19 @@
 			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"REMOVE": "",
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"SELECT-OPTION": "",
 			"SORTBY": "",
+			"SPONSOREDBY": "",
+			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
-			"TOKEN": "",
 			"TRY-AGAIN": "",
+			"TYPE": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
@@ -56,17 +69,20 @@
 		"MENU": {
 			"ABOUT": "",
 			"AUDITTRIAL": "",
+			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
 			"CONTACT": "",
 			"HELP": "",
 			"LOGIN": "",
 			"LOGOFF": "",
+			"MORE": "",
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
 			"REPORTS": "",
-			"USERPROFILE": ""
+			"USERPROFILE": "",
+			"USERS": ""
 		}
 	},
 	"PAGE": {
@@ -83,6 +99,18 @@
 			"TITLE": ""
 		},
 		"CONTACT": {
+			"TITLE": ""
+		},
+		"FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"MANAGE-COMPANIES": {
+			"TITLE": ""
+		},
+		"MANAGE-USERS": {
 			"TITLE": ""
 		},
 		"PROFILE": {
@@ -110,6 +138,9 @@
 				"SCHEMATIC-OVERVIEW-DESCRIPTION": "",
 				"UPLOAD-FILE-WITH-FURTHER-DETAILS": ""
 			},
+			"PRECEDING-STEP": {
+				"NONE": ""
+			},
 			"PROCESS-DESCRIPTION": "",
 			"PROCESS-TITLE": "",
 			"RECYCLING-STEP": "",
@@ -124,6 +155,7 @@
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
+			"ISRESET": "",
 			"TITLE": ""
 		},
 		"VERIFICATION-FAILED": {
@@ -131,7 +163,6 @@
 			"TITLE": ""
 		},
 		"VERIFICATION-SUCCEEDED": {
-			"CONTENT": "",
 			"TITLE": ""
 		}
 	},
@@ -182,6 +213,26 @@
 			}
 		},
 		"PROFILE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-SAVE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

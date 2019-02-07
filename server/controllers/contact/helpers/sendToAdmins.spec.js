@@ -40,14 +40,18 @@ describe("Send to admins", () => {
 		const sentMail = nodemailerMock.mock.sentMail();
 
 		expect(sentMail).to.have.lengthOf(2);
-		expect(sentMail[0]).to.be.an("object");
-		expect(sentMail[0].to).to.equal("validuser@example.com");
-		expect(sentMail[0].subject).to.equal("Some subject");
-		expect(sentMail[0].html).to.equal("Some body");
 
-		expect(sentMail[1]).to.be.an("object");
-		expect(sentMail[1].to).to.equal("test2@example.com");
-		expect(sentMail[1].subject).to.equal("Some subject");
-		expect(sentMail[1].html).to.equal("Some body");
+		const mail1 = sentMail.find((mail) => mail.to === "validuser@example.com");
+		const mail2 = sentMail.find((mail) => mail.to === "test2@example.com");
+
+		expect(mail1).to.be.an("object");
+		expect(mail1.to).to.equal("validuser@example.com");
+		expect(mail1.subject).to.equal("Rare | New contact message");
+		expect(mail1.html).to.have.string("<h1>New Contact message!</h1>");
+
+		expect(mail2).to.be.an("object");
+		expect(mail2.to).to.equal("test2@example.com");
+		expect(mail2.subject).to.equal("Rare | New contact message");
+		expect(mail2.html).to.have.string("<h1>New Contact message!</h1>");
 	});
 });

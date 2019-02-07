@@ -1,0 +1,25 @@
+<div class="m-loading" *ngIf="loading">
+  <div *ngIf="loading === STATUS.SHORT" class="m-loading--short">
+    <i class="fa fa-spinner fa-spin fa-fw"></i> {{ messages?.short.message | translate }}
+  </div>
+
+  <div *ngIf="loading === STATUS.MIDDLE" class="m-loading--middle">
+      <div class="m-loading__icon">
+        <i class="fa fa-spinner fa-spin fa-fw"></i>
+      </div>
+      <div class="m-loading__message">
+        <div class="m-loading__title">{{ messages?.middle.title | translate }}</div>
+        <p>{{ messages?.middle.message | translate }}</p>
+      </div>
+    </div>
+
+  <div *ngIf="loading === STATUS.LONG" class="m-loading--middle">
+    <div class="m-loading__icon">
+      <i class="fa fa-spinner fa-spin fa-fw"></i>
+    </div>
+    <div class="m-loading__message">
+      <div class="m-loading__title">{{ messages?.long.title | translate }}</div>
+      <p>{{ messages?.long.message | translate }}<ng-container *ngIf="cancelable"> {{ messages?.long.cancel | translate }}: <button (click)="emitCancel()">{{ 'GENERAL.BUTTONS.CANCEL' | translate }}</button> </ng-container></p>
+    </div>
+  </div>
+</div>

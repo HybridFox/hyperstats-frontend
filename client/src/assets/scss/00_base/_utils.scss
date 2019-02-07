@@ -120,6 +120,16 @@
     float: left;
 }
 
+.u-pull-center {
+    clear: both;
+    margin: 0 auto;
+}
+
+.u-clear::after {
+    float: none;
+    clear: both;
+}
+
  /**
  * USER
  * -------------------------------------------------------------------
@@ -138,3 +148,20 @@
     color: $boulder;
     font-size: .8em;
 }
+
+.u-text-uppercase {
+    text-transform: uppercase
+}
+
+/**
+ * ALIGNMENT
+ * -------------------------------------------------------------------
+ */
+
+ .u-align-center {
+     text-align: center;
+ }
+
+ .u-align-right {
+     text-align: right;
+ }

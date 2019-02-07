@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RecyclingProcessesComponent } from './recycling-processes.component';
-
+import { RecyclingProcessesPageComponent } from './recycling-processes.page';
 import { RecyclingProcessPageComponent } from './pages';
 
 const routes: Routes = [
   {
     path: '',
-    component: RecyclingProcessesComponent,
+    component: RecyclingProcessesPageComponent,
     children: [
       {
         path: ':recyclingProcess',

@@ -1,7 +1,16 @@
 {
+    "CONSTANTS": {
+        "METHODS-OF-PROCESSING": {
+            "RECYCLING": "Recycling",
+            "SORTING": "Sorting",
+            "TRANSPORT": "Transport"
+        }
+    },
     "GENERAL": {
         "BUTTONS": {
-            "CREATENEWREPORT": "Create new report"
+            "CANCEL": "Cancel",
+            "CREATENEWREPORT": "Create new report",
+            "SAVE": "Save"
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
@@ -9,15 +18,16 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
+            "ADMIN": "Admin",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
             "CITY": "City",
             "COMPANYNAME": "Company name",
-            "COPYRIGHT": "© Eucobat 2018",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
@@ -38,16 +48,19 @@
             "PREVIOUS-STEP": "Previous step",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "RESET-PASSWORD": "Reset",
+            "REMOVE": "Remove",
+            "RESET-PASSWORD": "Reset password",
             "SAVE": "Save",
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
+            "SPONSOREDBY": "Sponsored by",
+            "STREET": "Street name",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
-            "TOKEN": "Token",
             "TRY-AGAIN": "Try again",
+            "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
@@ -56,17 +69,20 @@
         "MENU": {
             "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
+            "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
             "LOGOFF": "Logoff",
+            "MORE": "More...",
             "PROXIES": "Proxies",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
             "REPORTS": "Reports",
-            "USERPROFILE": "User profile"
+            "USERPROFILE": "User profile",
+            "USERS": "Users"
         }
     },
     "PAGE": {
@@ -84,6 +100,18 @@
         },
         "CONTACT": {
             "TITLE": "Contact"
+        },
+        "FORGOT-PASSWORD": {
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "TITLE": "Password reset requested"
+            }
+        },
+        "MANAGE-COMPANIES": {
+            "TITLE": "Manage Companies"
+        },
+        "MANAGE-USERS": {
+            "TITLE": "Manage users"
         },
         "PROFILE": {
             "TITLE": "Profile"
@@ -110,13 +138,16 @@
                 "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
+            "PRECEDING-STEP": {
+                "NONE": "None"
+            },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
             "RECYCLING-STEP": "Recycling Step {{ key }}",
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
-            "VERIFY-EMAIL": "Verify email"
+            "VERIFY-EMAIL": "An email has been send to you"
         },
         "REPORTS": {
             "DRAFT": "Draft",
@@ -124,6 +155,7 @@
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
+            "ISRESET": "Your password has been reset! Please login to continiou",
             "TITLE": "Reset your password"
         },
         "VERIFICATION-FAILED": {
@@ -131,8 +163,7 @@
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "CONTENT": "Your email is now validated you can now login lorem ipsum doler sit amet etc…",
-            "TITLE": "Success!"
+            "TITLE": "Success! Your registration is now complete, please login to continue"
         }
     },
     "TOAST": {
@@ -189,6 +220,26 @@
             "SUCCESS": {
                 "DESCRIPTION": "Your profile has been saved!",
                 "TITLE": "Success!"
+            }
+        },
+        "RECYCLING-PROCESS-REMOVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not remove the recycling process. \nPlease try again later or contact the administrator.",
+                "TITLE": "Removing recycling-process failed!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling process has been removed successfully.",
+                "TITLE": "Recycling-process removed!"
+            }
+        },
+        "RECYCLING-PROCESS-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not save the recycling process. \nPlease try again later or contact the administrator.",
+                "TITLE": "Saving recycling-process failed!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling process has been saved successfully.",
+                "TITLE": "Recycling-process saved!"
             }
         },
         "REGISTER": {

@@ -1,10 +1,20 @@
-.o-menu--filled, .o-menu--transparent {
-    padding: $spacer 0;
+.o-menu--filled,
+.o-menu--transparent {
     .container {
         display: flex;
         align-items: center;
+        min-height: 74px;
+        white-space: nowrap;
+
         .o-menu__left {
+            display: flex;
+            align-items: center;
             flex-grow: 1;
+            width: 50%;
+
+            .o-menu__main-menu-wrapper {
+                width: calc(100% - 100px);
+            }
         }
         .o-menu__right {
             display: flex;

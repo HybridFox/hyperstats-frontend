@@ -27,11 +27,10 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.profileForm = this.formBuilder.group({
-            email: ['', Validators.required],
+            email: this.formBuilder.control({ value: '', disabled: true }, Validators.required),
             firstname: ['', Validators.required],
             lastname: ['', Validators.required]
         });
-
         this.user$
             .subscribe((user) => {
                 this.profileForm.patchValue(user);
@@ -62,6 +61,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
     public submit() {
         FormHelper.markAsDirty(this.profileForm);
+
         if (!this.profileForm.valid) {
             return this.toastrService.error(
                 ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
@@ -76,7 +76,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.PROFILE.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.PROFILE.SUCCESS.TITLE') as string
             );
-        }).catch(() => {
+        }).catch((error) => {
             return this.toastrService.error(
                 ngxExtract('TOAST.PROFILE.ERROR.DESCRIPTION') as string,
                 ngxExtract('TOAST.PROFILE.ERROR.TITLE') as string

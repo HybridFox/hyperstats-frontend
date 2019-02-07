@@ -5,16 +5,20 @@
     background-color: $white;
     position: relative;
     z-index: 50;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
 
-    &__copyright {
-        display: inline-block;
-        margin: $spacer-large $spacer $spacer 0;
-        text-transform: capitalize;
+    &__right {
+        display: flex;
+        align-items: center;
     }
 
     &__link {
         display: inline-block;
-        margin: $spacer;
+        margin-right: $spacer;
         text-transform: capitalize;
+        line-height: $footer-height;
     }
 }

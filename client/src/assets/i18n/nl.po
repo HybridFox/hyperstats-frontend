@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-01-08T09:46:42.107Z\n"
-"PO-Revision-Date: 2019-01-08 10:52+0100\n"
+"POT-Creation-Date: 2019-02-07T11:53:30.948Z\n"
+"PO-Revision-Date: 2019-02-07 12:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -10,12 +10,147 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.0.8\n"
+
+msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##EMAIL"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
+msgstr ""
+
+msgid "GENERAL##LABELS##BOX"
+msgstr ""
+
+msgid "GENERAL##LABELS##BROWSE"
+msgstr ""
+
+msgid "GENERAL##LABELS##CANCEL"
+msgstr ""
+
+msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr ""
 
 msgid "GENERAL##LABELS##COPYRIGHT"
 msgstr ""
 
+msgid "GENERAL##LABELS##COUNTRY"
+msgstr ""
+
+msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##DRAGANDDROP"
+msgstr ""
+
+msgid "GENERAL##LABELS##DUPLICATE-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##EMAIL"
+msgstr ""
+
+msgid "GENERAL##LABELS##FIRSTNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##FORGOT-PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##FUNCTION"
+msgstr ""
+
+msgid "GENERAL##LABELS##LASTNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##LOGIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##MESSAGE"
+msgstr ""
+
+msgid "GENERAL##LABELS##MOBILEPHONE"
+msgstr ""
+
+msgid "GENERAL##LABELS##NAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##NEXT-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##NUMBER"
+msgstr ""
+
+msgid "GENERAL##LABELS##PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##PHONE"
+msgstr ""
+
+msgid "GENERAL##LABELS##PREVIOUS-STEP"
+msgstr ""
+
 msgid "GENERAL##LABELS##PRIVACY"
+msgstr ""
+
+msgid "GENERAL##LABELS##REGISTER"
+msgstr ""
+
+msgid "GENERAL##LABELS##REMOVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##RESET-PASSWORD"
+msgstr ""
+
+msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##SELECT-OPTION"
+msgstr ""
+
+msgid "GENERAL##LABELS##SORTBY"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREETNUMBER"
+msgstr ""
+
+msgid "GENERAL##LABELS##SUBJECT"
+msgstr ""
+
+msgid "GENERAL##LABELS##SUBMIT"
+msgstr ""
+
+msgid "GENERAL##LABELS##TRY-AGAIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##UPDATE-PROFILE"
+msgstr ""
+
+msgid "GENERAL##LABELS##WELCOME"
+msgstr ""
+
+msgid "GENERAL##LABELS##ZIPCODE"
+msgstr ""
+
+msgid "GENERAL##MENU##ABOUT"
 msgstr ""
 
 msgid "GENERAL##MENU##AUDITTRIAL"
@@ -24,13 +159,19 @@ msgstr ""
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr ""
 
+msgid "GENERAL##MENU##CONTACT"
+msgstr ""
+
 msgid "GENERAL##MENU##HELP"
+msgstr ""
+
+msgid "GENERAL##MENU##LOGIN"
 msgstr ""
 
 msgid "GENERAL##MENU##LOGOFF"
 msgstr ""
 
-msgid "GENERAL##MENU##NEWREPORT"
+msgid "GENERAL##MENU##MORE"
 msgstr ""
 
 msgid "GENERAL##MENU##PROXIES"
@@ -42,23 +183,384 @@ msgstr ""
 msgid "GENERAL##MENU##RECYCLINGPROCESSES"
 msgstr ""
 
+msgid "GENERAL##MENU##REGISTER"
+msgstr ""
+
 msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr ""
 
-msgid "general##labels##email"
+msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
 
-msgid "general##labels##forgot-password"
+msgid "PAGE##ABOUT##CONTENT-2"
 msgstr ""
 
-msgid "general##labels##login"
+msgid "PAGE##ABOUT##SECTION-1"
 msgstr ""
 
-msgid "general##labels##password"
+msgid "PAGE##ABOUT##SECTION-2"
 msgstr ""
 
-msgid "general##labels##welcome"
+msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##HELP"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##TITLE"
+msgstr ""
+
+msgid "PAGE##CONTACT##TITLE"
+msgstr ""
+
+msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "PAGE##PROFILE##TITLE"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##CONTACTPERSON"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PARTNERS##TITLE"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##NAME"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##PRECEDING-STEP"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##PROCESSING-METHOD"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##TITLE"
+msgstr ""
+
+msgid "PAGE##REGISTER##VERIFY-EMAIL"
+msgstr ""
+
+msgid "PAGE##REPORTS##DRAFT"
+msgstr ""
+
+msgid "PAGE##REPORTS##FILLED"
+msgstr ""
+
+msgid "PAGE##REPORTS##TITLE"
+msgstr ""
+
+msgid "PAGE##RESET-PASSWORD##ISRESET"
+msgstr ""
+
+msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-FAILED##CONTENT"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-FAILED##TITLE"
+msgstr ""
+
+msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##CONTACT##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##CONTACT##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##GENERAL##INVALID##TITLE"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##LOGIN##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##PROFILE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##PROFILE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
+msgstr ""
+
+msgid "WIZARD##ADDITIVES##LABELS##ADD-ADDITIONAL-ADDITIVE"
+msgstr ""
+
+msgid "WIZARD##ADDITIVES##LABELS##TYPE"
+msgstr ""
+
+msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
+msgstr ""
+
+msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##ELEMENTS"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##IMPURITIES"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS-JACKET"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##MASS-OUTER-CASINGS"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-CHEMICAL"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-WASTE"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-INPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##ELEMENTS-COMPONENTS"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##TITLES##EXCESS-MATERIAL"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##RECYCLING-PROCESS"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-NAME"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORTING-YEAR"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##LABELS##RECYCLING-PROCESS"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORT-NAME"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##ON-DRY-WEIGHT-BASIS"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##SHARE-OUTPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##ELEMENTS"
+msgstr ""
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##INPUT"
+msgstr ""
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##OUTPUT"
+msgstr ""
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##CALCULATED-EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##OVERVIEW-ELEMENTS"
+msgstr ""
+
+msgid "WIZARD##TITLES##ADDITIONAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##TITLES##ADDITIVES"
+msgstr ""
+
+msgid "WIZARD##TITLES##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##TITLES##INPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##TITLES##NEW-REPORT"
+msgstr ""
+
+msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+msgstr ""
+
+msgctxt "TERMS"
+msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

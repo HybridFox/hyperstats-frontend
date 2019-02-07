@@ -94,7 +94,7 @@
             -moz-appearance: none;
             background: url("/assets/images/arrow_down.png") right $spacer center no-repeat, $white;
             background-size: 10px;
-            padding: 0 $spacer-small;
+            padding: 0 $spacer-x-large 0 $spacer-small;
         }
 
         select.a-input__field::-ms-expand {
@@ -115,7 +115,6 @@
     }
 
     &__description {
-        position: absolute;
         display: block;
         color: $tundora;
         margin: 0;
