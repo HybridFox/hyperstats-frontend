@@ -20,6 +20,7 @@
             "CANCEL": "Cancel",
             "CITY": "City",
             "COMPANYNAME": "Company name",
+            "COMPANYVAT": "Company VAT",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
@@ -82,6 +83,7 @@
             "TITLE": "About"
         },
         "COMPANYINFORMATION": {
+            "CONTACTPERSON": "Contact Person",
             "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"

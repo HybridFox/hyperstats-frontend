@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-07T13:55:56.795Z\n"
-"PO-Revision-Date: 2019-02-07T13:55:56.795Z\n"
+"POT-Creation-Date: 2019-02-07T16:43:08.658Z\n"
+"PO-Revision-Date: 2019-02-07T16:43:08.658Z\n"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
@@ -51,6 +51,9 @@ msgid "GENERAL##LABELS##CITY"
 msgstr ""
 
 msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYVAT"
 msgstr ""
 
 msgid "GENERAL##LABELS##COUNTRY"
@@ -210,6 +213,9 @@ msgid "PAGE##ABOUT##SECTION-2"
 msgstr ""
 
 msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
 msgstr ""
 
 msgid "PAGE##COMPANYINFORMATION##HELP"
