@@ -11,5 +11,5 @@ export const recyclingPartners = (obs$) => {
                     return {'link': partner._id, 'label': partner.data.name};
                 });
             })
-        )
-}
+        );
+};
