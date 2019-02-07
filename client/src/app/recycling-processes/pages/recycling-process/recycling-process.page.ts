@@ -39,8 +39,10 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     public ngOnInit() {
         this._setupForm();
         this._route.params
-            .pipe(takeUntil(this._componentDestroyed$))
-            .pipe(distinctUntilChanged())
+            .pipe(
+                takeUntil(this._componentDestroyed$),
+                distinctUntilChanged()
+            )
             .subscribe((params) => {
                 this._recyclingProcessId = params.recyclingProcess;
 
