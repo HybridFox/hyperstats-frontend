@@ -6,8 +6,6 @@ import { ContactPageComponent } from './contact';
 export { ContactPageComponent } from './contact';
 import { ForgotPasswordPageComponent } from './forgot-password';
 export { ForgotPasswordPageComponent } from './forgot-password';
-import { HelpPageComponent, HelpSectionPageComponent } from './help';
-export { HelpPageComponent, HelpSectionPageComponent } from './help';
 import { LandingPageComponent } from './landing';
 export { LandingPageComponent } from './landing';
 import { LoginPageComponent } from './login';
@@ -32,8 +30,6 @@ export const Pages = [
     CompanyPageComponent,
     ContactPageComponent,
     ForgotPasswordPageComponent,
-    HelpPageComponent,
-    HelpSectionPageComponent,
     LandingPageComponent,
     LoginPageComponent,
     PrivacyPageComponent,
