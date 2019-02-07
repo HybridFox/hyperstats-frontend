@@ -1,0 +1,45 @@
+
+<div *ngIf="form">
+    <app-text-input
+        class="u-margin-bottom-large"
+        [control]="form.get('data.name')"
+        [label]="'GENERAL.LABELS.NAME' | translate"
+    ></app-text-input>
+
+    <app-text-input
+        class="u-margin-bottom-large"
+        [control]="form.get('data.address.street')"
+        [label]="'GENERAL.LABELS.STREET' | translate"
+    ></app-text-input>
+
+    <app-text-input
+        class="u-margin-bottom-large"
+        [control]="form.get('data.address.number')"
+        [label]="'GENERAL.LABELS.NUMBER' | translate"
+        type="email"
+    ></app-text-input>
+
+    <app-text-input
+        class="u-margin-bottom-large"
+        [control]="form.get('data.address.zipCode')"
+        [label]="'GENERAL.LABELS.ZIPCODE' | translate"
+        type="email"
+    ></app-text-input>
+
+    <app-text-input
+        class="u-margin-bottom-large"
+        [control]="form.get('data.address.city')"
+        [label]="'GENERAL.LABELS.CITY' | translate"
+        type="email"
+    ></app-text-input>
+
+    <app-text-input
+        class="u-margin-bottom-large"
+        [control]="form.get('data.address.country')"
+        [label]="'GENERAL.LABELS.COUNTRY' | translate"
+        type="email"
+    ></app-text-input>
+</div>
+
+<button class="a-button--primary a-button--small u-margin-top-large u-margin-right-large" [disabled]="!form?.valid">{{ 'GENERAL.BUTTONS.SAVE' | translate }}</button>
+<a class="a-link" [routerLink]="['../']">{{ 'GENERAL.BUTTONS.CANCEL' | translate }}</a>
