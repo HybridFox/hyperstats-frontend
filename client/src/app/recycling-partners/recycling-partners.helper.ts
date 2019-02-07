@@ -9,7 +9,7 @@ export const recyclingPartners = (obs$) => {
             map((partners: any[]) => {
                 return partners.map((partner) => {
                     return {'link': partner._id, 'label': partner.data.name};
-                  });
+                });
             })
         )
 }
