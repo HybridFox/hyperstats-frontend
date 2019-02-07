@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-06T09:00:48.162Z\n"
-"PO-Revision-Date: 2019-02-06T09:00:48.162Z\n"
+"POT-Creation-Date: 2019-02-07T07:36:43.832Z\n"
+"PO-Revision-Date: 2019-02-07T07:36:43.832Z\n"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
@@ -192,6 +192,9 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
 msgid "GENERAL##MENU##USERPROFILE"
+msgstr ""
+
+msgid "GENERAL##MENU##USERS"
 msgstr ""
 
 msgid "PAGE##ABOUT##CONTENT-1"
