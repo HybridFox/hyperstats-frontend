@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Option } from '@ui/form-fields/components/select/select.types';
 
@@ -7,7 +7,7 @@ import { Option } from '@ui/form-fields/components/select/select.types';
     templateUrl: './recycling-partner-form.html'
 })
 
-export class RecyclingPartnerFormComponent implements OnInit {
+export class RecyclingPartnerFormComponent implements OnChanges {
     @Input() public countryList: Option[];
     @Input() public recyclingPartner: any;
     public recyclingPartnerForm: FormGroup;
@@ -16,7 +16,7 @@ export class RecyclingPartnerFormComponent implements OnInit {
         private formBuilder: FormBuilder,
     ) { }
 
-    public ngOnInit() {
+    public ngOnChanges() {
         this.buildForm(this.recyclingPartner);
     }
 

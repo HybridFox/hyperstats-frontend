@@ -9,7 +9,6 @@ import { RecyclingPartnerActions, RecyclingPartnerSelector } from '../../store';
 import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
-  selector: 'app-recycling-partner-page',
   templateUrl: './recycling-partner.page.html',
 })
 export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
@@ -32,7 +31,7 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
   this.route.params
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe(params => {
-          this.recyclingPartnerActions.fetchDetail(params.recyclingPartner).toPromise();
+        this.recyclingPartnerActions.fetchDetail(params.recyclingPartner).toPromise();
       });
   }
 
