@@ -8,7 +8,7 @@
             <app-vertical-menu
                 [menuItems]="recyclingPartners$ | async"
             ></app-vertical-menu>
-            <button class="a-button--primary a-button-outline has-icon-after">
+            <button class="a-button--primary a-button-outline has-icon-after" routerLink="new">
                 {{ 'GENERAL.LABELS.ADD-RECYCLING-PARTNER' | translate }}
             </button>
             <p class="u-text-description">

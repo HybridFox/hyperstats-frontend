@@ -1,5 +1,7 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { path, prop } from 'ramda';
+
 import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
@@ -10,66 +12,71 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 export class RecyclingPartnerFormComponent implements OnChanges {
     @Input() public countryList: Option[];
     @Input() public recyclingPartner: any;
+
+    @Output() public submit: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
+
     public recyclingPartnerForm: FormGroup;
 
     constructor(
         private formBuilder: FormBuilder,
-    ) { }
+    ) {}
 
     public ngOnChanges() {
-        this.buildForm(this.recyclingPartner);
+        this.buildForm(prop('data')(this.recyclingPartner));
     }
 
-    private buildForm(value) {
+    public saveForm() {
+        if (this.recyclingPartnerForm.invalid) {
+            return;
+        }
+
+        this.submit.emit(this.recyclingPartnerForm.getRawValue());
+    }
+
+    public removeForm() {
+        if (!prop('_id')(this.recyclingPartner)) {
+            return;
+        }
+
+        this.remove.emit(this.recyclingPartner._id);
+    }
+
+    private buildForm(value = {
+        name: '',
+        address: {
+            street: '',
+            number: '',
+            box: '',
+            zipCode: '',
+            city: '',
+            country: ''
+        },
+        contactPerson: {
+            name: '',
+            function: '',
+            phone: '',
+            mobile: '',
+            email: ''
+        }
+    }) {
         this.recyclingPartnerForm = this.formBuilder.group({
-            company: [
-                value.data.name,
-                Validators.required
-            ],
-            street: [
-                value.data.address.street,
-                Validators.required
-            ],
-            number: [
-                value.data.address.number,
-                Validators.required
-            ],
-            box: [
-                value.data.address.box,
-                ''
-            ],
-            zipcode: [
-                value.data.address.zipCode,
-                Validators.required
-            ],
-            city: [
-                value.data.address.city,
-                Validators.required
-            ],
-            country: [
-                value.data.address.country,
-                Validators.required
-            ],
-            name: [
-                value.data.contactPerson.name,
-                Validators.required
-            ],
-            function: [
-                value.data.contactPerson.function,
-                Validators.required
-            ],
-            phone: [
-                value.data.contactPerson.phone,
-                Validators.required
-            ],
-            mobile: [
-                value.data.contactPerson.mobile,
-                Validators.required
-            ],
-            email: [
-                value.data.contactPerson.email,
-                Validators.required
-            ],
+            name: [value.name, Validators.required],
+            address: this.formBuilder.group({
+                street: [value.address.street, Validators.required],
+                number: [value.address.number, Validators.required],
+                box: [value.address.box],
+                zipCode: [value.address.zipCode, Validators.required],
+                city: [value.address.city, Validators.required],
+                country: [value.address.country, Validators.required],
+            }),
+            contactPerson: this.formBuilder.group({
+                name: [value.contactPerson.name, Validators.required],
+                function: [value.contactPerson.function, Validators.required],
+                phone: [value.contactPerson.phone, Validators.required],
+                mobile: [value.contactPerson.mobile, Validators.required],
+                email: [value.contactPerson.email, Validators.required],
+            })
         });
     }
 

@@ -1,14 +1,10 @@
-<div class="m-card--primary">
-    <div class="u-pull-right">
-        <button class="a-button--link">{{ 'PAGE.RECYCLING-PARTNERS.REMOVEPARTNER' | translate }}</button>
-    </div>
-
+<div class="m-card--primary" *ngIf="recyclingPartnerForm">
     <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-8-12">
             <app-text-input
                 [label]="'GENERAL.LABELS.COMPANYNAME' | translate"
                 class="u-margin-bottom-x-large"
-                [control]="recyclingPartnerForm.get('company')"
+                [control]="recyclingPartnerForm.get('name')"
             ></app-text-input>
         </div>
     </div>
@@ -23,21 +19,21 @@
             <app-text-input
                 [label]="'GENERAL.LABELS.STREETNAME' | translate"
                 class="u-margin-bottom-large"
-                [control]="recyclingPartnerForm.get('street')"
+                [control]="recyclingPartnerForm.get('address').get('street')"
             ></app-text-input>
             <div class="l-grid__row l-grid--with-margins">
                 <div class="l-grid__col-6-12">
                     <app-text-input
                         [label]="'GENERAL.LABELS.STREETNUMBER' | translate"
                         class="u-margin-bottom-large"
-                        [control]="recyclingPartnerForm.get('number')"
+                        [control]="recyclingPartnerForm.get('address').get('number')"
                     ></app-text-input>
                 </div>
                 <div class="l-grid__col-6-12">
                     <app-text-input
                         [label]="'GENERAL.LABELS.BOX' | translate"
                         class="u-margin-bottom-large"
-                        [control]="recyclingPartnerForm.get('box')"
+                        [control]="recyclingPartnerForm.get('address').get('box')"
                     ></app-text-input>
                 </div>
             </div>
@@ -46,14 +42,14 @@
                     <app-text-input
                         [label]="'GENERAL.LABELS.ZIPCODE' | translate"
                         class="u-margin-bottom-large"
-                        [control]="recyclingPartnerForm.get('zipcode')"
+                        [control]="recyclingPartnerForm.get('address').get('zipCode')"
                     ></app-text-input>
                 </div>
                 <div class="l-grid__col-8-12">
                     <app-text-input
                         [label]="'GENERAL.LABELS.CITY' | translate"
                         class="u-margin-bottom-large"
-                        [control]="recyclingPartnerForm.get('city')"
+                        [control]="recyclingPartnerForm.get('address').get('city')"
                     ></app-text-input>
                 </div>
             </div>
@@ -61,7 +57,7 @@
                 [label]="'GENERAL.LABELS.COUNTRY' | translate"
                 [options]="countryList"
                 class="u-margin-bottom-x-large"
-                [control]="recyclingPartnerForm.get('country')"
+                [control]="recyclingPartnerForm.get('address').get('country')"
             ></app-select-input>
         </div>
     </div>
@@ -76,32 +72,46 @@
             <app-text-input
                 [label]="'GENERAL.LABELS.NAME' | translate"
                 class="u-margin-bottom-large"
-                [control]="recyclingPartnerForm.get('name')"
+                [control]="recyclingPartnerForm.get('contactPerson').get('name')"
             ></app-text-input>
             <app-text-input
                 [label]="'GENERAL.LABELS.FUNCTION' | translate"
                 class="u-margin-bottom-large"
-                [control]="recyclingPartnerForm.get('function')"
+                [control]="recyclingPartnerForm.get('contactPerson').get('function')"
             ></app-text-input>
             <app-text-input
                 [label]="'GENERAL.LABELS.PHONE' | translate"
                 class="u-margin-bottom-large"
-                [control]="recyclingPartnerForm.get('phone')"
+                [control]="recyclingPartnerForm.get('contactPerson').get('phone')"
             ></app-text-input>
             <app-text-input
                 [label]="'GENERAL.LABELS.MOBILEPHONE' | translate"
                 class="u-margin-bottom-large"
-                [control]="recyclingPartnerForm.get('mobile')"
+                [control]="recyclingPartnerForm.get('contactPerson').get('mobile')"
             ></app-text-input>
             <app-text-input
                 [label]="'GENERAL.LABELS.EMAIL' | translate"
                 class="u-margin-bottom-large"
-                [control]="recyclingPartnerForm.get('email')"
+                [control]="recyclingPartnerForm.get('contactPerson').get('email')"
             ></app-text-input>
         </div>
     </div>
 
-    <button class="a-button--primary a-button-outline has-icon-after" (click)="submit()">
-        {{ 'GENERAL.LABELS.SAVE' | translate }}
-    </button>
+    <app-sub-section-title class="u-margin-top-large"></app-sub-section-title>
+
+    <div class="u-margin-top-large">
+        <button
+            class="a-button--primary has-icon-after"
+            (click)="saveForm()"
+        >
+            {{ 'GENERAL.LABELS.SAVE' | translate }}
+        </button>
+        <button
+            *ngIf="!!recyclingPartner?._id"
+            class="a-button--danger has-icon-after u-pull-right u-text-uppercase"
+            (click)="removeForm()"
+        >
+            {{ 'PAGE.RECYCLING-PARTNERS.REMOVEPARTNER' | translate }}
+        </button>
+    </div>
 </div>
