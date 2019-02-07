@@ -11,7 +11,7 @@ module.exports = async(password, token) => {
 	}
 
 	user.data.password = await user.generateHash(password);
-	user.meta.passwordReset = null;
+	user.meta.passwordReset = {};
 
 	await user.save();
 };
