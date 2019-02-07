@@ -12,6 +12,7 @@
 		},
 		"LABELS": {
 			"ACCEPT_TERMS": "",
+			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
@@ -46,11 +47,13 @@
 			"SELECT-OPTION": "",
 			"SORTBY": "",
 			"SPONSOREDBY": "",
+			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
 			"TRY-AGAIN": "",
+			"TYPE": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
@@ -58,6 +61,7 @@
 		"MENU": {
 			"ABOUT": "",
 			"AUDITTRIAL": "",
+			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
 			"CONTACT": "",
 			"HELP": "",
@@ -94,6 +98,9 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"MANAGE-COMPANIES": {
+			"TITLE": ""
 		},
 		"MANAGE-USERS": {
 			"TITLE": ""
