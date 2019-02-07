@@ -1,0 +1,4 @@
+<app-loading-template [loading]="(isLoading$ | async)" [type]="type"></app-loading-template>
+
+
+<ng-content *ngIf="!(isLoading$ | async)"></ng-content>

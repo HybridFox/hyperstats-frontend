@@ -1,7 +1,9 @@
 {
     "GENERAL": {
         "BUTTONS": {
-            "CREATENEWREPORT": "Create new report"
+            "CANCEL": "Cancel",
+            "CREATENEWREPORT": "Create new report",
+            "SAVE": "Save"
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
@@ -12,12 +14,12 @@
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
+            "ADMIN": "Admin",
             "BOX": "Box",
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
             "CITY": "City",
             "COMPANYNAME": "Company name",
-            "COPYRIGHT": "© Eucobat 2018",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
@@ -42,6 +44,7 @@
             "SAVE": "Save",
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
+            "SPONSOREDBY": "Sponsored by",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
@@ -66,7 +69,8 @@
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
             "REPORTS": "Reports",
-            "USERPROFILE": "User profile"
+            "USERPROFILE": "User profile",
+            "USERS": "Users"
         }
     },
     "PAGE": {
@@ -90,6 +94,9 @@
                 "DESCRIPTION": "Please check your email for the link to reset your password",
                 "TITLE": "Password reset requested"
             }
+        },
+        "MANAGE-USERS": {
+            "TITLE": "Manage users"
         },
         "PROFILE": {
             "TITLE": "Profile"

@@ -29,6 +29,12 @@
             "styles": [
               "src/assets/scss/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss",
+                "src/assets/scss/00_base"
+              ]
+            },
             "scripts": []
           },
           "configurations": {

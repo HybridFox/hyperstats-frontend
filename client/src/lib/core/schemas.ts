@@ -6,4 +6,4 @@ export const recyclingPartner = new schema.Entity('recyclingPartners', {}, { idA
 
 export const user = new schema.Entity('users', {
   roles: [role],
-});
+}, { idAttribute: '_id' });
