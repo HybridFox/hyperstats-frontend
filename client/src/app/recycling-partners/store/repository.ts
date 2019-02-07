@@ -24,4 +24,25 @@ export class RecyclingPartnerRepository {
     return this.http
       .get(url);
   }
+
+  public create(company: any) {
+    const url = this.apiConfig.baseUrl('/company/type/RP');
+
+    return this.http
+      .post(url, company);
+  }
+
+  public update(id, company: any) {
+    const url = this.apiConfig.baseUrl(`/company/${id}`);
+
+    return this.http
+      .put(url, company);
+  }
+
+  public remove(id: string) {
+    const url = this.apiConfig.baseUrl(`/company/${id}`);
+
+    return this.http
+      .delete(url);
+  }
 }

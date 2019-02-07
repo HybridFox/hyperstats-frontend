@@ -91,10 +91,8 @@ export class RecyclingProcessesActions {
     return this.recyclingProcessesRepository.remove(id)
       .pipe(
         tap(() => {
-          const normalizedPayload = this.entitiesActions.remove('recyclingProcesses', id);
-
           this.handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
-            payload: normalizedPayload,
+            payload: this.entitiesActions.remove('recyclingProcesses', id),
           });
         })
       );

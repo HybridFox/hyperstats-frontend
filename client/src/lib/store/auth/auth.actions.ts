@@ -73,6 +73,7 @@ export class AuthActions {
   public updateProfile({ email, firstname, lastname, password }: ProfileInterface): Promise<any> {
     this.handler.dispatchStart(ACTIONS.FETCH_USER);
 
+
     return this.authRepository
       .updateProfile({ email, firstname, lastname, password })
       .pipe(
@@ -140,5 +141,11 @@ export class AuthActions {
       .resetPassword({ password, token })
       .toPromise()
       .then(() => this.handler.dispatch(ACTIONS.CLEAR_USER));
+  }
+
+  public updateCompanyOfProfile(company: any) {
+      this.handler.dispatch(ACTIONS.UPDATE_COMPANY, {
+        payload: company
+      });
   }
 }
