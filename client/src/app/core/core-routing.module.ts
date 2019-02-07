@@ -53,14 +53,6 @@ const routes: Routes = [
     }
   },
   {
-    path: 'help',
-    canActivate: [AuthGuard],
-    component: Pages.HelpPageComponent,
-    children: [
-      { path: ':section', component: Pages.HelpSectionPageComponent },
-    ]
-  },
-  {
     path: 'contact',
     component: Pages.ContactPageComponent
   },
@@ -76,6 +68,13 @@ const routes: Routes = [
         path: '',
         pathMatch: 'full',
         component: Pages.LandingPageComponent,
+      },
+      {
+        path: 'help',
+        component: Pages.HelpPageComponent,
+        children: [
+          { path: ':section', component: Pages.HelpSectionPageComponent },
+        ]
       },
       { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
       {
