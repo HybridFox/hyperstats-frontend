@@ -148,4 +148,40 @@ module.exports = (router) => {
 			DataMiddleware.validate("body", Validations.updateStatus, Errors.ObjectValidationFailed),
 			Controller.status,
 		);
+
+	/**
+	 * @swagger
+	 * /api/users/{id}/company:
+	 *   parameters:
+	 *     - in: path
+	 *       name: id
+	 *       required: true
+	 *       description: uuid
+	 *       type: string
+	 *   patch:
+	 *     description: Change user company
+	 *     tags:
+	 *       - users
+	 *     parameters:
+	 *       - in: body
+	 *         name: company
+	 *         required: true
+	 *         schema:
+	 *           type: string
+	 *     produces:
+	 *       - any
+	 *     responses:
+	 *       200:
+	 *         description: User
+	 *         schema:
+	 *           $ref: '#/definitions/User'
+	 */
+	router.route("/users/:id/company")
+		.patch(
+			AuthMiddleware.isLoggedIn,
+			DataMiddleware.copy,
+			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("body", Validations.updateCompany, Errors.ObjectValidationFailed),
+			Controller.updateCompany,
+		);
 };

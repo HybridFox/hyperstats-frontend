@@ -48,10 +48,20 @@ describe("Integration", () => {
 				.expect(400);
 		});
 
-		it("Should reset the password", async() => {
+		it("Should fail to reset password when invalid token is passed", () => {
+			return supertest(server)
+				.put("/api/auth/reset-password")
+				.send({
+					password: "newPassword",
+					token: "invalid token",
+				})
+				.expect(400);
+		});
+
+		const resetPasswordTest = () => {
 			let token;
 
-			await supertest(server)
+			it("Should request a password reset", () => supertest(server)
 				.post("/api/auth/request-password-reset")
 				.send({
 					email: "passwordreset@example.com",
@@ -71,9 +81,10 @@ describe("Integration", () => {
 					const match = myRegexp.exec(sentMail[0].html);
 
 					token = match[1];
-				});
+				})
+			);
 
-			await supertest(server)
+			it("Should reset the password", () => supertest(server)
 				.put("/api/auth/reset-password")
 				.send({
 					password: "newPassword",
@@ -83,9 +94,10 @@ describe("Integration", () => {
 				.then(({ body }) => {
 					expect(body).to.be.an("object");
 					expect(body.success).to.be.true;
-				});
+				})
+			);
 
-			return supertest(server)
+			it("Should login with the new password", () => supertest(server)
 				.post("/api/auth/login")
 				.send({
 					email: "passwordreset@example.com",
@@ -103,17 +115,11 @@ describe("Integration", () => {
 						isAdmin: false,
 						email: "passwordreset@example.com",
 					});
-				});
-		});
-
-		it("Should fail to reset password when invalid token is passed", () => {
-			return supertest(server)
-				.put("/api/auth/reset-password")
-				.send({
-					password: "newPassword",
-					token: "invalid token",
 				})
-				.expect(400);
-		});
+			);
+		};
+
+		describe("Should reset the password", () => resetPasswordTest());
+		describe("Should reset the password a second time", () => resetPasswordTest());
 	});
 });

@@ -1,9 +1,9 @@
-module.exports = {
-	activate:require("./activate"),
+module.exports =  {
 	create: require("./create"),
-	deactivate: require("./deactivate"),
 	getAll: require("./getAll"),
 	getOne: require("./getOne"),
+	getCompanyIdOfUser: require("./getCompanyIdOfUser"),
 	remove: require("./remove"),
+	setActiveProp: require("./setActiveProp"),
 	update: require("./update"),
 };
