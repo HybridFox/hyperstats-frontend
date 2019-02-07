@@ -136,7 +136,7 @@ module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /api/recycling-processes/{id}/activate:
-	 *   put:
+	 *   patch:
 	 *     description: Activate a recycling-process by Id
 	 *     tags:
 	 *       - recycling-processes
@@ -154,7 +154,7 @@ module.exports = (router) => {
 	 *           success:
 	 *              type: boolean
 	 */
-	router.route("/recycling-processes/:id/activate").put(
+	router.route("/recycling-processes/:id/activate").patch(
 		DataMiddleware.copy,
 		DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 		Controller.activate
@@ -181,7 +181,7 @@ module.exports = (router) => {
 	 *           success:
 	 *              type: boolean
 	 */
-	router.route("/recycling-processes/:id/deactivate").put(
+	router.route("/recycling-processes/:id/deactivate").patch(
 		DataMiddleware.copy,
 		DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 		Controller.deactivate
