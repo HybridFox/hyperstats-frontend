@@ -1,7 +1,7 @@
 .m-footer {
     width: 100%;
     border-top: 1.5px solid $mercury;
-    height: $footer-height;
+    min-height: $footer-height;
     background-color: $white;
     position: relative;
     z-index: 50;

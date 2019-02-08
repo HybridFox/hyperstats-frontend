@@ -1,0 +1,10 @@
+<div class="p-app">
+    <app-navigation
+        [user]="user$ | async"
+        [actionButton]="actionButton"
+        (logout)="onLogout()"
+    ></app-navigation>
+    <div class="container p-app__content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
