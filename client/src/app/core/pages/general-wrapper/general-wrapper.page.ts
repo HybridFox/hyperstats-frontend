@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 import { AuthActions } from '@store/auth/auth.actions';
 
 @Component({
-  templateUrl: './wrapper.page.html',
+  templateUrl: './general-wrapper.page.html',
 })
-export class WrapperPageComponent {
+export class GeneralWrapperPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
 
   constructor (

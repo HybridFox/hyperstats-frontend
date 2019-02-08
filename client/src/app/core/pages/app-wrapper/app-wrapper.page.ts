@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 import { AuthActions } from '@store/auth/auth.actions';
 
 @Component({
-  templateUrl: './wrapper.page.html',
+  templateUrl: './app-wrapper.page.html',
 })
-export class WrapperPageComponent {
+export class AppWrapperPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
-  public actionButton = { label: 'New report', link: ['new-report'] };
+  public actionButton = { label: 'New report', link: ['/', 'recycler', 'new-report'] };
 
   constructor (
     private authActions: AuthActions,

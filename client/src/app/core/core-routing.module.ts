@@ -8,14 +8,14 @@ import * as Pages from './pages';
 const routes: Routes = [
   {
     path: '',
-    component: Pages.WrapperPageComponent,
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    component: Pages.LandingPageComponent
+  },
+  {
+    path: '',
+    component: Pages.GeneralWrapperPageComponent,
     children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        canActivate: [AuthGuard],
-        component: Pages.LandingPageComponent
-      },
       {
         path: 'about',
         component: Pages.AboutPageComponent
@@ -27,6 +27,27 @@ const routes: Routes = [
       {
         path: 'privacy',
         component: Pages.PrivacyPageComponent
+      },
+    ]
+  },
+  {
+    path: '',
+    component: Pages.AppWrapperPageComponent,
+    children: [
+      {
+        path: 'recycler',
+        canActivate: [AuthGuard],
+        loadChildren: '../recycler/recycler.module#RecyclerModule',
+      },
+      {
+        path: 'user',
+        canActivate: [AuthGuard],
+        loadChildren: '../user/user.module#UserModule',
+      },
+      {
+        path: 'admin',
+        canActivate: [AuthGuard, AdminGuard],
+        loadChildren: '../admin/admin.module#AdminModule',
       },
     ]
   },

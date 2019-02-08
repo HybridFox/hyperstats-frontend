@@ -18,7 +18,6 @@ const debounce = obs$ => obs$.pipe(
 export class CoreComponent implements OnInit {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
   @select$(['auth', 'user', 'loading'], debounce) public loading$: Observable<any>;
-  public actionButton = { label: 'New report', link: '/new-report' };
 
   constructor(
     private languageService: LanguageService,
