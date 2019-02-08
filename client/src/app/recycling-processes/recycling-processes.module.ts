@@ -16,6 +16,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
 import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
+import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
 
 @NgModule({
   imports: [
@@ -23,11 +24,11 @@ import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling
     ReportsRoutingModule,
     SharedModule,
     ReportsApiModule,
-    FormFieldsModule
+    FormFieldsModule,
+    RecyclingPartnersModule
   ],
   providers: [
     RecylingProcessesServices,
-    recyclingPartnersServices
   ],
   declarations: [
     Pages,
@@ -39,6 +40,5 @@ export class RecyclingProcessesModule {
     private storeService: StoreService,
   ) {
     this.storeService.injectAsyncReducer('recyclingProcesses', recyclingProcessesReducer);
-    this.storeService.injectAsyncReducer('recyclingPartners', recyclingPartnerReducer);
   }
 }
