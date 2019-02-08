@@ -93,7 +93,6 @@ export class RecyclingPartnerActions {
     return this.recyclingPartnerRepository.remove(id)
       .pipe(
         tap(() => {
-          console.log('id', id);
           this.handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
             payload: this.entitiesActions.remove('recyclingPartners', id),
           });
