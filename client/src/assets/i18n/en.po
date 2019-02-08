@@ -144,7 +144,7 @@ msgid "GENERAL##LABELS##SORTBY"
 msgstr "Sort by"
 
 msgid "GENERAL##LABELS##SPONSOREDBY"
-msgstr "Sponsored by"
+msgstr "Powered by"
 
 msgid "GENERAL##LABELS##STREET"
 msgstr "Street name"
