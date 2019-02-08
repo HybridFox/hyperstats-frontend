@@ -9,7 +9,7 @@ import { LanguageService } from '../../services';
 
 const debounce = obs$ => obs$.pipe(
   tap((value) => console.log(value)),
-  debounceTime(100),
+  debounceTime(1000),
 );
 
 @Component({

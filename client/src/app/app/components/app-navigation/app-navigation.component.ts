@@ -10,7 +10,6 @@ import { storeRouterSelectors } from '@core/store-router';
 
 export class AppNavigationComponent {
     @select(storeRouterSelectors.data) public routeData$: any;
-
     @Input() actionButton: any;
     @Input() profile: any;
     @Output() logout: EventEmitter<any> = new EventEmitter<any>();

@@ -1,6 +1,6 @@
 <div class="p-app-root">
   <div class="p-app-root__content">
-    <router-outlet *ngIf="!(loading$ | async)"></router-outlet>
+    <router-outlet *ngIf="(loading$ | async) === false"></router-outlet>
   </div>
   <div class="p-app-root__footer">
     <app-footer></app-footer>

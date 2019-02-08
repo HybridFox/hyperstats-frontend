@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-core-navigation',
@@ -6,4 +6,9 @@ import { Component, Input } from '@angular/core';
 })
 export class CoreNavigationComponent {
     @Input() public user: any;
+    @Output() public logout: EventEmitter<any> = new EventEmitter();
+
+    public onLogout() {
+        this.logout.emit();
+    }
 }
