@@ -8,6 +8,11 @@ const routes: Routes = [
         path: '',
         component: Pages.WrapperPageComponent,
         children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                redirectTo: 'reports',
+            },
             { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule' },
             {
                 path: 'reports',

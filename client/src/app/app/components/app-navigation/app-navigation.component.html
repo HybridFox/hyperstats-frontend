@@ -1,0 +1,18 @@
+<div class="o-menu--filled">
+    <div class="container" *ngIf="profile">
+        <div class="o-menu__left">
+            <div>
+                <a routerLink="/" class="a-site-logo"><img src="/assets/images/logo.png" alt="Logo"></a>
+            </div>
+            <div class="o-menu__main-menu-wrapper">
+                <app-main-menu [profile]="profile"></app-main-menu>
+            </div>
+        </div>
+
+        <div class="o-menu__right">
+            <a *ngIf="actionButton" [routerLink]="actionButton.link" class="a-button--secondary">{{ actionButton.label }}</a>
+            <app-user-menu [profile]="profile" (logout)="logout.emit()"></app-user-menu>
+            <a routerLink="help" class="m-menu--main__item">{{ 'GENERAL.MENU.HELP' | translate }}</a>
+        </div>
+    </div>
+</div>

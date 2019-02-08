@@ -7,16 +7,28 @@ import * as Pages from './pages';
 
 const routes: Routes = [
   {
-    path: 'about',
-    component: Pages.AboutPageComponent
-  },
-  {
-    path: 'contact',
-    component: Pages.ContactPageComponent
-  },
-  {
-    path: 'privacy',
-    component: Pages.PrivacyPageComponent
+    path: '',
+    component: Pages.WrapperPageComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        canActivate: [AuthGuard],
+        component: Pages.LandingPageComponent
+      },
+      {
+        path: 'about',
+        component: Pages.AboutPageComponent
+      },
+      {
+        path: 'contact',
+        component: Pages.ContactPageComponent
+      },
+      {
+        path: 'privacy',
+        component: Pages.PrivacyPageComponent
+      },
+    ]
   },
   {
     path: 'auth',

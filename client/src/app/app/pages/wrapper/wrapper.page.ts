@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
 
 @Component({
   templateUrl: './wrapper.page.html',
 })
-export class WrapperPageComponent implements OnInit {
-
-  public ngOnInit() {
-    console.log('WrapperPageComponent');
-  }
+export class WrapperPageComponent {
+  @select(['auth', 'user', 'result']) public user$: Observable<any>;
 }

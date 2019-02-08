@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgRedux } from '@angular-redux/store';
-import { select } from '@angular-redux/store';
+import { select, select$ } from '@angular-redux/store';
 import { Observable } from 'rxjs';
+import { debounceTime, tap } from 'rxjs/operators';
 
 import { AuthActions } from '@store/auth';
 import { LanguageService } from '../../services';
+
+const debounce = obs$ => obs$.pipe(
+  tap((value) => console.log(value)),
+  debounceTime(100),
+);
 
 @Component({
   selector: 'app-root',
@@ -13,7 +18,7 @@ import { LanguageService } from '../../services';
 })
 export class CoreComponent implements OnInit {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
-  @select(['auth', 'user', 'loading']) public loading$: Observable<any>;
+  @select$(['auth', 'user', 'loading'], debounce) public loading$: Observable<any>;
   public actionButton = { label: 'New report', link: '/new-report' };
 
   constructor(

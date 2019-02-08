@@ -16,7 +16,6 @@
 @import "./06_vendor/v-material";
 
 // Atoms
-@import "./01_atoms/a-app-root";
 @import "./01_atoms/a-buttons";
 @import "./01_atoms/a-icons";
 @import "./01_atoms/a-input";
@@ -50,6 +49,8 @@
 
 // Pages
 @import "./05_pages/p-home";
+@import "./05_pages/p-app-root";
+@import "./05_pages/p-app";
 @import "./05_pages/p-auth";
 @import "./05_pages/p-login";
 @import "./05_pages/p-profile";
