@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-07T16:58:35.224Z\n"
+"POT-Creation-Date: 2019-02-08T10:43:58.303Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr "Recycling"
@@ -203,6 +203,11 @@ msgstr "Logoff"
 msgid "GENERAL##MENU##MORE"
 msgstr "More..."
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##PRIVACY"
+msgid "GENERAL##MENU##PRIVACY"
+msgstr "Privacy"
+
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
 
@@ -280,13 +285,9 @@ msgstr "Company information"
 msgid "PAGE##CONTACT##TITLE"
 msgstr "Contact"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "Please check your email for the link to reset your password"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
