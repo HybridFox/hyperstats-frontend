@@ -18,6 +18,13 @@ const reducer = (
     return null;
   }
 
+  if (action.type === ACTIONS.UPDATE_COMPANY) {
+    return {
+      ...state,
+      company: action.payload
+    };
+  }
+
   return state;
 };
 

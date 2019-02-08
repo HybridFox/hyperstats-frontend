@@ -67,6 +67,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
 
     public submit() {
         FormHelper.markAsDirty(this.companyForm);
+
         if (!this.companyForm.valid) {
             return this.toastrService.error(
                 ngxExtract('TOAST.GENERAL.INVALID.DESCRIPTION') as string,
@@ -81,7 +82,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.TITLE') as string
             );
-            this.authActions.fetchProfile();
+            this.authActions.updateCompanyOfProfile(company);
             this.companyForm.setValue(company.data);
         }).catch(() => {
             this.toastrService.error(

@@ -5,8 +5,18 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-07T16:43:08.658Z\n"
-"PO-Revision-Date: 2019-02-07T16:43:08.658Z\n"
+
+"POT-Creation-Date: 2019-02-07T13:44:26.046Z\n"
+"PO-Revision-Date: 2019-02-07T13:44:26.046Z\n"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
+msgstr ""
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
+msgstr ""
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
+msgstr ""
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
@@ -24,6 +34,9 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
@@ -116,6 +129,9 @@ msgstr ""
 msgid "GENERAL##LABELS##REGISTER"
 msgstr ""
 
+msgid "GENERAL##LABELS##REMOVE"
+msgstr ""
+
 msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr ""
 
@@ -129,6 +145,9 @@ msgid "GENERAL##LABELS##SORTBY"
 msgstr ""
 
 msgid "GENERAL##LABELS##SPONSOREDBY"
+msgstr ""
+
+msgid "GENERAL##LABELS##STREET"
 msgstr ""
 
 msgid "GENERAL##LABELS##STREETNAME"
@@ -146,6 +165,9 @@ msgstr ""
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr ""
 
+msgid "GENERAL##LABELS##TYPE"
+msgstr ""
+
 msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr ""
 
@@ -159,6 +181,9 @@ msgid "GENERAL##MENU##ABOUT"
 msgstr ""
 
 msgid "GENERAL##MENU##AUDITTRIAL"
+msgstr ""
+
+msgid "GENERAL##MENU##COMPANIES"
 msgstr ""
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
@@ -236,6 +261,9 @@ msgstr ""
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgstr ""
+
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr ""
 
@@ -291,6 +319,9 @@ msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
+msgstr ""
+
+msgid "PAGE##RECYCLING-PROCESSES##PRECEDING-STEP##NONE"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
@@ -393,6 +424,30 @@ msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"

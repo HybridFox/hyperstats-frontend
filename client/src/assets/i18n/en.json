@@ -1,4 +1,11 @@
 {
+    "CONSTANTS": {
+        "METHODS-OF-PROCESSING": {
+            "RECYCLING": "Recycling",
+            "SORTING": "Sorting",
+            "TRANSPORT": "Transport"
+        }
+    },
     "GENERAL": {
         "BUTTONS": {
             "CANCEL": "Cancel",
@@ -11,6 +18,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
@@ -41,16 +49,19 @@
             "PREVIOUS-STEP": "Previous step",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
+            "REMOVE": "Remove",
             "RESET-PASSWORD": "Reset password",
             "SAVE": "Save",
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
+            "STREET": "Street name",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
             "TRY-AGAIN": "Try again",
+            "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
@@ -59,6 +70,7 @@
         "MENU": {
             "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
+            "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
             "CONTACT": "Contact",
             "HELP": "Help",
@@ -97,6 +109,9 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-COMPANIES": {
+            "TITLE": "Manage Companies"
+        },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
         },
@@ -124,6 +139,9 @@
                 "SCHEMATIC-OVERVIEW": "Schematic overview of process",
                 "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
+            },
+            "PRECEDING-STEP": {
+                "NONE": "None"
             },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
@@ -204,6 +222,26 @@
             "SUCCESS": {
                 "DESCRIPTION": "Your profile has been saved!",
                 "TITLE": "Success!"
+            }
+        },
+        "RECYCLING-PROCESS-REMOVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not remove the recycling process. \nPlease try again later or contact the administrator.",
+                "TITLE": "Removing recycling-process failed!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling process has been removed successfully.",
+                "TITLE": "Recycling-process removed!"
+            }
+        },
+        "RECYCLING-PROCESS-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not save the recycling process. \nPlease try again later or contact the administrator.",
+                "TITLE": "Saving recycling-process failed!"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling process has been saved successfully.",
+                "TITLE": "Recycling-process saved!"
             }
         },
         "REGISTER": {

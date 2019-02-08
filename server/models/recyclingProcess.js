@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
+const { v4: uuid } = require("node-uuid");
 
 const RecyclingStepSchema = mongoose.Schema({
+	uuid: {
+		type: String,
+		required: true,
+		default: uuid,
+	},
 	precedingStep: {
 		type: String,
 	},
@@ -42,6 +48,10 @@ const RecyclingProcessSchema = mongoose.Schema({
 		lastUpdated: {
 			type: Date,
 			default: Date.now,
+		},
+		activated: {
+			type: Boolean,
+			default: false,
 		},
 	},
 });

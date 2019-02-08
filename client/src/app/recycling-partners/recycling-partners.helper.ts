@@ -7,9 +7,12 @@ export const recyclingPartners = (obs$) => {
                 return Array.isArray(partners);
             }),
             map((partners: any[]) => {
-                return partners.map((partner) => {
-                    return {'link': partner._id, 'label': partner.data.name};
-                });
+                return partners.reduce((acc, partner) => {
+                    if (!partner) {
+                        return;
+                    }
+                    return acc.concat({'link': partner._id, 'label': partner.data.name});
+                }, []);
             })
         );
 };

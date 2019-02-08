@@ -24,6 +24,9 @@ module.exports = async({
 				country: "BE",
 			},
 		},
+		meta: {
+			type: "R",
+		},
 	}))._id;
 
 	const testUser = new UserModel({

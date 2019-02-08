@@ -3,5 +3,6 @@ module.exports = {
 	getAll: require("./getAll"),
 	getById: require("./getById"),
 	remove: require("./remove"),
+	setActiveProp: require("./setActiveProp"),
 	update: require("./update"),
 };

@@ -2,6 +2,7 @@ const AuthMiddleware = require("../middleware/auth");
 const DataMiddleware = require("../middleware/data");
 const Errors = require("../helpers/errorHandler");
 const Validations = require("../controllers/users/validations");
+const validationPresets = require("../helpers/validation/presets");
 const Controller = require("../controllers/users");
 
 module.exports = (router) => {
@@ -45,6 +46,16 @@ module.exports = (router) => {
 	 *       - users
 	 *     produces:
 	 *       - application/json
+	 *     parameters:
+	 *       - in: query
+	 *         name: companyType
+	 *         required: false
+	 *         type: string
+	 *         description: >
+	 *           Type of company the user belongs to
+	 *             * `R` - Recycler
+	 *             * `RP` - Recycling Partner
+	 *             * `CO` - Compliance organisation
 	 *     responses:
 	 *       200:
 	 *         description: Users
@@ -56,6 +67,8 @@ module.exports = (router) => {
 	router.route("/users")
 		.get(
 			AuthMiddleware.isLoggedIn,
+			DataMiddleware.copy,
+			DataMiddleware.validate("query", Validations.filters, Errors.ObjectValidationFailed),
 			Controller.getAll,
 		);
 
@@ -101,13 +114,13 @@ module.exports = (router) => {
 		.get(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			Controller.getById,
 		)
 		.put(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
 			Controller.update,
 		);
@@ -144,7 +157,7 @@ module.exports = (router) => {
 		.patch(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.updateStatus, Errors.ObjectValidationFailed),
 			Controller.status,
 		);
@@ -180,7 +193,7 @@ module.exports = (router) => {
 		.patch(
 			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
-			DataMiddleware.validate("params", Validations.byId, Errors.ObjectValidationFailed),
+			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.updateCompany, Errors.ObjectValidationFailed),
 			Controller.updateCompany,
 		);

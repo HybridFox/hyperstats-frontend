@@ -62,4 +62,40 @@ export class RecyclingPartnerActions {
         }),
       );
   }
+
+  public create(partner: any) {
+    return this.recyclingPartnerRepository.create(partner)
+      .pipe(
+        tap((response: any) => {
+          const normalizedPayload = this.entitiesActions.normalize(response, EntitiesActions.schema.recyclingPartner);
+
+          this.handler.dispatch(ACTIONS.ADD_TO_LIST, {
+            payload: normalizedPayload,
+          });
+        })
+      );
+  }
+
+  public update(id: string, partner: any) {
+    return this.recyclingPartnerRepository.update(id, partner)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.UPDATE, {
+            payload: this.entitiesActions.patch('recyclingPartners', response._id, response)
+          });
+        })
+      );
+  }
+
+  public delete(id: string) {
+    return this.recyclingPartnerRepository.remove(id)
+      .pipe(
+        tap(() => {
+          console.log('id', id);
+          this.handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
+            payload: this.entitiesActions.remove('recyclingPartners', id),
+          });
+        })
+      );
+  }
 }

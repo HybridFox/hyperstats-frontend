@@ -1,4 +1,11 @@
 {
+	"CONSTANTS": {
+		"METHODS-OF-PROCESSING": {
+			"RECYCLING": "",
+			"SORTING": "",
+			"TRANSPORT": ""
+		}
+	},
 	"GENERAL": {
 		"BUTTONS": {
 			"CANCEL": "",
@@ -12,6 +19,7 @@
 		},
 		"LABELS": {
 			"ACCEPT_TERMS": "",
+			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
@@ -42,16 +50,19 @@
 			"PREVIOUS-STEP": "",
 			"PRIVACY": "",
 			"REGISTER": "",
+			"REMOVE": "",
 			"RESET-PASSWORD": "",
 			"SAVE": "",
 			"SELECT-OPTION": "",
 			"SORTBY": "",
 			"SPONSOREDBY": "",
+			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
 			"TRY-AGAIN": "",
+			"TYPE": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
 			"ZIPCODE": ""
@@ -59,6 +70,7 @@
 		"MENU": {
 			"ABOUT": "",
 			"AUDITTRIAL": "",
+			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
 			"CONTACT": "",
 			"HELP": "",
@@ -97,6 +109,9 @@
 				"TITLE": ""
 			}
 		},
+		"MANAGE-COMPANIES": {
+			"TITLE": ""
+		},
 		"MANAGE-USERS": {
 			"TITLE": ""
 		},
@@ -124,6 +139,9 @@
 				"SCHEMATIC-OVERVIEW": "",
 				"SCHEMATIC-OVERVIEW-DESCRIPTION": "",
 				"UPLOAD-FILE-WITH-FURTHER-DETAILS": ""
+			},
+			"PRECEDING-STEP": {
+				"NONE": ""
 			},
 			"PROCESS-DESCRIPTION": "",
 			"PROCESS-TITLE": "",
@@ -197,6 +215,26 @@
 			}
 		},
 		"PROFILE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-SAVE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
