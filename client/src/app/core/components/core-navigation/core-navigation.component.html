@@ -1,0 +1,17 @@
+
+
+<div class="o-menu--filled">
+    <div class="container">
+        <div class="o-menu__left">
+            <nav class="m-menu--main">
+                <a [routerLink]="['/about']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.ABOUT' | translate }}</a>
+                <a [routerLink]="['/contact']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.CONTACT' | translate }}</a>
+                <a [routerLink]="['/privacy']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.PRIVACY' | translate }}</a>
+            </nav>
+        </div>
+
+        <div class="o-menu__right">
+            <app-user-menu [profile]="user" (logout)="logout.emit()"></app-user-menu>
+        </div>
+    </div>
+</div>

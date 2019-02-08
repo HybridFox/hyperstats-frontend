@@ -1,9 +1,6 @@
 <div>
-    <app-menu [actionButton]="actionButton" [profile]="user$ | async" (logout)="logout()"></app-menu>
+    <app-core-navigation [user]="user$ | async"></app-core-navigation>
     <div class="container-fluid">
-      <app-loading [loading]="loading$ | async">
-          <router-outlet></router-outlet>
-      </app-loading>
-
+      <router-outlet></router-outlet>
     </div>
-  </div>
+</div>
