@@ -419,10 +419,10 @@ msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
 msgstr "Could not register"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
-msgstr "Please check your inbox for a verification email"
+msgstr "Your company information is saved"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
-msgstr "Registration successfull"
+msgstr "Updated successfully"
 
 msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
 msgstr "There was en error sending your message"

@@ -175,8 +175,8 @@
                 "TITLE": "Could not register"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your inbox for a verification email",
-                "TITLE": "Registration successfull"
+                "DESCRIPTION": "Your company information is saved",
+                "TITLE": "Updated successfully"
             }
         },
         "CONTACT": {
