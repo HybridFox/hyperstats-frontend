@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-07T16:58:35.224Z\n"
+"POT-Creation-Date: 2019-02-08T14:58:41.182Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,22 +9,27 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
-msgstr "Recycling"
+msgstr ""
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
-msgstr "Sorting"
+msgstr ""
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
-msgstr "Transport"
+msgstr ""
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr "Cancel"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
+
+#, fuzzy
+#| msgid "GENERAL##BUTTONS##SAVE"
+msgid "GENERAL##BUTTONS##GOTOAPP"
+msgstr "Save"
 
 msgid "GENERAL##BUTTONS##SAVE"
 msgstr "Save"
@@ -38,8 +43,10 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##SAVE"
 msgid "GENERAL##LABELS##ACTIVE"
-msgstr "Active"
+msgstr "Save"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
@@ -131,8 +138,10 @@ msgstr "Privacy"
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##BROWSE"
 msgid "GENERAL##LABELS##REMOVE"
-msgstr "Remove"
+msgstr "Browse"
 
 msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr "Reset password"
@@ -149,6 +158,8 @@ msgstr "Sort by"
 msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr "Sponsored by"
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##STREETNAME"
 msgid "GENERAL##LABELS##STREET"
 msgstr "Street name"
 
@@ -167,8 +178,10 @@ msgstr "Submit"
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##CITY"
 msgid "GENERAL##LABELS##TYPE"
-msgstr "Type"
+msgstr "City"
 
 msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr "Update profile"
@@ -185,8 +198,10 @@ msgstr "About us"
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
+#, fuzzy
+#| msgid "GENERAL##MENU##PROXIES"
 msgid "GENERAL##MENU##COMPANIES"
-msgstr "Companies"
+msgstr "Proxies"
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr "Company information"
@@ -205,6 +220,11 @@ msgstr "Logoff"
 
 msgid "GENERAL##MENU##MORE"
 msgstr "More..."
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##PRIVACY"
+msgid "GENERAL##MENU##PRIVACY"
+msgstr "Privacy"
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
@@ -296,8 +316,10 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
+#, fuzzy
+#| msgid "PAGE##MANAGE-USERS##TITLE"
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
-msgstr "Manage Companies"
+msgstr "Manage users"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -368,8 +390,10 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
 msgstr "(upload a file with further details on your recycling process)"
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
 msgid "PAGE##RECYCLING-PROCESSES##PRECEDING-STEP##NONE"
-msgstr "None"
+msgstr "Recycling Step {{ key }}"
 
 msgid "PAGE##RECYCLING-PROCESSES##PROCESS-DESCRIPTION"
 msgstr ""
@@ -419,10 +443,10 @@ msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
 msgstr "Could not register"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
-msgstr "Your company information is saved"
+msgstr "Please check your inbox for a verification email"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
-msgstr "Updated successfully"
+msgstr "Registration successfull"
 
 msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
 msgstr "There was en error sending your message"
@@ -475,33 +499,57 @@ msgstr "Your profile has been saved!"
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
 msgstr ""
-"Could not remove the recycling process. \n"
-"Please try again later or contact the administrator."
+"Add all the different battery chemistry types you process. Per battery type "
+"define which recycling site sare involved and provide some additional "
+"information regarding the recycling process."
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##TITLE"
-msgstr "Removing recycling-process failed!"
+msgstr "Recycling Processes"
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
-msgstr "The recycling process has been removed successfully."
+msgstr ""
+"Add all the different battery chemistry types you process. Per battery type "
+"define which recycling site sare involved and provide some additional "
+"information regarding the recycling process."
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
-msgstr "Recycling-process removed!"
+msgstr "Process Description - Recycling Steps"
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
 msgstr ""
-"Could not save the recycling process. \n"
-"Please try again later or contact the administrator."
+"Add all the different battery chemistry types you process. Per battery type "
+"define which recycling site sare involved and provide some additional "
+"information regarding the recycling process."
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##TITLE"
-msgstr "Saving recycling-process failed!"
+msgstr "Recycling Processes"
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
-msgstr "The recycling process has been saved successfully."
+msgstr ""
+"Add all the different battery chemistry types you process. Per battery type "
+"define which recycling site sare involved and provide some additional "
+"information regarding the recycling process."
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
-msgstr "Recycling-process saved!"
+msgstr "Recycling Processes"
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
@@ -703,19 +751,6 @@ msgstr "Recycling Efficiency"
 msgctxt "TERMS"
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "I accept the terms and conditions"
-
-#, fuzzy
-#~| msgid "PAGE##RECYCLING-PARTNERS##TITLE"
-#~ msgid "TOAST##RECYCLING##TITLE"
-#~ msgstr "Recycling Partners"
-
-#, fuzzy
-#~| msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
-#~ msgid "TOAST##RECYCLING##DESCRIPTION"
-#~ msgstr ""
-#~ "Add here the legal information for all the different recycling partners "
-#~ "you work with. Only add the address information where the actual "
-#~ "recycling plants are located."
 
 #~ msgid "GENERAL##LABELS##COPYRIGHT"
 #~ msgstr "© Eucobat 2018"
