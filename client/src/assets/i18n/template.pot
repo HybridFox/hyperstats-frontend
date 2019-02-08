@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-08T10:43:58.303Z\n"
-"PO-Revision-Date: 2019-02-08T10:43:58.303Z\n"
+"POT-Creation-Date: 2019-02-08T12:29:25.979Z\n"
+"PO-Revision-Date: 2019-02-08T12:29:25.979Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -21,6 +21,9 @@ msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr ""
+
+msgid "GENERAL##BUTTONS##GOTOAPP"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##SAVE"

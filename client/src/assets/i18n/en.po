@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-08T10:43:58.303Z\n"
+"POT-Creation-Date: 2019-02-08T12:29:25.979Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,6 +25,9 @@ msgstr "Cancel"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
+
+msgid "GENERAL##BUTTONS##GOTOAPP"
+msgstr "Go to app"
 
 msgid "GENERAL##BUTTONS##SAVE"
 msgstr "Save"

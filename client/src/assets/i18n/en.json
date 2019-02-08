@@ -10,6 +10,7 @@
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
+            "GOTOAPP": "Go to app",
             "SAVE": "Save"
         },
         "FIELD-ERRORS": {

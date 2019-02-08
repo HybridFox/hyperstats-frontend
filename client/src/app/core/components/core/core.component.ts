@@ -28,6 +28,6 @@ export class CoreComponent implements OnInit {
 
   public ngOnInit() {
     this.languageService.initLanguage();
-    this.authActions.fetchProfile().toPromise();
+    this.authActions.fetchProfile().toPromise().catch(() => {});
   }
 }

@@ -11,6 +11,7 @@
         </div>
 
         <div class="o-menu__right">
+            <a [routerLink]="['/', 'app']" class="m-menu--user__title a-button--secondary a-button-outline">{{ 'GENERAL.BUTTONS.GOTOAPP' | translate }}</a>
             <app-user-menu [profile]="user" (logout)="onLogout()"></app-user-menu>
         </div>
     </div>
