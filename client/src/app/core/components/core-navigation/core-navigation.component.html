@@ -3,6 +3,9 @@
 <div class="o-menu--filled">
     <div class="container">
         <div class="o-menu__left">
+            <div>
+                <a routerLink="/" class="a-site-logo"><img src="/assets/images/logo.png" alt="Logo"></a>
+            </div>
             <nav class="m-menu--main">
                 <a [routerLink]="['/about']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.ABOUT' | translate }}</a>
                 <a [routerLink]="['/contact']" class="m-menu--main__item" routerLinkActive="active">{{ 'GENERAL.MENU.CONTACT' | translate }}</a>
