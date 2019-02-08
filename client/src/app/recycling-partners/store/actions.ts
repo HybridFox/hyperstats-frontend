@@ -15,7 +15,9 @@ export class RecyclingPartnerActions {
     private handler: Handler,
     private entitiesActions: EntitiesActions,
     private recyclingPartnerRepository: RecyclingPartnerRepository,
-  ) {}
+  ) {
+    console.log('init');
+  }
 
   public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH_ALL);

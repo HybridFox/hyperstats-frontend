@@ -15,6 +15,7 @@ import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
+import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { Pages } from './pages';
   ],
   providers: [
     RecylingProcessesServices,
+    recyclingPartnersServices
   ],
   declarations: [
     Pages,
@@ -37,5 +39,6 @@ export class RecyclingProcessesModule {
     private storeService: StoreService,
   ) {
     this.storeService.injectAsyncReducer('recyclingProcesses', recyclingProcessesReducer);
+    this.storeService.injectAsyncReducer('recyclingPartners', recyclingPartnerReducer);
   }
 }
