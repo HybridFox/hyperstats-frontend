@@ -14,16 +14,16 @@ import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../st
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 
 @Component({
-  templateUrl: './recycling-process.page.html',
+  templateUrl: './detail.page.html',
 })
-export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
+export class DetailPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
 
     public recyclingProcessForm: any;
     public process: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
+    public recyclingProcessId: string;
 
-    private recyclingProcessId: string;
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -219,6 +219,3 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             });
     }
 }
-
-
-
