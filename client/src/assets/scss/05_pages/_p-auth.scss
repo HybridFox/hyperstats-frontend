@@ -1,7 +1,8 @@
-.p-register {
+.p-auth {
     background: url("/assets/images/login_background.png") center center;
     background-size: cover;
     display: flex;
+    flex: 1;
     justify-content: flex-end;
 
     &__title {
@@ -13,7 +14,7 @@
     &__box {
         display: flex;
         background-color: $athens-gray;
-        min-height: calc(100vh - #{$footer-height});
+        // min-height: calc(100vh - #{$footer-height});
         justify-content: center;
         flex-direction: column;
         padding: 0 $spacer-xxx-large;
@@ -36,7 +37,7 @@
 }
 
 @media(max-width: 500px) {
-    .p-login .p-login__box {
+    .p-auth .p-auth__box {
         width: 100%;
         min-width: auto;
     }

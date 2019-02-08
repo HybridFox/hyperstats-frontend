@@ -1,0 +1,17 @@
+.a-app-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.a-app-root__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    & > ng-component {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
