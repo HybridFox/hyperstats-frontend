@@ -35,7 +35,7 @@ export class CoreComponent implements OnInit {
   public logout() {
     this.authActions.logout()
       .then(() => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/', 'auth', 'login']);
       });
   }
 }

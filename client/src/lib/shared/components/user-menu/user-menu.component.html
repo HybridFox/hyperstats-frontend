@@ -16,5 +16,5 @@
 </div>
 
 <div *ngIf="!profile">
-    <a routerLink="/login" class="a-button--secondary a-button-outline">{{ 'GENERAL.MENU.LOGIN' | translate }}</a>
+    <a [routerLink]="['/', 'auth']" class="a-button--secondary a-button-outline">{{ 'GENERAL.MENU.LOGIN' | translate }}</a>
 </div>
