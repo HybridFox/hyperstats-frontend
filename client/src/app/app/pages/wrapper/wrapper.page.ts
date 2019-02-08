@@ -17,7 +17,8 @@ export class WrapperPageComponent {
   ) {}
 
   public onLogout() {
-    this.authActions.logout();
-    this.router.navigate(['/', 'auth']);
+    this.authActions.logout().toPromise().then(() => {
+      this.router.navigate(['/', 'auth']);
+    });
   }
 }

@@ -127,13 +127,14 @@ export class AuthActions {
       .toPromise();
   }
 
-  public logout(): Promise<any> {
+  public logout(): Observable<any> {
     return this.authRepository
       .logout()
-      .toPromise()
-      .then(() => {
-        return this.handler.dispatch(ACTIONS.CLEAR_USER);
-      });
+      .pipe(
+        tap(() => {
+          this.handler.dispatch(ACTIONS.CLEAR_USER);
+        })
+      );
   }
 
   public resetPassword({ password, token }: ResetPasswordInterface): Promise<any> {

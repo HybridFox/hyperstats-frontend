@@ -4,4 +4,10 @@ import { Component } from '@angular/core';
     templateUrl: './reports.page.html',
 })
 
-export class ReportsPageComponent {}
+export class ReportsPageComponent {
+    public menuItems = [
+        {link: [''], label: 'Alkaline - Nickel Metal'},
+        {link: ['zinc'], label: 'Zinc Carbon'},
+        {link: ['nickel'], label: 'Nickel Cadmium'},
+    ];
+}

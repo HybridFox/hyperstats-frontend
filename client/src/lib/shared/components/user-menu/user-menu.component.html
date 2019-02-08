@@ -4,10 +4,10 @@
     </span>
     <ul (click)="preventClick($event)" [hidden]="!visible" class="m-menu--user__sub-menu">
         <li class="m-menu--user__sub-menu__item">
-            <a (click)="close()" routerLink="/profile" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
+            <a (click)="close()" routerLink="/app/profile" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">
-            <a (click)="close()" routerLink="/company-information" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
+            <a (click)="close()" routerLink="/app/company-information" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">
             <button (click)="close()" href="#" (click)="logoff()" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.LOGOFF' | translate }}</button>

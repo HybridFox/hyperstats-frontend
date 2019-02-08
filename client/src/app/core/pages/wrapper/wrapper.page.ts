@@ -15,6 +15,6 @@ export class WrapperPageComponent {
   ) {}
 
   public onLogout() {
-    this.authActions.logout();
+    this.authActions.logout().toPromise();
   }
 }

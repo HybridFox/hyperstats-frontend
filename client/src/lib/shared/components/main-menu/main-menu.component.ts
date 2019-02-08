@@ -46,11 +46,11 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
             ];
         } else {
             this.navItems = [
-                { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/reports'] },
-                { title: ngxExtract('GENERAL.MENU.RECYCLINGPROCESSES'), link: ['/recycling-processes'] },
-                { title: ngxExtract('GENERAL.MENU.RECYCLINGPARTNERS'), link: ['/recycling-partners'] },
-                { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/proxies'] },
-                { title: ngxExtract('GENERAL.MENU.AUDITTRIAL'), link: ['/audit-trail'] },
+                { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/app/reports'] },
+                { title: ngxExtract('GENERAL.MENU.RECYCLINGPROCESSES'), link: ['/app/recycling-processes'] },
+                { title: ngxExtract('GENERAL.MENU.RECYCLINGPARTNERS'), link: ['/app/recycling-partners'] },
+                { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/app/proxies'] },
+                { title: ngxExtract('GENERAL.MENU.AUDITTRIAL'), link: ['/app/audit-trail'] },
             ];
         }
 

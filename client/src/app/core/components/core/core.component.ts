@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, select$ } from '@angular-redux/store';
 import { Observable } from 'rxjs';
-import { debounceTime, tap } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 import { AuthActions } from '@store/auth';
 import { LanguageService } from '../../services';
 
 const debounce = obs$ => obs$.pipe(
-  tap((value) => console.log(value)),
   debounceTime(1000),
 );
 
@@ -29,13 +28,6 @@ export class CoreComponent implements OnInit {
 
   public ngOnInit() {
     this.languageService.initLanguage();
-    this.authActions.fetchProfile().subscribe(() => {}, () => {});
-  }
-
-  public logout() {
-    this.authActions.logout()
-      .then(() => {
-        this.router.navigate(['/', 'auth', 'login']);
-      });
+    this.authActions.fetchProfile().toPromise();
   }
 }
