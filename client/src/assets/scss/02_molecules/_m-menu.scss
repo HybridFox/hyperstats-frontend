@@ -83,6 +83,14 @@
                 line-height: 19px;
                 color: $blue;
                 display: block;
+                background-color: transparent;
+                border: none;
+                padding: 0;
+
+                &:focus {
+                    outline: none;
+                }
+
                 &:hover,
                 &:active {
                     text-decoration: none;

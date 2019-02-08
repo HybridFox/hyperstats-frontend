@@ -1,14 +1,8 @@
-<div [ngClass]="{
-    'root': true,
-    'u-user-logged-in': !!(user$ | async)
-}">
-  <app-menu [actionButton]="actionButton" [profile]="user$ | async" (logout)="logout()"></app-menu>
-  <div [ngClass]="!!(user$ | async) ? 'container' : 'container-fluid'">
-    <app-loading [loading]="loading$ | async">
-        <router-outlet></router-outlet>
-    </app-loading>
-
+<div class="p-app-root">
+  <div class="p-app-root__content">
+    <router-outlet *ngIf="(loading$ | async) === false"></router-outlet>
+  </div>
+  <div class="p-app-root__footer">
+    <app-footer></app-footer>
   </div>
 </div>
-
-<app-footer></app-footer>

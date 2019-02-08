@@ -4,17 +4,17 @@
     </span>
     <ul (click)="preventClick($event)" [hidden]="!visible" class="m-menu--user__sub-menu">
         <li class="m-menu--user__sub-menu__item">
-            <a (click)="close()" routerLink="/profile" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
+            <a (click)="close()" [routerLink]="['/user/profile']" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">
-            <a (click)="close()" routerLink="/company-information" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
+            <a (click)="close()" [routerLink]="['/user/company-information']" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">
-            <a (click)="close()" href="#" (click)="logoff()" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.LOGOFF' | translate }}</a>
+            <button (click)="close()" href="#" (click)="logoff()" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.LOGOFF' | translate }}</button>
         </li>
     </ul>
 </div>
 
 <div *ngIf="!profile">
-    <a routerLink="/login" class="a-button--secondary a-button-outline">{{ 'GENERAL.MENU.LOGIN' | translate }}</a>
+    <a [routerLink]="['/', 'auth']" class="a-button--secondary a-button-outline">{{ 'GENERAL.MENU.LOGIN' | translate }}</a>
 </div>
