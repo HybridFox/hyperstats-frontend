@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '@shared/shared.module';
 import { FormFieldsModule } from '@ui/form-fields';
 
-import { AppRoutingModule } from './app-routing.module';
+import { RecyclerRoutingModule } from './recycler-routing.module';
 
 import { Pages } from './pages';
 import { Components } from './components';
@@ -17,7 +17,7 @@ import { Components } from './components';
   ],
   entryComponents: [],
   imports: [
-    AppRoutingModule,
+    RecyclerRoutingModule,
     ReactiveFormsModule,
 
     SharedModule,
@@ -26,4 +26,4 @@ import { Components } from './components';
   ],
   providers: [],
 })
-export class AppModule { }
+export class RecyclerModule { }

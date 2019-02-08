@@ -25,7 +25,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
                 if (user.isAdmin) {
                     this.router.navigate(['admin']);
                 } else {
-                    this.router.navigate(['app']);
+                    this.router.navigate(['recycler']);
                 }
             });
     }

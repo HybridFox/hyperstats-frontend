@@ -35,9 +35,9 @@ const routes: Routes = [
     loadChildren: '../auth/auth.module#AuthModule',
   },
   {
-    path: 'app',
+    path: 'recycler',
     canActivate: [AuthGuard],
-    loadChildren: '../app/app.module#AppModule',
+    loadChildren: '../recycler/recycler.module#RecyclerModule',
   },
   {
     path: 'admin',

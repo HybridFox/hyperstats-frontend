@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-// import { ActionButton } from './menu.types';
+import { ActionButton } from './types';
 import { select } from '@angular-redux/store';
 import { storeRouterSelectors } from '@core/store-router';
 
@@ -7,10 +7,13 @@ import { storeRouterSelectors } from '@core/store-router';
     selector: 'app-navigation',
     templateUrl: './app-navigation.component.html',
 })
-
 export class AppNavigationComponent {
     @select(storeRouterSelectors.data) public routeData$: any;
-    @Input() actionButton: any;
-    @Input() profile: any;
-    @Output() logout: EventEmitter<any> = new EventEmitter<any>();
+    @Input() public actionButton: ActionButton;
+    @Input() public user: any;
+    @Output() public logout: EventEmitter<any> = new EventEmitter<any>();
+
+    public onLogout() {
+        this.logout.emit();
+    }
 }

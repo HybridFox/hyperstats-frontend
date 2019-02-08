@@ -10,6 +10,7 @@ import { AuthActions } from '@store/auth/auth.actions';
 })
 export class WrapperPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  public actionButton = { label: 'New report', link: ['new-report'] };
 
   constructor (
     private authActions: AuthActions,
