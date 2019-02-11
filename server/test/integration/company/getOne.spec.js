@@ -60,14 +60,14 @@ describe("Integration", () => {
 
 			it("Should not get a company when not logged in", () => {
 				return supertest(server)
-					.get(`/api/company/${recycler1}`)
+					.get(`/api/companies/${recycler1}`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 
 			it("Should get a recycler company that is coupled to the user", () => {
 				return supertest(server)
-					.get(`/api/company/${recycler1}`)
+					.get(`/api/companies/${recycler1}`)
 					.expect("Content-Type", /json/)
 					.set("cookie", cookie)
 					.expect(200)
@@ -80,7 +80,7 @@ describe("Integration", () => {
 
 			it("Should not get a recycler company that is not coupled to the user", () => {
 				return supertest(server)
-					.get(`/api/company/${unmanagedRecycler}`)
+					.get(`/api/companies/${unmanagedRecycler}`)
 					.expect("Content-Type", /json/)
 					.set("cookie", cookie)
 					.expect(500);
@@ -88,7 +88,7 @@ describe("Integration", () => {
 
 			it("Should get a compliance org company that is coupled to the user", () => {
 				return supertest(server)
-					.get(`/api/company/${complienceOrg1}`)
+					.get(`/api/companies/${complienceOrg1}`)
 					.expect("Content-Type", /json/)
 					.set("cookie", cookie)
 					.expect(200)
@@ -101,7 +101,7 @@ describe("Integration", () => {
 
 			it("Should not get a compliance org company that is not coupled to the user", () => {
 				return supertest(server)
-					.get(`/api/company/${unmanagedComplienceOrg}`)
+					.get(`/api/companies/${unmanagedComplienceOrg}`)
 					.expect("Content-Type", /json/)
 					.set("cookie", cookie)
 					.expect(500);

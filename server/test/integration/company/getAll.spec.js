@@ -63,14 +63,14 @@ describe("Integration", () => {
 
 			it("Should not get companies when not logged in", () => {
 				return supertest(server)
-					.get(`/api/company/type/R`)
+					.get(`/api/companies?type=R`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 
 			it("Should get all recycler companies that are coupled to the user", () => {
 				return supertest(server)
-					.get(`/api/company/type/R`)
+					.get(`/api/companies?type=R`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(200)
@@ -82,7 +82,7 @@ describe("Integration", () => {
 
 			it("Should get all complience org companies that are coupled to the user", () => {
 				return supertest(server)
-					.get(`/api/company/type/CO`)
+					.get(`/api/companies?type=CO`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(200)

@@ -40,7 +40,7 @@ describe("Integration", () => {
 
 			it("Should not create a company when not logged in", () => {
 				return supertest(server)
-					.post("/api/company/type/R")
+					.post("/api/companies?type=R")
 					.send({
 						name: "Some Company",
 						vat: "BE12 3456 7890",
@@ -65,7 +65,7 @@ describe("Integration", () => {
 
 			it("Should return a validation error when no valid body is passed", () => {
 				return supertest(server)
-					.post("/api/company/type/R")
+					.post("/api/companies?type=R")
 					.set("cookie", cookie)
 					.send({
 						address: {
@@ -94,7 +94,7 @@ describe("Integration", () => {
 
 				it("should return the created company", () => {
 					return supertest(server)
-						.post("/api/company/type/R")
+						.post("/api/companies?type=R")
 						.set("cookie", cookie)
 						.send({
 							name: "Some company name",
@@ -149,7 +149,7 @@ describe("Integration", () => {
 
 				it("should have stored the created company", () => {
 					supertest(server)
-						.get(`/api/company/${newCompanyId}`)
+						.get(`/api/companies/${newCompanyId}`)
 						.set("cookie", cookie)
 						.expect(200)
 						.then(({ body }) => {

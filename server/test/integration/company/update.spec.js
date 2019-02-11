@@ -46,7 +46,7 @@ describe("Integration", () => {
 
 			it("Should not update a company when not logged in", () => {
 				return supertest(server)
-					.put(`/api/company/${companyId}`)
+					.put(`/api/companies/${companyId}`)
 					.send({
 						name: "Some Company updated",
 						vat: "BE12 3456 7890",
@@ -71,7 +71,7 @@ describe("Integration", () => {
 
 			it("Should not update a company that is not managed by the user", () => {
 				return supertest(server)
-					.put(`/api/company/${otherCompanyId}`)
+					.put(`/api/companies/${otherCompanyId}`)
 					.set("cookie", cookie)
 					.send({
 						name: "Some Company updated",
@@ -97,7 +97,7 @@ describe("Integration", () => {
 
 			it("Should return a validation error when no valid body is passed", () => {
 				return supertest(server)
-					.put(`/api/company/${companyId}`)
+					.put(`/api/companies/${companyId}`)
 					.set("cookie", cookie)
 					.send({
 						address: {
@@ -122,7 +122,7 @@ describe("Integration", () => {
 			describe("Should update a company", () => {
 				it("should return the created company", () => {
 					return supertest(server)
-						.put(`/api/company/${companyId}`)
+						.put(`/api/companies/${companyId}`)
 						.set("cookie", cookie)
 						.send({
 							name: "Some Company updated",
@@ -175,7 +175,7 @@ describe("Integration", () => {
 
 				it("should have stored the created company", () => {
 					supertest(server)
-						.put(`/api/company/${companyId}`)
+						.put(`/api/companies/${companyId}`)
 						.set("cookie", cookie)
 						.expect(200)
 						.then(({ body }) => {

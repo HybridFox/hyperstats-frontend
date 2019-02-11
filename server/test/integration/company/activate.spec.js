@@ -34,14 +34,14 @@ describe("Integration", () => {
 
 			it("Should not activate company when not logged in", () => {
 				return supertest(server)
-					.patch(`/api/company/${companyId}/activate`)
+					.patch(`/api/companies/${companyId}/activate`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 
 			it("Should not activate a compnay when a malformed id is passed", () => {
 				return supertest(server)
-					.patch("/api/company/malformedId/activate")
+					.patch("/api/companies/malformedId/activate")
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(403);
@@ -49,7 +49,7 @@ describe("Integration", () => {
 
 			it("Should return a not found error when id doesn't exist", () => {
 				return supertest(server)
-					.patch(`/api/company/${Types.ObjectId()}/activate`)
+					.patch(`/api/companies/${Types.ObjectId()}/activate`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(403);
@@ -57,7 +57,7 @@ describe("Integration", () => {
 
 			it("Should activate a company", () => {
 				return supertest(server)
-					.patch(`/api/company/${companyId}/activate`)
+					.patch(`/api/companies/${companyId}/activate`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(403);
