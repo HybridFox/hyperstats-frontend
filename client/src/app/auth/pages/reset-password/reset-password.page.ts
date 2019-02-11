@@ -34,6 +34,7 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.resetPasswordForm = this.formBuilder.group({
             password: ['', [Validators.required, PasswordValidator.strong]],
+            confirmpassword: ['', [Validators.required]],
             token: [this.token],
         });
     }
@@ -44,21 +45,28 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
     }
 
     public submit() {
-        this.authAction.resetPassword({
-            password: this.resetPasswordForm.value.password,
-            token: this.token
-        }).then(() => {
-            this.toastrService.success(
-                ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.TITLE') as string
-            );
-            this.isReset = true;
-            this.resetPasswordForm.reset();
-        }).catch(() => {
+        if (this.resetPasswordForm.value.password === this.resetPasswordForm.value.confirmpassword) {
+            this.authAction.resetPassword({
+                password: this.resetPasswordForm.value.password,
+                token: this.token
+            }).then(() => {
+                this.toastrService.success(
+                    ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.DESCRIPTION') as string,
+                    ngxExtract('TOAST.RESET-PASSWORD.SUCCESS.TITLE') as string
+                );
+                this.isReset = true;
+                this.resetPasswordForm.reset();
+            }).catch(() => {
+                this.toastrService.error(
+                    ngxExtract('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION') as string,
+                    ngxExtract('TOAST.RESET-PASSWORD.ERROR.TITLE') as string
+                );
+            });
+        } else {
             this.toastrService.error(
-                ngxExtract('TOAST.RESET-PASSWORD.ERROR.DESCRIPTION') as string,
-                ngxExtract('TOAST.RESET-PASSWORD.ERROR.TITLE') as string
+                ngxExtract('TOAST.RESET-PASSWORD.NOT-EQUAL.DESCRIPTION') as string,
+                ngxExtract('TOAST.RESET-PASSWORD.NOT-EQUAL.TITLE') as string
             );
-        });
+        }
     }
 }

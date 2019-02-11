@@ -30,6 +30,7 @@
             "CITY": "City",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
+            "CONFIRMPASSWORD": "Confirm Password",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
@@ -260,7 +261,11 @@
             "SUCCESS": {
                 "DESCRIPTION": "You can now use your new password to login",
                 "TITLE": "Success!"
-            }
+            },
+            "NOT-EQUAL": {
+				"DESCRIPTION": "Passwords not matching",
+				"TITLE": "Something went wrong"
+			}
         }
     },
     "WIZARD": {
