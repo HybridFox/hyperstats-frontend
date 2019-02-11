@@ -47,11 +47,11 @@ describe("Send to admins", () => {
 		expect(mail1).to.be.an("object");
 		expect(mail1.to).to.equal("validuser@example.com");
 		expect(mail1.subject).to.equal("Rare | New contact message");
-		expect(mail1.html).to.have.string("<h1>New Contact message!</h1>");
+		expect(mail1.html).to.have.string("<!DOCTYPE html>");
 
 		expect(mail2).to.be.an("object");
 		expect(mail2.to).to.equal("test2@example.com");
 		expect(mail2.subject).to.equal("Rare | New contact message");
-		expect(mail2.html).to.have.string("<h1>New Contact message!</h1>");
+		expect(mail2.html).to.have.string("<!DOCTYPE html>");
 	});
 });
