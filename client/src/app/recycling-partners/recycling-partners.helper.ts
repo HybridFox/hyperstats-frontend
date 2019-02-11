@@ -11,7 +11,11 @@ export const recyclingPartners = (obs$) => {
                     if (!partner) {
                         return;
                     }
-                    return acc.concat({'link': partner._id, 'label': partner.data.name, 'class': partner.meta.activated ? 'activated' : 'deactivated'});
+                    return acc.concat({
+                        'link': partner._id,
+                        'label': partner.data.name,
+                        'class': partner.meta.activated ? 'activated' : 'deactivated'
+                    });
                 }, []);
             })
         );
