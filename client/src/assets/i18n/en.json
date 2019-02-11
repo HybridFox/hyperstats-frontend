@@ -10,6 +10,7 @@
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
+            "GOTOAPP": "Go to app",
             "SAVE": "Save"
         },
         "FIELD-ERRORS": {
@@ -76,6 +77,7 @@
             "LOGIN": "Login",
             "LOGOFF": "Logoff",
             "MORE": "More...",
+            "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
