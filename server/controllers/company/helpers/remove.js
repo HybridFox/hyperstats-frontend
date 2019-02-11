@@ -3,9 +3,9 @@ const ResponseError = require("../../../helpers/errors/responseError");
 const getCompanyQuery = require("./getQuery");
 
 module.exports = async({ _id, companyOfUser } = {}) => {
-	const response = await CompanyModel.remove(getCompanyQuery(_id, companyOfUser)).exec();
+	const response = await CompanyModel.findOneAndUpdate(getCompanyQuery(_id, companyOfUser), { $set: { "meta.deleted": true } }).exec();
 
-	if (response.n === 0) {
+	if (!response) {
 		throw new ResponseError({ type: 404, msg: "Company not found", error: `Company not found for id: ${_id}` });
 	}
 

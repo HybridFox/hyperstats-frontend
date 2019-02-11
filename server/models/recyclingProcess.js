@@ -41,6 +41,10 @@ const RecyclingProcessSchema = mongoose.Schema({
 		steps: [RecyclingStepSchema],
 	},
 	meta: {
+		deleted: {
+			type: Boolean,
+			default: false,
+		},
 		created: {
 			type: Date,
 			default: Date.now,
