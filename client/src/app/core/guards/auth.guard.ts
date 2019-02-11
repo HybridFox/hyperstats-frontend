@@ -7,12 +7,10 @@ import { map, tap, filter, skipUntil } from 'rxjs/operators';
 const handle = (obs$) => {
     return obs$
         .pipe(
-            tap((user) => console.log(user)),
             filter((user: any) => {
-                return user.loading === false;
+                return !user || user.loading === false;
             }),
             map((user: any) => !!user.result),
-            tap((user) => console.log(user)),
         );
 };
 
