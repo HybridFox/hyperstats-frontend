@@ -1,25 +1,19 @@
 <form>
     <ng-container *ngIf="form">
-        <app-text-input
-            class="u-margin-bottom-large"
-            [control]="form.get('data.firstname')"
-            [label]="'GENERAL.LABELS.FIRSTNAME' | translate"
-        ></app-text-input>
+        <app-text-input class="u-margin-bottom-large" [control]="form.get('data.firstname')"
+            [label]="'GENERAL.LABELS.FIRSTNAME' | translate"></app-text-input>
 
-        <app-text-input
-            class="u-margin-bottom-large"
-            [control]="form.get('data.lastname')"
-            [label]="'GENERAL.LABELS.LASTNAME' | translate"
-        ></app-text-input>
+        <app-text-input class="u-margin-bottom-large" [control]="form.get('data.lastname')"
+            [label]="'GENERAL.LABELS.LASTNAME' | translate"></app-text-input>
 
-        <app-text-input
-            class="u-margin-bottom-large"
-            [control]="form.get('data.email')"
-            [label]="'GENERAL.LABELS.EMAIL' | translate"
-            type="email"
-        ></app-text-input>
+        <app-text-input class="u-margin-bottom-large" [control]="form.get('data.email')"
+            [label]="'GENERAL.LABELS.EMAIL' | translate" type="email"></app-text-input>
     </ng-container>
 
-    <button class="a-button--primary a-button--small u-margin-top-large u-margin-right-large" [disabled]="!form?.valid">{{ 'GENERAL.BUTTONS.SAVE' | translate }}</button>
-    <a class="a-link" [routerLink]="['../']">{{ 'GENERAL.BUTTONS.CANCEL' | translate }}</a>
+    <button class="a-button--primary a-button--small u-margin-top-large u-margin-right-large"
+        [disabled]="!form?.valid">{{ 'GENERAL.BUTTONS.SAVE' | translate }}</button>
+    <button type="button" class="a-button u-margin-left-x-large a-button--secondary a-button--small"
+        (click)="resetPassword()">
+        {{ 'GENERAL.LABELS.RESET-PASSWORD' | translate }}
+    </button>
 </form>
