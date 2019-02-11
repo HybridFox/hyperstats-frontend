@@ -27,7 +27,7 @@ module.exports = async(email) => {
 		templatePath: join(process.cwd(), "controllers/auth/templates/passwordReset.html"),
 		data: {
 			firstname: user.data.firstname,
-			confirmPath: `/reset-password?token=${resetToken}`,
+			confirmPath: `/auth/reset-password?token=${resetToken}`,
 		},
 	});
 
