@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { select$ } from '@angular-redux/store';
-import { Observable, combineLatest, timer } from 'rxjs';
-import { map, tap, filter, skipUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map, tap, filter } from 'rxjs/operators';
 
 const handle = (obs$) => {
     return obs$
