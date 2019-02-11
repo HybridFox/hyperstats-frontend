@@ -48,8 +48,8 @@ export class UserFormComponent implements OnChanges {
             email: this.user.data.email
         }).then(() => {
             this.toastrService.success(
-                ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.TITLE') as string
+                ngxExtract('TOAST.ADMIN-FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.ADMIN-FORGOT-PASSWORD.SUCCESS.TITLE') as string
             );
         }).catch(() => {
             return this.toastrService.error(

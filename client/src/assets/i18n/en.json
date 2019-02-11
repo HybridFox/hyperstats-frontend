@@ -171,6 +171,12 @@
         }
     },
     "TOAST": {
+        "ADMIN-FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "Email with password reset link send to user",
+				"TITLE": "Password reset requested"
+			}
+		},
         "COMPANY-INFORMATION": {
             "ERROR": {
                 "DESCRIPTION": "Please try again later",

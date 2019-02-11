@@ -143,6 +143,12 @@
         }
     },
     "TOAST": {
+        "ADMIN-FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
         "COMPANY-INFORMATION": {
             "ERROR": {
                 "DESCRIPTION": "",
