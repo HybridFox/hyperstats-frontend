@@ -1,5 +1,4 @@
-const company = require("./company");
-
 module.exports = {
-	company,
+	company: require("./company"),
+	types: require("./types"),
 };

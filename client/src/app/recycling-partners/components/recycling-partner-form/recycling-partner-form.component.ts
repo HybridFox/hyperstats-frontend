@@ -44,6 +44,7 @@ export class RecyclingPartnerFormComponent implements OnChanges {
 
     private buildForm(value = {
         name: '',
+        vat: '',
         address: {
             street: '',
             number: '',
@@ -62,6 +63,7 @@ export class RecyclingPartnerFormComponent implements OnChanges {
     }) {
         this.recyclingPartnerForm = this.formBuilder.group({
             name: [value.name, Validators.required],
+            vat: [value.vat, Validators.required],
             address: this.formBuilder.group({
                 street: [value.address.street, Validators.required],
                 number: [value.address.number, Validators.required],

@@ -17,10 +17,10 @@ export class CompaniesActions {
         private usersRepository: CompaniesRepository,
     ) { }
 
-    public fetchByType(type: CompanyType): Observable<any> {
+    public fetchByType(types: CompanyType[]): Observable<any> {
         this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
-        return this.usersRepository.fetchByType(type)
+        return this.usersRepository.fetchByType(types)
             .pipe(
                 catchError((error) => {
                     this.handler.dispatchError(ACTIONS.OVERVIEW.FETCH, {

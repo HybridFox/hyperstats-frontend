@@ -36,7 +36,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             )
             .subscribe((params) => {
                 // Todo: Use multiple params!
-                const type = params && params.types && params.types.length > 0 ? params.types[0] : CompanyType.R;
+                const type = params && params.types && params.types.length > 0 ? params.types : null;
                 this.companiesActions.fetchByType(type).subscribe();
             });
 

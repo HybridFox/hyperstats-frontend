@@ -12,11 +12,14 @@ export class CompaniesRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchByType(type: CompanyType): Observable<any> {
-    return this.http.get(this.apiConfig.baseUrl(`/company/type/${type}`));
+  public fetchByType(types: CompanyType[]): Observable<any> {
+
+    return this.http.get(this.apiConfig.baseUrl(`/companies`), {
+      params: types ? { 'type': types } : {}
+    });
   }
 
   public fetchById(id: string): Observable<any> {
-    return this.http.get(this.apiConfig.baseUrl(`/company/${id}`));
+    return this.http.get(this.apiConfig.baseUrl(`/companies/${id}`));
   }
 }
