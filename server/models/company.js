@@ -6,6 +6,10 @@ const CompanySchema = mongoose.Schema({
 			type: String,
 			required: true,
 		},
+		vat: {
+			type: String,
+			required: true,
+		},
 		address: {
 			street: {
 				type: String,

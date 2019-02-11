@@ -30,6 +30,7 @@
 			"CANCEL": "",
 			"CITY": "",
 			"COMPANYNAME": "",
+			"COMPANYVAT": "",
 			"COUNTRY": "",
 			"DELETE-STEP": "",
 			"DRAGANDDROP": "",
@@ -96,6 +97,7 @@
 			"TITLE": ""
 		},
 		"COMPANYINFORMATION": {
+			"CONTACTPERSON": "",
 			"HELP": "",
 			"SUBTITLE": "",
 			"TITLE": ""

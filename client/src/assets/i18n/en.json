@@ -1,16 +1,16 @@
 {
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
-            "RECYCLING": "Recycling",
-            "SORTING": "Sorting",
-            "TRANSPORT": "Transport"
+            "RECYCLING": "",
+            "SORTING": "",
+            "TRANSPORT": ""
         }
     },
     "GENERAL": {
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
-            "GOTOAPP": "Go to app",
+            "GOTOAPP": "Save",
             "SAVE": "Save"
         },
         "FIELD-ERRORS": {
@@ -19,7 +19,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
-            "ACTIVE": "Active",
+            "ACTIVE": "Save",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
@@ -29,6 +29,7 @@
             "CANCEL": "Cancel",
             "CITY": "City",
             "COMPANYNAME": "Company name",
+            "COMPANYVAT": "Company VAT",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DRAGANDDROP": "Drag files here or",
@@ -49,7 +50,7 @@
             "PREVIOUS-STEP": "Previous step",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "REMOVE": "Remove",
+            "REMOVE": "Browse",
             "RESET-PASSWORD": "Reset password",
             "SAVE": "Save",
             "SELECT-OPTION": "Select a option",
@@ -61,7 +62,7 @@
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
             "TRY-AGAIN": "Try again",
-            "TYPE": "Type",
+            "TYPE": "City",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
@@ -70,7 +71,7 @@
         "MENU": {
             "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
-            "COMPANIES": "Companies",
+            "COMPANIES": "Proxies",
             "COMPANYINFORMATION": "Company information",
             "CONTACT": "Contact",
             "HELP": "Help",
@@ -96,6 +97,7 @@
             "TITLE": "About"
         },
         "COMPANYINFORMATION": {
+            "CONTACTPERSON": "Contact Person",
             "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
@@ -110,7 +112,7 @@
             }
         },
         "MANAGE-COMPANIES": {
-            "TITLE": "Manage Companies"
+            "TITLE": "Manage users"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -141,7 +143,7 @@
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
             "PRECEDING-STEP": {
-                "NONE": "None"
+                "NONE": "Recycling Step {{ key }}"
             },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
@@ -226,22 +228,22 @@
         },
         "RECYCLING-PROCESS-REMOVE": {
             "ERROR": {
-                "DESCRIPTION": "Could not remove the recycling process. \nPlease try again later or contact the administrator.",
-                "TITLE": "Removing recycling-process failed!"
+                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
+                "TITLE": "Recycling Processes"
             },
             "SUCCESS": {
-                "DESCRIPTION": "The recycling process has been removed successfully.",
-                "TITLE": "Recycling-process removed!"
+                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
+                "TITLE": "Process Description - Recycling Steps"
             }
         },
         "RECYCLING-PROCESS-SAVE": {
             "ERROR": {
-                "DESCRIPTION": "Could not save the recycling process. \nPlease try again later or contact the administrator.",
-                "TITLE": "Saving recycling-process failed!"
+                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
+                "TITLE": "Recycling Processes"
             },
             "SUCCESS": {
-                "DESCRIPTION": "The recycling process has been saved successfully.",
-                "TITLE": "Recycling-process saved!"
+                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
+                "TITLE": "Recycling Processes"
             }
         },
         "REGISTER": {
