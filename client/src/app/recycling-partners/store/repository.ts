@@ -50,13 +50,13 @@ export class RecyclingPartnerRepository {
     const url = this.apiConfig.baseUrl(`/company/${id}/activate`);
 
     return this.http
-      .patch(url);
+      .patch(url, {});
   }
 
   public deactivate(id: string) {
     const url = this.apiConfig.baseUrl(`/company/${id}/deactivate`);
 
     return this.http
-      .patch(url);
+      .patch(url, {});
   }
 }

@@ -15,7 +15,7 @@ export class RecyclingPartnerFormComponent implements OnChanges {
 
     @Output() public submit: EventEmitter<any> = new EventEmitter<any>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
-    @Output() public toggleActivation: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public toggleActivation: EventEmitter<any> = new EventEmitter<any>();
 
     public recyclingPartnerForm: FormGroup;
     public isActivated: boolean;
