@@ -105,7 +105,7 @@ const ReportSchema = mongoose.Schema({
 			siteRef: {
 				type: String,
 			},
-			data: {
+			data: [{
 				element: {
 					type: String,
 					required: true,
@@ -130,7 +130,7 @@ const ReportSchema = mongoose.Schema({
 					type: String,
 					required: true,
 				},
-			},
+			}],
 		}],
 		recyclingEfficiency: {
 			calculatedEfficiency: {
