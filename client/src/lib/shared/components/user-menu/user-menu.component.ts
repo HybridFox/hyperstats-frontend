@@ -10,7 +10,7 @@ export class UserMenuComponent {
 
     public visible = false;
 
-    @HostListener('document:click', ['$event']) clickout(event) {
+    @HostListener('document:click', ['$event']) clickout() {
         if (this.visible) {
             this.close();
         }
@@ -20,7 +20,7 @@ export class UserMenuComponent {
         this.visible = false;
     }
 
-    public toggle() {
+    public toggle(event) {
         event.stopPropagation();
         this.visible = !this.visible;
     }
