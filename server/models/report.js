@@ -10,6 +10,7 @@ const ReportSchema = mongoose.Schema({
 			recyclingProcess: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "RecyclingProcess",
+				required: true,
 			},
 			name: {
 				type: String,
@@ -18,68 +19,68 @@ const ReportSchema = mongoose.Schema({
 			receiver: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "Company",
+				required: true,
 			},
 		},
-		inputFraction: {
-			processChemistry: {
+		inputFraction: [{
+			siteRef: {
 				type: String,
-				required: true,
 			},
-			weightInput: {
-				type: String,
-				required: true,
-			},
-			shareOfBatteryType: {
-				type: String,
-				required: true,
-			},
-			weightBatteryType: {
-				type: String,
-				required: true,
-			},
-			excessMaterialReceived: [{
-				impurities: {
-					type: {
-						type: Number,
-						required: true,
-					},
-					packagingMaterial: {
-						type: Number,
-						required: true,
-					},
-				},
-			}],
-			elements: [{
-				element: {
+			data: {
+				processChemistry: {
 					type: String,
 					required: true,
 				},
-				share: {
+				weightInput: {
 					type: Number,
 					required: true,
 				},
-				mass: {
+				shareOfBatteryType: {
 					type: Number,
 					required: true,
 				},
-			}],
-			descriptionOfMethodologyShare: {
-				type: String,
-				required: true,
+				weightBatteryType: {
+					type: Number,
+					required: true,
+				},
+				excessMaterialReceived: [{
+					impurities: {
+						type: Number,
+						required: true,
+					},
+					PackagingMaterial: {
+						type: Number,
+						required: true,
+					},
+				}],
+				elements: [{
+					element: {
+						type: String,
+						required: true,
+					},
+					mass: {
+						type: Number,
+						required: true,
+					},
+				}],
+				descriptionOfMethodologyShare: {
+					type: String,
+					required: true,
+				},
+				descriptionOfMethodologyChemicalComposition: {
+					type: String,
+					required: true,
+				},
+				massOfExternalJacket: {
+					type: Number,
+					required: true,
+				},
+				massOfOuterCasings: {
+					type: Number,
+					required: true,
+				},
 			},
-			descriptionOfMethodologyChemicalComposition: {
-				type: String,
-				required: true,
-			},
-			massOfExternalJacket: {
-				type: String,
-				required: true,
-			},
-			massOfOuterCasings: {
-				type: String,
-				required: true,
-			},
-		},
+		}],
 		additives: [{
 			type: {
 				type: String,
@@ -89,52 +90,49 @@ const ReportSchema = mongoose.Schema({
 				type: Number,
 				required: true,
 			},
-		}],
-		outputFraction: [{
-			element: {
-				type: String,
-				required: true,
-			},
-			share: {
-				type: Number,
-				required: true,
-			},
-			mass: {
-				type: String,
-				required: true,
-			},
-			classification: {
-				type: String,
-				required: true,
-			},
-			replacedMaterial: {
-				type: String,
-				required: true,
-			},
-			elementCompound: {
-				type: String,
-				required: true,
-			},
-			shareOutputFraction: {
-				type: String,
-				required: true,
-			},
-		}],
-		recyclingEfficiency: {
-			overviewElements: [{
+			chemicalComposition: [{
 				element: {
 					type: String,
 					required: true,
 				},
-				input: {
-					type: String,
-					required: true,
-				},
-				output: {
-					type: String,
+				weight: {
+					type: Number,
 					required: true,
 				},
 			}],
+		}],
+		outputFraction: [{
+			siteRef: {
+				type: String,
+			},
+			data: {
+				element: {
+					type: String,
+					required: true,
+				},
+				mass: {
+					type: Number,
+					required: true,
+				},
+				classification: {
+					type: String,
+					required: true,
+				},
+				replacedMaterial: {
+					type: String,
+					required: true,
+				},
+				elementCompound: {
+					type: String,
+					required: true,
+				},
+				shareOutputFraction: {
+					type: String,
+					required: true,
+				},
+			},
+		}],
+		recyclingEfficiency: {
 			calculatedEfficiency: {
 				type: Number,
 				required: true,
