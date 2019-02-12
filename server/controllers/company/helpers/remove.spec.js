@@ -37,7 +37,9 @@ describe("Company", () => {
 			await removeCompany({ _id: managedCompany.toObject()._id, companyOfUser });
 			const company = await CompanyModel.findOne({ _id: managedCompany.toObject()._id });
 
-			expect(company).to.be.null;
+			expect(company).to.be.an("object");
+			expect(company.meta).to.be.an("object");
+			expect(company.meta.deleted).to.be.true;
 		});
 
 		it("Should not remove a company that the user has no access to", async() => {

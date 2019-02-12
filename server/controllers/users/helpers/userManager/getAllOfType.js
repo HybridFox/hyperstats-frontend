@@ -4,6 +4,11 @@ const UserModel = require("../../../../models/user");
 
 module.exports = (type) => {
 	return UserModel.aggregate([{
+		$match: {
+			"meta.deleted": false,
+		},
+	},
+	{
 		$lookup: {
 			from: "companies",
 			localField: "data.company",
