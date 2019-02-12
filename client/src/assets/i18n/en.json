@@ -144,7 +144,7 @@
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
             "PRECEDING-STEP": {
-                "NONE": "Recycling Step {{ key }}"
+                "NONE": "None"
             },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
