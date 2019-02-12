@@ -43,6 +43,7 @@ describe("Integration", () => {
 					.post("/api/company/type/R")
 					.send({
 						name: "Some Company",
+						vat: "BE12 3456 7890",
 						address: {
 							street: "Some street",
 							number: "33A",
@@ -97,6 +98,7 @@ describe("Integration", () => {
 						.set("cookie", cookie)
 						.send({
 							name: "Some company name",
+							vat: "BE12 3456 7890",
 							address: {
 								street: "Some street",
 								number: "33A",
@@ -119,6 +121,7 @@ describe("Integration", () => {
 							expect(body.data).to.be.an("object");
 							expect(body.data).to.deep.equal({
 								name: "Some company name",
+								vat: "BE12 3456 7890",
 								address: {
 									street: "Some street",
 									number: "33A",
@@ -154,6 +157,7 @@ describe("Integration", () => {
 							expect(body.data).to.be.an("object");
 							expect(body.data).to.deep.equal({
 								name: "Some company name",
+								vat: "BE12 3456 7890",
 								address: {
 									street: "Some street",
 									number: "33A",

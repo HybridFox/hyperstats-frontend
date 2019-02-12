@@ -5,6 +5,7 @@ const defaultCompany = {
 	_id: mongoose.Types.ObjectId("5c485d0029abc50032947f91"),
 	data: {
 		name: "Default company",
+		vat: "BE12 3456 7890",
 		address: {
 			street: "Veldkant",
 			number: "33A",
