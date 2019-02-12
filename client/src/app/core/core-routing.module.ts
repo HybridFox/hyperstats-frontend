@@ -28,6 +28,10 @@ const routes: Routes = [
         path: 'privacy',
         component: Pages.PrivacyPageComponent
       },
+      {
+        path: 'terms-and-conditions',
+        component: Pages.TermsAndConditionsPageComponent
+      },
     ]
   },
   {

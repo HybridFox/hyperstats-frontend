@@ -10,6 +10,8 @@ import { PrivacyPageComponent } from './privacy';
 export { PrivacyPageComponent } from './privacy';
 import { GeneralWrapperPageComponent } from './general-wrapper/general-wrapper.page';
 export { GeneralWrapperPageComponent } from './general-wrapper/general-wrapper.page';
+import { TermsAndConditionsPageComponent } from './terms-and-conditions';
+export { TermsAndConditionsPageComponent } from './terms-and-conditions';
 
 export const Pages = [
     AboutPageComponent,
@@ -18,4 +20,5 @@ export const Pages = [
     LandingPageComponent,
     PrivacyPageComponent,
     GeneralWrapperPageComponent,
+    TermsAndConditionsPageComponent
 ];

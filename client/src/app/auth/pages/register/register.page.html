@@ -26,8 +26,12 @@
         <app-checkbox-input
             class="u-margin-bottom-large"
             [control]="registerForm.get('terms')"
-            [label]="'GENERAL.LABELS.ACCEPT_TERMS' | translate"
-        ></app-checkbox-input>
+        >
+            <div checkbox-label>
+                {{ 'GENERAL.LABELS.I-ACCEPT-THE' | translate }}
+                <a href="/terms-and-conditions" target="_blank">{{ 'GENERAL.LABELS.TERMS-AND-CONDITIONS' | translate }}</a>
+            </div>
+        </app-checkbox-input>
         <button type="submit" [disabled]="!registerForm.valid" class="a-button a-button--primary a-button--small u-margin-right">{{ 'GENERAL.LABELS.REGISTER' | translate }}</button>
         <a [routerLink]="['../', 'login']" class="a-link">{{ 'GENERAL.LABELS.LOGIN' | translate }}</a>
     </form>
