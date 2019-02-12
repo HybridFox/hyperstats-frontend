@@ -305,7 +305,7 @@
                 "METHODOLOG-CHEMICAL": "Description of methodology to determine the share of different types of waste battery or accumulator present in an input fraction",
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
                 "PACKAGING-CASING": "Packaging material / outer casing",
-                "PROCESS-CHEMESTRY": "Process chemestry",
+                "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
                 "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",

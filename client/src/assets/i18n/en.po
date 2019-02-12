@@ -655,7 +655,7 @@ msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr "Packaging material / outer casing"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
-msgstr "Process chemestry"
+msgstr "Process chemistry"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr "Share of battery type in input fraction"
