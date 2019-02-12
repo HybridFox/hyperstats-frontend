@@ -19,7 +19,6 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT_TERMS": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
@@ -42,6 +41,7 @@
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"FUNCTION": "",
+			"I-ACCEPT-THE": "",
 			"LASTNAME": "",
 			"LOGIN": "",
 			"MESSAGE": "",
@@ -65,6 +65,7 @@
 			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
+			"TERMS-AND-CONDITIONS": "",
 			"TRY-AGAIN": "",
 			"TYPE": "",
 			"UPDATE-PROFILE": "",
@@ -162,6 +163,11 @@
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",
+			"TITLE": ""
+		},
+		"TERMS-AND-CONDITIONS": {
+			"CONTENT": "",
+			"SUB-TITLE": "",
 			"TITLE": ""
 		},
 		"VERIFICATION-FAILED": {
@@ -299,7 +305,7 @@
 				"METHODOLOG-CHEMICAL": "",
 				"METHODOLOG-WASTE": "",
 				"PACKAGING-CASING": "",
-				"PROCESS-CHEMESTRY": "",
+				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
 				"SHARE-INPUT-FRACTION": "",
 				"WEIGHT-BATTERY": "",
