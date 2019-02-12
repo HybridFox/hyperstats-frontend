@@ -3,7 +3,7 @@ const Errors = require("../../../../helpers/errorHandler");
 
 module.exports = (id, recyclingProcess) => {
 	return RecyclingProcessModel.findOneAndUpdate(
-		{ _id: id },
+		{ _id: id, "meta.deleted": false },
 		{ ...recyclingProcess },
 		{ new: true },
 	).exec()

@@ -72,6 +72,10 @@ const CompanySchema = mongoose.Schema({
 			type: Boolean,
 			default: false,
 		},
+		deleted: {
+			type: Boolean,
+			default: false,
+		},
 		type: {
 			type: String,
 			// R => Recycler

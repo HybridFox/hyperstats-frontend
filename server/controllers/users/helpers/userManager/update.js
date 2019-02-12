@@ -3,7 +3,7 @@ const Errors = require("../../../../helpers/errorHandler");
 
 module.exports = (id, data) => {
 	return UserModel.findOneAndUpdate(
-		{ _id: id },
+		{ _id: id, "meta.deleted": false },
 		{ ...data },
 		{ new: true },
 	).lean().exec()

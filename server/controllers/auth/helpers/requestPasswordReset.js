@@ -11,6 +11,7 @@ module.exports = async(email) => {
 	const resetToken = `${uuid()}-${uuid()}`;
 	const user = await UserModel.findOneAndUpdate({
 		"data.email": email,
+		"meta.deleted": false,
 		"meta.validation.isValidated": true,
 	}, {
 		"meta.passwordReset.token": resetToken,
@@ -27,7 +28,7 @@ module.exports = async(email) => {
 		templatePath: join(process.cwd(), "controllers/auth/templates/passwordReset.html"),
 		data: {
 			firstname: user.data.firstname,
-			confirmPath: `/reset-password?token=${resetToken}`,
+			confirmPath: `/auth/reset-password?token=${resetToken}`,
 		},
 	});
 

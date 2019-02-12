@@ -6,7 +6,7 @@ const UserModel = require("../../../models/user");
  * @returns {Object} Returns user
  */
 module.exports = async(token) => {
-	const user = await UserModel.findOne({ "meta.validation": { isValidated: false, token } }).exec();
+	const user = await UserModel.findOne({ "meta.deleted": false, "meta.validation": { isValidated: false, token } }).exec();
 
 	if (!user) {
 		throw new Error({ type: 400, msg: "Invalid token!" });

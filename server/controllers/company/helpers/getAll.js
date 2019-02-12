@@ -2,7 +2,7 @@ const CompanyModel = require("../../../models/company");
 const {
 	__,
 	set,
-	merge,
+	mergeAll,
 	useWith,
 	ifElse,
 	identity,
@@ -29,7 +29,13 @@ const getCompanyQuery = curry((isAdmin, company) => isAdmin ? {} : {
 	}],
 });
 
-const getQuery = (type, companyOfUser, isAdmin) => useWith(merge, [getTypeQuery, getCompanyQuery(isAdmin)])(type, companyOfUser);
+const getNonDeletedQuery = () => ({ "meta.deleted": false });
+
+const getQuery = (type, companyOfUser, isAdmin) => useWith(mergeAll, [
+	getTypeQuery,
+	getCompanyQuery(isAdmin),
+	getNonDeletedQuery(),
+])(type, companyOfUser);
 
 module.exports = async({ type, companyOfUser, isAdmin = false } = {}) => {
 	return CompanyModel.find(getQuery(type, companyOfUser, isAdmin)).lean().exec();

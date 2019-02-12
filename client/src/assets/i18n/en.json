@@ -130,7 +130,7 @@
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
             "LABELS": {
-                "DESCRIPTION": "Choose a description for this recycling step",
+                "DESCRIPTION": "Choose a name for this recycling step",
                 "DESCRIPTION-DESCRIPTION": "This is the identifier you typically use in your organisation for this recycling step. Take something that everyone in your organisation understands",
                 "NAME": "Choose a name for this recycling process",
                 "PRECEDING-STEP": "If any, choose a preceding step",
@@ -171,6 +171,12 @@
         }
     },
     "TOAST": {
+        "ADMIN-FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "Email with password reset link send to user",
+				"TITLE": "Password reset requested"
+			}
+		},
         "COMPANY-INFORMATION": {
             "ERROR": {
                 "DESCRIPTION": "Please try again later",
