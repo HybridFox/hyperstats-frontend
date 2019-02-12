@@ -10,6 +10,7 @@ const {
 	compose,
 	lensProp,
 	always,
+	curryN,
 } = require("ramda");
 
 const getTypeQuery = (type) => ifElse(
@@ -31,11 +32,11 @@ const getCompanyQuery = curry((isAdmin, company) => isAdmin ? {} : {
 
 const getNonDeletedQuery = () => ({ "meta.deleted": false });
 
-const getQuery = (type, companyOfUser, isAdmin) => useWith(mergeAll, [
-	getTypeQuery,
-	getCompanyQuery(isAdmin),
-	getNonDeletedQuery(),
-])(type, companyOfUser);
+const getQuery = (type, companyOfUser, isAdmin) => ({
+	...getTypeQuery(type),
+	...getCompanyQuery(isAdmin, companyOfUser),
+	...getNonDeletedQuery(),
+});
 
 module.exports = async({ type, companyOfUser, isAdmin = false } = {}) => {
 	return CompanyModel.find(getQuery(type, companyOfUser, isAdmin)).lean().exec();
