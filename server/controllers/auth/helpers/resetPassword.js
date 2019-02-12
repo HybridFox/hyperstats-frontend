@@ -3,6 +3,7 @@ const UserModel = require("../../../models/user");
 module.exports = async(password, token) => {
 	const user = await UserModel.findOne({
 		"meta.passwordReset.token": token,
+		"meta.deleted": false,
 		"meta.passwordReset.expireDate": { $gte: new Date() },
 	}).exec();
 

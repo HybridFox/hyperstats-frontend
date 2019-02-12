@@ -11,6 +11,7 @@ module.exports = async(email) => {
 	const resetToken = `${uuid()}-${uuid()}`;
 	const user = await UserModel.findOneAndUpdate({
 		"data.email": email,
+		"meta.deleted": false,
 		"meta.validation.isValidated": true,
 	}, {
 		"meta.passwordReset.token": resetToken,
