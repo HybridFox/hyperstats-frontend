@@ -162,6 +162,34 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
+    public toggleActivation() {
+        const isCurrentlyActive = pathOr(false, ['meta', 'activated'])(this.process);
+        const type = this.translateService.instant(
+            isCurrentlyActive ?
+            ngxExtract('TOAST.RECYCLING-PROCESS-TOGGLE.DEACTIVATED') :
+            ngxExtract('TOAST.RECYCLING-PROCESS-TOGGLE.ACTIVATED')
+        );
+
+
+        const promise: Promise<any> = isCurrentlyActive ?
+            this.processActions.deactivate(this.recyclingProcessId).toPromise() :
+            this.processActions.activate(this.recyclingProcessId).toPromise();
+
+        promise
+            .then(() => {
+                this.toastrService.success(
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.SUCCESS.DESCRIPTION', { type }) as string,
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.SUCCESS.TITLE', { type }) as string
+                );
+            })
+            .catch(() => {
+                this.toastrService.error(
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.ERROR.DESCRIPTION', { type }) as string,
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.ERROR.TITLE', { type }) as string
+                );
+            });
+    }
+
     private setupForm(process?: any): void {
         this.recyclingProcessForm = this.formBuilder.group({
             name: [pathOr('', ['data', 'name'])(process), Validators.required],
