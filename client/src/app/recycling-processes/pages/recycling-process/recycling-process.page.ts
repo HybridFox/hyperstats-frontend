@@ -86,6 +86,8 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
                 return acc;
             }
 
+            console.log(x.value.methodOfProcessing ? `${x.value.description} (${x.value.methodOfProcessing})` : x.value.description);
+
             acc.push({
                 label: x.value.description ||
                     `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
