@@ -42,13 +42,13 @@
             <app-text-input
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.RECYCLING-SITE-OWNER' | translate"
                 [control]="step.value.get('site')"
-                class="u-margin-bottom-large"
+                class="u-margin-bottom-x-large"
             ></app-text-input>
             <app-select-input
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PROCESSING-METHOD' | translate"
                 [control]="step.value.get('methodOfProcessing')"
                 [options]="methodsOfProcessing"
-                class="u-margin-bottom-large"
+                class="u-margin-bottom-x-large"
             ></app-select-input>
             <app-textarea-input
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION' | translate"
@@ -62,7 +62,7 @@
             <app-file-upload
                 [title]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
                 [description]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate"
-                class="u-margin-bottom-large"
+                class="u-margin-bottom-x-large"
             ></app-file-upload>
         </div>
         <button class="a-button--primary a-button-outline has-icon-after" (click)="addStep()">
