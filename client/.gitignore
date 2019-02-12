@@ -273,3 +273,6 @@ test/coverage
 data
 dist
 test-results
+
+# Translations
+*.mo

@@ -97,4 +97,26 @@ export class RecyclingPartnerActions {
         })
       );
   }
+
+  public activate(id: string) {
+    return this.recyclingPartnerRepository.activate(id)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.ACTIVATE, {
+            payload: this.entitiesActions.patch('recyclingPartners', id, response),
+          });
+        })
+      );
+  }
+
+  public deactivate(id: string) {
+    return this.recyclingPartnerRepository.deactivate(id)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.DEACTIVATE, {
+            payload: this.entitiesActions.patch('recyclingPartners', id, response),
+          });
+        })
+      );
+  }
 }

@@ -1,5 +1,5 @@
 <div *ngIf="profile" class="m-menu--user">
-    <span (click)="toggle()" class="m-menu--user__title a-button--secondary a-button-outline a-button--has-icon-after">
+    <span (click)="toggle($event)" class="m-menu--user__title a-button--secondary a-button-outline a-button--has-icon-after">
         {{ profile.firstname }} {{ profile.lastname }}<i class="a-icon a-icon--arrow-bottom"></i>
     </span>
     <ul (click)="preventClick($event)" [hidden]="!visible" class="m-menu--user__sub-menu">

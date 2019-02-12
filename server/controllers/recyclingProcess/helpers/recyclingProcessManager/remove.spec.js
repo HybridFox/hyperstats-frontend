@@ -30,6 +30,8 @@ describe("Remove Recycling process", () => {
 		await remove(processId);
 		const result = await Model.findOne({ _id: processId }).exec();
 
-		expect(result).to.be.null;
+		expect(result).to.be.an("object");
+		expect(result.meta).to.be.an("object");
+		expect(result.meta.deleted).to.be.true;
 	});
 });

@@ -4,7 +4,7 @@ const textToHTml = require("../../../helpers/textToHtml");
 const path = require("path");
 
 module.exports = async(body) => {
-	const admins = await UserModel.find({ "meta.isAdmin": true }, { "data.email": 1 }).lean().exec();
+	const admins = await UserModel.find({ "meta.isAdmin": true, "meta.deleted": false }, { "data.email": 1 }).lean().exec();
 
 	return Promise.all(admins.map((admin) => MailHelper({
 		to: admin.data.email,

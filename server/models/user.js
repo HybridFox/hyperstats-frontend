@@ -38,6 +38,10 @@ const UserSchema = mongoose.Schema({
 			required: true,
 			default: Date.now,
 		},
+		deleted: {
+			type: Boolean,
+			default: false,
+		},
 		status: {
 			type: {
 				type: String,
@@ -73,7 +77,6 @@ const UserSchema = mongoose.Schema({
 				type: Date,
 				required: false,
 			},
-			required: false,
 		},
 	},
 });

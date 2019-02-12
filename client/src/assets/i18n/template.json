@@ -34,9 +34,11 @@
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
 			"DELETE-STEP": "",
+			"DISABLE": "",
 			"DRAGANDDROP": "",
 			"DUPLICATE-STEP": "",
 			"EMAIL": "",
+			"ENABLE": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"FUNCTION": "",
@@ -125,7 +127,6 @@
 			"ADDRESSINFORMATION": "",
 			"CONTACTPERSON": "",
 			"DESCRIPTION": "",
-			"REMOVEPARTNER": "",
 			"TITLE": ""
 		},
 		"RECYCLING-PROCESSES": {
@@ -172,6 +173,12 @@
 		}
 	},
 	"TOAST": {
+		"ADMIN-FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"COMPANY-INFORMATION": {
 			"ERROR": {
 				"DESCRIPTION": "",

@@ -106,12 +106,28 @@
         >
             {{ 'GENERAL.LABELS.SAVE' | translate }}
         </button>
-        <button
-            *ngIf="!!recyclingPartner?._id"
-            class="a-button--danger has-icon-after u-pull-right u-text-uppercase"
-            (click)="removeForm()"
-        >
-            {{ 'PAGE.RECYCLING-PARTNERS.REMOVEPARTNER' | translate }}
-        </button>
+        <div class="u-pull-right">
+            <button
+                *ngIf="isActivated"
+                class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()"
+            >
+                {{ 'GENERAL.LABELS.DISABLE' | translate }}
+            </button>
+            <button
+                *ngIf="!isActivated"
+                class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()"
+            >
+                {{ 'GENERAL.LABELS.ENABLE' | translate }}
+            </button>
+            <button
+                *ngIf="!!recyclingPartner?._id"
+                class="a-button--danger has-icon-after u-text-uppercase"
+                (click)="removeForm()"
+            >
+                {{ 'GENERAL.LABELS.REMOVE' | translate }}
+            </button>
+        </div>
     </div>
 </div>

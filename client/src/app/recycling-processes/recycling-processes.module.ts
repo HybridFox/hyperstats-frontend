@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RecyclingProcessesPageComponent } from './recycling-processes.page';
-
 import { SharedModule } from '@shared/shared.module';
 
 import { ReportsRoutingModule } from './recycling-processes-routing.module';
@@ -32,7 +30,6 @@ import { RecyclingPartnersModule } from '../recycling-partners/recycling-partner
   ],
   declarations: [
     Pages,
-    RecyclingProcessesPageComponent
   ],
 })
 export class RecyclingProcessesModule {

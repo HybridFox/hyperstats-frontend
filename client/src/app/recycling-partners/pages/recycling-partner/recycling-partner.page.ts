@@ -95,7 +95,33 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.TITLE') as string
             );
         });
-}
+  }
+
+  public toggleActivation({ id, isActivated }) {
+    let promise: Promise<any>;
+
+    if (isActivated) {
+      promise = this.recyclingPartnerActions.activate(id).toPromise();
+    } else {
+      promise = this.recyclingPartnerActions.deactivate(id).toPromise();
+    }
+
+    promise
+      .then(() => {
+          this.toastrService.success(
+              ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.SUCCESS.DESCRIPTION') as string,
+              ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.SUCCESS.TITLE') as string
+          );
+
+          this.router.navigate(['../'], { relativeTo: this.route });
+      })
+      .catch(() => {
+          this.toastrService.error(
+              ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.DESCRIPTION') as string,
+              ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.TITLE') as string
+          );
+      });
+  }
 
   private fetchPartnerIfNeeded() {
     if (
