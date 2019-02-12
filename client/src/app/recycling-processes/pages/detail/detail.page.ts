@@ -15,6 +15,7 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { recyclingPartnersToSelectOptions } from '../recycling-process/select.helpers';
 import { AssetsRepository } from '@api/assets';
+import { FormHelper } from '@helpers/form.helper';
 
 @Component({
   templateUrl: './detail.page.html',
@@ -102,6 +103,8 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     public save() {
+        FormHelper.markAsDirty(this.recyclingProcessForm);
+
         if (this.recyclingProcessForm.invalid) {
             return;
         }

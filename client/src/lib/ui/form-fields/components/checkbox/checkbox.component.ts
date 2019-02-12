@@ -6,7 +6,6 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'app-checkbox-input',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.html'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

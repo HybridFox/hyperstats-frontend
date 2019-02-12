@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-11T12:33:38.584Z\n"
-"PO-Revision-Date: 2019-02-11T12:33:38.585Z\n"
+"POT-Creation-Date: 2019-02-12T13:27:57.441Z\n"
+"PO-Revision-Date: 2019-02-12T13:27:57.442Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -80,6 +80,9 @@ msgstr ""
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr ""
 
+msgid "GENERAL##LABELS##DISABLE"
+msgstr ""
+
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr ""
 
@@ -89,6 +92,9 @@ msgstr ""
 msgid "GENERAL##LABELS##EMAIL"
 msgstr ""
 
+msgid "GENERAL##LABELS##ENABLE"
+msgstr ""
+
 msgid "GENERAL##LABELS##FIRSTNAME"
 msgstr ""
 
@@ -96,6 +102,9 @@ msgid "GENERAL##LABELS##FORGOT-PASSWORD"
 msgstr ""
 
 msgid "GENERAL##LABELS##FUNCTION"
+msgstr ""
+
+msgid "GENERAL##LABELS##I-ACCEPT-THE"
 msgstr ""
 
 msgid "GENERAL##LABELS##LASTNAME"
@@ -165,6 +174,9 @@ msgid "GENERAL##LABELS##SUBJECT"
 msgstr ""
 
 msgid "GENERAL##LABELS##SUBMIT"
+msgstr ""
+
+msgid "GENERAL##LABELS##TERMS-AND-CONDITIONS"
 msgstr ""
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
@@ -287,9 +299,6 @@ msgstr ""
 msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
 msgstr ""
 
-msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
-msgstr ""
-
 msgid "PAGE##RECYCLING-PARTNERS##TITLE"
 msgstr ""
 
@@ -360,6 +369,15 @@ msgid "PAGE##RESET-PASSWORD##ISRESET"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
+msgstr ""
+
+msgid "PAGE##TERMS-AND-CONDITIONS##SUB-TITLE"
+msgstr ""
+
+msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
@@ -527,7 +545,7 @@ msgstr ""
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr ""
 
-msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMISTRY"
 msgstr ""
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
@@ -642,8 +660,4 @@ msgid "WIZARD##TITLES##OUTPUT-FRACTION"
 msgstr ""
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
-msgstr ""
-
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""

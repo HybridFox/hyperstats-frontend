@@ -32,9 +32,11 @@ module.exports.getFull = (req) => path(["session", "profile"])(req);
  * @function unset Unset profile props in session
  * @param {Object} req Express request object
  */
-module.exports.unset = (req) => {
+module.exports.unset = async(req) => {
 	delete req.session.profile;
 	delete req.session.safeProfile;
+
+	await req.session.save();
 };
 
 /**
