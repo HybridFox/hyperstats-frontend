@@ -73,7 +73,6 @@ const UserSchema = mongoose.Schema({
 				type: Date,
 				required: false,
 			},
-			required: false,
 		},
 	},
 });
