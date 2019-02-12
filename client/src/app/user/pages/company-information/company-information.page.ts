@@ -33,6 +33,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.companyForm = this.formBuilder.group({
             name: ['', Validators.required],
+            vat: ['', ''],
             address: this.formBuilder.group({
                 street: ['', Validators.required],
                 number: ['', Validators.required],
@@ -40,7 +41,11 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
                 zipCode: ['', Validators.required],
                 city: ['', Validators.required],
                 country: ['', Validators.required]
-            })
+            }),
+            contactPerson: this.formBuilder.group({
+                name: ['', Validators.required],
+                email: ['', Validators.required],
+            }),
         });
 
         this.user$.subscribe((user) => {

@@ -43,6 +43,7 @@ describe("Integration", () => {
 				.put("/api/profile/company")
 				.send({
 					name: "firstnameUpdated",
+					vat: "updated vat",
 					address: {
 						street: "updated street",
 						number: "updated number",
@@ -81,6 +82,7 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.send({
 					name: "firstnameUpdated",
+					vat: "updated vat",
 					address: {
 						number: "updated number",
 						box: "updated box",
@@ -100,6 +102,7 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.send({
 					name: "firstnameUpdated",
+					vat: "updated vat",
 					address: {
 						street: "updated street",
 						box: "updated box",
@@ -119,6 +122,7 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.send({
 					name: "firstnameUpdated",
+					vat: "updated vat",
 					address: {
 						street: "updated street",
 						number: "updated number",
@@ -138,6 +142,7 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.send({
 					name: "firstnameUpdated",
+					vat: "updated vat",
 					address: {
 						street: "updated street",
 						number: "updated number",
@@ -157,6 +162,7 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.send({
 					name: "firstnameUpdated",
+					vat: "updated vat",
 					address: {
 						street: "updated street",
 						number: "updated number",
@@ -176,6 +182,7 @@ describe("Integration", () => {
 				.set("cookie", cookie)
 				.send({
 					name: "updated name",
+					vat: "updated vat",
 					address: {
 						street: "updated street",
 						number: companyMock.data.address.number,

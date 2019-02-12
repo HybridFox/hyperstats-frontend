@@ -27,6 +27,7 @@ describe("Company", () => {
 		it("Should create a company", async() => {
 			const createdCompany = await createCompany({ type: "R", companyOfUser, company: {
 				name: "Some Company",
+				vat: "BE12 3456 7890",
 				address: {
 					street: "Some street",
 					number: "33A",

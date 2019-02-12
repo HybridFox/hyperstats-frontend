@@ -39,6 +39,7 @@ describe("Company", () => {
 				companyOfUser,
 				update: {
 					name: "Some Company updated",
+					vat: "BE12 3456 7890",
 					address: {
 						street: "Some street updated",
 						number: "33A",
@@ -60,6 +61,7 @@ describe("Company", () => {
 			expect(company.data).to.be.an("object");
 			expect(company.toObject().data).to.deep.equal({
 				name: "Some Company updated",
+				vat: "BE12 3456 7890",
 				address: {
 					street: "Some street updated",
 					number: "33A",

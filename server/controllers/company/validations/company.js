@@ -3,6 +3,7 @@ const { schemas } = require("../../../helpers/validation");
 
 const schema = joi.object().keys({
 	name: joi.string().required(),
+	vat: joi.string().required(),
 	address: joi.object().keys({
 		street: joi.string().required(),
 		number: joi.string().required(),
