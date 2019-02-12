@@ -14,6 +14,7 @@ import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../st
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { recyclingPartnersToSelectOptions } from '../recycling-process/select.helpers';
+import { AssetsRepository } from '@api/assets';
 
 @Component({
   templateUrl: './detail.page.html',
@@ -38,6 +39,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         private router: Router,
         private toastrService: ToastrService,
         private translateService: TranslateService,
+        private assetsRepository: AssetsRepository
     ) {}
 
     public ngOnInit() {
@@ -222,5 +224,11 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
                 this.setupForm(this.process);
             });
+    }
+
+    public uploadFile(file) {
+        this.assetsRepository.upload(file).toPromise().then((res) => {
+            console.log(res);
+        });
     }
 }

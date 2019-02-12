@@ -58,6 +58,7 @@
             <app-file-upload
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
                 class="u-margin-bottom-x-large"
+                (upload)="uploadFile($event)"
             ></app-file-upload>
             <app-file-upload
                 [title]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"

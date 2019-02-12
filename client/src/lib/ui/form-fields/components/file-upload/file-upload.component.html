@@ -6,14 +6,14 @@
             type="file"
             name="filesToUpload"
             class="m-file-upload__input"
-            [formControl]="control"
+            (change)="onUpload($event)"
             #filesInput>
 
         <div *ngIf="!multiple; then singleFile else dragAndDrop"></div>
         <ng-template #singleFile>
             <div class="m-file-upload--single-file">
                 <i class="a-icon--upload"></i>
-                <span (click)="fileInput.click()" class="m-file-upload__upload">Upload attachment</span>
+                <span (click)="filesInput.click()" class="m-file-upload__upload">Upload attachment</span>
                 <label *ngIf="label" for="file" class="m-file-upload__label">{{ label }}</label>
             </div>
         </ng-template>

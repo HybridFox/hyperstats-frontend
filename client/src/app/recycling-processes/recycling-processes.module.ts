@@ -10,6 +10,7 @@ import { recyclingProcessesReducer } from './store/reducers';
 import { RecylingProcessesServices } from './store';
 
 import { ReportsApiModule } from '@api/reports';
+import { AssetsApiModule } from '@api/assets';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
@@ -23,7 +24,8 @@ import { RecyclingPartnersModule } from '../recycling-partners/recycling-partner
     SharedModule,
     ReportsApiModule,
     FormFieldsModule,
-    RecyclingPartnersModule
+    RecyclingPartnersModule,
+    AssetsApiModule
   ],
   providers: [
     RecylingProcessesServices,
