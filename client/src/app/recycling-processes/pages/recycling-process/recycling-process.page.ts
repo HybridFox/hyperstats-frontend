@@ -80,7 +80,7 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
     }
 
-    public precedingSteps(step: FormControl) {
+    /* public precedingSteps(step: FormControl) {
         return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
             if (step.value.value.uuid === x.value.uuid) {
                 return acc;
@@ -97,6 +97,22 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             label: ngxExtract('PAGE.RECYCLING-PROCESSES.PRECEDING-STEP.NONE'),
             value: null
         }]);
+    } */
+
+    public precedingSteps(step: FormControl) {
+        return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
+            if (step.value.value.uuid === x.value.uuid) {
+                return acc;
+            }
+
+            acc.push({
+                label: x.value.description ||
+                    `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
+                value: x.value.uuid
+            });
+
+            return acc;
+        }, []);
     }
 
     public save() {
