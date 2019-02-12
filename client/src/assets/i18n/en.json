@@ -1,16 +1,16 @@
 {
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
-            "RECYCLING": "",
-            "SORTING": "",
-            "TRANSPORT": ""
+            "RECYCLING": "Recycling",
+            "SORTING": "Sorting",
+            "TRANSPORT": "Transport"
         }
     },
     "GENERAL": {
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
-            "GOTOAPP": "Save",
+            "GOTOAPP": "Go to app",
             "SAVE": "Save"
         },
         "FIELD-ERRORS": {
@@ -32,9 +32,11 @@
             "COMPANYVAT": "Company VAT",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
+            "DISABLE": "Disable",
             "DRAGANDDROP": "Drag files here or",
             "DUPLICATE-STEP": "Duplicate step",
             "EMAIL": "Email",
+            "ENABLE": "Enable",
             "FIRSTNAME": "Firstname",
             "FORGOT-PASSWORD": "Forgot Password",
             "FUNCTION": "Function",
@@ -50,19 +52,19 @@
             "PREVIOUS-STEP": "Previous step",
             "PRIVACY": "Privacy",
             "REGISTER": "Register",
-            "REMOVE": "Browse",
+            "REMOVE": "Remove",
             "RESET-PASSWORD": "Reset password",
             "SAVE": "Save",
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
-            "SPONSOREDBY": "Powered by",
+            "SPONSOREDBY": "Sponsored by",
             "STREET": "Street name",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
             "TRY-AGAIN": "Try again",
-            "TYPE": "City",
+            "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
@@ -71,7 +73,7 @@
         "MENU": {
             "ABOUT": "About us",
             "AUDITTRIAL": "Audit Trial",
-            "COMPANIES": "Proxies",
+            "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
             "CONTACT": "Contact",
             "HELP": "Help",
@@ -124,7 +126,6 @@
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
             "CONTACTPERSON": "Contact Person",
             "DESCRIPTION": "Add here the legal information for all the different recycling partners you work with. Only add the address information where the actual recycling plants are located.",
-            "REMOVEPARTNER": "Remove recycling partner",
             "TITLE": "Recycling Partners"
         },
         "RECYCLING-PROCESSES": {

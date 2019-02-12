@@ -137,5 +137,23 @@
                 background-color: $yellow;
             }
         }
+        &.activated {
+            &:after {
+                content: '(activated)';
+                position: absolute;
+                right: 0;
+                font-size: $font-size-small;
+                color: $gray;
+            }
+        }
+        &.deactivated {
+            &:after {
+                content: '(deactivated)';
+                position: absolute;
+                right: 0;
+                font-size: $font-size-small;
+                color: $gray;
+            }
+        }
     }
 }
