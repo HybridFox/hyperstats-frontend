@@ -1,9 +1,9 @@
 {
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
-            "RECYCLING": "",
-            "SORTING": "",
-            "TRANSPORT": ""
+            "RECYCLING": "Recycling",
+            "SORTING": "Sorting",
+            "TRANSPORT": "Transport"
         }
     },
     "GENERAL": {
