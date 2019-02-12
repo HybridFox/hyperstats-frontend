@@ -16,7 +16,8 @@
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
-            "REQUIRED": "This field is required"
+            "REQUIRED": "This field is required",
+            "PASSWORD-MATCH": "Passwords need to match"
         },
         "LABELS": {
             "ACTIVE": "Save",
@@ -30,6 +31,7 @@
             "CITY": "City",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
+            "CONFIRMPASSWORD": "Confirm Password",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",

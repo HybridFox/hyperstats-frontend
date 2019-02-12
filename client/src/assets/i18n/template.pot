@@ -71,6 +71,9 @@ msgstr ""
 msgid "GENERAL##LABELS##COMPANYVAT"
 msgstr ""
 
+msgid "GENERAL##LABELS##CONFIRMPASSWORD"
+msgstr ""
+
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
