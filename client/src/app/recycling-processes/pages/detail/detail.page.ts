@@ -13,20 +13,20 @@ import { ToastrService } from 'ngx-toastr';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { recyclingPartnersToSelectOptions } from './select.helpers';
+import { recyclingPartnersToSelectOptions } from '../recycling-process/select.helpers';
 
 @Component({
-  templateUrl: './recycling-process.page.html',
+  templateUrl: './detail.page.html',
 })
-export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
+export class DetailPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
     @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
 
     public recyclingProcessForm: any;
     public process: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
+    public recyclingProcessId: string;
 
-    private recyclingProcessId: string;
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -224,6 +224,3 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             });
     }
 }
-
-
-

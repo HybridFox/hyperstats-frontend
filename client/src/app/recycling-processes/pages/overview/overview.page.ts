@@ -4,13 +4,13 @@ import { Observable, Subject } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
-import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
-import { processToMenuItemObservableHandler } from './recycling-processes.helpers';
+import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
+import { processToMenuItemObservableHandler } from '../../recycling-processes.helpers';
 
 @Component({
-  templateUrl: './recycling-processes.page.html',
+  templateUrl: './overview.page.html',
 })
-export class RecyclingProcessesPageComponent implements OnInit {
+export class OverviewPageComponent implements OnInit {
   @select$(RecyclingProcessesSelectors.list.result, processToMenuItemObservableHandler) public $processMenuItems: Observable<any[]>;
 
   public menuItems: MenuItem[] = [];
