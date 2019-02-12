@@ -2,15 +2,12 @@ const CompanyModel = require("../../../models/company");
 const {
 	__,
 	set,
-	mergeAll,
-	useWith,
 	ifElse,
 	identity,
 	curry,
 	compose,
 	lensProp,
 	always,
-	curryN,
 } = require("ramda");
 
 const getTypeQuery = (type) => ifElse(
