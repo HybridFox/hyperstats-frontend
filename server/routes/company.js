@@ -68,11 +68,11 @@ module.exports = (router) => {
 	 *         $ref: '#/definitions/CompanyMeta'
 	 */
 
-	router.use("/company*", authMiddleware.isLoggedIn);
+	router.use("/companies*", authMiddleware.isLoggedIn);
 
 	/**
 	 * @swagger
-	 * /api/company/type/{type}:
+	 * /api/companies:
 	 *   get:
 	 *     description: Get all user companies of type
 	 *     tags:
@@ -80,7 +80,7 @@ module.exports = (router) => {
 	 *     produces:
 	 *       - application/json
 	 *     parameters:
-	 *       - in: path
+	 *       - in: query
 	 *         name: type
 	 *         required: true
 	 *         $ref: '#/definitions/CompanyTypes'
@@ -96,7 +96,7 @@ module.exports = (router) => {
 	 *     produces:
 	 *       - application/json
 	 *     parameters:
-	 *       - in: path
+	 *       - in: query
 	 *         name: type
 	 *         required: true
 	 *         $ref: '#/definitions/CompanyTypes'
@@ -111,9 +111,10 @@ module.exports = (router) => {
 	 *         schema:
 	 *           $ref: '#/definitions/CompanyResponse'
 	 */
-	router.route("/company/type/:type")
+	router.route("/companies")
 		.get(
 			dataMiddleware.copy,
+			dataMiddleware.validate("query", companyValidations.types, Errors.ObjectValidationFailed),
 			companyController.getAll
 		)
 		.post(
@@ -124,7 +125,7 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/company/{id}:
+	 * /api/companies/{id}:
 	 *   get:
 	 *     description: Get company by Id
 	 *     tags:
@@ -177,7 +178,7 @@ module.exports = (router) => {
 	 *       204:
 	 *         description: Company
 	 */
-	router.route("/company/:id")
+	router.route("/companies/:id")
 		.get(
 			dataMiddleware.copy,
 			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
@@ -197,7 +198,7 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/company/{id}/activate:
+	 * /api/companies/{id}/activate:
 	 *   patch:
 	 *     description: Activate a company by Id
 	 *     tags:
@@ -217,7 +218,7 @@ module.exports = (router) => {
 	 *             success:
 	 *               type: boolean
 	 */
-	router.route("/company/:id/activate").patch(
+	router.route("/companies/:id/activate").patch(
 		dataMiddleware.copy,
 		dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
 		companyController.activate
@@ -225,7 +226,7 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/company/{id}/deactivate:
+	 * /api/companies/{id}/deactivate:
 	 *   patch:
 	 *     description: Deactivate a company by Id
 	 *     tags:
@@ -245,7 +246,7 @@ module.exports = (router) => {
 	 *             success:
 	 *               type: boolean
 	 */
-	router.route("/company/:id/deactivate").patch(
+	router.route("/companies/:id/deactivate").patch(
 		dataMiddleware.copy,
 		dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
 		companyController.deactivate

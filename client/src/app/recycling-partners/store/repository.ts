@@ -12,35 +12,35 @@ export class RecyclingPartnerRepository {
   ) {}
 
   public fetchAll(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/company/type/RP');
+    const url = this.apiConfig.baseUrl('/companies?type=RP');
 
     return this.http
       .get(url);
   }
 
   public fetchDetail(id: string): Observable<any> {
-    const url = this.apiConfig.baseUrl(`/company/${id}`);
+    const url = this.apiConfig.baseUrl(`/companies/${id}`);
 
     return this.http
       .get(url);
   }
 
   public create(company: any) {
-    const url = this.apiConfig.baseUrl('/company/type/RP');
+    const url = this.apiConfig.baseUrl('/companies?type=RP');
 
     return this.http
       .post(url, company);
   }
 
   public update(id, company: any) {
-    const url = this.apiConfig.baseUrl(`/company/${id}`);
+    const url = this.apiConfig.baseUrl(`/companies/${id}`);
 
     return this.http
       .put(url, company);
   }
 
   public remove(id: string) {
-    const url = this.apiConfig.baseUrl(`/company/${id}`);
+    const url = this.apiConfig.baseUrl(`/companies/${id}`);
 
     return this.http
       .delete(url);

@@ -49,21 +49,21 @@ describe("Integration", () => {
 
 			it("Should not remove a company when not logged in", () => {
 				return supertest(server)
-					.delete(`/api/company/${recycler1}`)
+					.delete(`/api/companies/${recycler1}`)
 					.expect("Content-Type", /json/)
 					.expect(403);
 			});
 
 			it("Should remove a company", () => {
 				return supertest(server)
-					.delete(`/api/company/${recycler1}`)
+					.delete(`/api/companies/${recycler1}`)
 					.set("cookie", cookie)
 					.expect(204);
 			});
 
 			it("Should not remove a company when the user has no rights to it", () => {
 				return supertest(server)
-					.delete(`/api/company/${unmanagedRecycler}`)
+					.delete(`/api/companies/${unmanagedRecycler}`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(500);
