@@ -13,6 +13,8 @@ import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
+import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
+import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
 
 @NgModule({
   imports: [
@@ -20,7 +22,8 @@ import { Pages } from './pages';
     ReportsRoutingModule,
     SharedModule,
     ReportsApiModule,
-    FormFieldsModule
+    FormFieldsModule,
+    RecyclingPartnersModule
   ],
   providers: [
     RecylingProcessesServices,

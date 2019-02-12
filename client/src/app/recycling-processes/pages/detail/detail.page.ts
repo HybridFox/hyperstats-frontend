@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
-import { select } from '@angular-redux/store';
+import { select, select$ } from '@angular-redux/store';
 import * as uuid from 'uuid';
 import { omit, prop, pathOr, equals } from 'ramda';
 import { Observable, Subscription, Subject } from 'rxjs';
@@ -12,12 +12,15 @@ import { ToastrService } from 'ngx-toastr';
 
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
+import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
+import { recyclingPartnersToSelectOptions } from './select.helpers';
 
 @Component({
   templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
+    @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
 
     public recyclingProcessForm: any;
     public process: any;
@@ -29,6 +32,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
     constructor(
         private processActions: RecyclingProcessesActions,
+        private partnerActions: RecyclingPartnerActions,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
@@ -38,6 +42,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
     public ngOnInit() {
         this.setupForm();
+        this.partnerActions.fetchAll().toPromise();
         this.route.params
             .pipe(
                 takeUntil(this.componentDestroyed$),

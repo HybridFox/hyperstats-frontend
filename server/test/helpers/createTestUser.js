@@ -16,6 +16,7 @@ module.exports = async({
 	const newCompany = company || (await testCompany.create({
 		data: {
 			name: "Company for user",
+			vat: "BE12 3456 7890",
 			address: {
 				street: "user street",
 				number: "2a",

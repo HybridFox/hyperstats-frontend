@@ -150,9 +150,10 @@ module.exports = (router) => {
 	 *     responses:
 	 *       200:
 	 *         description: Response
-	 *         properties:
-	 *           success:
-	 *              type: boolean
+	 *         schema:
+	 *           properties:
+	 *             success:
+	 *                type: boolean
 	 */
 	router.route("/recycling-processes/:id/activate").patch(
 		DataMiddleware.copy,
@@ -163,7 +164,7 @@ module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /api/company/{id}/deactivate:
-	 *   put:
+	 *   patch:
 	 *     description: Deactivate a recycling-process by Id
 	 *     tags:
 	 *       - recycling-processes
@@ -177,9 +178,10 @@ module.exports = (router) => {
 	 *     responses:
 	 *       200:
 	 *         description: Response
-	 *         properties:
-	 *           success:
-	 *              type: boolean
+	 *         schema:
+	 *           properties:
+	 *             success:
+	 *               type: boolean
 	 */
 	router.route("/recycling-processes/:id/deactivate").patch(
 		DataMiddleware.copy,

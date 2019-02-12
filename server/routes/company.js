@@ -212,9 +212,10 @@ module.exports = (router) => {
 	 *     responses:
 	 *       200:
 	 *         description: Company
-	 *         properties:
-	 *           success:
-	 *              type: boolean
+	 *         schema:
+	 *           properties:
+	 *             success:
+	 *               type: boolean
 	 */
 	router.route("/company/:id/activate").patch(
 		dataMiddleware.copy,
@@ -239,9 +240,10 @@ module.exports = (router) => {
 	 *     responses:
 	 *       200:
 	 *         description: Company
-	 *         properties:
-	 *           success:
-	 *              type: boolean
+	 *         schema:
+	 *           properties:
+	 *             success:
+	 *               type: boolean
 	 */
 	router.route("/company/:id/deactivate").patch(
 		dataMiddleware.copy,
