@@ -93,7 +93,10 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             });
 
             return acc;
-        }, []);
+        }, [{
+            label: ngxExtract('PAGE.RECYCLING-PROCESSES.PRECEDING-STEP.NONE'),
+            value: null
+        }]);
     }
 
     public save() {
