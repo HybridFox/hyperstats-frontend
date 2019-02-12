@@ -6,8 +6,6 @@ import { ContactPageComponent } from './contact';
 export { ContactPageComponent } from './contact';
 import { LandingPageComponent } from './landing';
 export { LandingPageComponent } from './landing';
-import { PrivacyPageComponent } from './privacy';
-export { PrivacyPageComponent } from './privacy';
 import { GeneralWrapperPageComponent } from './general-wrapper/general-wrapper.page';
 export { GeneralWrapperPageComponent } from './general-wrapper/general-wrapper.page';
 import { TermsAndConditionsPageComponent } from './terms-and-conditions';
@@ -18,7 +16,6 @@ export const Pages = [
     AppWrapperPageComponent,
     ContactPageComponent,
     LandingPageComponent,
-    PrivacyPageComponent,
     GeneralWrapperPageComponent,
     TermsAndConditionsPageComponent
 ];
