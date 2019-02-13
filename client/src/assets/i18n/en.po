@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-12T13:27:57.441Z\n"
+"POT-Creation-Date: 2019-02-12T17:00:22.600Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,10 +41,8 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##SAVE"
 msgid "GENERAL##LABELS##ACTIVE"
-msgstr "Save"
+msgstr "Active"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
@@ -76,10 +74,8 @@ msgstr "Company name"
 msgid "GENERAL##LABELS##COMPANYVAT"
 msgstr "Company VAT"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##PASSWORD"
 msgid "GENERAL##LABELS##CONFIRMPASSWORD"
-msgstr "Password"
+msgstr "Confirm password"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -143,9 +139,6 @@ msgstr "Phone"
 
 msgid "GENERAL##LABELS##PREVIOUS-STEP"
 msgstr "Previous step"
-
-msgid "GENERAL##LABELS##PRIVACY"
-msgstr "Privacy"
 
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
@@ -315,20 +308,14 @@ msgstr "Company information"
 msgid "PAGE##CONTACT##TITLE"
 msgstr "Contact"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "Please check your email for the link to reset your password"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
-#, fuzzy
-#| msgid "PAGE##MANAGE-USERS##TITLE"
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
-msgstr "Manage users"
+msgstr "Manage companies"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -456,13 +443,9 @@ msgstr "Something went wrong"
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success! Your registration is now complete, please login to continue"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "Please check your email for the link to reset your password"
+msgstr "An email has ben sent to the user requesting a password reset."
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
@@ -529,57 +512,48 @@ msgstr "Your profile has been saved!"
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
 msgstr ""
-"Add all the different battery chemistry types you process. Per battery type "
-"define which recycling site sare involved and provide some additional "
-"information regarding the recycling process."
+"Could not remove the recycling process. Please contact an administrator."
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##TITLE"
-msgstr "Recycling Processes"
+msgstr "Recycling process removal failed"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
-msgstr ""
-"Add all the different battery chemistry types you process. Per battery type "
-"define which recycling site sare involved and provide some additional "
-"information regarding the recycling process."
+msgstr "Recycling process is successfully removed."
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##PROCESS-TITLE"
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
-msgstr "Process Description - Recycling Steps"
+msgstr "Error removing recycling process"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
-msgstr ""
-"Add all the different battery chemistry types you process. Per battery type "
-"define which recycling site sare involved and provide some additional "
-"information regarding the recycling process."
+msgstr "Could not save the recycling process. Please contact an administrator."
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##TITLE"
-msgstr "Recycling Processes"
+msgstr "Error saving recycling process"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##DESCRIPTION"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
-msgstr ""
-"Add all the different battery chemistry types you process. Per battery type "
-"define which recycling site sare involved and provide some additional "
-"information regarding the recycling process."
+msgstr "Recycling process is successfully saved."
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
-msgstr "Recycling Processes"
+msgstr "Recycling Processes saved"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
+msgstr "activated"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
+msgstr "deactivated"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##DESCRIPTION"
+msgstr "There recycling process could not be {{type}}."
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##TITLE"
+msgstr "Recycling process not {{type}}"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr "The recycling process is {{type}}."
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
+msgstr "Recycling process {{type}}"
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
@@ -652,7 +626,9 @@ msgstr ""
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr "Packaging material / outer casing"
 
-msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+#, fuzzy
+#| msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMISTRY"
 msgstr "Process chemistry"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
@@ -777,6 +753,9 @@ msgstr "Output Fraction"
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr "Recycling Efficiency"
+
+#~ msgid "GENERAL##LABELS##PRIVACY"
+#~ msgstr "Privacy"
 
 #~ msgid "PAGE##RECYCLING-PARTNERS##DISABLEPARTNER"
 #~ msgstr "Disable"
