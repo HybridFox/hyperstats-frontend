@@ -127,7 +127,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
     public save() {
         FormHelper.markAsDirty(this.recyclingProcessForm);
-        console.log(this.process);
 
         if (this.recyclingProcessForm.invalid) {
             return;
