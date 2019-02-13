@@ -230,8 +230,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     public uploadFile(file) {
-        this.assetsRepository.upload(file).toPromise().then((res) => {
-            console.log(res);
-        });
+        this.assetsRepository.upload(file).toPromise();
     }
 }
