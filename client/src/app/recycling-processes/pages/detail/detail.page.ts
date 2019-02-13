@@ -87,9 +87,12 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 return acc;
             }
 
+            const label = x.value.description
+                ? x.value.description
+                : `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`;
+
             acc.push({
-                label: x.value.description ||
-                    `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
+                label: x.value.methodOfProcessing ? `${label} (${x.value.methodOfProcessing})` : label,
                 value: x.value.uuid
             });
 
