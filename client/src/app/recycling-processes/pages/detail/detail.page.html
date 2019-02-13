@@ -5,7 +5,7 @@
 
     <div *ngIf="recyclingProcessId">
         <app-section-title
-            title="recyclingProcessForm.get('name').value"
+            [title]="recyclingProcessForm.get('name').value"
             class="u-margin-bottom"
         ></app-section-title>
         <app-text-input
