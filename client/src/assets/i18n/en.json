@@ -146,7 +146,7 @@
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
             "PRECEDING-STEP": {
-                "NONE": "Recycling Step {{ key }}"
+                "NONE": "None"
             },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
@@ -305,7 +305,7 @@
                 "METHODOLOG-CHEMICAL": "Description of methodology to determine the share of different types of waste battery or accumulator present in an input fraction",
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
                 "PACKAGING-CASING": "Packaging material / outer casing",
-                "PROCESS-CHEMISTRY": "Process chemistry",
+                "PROCESS-CHEMESTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
                 "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
