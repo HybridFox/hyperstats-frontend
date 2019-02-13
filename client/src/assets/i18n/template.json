@@ -52,7 +52,6 @@
 			"PASSWORD": "",
 			"PHONE": "",
 			"PREVIOUS-STEP": "",
-			"PRIVACY": "",
 			"REGISTER": "",
 			"REMOVE": "",
 			"RESET-PASSWORD": "",
@@ -251,6 +250,18 @@
 			}
 		},
 		"RECYCLING-PROCESS-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PROCESS-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

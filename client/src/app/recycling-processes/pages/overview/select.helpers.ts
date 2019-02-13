@@ -8,6 +8,7 @@ export const processToMenuItemObservableHandler = (obs$: Observable<any>): Obser
     .pipe(map((processes: any[]): any[] => {
         return reduce((acc: any[], process: any): any[] => process ? acc.concat({
             label: process.data.name,
-            link: process._id
+            link: process._id,
+            class: process.meta.activated ? 'activated' : 'deactivated'
         } as MenuItem) : acc, [])(processes);
     }));
