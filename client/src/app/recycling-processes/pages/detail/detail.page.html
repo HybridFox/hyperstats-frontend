@@ -5,7 +5,7 @@
 
     <div *ngIf="recyclingProcessId">
         <app-section-title
-            title="Alkaline - Nickel Metal"
+            title="recyclingProcessForm.get('name').value"
             class="u-margin-bottom"
         ></app-section-title>
         <app-text-input
@@ -39,11 +39,12 @@
                 [control]="step.value.get('description')"
                 class="u-margin-bottom-x-large"
             ></app-text-input>
-            <app-text-input
+            <app-select-input
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.RECYCLING-SITE-OWNER' | translate"
                 [control]="step.value.get('site')"
-                class="u-margin-bottom-x-large"
-            ></app-text-input>
+                [options]="(partnerOptions$ | async)"
+                class="u-margin-bottom-large"
+            ></app-select-input>
             <app-select-input
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PROCESSING-METHOD' | translate"
                 [control]="step.value.get('methodOfProcessing')"
@@ -72,6 +73,18 @@
         <div class="u-margin-top-large">
             <button class="a-button--primary has-icon-after u-margin-right" (click)="save()">
                 {{ 'GENERAL.LABELS.SAVE' | translate }}
+            </button>
+            <button
+                *ngIf="isActivated"
+                class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()">
+                {{ 'GENERAL.LABELS.DISABLE' | translate }}
+            </button>
+            <button
+                *ngIf="!isActivated"
+                class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()">
+                {{ 'GENERAL.LABELS.ENABLE' | translate }}
             </button>
             <button *ngIf="!!process?._id" class="a-button--danger has-icon-after u-pull-right u-text-uppercase" (click)="remove()">
                 {{ 'GENERAL.LABELS.REMOVE' | translate }}

@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { recyclingPartnersToSelectOptions } from '../recycling-process/select.helpers';
+import { recyclingPartnersToSelectOptions } from './select.helpers';
 import { FormHelper } from '@helpers/form.helper';
 
 @Component({
