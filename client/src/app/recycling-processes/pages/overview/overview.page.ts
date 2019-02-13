@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { select$ } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { processToMenuItemObservableHandler } from './select.helpers';
 @Component({
   templateUrl: './overview.page.html',
 })
-export class OverviewPageComponent implements OnInit {
+export class OverviewPageComponent implements OnInit, OnDestroy {
   @select$(RecyclingProcessesSelectors.list.result, processToMenuItemObservableHandler) public $processMenuItems: Observable<any[]>;
 
   public menuItems: MenuItem[] = [];
@@ -24,7 +24,7 @@ export class OverviewPageComponent implements OnInit {
     this.recyclingProcessesActions.fetchAll().toPromise();
   }
 
-  ngOnDesroy() {
+  ngOnDestroy() {
     this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
   }

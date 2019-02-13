@@ -15,6 +15,7 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { recyclingPartnersToSelectOptions } from './select.helpers';
 import { FormHelper } from '@helpers/form.helper';
+import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   templateUrl: './detail.page.html',
@@ -103,14 +104,37 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         }]);
     }
 
+    public duplicateProcess(key: number) {
+        this.processActions.fetchById(this.recyclingProcessId).subscribe(res => {
+            let promise;
+            promise = this.processActions.create(res).toPromise();
+            promise
+                .then((response) => {
+                    this.toastrService.success(
+                        ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.SUCCESS.DESCRIPTION') as string,
+                        ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.SUCCESS.TITLE') as string
+                    );
+                    this.router.navigate([`../${response._id}`], { relativeTo: this.route });
+                })
+                .catch(() => {
+                    this.toastrService.error(
+                        ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.ERROR.DESCRIPTION') as string,
+                        ngxExtract('TOAST.RECYCLING-PROCESS-SAVE.ERROR.TITLE') as string
+                    );
+                });
+        });
+    }
+
     public save() {
         FormHelper.markAsDirty(this.recyclingProcessForm);
+        console.log(this.process);
 
         if (this.recyclingProcessForm.invalid) {
             return;
         }
 
         const rawValue = this.recyclingProcessForm.getRawValue();
+
         const toSave = {
             ...this.process,
             data: {
@@ -244,6 +268,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         }
 
         if (this.recyclingProcessId === 'new') {
+            this.process = null;
             return this.setupForm();
         }
 

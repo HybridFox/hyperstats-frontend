@@ -7,7 +7,16 @@
         <app-section-title
             [title]="recyclingProcessForm.get('name').value"
             class="u-margin-bottom"
-        ></app-section-title>
+        >
+            <div action>
+                <button
+                    *ngIf="!!process?._id"
+                    class="a-button--link"
+                    (click)="duplicateProcess()">
+                    {{ 'GENERAL.LABELS.DUPLICATE-PROCESS' | translate }}
+                </button>
+            </div>
+        </app-section-title>
         <app-text-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.NAME' | translate"
             [control]="recyclingProcessForm.get('name')"
