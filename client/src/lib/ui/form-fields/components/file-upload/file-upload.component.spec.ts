@@ -27,4 +27,17 @@ describe('FileUploadComponent', () => {
     it('should create', () => {
         expect(component).toBeDefined();
     });
+
+    it('should accept a file for upload', () => {
+        spyOn(component.upload, 'emit').and.callThrough();
+        const event = {
+            target: {
+                files: [['Test']],
+            }
+        };
+
+        component.onUpload(event);
+
+        expect(component.upload.emit).toHaveBeenCalled();
+    });
 });

@@ -1,7 +1,6 @@
 import { Component, Input, Output, OnDestroy, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-file-upload',
@@ -16,8 +15,6 @@ export class FileUploadComponent implements OnDestroy {
     @Input() class = '';
     @Input() multiple: boolean;
     @Output() upload = new EventEmitter<any>();
-
-    constructor(private http: HttpClient) { }
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
