@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { Step } from './store/types';
+import { NewReportActions } from './store';
 
 @Component({
   selector: 'app-new-report',
@@ -21,6 +22,7 @@ export class NewReportComponent implements OnInit, OnDestroy, AfterContentInit {
 
   constructor(
     public formData: FormDataService,
+    private newReportActions: NewReportActions,
     private router: Router
   ) {}
 
@@ -38,6 +40,12 @@ export class NewReportComponent implements OnInit, OnDestroy, AfterContentInit {
           ] : acc, []);
         }
       });
+
+    this.newReportActions.fetchAllRecyclingProcesses()
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe();
 
     this.data = this.formData.getFormData();
     this.steps = [

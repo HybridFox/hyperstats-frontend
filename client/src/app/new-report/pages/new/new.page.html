@@ -23,7 +23,7 @@
                 class="u-margin-top-x-large"
                 [label]="'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS' | translate"
                 [control]="form.get('recyclingProcess')"
-                [options]="codesService.recyclingProcesses()"
+                [options]="recyclingProcesses$ | async"
             ></app-select-input>
         </div>
         <div class="l-grid__col-6-12">

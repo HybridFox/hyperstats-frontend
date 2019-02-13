@@ -4,11 +4,19 @@ import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
+import { select, select$ } from '@angular-redux/store';
+import { NewReportSelector } from '../../store';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { mapRecyclingProcesses } from '../../new-report.helper';
 
 @Component({
   templateUrl: './new.page.html',
 })
 export class NewPageComponent implements OnInit {
+  @select$(NewReportSelector.recyclingProcesses, mapRecyclingProcesses) recyclingProcesses$: Observable<any>;
+
+  public mappedRecyclingProcesses$: Observable<any>;
   public form: any;
 
   constructor(

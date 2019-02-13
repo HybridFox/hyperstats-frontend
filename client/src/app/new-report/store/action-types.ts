@@ -1,5 +1,5 @@
-export const TYPE_LIST = 'REPORTS';
+export const TYPE = 'NEW_REPORT';
 
 export const ACTIONS = {
-  FETCH: `${TYPE_LIST}/FETCH`,
+  FETCH_RECYCLINGPROCESSES: `${TYPE}/FETCH_RECYCLINGPROCESSES`,
 };
