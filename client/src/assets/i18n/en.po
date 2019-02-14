@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-14T13:33:15.643Z\n"
+"POT-Creation-Date: 2019-02-14T14:05:18.182Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -65,11 +65,6 @@ msgstr "Browse"
 msgid "GENERAL##LABELS##CANCEL"
 msgstr "Cancel"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##CANCEL"
-msgid "GENERAL##LABELS##CANCELREMOVE"
-msgstr "Cancel"
-
 msgid "GENERAL##LABELS##CITY"
 msgstr "City"
 
@@ -81,9 +76,6 @@ msgstr "Company VAT"
 
 msgid "GENERAL##LABELS##CONFIRMPASSWORD"
 msgstr "Confirm password"
-
-msgid "GENERAL##LABELS##CONFIRMREMOVE"
-msgstr "Delete"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
@@ -256,6 +248,16 @@ msgstr "User profile"
 
 msgid "GENERAL##MENU##USERS"
 msgstr "Users"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##CANCEL"
+msgid "GENERAL##POPUP##CANCELREMOVE"
+msgstr "Cancel"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##CONFIRMREMOVE"
+msgid "GENERAL##POPUP##CONFIRMREMOVE"
+msgstr "Delete"
 
 msgid "GENERAL##POPUP##DELETEITEM"
 msgstr "Are you sure you want to delete this item?"

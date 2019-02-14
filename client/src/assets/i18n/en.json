@@ -27,12 +27,10 @@
             "BOX": "Box",
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
-            "CANCELREMOVE": "Cancel",
             "CITY": "City",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
-            "CONFIRMREMOVE": "Delete",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
@@ -93,6 +91,8 @@
             "USERS": "Users"
         },
         "POPUP": {
+            "CANCELREMOVE": "Cancel",
+            "CONFIRMREMOVE": "Delete",
             "DELETEITEM": "Are you sure you want to delete this item?"
         }
     },

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-14T13:33:15.643Z\n"
-"PO-Revision-Date: 2019-02-14T13:33:15.643Z\n"
+"POT-Creation-Date: 2019-02-14T14:05:18.182Z\n"
+"PO-Revision-Date: 2019-02-14T14:05:18.182Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -62,9 +62,6 @@ msgstr ""
 msgid "GENERAL##LABELS##CANCEL"
 msgstr ""
 
-msgid "GENERAL##LABELS##CANCELREMOVE"
-msgstr ""
-
 msgid "GENERAL##LABELS##CITY"
 msgstr ""
 
@@ -75,9 +72,6 @@ msgid "GENERAL##LABELS##COMPANYVAT"
 msgstr ""
 
 msgid "GENERAL##LABELS##CONFIRMPASSWORD"
-msgstr ""
-
-msgid "GENERAL##LABELS##CONFIRMREMOVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##COUNTRY"
@@ -246,6 +240,12 @@ msgid "GENERAL##MENU##USERPROFILE"
 msgstr ""
 
 msgid "GENERAL##MENU##USERS"
+msgstr ""
+
+msgid "GENERAL##POPUP##CANCELREMOVE"
+msgstr ""
+
+msgid "GENERAL##POPUP##CONFIRMREMOVE"
 msgstr ""
 
 msgid "GENERAL##POPUP##DELETEITEM"
