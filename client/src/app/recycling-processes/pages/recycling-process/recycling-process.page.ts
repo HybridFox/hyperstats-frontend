@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { select, select$ } from '@angular-redux/store';
-import * as uuid from 'uuid';
-import { omit, prop, pathOr, equals } from 'ramda';
+import { prop, pathOr, equals } from 'ramda';
 import { Observable, Subscription, Subject } from 'rxjs';
 import { filter, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
@@ -15,7 +14,6 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { recyclingPartnersToSelectOptions } from './select.helpers';
 import { FormHelper } from '@helpers/form.helper';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   templateUrl: './recycling-process.page.html',
