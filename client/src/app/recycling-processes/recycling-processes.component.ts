@@ -3,13 +3,15 @@ import { select$ } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
-import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
-import { processToMenuItemObservableHandler } from './select.helpers';
+import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
+import { processToMenuItemObservableHandler } from './recycling-processes.helper';
 
 @Component({
-  templateUrl: './overview.page.html',
+  selector: 'app-recycling-processes',
+  templateUrl: './recycling-processes.component.html',
 })
-export class OverviewPageComponent implements OnInit, OnDestroy {
+
+export class RecyclingProcessesComponent implements OnInit, OnDestroy {
   @select$(RecyclingProcessesSelectors.list.result, processToMenuItemObservableHandler) public $processMenuItems: Observable<any[]>;
 
   public menuItems: MenuItem[] = [];
