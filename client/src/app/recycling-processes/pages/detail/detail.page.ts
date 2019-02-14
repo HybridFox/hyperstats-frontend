@@ -147,7 +147,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         this.deletedClicked = true;
     }
 
-
     public confirmRemoveForm() {
         if (this.recyclingProcessId === 'new') {
             return;
