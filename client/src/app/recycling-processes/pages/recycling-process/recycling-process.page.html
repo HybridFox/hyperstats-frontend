@@ -1,0 +1,16 @@
+
+<div *ngIf="!recyclingProcessId" class="m-card__placeholder">
+    <img src="/assets/images/choose.svg" alt="Choose image">
+</div>
+
+<app-recycling-process-form
+    *ngIf="recyclingProcessId"
+    [recyclingProcess]="process"
+    (submit)="save($event)"
+    (remove)="remove($event)"
+    (toggleActivation)="toggleActivation($event)"
+    (addStep)="addStep($event)"
+    (removeStep)="removeStep($event)"
+    (duplicate)="duplicateProcess($event)"
+></app-recycling-process-form>
+

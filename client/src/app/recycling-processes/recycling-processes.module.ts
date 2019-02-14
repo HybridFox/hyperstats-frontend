@@ -17,6 +17,9 @@ import { Pages } from './pages';
 import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
 import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
 
+import { Components } from './components';
+import { RecyclingProcessesComponent } from './recycling-processes.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -32,6 +35,8 @@ import { RecyclingPartnersModule } from '../recycling-partners/recycling-partner
   ],
   declarations: [
     Pages,
+    RecyclingProcessesComponent,
+    Components
   ],
 })
 export class RecyclingProcessesModule {

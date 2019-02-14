@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { select, select$ } from '@angular-redux/store';
-import * as uuid from 'uuid';
-import { omit, prop, pathOr, equals } from 'ramda';
+import { prop, pathOr, equals } from 'ramda';
 import { Observable, Subscription, Subject } from 'rxjs';
 import { filter, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
@@ -18,9 +17,9 @@ import { AssetsRepository } from '@api/assets';
 import { FormHelper } from '@helpers/form.helper';
 
 @Component({
-  templateUrl: './detail.page.html',
+  templateUrl: './recycling-process.page.html',
 })
-export class DetailPageComponent implements OnInit, OnDestroy {
+export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
     @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
 
@@ -28,6 +27,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     public process: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
     public recyclingProcessId: string;
+    public duplicateProcessId: string;
 
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -35,7 +35,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     constructor(
         private processActions: RecyclingProcessesActions,
         private partnerActions: RecyclingPartnerActions,
-        private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
         private toastrService: ToastrService,
@@ -44,7 +43,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     ) {}
 
     public ngOnInit() {
-        this.setupForm();
         this.partnerActions.fetchAll().toPromise();
         this.route.params
             .pipe(
@@ -61,26 +59,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     public ngOnDestroy() {
         this.componentDestroyed$.next(true);
         this.componentDestroyed$.complete();
-    }
-
-    public getStepKey(key: string) {
-        return parseInt(key, 16) + 1;
-    }
-
-    public deleteStep(key: number) {
-        this.recyclingProcessForm.controls.steps.controls.splice(key, 1);
-    }
-
-    public duplicateStep(key: number) {
-        const newStep = this.createStep();
-        newStep.patchValue(
-            omit(['uuid'], this.recyclingProcessForm.controls.steps.controls[key].value)
-        );
-        this.recyclingProcessForm.controls.steps.push(newStep);
-    }
-
-    public addStep(): void {
-        this.recyclingProcessForm.controls.steps.push(this.createStep());
     }
 
     public precedingSteps(step: FormControl) {
@@ -105,14 +83,20 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         }]);
     }
 
-    public save() {
-        FormHelper.markAsDirty(this.recyclingProcessForm);
+    public duplicateProcess(event) {
+        this.duplicateProcessId = event;
+        this.router.navigate(['../new'], { relativeTo: this.route });
+    }
 
-        if (this.recyclingProcessForm.invalid) {
+    public save(recyclingProcessForm: any) {
+        FormHelper.markAsDirty(recyclingProcessForm);
+
+        if (recyclingProcessForm.invalid) {
             return;
         }
 
-        const rawValue = this.recyclingProcessForm.getRawValue();
+        const rawValue = recyclingProcessForm.getRawValue();
+
         const toSave = {
             ...this.process,
             data: {
@@ -167,7 +151,8 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    public toggleActivation() {
+    public toggleActivation(event) {
+        console.log(event);
         const isCurrentlyActive = pathOr(false, ['meta', 'activated'])(this.process);
         const type = this.translateService.instant(
             isCurrentlyActive ?
@@ -195,47 +180,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    private setupForm(process?: any): void {
-        this.recyclingProcessForm = this.formBuilder.group({
-            name: [pathOr('', ['data', 'name'])(process), Validators.required],
-            steps: this.createStepFormGroups(pathOr([], ['data', 'steps'])(process))
-        });
-    }
-
-    private createStepFormGroups(steps: any[]): FormArray {
-        if (!steps.length) {
-            return this.formBuilder.array([this.createStep()]);
-        }
-
-        return this.formBuilder.array(steps.map((step) => this.createStep(step)));
-    }
-
-    private createStep(step = {
-        uuid: uuid.v4(),
-        precedingStep: 0,
-        description: '',
-        site: '',
-        methodOfProcessing: '',
-        qualitativeDescription: {
-            text: '',
-            asset: ''
-        },
-        schematicOverview: ''
-    }): FormGroup {
-        return this.formBuilder.group({
-            uuid: [step.uuid],
-            precedingStep: [step.precedingStep],
-            description: [step.description, Validators.required],
-            site: [step.site, Validators.required],
-            methodOfProcessing: [step.methodOfProcessing, Validators.required],
-            qualitativeDescription: this.formBuilder.group({
-                text: [step.qualitativeDescription.text, Validators.required],
-                asset: [step.qualitativeDescription.asset]
-            }),
-            schematicOverview: [step.schematicOverview],
-        });
-    }
-
     private fetchProcessIfNeeded(): void {
         if (!this.recyclingProcessId || (this.process && prop('_id', this.process) === this.recyclingProcessId)) {
             return;
@@ -245,19 +189,23 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             this.processSubscription.unsubscribe();
         }
 
-        if (this.recyclingProcessId === 'new') {
-            return this.setupForm();
+        let id;
+        if (this.recyclingProcessId === 'new' && (this.process && prop('_id', this.process) === this.duplicateProcessId)) {
+            id = this.duplicateProcessId;
+        } else if (this.recyclingProcessId === 'new') {
+            this.process = null;
+            return this.process;
+        } else {
+            id = this.recyclingProcessId;
         }
-
-        this.processActions.fetchById(this.recyclingProcessId).toPromise();
+        this.processActions.fetchById(id).toPromise();
         this.processSubscription = this.$process
             .pipe(takeUntil(this.componentDestroyed$))
             .pipe(filter((process) => process && !equals(process, this.process)))
             .subscribe((process) => {
                 this.process = process;
-
-                this.setupForm(this.process);
             });
+        this.duplicateProcessId = null;
     }
 
     public uploadFile(file) {

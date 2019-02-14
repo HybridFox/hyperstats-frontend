@@ -1,13 +1,18 @@
 <div class="m-card--primary u-margin-bottom-large">
-    <div *ngIf="!recyclingProcessId" class="m-card__placeholder">
-        <img src="/assets/images/choose.svg" alt="Choose image">
-    </div>
-
-    <div *ngIf="recyclingProcessId">
+    <div *ngIf="recyclingProcessForm">
         <app-section-title
             [title]="recyclingProcessForm.get('name').value"
             class="u-margin-bottom"
-        ></app-section-title>
+        >
+            <div action>
+                <button
+                    *ngIf="!!recyclingProcess?._id"
+                    class="a-button--link"
+                    (click)="duplicateProcess()">
+                    {{ 'GENERAL.LABELS.DUPLICATE-PROCESS' | translate }}
+                </button>
+            </div>
+        </app-section-title>
         <app-text-input
             [label]="'PAGE.RECYCLING-PROCESSES.LABELS.NAME' | translate"
             [control]="recyclingProcessForm.get('name')"
@@ -68,27 +73,27 @@
                 (upload)="uploadFile($event)"
             ></app-file-upload>
         </div>
-        <button class="a-button--primary a-button-outline has-icon-after" (click)="addStep()">
+        <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">
             {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' | translate }}
         </button>
         <app-sub-section-title class="u-margin-top-large"></app-sub-section-title>
         <div class="u-margin-top-large">
-            <button class="a-button--primary has-icon-after u-margin-right" (click)="save()">
+            <button class="a-button--primary has-icon-after u-margin-right" (click)="saveForm()">
                 {{ 'GENERAL.LABELS.SAVE' | translate }}
             </button>
             <button
-                *ngIf="process?.meta.activated"
+                *ngIf="recyclingProcess?.meta.activated"
                 class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
-                (click)="toggleActivation()">
+                (click)="toggleActivationForm()">
                 {{ 'GENERAL.LABELS.DISABLE' | translate }}
             </button>
             <button
-                *ngIf="!process?.meta.activated"
+                *ngIf="!recyclingProcess?.meta.activated"
                 class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
-                (click)="toggleActivation()">
+                (click)="toggleActivationForm()">
                 {{ 'GENERAL.LABELS.ENABLE' | translate }}
             </button>
-            <button *ngIf="!!process?._id" class="a-button--danger has-icon-after u-pull-right u-text-uppercase" (click)="remove()">
+            <button *ngIf="!!recyclingProcess?._id" class="a-button--danger has-icon-after u-pull-right u-text-uppercase" (click)="removeForm()">
                 {{ 'GENERAL.LABELS.REMOVE' | translate }}
             </button>
         </div>
