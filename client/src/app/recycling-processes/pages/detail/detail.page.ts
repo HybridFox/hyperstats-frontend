@@ -27,6 +27,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     public process: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
     public recyclingProcessId: string;
+    public deletedClicked: boolean;
 
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -143,6 +144,11 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     public remove() {
+        this.deletedClicked = true;
+    }
+
+
+    public confirmRemoveForm() {
         if (this.recyclingProcessId === 'new') {
             return;
         }
@@ -163,6 +169,10 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.TITLE') as string
                 );
             });
+    }
+
+    public cancelRemoveForm() {
+        this.deletedClicked = false;
     }
 
     public toggleActivation() {
