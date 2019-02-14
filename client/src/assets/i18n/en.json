@@ -19,7 +19,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
-            "ACTIVE": "Save",
+            "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
@@ -30,7 +30,7 @@
             "CITY": "City",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
-            "CONFIRMPASSWORD": "Password",
+            "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
@@ -52,7 +52,6 @@
             "PASSWORD": "Password",
             "PHONE": "Phone",
             "PREVIOUS-STEP": "Previous step",
-            "PRIVACY": "Privacy",
             "REGISTER": "Register",
             "REMOVE": "Remove",
             "RESET-PASSWORD": "Reset password",
@@ -116,7 +115,7 @@
             }
         },
         "MANAGE-COMPANIES": {
-            "TITLE": "Manage users"
+            "TITLE": "Manage companies"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -146,7 +145,7 @@
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
             "PRECEDING-STEP": {
-                "NONE": "Recycling Step {{ key }}"
+                "NONE": "None"
             },
             "PROCESS-DESCRIPTION": "Add every recycling step that makes up your recycling process. Per recycling step you can define the recycling site and provide a process description.",
             "PROCESS-TITLE": "Process Description - Recycling Steps",
@@ -181,7 +180,7 @@
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
-                "DESCRIPTION": "Please check your email for the link to reset your password",
+                "DESCRIPTION": "An email has ben sent to the user requesting a password reset.",
                 "TITLE": "Password reset requested"
             }
         },
@@ -242,22 +241,34 @@
         },
         "RECYCLING-PROCESS-REMOVE": {
             "ERROR": {
-                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
-                "TITLE": "Recycling Processes"
+                "DESCRIPTION": "Could not remove the recycling process. Please contact an administrator.",
+                "TITLE": "Recycling process removal failed"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
-                "TITLE": "Process Description - Recycling Steps"
+                "DESCRIPTION": "Recycling process is successfully removed.",
+                "TITLE": "Error removing recycling process"
             }
         },
         "RECYCLING-PROCESS-SAVE": {
             "ERROR": {
-                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
-                "TITLE": "Recycling Processes"
+                "DESCRIPTION": "Could not save the recycling process. Please contact an administrator.",
+                "TITLE": "Error saving recycling process"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
-                "TITLE": "Recycling Processes"
+                "DESCRIPTION": "Recycling process is successfully saved.",
+                "TITLE": "Recycling Processes saved"
+            }
+        },
+        "RECYCLING-PROCESS-TOGGLE": {
+            "ACTIVATED": "activated",
+            "DEACTIVATED": "deactivated",
+            "ERROR": {
+                "DESCRIPTION": "There recycling process could not be {{type}}.",
+                "TITLE": "Recycling process not {{type}}"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling process is {{type}}.",
+                "TITLE": "Recycling process {{type}}"
             }
         },
         "REGISTER": {

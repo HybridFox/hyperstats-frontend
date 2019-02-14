@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { recyclingPartnersToSelectOptions } from '../recycling-process/select.helpers';
+import { recyclingPartnersToSelectOptions } from './select.helpers';
 import { AssetsRepository } from '@api/assets';
 import { FormHelper } from '@helpers/form.helper';
 
@@ -89,9 +89,12 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 return acc;
             }
 
+            const label = x.value.description
+                ? x.value.description
+                : `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`;
+
             acc.push({
-                label: x.value.description ||
-                    `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`,
+                label: x.value.methodOfProcessing ? `${label} (${x.value.methodOfProcessing})` : label,
                 value: x.value.uuid
             });
 
@@ -160,6 +163,34 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 this.toastrService.error(
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.DESCRIPTION') as string,
                     ngxExtract('TOAST.RECYCLING-PROCESS-REMOVE.ERROR.TITLE') as string
+                );
+            });
+    }
+
+    public toggleActivation() {
+        const isCurrentlyActive = pathOr(false, ['meta', 'activated'])(this.process);
+        const type = this.translateService.instant(
+            isCurrentlyActive ?
+            ngxExtract('TOAST.RECYCLING-PROCESS-TOGGLE.DEACTIVATED') :
+            ngxExtract('TOAST.RECYCLING-PROCESS-TOGGLE.ACTIVATED')
+        );
+
+
+        const promise: Promise<any> = isCurrentlyActive ?
+            this.processActions.deactivate(this.recyclingProcessId).toPromise() :
+            this.processActions.activate(this.recyclingProcessId).toPromise();
+
+        promise
+            .then(() => {
+                this.toastrService.success(
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.SUCCESS.DESCRIPTION', { type }) as string,
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.SUCCESS.TITLE', { type }) as string
+                );
+            })
+            .catch(() => {
+                this.toastrService.error(
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.ERROR.DESCRIPTION', { type }) as string,
+                    this.translateService.instant('TOAST.RECYCLING-PROCESS-TOGGLE.ERROR.TITLE', { type }) as string
                 );
             });
     }
