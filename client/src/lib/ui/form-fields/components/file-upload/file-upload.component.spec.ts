@@ -30,14 +30,22 @@ describe('FileUploadComponent', () => {
 
     it('should accept a file for upload', () => {
         spyOn(component.upload, 'emit').and.callThrough();
+
+        const file = new File(['foo'], 'foo.txt', {
+            type: 'text/plain',
+          });
+
         const event = {
             target: {
-                files: [['Test']],
+                files: [file],
             }
         };
 
         component.onUpload(event);
 
-        expect(component.upload.emit).toHaveBeenCalled();
+        const formData: FormData = new FormData();
+        formData.append('file', event.target.files[0]);
+
+        expect(component.upload.emit).toHaveBeenCalledWith(formData);
     });
 });
