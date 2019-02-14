@@ -1,0 +1,20 @@
+<div class="o-popup" >
+    <div class="m-card--primary">
+        <p *ngIf="title">{{ title }}</p>
+
+        <div>
+            <button
+                class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="cancelClicked()"
+            >
+                {{ 'GENERAL.LABELS.REMOVE.CANCEL' | translate }}
+            </button>
+            <button
+                class="a-button--danger has-icon-after u-text-uppercase"
+                (click)="confirmClicked()"
+            >
+                {{ 'GENERAL.LABELS.REMOVE.CONFIRM' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

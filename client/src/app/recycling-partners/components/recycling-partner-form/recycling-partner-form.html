@@ -126,8 +126,14 @@
             >
                 {{ 'GENERAL.LABELS.ENABLE' | translate }}
             </button>
+            <app-delete-popup
+                *ngIf="deletedClicked"
+                [title]="'GENERAL.POPUP.DELETEITEM' | translate"
+                (confirmDeleteItem)="confirmRemoveForm($event)"
+                (cancelDeleteItem)="cancelRemoveForm($event)"
+            ></app-delete-popup>
             <button
-                *ngIf="!!recyclingPartner?._id"
+                *ngIf="!!recyclingPartner?._id && !deletedClicked"
                 class="a-button--danger has-icon-after u-text-uppercase"
                 (click)="removeForm()"
             >

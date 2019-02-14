@@ -20,6 +20,9 @@ export class RecyclingPartnerFormComponent implements OnChanges {
     public recyclingPartnerForm: FormGroup;
     public isActivated: boolean;
 
+
+    public deletedClicked: boolean;
+
     constructor(
         private formBuilder: FormBuilder,
     ) {}
@@ -33,16 +36,24 @@ export class RecyclingPartnerFormComponent implements OnChanges {
         if (this.recyclingPartnerForm.invalid) {
             return;
         }
-
         this.submit.emit(this.recyclingPartnerForm.getRawValue());
     }
 
     public removeForm() {
+        this.deletedClicked = true;
+    }
+
+    public confirmRemoveForm() {
+
         if (!prop('_id')(this.recyclingPartner)) {
             return;
         }
 
         this.remove.emit(this.recyclingPartner._id);
+    }
+
+    public cancelRemoveForm() {
+        this.deletedClicked = false;
     }
 
     public toggleActivationForm() {
