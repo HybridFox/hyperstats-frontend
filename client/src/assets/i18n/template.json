@@ -27,10 +27,12 @@
 			"BOX": "",
 			"BROWSE": "",
 			"CANCEL": "",
+			"CANCELREMOVE": "",
 			"CITY": "",
 			"COMPANYNAME": "",
 			"COMPANYVAT": "",
 			"CONFIRMPASSWORD": "",
+			"CONFIRMREMOVE": "",
 			"COUNTRY": "",
 			"DELETE-STEP": "",
 			"DISABLE": "",
@@ -89,6 +91,9 @@
 			"REPORTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
+		},
+		"POPUP": {
+			"DELETEITEM": ""
 		}
 	},
 	"PAGE": {
