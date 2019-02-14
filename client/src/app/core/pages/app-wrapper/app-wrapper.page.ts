@@ -18,8 +18,10 @@ export class AppWrapperPageComponent {
   ) {}
 
   public onLogout() {
-    this.authActions.logout().toPromise().then(() => {
-      this.router.navigate(['/', 'auth']);
-    });
+    this.authActions.logout()
+      .toPromise()
+      .then(() => {
+        this.router.navigate(['/', 'auth']);
+      });
   }
 }

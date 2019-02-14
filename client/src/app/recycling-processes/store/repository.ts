@@ -45,4 +45,18 @@ export class RecyclingProcessesRepository {
     return this.http
       .delete(url);
   }
+
+  public activate(id: string) {
+    const url = this.apiConfig.baseUrl(`/recycling-processes/${id}/activate`);
+
+    return this.http
+      .patch(url, {});
+  }
+
+  public deactivate(id: string) {
+    const url = this.apiConfig.baseUrl(`/recycling-processes/${id}/deactivate`);
+
+    return this.http
+      .patch(url, {});
+  }
 }

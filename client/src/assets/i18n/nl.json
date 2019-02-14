@@ -143,12 +143,6 @@
         }
     },
     "TOAST": {
-        "ADMIN-FORGOT-PASSWORD": {
-			"SUCCESS": {
-				"DESCRIPTION": "",
-				"TITLE": ""
-			}
-		},
         "COMPANY-INFORMATION": {
             "ERROR": {
                 "DESCRIPTION": "",
@@ -249,7 +243,7 @@
                 "METHODOLOG-CHEMICAL": "",
                 "METHODOLOG-WASTE": "",
                 "PACKAGING-CASING": "",
-                "PROCESS-CHEMESTRY": "",
+                "PROCESS-CHEMISTRY": "",
                 "SHARE-BATTERY": "",
                 "SHARE-INPUT-FRACTION": "",
                 "WEIGHT-BATTERY": "",
