@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-12T17:00:22.600Z\n"
-"PO-Revision-Date: 2019-02-12T17:00:22.600Z\n"
+"POT-Creation-Date: 2019-02-15T07:55:48.376Z\n"
+"PO-Revision-Date: 2019-02-15T07:55:48.376Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -42,6 +42,9 @@ msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-PROXY"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
@@ -285,6 +288,12 @@ msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr ""
 
 msgid "PAGE##PROFILE##TITLE"
+msgstr ""
+
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##TITLE"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"

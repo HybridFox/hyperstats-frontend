@@ -21,6 +21,7 @@
 		"LABELS": {
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
+			"ADD-PROXY": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
 			"ADMIN": "",
@@ -121,6 +122,10 @@
 			"TITLE": ""
 		},
 		"PROFILE": {
+			"TITLE": ""
+		},
+		"PROXIES": {
+			"DESCRIPTION": "",
 			"TITLE": ""
 		},
 		"RECYCLING-PARTNERS": {

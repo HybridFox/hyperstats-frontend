@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-12T17:00:22.600Z\n"
+"POT-Creation-Date: 2019-02-15T07:55:48.376Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr "Recycling"
@@ -46,6 +46,9 @@ msgstr "Active"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
+
+msgid "GENERAL##LABELS##ADD-PROXY"
+msgstr "Add proxy"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
 msgstr "Add recycling partner"
@@ -322,6 +325,15 @@ msgstr "Manage users"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
+
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+"Proxies are the organizations that have access to your reports. In this "
+"overview you can control who has access to your reports for a given "
+"reporting year and recycling process"
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr "Your proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"

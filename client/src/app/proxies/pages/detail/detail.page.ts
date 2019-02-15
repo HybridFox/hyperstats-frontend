@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 })
 
 export class DetailPageComponent  {
+    constructor(
+    ) {}
 }
