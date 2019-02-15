@@ -16,5 +16,6 @@ module.exports = {
 	},
 	meta: {
 		type: "R",
+		deleted: "false",
 	},
 };
