@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { recyclingPartnersToSelectOptions } from './select.helpers';
 import { FormHelper } from '@helpers/form.helper';
 
 @Component({
@@ -20,7 +19,6 @@ import { FormHelper } from '@helpers/form.helper';
 })
 export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
-    @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
 
     public recyclingProcessForm: any;
     public process: any;
@@ -57,28 +55,6 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     public ngOnDestroy() {
         this.componentDestroyed$.next(true);
         this.componentDestroyed$.complete();
-    }
-
-    public precedingSteps(step: FormControl) {
-        return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
-            if (step.value.value.uuid === x.value.uuid) {
-                return acc;
-            }
-
-            const label = x.value.description
-                ? x.value.description
-                : `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`;
-
-            acc.push({
-                label: x.value.methodOfProcessing ? `${label} (${x.value.methodOfProcessing})` : label,
-                value: x.value.uuid
-            });
-
-            return acc;
-        }, [{
-            label: ngxExtract('PAGE.RECYCLING-PROCESSES.PRECEDING-STEP.NONE'),
-            value: null
-        }]);
     }
 
     public duplicateProcess(event) {
@@ -150,7 +126,6 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
     }
 
     public toggleActivation(event) {
-        console.log(event);
         const isCurrentlyActive = pathOr(false, ['meta', 'activated'])(this.process);
         const type = this.translateService.instant(
             isCurrentlyActive ?

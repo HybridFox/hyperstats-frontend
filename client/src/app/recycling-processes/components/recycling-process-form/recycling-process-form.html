@@ -64,11 +64,13 @@
             <app-file-upload
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
                 class="u-margin-bottom-x-large"
+                [control]="step.value.get('qualitativeDescription').get('asset')"
             ></app-file-upload>
             <app-file-upload
                 [title]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
                 [description]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate"
                 class="u-margin-bottom-x-large"
+                [control]="step.value.get('schematicOverview')"
             ></app-file-upload>
         </div>
         <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">
@@ -80,13 +82,13 @@
                 {{ 'GENERAL.LABELS.SAVE' | translate }}
             </button>
             <button
-                *ngIf="recyclingProcess?.meta.activated"
+                *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id"
                 class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
                 (click)="toggleActivationForm()">
                 {{ 'GENERAL.LABELS.DISABLE' | translate }}
             </button>
             <button
-                *ngIf="!recyclingProcess?.meta.activated"
+                *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id"
                 class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
                 (click)="toggleActivationForm()">
                 {{ 'GENERAL.LABELS.ENABLE' | translate }}

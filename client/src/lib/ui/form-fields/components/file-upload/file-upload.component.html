@@ -25,16 +25,16 @@
         </ng-template>
     </div>
 
-    <ul class="m-file-upload__progress" *ngIf="uploadFile">
+    <ul class="m-file-upload__progress" *ngIf="control?.value?.originalname">
         <li class="l-grid__row u-margin-bottom">
             <div class="l-grid__col-1-12">
                 <i class="a-icon--file"></i>
             </div>
             <div class="l-grid__col-10-12">
-                <span class="m-file-upload__progress__file-name">{{ formGroup?.value?.originalname }}</span>
-                <progress max="100" value="{{ uploadProcess }}" class="m-file-upload__progress__bar"></progress>
+                <span class="m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>
+                <progress max="100" value="{{ uploadProcess || 100 }}" class="m-file-upload__progress__bar"></progress>
             </div>
-            <div class="l-grid__col-1-12">
+            <div class="l-grid__col-1-12" *ngIf="uploadProcess">
                 <span class="m-file-upload__progress__percentage">{{ uploadProcess }}%</span>
             </div>
         </li>

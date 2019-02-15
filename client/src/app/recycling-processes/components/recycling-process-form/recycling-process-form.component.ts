@@ -5,8 +5,11 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
-import { AssetsRepository } from '@api/assets';
 import { createFileUploadControl } from '@ui/form-fields/components/file-upload/file-upload.helper';
+import { Observable } from 'rxjs';
+import { RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
+import { recyclingPartnersToSelectOptions } from './select.helpers';
+import { select$ } from '@angular-redux/store';
 
 @Component({
     selector: 'app-recycling-process-form',
@@ -14,13 +17,12 @@ import { createFileUploadControl } from '@ui/form-fields/components/file-upload/
 })
 
 export class RecyclingProcessFormComponent implements OnChanges {
+    @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
     @Input() public recyclingProcess: any;
 
     @Output() public submit: EventEmitter<any> = new EventEmitter<any>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
     @Output() public toggleActivation: EventEmitter<any> = new EventEmitter<any>();
-    @Output() public addStep: EventEmitter<any> = new EventEmitter<any>();
-    @Output() public removeStep: EventEmitter<any> = new EventEmitter<any>();
     @Output() public duplicate: EventEmitter<any> = new EventEmitter<any>();
 
     public recyclingProcessForm: any;
@@ -30,8 +32,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
 
     constructor(
         private formBuilder: FormBuilder,
-        private translateService: TranslateService,
-        private assetsRepository: AssetsRepository
+        private translateService: TranslateService
     ) {}
 
     public ngOnChanges() {
@@ -89,7 +90,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
             text: '',
             asset: undefined
         },
-        schematicOverview: ''
+        schematicOverview: undefined
     }): FormGroup {
         return this.formBuilder.group({
             uuid: [step.uuid],
@@ -99,10 +100,9 @@ export class RecyclingProcessFormComponent implements OnChanges {
             methodOfProcessing: [step.methodOfProcessing, Validators.required],
             qualitativeDescription: this.formBuilder.group({
                 text: [step.qualitativeDescription.text, Validators.required],
-                // asset: [step.qualitativeDescription.asset]
                 asset: createFileUploadControl(step.qualitativeDescription.asset)
             }),
-            schematicOverview: [step.schematicOverview],
+            schematicOverview: createFileUploadControl(step.schematicOverview),
         });
     }
 
@@ -146,5 +146,9 @@ export class RecyclingProcessFormComponent implements OnChanges {
 
     public newStep(): void {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
+    }
+
+    public onUpload(file) {
+        console.log(file);
     }
 }
