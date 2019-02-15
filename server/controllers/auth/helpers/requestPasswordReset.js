@@ -2,6 +2,7 @@ const { v4: uuid } = require("node-uuid");
 const { join } = require("path");
 const UserModel = require("../../../models/user");
 const mailer = require("../../../helpers/mail");
+const ResponseError = require("../../../helpers/errors/responseError");
 
 const getFutureDate = (days) => {
 	return new Date(new Date().getTime() + (86400000 * days));
@@ -19,7 +20,7 @@ module.exports = async(email) => {
 	}, { new: true });
 
 	if (!user) {
-		throw new Error({ type: 404, message: "User not found" });
+		throw new ResponseError({ type: 404, msg: "User not found" });
 	}
 
 	await mailer({
