@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormDataService } from '../../services/formdata.service';
+import { FormDataService } from '../../../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
-import { FormHelper } from '@helpers/form.helper';
-import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FormHelper } from '@helpers/form.helper';
 
 @Component({
-  templateUrl: './additives.page.html',
+  templateUrl: './recycling-efficiency.page.html',
 })
-export class AdditivesPageComponent implements OnInit {
+export class RecyclingEfficiencyPageComponent implements OnInit {
   public form: any;
 
   constructor(
@@ -20,22 +20,18 @@ export class AdditivesPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.form = this.formData.getFormData().get('additives');
-  }
-
-  public addAdditive() {
-    this.formData.addAdditive();
+    this.form = this.formData.getFormData().get('recyclingEfficiency');
   }
 
   public previousStep() {
-    this.router.navigate(['../input-fraction'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
   }
 
   public nextStep() {
     FormHelper.markAsDirty(this.form);
 
     if (this.form.valid) {
-      this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
+      this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
     } else {
       this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
     }
