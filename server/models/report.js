@@ -152,6 +152,15 @@ const ReportSchema = mongoose.Schema({
 		},
 	},
 	meta: {
+		approvedCompanies: [{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Company",
+		}],
+		reportingCompany: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Company",
+			required: true,
+		},
 		created: {
 			type: Date,
 			required: true,

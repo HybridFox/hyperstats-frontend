@@ -1,5 +1,4 @@
 const dataMiddleware = require("../middleware/data");
-// const validationPresets = require("../helpers/validation/presets");
 const Errors = require("../helpers/errorHandler");
 const reportController = require("../controllers/report");
 const reportValidations = require("../controllers/report/validations");
@@ -205,7 +204,7 @@ module.exports = (router) => {
 	 *       meta:
 	 *         $ref: '#/definitions/ReportMeta'
 	 */
-	router.use("/companies*", authMiddleware.isLoggedIn);
+	router.use("/reports*", authMiddleware.isLoggedIn);
 
 	/**
 	 * @swagger
