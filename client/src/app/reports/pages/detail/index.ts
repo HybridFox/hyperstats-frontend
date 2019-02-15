@@ -25,3 +25,14 @@ export const Pages = [
   FilePageComponent,
   ReportPageComponent,
 ];
+
+export {
+  NewPageComponent,
+  InputFractionPageComponent,
+  AdditivesPageComponent,
+  OutputFractionPageComponent,
+  RecyclingEfficiencyPageComponent,
+  AdditionalInformationPageComponent,
+  ReportPageComponent,
+  FilePageComponent,
+};

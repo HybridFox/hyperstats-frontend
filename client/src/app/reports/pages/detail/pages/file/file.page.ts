@@ -13,9 +13,6 @@ export class FilePageComponent implements OnInit {
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
-    private toastrService: ToastrService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
   ) {}
 
   public ngOnInit() {
