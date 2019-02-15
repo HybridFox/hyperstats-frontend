@@ -6,7 +6,7 @@
         <div class="m-filter u-pull-right">
             <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
         </div>
-        <button class="a-button--primary">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</button>
+        <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
     </div>
 </div>
 
