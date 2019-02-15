@@ -13,8 +13,8 @@ import { ToastrService } from 'ngx-toastr';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { FormHelper } from '@helpers/form.helper';
+import { companiesToSelectOptions } from '@helpers/select.helpers';
 
 @Component({
   templateUrl: './detail.page.html',
