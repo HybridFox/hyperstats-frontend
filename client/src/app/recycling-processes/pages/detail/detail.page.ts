@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { recyclingPartnersToSelectOptions } from './select.helpers';
+import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { FormHelper } from '@helpers/form.helper';
 
 @Component({
@@ -21,7 +21,7 @@ import { FormHelper } from '@helpers/form.helper';
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
-    @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
+    @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partnerOptions$: Observable<any[]>;
 
     public recyclingProcessForm: any;
     public process: any;

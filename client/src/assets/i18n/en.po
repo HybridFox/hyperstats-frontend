@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-12T17:00:22.600Z\n"
+"POT-Creation-Date: 2019-02-15T10:28:07.626Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,6 +41,9 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##LABELS##ACTIVATED"
+msgstr "Active"
+
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr "Active"
 
@@ -67,6 +70,9 @@ msgstr "Cancel"
 
 msgid "GENERAL##LABELS##CITY"
 msgstr "City"
+
+msgid "GENERAL##LABELS##COMPANY"
+msgstr "Company"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company name"
@@ -434,6 +440,12 @@ msgstr "Lorem Ipsum Dolor Sit Amet Co"
 msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
 msgstr "Terms and conditions"
 
+msgid "PAGE##USER-ADMIN##CONFIGURATION"
+msgstr "Configuration"
+
+msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
+msgstr "User information"
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr "We are having trouble verifying your email, please try again later"
 
@@ -572,6 +584,18 @@ msgstr "You can now use your new password to login"
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to save the user."
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##TITLE"
+msgstr "Error saving user"
+
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
+msgstr "The user is successfully saved!"
+
+msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgstr "User saved!"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Addition information"
