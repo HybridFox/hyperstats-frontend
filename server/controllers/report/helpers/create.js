@@ -1,9 +1,12 @@
 const ReportModel = require("../../../models/report");
 
-module.exports = async(report = {}, companyId = null) => {
+module.exports = async({ report, meta, companyId }) => {
 	const newReport = new ReportModel({
 		data: report,
-		meta: { reportingCompany: companyId },
+		meta: {
+			...meta,
+			reportingCompany: companyId,
+		},
 	});
 
 	await newReport.save();

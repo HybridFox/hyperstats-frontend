@@ -1,5 +1,7 @@
 const createObjectId = require("mongoose").Types.ObjectId;
 
+const REPORT_STATUS = ["SAVED", "FILED"];
+
 const NEW_REPORT = {
 	information: {
 		reportingYear: 2019,
@@ -59,5 +61,6 @@ const NEW_REPORT = {
 };
 
 module.exports = {
+	REPORT_STATUS,
 	NEW_REPORT,
 };

@@ -1,6 +1,7 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
+const createObjectId = require("mongoose").Types.ObjectId;
 const createReport = require("./create");
 const NEW_REPORT = require("./const").NEW_REPORT;
 
@@ -20,7 +21,11 @@ describe("Report", () => {
 		});
 
 		it("Should create a report", async() => {
-			const createdReport = await createReport(NEW_REPORT);
+			const createdReport = await createReport({
+				report: NEW_REPORT,
+				meta: { status: "FILED" },
+				companyId: createObjectId(),
+			});
 
 			expect(createdReport).to.be.an("object");
 			expect(createdReport.data).to.be.an("object");
@@ -28,6 +33,8 @@ describe("Report", () => {
 			expect(createdReport.data.recyclingEfficiency).to.deep.equal({
 				calculatedEfficiency: 1,
 			});
+			expect(createdReport.meta).to.be.an("object");
+			expect(createdReport.meta.status).to.equal("FILED");
 		});
 	});
 });
