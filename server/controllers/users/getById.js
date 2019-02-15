@@ -5,5 +5,5 @@ module.exports = (req, res, next) => {
 	const id = req.data.params.id;
 	Manager.getById(id)
 		.then((data) => res.status(200).json(ResponseHandler.formatUser(data)))
-		.catch((error) => console.log(error) || next(error));
+		.catch((error) => next(error));
 };
