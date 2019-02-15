@@ -5,6 +5,32 @@ import { Component } from '@angular/core';
 })
 
 export class DetailPageComponent  {
-    constructor(
-    ) {}
+  public proxies = [
+    {
+      name: 'Bebat VZW',
+      types: [
+        {
+          name: 'Alkaline',
+        },
+        {
+          name: 'Zinc',
+        }
+      ]
+    },
+    {
+      name: 'Stibat vzw',
+      types: [
+        {
+          name: 'Alkaline',
+        },
+        {
+          name: 'Zinc',
+        }
+      ]
+    }
+  ];
+
+  public revokeProxy() {
+    console.log('revokeProxy');
+  }
 }

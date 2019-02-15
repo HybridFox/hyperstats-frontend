@@ -2,6 +2,9 @@
     [title]="'PAGE.PROXIES.TITLE' | translate"
 ></app-page-title>
 <div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-8-12">
+        <router-outlet></router-outlet>
+    </div>
     <div class="l-grid__col-4-12">
         <div class="m-card--primary">
             <button class="a-button--primary a-button-outline has-icon-after" routerLink="new">
@@ -11,8 +14,5 @@
                 {{ 'PAGE.PROXIES.DESCRIPTION' | translate }}
             </p>
         </div>
-    </div>
-    <div class="l-grid__col-8-12">
-        <router-outlet></router-outlet>
     </div>
 </div>

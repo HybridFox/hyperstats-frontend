@@ -1,5 +1,38 @@
-<div class="m-card--primary u-margin-bottom-large">
-    <div *ngIf="!proxyId" class="m-card__placeholder">
+<div *ngIf="!proxies" class="m-card--primary u-margin-bottom-large">
+    <div class="m-card__placeholder">
         <img src="/assets/images/choose.svg" alt="Choose image">
+    </div>
+</div>
+<div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxies">
+    <app-sub-section-title
+        title={{proxy?.name}}
+    >
+        <div action>
+            <button class="a-button--link a-button--small" (click)="revokeProxy()">Revoke this proxy</button>
+        </div>
+    </app-sub-section-title>
+    <div class="a-table-wrapper">
+        <form>
+            <table class="a-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>2017</th>
+                        <th>2018</th>
+                        <th>2019</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let type of proxy.types">
+                        <td>{{type.name}}</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
     </div>
 </div>
