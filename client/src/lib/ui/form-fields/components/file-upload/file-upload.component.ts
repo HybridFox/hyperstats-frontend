@@ -29,7 +29,6 @@ export class FileUploadComponent implements OnDestroy, OnInit {
     ) {}
 
     public ngOnInit() {
-        console.log(this.control);
         this.formGroup = createFileUploadControl();
         this.formGroup.valueChanges
             .pipe(takeUntil(this.componentDestroyed$))
@@ -57,5 +56,6 @@ export class FileUploadComponent implements OnDestroy, OnInit {
                     }
                 });
         }
+        return;
     }
 }
