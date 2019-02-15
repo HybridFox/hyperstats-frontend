@@ -13,7 +13,6 @@ import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../st
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { recyclingPartnersToSelectOptions } from './select.helpers';
-import { AssetsRepository } from '@api/assets';
 import { FormHelper } from '@helpers/form.helper';
 
 @Component({
@@ -39,7 +38,6 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
         private router: Router,
         private toastrService: ToastrService,
         private translateService: TranslateService,
-        private assetsRepository: AssetsRepository
     ) {}
 
     public ngOnInit() {
@@ -206,9 +204,5 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
                 this.process = process;
             });
         this.duplicateProcessId = null;
-    }
-
-    public uploadFile(file) {
-        this.assetsRepository.upload(file).toPromise();
     }
 }

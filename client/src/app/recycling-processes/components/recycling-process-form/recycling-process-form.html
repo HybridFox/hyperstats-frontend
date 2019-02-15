@@ -64,13 +64,11 @@
             <app-file-upload
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
                 class="u-margin-bottom-x-large"
-                (upload)="uploadFile($event)"
             ></app-file-upload>
             <app-file-upload
                 [title]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
                 [description]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate"
                 class="u-margin-bottom-x-large"
-                (upload)="uploadFile($event)"
             ></app-file-upload>
         </div>
         <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">

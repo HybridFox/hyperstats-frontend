@@ -5,6 +5,8 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
+import { AssetsRepository } from '@api/assets';
+import { createFileUploadControl } from '@ui/form-fields/components/file-upload/file-upload.helper';
 
 @Component({
     selector: 'app-recycling-process-form',
@@ -29,6 +31,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
     constructor(
         private formBuilder: FormBuilder,
         private translateService: TranslateService,
+        private assetsRepository: AssetsRepository
     ) {}
 
     public ngOnChanges() {
@@ -84,7 +87,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
         methodOfProcessing: '',
         qualitativeDescription: {
             text: '',
-            asset: ''
+            asset: undefined
         },
         schematicOverview: ''
     }): FormGroup {
@@ -96,7 +99,8 @@ export class RecyclingProcessFormComponent implements OnChanges {
             methodOfProcessing: [step.methodOfProcessing, Validators.required],
             qualitativeDescription: this.formBuilder.group({
                 text: [step.qualitativeDescription.text, Validators.required],
-                asset: [step.qualitativeDescription.asset]
+                // asset: [step.qualitativeDescription.asset]
+                asset: createFileUploadControl(step.qualitativeDescription.asset)
             }),
             schematicOverview: [step.schematicOverview],
         });

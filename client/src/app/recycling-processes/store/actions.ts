@@ -8,6 +8,7 @@ import { Handler } from '@store/handler';
 
 import { RecyclingProcessesRepository } from './repository';
 import { ACTIONS } from './action-types';
+import { AssetsRepository } from '@api/assets';
 
 @Injectable()
 export class RecyclingProcessesActions {
@@ -15,6 +16,7 @@ export class RecyclingProcessesActions {
     private handler: Handler,
     private entitiesActions: EntitiesActions,
     private recyclingProcessesRepository: RecyclingProcessesRepository,
+    private assetsRepository: AssetsRepository,
   ) {}
 
   public fetchAll(): Observable<any> {
