@@ -182,6 +182,14 @@ module.exports = (router) => {
 	 *   ReportMeta:
 	 *     type: object
 	 *     properties:
+	 *       approvedCompanies:
+	 *         type: array
+	 *         items:
+	 *           type: string
+	 *           description: object-id of the company
+	 *       reportingCompany:
+	 *         type: string
+	 *         description: object-id of the company
 	 *       created:
 	 *         type: string
 	 *         format: date-time
