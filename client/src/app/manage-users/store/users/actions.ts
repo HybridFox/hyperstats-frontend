@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of } from 'rxjs';
 import { tap, finalize, catchError } from 'rxjs/operators';
 
 import { Handler } from '@store/handler';
@@ -7,6 +7,9 @@ import { EntitiesActions } from '@store/entities';
 
 import { UsersRepository } from './repository';
 import { ACTIONS } from './action-types';
+import { CompanyType } from 'src/app/manage-companies/store/companies/types';
+import path from 'ramda/es/path';
+import prop from 'ramda/es/prop';
 
 @Injectable()
 export class UsersActions {
@@ -16,10 +19,17 @@ export class UsersActions {
         private usersRepository: UsersRepository,
     ) { }
 
-    public fetchAll(): Observable<any> {
+    public fetchByTypes(types: CompanyType[], admin: boolean): Observable<any> {
+        if (!prop('length')(types) && !admin) {
+            return of(this.handler.dispatchSuccess(ACTIONS.OVERVIEW.FETCH, {
+                payload: [],
+                pagination: null
+            }));
+        }
+
         this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
-        return this.usersRepository.fetchAll()
+        return this.usersRepository.fetchByTypes(types, admin)
             .pipe(
                 catchError((error) => {
                     this.handler.dispatchError(ACTIONS.OVERVIEW.FETCH, {
@@ -59,6 +69,19 @@ export class UsersActions {
                 }),
                 finalize(() => {
                     this.handler.dispatchDone(ACTIONS.DETAIL.FETCH);
+                })
+            );
+    }
+
+    public updateUser(user: any): Observable<any> {
+        this.handler.dispatchStart(ACTIONS.DETAIL.UPDATE);
+
+        return this.usersRepository.updateUser(user)
+            .pipe(
+                tap((response) => {
+                    this.handler.dispatchSuccess(ACTIONS.DETAIL.UPDATE, {
+                        payload: this.entitiesActions.patch('users', response._id, response),
+                    });
                 })
             );
     }
