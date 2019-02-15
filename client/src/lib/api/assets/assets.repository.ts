@@ -34,4 +34,11 @@ export class AssetsRepository {
         return event.body;
     }
   }
+
+  public downloadFile(fileId) {
+    const url = this.apiConfig.baseUrl('/assets') + '/' + fileId;
+
+    return this.http
+      .get(url, { responseType: 'blob' });
+  }
 }

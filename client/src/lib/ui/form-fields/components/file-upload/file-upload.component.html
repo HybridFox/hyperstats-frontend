@@ -31,7 +31,12 @@
                 <i class="a-icon--file"></i>
             </div>
             <div class="l-grid__col-10-12">
-                <span class="m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>
+                <div *ngIf="!formGroup?.value?.originalname">
+                    <a (click)="getFile()" class="m-file-upload__upload m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>
+                </div>
+                <div *ngIf="formGroup?.value?.originalname">
+                    <span class="m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>
+                </div>
                 <progress max="100" value="{{ uploadProcess || 100 }}" class="m-file-upload__progress__bar"></progress>
             </div>
             <div class="l-grid__col-1-12" *ngIf="uploadProcess">

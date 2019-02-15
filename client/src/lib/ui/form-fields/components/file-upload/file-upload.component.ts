@@ -58,4 +58,13 @@ export class FileUploadComponent implements OnDestroy, OnInit {
         }
         return;
     }
+
+    public getFile() {
+        this.assetsRepository
+            .downloadFile(this.control.value.id)
+            .toPromise()
+            .then((file) => {
+                console.log(file);
+            });
+    }
 }
