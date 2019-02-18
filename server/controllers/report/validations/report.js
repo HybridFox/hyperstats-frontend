@@ -4,15 +4,15 @@ const REPORT_STATUS = require("../helpers/const").REPORT_STATUS;
 
 const schema = joi.object().keys({
 	data: joi.object().keys({
-		information: {
+		information: joi.object().keys({
 			reportingYear: joi.number().required(),
 			recyclingProcess: joi.string().required(),
 			name: joi.string().required(),
 			receiver: joi.string().required(),
-		},
+		}),
 		inputFraction: joi.array().items(joi.object().keys({
 			siteRef: joi.string(),
-			data: {
+			data: joi.object().keys({
 				processChemistry: joi.string().required(),
 				weightInput: joi.number().required(),
 				shareOfBatteryType: joi.number().required(),
@@ -29,7 +29,7 @@ const schema = joi.object().keys({
 				descriptionOfMethodologyChemicalComposition: joi.string().required(),
 				massOfExternalJacket: joi.number().required(),
 				massOfOuterCasings: joi.number().required(),
-			},
+			}),
 		})),
 		additives: joi.array().items(joi.object().keys({
 			type: joi.string().required(),
@@ -50,15 +50,15 @@ const schema = joi.object().keys({
 				shareOutputFraction: joi.string().required(),
 			})),
 		})),
-		recyclingEfficiency: {
+		recyclingEfficiency: joi.object().keys({
 			calculatedEfficiency: joi.number().required(),
-		},
-		additionalInformation: {
+		}),
+		additionalInformation: joi.object().keys({
 			files: joi.array().items(joi.object().keys({
 				type: joi.string(),
 			})),
 			additionalInformation: joi.string().required(),
-		},
+		}),
 	}),
 	meta: joi.object().keys({
 		approvedCompanies: joi.array().items(joi.string()).optional(),
