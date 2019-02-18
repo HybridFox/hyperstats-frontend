@@ -69,6 +69,7 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
+						console.log(body);
 						expect(body).to.be.an("object");
 						expect(omit(["__v"], body)).to.deep.equal({
 							"_id": `${mockRecyclingProcesses[0]._id}`,
@@ -82,10 +83,20 @@ describe("Integration", () => {
 										"methodOfProcessing": "methodOfProcessing 1",
 										"precedingStep": "precedingStep 1",
 										"qualitativeDescription": {
-											"asset": " qualitativeDescription asset 1",
+											"asset": {
+												"id": "",
+												"mimetype": "",
+												"uploadDate": "",
+												"originalname": "",
+											},
 											"text": "qualitativeDescription text 1",
 										},
-										"schematicOverview": "schematicOverview 1",
+										"schematicOverview": {
+											"id": "",
+											"mimetype": "",
+											"uploadDate": "",
+											"originalname": "",
+										},
 										"site": "site 1",
 									},
 								],
