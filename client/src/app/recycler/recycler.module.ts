@@ -7,12 +7,8 @@ import { FormFieldsModule } from '@ui/form-fields';
 
 import { RecyclerRoutingModule } from './recycler-routing.module';
 
-import { Pages } from './pages';
-
 @NgModule({
-  declarations: [
-    Pages,
-  ],
+  declarations: [],
   entryComponents: [],
   imports: [
     RecyclerRoutingModule,
