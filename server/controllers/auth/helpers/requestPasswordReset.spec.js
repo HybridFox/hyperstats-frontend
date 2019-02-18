@@ -32,7 +32,7 @@ describe("Request password reset", () => {
 	});
 
 	it("Should fail when using an invalid email", () => {
-		return expect(requestPasswordReset("invalid-email@example.com")).to.be.rejectedWith(Error);
+		return expect(requestPasswordReset("invalid-email@example.com")).to.be.rejectedWith("ITEM_NOT_FOUND");
 	});
 
 	it("Should prepare a password reset when a valid email is passed", async() => {
