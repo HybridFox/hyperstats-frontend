@@ -268,6 +268,27 @@ module.exports = (router) => {
 			reportController.create
 		);
 
+	/**
+	 * @swagger
+	 * /api/reports/{id}:
+	 *   get:
+	 *     description: get a single report
+	 *     tags:
+	 *       - report
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         type: string
+	 *         required: true
+	 *     responses:
+	 *       201:
+	 *         description: Report
+	 *         schema:
+	 *           $ref: '#/definitions/ReportResponse'
+	 */
+
 	router.route("/reports/:id")
 		.get(
 			dataMiddleware.copy,
