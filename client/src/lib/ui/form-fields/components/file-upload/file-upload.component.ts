@@ -21,6 +21,7 @@ export class FileUploadComponent implements OnDestroy, OnInit {
 
     public formGroup: FormGroup;
     public uploadProcess: string;
+    public fileUrl;
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -60,11 +61,6 @@ export class FileUploadComponent implements OnDestroy, OnInit {
     }
 
     public getFile() {
-        this.assetsRepository
-            .downloadFile(this.control.value.id)
-            .toPromise()
-            .then((file) => {
-                console.log(file);
-            });
+        this.fileUrl = this.assetsRepository.getFileURL(this.control.value.id);
     }
 }

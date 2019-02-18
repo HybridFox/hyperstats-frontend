@@ -32,7 +32,7 @@
             </div>
             <div class="l-grid__col-10-12">
                 <div *ngIf="!formGroup?.value?.originalname">
-                    <a (click)="getFile()" class="m-file-upload__upload m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>
+                    <a href="{{ fileUrl || '#' }}" (click)="getFile()" class="m-file-upload__upload m-file-upload__progress__file-name" download>{{ control?.value?.originalname }}</a>
                 </div>
                 <div *ngIf="formGroup?.value?.originalname">
                     <span class="m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>

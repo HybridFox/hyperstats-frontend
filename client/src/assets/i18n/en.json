@@ -32,7 +32,6 @@
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
-            "DUPLICATE-PROCESS": "Duplicate process",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
             "DRAGANDDROP": "Drag files here or",
@@ -133,7 +132,7 @@
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
             "LABELS": {
-                "DESCRIPTION": "Choose a description for this recycling step",
+                "DESCRIPTION": "Choose a name for this recycling step",
                 "DESCRIPTION-DESCRIPTION": "This is the identifier you typically use in your organisation for this recycling step. Take something that everyone in your organisation understands",
                 "NAME": "Choose a name for this recycling process",
                 "PRECEDING-STEP": "If any, choose a preceding step",
@@ -317,7 +316,7 @@
                 "METHODOLOG-CHEMICAL": "Description of methodology to determine the share of different types of waste battery or accumulator present in an input fraction",
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
                 "PACKAGING-CASING": "Packaging material / outer casing",
-                "PROCESS-CHEMESTRY": "Process chemistry",
+                "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
                 "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",

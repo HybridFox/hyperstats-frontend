@@ -35,10 +35,9 @@ export class AssetsRepository {
     }
   }
 
-  public downloadFile(fileId) {
+  public getFileURL(fileId) {
     const url = this.apiConfig.baseUrl('/assets') + '/' + fileId;
 
-    return this.http
-      .get(url, { responseType: 'blob' });
+    return url;
   }
 }

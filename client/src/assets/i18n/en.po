@@ -345,7 +345,7 @@ msgstr ""
 "information regarding the recycling process."
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
-msgstr "Choose a description for this recycling step"
+msgstr "Choose a name for this recycling step"
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
 msgstr ""
