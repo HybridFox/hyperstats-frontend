@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -19,9 +19,11 @@ export class FileUploadComponent implements OnDestroy, OnInit {
     @Input() multiple: boolean;
     @Input() control: FormControl = new FormControl('');
 
+    @Output() public upload: EventEmitter<boolean> = new EventEmitter<boolean>();
+
     public formGroup: FormGroup;
-    public uploadProcess: string;
-    public fileUrl;
+    public uploadProcess: number;
+    public fileUrl: string;
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 

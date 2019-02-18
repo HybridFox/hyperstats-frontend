@@ -47,7 +47,7 @@
             <app-select-input
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.RECYCLING-SITE-OWNER' | translate"
                 [control]="step.value.get('site')"
-                [options]="(partnerOptions$ | async)"
+                [options]="(recyclingPartners)"
                 class="u-margin-bottom-large"
             ></app-select-input>
             <app-select-input

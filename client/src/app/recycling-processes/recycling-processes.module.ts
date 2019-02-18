@@ -10,15 +10,13 @@ import { recyclingProcessesReducer } from './store/reducers';
 import { RecylingProcessesServices } from './store';
 
 import { ReportsApiModule } from '@api/reports';
-import { AssetsApiModule } from '@api/assets';
 import { FormFieldsModule } from '@ui/form-fields';
+import { AssetsApiModule } from '@api/assets';
 
 import { Pages } from './pages';
+import { Components } from './components';
 import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
 import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
-
-import { Components } from './components';
-import { RecyclingProcessesComponent } from './recycling-processes.component';
 
 @NgModule({
   imports: [
@@ -28,14 +26,13 @@ import { RecyclingProcessesComponent } from './recycling-processes.component';
     ReportsApiModule,
     FormFieldsModule,
     RecyclingPartnersModule,
-    AssetsApiModule
+    AssetsApiModule,
   ],
   providers: [
     RecylingProcessesServices,
   ],
   declarations: [
     Pages,
-    RecyclingProcessesComponent,
     Components
   ],
 })

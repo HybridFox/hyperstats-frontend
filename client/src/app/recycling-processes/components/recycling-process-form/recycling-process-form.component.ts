@@ -1,15 +1,14 @@
-import { Component, OnChanges, Output, Input, EventEmitter } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormArray, FormControl } from '@angular/forms';
-import { prop, pathOr, omit } from 'ramda';
-import { METHODS_OF_PROCESSING } from 'src/lib/constants';
-import * as uuid from 'uuid';
+import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
 import { createFileUploadControl } from '@ui/form-fields/components/file-upload/file-upload.helper';
-import { Observable } from 'rxjs';
-import { RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
-import { recyclingPartnersToSelectOptions } from './select.helpers';
-import { select$ } from '@angular-redux/store';
+import { omit, prop, pathOr } from 'ramda';
+
+import { METHODS_OF_PROCESSING } from 'src/lib/constants';
+import * as uuid from 'uuid';
+import { Toggle } from './recycling-process.interface';
+
 
 @Component({
     selector: 'app-recycling-process-form',
@@ -17,18 +16,12 @@ import { select$ } from '@angular-redux/store';
 })
 
 export class RecyclingProcessFormComponent implements OnChanges {
-    @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
     @Input() public recyclingProcess: any;
+    @Input() public recyclingPartners: any;
 
     @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
-    @Output() public toggleActivation: EventEmitter<{
-        id: string,
-        isActivated: boolean
-    }> = new EventEmitter<{
-        id: string,
-        isActivated: boolean
-    }>();
+    @Output() public toggleActivation: EventEmitter<Toggle> = new EventEmitter<Toggle>();
     @Output() public duplicate: EventEmitter<string> = new EventEmitter<string>();
 
     public recyclingProcessForm: any;

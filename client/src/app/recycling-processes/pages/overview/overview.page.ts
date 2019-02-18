@@ -1,17 +1,15 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { select$ } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
-import { RecyclingProcessesActions, RecyclingProcessesSelectors } from './store';
-import { processToMenuItemObservableHandler } from './recycling-processes.helper';
+import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../store';
+import { processToMenuItemObservableHandler } from './select.helpers';
 
 @Component({
-  selector: 'app-recycling-processes',
-  templateUrl: './recycling-processes.component.html',
+  templateUrl: './overview.page.html',
 })
-
-export class RecyclingProcessesComponent implements OnInit, OnDestroy {
+export class OverviewPageComponent implements OnInit {
   @select$(RecyclingProcessesSelectors.list.result, processToMenuItemObservableHandler) public $processMenuItems: Observable<any[]>;
 
   public menuItems: MenuItem[] = [];
@@ -26,7 +24,7 @@ export class RecyclingProcessesComponent implements OnInit, OnDestroy {
     this.recyclingProcessesActions.fetchAll().toPromise();
   }
 
-  ngOnDestroy() {
+  ngOnDesroy() {
     this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
   }

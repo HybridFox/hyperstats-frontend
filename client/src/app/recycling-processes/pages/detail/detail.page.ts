@@ -13,12 +13,14 @@ import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../st
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { FormHelper } from '@helpers/form.helper';
+import { recyclingPartnersToSelectOptions } from './select.helpers';
 
 @Component({
-  templateUrl: './recycling-process.page.html',
+  templateUrl: './detail.page.html',
 })
-export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
+export class DetailPageComponent implements OnInit, OnDestroy {
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
+    @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partners$: Observable<any[]>;
 
     public recyclingProcessForm: any;
     public process: any;
