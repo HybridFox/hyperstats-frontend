@@ -28,7 +28,7 @@ export class CodesService {
   }
 
   public years() {
-    return Array.from(new Array(100).keys()).map(val => ({
+    return Array((new Date()).getFullYear() - 2016 + 1).fill(0).map((_, idx) => 2016 + idx).map(val => ({
       label: val.toString(),
       value: val.toString()
     }));
