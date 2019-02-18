@@ -1,0 +1,5 @@
+export const TYPE = 'NEW_REPORT';
+
+export const ACTIONS = {
+  FETCH_RECYCLINGPROCESSES: `${TYPE}/FETCH_RECYCLINGPROCESSES`,
+};
