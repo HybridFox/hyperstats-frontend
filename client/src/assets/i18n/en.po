@@ -89,6 +89,9 @@ msgstr "Disable"
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
 
+msgid "GENERAL##LABELS##DUPLICATE-PROCESS"
+msgstr "Duplicate process"
+
 msgid "GENERAL##LABELS##DUPLICATE-STEP"
 msgstr "Duplicate step"
 
