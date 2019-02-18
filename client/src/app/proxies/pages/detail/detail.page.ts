@@ -10,24 +10,15 @@ export class DetailPageComponent  {
       name: 'Bebat VZW',
       types: [
         {
-          name: 'Alkaline',
+          name: 'Alkaline - Nickel Metal',
+          multiple: false,
         },
         {
-          name: 'Zinc',
+          name: 'Zinc Carbon',
+          multiple: true,
         }
       ]
     },
-    {
-      name: 'Stibat vzw',
-      types: [
-        {
-          name: 'Alkaline',
-        },
-        {
-          name: 'Zinc',
-        }
-      ]
-    }
   ];
 
   public revokeProxy() {

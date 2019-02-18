@@ -5,6 +5,7 @@
 </div>
 <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxies">
     <app-sub-section-title
+        class="p-proxies-proxy__title"
         title={{proxy?.name}}
     >
         <div action>
@@ -20,17 +21,79 @@
                         <th>2017</th>
                         <th>2018</th>
                         <th>2019</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let type of proxy.types">
-                        <td>{{type.name}}</td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td><input type="checkbox"></td>
-                        <td></td>
-                    </tr>
+                    <ng-container *ngFor="let type of proxy.types">
+                        <ng-template [ngIf]="!type.multiple" [ngIfElse]="multipleTypes">
+                            <tr class="a-table__row--header">
+                                <td>{{type.name}}</td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template #multipleTypes>
+                            <tr class="a-table__row--header">
+                                <td>{{type.name}}</td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                            </tr>
+                            <tr class="a-table__row--small">
+                                <td>Rapport 1</td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr class="a-table__row--small">
+                                <td>Rapport 2</td>
+                                <td>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr class="a-table__row--small">
+                                <td>Rapport 3</td>
+                                <td>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr class="a-table__row--small">
+                                <td>Rapport 4</td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <app-checkbox-input></app-checkbox-input>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </ng-container>
                 </tbody>
             </table>
         </form>

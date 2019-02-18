@@ -4,7 +4,5 @@ import { Component } from '@angular/core';
   templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent {
-
-  constructor(
-  ) {}
+  constructor() {  }
 }
