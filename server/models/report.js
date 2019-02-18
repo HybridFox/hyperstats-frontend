@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const REPORT_STATUS = require("../controllers/report/helpers/const").REPORT_STATUS;
 
 const ReportSchema = mongoose.Schema({
 	data: {
@@ -152,6 +153,15 @@ const ReportSchema = mongoose.Schema({
 		},
 	},
 	meta: {
+		approvedCompanies: [{
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Company",
+		}],
+		reportingCompany: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Company",
+			required: true,
+		},
 		created: {
 			type: Date,
 			required: true,
@@ -167,11 +177,9 @@ const ReportSchema = mongoose.Schema({
 			default: false,
 		},
 		status: {
-			type: {
-				type: String,
-				enum: ["SAVED", "FILED"],
-				default: "SAVED",
-			},
+			type: String,
+			enum: REPORT_STATUS,
+			default: "SAVED",
 		},
 	},
 });
