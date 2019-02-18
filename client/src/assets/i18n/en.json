@@ -154,6 +154,7 @@
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
+            "LOADING": "Registering",
             "VERIFY-EMAIL": "An email has been send to you"
         },
         "REPORTS": {

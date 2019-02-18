@@ -403,6 +403,9 @@ msgstr "Recycling Step {{ key }}"
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr "Recycling Processes"
 
+msgid "PAGE##REGISTER##LOADING"
+msgstr "Registering"
+
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr "An email has been send to you"
 

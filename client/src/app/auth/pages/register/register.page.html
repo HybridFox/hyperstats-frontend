@@ -1,4 +1,4 @@
-<div *ngIf="!registerSucceeded">
+<div *ngIf="!registerSucceeded && !loadingRegister">
     <h1 class="p-auth__title">{{ 'GENERAL.LABELS.WELCOME' | translate }}</h1>
     <form [formGroup]="registerForm" (ngSubmit)="submit()">
         <app-text-input
@@ -35,6 +35,11 @@
         <button type="submit" [disabled]="!registerForm.valid" class="a-button a-button--primary a-button--small u-margin-right">{{ 'GENERAL.LABELS.REGISTER' | translate }}</button>
         <a [routerLink]="['../', 'login']" class="a-link">{{ 'GENERAL.LABELS.LOGIN' | translate }}</a>
     </form>
+</div>
+
+<div *ngIf="loadingRegister && !registerSucceeded" class="u-align-center">
+    <img src="./assets/images/mail_loading.svg" alt="Mail loading" class="p-auth__visual">
+    <h1 class="p-auth__title">{{ 'PAGE.REGISTER.LOADING' | translate }}</h1>
 </div>
 
 <div *ngIf="registerSucceeded" class="u-align-center">

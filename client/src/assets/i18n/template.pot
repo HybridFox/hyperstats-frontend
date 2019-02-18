@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-13T11:04:54.576Z\n"
-"PO-Revision-Date: 2019-02-13T11:04:54.577Z\n"
+"POT-Creation-Date: 2019-02-18T09:25:47.302Z\n"
+"PO-Revision-Date: 2019-02-18T09:25:47.302Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -351,6 +351,9 @@ msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
+msgstr ""
+
+msgid "PAGE##REGISTER##LOADING"
 msgstr ""
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
