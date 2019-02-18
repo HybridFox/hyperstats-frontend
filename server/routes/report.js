@@ -1,4 +1,5 @@
 const dataMiddleware = require("../middleware/data");
+const validationPresets = require("../helpers/validation/presets");
 const Errors = require("../helpers/errorHandler");
 const reportController = require("../controllers/report");
 const reportValidations = require("../controllers/report/validations");
@@ -265,5 +266,12 @@ module.exports = (router) => {
 			dataMiddleware.copy,
 			dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
 			reportController.create
+		);
+
+	router.route("/reports/:id")
+		.get(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			reportController.getOne
 		);
 };
