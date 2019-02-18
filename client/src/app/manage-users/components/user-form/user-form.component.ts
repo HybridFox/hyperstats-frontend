@@ -7,6 +7,7 @@ import { select } from '@angular-redux/store';
 import { UserInterface } from '@store/auth/auth.interface';
 import { Observable } from 'rxjs';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
     selector: 'app-user-form',
@@ -14,7 +15,7 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
 })
 export class UserFormComponent implements OnChanges {
     @Input() public user: any;
-    @Input() public companyOptions: any[];
+    @Input() public companyOptions: Option[];
 
     @Output() public save: EventEmitter<any> = new EventEmitter<any>();
     @Output() public toggleActivation: EventEmitter<boolean> = new EventEmitter<boolean>();

@@ -11,13 +11,14 @@ import { UserCompanyActions } from '../../store/companies/actions';
 import { UserCompanySelector } from '../../store/companies/selectors';
 import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { ToastrService } from 'ngx-toastr';
+import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
     templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
     @select(UserSelector.detail.result) public user$: Observable<any>;
-    @select$(UserCompanySelector.list.result, companiesToSelectOptions) public companyOptions$: Observable<any>;
+    @select$(UserCompanySelector.list.result, companiesToSelectOptions) public companyOptions$: Observable<Option>;
     @select(UserSelector.detail.loading) public loading$: Observable<boolean>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
