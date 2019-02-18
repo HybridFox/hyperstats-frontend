@@ -1,0 +1,93 @@
+<h1>{{ 'PAGE.REPORTS.TITLE' | translate}}</h1>
+
+<div class="l-grid__row l-grid--with-margins u-margin-bottom">
+    <div class="l-grid__col-3-12"></div>
+    <div class="l-grid__col-9-12">
+        <div class="m-filter u-pull-right">
+            <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
+        </div>
+        <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
+    </div>
+</div>
+
+<div class="l-grid__row l-grid--with-margins">
+    <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
+        <app-vertical-menu [menuItems]="menuItems"></app-vertical-menu>
+    </div>
+    <div class="l-grid__col-9-12 m-card--primary">
+        <ul>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                    <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                    <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                    <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                    <button class="a-button--success a-button-outline">{{ 'PAGE.REPORTS.FILLED' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                    <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+            <li class="m-report">
+                <div class="m-report__name">Alkaline - Nickel Metal</div>
+                <div class="m-report__year">2018</div>
+                <div class="m-report__edited-on">Edited on: 21/08/2018</div>
+                <div class="m-report__actions">
+                    <a href="" class="a-link">View</a>
+                    <a href="" class="a-link">Export</a>
+                </div>
+                <div class="m-report__state">
+                    <button class="a-button--danger a-button-outline">{{ 'PAGE.REPORTS.DRAFT' | translate}}</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
