@@ -263,6 +263,9 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr ""
 
+msgid "PAGE##ADMIN##FILTERS"
+msgstr ""
+
 msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
 msgstr ""
 

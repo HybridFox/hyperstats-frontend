@@ -297,6 +297,9 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
+msgid "PAGE##ADMIN##FILTERS"
+msgstr "Filters:"
+
 msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
 msgstr "Contact Person"
 
