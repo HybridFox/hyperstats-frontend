@@ -3,7 +3,7 @@ const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
 const createObjectId = require("mongoose").Types.ObjectId;
 const createReport = require("./create");
-const NEW_REPORT = require("./const").NEW_REPORT;
+const NEW_REPORT = require("../../../test/mocks/report").NEW_REPORT;
 
 should();
 use(chaiAsPromised);
