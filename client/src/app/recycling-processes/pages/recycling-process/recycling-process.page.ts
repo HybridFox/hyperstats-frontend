@@ -162,14 +162,16 @@ export class RecyclingProcessPageComponent implements OnInit, OnDestroy {
             this.processSubscription.unsubscribe();
         }
 
-        let id;
-        if (this.recyclingProcessId === 'new' && (this.process && prop('_id', this.process) === this.duplicateProcessId)) {
-            id = this.duplicateProcessId;
-        } else if (this.recyclingProcessId === 'new') {
+        const duplicate = (this.process && prop('_id', this.process) === this.duplicateProcessId);
+        let id = this.recyclingProcessId;
+
+        if (this.recyclingProcessId === 'new' && !duplicate) {
             this.process = null;
             return this.process;
-        } else {
-            id = this.recyclingProcessId;
+        }
+
+        if (this.recyclingProcessId === 'new' && duplicate) {
+            id = this.duplicateProcessId;
         }
         this.processActions.fetchById(id).toPromise();
         this.processSubscription = this.$process

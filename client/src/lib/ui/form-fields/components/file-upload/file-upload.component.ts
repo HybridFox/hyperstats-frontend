@@ -44,20 +44,21 @@ export class FileUploadComponent implements OnDestroy, OnInit {
     }
 
     public onUpload(event) {
-        if (event.target.files.length > 0) {
-            const formData: FormData = new FormData();
-            formData.append('file', event.target.files[0]);
-            this.assetsRepository
-                .upload(formData)
-                .subscribe(fileResponse => {
-                    if (fileResponse && fileResponse.constructor === Number) {
-                        this.uploadProcess = fileResponse;
-                    } else if (fileResponse) {
-                        this.formGroup.patchValue(fileResponse);
-                    }
-                });
+        if (event.target.files.length === 0) {
+            return;
         }
-        return;
+
+        const formData: FormData = new FormData();
+        formData.append('file', event.target.files[0]);
+        this.assetsRepository
+            .upload(formData)
+            .subscribe(fileResponse => {
+                if (fileResponse && fileResponse.constructor === Number) {
+                    this.uploadProcess = fileResponse;
+                } else if (fileResponse) {
+                    this.formGroup.patchValue(fileResponse);
+                }
+            });
     }
 
     public getFile() {

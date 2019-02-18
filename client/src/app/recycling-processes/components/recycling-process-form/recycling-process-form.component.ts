@@ -20,10 +20,16 @@ export class RecyclingProcessFormComponent implements OnChanges {
     @select$(RecyclingPartnerSelector.list.result, recyclingPartnersToSelectOptions) public partnerOptions$: Observable<any[]>;
     @Input() public recyclingProcess: any;
 
-    @Output() public submit: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
-    @Output() public toggleActivation: EventEmitter<any> = new EventEmitter<any>();
-    @Output() public duplicate: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public toggleActivation: EventEmitter<{
+        id: string,
+        isActivated: boolean
+    }> = new EventEmitter<{
+        id: string,
+        isActivated: boolean
+    }>();
+    @Output() public duplicate: EventEmitter<string> = new EventEmitter<string>();
 
     public recyclingProcessForm: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
@@ -59,12 +65,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
     }
 
     public toggleActivationForm() {
-        if (this.isActivated === true) {
-            this.isActivated = false;
-        } else {
-            this.isActivated = true;
-        }
-
+        this.isActivated = !this.isActivated;
         this.toggleActivation.emit({id: this.recyclingProcess._id, isActivated: this.isActivated});
     }
 
@@ -146,9 +147,5 @@ export class RecyclingProcessFormComponent implements OnChanges {
 
     public newStep(): void {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
-    }
-
-    public onUpload(file) {
-        console.log(file);
     }
 }

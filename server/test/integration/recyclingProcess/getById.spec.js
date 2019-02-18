@@ -69,7 +69,6 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
-						console.log(body);
 						expect(body).to.be.an("object");
 						expect(omit(["__v"], body)).to.deep.equal({
 							"_id": `${mockRecyclingProcesses[0]._id}`,
