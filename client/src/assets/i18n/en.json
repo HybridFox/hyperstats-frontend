@@ -185,6 +185,9 @@
             "TITLE": "Success! Your registration is now complete, please login to continue"
         }
     },
+    "PROXIES": {
+        "REVOKEPROXY": "Revoke this proxy"
+    },
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {

@@ -185,6 +185,9 @@
 			"TITLE": ""
 		}
 	},
+	"PROXIES": {
+		"REVOKEPROXY": ""
+	},
 	"TOAST": {
 		"ADMIN-FORGOT-PASSWORD": {
 			"SUCCESS": {
