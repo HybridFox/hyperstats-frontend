@@ -1,4 +1,5 @@
 const dataMiddleware = require("../middleware/data");
+const validationPresets = require("../helpers/validation/presets");
 const Errors = require("../helpers/errorHandler");
 const reportController = require("../controllers/report");
 const reportValidations = require("../controllers/report/validations");
@@ -266,5 +267,33 @@ module.exports = (router) => {
 			// TODO: enable this validation again when it's possible to save the report partially based on FILED or SAVED status
 			// dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
 			reportController.create
+		);
+
+	/**
+	 * @swagger
+	 * /api/reports/{id}:
+	 *   get:
+	 *     description: get a single report
+	 *     tags:
+	 *       - report
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         type: string
+	 *         required: true
+	 *     responses:
+	 *       201:
+	 *         description: Report
+	 *         schema:
+	 *           $ref: '#/definitions/ReportResponse'
+	 */
+
+	router.route("/reports/:id")
+		.get(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			reportController.getOne
 		);
 };
