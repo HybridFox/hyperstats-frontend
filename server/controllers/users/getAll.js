@@ -3,7 +3,7 @@ const ResponseHandler = require("./helpers/responseManager");
 
 module.exports = async(req, res, next) => {
 	try {
-		const data = req.data.query.type ? await Manager.getAllOfType(req.data.query.type) : await Manager.getAll();
+		const data = req.data.query["company-type"] ? await Manager.getAllOfType(req.data.query["company-type"], req.data.query.admin) : await Manager.getAll(req.data.query.admin);
 
 		const users = data.map((user) => {
 			return ResponseHandler.formatUser(user);

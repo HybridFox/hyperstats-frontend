@@ -2,7 +2,11 @@ const Joi = require("joi");
 const { schemas } = require("../../../helpers/validation");
 
 const schema = Joi.object().keys({
-	type: Joi.string().valid(["R", "RP", "CO"]).optional(),
+	"company-type": Joi.alternatives([
+		Joi.array().items(Joi.string().valid(["R", "RP", "CO"])),
+		Joi.string().valid(["R", "RP", "CO"]),
+	]).optional(),
+	"admin": Joi.string().optional(),
 });
 
 module.exports = {
