@@ -1,3 +1,5 @@
+// TODO: required values need to be fixed
+
 const mongoose = require("mongoose");
 const REPORT_STATUS = require("../controllers/report/helpers/const").REPORT_STATUS;
 
@@ -6,21 +8,21 @@ const ReportSchema = mongoose.Schema({
 		information: {
 			reportingYear: {
 				type: Number,
-				required: true,
+				// required: true,
 			},
 			recyclingProcess: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "RecyclingProcess",
-				required: true,
+				// required: true,
 			},
 			name: {
 				type: String,
-				required: true,
+				// required: true,
 			},
 			receiver: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "Company",
-				required: true,
+				// required: true,
 			},
 		},
 		inputFraction: [{
@@ -30,75 +32,75 @@ const ReportSchema = mongoose.Schema({
 			data: {
 				processChemistry: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				weightInput: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 				shareOfBatteryType: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 				weightBatteryType: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 				excessMaterialReceived: [{
 					impurities: {
 						type: Number,
-						required: true,
+						// required: true,
 					},
 					PackagingMaterial: {
 						type: Number,
-						required: true,
+						// required: true,
 					},
 				}],
 				elements: [{
 					element: {
 						type: String,
-						required: true,
+						// required: true,
 					},
 					mass: {
 						type: Number,
-						required: true,
+						// required: true,
 					},
 				}],
 				descriptionOfMethodologyShare: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				descriptionOfMethodologyChemicalComposition: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				massOfExternalJacket: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 				massOfOuterCasings: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 			},
 		}],
 		additives: [{
 			type: {
 				type: String,
-				required: true,
+				// required: true,
 			},
 			weight: {
 				type: Number,
-				required: true,
+				// required: true,
 			},
 			chemicalComposition: [{
 				element: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				weight: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 			}],
 		}],
@@ -109,34 +111,34 @@ const ReportSchema = mongoose.Schema({
 			data: [{
 				element: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				mass: {
 					type: Number,
-					required: true,
+					// required: true,
 				},
 				classification: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				replacedMaterial: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				elementCompound: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 				shareOutputFraction: {
 					type: String,
-					required: true,
+					// required: true,
 				},
 			}],
 		}],
 		recyclingEfficiency: {
 			calculatedEfficiency: {
 				type: Number,
-				required: true,
+				// required: true,
 			},
 		},
 		additionalInformation: {
@@ -148,7 +150,7 @@ const ReportSchema = mongoose.Schema({
 			}],
 			additionalInformation: {
 				type: String,
-				required: true,
+				// required: true,
 			},
 		},
 	},
@@ -160,16 +162,16 @@ const ReportSchema = mongoose.Schema({
 		reportingCompany: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Company",
-			required: true,
+			// required: true,
 		},
 		created: {
 			type: Date,
-			required: true,
+			// required: true,
 			default: Date.now,
 		},
 		lastUpdated: {
 			type: Date,
-			required: true,
+			// required: true,
 			default: Date.now,
 		},
 		deleted: {
