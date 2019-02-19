@@ -167,7 +167,15 @@ module.exports = (router) => {
 	 *       status:
 	 *         $ref: '#/definitions/ReportStatuses'
 	 *   ReportBody:
-	 *       $ref: '#/definitions/ReportData'
+	 *       type: object
+	 *       properties:
+	 *         data:
+	 *           $ref: '#/definitions/ReportData'
+	 *         meta:
+	 *           type: object
+	 *           properties:
+	 *             status:
+	 *               $ref: '#/definitions/ReportStatuses'
 	 *   ReportResponse:
 	 *     type: object
 	 *     properties:
@@ -261,6 +269,32 @@ module.exports = (router) => {
 			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
 			reportController.getOne
 		);
+
+	/**
+	 * @swagger
+	 * /api/reports/{id}:
+	 *   put:
+	 *     description: update a single report
+	 *     tags:
+	 *       - report
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         type: string
+	 *         required: true
+	 *       - in: body
+	 *         name: body
+	 *         required: true
+	 *         schema:
+	 *           $ref: '#/definitions/ReportBody'
+	 *     responses:
+	 *       201:
+	 *         description: Report
+	 *         schema:
+	 *           $ref: '#/definitions/ReportResponse'
+	 */
 
 	router.route("/reports/:id")
 		.put(
