@@ -2,7 +2,7 @@ const dataMiddleware = require("../middleware/data");
 const validationPresets = require("../helpers/validation/presets");
 const Errors = require("../helpers/errorHandler");
 const reportController = require("../controllers/report");
-const reportValidations = require("../controllers/report/validations");
+// const reportValidations = require("../controllers/report/validations");
 const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
@@ -23,9 +23,6 @@ module.exports = (router) => {
 	 *         type: string
 	 *       mass:
 	 *         type: number
-	 *     required:
-	 *      - element
-	 *      - mass
 	 *   ReportExcessMaterial:
 	 *     type: object
 	 *     properties:
@@ -33,9 +30,6 @@ module.exports = (router) => {
 	 *         type: number
 	 *       PackagingMaterial:
 	 *         type: number
-	 *     required:
-	 *      - impurities
-	 *      - PackagingMaterial
 	 *   ReportChemicalComposition:
 	 *     type: object
 	 *     properties:
@@ -43,9 +37,6 @@ module.exports = (router) => {
 	 *         type: string
 	 *       weight:
 	 *         type: number
-	 *     required:
-	 *      - element
-	 *      - weight
 	 *   ReportAdditive:
 	 *     type: object
 	 *     properties:
@@ -57,47 +48,38 @@ module.exports = (router) => {
 	 *         type: array
 	 *         items:
 	 *           $ref: '#/definitions/ReportChemicalComposition'
-	 *     required:
-	 *      - type
-	 *      - weight
 	 *   ReportInputFraction:
 	 *     type: object
 	 *     properties:
-	 *       processChemistry:
+	 *       siteRef:
 	 *         type: string
-	 *       weightInput:
-	 *         type: number
-	 *       shareOfBatteryType:
-	 *         type: number
-	 *       weightBatteryType:
-	 *         type: number
-	 *       excessMaterialReceived:
-	 *         type: array
-	 *         items:
-	 *           $ref: '#/definitions/ReportExcessMaterial'
-	 *       elements:
-	 *         type: array
-	 *         items:
-	 *           $ref: '#/definitions/ReportElement'
-	 *       descriptionOfMethodologyShare:
-	 *         type: string
-	 *       descriptionOfMethodologyChemicalComposition:
-	 *         type: string
-	 *       massOfExternalJacket:
-	 *         type: number
-	 *       massOfOuterCasings:
-	 *         type: number
-	 *     required:
-	 *       - processChemistry
-	 *       - weightInput
-	 *       - shareOfBatteryType
-	 *       - weightBatteryType
-	 *       - excessMaterialReceived
-	 *       - elements
-	 *       - descriptionOfMethodologyShare
-	 *       - descriptionOfMethodologyChemicalComposition
-	 *       - massOfExternalJacket
-	 *       - massOfOuterCasings
+	 *       data:
+	 *         type: object
+	 *         properties:
+	 *           processChemistry:
+	 *             type: string
+	 *           weightInput:
+	 *             type: number
+	 *           shareOfBatteryType:
+	 *             type: number
+	 *           weightBatteryType:
+	 *             type: number
+	 *           excessMaterialReceived:
+	 *             type: array
+	 *             items:
+	 *               $ref: '#/definitions/ReportExcessMaterial'
+	 *           elements:
+	 *             type: array
+	 *             items:
+	 *               $ref: '#/definitions/ReportElement'
+	 *           descriptionOfMethodologyShare:
+	 *             type: string
+	 *           descriptionOfMethodologyChemicalComposition:
+	 *             type: string
+	 *           massOfExternalJacket:
+	 *             type: number
+	 *           massOfOuterCasings:
+	 *             type: number
 	 *   ReportOutputFraction:
 	 *     type: object
 	 *     properties:
@@ -120,13 +102,6 @@ module.exports = (router) => {
 	 *               type: string
 	 *             shareOutputFraction:
 	 *               type: string
-	 *           required:
-	 *             - element
-	 *             - mass
-	 *             - classification
-	 *             - replacedMaterial
-	 *             - elementCompound
-	 *             - shareOutputFraction
 	 *   ReportData:
 	 *     type: object
 	 *     properties:
@@ -143,19 +118,14 @@ module.exports = (router) => {
 	 *           receiver:
 	 *             type: string
 	 *             description: object-id of the receiver (company)
-	 *         required:
-	 *           - reportingYear
-	 *           - recyclingProcess
-	 *           - name
-	 *           - receiver
 	 *       inputFraction:
 	 *         type: array
 	 *         items:
-	 *           $ref: '#/definitions/ReportAdditive'
+	 *           $ref: '#/definitions/ReportInputFraction'
 	 *       additives:
 	 *         type: array
 	 *         items:
-	 *           $ref: '#/definitions/ReportInputFraction'
+	 *           $ref: '#/definitions/ReportAdditive'
 	 *       outputFraction:
 	 *         type: array
 	 *         items:
@@ -164,9 +134,7 @@ module.exports = (router) => {
 	 *         type: object
 	 *         properties:
 	 *           calculatedEfficiency:
-	 *             type: object
-	 *         required:
-	 *           - calculatedEfficiency
+	 *             type: number
 	 *       additionalInformation:
 	 *         type: object
 	 *         properties:
@@ -177,9 +145,6 @@ module.exports = (router) => {
 	 *               description: object-id of the asset
 	 *           additionalInformation:
 	 *             type: string
-	 *     required:
-	 *       - information
-	 *       - recyclingEfficiency
 	 *   ReportMeta:
 	 *     type: object
 	 *     properties:
