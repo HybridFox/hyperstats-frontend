@@ -8,7 +8,6 @@ import { takeUntil } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { OutputFraction } from '../../../../reports.types';
-import { access } from 'fs';
 
 @Component({
  templateUrl: './output-fraction.page.html',
