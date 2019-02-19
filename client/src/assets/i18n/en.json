@@ -104,6 +104,9 @@
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
         },
+        "ADMIN": {
+            "FILTERS": "Filters:"
+        },
         "COMPANYINFORMATION": {
             "CONTACTPERSON": "Contact Person",
             "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
