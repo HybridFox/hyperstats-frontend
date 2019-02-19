@@ -261,4 +261,11 @@ module.exports = (router) => {
 			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
 			reportController.getOne
 		);
+
+	router.route("/reports/:id")
+		.put(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			reportController.update
+		);
 };
