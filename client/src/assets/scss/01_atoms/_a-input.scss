@@ -142,3 +142,13 @@
         margin-top: 0;
     }
 }
+
+.a-input__mass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .a-input__mass--percentage {
+        height: 30px;
+    }
+}

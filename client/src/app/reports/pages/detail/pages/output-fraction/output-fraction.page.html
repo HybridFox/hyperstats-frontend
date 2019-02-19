@@ -16,22 +16,15 @@
                     [options]="codesService.elements()"
                 ></app-select-input>
             </div>
-            <div class="l-grid__col-3-12">
-                <app-text-input
-                    suffix="%"
-                    [label]="'WIZARD.OUTPUT-FRACTION.LABELS.SHARE-OUTPUT-FRACTION' | translate"
-                    [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.ON-DRY-WEIGHT-BASIS' | translate"
-                    [control]="outputFraction.get('share')"
-                ></app-text-input>
-            </div>
-            <div class="l-grid__col-3-12">
-                <app-text-input
+            <div class="l-grid__col-6-12">
+                <app-mass-input
                     suffix="kg"
                     [label]="'WIZARD.OUTPUT-FRACTION.LABELS.MASS' | translate"
                     [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.ON-DRY-WEIGHT-BASIS' | translate"
                     [control]="outputFraction.get('mass')"
-                ></app-text-input>
-            </div>
+                    [totalWeight]="totalWeight"
+                ></app-mass-input>
+             </div>
         </div>
         <div class="l-grid__row l-grid--with-margins">
             <div class="l-grid__col-6-12">
