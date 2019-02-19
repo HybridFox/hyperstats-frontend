@@ -263,7 +263,8 @@ module.exports = (router) => {
 	router.route("/reports")
 		.post(
 			dataMiddleware.copy,
-			dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
+			// TODO: enable this validation again when it's possible to save the report partially based on FILED or SAVED status
+			// dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
 			reportController.create
 		);
 };
