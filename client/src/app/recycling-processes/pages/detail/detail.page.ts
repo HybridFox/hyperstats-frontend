@@ -142,7 +142,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    public remove() {
+    public removeForm() {
         if (this.recyclingProcessId === 'new') {
             return;
         }

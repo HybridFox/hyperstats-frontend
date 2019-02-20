@@ -7,9 +7,12 @@ const schema = Joi.object().keys({
 		email: Joi.string().required(),
 		lastname: Joi.string(),
 		firstname: Joi.string(),
+		company: Joi.any().optional(),
 	}),
 	meta: Joi.object().keys({
-		status: Joi.any(),
+		status: Joi.object().keys({
+			type: Joi.string().valid(["ACTIVATED", "DEACTIVATED"]).required(),
+		}).required(),
 		isAdmin: Joi.boolean(),
 		created: Joi.any(),
 		lastUpdated: Joi.any(),

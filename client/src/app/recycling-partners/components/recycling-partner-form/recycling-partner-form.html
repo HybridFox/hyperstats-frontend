@@ -126,13 +126,10 @@
             >
                 {{ 'GENERAL.LABELS.ENABLE' | translate }}
             </button>
-            <button
+            <app-delete-button
                 *ngIf="!!recyclingPartner?._id"
-                class="a-button--danger has-icon-after u-text-uppercase"
-                (click)="removeForm()"
-            >
-                {{ 'GENERAL.LABELS.REMOVE' | translate }}
-            </button>
+                (deleteFunction)="removeForm()"
+            ></app-delete-button>
         </div>
     </div>
 </div>
