@@ -69,7 +69,6 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
 
     const efficiency = (result[1] / result[0]) * 100;
     this.efficiency = parseFloat(efficiency.toFixed(2));
-
   }
 
   public ngOnInit() {
