@@ -11,17 +11,11 @@ export interface Information {
 }
 
 export interface InputFraction {
-    type: string;
-    weight: number;
-    chemicalComposition: ChemicalComposition;
+    sitRef: string;
+    data: InputFractionData;
 }
 
-interface ChemicalComposition {
-    element: string;
-    weight: number;
-}
-
-export interface Additives {
+export interface InputFractionData {
     processChemistry: string;
     weightInput: number;
     shareOfBatteryType: number;
@@ -34,9 +28,20 @@ export interface Additives {
     massOfOuterCasings: number;
 }
 
+interface ChemicalComposition {
+    element: string;
+    weight: number;
+}
+
+export interface Additives {
+    type: string;
+    weight: number;
+    chemicalComposition: ChemicalComposition;
+}
+
 interface ExcessMaterialReceived {
     impurities: number;
-    PackagingMaterial: number;
+    packagingMaterial: number;
 }
 
 interface AdditivesElements {
