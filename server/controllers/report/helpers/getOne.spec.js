@@ -1,10 +1,11 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const createObjectId = require("mongoose").Types.ObjectId;
-const { mockMongoose } = require("../../../test/mocks");
+const ResponseError = require("../../../helpers/errors/responseError");
 const createReport = require("./create");
 const getOneReport = require("./getOne");
-const NEW_REPORT = require("../../../test/mocks/report").NEW_REPORT;
+const { mockMongoose } = require("../../../test/mocks");
+const { NEW_REPORT } = require("../../../test/mocks/report");
 
 should();
 use(chaiAsPromised);
@@ -33,6 +34,13 @@ describe("Report", () => {
 
 			expect(fetchedReport).to.be.an("object");
 			expect(fetchedReport._id.toString()).to.equal(report._id.toString());
+		});
+
+		it("Should throw an error when no report is found", async() => {
+			expect(getOneReport({
+				_id: createObjectId(),
+				reportedById: companyId,
+			})).to.eventually.rejectedWith(ResponseError);
 		});
 	});
 });
