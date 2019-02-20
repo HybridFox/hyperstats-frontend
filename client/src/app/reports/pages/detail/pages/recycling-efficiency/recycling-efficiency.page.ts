@@ -65,10 +65,14 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
   }
 
   private calculateEfficiency () {
-    const result = this.types.reduce((currentTotals, newItem) =>
-    [currentTotals[0] + newItem.input, currentTotals[1] + newItem.output], [0, 0]);
+    const result = this.types.reduce((currentTotals, newItem) => (
+      {
+        input: (currentTotals.input + newItem.input),
+        output: (currentTotals.output + newItem.output),
+      }
+    ), {input: 0, output: 0});
 
-    const efficiency = (result[1] / result[0]) * 100;
+    const efficiency = (result.output / result.input) * 100;
     this.efficiency = parseFloat(efficiency.toFixed(2));
   }
 
