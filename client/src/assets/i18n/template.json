@@ -22,6 +22,7 @@
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
+			"ADD-PROXY": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
 			"ADMIN": "",
@@ -133,6 +134,10 @@
 		"PROFILE": {
 			"TITLE": ""
 		},
+		"PROXIES": {
+			"DESCRIPTION": "",
+			"TITLE": ""
+		},
 		"RECYCLING-PARTNERS": {
 			"ADDRESSINFORMATION": "",
 			"CONTACTPERSON": "",
@@ -190,6 +195,9 @@
 		"VERIFICATION-SUCCEEDED": {
 			"TITLE": ""
 		}
+	},
+	"PROXIES": {
+		"REVOKEPROXY": ""
 	},
 	"TOAST": {
 		"ADMIN-FORGOT-PASSWORD": {

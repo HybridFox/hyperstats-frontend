@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-15T10:28:07.626Z\n"
+"POT-Creation-Date: 2019-02-19T13:16:22.512Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -49,6 +49,9 @@ msgstr "Active"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
+
+msgid "GENERAL##LABELS##ADD-PROXY"
+msgstr "Add proxy"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
 msgstr "Add recycling partner"
@@ -345,6 +348,15 @@ msgstr "Manage users"
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
 
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+"Proxies are the organizations that have access to your reports. In this "
+"overview you can control who has access to your reports for a given "
+"reporting year and recycling process"
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr "Your proxies"
+
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
 
@@ -470,6 +482,9 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success! Your registration is now complete, please login to continue"
+
+msgid "PROXIES##REVOKEPROXY"
+msgstr "Revoke this proxy"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "An email has ben sent to the user requesting a password reset."

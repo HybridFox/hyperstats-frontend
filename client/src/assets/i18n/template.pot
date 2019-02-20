@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-15T10:28:07.626Z\n"
-"PO-Revision-Date: 2019-02-15T10:28:07.626Z\n"
+"POT-Creation-Date: 2019-02-19T13:16:22.512Z\n"
+"PO-Revision-Date: 2019-02-19T13:16:22.512Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -45,6 +45,9 @@ msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-PROXY"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
@@ -305,6 +308,12 @@ msgstr ""
 msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr ""
+
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr ""
 
@@ -408,6 +417,9 @@ msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "PROXIES##REVOKEPROXY"
 msgstr ""
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"

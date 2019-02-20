@@ -22,6 +22,7 @@
             "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
+            "ADD-PROXY": "Add proxy",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
             "ADMIN": "Admin",
@@ -133,6 +134,10 @@
         "PROFILE": {
             "TITLE": "Profile"
         },
+        "PROXIES": {
+            "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
+            "TITLE": "Your proxies"
+        },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
             "CONTACTPERSON": "Contact Person",
@@ -190,6 +195,9 @@
         "VERIFICATION-SUCCEEDED": {
             "TITLE": "Success! Your registration is now complete, please login to continue"
         }
+    },
+    "PROXIES": {
+        "REVOKEPROXY": "Revoke this proxy"
     },
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
