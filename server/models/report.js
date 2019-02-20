@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const REPORT_STATUS = require("../controllers/report/helpers/const").REPORT_STATUS;
+const { REPORT_STATUS } = require("../controllers/report/helpers/const");
 
 const ReportSchema = mongoose.Schema({
 	data: {
@@ -7,27 +7,27 @@ const ReportSchema = mongoose.Schema({
 			reportingYear: {
 				type: String,
 				required: function() {
-					return this.meta.status === "FILED";
+					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
 			recyclingProcess: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "RecyclingProcess",
 				required: function() {
-					return this.meta.status === "FILED";
+					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
 			name: {
 				type: String,
 				required: function() {
-					return this.meta.status === "FILED";
+					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
 			receiver: {
 				type: mongoose.Schema.Types.ObjectId,
 				ref: "Company",
 				required: function() {
-					return this.meta.status === "FILED";
+					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
 		},
@@ -123,7 +123,7 @@ const ReportSchema = mongoose.Schema({
 			calculatedEfficiency: {
 				type: Number,
 				required: function() {
-					return this.meta.status === "FILED";
+					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
 		},
@@ -165,8 +165,8 @@ const ReportSchema = mongoose.Schema({
 		},
 		status: {
 			type: String,
-			enum: REPORT_STATUS,
-			default: "SAVED",
+			enum: [REPORT_STATUS.SAVED, REPORT_STATUS.FILED],
+			default: REPORT_STATUS.SAVED,
 		},
 	},
 });

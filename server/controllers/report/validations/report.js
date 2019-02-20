@@ -1,6 +1,6 @@
 const joi = require("joi");
 const { schemas } = require("../../../helpers/validation");
-const REPORT_STATUS = require("../helpers/const").REPORT_STATUS;
+const { REPORT_STATUS } = require("../helpers/const");
 
 const savedData = {
 	information: joi.object().keys({
@@ -119,10 +119,10 @@ const filedData = {
 };
 
 const schema = joi.object().keys({
-	data: joi.alternatives().when("meta.status", { is: "FILED", then: joi.object().keys(filedData), otherwise: joi.object().keys(savedData) }),
+	data: joi.alternatives().when("meta.status", { is: REPORT_STATUS.FILED, then: joi.object().keys(filedData), otherwise: joi.object().keys(savedData) }),
 	meta: joi.object().keys({
 		approvedCompanies: joi.array().items(joi.string()).optional(),
-		status: joi.string().valid(REPORT_STATUS).optional(),
+		status: joi.string().valid([REPORT_STATUS.FILED, REPORT_STATUS.SAVED]).optional(),
 	}),
 });
 
