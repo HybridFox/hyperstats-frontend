@@ -3,6 +3,8 @@ import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/f
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import { isNil } from 'ramda';
+
 @Component({
   selector: 'app-mass-input',
   templateUrl: './mass-input.component.html',
@@ -45,10 +47,7 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
       this.setDisabledState(this.disabled);
     }
 
-    if (
-      typeof changes.totalWeight !== 'undefined' &&
-      changes.totalWeight.currentValue !== changes.totalWeight.previousValue
-    ) {
+    if (!isNil(changes.totalWeight) &&  changes.totalWeight.currentValue !== changes.totalWeight.previousValue) {
       this.percentage = this.calculatePercentage(this.totalWeight, this.control.value);
     }
   }
