@@ -24,13 +24,13 @@ module.exports = (type, includeAdmin = false) => {
 			from: "companies",
 			localField: "data.company",
 			foreignField: "_id",
-			as: "data.company",
+			as: "_company",
 		},
 	}, {
 		$project: {
 			data: "$$ROOT.data",
 			meta: "$$ROOT.meta",
-			_company: { $arrayElemAt: ["$data.company", 0] },
+			_company: { $arrayElemAt: ["$_company", 0] },
 		},
 	}, {
 		$match: matchQuery,

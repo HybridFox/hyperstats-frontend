@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-18T20:30:34.538Z\n"
-"PO-Revision-Date: 2019-02-18T20:30:34.538Z\n"
+"POT-Creation-Date: 2019-02-15T10:28:07.626Z\n"
+"PO-Revision-Date: 2019-02-15T10:28:07.626Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -38,6 +38,9 @@ msgstr ""
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr ""
 
+msgid "GENERAL##LABELS##ACTIVATED"
+msgstr ""
+
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
@@ -63,6 +66,9 @@ msgid "GENERAL##LABELS##CANCEL"
 msgstr ""
 
 msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANY"
 msgstr ""
 
 msgid "GENERAL##LABELS##COMPANYNAME"
@@ -389,6 +395,12 @@ msgstr ""
 msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
 msgstr ""
 
+msgid "PAGE##USER-ADMIN##CONFIGURATION"
+msgstr ""
+
+msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
+msgstr ""
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr ""
 
@@ -525,6 +537,18 @@ msgid "TOAST##RESET-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
 msgstr ""
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"

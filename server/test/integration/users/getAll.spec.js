@@ -1,6 +1,6 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
-const { dissoc, set, lensPath } = require("ramda");
+const { dissoc, set, lensPath, omit } = require("ramda");
 const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
@@ -86,11 +86,12 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(7);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
@@ -102,11 +103,12 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(1);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
@@ -118,11 +120,12 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(2);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "test1@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
@@ -134,11 +137,12 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(5);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
@@ -150,11 +154,12 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(2);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "test3@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
@@ -166,11 +171,12 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(2);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "test5@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 		});
