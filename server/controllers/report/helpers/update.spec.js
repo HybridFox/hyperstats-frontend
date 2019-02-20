@@ -10,7 +10,7 @@ const { REPORT_STATUS } = require("./const");
 should();
 use(chaiAsPromised);
 
-describe.only("Report", () => {
+describe("Report", () => {
 	describe("update", () => {
 		const companyId = createObjectId();
 		let mongoServer;
