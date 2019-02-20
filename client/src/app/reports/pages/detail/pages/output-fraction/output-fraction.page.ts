@@ -7,7 +7,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { OutputFraction } from '../../../../reports.types';
+import { OutputFraction } from '../../../../store/reports/types';
 
 @Component({
  templateUrl: './output-fraction.page.html',
