@@ -6,40 +6,31 @@
     <app-sub-section-title
         [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.OVERVIEW-ELEMENTS' | translate"
     ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins" *ngFor="let element of form.controls; let i = index">
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.ELEMENTS' | translate"
-                [control]="element.get('element')"
-            ></app-text-input>
-        </div>
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.INPUT' | translate"
-                [control]="element.get('input')"
-            ></app-text-input>
-        </div>
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.OUTPUT' | translate"
-                [control]="element.get('output')"
-            ></app-text-input>
-        </div>
+    <div class="a-table-wrapper">
+        <table class="a-table">
+            <thead>
+                <tr>
+                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.ELEMENTS' | translate }}</th>
+                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.INPUT' | translate }}</th>
+                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.OUTPUT' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let type of types">
+                    <td>{{ type.element }}</td>
+                    <td>{{ type.input }}</td>
+                    <td>{{ type.output }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <app-sub-section-title
         class="u-margin-top-x-large"
         [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.CALCULATED-EFFICIENCY' | translate"
     ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins" *ngFor="let element of form.controls; let i = index">
+    <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.EFFICIENCY' | translate"
-                suffix="%"
-            ></app-text-input>
+            <p *ngIf='efficiency'>{{ efficiency }}%</p>
         </div>
     </div>
     <div class="u-margin-top-large">
