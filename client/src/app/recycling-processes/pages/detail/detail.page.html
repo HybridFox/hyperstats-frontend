@@ -86,9 +86,10 @@
                 (click)="toggleActivation()">
                 {{ 'GENERAL.LABELS.ENABLE' | translate }}
             </button>
-            <button *ngIf="!!process?._id" class="a-button--danger has-icon-after u-pull-right u-text-uppercase" (click)="remove()">
-                {{ 'GENERAL.LABELS.REMOVE' | translate }}
-            </button>
+            <app-delete-button
+                *ngIf="!!process?._id"
+                (deleteFunction)="removeForm()"
+            ></app-delete-button>
         </div>
     </div>
 </div>

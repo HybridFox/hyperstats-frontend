@@ -48,7 +48,7 @@ module.exports = (router) => {
 	 *       - application/json
 	 *     parameters:
 	 *       - in: query
-	 *         name: companyType
+	 *         name: company-type
 	 *         required: false
 	 *         type: string
 	 *         description: >

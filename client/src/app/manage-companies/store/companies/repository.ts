@@ -12,7 +12,7 @@ export class CompaniesRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchByType(types: CompanyType[]): Observable<any> {
+  public fetchByTypes(types: CompanyType[]): Observable<any> {
 
     return this.http.get(this.apiConfig.baseUrl(`/companies`), {
       params: types ? { 'type': types } : {}

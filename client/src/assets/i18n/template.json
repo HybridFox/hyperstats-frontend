@@ -19,6 +19,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-RECYCLING-PARTNER": "",
@@ -28,6 +29,7 @@
 			"BROWSE": "",
 			"CANCEL": "",
 			"CITY": "",
+			"COMPANY": "",
 			"COMPANYNAME": "",
 			"COMPANYVAT": "",
 			"CONFIRMPASSWORD": "",
@@ -89,6 +91,11 @@
 			"REPORTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
+		},
+		"POPUP": {
+			"CANCELREMOVE": "",
+			"CONFIRMREMOVE": "",
+			"DELETEITEM": ""
 		}
 	},
 	"PAGE": {
@@ -98,6 +105,9 @@
 			"SECTION-1": "",
 			"SECTION-2": "",
 			"TITLE": ""
+		},
+		"ADMIN": {
+			"FILTERS": ""
 		},
 		"COMPANYINFORMATION": {
 			"CONTACTPERSON": "",
@@ -168,6 +178,10 @@
 			"CONTENT": "",
 			"SUB-TITLE": "",
 			"TITLE": ""
+		},
+		"USER-ADMIN": {
+			"CONFIGURATION": "",
+			"MAIN-INFORMATION": ""
 		},
 		"VERIFICATION-FAILED": {
 			"CONTENT": "",
@@ -284,6 +298,20 @@
 			},
 			"SUCCESS": {
 				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": ""
+			}
+		},
+		"USER-ADMIN-SAVEF": {
+			"SUCCESS": {
 				"TITLE": ""
 			}
 		}

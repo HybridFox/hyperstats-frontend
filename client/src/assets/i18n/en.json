@@ -19,6 +19,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
@@ -28,6 +29,7 @@
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
             "CITY": "City",
+            "COMPANY": "Company",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
@@ -89,6 +91,11 @@
             "REPORTS": "Reports",
             "USERPROFILE": "User profile",
             "USERS": "Users"
+        },
+        "POPUP": {
+            "CANCELREMOVE": "Cancel",
+            "CONFIRMREMOVE": "Delete",
+            "DELETEITEM": "Are you sure you want to delete this item?"
         }
     },
     "PAGE": {
@@ -98,6 +105,9 @@
             "SECTION-1": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing",
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
+        },
+        "ADMIN": {
+            "FILTERS": "Filters:"
         },
         "COMPANYINFORMATION": {
             "CONTACTPERSON": "Contact Person",
@@ -168,6 +178,10 @@
             "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum",
             "SUB-TITLE": "Lorem Ipsum Dolor Sit Amet Co",
             "TITLE": "Terms and conditions"
+        },
+        "USER-ADMIN": {
+            "CONFIGURATION": "Configuration",
+            "MAIN-INFORMATION": "User information"
         },
         "VERIFICATION-FAILED": {
             "CONTENT": "We are having trouble verifying your email, please try again later",
@@ -285,6 +299,20 @@
             "SUCCESS": {
                 "DESCRIPTION": "You can now use your new password to login",
                 "TITLE": "Success!"
+            }
+        },
+        "USER-ADMIN-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to save the user.",
+                "TITLE": "Error saving user"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully saved!"
+            }
+        },
+        "USER-ADMIN-SAVEF": {
+            "SUCCESS": {
+                "TITLE": "User saved!"
             }
         }
     },
