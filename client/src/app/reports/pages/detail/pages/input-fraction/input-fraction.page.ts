@@ -5,6 +5,8 @@ import { FormHelper } from '@helpers/form.helper';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+
 @Component({
   templateUrl: './input-fraction.page.html',
 })
@@ -37,7 +39,7 @@ export class InputFractionPageComponent implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['../additives'], {relativeTo: this.activatedRoute});
     } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
-    }
+
+      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);    }
   }
 }
