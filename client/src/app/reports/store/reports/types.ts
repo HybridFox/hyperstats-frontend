@@ -11,7 +11,7 @@ export interface Information {
 }
 
 export interface InputFraction {
-    sitRef: string;
+    siteRef: string;
     data: InputFractionData;
 }
 

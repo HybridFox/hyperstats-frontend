@@ -37,7 +37,7 @@ export class OutputFractionPageComponent implements OnInit {
  }
 
  public handleFormChanges(changes: OutputFraction[]) {
-  this.totalWeight = changes.filter(item => item.mass !== '' && !isNaN(parseInt(item.mass, 10)))
+  this.totalWeight = changes.filter(item => item.mass !== '' && !isNaN(parseInt(item.mass, 10)) && item.mass !== '0')
   .map(item => parseInt(item.mass, 10))
   .reduce((acc, value) => acc + value);
  }
