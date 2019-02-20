@@ -5,7 +5,7 @@ const ReportSchema = mongoose.Schema({
 	data: {
 		information: {
 			reportingYear: {
-				type: String,
+				type: Number,
 				required: function() {
 					return this.meta.status === REPORT_STATUS.FILED;
 				},
