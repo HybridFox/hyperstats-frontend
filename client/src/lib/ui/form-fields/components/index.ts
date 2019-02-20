@@ -4,6 +4,7 @@ import { SelectInputComponent } from './select/select.component';
 import { CheckboxInputComponent } from './checkbox/checkbox.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { TextareaComponent } from './textarea/textarea.component';
+import { DeleteButtonComponent } from './delete-button/delete-button.component';
 
 export const Components = [
     TextInputComponent,
@@ -11,5 +12,6 @@ export const Components = [
     SelectInputComponent,
     CheckboxInputComponent,
     FileUploadComponent,
-    TextareaComponent
+    TextareaComponent,
+    DeleteButtonComponent
 ];

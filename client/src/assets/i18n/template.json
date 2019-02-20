@@ -89,6 +89,11 @@
 			"REPORTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
+		},
+		"POPUP": {
+			"CANCELREMOVE": "",
+			"CONFIRMREMOVE": "",
+			"DELETEITEM": ""
 		}
 	},
 	"PAGE": {
