@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 
+import { ElementType } from './recycling-efficiency.types';
 import { groupBy } from 'ramda';
 
 @Component({
@@ -34,7 +35,7 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
       output: output.mass,
     }));
 
-    const elements =  groupBy((item: any) => item.element)([...inputs, ...outputs]);
+    const elements =  groupBy((item: ElementType) => item.element)([...inputs, ...outputs]);
 
     this.types = Object.keys(elements).map(element => {
       const inputNumbers = elements[element].reduce((previousState, currentItem) => {
