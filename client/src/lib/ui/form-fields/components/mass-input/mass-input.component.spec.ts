@@ -6,7 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import { MassInputComponent } from './mass-input.component';
 
-describe('TextInputComponent', () => {
+describe('MassInputComponent', () => {
   let fixture: ComponentFixture<MassInputComponent>;
   let component: MassInputComponent;
   let de: DebugElement;
@@ -45,14 +45,6 @@ describe('TextInputComponent', () => {
   });
 
   describe('DOM', () => {
-    it('Should render a placeholder when it is set', () => {
-      component.placeholder = 'Test';
-      fixture.detectChanges();
-
-      const inputElement = fixture.nativeElement.querySelector('.a-input__field');
-      expect(inputElement.placeholder).toEqual('Test');
-    });
-
     it('Should render a label when it is set', () => {
       component.label = 'Test';
       fixture.detectChanges();
