@@ -47,7 +47,7 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
       this.setDisabledState(this.disabled);
     }
 
-    if (!isNil(changes.totalWeight) &&  changes.totalWeight.currentValue !== changes.totalWeight.previousValue) {
+    if (!isNil(changes.totalWeight) && changes.totalWeight.currentValue !== changes.totalWeight.previousValue) {
       this.percentage = this.calculatePercentage(this.totalWeight, this.control.value);
     }
   }
