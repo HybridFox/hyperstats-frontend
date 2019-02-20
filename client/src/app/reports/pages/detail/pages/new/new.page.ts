@@ -5,15 +5,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 import { select$ } from '@angular-redux/store';
-import { ReportProcessSelector } from '../../../../store/recycling-processes/selectors';
+import { ReportsProcessSelector } from '../../../../store/recycling-processes/selectors';
 import { Observable } from 'rxjs';
-import { mapRecyclingProcesses } from '../../../../services/select.helpers';
+import { mapRecyclingProcessesToOptions } from '../../../../services/select.helpers';
 
 @Component({
   templateUrl: './new.page.html',
 })
 export class NewPageComponent implements OnInit {
-  @select$(ReportProcessSelector.recyclingProcesses, mapRecyclingProcesses) recyclingProcesses$: Observable<any>;
+  @select$(ReportsProcessSelector.recyclingProcesses, mapRecyclingProcessesToOptions) recyclingProcesses$: Observable<any>;
 
   public mappedRecyclingProcesses$: Observable<any>;
   public form: any;

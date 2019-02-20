@@ -1,11 +1,24 @@
-import { selectDenormalized } from '@store/utils/selector';
-import * as schema from '@core/schemas';
+import {
+  detailLoading,
+  detail,
+  detailError
+} from './detail/selectors';
+
+import {
+  overview,
+  overviewLoading,
+  overviewError,
+} from './overview/selectors';
 
 export const ReportsSelector = {
-  loading: ['cds', 'endpoint', 'loading'],
-  result: selectDenormalized({
-    relations: ['roles'],
-    schema: schema.user,
-    selector: 'reports.result',
-  })
+  detail: {
+    result: detail,
+    loading: detailLoading,
+    error: detailError,
+  },
+  overview: {
+    result: overview,
+    loading: overviewLoading,
+    error: overviewError,
+  },
 };

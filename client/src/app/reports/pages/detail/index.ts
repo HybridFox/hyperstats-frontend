@@ -12,7 +12,7 @@ import { AdditivesPageComponent } from './pages/additives';
 import { OutputFractionPageComponent } from './pages/output-fraction';
 import { RecyclingEfficiencyPageComponent } from './pages/recycling-efficiency';
 import { AdditionalInformationPageComponent } from './pages/additional-information';
-import { ReportPageComponent } from './report.component';
+import { ReportPageComponent } from './report.page';
 import { FilePageComponent } from './pages/file';
 
 export const Pages = [

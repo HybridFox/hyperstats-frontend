@@ -94,4 +94,10 @@ export class FormDataService {
     public getRecyclingProcess(): string {
         return this.formGroup.controls.information.controls.recyclingProcess.value;
     }
+
+    public setFormData(report: any): FormGroup {
+        this.formGroup.patchValue(report.data);
+
+        return this.formGroup;
+    }
 }

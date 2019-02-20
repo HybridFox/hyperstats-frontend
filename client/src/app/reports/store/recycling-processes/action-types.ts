@@ -1,5 +1,7 @@
-export const TYPE = 'NEW_REPORT';
+import { MODULE } from '../constants';
+
+export const RECYCLING_PROCESSES = 'RECYCLING_PROCESSES';
 
 export const ACTIONS = {
-  FETCH_RECYCLINGPROCESSES: `${TYPE}/FETCH_RECYCLINGPROCESSES`,
+  FETCH: `${MODULE}/${RECYCLING_PROCESSES}/FETCH`,
 };

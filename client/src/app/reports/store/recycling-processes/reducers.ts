@@ -1,13 +1,14 @@
 import { ACTIONS } from './action-types';
 import { progressReducer } from '@store/hor';
 
-import { TYPE } from './action-types';
+import { RECYCLING_PROCESSES } from './action-types';
+import { MODULE } from '../constants';
 
 export const reducer = (
   state = null,
   action,
 ) => {
-  if (action.type === ACTIONS.FETCH_RECYCLINGPROCESSES) {
+  if (action.type === ACTIONS.FETCH) {
     return [
       ...action.payload,
     ];
@@ -17,6 +18,6 @@ export const reducer = (
 };
 
 export const ReportsProcessReducer = progressReducer(
-  { entityType: TYPE },
+  { entityType: `${MODULE}/${RECYCLING_PROCESSES}` },
   reducer,
 );
