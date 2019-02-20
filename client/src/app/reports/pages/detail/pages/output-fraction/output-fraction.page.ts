@@ -39,6 +39,7 @@ export class OutputFractionPageComponent implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['../recycling-efficiency'], {relativeTo: this.activatedRoute});
     } else {
-      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);    }
+      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
+    }
   }
 }
