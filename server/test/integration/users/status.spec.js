@@ -55,14 +55,18 @@ describe("Integration", () => {
 					.patch(`/api/users/${userId}/status`)
 					.set("cookie", cookie)
 					.send({
-						status: "DEACTIVATED",
+						status: {
+							type: "DEACTIVATED",
+						},
 					})
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("object");
 						expect(body._id).to.equal(userId.toString());
-						expect(body.meta.status).to.equal("DEACTIVATED");
+						expect(body.meta.status).to.deep.equal({
+							type: "DEACTIVATED",
+						});
 					});
 			});
 		});

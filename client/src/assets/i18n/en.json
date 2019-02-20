@@ -19,8 +19,10 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
+            "ADD-PROXY": "Add proxy",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
             "ADMIN": "Admin",
@@ -28,6 +30,7 @@
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
             "CITY": "City",
+            "COMPANY": "Company",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
@@ -131,6 +134,10 @@
         "PROFILE": {
             "TITLE": "Profile"
         },
+        "PROXIES": {
+            "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
+            "TITLE": "Your proxies"
+        },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
             "CONTACTPERSON": "Contact Person",
@@ -177,6 +184,10 @@
             "SUB-TITLE": "Lorem Ipsum Dolor Sit Amet Co",
             "TITLE": "Terms and conditions"
         },
+        "USER-ADMIN": {
+            "CONFIGURATION": "Configuration",
+            "MAIN-INFORMATION": "User information"
+        },
         "VERIFICATION-FAILED": {
             "CONTENT": "We are having trouble verifying your email, please try again later",
             "TITLE": "Something went wrong"
@@ -184,6 +195,9 @@
         "VERIFICATION-SUCCEEDED": {
             "TITLE": "Success! Your registration is now complete, please login to continue"
         }
+    },
+    "PROXIES": {
+        "REVOKEPROXY": "Revoke this proxy"
     },
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
@@ -293,6 +307,20 @@
             "SUCCESS": {
                 "DESCRIPTION": "You can now use your new password to login",
                 "TITLE": "Success!"
+            }
+        },
+        "USER-ADMIN-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to save the user.",
+                "TITLE": "Error saving user"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully saved!"
+            }
+        },
+        "USER-ADMIN-SAVEF": {
+            "SUCCESS": {
+                "TITLE": "User saved!"
             }
         }
     },

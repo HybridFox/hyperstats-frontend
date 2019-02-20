@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { pathOr } from 'ramda';
 import { ToastrService } from 'ngx-toastr';
@@ -7,14 +7,18 @@ import { select } from '@angular-redux/store';
 import { UserInterface } from '@store/auth/auth.interface';
 import { Observable } from 'rxjs';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
     selector: 'app-user-form',
     templateUrl: './user-form.component.html',
 })
 export class UserFormComponent implements OnChanges {
-    @select(AuthSelector.user.result) public user$: Observable<UserInterface>;
     @Input() public user: any;
+    @Input() public companyOptions: Option[];
+
+    @Output() public save: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public toggleActivation: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     public form: FormGroup;
 
@@ -27,9 +31,6 @@ export class UserFormComponent implements OnChanges {
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.user && this.user) {
             this.form = this.createForm(this.user);
-
-            // Temp disable this form until the edit page is implemented
-            this.form.disable();
         }
     }
 
@@ -39,7 +40,11 @@ export class UserFormComponent implements OnChanges {
                 firstname: this.formBuilder.control(pathOr('', ['data', 'firstname'], user)),
                 lastname: this.formBuilder.control(pathOr('', ['data', 'lastname'], user)),
                 email: this.formBuilder.control(pathOr('', ['data', 'email'], user)),
+                company: this.formBuilder.control(pathOr('', ['data', 'company'], user))
             }),
+            meta: this.formBuilder.group({
+                activated: this.formBuilder.control(pathOr('DEACTIVATED', ['meta', 'status', 'type'], user) === 'ACTIVATED')
+            })
         });
     }
 
@@ -58,4 +63,26 @@ export class UserFormComponent implements OnChanges {
             );
         });
     }
+
+    public saveUser(): void {
+        this.save.emit(this.formatUser(this.user, this.form.getRawValue()));
+    }
+
+    private formatUser(user: any, formValues: any) {
+        return {
+            ...user,
+            data: {
+                ...user.data,
+                ...formValues.data
+            },
+            meta: {
+                ...user.meta,
+                ...formValues.meta,
+                status: {
+                    type: formValues.meta.activated ? 'ACTIVATED' : 'DEACTIVATED'
+                }
+            }
+        } ;
+    }
+
 }
