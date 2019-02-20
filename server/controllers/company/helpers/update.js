@@ -1,13 +1,29 @@
 const CompanyModel = require("../../../models/company");
-const ResponseError = require("../../../helpers/errors/responseError");
-const getCompanyQuery = require("./getQuery");
+const Errors = require("../../../helpers/errorHandler");
 
 module.exports = async({ _id, companyOfUser, update } = {}) => {
-	const updatedCompany = await CompanyModel.findOneAndUpdate(getCompanyQuery(_id, companyOfUser), { $set: { data: update } }, { new: true });
+	const query = {
+		_id,
+		...(companyOfUser ? { "meta.managedBy": companyOfUser } : {}),
+	};
 
-	if (!updatedCompany) {
-		throw new ResponseError({ type: 404, msg: "Company not found", error: `Company not found for id: ${_id}` });
+	const company = await CompanyModel.findOne(query).exec();
+
+	if (!company) {
+		throw Errors.ItemNotFound;
 	}
 
-	return updatedCompany;
+	const originalCompany = company.toObject();
+
+	company.data = update.data;
+	company.meta = {
+		...originalCompany.meta,
+		...update.meta,
+		lastUpdated: Date.now(),
+		managedBy: companyOfUser || update.meta.managedBy,
+	};
+
+	await company.save();
+
+	return company.toObject();
 };

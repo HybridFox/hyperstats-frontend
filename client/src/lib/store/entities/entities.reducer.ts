@@ -39,6 +39,8 @@ export const EntitiesReducer = (state = INITIAL_STATE, action) => {
   if (action.type === ACTIONS.REMOVE) {
     const entities = path([action.payload.entity], state);
 
+    console.log(entities, state);
+
     const filteredEntities = Object.assign({}, ...Object.keys(entities).filter((id) => {
         return id !== action.payload.id;
       })

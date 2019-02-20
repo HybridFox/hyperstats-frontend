@@ -9,9 +9,13 @@ export const companiesToSelectOptions = (obs$) => {
             map((companies: any[]) => {
                 return companies.reduce((acc, company) => {
                     if (!company) {
-                        return;
+                        return acc;
                     }
-                    return acc.concat({'value': company._id, 'label': company.data.name});
+
+                    return acc.concat({
+                        value: company._id,
+                        label: company.data.name
+                    });
                 }, []);
             })
         );

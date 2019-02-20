@@ -4,6 +4,7 @@ const Errors = require("../helpers/errorHandler");
 const companyController = require("../controllers/company");
 const companyValidations = require("../controllers/company/validations");
 const authMiddleware = require("../middleware/auth");
+const { ADMIN, NON_ADMIN } = require("../config/userTypes");
 
 module.exports = (router) => {
 	/**
@@ -119,7 +120,8 @@ module.exports = (router) => {
 		)
 		.post(
 			dataMiddleware.copy,
-			dataMiddleware.validate("body", companyValidations.company, Errors.ObjectValidationFailed),
+			dataMiddleware.conditionalValidate(ADMIN, "body", companyValidations.company, Errors.ObjectValidationFailed),
+			dataMiddleware.conditionalValidate(NON_ADMIN, "body", companyValidations.recyclingPartner, Errors.ObjectValidationFailed),
 			companyController.create
 		);
 
@@ -187,7 +189,8 @@ module.exports = (router) => {
 		.put(
 			dataMiddleware.copy,
 			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
-			dataMiddleware.validate("body", companyValidations.company, Errors.ObjectValidationFailed),
+			dataMiddleware.conditionalValidate(ADMIN, "body", companyValidations.company, Errors.ObjectValidationFailed),
+			dataMiddleware.conditionalValidate(NON_ADMIN, "body", companyValidations.recyclingPartner, Errors.ObjectValidationFailed),
 			companyController.update
 		)
 		.delete(
