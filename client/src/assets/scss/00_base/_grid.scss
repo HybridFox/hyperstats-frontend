@@ -95,9 +95,8 @@
 // for use in page layouts
 
 .l-grid--with-margins {
-
 	width: calc(100% + #{$grid-gutter});
-	transform: translateX(-($grid-gutter / 2));
+	margin-left: (-($grid-gutter / 2));
 
 	[class*="l-grid__col"] {
 		flex-grow: 0;

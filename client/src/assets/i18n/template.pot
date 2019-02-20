@@ -242,6 +242,15 @@ msgstr ""
 msgid "GENERAL##MENU##USERS"
 msgstr ""
 
+msgid "GENERAL##POPUP##CANCELREMOVE"
+msgstr ""
+
+msgid "GENERAL##POPUP##CONFIRMREMOVE"
+msgstr ""
+
+msgid "GENERAL##POPUP##DELETEITEM"
+msgstr ""
+
 msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
 
