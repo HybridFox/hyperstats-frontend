@@ -143,6 +143,16 @@
     }
 }
 
+.a-input__mass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .a-input__mass--percentage {
+        height: 24px;
+    }
+}
+
 /* REMOVE NUMBER INPUT FIELD ARROWS */
 /* For Firefox */
 input[type='number'] {
