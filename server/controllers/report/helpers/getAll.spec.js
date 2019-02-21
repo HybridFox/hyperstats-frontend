@@ -9,7 +9,7 @@ const NEW_REPORT = require("../../../test/mocks/report").NEW_REPORT;
 should();
 use(chaiAsPromised);
 
-describe.only("Report", () => {
+describe("Report", () => {
 	describe("getAll", () => {
 		const companyId = createObjectId();
 		const firstRecycingProcess = createObjectId();
