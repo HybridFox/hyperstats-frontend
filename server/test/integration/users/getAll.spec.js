@@ -14,6 +14,7 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let nonAdminCookie;
 		let rp;
 		let co;
 
@@ -58,7 +59,8 @@ describe("Integration", () => {
 				company: co._id,
 			});
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
 		afterEach(() => reset());
@@ -178,6 +180,14 @@ describe("Integration", () => {
 						});
 						expect(body[0].data.company).to.be.an("string");
 					});
+			});
+
+			it("Should fail to fetch users when user is not admin", async() => {
+				return supertest(server)
+					.get("/api/users")
+					.set("cookie", nonAdminCookie)
+					.expect("Content-Type", /json/)
+					.expect(403);
 			});
 		});
 	});

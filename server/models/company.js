@@ -81,7 +81,7 @@ const CompanySchema = mongoose.Schema({
 			// R => Recycler
 			// RP => Recycler Partner
 			// CO => Complience organization
-			enum: ["R", "RP", "CO"],
+			enum: ["R", "RP", "CO", "AO"],
 		},
 	},
 });

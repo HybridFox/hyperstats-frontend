@@ -13,8 +13,8 @@ import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
-import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
 import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
+import { RecyclingProcessesApiModule } from '@api/recycling-processes';
 
 @NgModule({
   imports: [
@@ -23,7 +23,8 @@ import { RecyclingPartnersModule } from '../recycling-partners/recycling-partner
     SharedModule,
     ReportsApiModule,
     FormFieldsModule,
-    RecyclingPartnersModule
+    RecyclingPartnersModule,
+    RecyclingProcessesApiModule,
   ],
   providers: [
     RecylingProcessesServices,
