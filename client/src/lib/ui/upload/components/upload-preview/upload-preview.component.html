@@ -1,0 +1,16 @@
+<ul class="m-file-upload__progress">
+    <li class="l-grid__row u-margin-bottom">
+        <div class="l-grid__col-1-12">
+            <i class="a-icon--file"></i>
+        </div>
+        <div class="l-grid__col-10-12">
+            <div>
+                <span class="m-file-upload__progress__file-name">{{ name }}</span>
+            </div>
+            <progress [max]="100" [value]="progress || 0" class="m-file-upload__progress__bar"></progress>
+        </div>
+        <div class="l-grid__col-1-12">
+            <span class="m-file-upload__progress__percentage">{{ progress || 0 }}%</span>
+        </div>
+    </li>
+</ul>

@@ -30,6 +30,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     public recyclingProcessId: string;
     public duplicateProcessId: string;
     public uploadResponse: any;
+    public uploadResults;
 
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -190,42 +191,10 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     public onUpload(fileObject) {
-        this.assetsRepository
-            .upload(fileObject.file)
-            .subscribe(fileResponse => {
-                if (fileResponse && fileObject.type === 'asset' ) {
-                    if (!this.uploadResponse) {
-                        this.uploadResponse = {
-                            [fileObject.step]: {
-                                asset: fileResponse
-                            }
-                        };
-                    } else {
-                        this.uploadResponse = {
-                            ...this.uploadResponse,
-                            [fileObject.step]: {
-                                ...this.uploadResponse[fileObject.step],
-                                asset: fileResponse
-                            }
-                        };
-                    }
-                } else if (fileResponse) {
-                    if (!this.uploadResponse) {
-                        this.uploadResponse = {
-                            [fileObject.step]: {
-                                overview: fileResponse,
-                            }
-                        };
-                    } else {
-                        this.uploadResponse = {
-                            ...this.uploadResponse,
-                            [fileObject.step]: {
-                                ...this.uploadResponse[fileObject.step],
-                                overview: fileResponse,
-                            }
-                        };
-                    }
-                }
-            });
+        this.uploadResults = Object.assign({}, this.uploadResults, {
+            [fileObject.stepIndex]: Object.assign({}, this.uploadResults ? this.uploadResults[fileObject.stepIndex] : {}, {
+                [fileObject.input]: this.assetsRepository.upload(fileObject.fileList[0])
+            })
+        });
     }
 }

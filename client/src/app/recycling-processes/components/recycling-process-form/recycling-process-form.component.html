@@ -22,7 +22,7 @@
             <p class="u-no-margin u-margin-bottom"><b>{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-TITLE' | translate }}</b></p>
             <p class="u-no-margin">{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-DESCRIPTION' | translate }}</p>
         </div>
-        <div *ngFor="let step of recyclingProcessForm.controls.steps.controls | keyvalue">
+        <div *ngFor="let step of recyclingProcessForm.controls.steps.controls | keyvalue; let index = index">
             <app-sub-section-title
                 [title]="step.value.get('description').value || ('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{ key: getStepKey(step.key) })"
                 class="u-margin-bottom-large"
@@ -62,21 +62,19 @@
                 [control]="step.value.get('qualitativeDescription').get('text')"
             ></app-textarea-input>
             <app-file-upload
-                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
                 class="u-margin-bottom-x-large"
-                [control]="step.value.get('qualitativeDescription').get('asset')"
-                (upload)="onUploadAsset($event, step.key)"
-                [uploadProgress]="uploadResponse && uploadResponse[step.key]?.asset?.progress"
-                [uploadResult]="uploadResponse && uploadResponse[step.key]?.asset?.result"
+                [control]="step.value.get('qualitativeDescription.asset')"
+                [response]="(uploadResponse ? uploadResponse[index]?.ASSET : null) | async"
+                (upload)="onUpload($event, index, 'ASSET')"
             ></app-file-upload>
+
+            {{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}
+            <p>{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
             <app-file-upload
-                [title]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate"
-                [description]="'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate"
                 class="u-margin-bottom-x-large"
                 [control]="step.value.get('schematicOverview')"
-                (upload)="onUploadOverview($event, step.key)"
-                [uploadProgress]="uploadResponse && uploadResponse[step.key]?.overview?.progress"
-                [uploadResult]="uploadResponse && uploadResponse[step.key]?.overview?.result"
+                [response]="(uploadResponse ? uploadResponse[index]?.SCHEMATIC : null) | async"
+                (upload)="onUpload($event, index, 'SCHEMATIC')"
             ></app-file-upload>
         </div>
         <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">

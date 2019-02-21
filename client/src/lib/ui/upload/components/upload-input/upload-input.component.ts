@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
     templateUrl: './upload-input.component.html',
 })
 export class UploadInputComponent implements OnDestroy, OnInit {
-    @Output() public upload: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public select: EventEmitter<FileList> = new EventEmitter<FileList>();
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -18,10 +18,7 @@ export class UploadInputComponent implements OnDestroy, OnInit {
         this.componentDestroyed$.complete();
     }
 
-    public onUpload(event) {
-        if (event.target.files.length === 0) {
-            return;
-        }
-        this.upload.emit(event);
+    public onSelect(event) {
+        this.select.emit(event.target.files);
     }
 }

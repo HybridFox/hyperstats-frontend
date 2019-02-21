@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
-import { UploadInputComponent } from './upload-input/upload-input.component';
-import { UploadPreviewComponent } from './upload-preview/upload-preview.component';
+
+import { Components } from './components';
 
 @NgModule({
   imports: [
@@ -15,12 +15,10 @@ import { UploadPreviewComponent } from './upload-preview/upload-preview.componen
   ],
   providers: [],
   declarations: [
-    UploadInputComponent,
-    UploadPreviewComponent
+    Components,
   ],
   exports: [
-    UploadInputComponent,
-    UploadPreviewComponent
+    Components,
   ],
 })
 export class UploadModule { }
