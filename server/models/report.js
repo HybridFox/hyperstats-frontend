@@ -23,13 +23,13 @@ const ReportSchema = mongoose.Schema({
 					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
-			receiver: {
-				type: mongoose.Schema.Types.ObjectId,
-				ref: "Company",
-				required: function() {
-					return this.meta.status === REPORT_STATUS.FILED;
-				},
-			},
+			// receiver: {
+			// 	type: mongoose.Schema.Types.ObjectId,
+			// 	ref: "Company",
+			// 	required: function() {
+			// 		return this.meta.status === REPORT_STATUS.FILED;
+			// 	},
+			// },
 		},
 		inputFraction: [{
 			siteRef: {

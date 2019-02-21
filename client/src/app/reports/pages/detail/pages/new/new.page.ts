@@ -9,7 +9,9 @@ import { ReportsProcessSelector } from '../../../../store/recycling-processes/se
 import { Observable } from 'rxjs';
 import { mapRecyclingProcessesToOptions } from '../../../../services/select.helpers';
 
+import { ReportsActions } from '../../../../store/reports';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { zip } from 'rxjs/operators';
 
 @Component({
   templateUrl: './new.page.html',
@@ -25,7 +27,8 @@ export class NewPageComponent implements OnInit {
     public formData: FormDataService,
     private toastrService: ToastrService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private reportActions: ReportsActions
   ) {}
 
   public ngOnInit() {
@@ -36,7 +39,20 @@ export class NewPageComponent implements OnInit {
     FormHelper.markAsDirty(this.form);
 
     if (this.form.valid) {
-      this.router.navigate(['../input-fraction'], {relativeTo: this.activatedRoute});
+
+      const data = {
+        data: this.formData.getFormData().getRawValue(),
+        meta: {
+          status: 'SAVED',
+        }
+      };
+
+      let promise: Promise<any>;
+      promise = this.reportActions.createDrafted(data).toPromise();
+          promise.then((response) => {
+              this.router.navigate([`/recycler/reports/${response._id}/input-fraction`]);
+          })
+          .catch(() => {});
     } else {
       this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }

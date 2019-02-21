@@ -11,24 +11,17 @@ export class FormDataService {
     ) {
         this.formGroup = this.formBuilder.group({
             information: this.formBuilder.group({
-                reportingYear: ['', Validators.required],
-                recyclingProcess: ['', Validators.required],
+                reportingYear: [null, Validators.required],
+                recyclingProcess: [null, Validators.required],
                 name: ['', Validators.required],
-                receiver: ['', Validators.required]
+                // receiver: [null, Validators.required]
             }),
-            inputFraction: this.formBuilder.group({
-                weightInput: ['', Validators.required],
-                shareOfBatteryType: ['', Validators.required],
-                weightBatteryType: ['', Validators.required],
-                elements: this.formBuilder.array([this.createInputElement()]),
-                descriptionOfMethodologyShare: ['', Validators.required],
-                descriptionOfMethodologyChemicalComposition: ['', Validators.required],
-                massOfExternalJacket: ['', Validators.required],
-                massOfOuterCasings: ['', Validators.required],
-            }),
+            inputFraction: this.formBuilder.array([this.createInputFraction()]),
             additives: this.formBuilder.array([this.createAdditive()]),
             outputFraction: this.formBuilder.array([this.createOutputElement()]),
-            recyclingEfficiency: this.formBuilder.array([this.createRecyclingElement()]),
+            recyclingEfficiency: this.formBuilder.group({
+              calculatedEfficiency: [null, Validators.required]
+            }),
             additionalInformation: this.formBuilder.group({
                 files: [[]],
                 additionalInformation: ['']
@@ -37,7 +30,7 @@ export class FormDataService {
     }
 
     public addInputElement(): void {
-        this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
+      this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
     }
 
     public addAdditive(): void {
@@ -52,6 +45,19 @@ export class FormDataService {
         this.formGroup.controls.recyclingEfficiency.push(this.createOutputElement());
     }
 
+    private createInputFraction(): FormGroup {
+      return this.formBuilder.group({
+            weightInput: ['', Validators.required],
+            shareOfBatteryType: ['', Validators.required],
+            weightBatteryType: ['', Validators.required],
+            elements: this.formBuilder.array([this.createInputElement()]),
+            descriptionOfMethodologyShare: ['', Validators.required],
+            descriptionOfMethodologyChemicalComposition: ['', Validators.required],
+            massOfExternalJacket: ['', Validators.required],
+            massOfOuterCasings: ['', Validators.required],
+        });
+    }
+
     private createInputElement(): FormGroup {
       return this.formBuilder.group({
         element: ['', Validators.required],
@@ -63,8 +69,7 @@ export class FormDataService {
     private createOutputElement(): FormGroup {
       return this.formBuilder.group({
         element: ['', Validators.required],
-        share: ['', Validators.required],
-        mass: ['', Validators.required],
+        mass: [null, Validators.required],
         classification: ['', Validators.required],
         replacedMaterial: ['', Validators.required],
         elementClassification: ['', Validators.required],
@@ -75,15 +80,7 @@ export class FormDataService {
     private createAdditive(): FormGroup {
       return this.formBuilder.group({
         type: ['', Validators.required],
-        weight: ['', Validators.required],
-      });
-    }
-
-    private createRecyclingElement(): FormGroup {
-      return this.formBuilder.group({
-        element: ['', Validators.required],
-        input: ['', Validators.required],
-        output: ['', Validators.required],
+        weight: [null, Validators.required],
       });
     }
 

@@ -64,12 +64,25 @@ export class ReportsActions {
       );
   }
 
-  public create(report: any): Observable<any> {
+  public createDrafted(report: any): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
           this.handler.dispatch(ACTIONS.OVERVIEW.ADD_TO_LIST, {
             payload: this.entitiesActions.normalize(response, EntitiesActions.schema.report),
+          });
+        })
+      );
+  }
+
+  public createFiled(report: any): Observable<any> {
+    return this.reportsRepository.create(report)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.OVERVIEW.ADD_TO_LIST, {
+            payload: this.entitiesActions.normalize({
+              ...response,
+            }, EntitiesActions.schema.report),
           });
         })
       );

@@ -3,150 +3,152 @@
         [title]="formData.getRecyclingProcess()"
         class="u-margin-bottom"
     ></app-section-title>
-    <div class="l-grid__row">
-        <div class="l-grid__col-8-12">
-            <app-text-input
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.PROCESS-CHEMISTRY' | translate"
-                [control]="form.get('weightInput')"
-            ></app-text-input>
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.WEIGHT-INPUT-FRACTION' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('weightInput')"
-            ></app-text-input>
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-BATTERY' | translate"
-                type="number"
-                suffix="%"
-                [control]="form.get('shareOfBatteryType')"
-            ></app-text-input>
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.WEIGHT-BATTERY' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('weightBatteryType')"
-            ></app-text-input>
+    <div class="m-card--secondary u-margin-bottom" *ngFor="let inputFraction of form.controls; let i = index">
+        <div class="l-grid__row">
+            <div class="l-grid__col-8-12">
+                <app-text-input
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.PROCESS-CHEMISTRY' | translate"
+                    [control]="inputFraction.get('weightInput')"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.WEIGHT-INPUT-FRACTION' | translate"
+                    [control]="inputFraction.get('weightInput')"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-BATTERY' | translate"
+                    [control]="inputFraction.get('shareOfBatteryType')"
+                    type="number"
+                    suffix="%"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.WEIGHT-BATTERY' | translate"
+                    [control]="inputFraction.get('weightBatteryType')"
+                ></app-text-input>
+            </div>
         </div>
-    </div>
-    <app-sub-section-title
-        class="u-margin-top-x-large"
-        [title]="'WIZARD.INPUT-FRACTION.TITLES.EXCESS-MATERIAL' | translate"
-    ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-6-12">
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.IMPURITIES' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('weightBatteryType')"
-            ></app-text-input>
+        <app-sub-section-title
+            class="u-margin-top-x-large"
+            [title]="'WIZARD.INPUT-FRACTION.TITLES.EXCESS-MATERIAL' | translate"
+        ></app-sub-section-title>
+        <div class="l-grid__row l-grid--with-margins">
+            <div class="l-grid__col-6-12">
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.IMPURITIES' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('weightBatteryType')"
+                ></app-text-input>
+            </div>
+            <div class="l-grid__col-6-12">
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.PACKAGING-CASING' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('weightBatteryType')"
+                ></app-text-input>
+            </div>
         </div>
-        <div class="l-grid__col-6-12">
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.PACKAGING-CASING' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('weightBatteryType')"
-            ></app-text-input>
+        <div class="l-grid__row l-grid--with-margins">
+            <div class="l-grid__col-6-12">
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.IMPURITIES' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('weightBatteryType')"
+                ></app-text-input>
+            </div>
+            <div class="l-grid__col-6-12">
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.PACKAGING-CASING' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('weightBatteryType')"
+                ></app-text-input>
+            </div>
         </div>
-    </div>
-    <div class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-6-12">
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.IMPURITIES' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('weightBatteryType')"
-            ></app-text-input>
+        <app-sub-section-title
+            class="u-margin-top-x-large"
+            [title]="'WIZARD.INPUT-FRACTION.TITLES.ELEMENTS-COMPONENTS' | translate"
+        ></app-sub-section-title>
+        <div class="l-grid__row l-grid--with-margins" *ngFor="let element of inputFraction.controls.elements.controls; let i = index">
+            <div class="l-grid__col-4-12">
+                <app-select-input
+                    class="u-margin-top-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.ELEMENTS' | translate"
+                    [control]="element.get('element')"
+                    [options]="codesService.elements()"
+                ></app-select-input>
+            </div>
+            <div class="l-grid__col-4-12">
+                <app-text-input
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-INPUT-FRACTION' | translate"
+                    class="u-margin-top-large"
+                    [control]="element.get('share')"
+                    type="number"
+                    suffix="%"
+                ></app-text-input>
+            </div>
+            <div class="l-grid__col-4-12">
+                <app-text-input
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
+                    class="u-margin-top-large"
+                    [control]="element.get('mass')"
+                    type="number"
+                    suffix="kg"
+                ></app-text-input>
+            </div>
         </div>
-        <div class="l-grid__col-6-12">
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.PACKAGING-CASING' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('weightBatteryType')"
-            ></app-text-input>
+        <a
+            class="u-margin-top-large a-button--primary a-button-outline has-icon-after"
+            (click)="addElement()">
+                {{ 'WIZARD.INPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
+        </a>
+        <app-sub-section-title
+            class="u-margin-top-x-large"
+            [title]="'WIZARD.INPUT-FRACTION.TITLES.ADDITIONAL-INFORMATION' | translate"
+        ></app-sub-section-title>
+        <div class="l-grid__row">
+            <div class="l-grid__col-8-12">
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.METHODOLOG-CHEMICAL' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('descriptionOfMethodologyShare')"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.METHODOLOG-WASTE' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('descriptionOfMethodologyChemicalComposition')"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS-JACKET' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('massOfExternalJacket')"
+                ></app-text-input>
+                <app-text-input
+                    class="u-margin-top-x-large"
+                    [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS-OUTER-CASINGS' | translate"
+                    type="number"
+                    suffix="kg"
+                    [control]="inputFraction.get('massOfOuterCasings')"
+                ></app-text-input>
+            </div>
         </div>
-    </div>
-    <app-sub-section-title
-        class="u-margin-top-x-large"
-        [title]="'WIZARD.INPUT-FRACTION.TITLES.ELEMENTS-COMPONENTS' | translate"
-    ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins" *ngFor="let element of form.controls.elements.controls; let i = index">
-        <div class="l-grid__col-4-12">
-            <app-select-input
-                class="u-margin-top-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.ELEMENTS' | translate"
-                [control]="element.get('element')"
-                [options]="codesService.elements()"
-            ></app-select-input>
+        <div class="u-margin-top-large">
+            <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+            <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
         </div>
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-INPUT-FRACTION' | translate"
-                class="u-margin-top-large"
-                type="number"
-                suffix="%"
-                [control]="element.get('share')"
-            ></app-text-input>
-        </div>
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
-                type="number"
-                suffix="kg"
-                class="u-margin-top-large"
-                [control]="element.get('mass')"
-            ></app-text-input>
-        </div>
-    </div>
-    <a
-        class="u-margin-top-large a-button--primary a-button-outline has-icon-after"
-        (click)="addElement()">
-            {{ 'WIZARD.INPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
-    </a>
-    <app-sub-section-title
-        class="u-margin-top-x-large"
-        [title]="'WIZARD.INPUT-FRACTION.TITLES.ADDITIONAL-INFORMATION' | translate"
-    ></app-sub-section-title>
-    <div class="l-grid__row">
-        <div class="l-grid__col-8-12">
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.METHODOLOG-CHEMICAL' | translate"
-                [control]="form.get('descriptionOfMethodologyShare')"
-            ></app-text-input>
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.METHODOLOG-WASTE' | translate"
-                [control]="form.get('descriptionOfMethodologyChemicalComposition')"
-            ></app-text-input>
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS-JACKET' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('massOfExternalJacket')"
-            ></app-text-input>
-            <app-text-input
-                class="u-margin-top-x-large"
-                [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS-OUTER-CASINGS' | translate"
-                type="number"
-                suffix="kg"
-                [control]="form.get('massOfOuterCasings')"
-            ></app-text-input>
-        </div>
-    </div>
-    <div class="u-margin-top-large">
-        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
-        <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
     </div>
 </div>
