@@ -11,15 +11,17 @@ export class FormDataService {
     ) {
         this.formGroup = this.formBuilder.group({
             information: this.formBuilder.group({
-                reportingYear: ['', Validators.required],
-                recyclingProcess: ['', Validators.required],
+                reportingYear: [null, Validators.required],
+                recyclingProcess: [null, Validators.required],
                 name: ['', Validators.required],
-                receiver: ['', Validators.required]
+                // receiver: [null, Validators.required]
             }),
             inputFraction: this.formBuilder.array([this.createInputFraction()]),
             additives: this.formBuilder.array([this.createAdditive()]),
             outputFraction: this.formBuilder.array([this.createOutputElement()]),
-            recyclingEfficiency: this.formBuilder.array([this.createRecyclingElement()]),
+            recyclingEfficiency: this.formBuilder.group({
+              calculatedEfficiency: [null, Validators.required]
+            }),
             additionalInformation: this.formBuilder.group({
                 files: [[]],
                 additionalInformation: ['']
@@ -67,8 +69,7 @@ export class FormDataService {
     private createOutputElement(): FormGroup {
       return this.formBuilder.group({
         element: ['', Validators.required],
-        share: ['', Validators.required],
-        mass: ['', Validators.required],
+        mass: [null, Validators.required],
         classification: ['', Validators.required],
         replacedMaterial: ['', Validators.required],
         elementClassification: ['', Validators.required],
@@ -79,15 +80,7 @@ export class FormDataService {
     private createAdditive(): FormGroup {
       return this.formBuilder.group({
         type: ['', Validators.required],
-        weight: ['', Validators.required],
-      });
-    }
-
-    private createRecyclingElement(): FormGroup {
-      return this.formBuilder.group({
-        element: ['', Validators.required],
-        input: ['', Validators.required],
-        output: ['', Validators.required],
+        weight: [null, Validators.required],
       });
     }
 

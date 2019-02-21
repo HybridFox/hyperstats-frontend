@@ -4,10 +4,10 @@ const { REPORT_STATUS } = require("../helpers/const");
 
 const savedData = {
 	information: joi.object().keys({
-		reportingYear: joi.number().optional(),
-		recyclingProcess: joi.string().optional(),
-		name: joi.string().optional(),
-		receiver: joi.string().optional(),
+		reportingYear: joi.number().allow(null).optional(),
+		recyclingProcess: joi.string().allow(null).optional(),
+		name: joi.string().allow("").optional(),
+		// receiver: joi.string().allow(null).optional(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
@@ -31,8 +31,8 @@ const savedData = {
 		}),
 	})),
 	additives: joi.array().items(joi.object().keys({
-		type: joi.string().optional(),
-		weight: joi.number().optional(),
+		type: joi.string().allow("").optional(),
+		weight: joi.number().allow(null).optional(),
 		chemicalComposition: joi.array().items(joi.object().keys({
 			element: joi.string().optional(),
 			weight: joi.number().optional(),
@@ -50,13 +50,13 @@ const savedData = {
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({
-		calculatedEfficiency: joi.number().optional(),
+		calculatedEfficiency: joi.number().allow(null).optional(),
 	}),
 	additionalInformation: joi.object().keys({
 		files: joi.array().items(joi.object().keys({
 			type: joi.string(),
 		})),
-		additionalInformation: joi.string().optional(),
+		additionalInformation: joi.string().allow("").optional(),
 	}),
 };
 
