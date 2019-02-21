@@ -10,56 +10,56 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { OutputFraction } from '../../../../store/reports/types';
 
 @Component({
- templateUrl: './output-fraction.page.html',
+  templateUrl: './output-fraction.page.html',
 })
 export class OutputFractionPageComponent implements OnInit {
- public form: any;
- public totalWeight = 0;
+  public form: any;
+  public totalWeight = 0;
 
- private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
- constructor(
-   public codesService: CodesService,
-   public formData: FormDataService,
-   private toastrService: ToastrService,
-   private router: Router,
-   private activatedRoute: ActivatedRoute
- ) {}
+  constructor(
+    public codesService: CodesService,
+    public formData: FormDataService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) { }
 
- public ngOnInit() {
-   this.form = this.formData.getFormData().get('outputFraction');
+  public ngOnInit() {
+    this.form = this.formData.getFormData().get('outputFraction');
 
-   this.form.valueChanges.pipe(
-     takeUntil(this.componentDestroyed$),
-   ).subscribe((value) => {
-     this.handleFormChanges(value);
-   });
- }
+    this.form.valueChanges.pipe(
+      takeUntil(this.componentDestroyed$),
+    ).subscribe((value) => {
+      this.handleFormChanges(value);
+    });
+  }
 
- public handleFormChanges(changes: OutputFraction[]) {
-  this.totalWeight = changes.reduce((totalWeight, item) => {
-    if (item.mass !== '' && !isNaN(parseInt(item.mass, 10))) {
-      return totalWeight + parseInt(item.mass, 10);
+  public handleFormChanges(changes: OutputFraction[]) {
+    this.totalWeight = changes.reduce((totalWeight, item) => {
+      if (item.mass !== '' && !isNaN(parseInt(item.mass, 10))) {
+        return totalWeight + parseInt(item.mass, 10);
+      }
+      return totalWeight;
+    }, 0);
+  }
+
+  public addOutputFraction() {
+    this.formData.addOutputElement();
+  }
+
+  public previousStep() {
+    this.router.navigate(['../additives'], { relativeTo: this.activatedRoute });
+  }
+
+  public nextStep() {
+    FormHelper.markAsDirty(this.form);
+
+    if (this.form.valid) {
+      this.router.navigate(['../recycling-efficiency'], { relativeTo: this.activatedRoute });
+    } else {
+      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
     }
-    return totalWeight;
-  }, 0);
- }
-
- public addOutputFraction() {
-   this.formData.addOutputElement();
- }
-
- public previousStep() {
-   this.router.navigate(['../additives'], {relativeTo: this.activatedRoute});
- }
-
- public nextStep() {
-   FormHelper.markAsDirty(this.form);
-
-   if (this.form.valid) {
-     this.router.navigate(['../recycling-efficiency'], {relativeTo: this.activatedRoute});
-   } else {
-     this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
-   }
- }
+  }
 }
