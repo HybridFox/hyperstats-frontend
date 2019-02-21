@@ -3,7 +3,8 @@ const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
 const createObjectId = require("mongoose").Types.ObjectId;
 const createReport = require("./create");
-const NEW_REPORT = require("../../../test/mocks/report").NEW_REPORT;
+const { NEW_REPORT } = require("../../../test/mocks/report");
+const { REPORT_STATUS } = require("./const");
 
 should();
 use(chaiAsPromised);
@@ -23,7 +24,7 @@ describe("Report", () => {
 		it("Should create a report", async() => {
 			const createdReport = await createReport({
 				report: NEW_REPORT,
-				meta: { status: "FILED" },
+				meta: { status: REPORT_STATUS.FILED },
 				companyId: createObjectId(),
 			});
 
@@ -34,7 +35,7 @@ describe("Report", () => {
 				calculatedEfficiency: 1,
 			});
 			expect(createdReport.meta).to.be.an("object");
-			expect(createdReport.meta.status).to.equal("FILED");
+			expect(createdReport.meta.status).to.equal(REPORT_STATUS.FILED);
 		});
 	});
 });

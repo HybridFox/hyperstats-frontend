@@ -1,5 +1,6 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import countryList from 'country-list';
 import { prop, pathOr } from 'ramda';
 
 import { Option } from '@ui/form-fields/components/select/select.types';
@@ -9,20 +10,27 @@ import { Option } from '@ui/form-fields/components/select/select.types';
     templateUrl: './recycling-partner-form.html'
 })
 
-export class RecyclingPartnerFormComponent implements OnChanges {
-    @Input() public countryList: Option[];
+export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
     @Input() public recyclingPartner: any;
 
     @Output() public submit: EventEmitter<any> = new EventEmitter<any>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
     @Output() public toggleActivation: EventEmitter<any> = new EventEmitter<any>();
 
+    public countryList: Option[];
     public recyclingPartnerForm: FormGroup;
     public isActivated: boolean;
 
     constructor(
         private formBuilder: FormBuilder,
     ) {}
+
+    ngOnInit() {
+        this.countryList = countryList.getData().map(({ code, name }) => ({
+            value: code,
+            label: name,
+        }));
+    }
 
     public ngOnChanges() {
         this.buildForm(prop('data')(this.recyclingPartner));
@@ -34,7 +42,13 @@ export class RecyclingPartnerFormComponent implements OnChanges {
             return;
         }
 
-        this.submit.emit(this.recyclingPartnerForm.getRawValue());
+        this.submit.emit({
+            ...this.recyclingPartner || {},
+            data: this.recyclingPartnerForm.getRawValue(),
+            meta: {
+                type: 'RP'
+            }
+        });
     }
 
     public removeForm() {

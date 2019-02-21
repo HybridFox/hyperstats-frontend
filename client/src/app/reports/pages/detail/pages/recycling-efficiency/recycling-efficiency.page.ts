@@ -7,6 +7,7 @@ import { FormHelper } from '@helpers/form.helper';
 
 import { ElementType } from './recycling-efficiency.types';
 import { groupBy } from 'ramda';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 @Component({
   templateUrl: './recycling-efficiency.page.html',
@@ -92,7 +93,7 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
     } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
+      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
   }
 }

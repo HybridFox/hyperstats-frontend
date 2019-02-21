@@ -2,7 +2,7 @@ const dataMiddleware = require("../middleware/data");
 const validationPresets = require("../helpers/validation/presets");
 const Errors = require("../helpers/errorHandler");
 const reportController = require("../controllers/report");
-// const reportValidations = require("../controllers/report/validations");
+const reportValidations = require("../controllers/report/validations");
 const authMiddleware = require("../middleware/auth");
 
 module.exports = (router) => {
@@ -167,7 +167,15 @@ module.exports = (router) => {
 	 *       status:
 	 *         $ref: '#/definitions/ReportStatuses'
 	 *   ReportBody:
-	 *       $ref: '#/definitions/ReportData'
+	 *       type: object
+	 *       properties:
+	 *         data:
+	 *           $ref: '#/definitions/ReportData'
+	 *         meta:
+	 *           type: object
+	 *           properties:
+	 *             status:
+	 *               $ref: '#/definitions/ReportStatuses'
 	 *   ReportResponse:
 	 *     type: object
 	 *     properties:
@@ -189,6 +197,15 @@ module.exports = (router) => {
 	 *       - report
 	 *     produces:
 	 *       - application/json
+	 *     parameters:
+	 *       - in: query
+	 *         name: recycling-process
+	 *         type: string
+	 *         description: The id of the recycling process
+	 *       - in: query
+	 *         name: sort
+	 *         type: string
+	 *         description: Sort the list on "name" or "reportingYear". Prefix with "-" to sort descending. Falls back to "name".
 	 *     responses:
 	 *       201:
 	 *         description: Report array
@@ -201,6 +218,7 @@ module.exports = (router) => {
 	router.route("/reports")
 		.get(
 			dataMiddleware.copy,
+			dataMiddleware.validate("query", reportValidations.getAllQuery, Errors.ItemNotFound),
 			reportController.getAll
 		);
 
@@ -229,8 +247,7 @@ module.exports = (router) => {
 	router.route("/reports")
 		.post(
 			dataMiddleware.copy,
-			// TODO: enable this validation again when it's possible to save the report partially based on FILED or SAVED status
-			// dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
+			dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
 			reportController.create
 		);
 
@@ -260,5 +277,39 @@ module.exports = (router) => {
 			dataMiddleware.copy,
 			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
 			reportController.getOne
+		);
+
+	/**
+	 * @swagger
+	 * /api/reports/{id}:
+	 *   put:
+	 *     description: update a single report
+	 *     tags:
+	 *       - report
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - in: path
+	 *         name: id
+	 *         type: string
+	 *         required: true
+	 *       - in: body
+	 *         name: body
+	 *         required: true
+	 *         schema:
+	 *           $ref: '#/definitions/ReportBody'
+	 *     responses:
+	 *       201:
+	 *         description: Report
+	 *         schema:
+	 *           $ref: '#/definitions/ReportResponse'
+	 */
+
+	router.route("/reports/:id")
+		.put(
+			dataMiddleware.copy,
+			dataMiddleware.validate("params", validationPresets.byId, Errors.ItemNotFound),
+			dataMiddleware.validate("body", reportValidations.report, Errors.ObjectValidationFailed),
+			reportController.update
 		);
 };
