@@ -18,8 +18,6 @@ export class ReportsActions {
     private reportsRepository: ReportsRepository,
   ) {}
 
-  public;
-
   public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
