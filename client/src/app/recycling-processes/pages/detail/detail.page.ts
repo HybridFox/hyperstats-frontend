@@ -14,6 +14,8 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { FormHelper } from '@helpers/form.helper';
 import { recyclingPartnersToSelectOptions } from './select.helpers';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
+import { AssetsRepository } from '@api/assets';
 
 @Component({
   templateUrl: './detail.page.html',
@@ -27,6 +29,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
     public recyclingProcessId: string;
     public duplicateProcessId: string;
+    public uploadResponse: any;
 
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -38,6 +41,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         private router: Router,
         private toastrService: ToastrService,
         private translateService: TranslateService,
+        private assetsRepository: AssetsRepository
     ) {}
 
     public ngOnInit() {
@@ -183,5 +187,46 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 this.process = process;
             });
         this.duplicateProcessId = null;
+    }
+
+    public onUpload(fileObject) {
+        this.assetsRepository
+            .upload(fileObject.file)
+            .subscribe(fileResponse => {
+                if (fileResponse && fileObject.type === 'asset' ) {
+                    if (!this.uploadResponse) {
+                        this.uploadResponse = {
+                            [fileObject.step]: {
+                                asset: fileResponse
+                            }
+                        };
+                    } else {
+                        this.uploadResponse = {
+                            ...this.uploadResponse,
+                            [fileObject.step]: {
+                                ...this.uploadResponse[fileObject.step],
+                                asset: fileResponse
+                            }
+                        };
+                    }
+                } else if (fileResponse) {
+                    if (!this.uploadResponse) {
+                        this.uploadResponse = {
+                            [fileObject.step]: {
+                                overview: fileResponse,
+                            }
+                        };
+                    } else {
+                        this.uploadResponse = {
+                            ...this.uploadResponse,
+                            [fileObject.step]: {
+                                ...this.uploadResponse[fileObject.step],
+                                overview: fileResponse,
+                            }
+                        };
+                    }
+                }
+
+            });
     }
 }

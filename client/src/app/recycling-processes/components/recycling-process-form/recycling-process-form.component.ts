@@ -8,6 +8,7 @@ import { omit, prop, pathOr } from 'ramda';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
+import { AssetsApiModule } from '@api/assets';
 
 
 @Component({
@@ -18,11 +19,14 @@ import { Toggle } from './recycling-process.interface';
 export class RecyclingProcessFormComponent implements OnChanges {
     @Input() public recyclingProcess: any;
     @Input() public recyclingPartners: any;
+    @Input() public uploadResponse: any;
 
     @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
     @Output() public toggleActivation: EventEmitter<Toggle> = new EventEmitter<Toggle>();
     @Output() public duplicate: EventEmitter<string> = new EventEmitter<string>();
+    @Output() public uploadAsset: EventEmitter<object> = new EventEmitter<object>();
+    @Output() public uploadOverview: EventEmitter<object> = new EventEmitter<object>();
 
     public recyclingProcessForm: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
@@ -140,5 +144,23 @@ export class RecyclingProcessFormComponent implements OnChanges {
 
     public newStep(): void {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
+    }
+
+    public onUploadAsset(formData, key: number) {
+        const file = {
+            step: key,
+            file: formData,
+            type: 'asset'
+        };
+        this.uploadAsset.emit(file);
+    }
+
+    public onUploadOverview(formData, key: number) {
+        const file = {
+            step: key,
+            file: formData,
+            type: 'overview'
+        };
+        this.uploadOverview.emit(file);
     }
 }

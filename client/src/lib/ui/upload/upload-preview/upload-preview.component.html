@@ -1,0 +1,19 @@
+<ul class="m-file-upload__progress" *ngIf="uploadProgress">
+    <li class="l-grid__row u-margin-bottom">
+        <div class="l-grid__col-1-12">
+            <i class="a-icon--file"></i>
+        </div>
+        <div class="l-grid__col-10-12">
+            <!-- <div *ngIf="!upload?.name || !uploadResult?.originalname">
+                <a href="{{ fileUrl || '#' }}" (click)="getFile()" class="m-file-upload__upload m-file-upload__progress__file-name" download>{{ uploadResult?.originalname }}</a>
+            </div> -->
+            <div *ngIf="upload?.name || uploadResult?.originalname">
+                <span class="m-file-upload__progress__file-name">{{ upload?.name || uploadResult?.originalname }}</span>
+            </div>
+            <progress max="100" value="{{ uploadProgress || 0 }}" class="m-file-upload__progress__bar"></progress>
+        </div>
+        <div class="l-grid__col-1-12" *ngIf="uploadProgress">
+            <span class="m-file-upload__progress__percentage">{{ uploadProgress }}%</span>
+        </div>
+    </li>
+</ul>

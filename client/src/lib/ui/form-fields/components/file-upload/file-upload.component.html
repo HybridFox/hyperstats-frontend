@@ -1,47 +1,13 @@
 <div [ngClass]="['m-file-upload', class]">
     <p *ngIf="title" class="m-file-upload__title">{{ title }}</p>
     <p *ngIf="description" class="m-file-upload__description">{{ description }}</p>
-    <div class="m-file-upload__action u-margin-bottom">
-        <input
-            type="file"
-            name="filesToUpload"
-            class="m-file-upload__input"
-            (change)="onUpload($event)"
-            #filesInput>
+    <app-upload-input
+        (upload)="onUpload($event)"
+    ></app-upload-input>
 
-        <div *ngIf="!multiple; then singleFile else dragAndDrop"></div>
-        <ng-template #singleFile>
-            <div class="m-file-upload--single-file">
-                <i class="a-icon--upload"></i>
-                <span (click)="filesInput.click()" class="m-file-upload__upload">Upload attachment</span>
-                <label *ngIf="label" for="file" class="m-file-upload__label">{{ label }}</label>
-            </div>
-        </ng-template>
-
-        <ng-template #dragAndDrop>
-            <div class="m-file-upload--drag-and-drop">
-                <p>{{ 'GENERAL.LABELS.DRAGANDDROP' | translate }} <a href="#" (click)="filesInput.click()" class="m-file-upload__upload">{{ 'GENERAL.LABELS.BROWSE' | translate }}</a></p>
-            </div>
-        </ng-template>
-    </div>
-
-    <ul class="m-file-upload__progress" *ngIf="control?.value?.originalname">
-        <li class="l-grid__row u-margin-bottom">
-            <div class="l-grid__col-1-12">
-                <i class="a-icon--file"></i>
-            </div>
-            <div class="l-grid__col-10-12">
-                <div *ngIf="!formGroup?.value?.originalname">
-                    <a href="{{ fileUrl || '#' }}" (click)="getFile()" class="m-file-upload__upload m-file-upload__progress__file-name" download>{{ control?.value?.originalname }}</a>
-                </div>
-                <div *ngIf="formGroup?.value?.originalname">
-                    <span class="m-file-upload__progress__file-name">{{ control?.value?.originalname }}</span>
-                </div>
-                <progress max="100" value="{{ uploadProcess || 100 }}" class="m-file-upload__progress__bar"></progress>
-            </div>
-            <div class="l-grid__col-1-12" *ngIf="uploadProcess">
-                <span class="m-file-upload__progress__percentage">{{ uploadProcess }}%</span>
-            </div>
-        </li>
-    </ul>
+    <app-upload-preview
+        [upload]="file"
+        [uploadProgress]="uploadProgress"
+        [uploadResult]="uploadResult"
+    ></app-upload-preview>
 </div>

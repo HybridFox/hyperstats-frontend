@@ -1,9 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { FormGroup, FormControl } from '@angular/forms';
-import { createFileUploadControl } from './file-upload.helper';
-import { AssetsRepository } from '@api/assets';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'app-file-upload',
@@ -18,26 +15,17 @@ export class FileUploadComponent implements OnDestroy, OnInit {
     @Input() class = '';
     @Input() multiple: boolean;
     @Input() control: FormControl = new FormControl('');
+    @Input() uploadResult: any;
+    @Input() uploadProgress: any;
 
-    @Output() public upload: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-    public formGroup: FormGroup;
-    public uploadProcess: number;
-    public fileUrl: string;
+    @Output() public upload: EventEmitter<FormData> = new EventEmitter<FormData>();
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
-    constructor(
-        private assetsRepository: AssetsRepository
-    ) {}
+    public file: any;
 
     public ngOnInit() {
-        this.formGroup = createFileUploadControl();
-        this.formGroup.valueChanges
-            .pipe(takeUntil(this.componentDestroyed$))
-            .subscribe((value) => {
-                this.control.patchValue(value);
-            });
+
     }
 
     public ngOnDestroy() {
@@ -46,24 +34,16 @@ export class FileUploadComponent implements OnDestroy, OnInit {
     }
 
     public onUpload(event) {
-        if (event.target.files.length === 0) {
-            return;
-        }
-
         const formData: FormData = new FormData();
+        this.file = {
+            name: event.target.files[0].name,
+        };
         formData.append('file', event.target.files[0]);
-        this.assetsRepository
-            .upload(formData)
-            .subscribe(fileResponse => {
-                if (fileResponse && fileResponse.constructor === Number) {
-                    this.uploadProcess = fileResponse;
-                } else if (fileResponse) {
-                    this.formGroup.patchValue(fileResponse);
-                }
-            });
+
+        this.upload.emit(formData);
     }
 
-    public getFile() {
-        this.fileUrl = this.assetsRepository.getFileURL(this.control.value.id);
-    }
+    // public getFile() {
+    //     this.fileUrl = this.assetsRepository.getFileURL(this.control.value.id);
+    // }
 }

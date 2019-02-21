@@ -6,8 +6,11 @@
     *ngIf="recyclingProcessId"
     [recyclingProcess]="process"
     [recyclingPartners]="partners$ | async"
+    [uploadResponse]="uploadResponse"
     (submit)="save($event)"
     (remove)="remove($event)"
     (toggleActivation)="toggleActivation($event)"
     (duplicate)="duplicateProcess($event)"
+    (uploadAsset)="onUpload($event)"
+    (uploadOverview)="onUpload($event)"
 ></app-recycling-process-form>

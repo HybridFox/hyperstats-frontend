@@ -28,9 +28,17 @@ export class AssetsRepository {
   private getEventMessage(event: HttpEvent<any>, file: File) {
     switch (event.type) {
       case HttpEventType.UploadProgress:
-        return Math.round(100 * event.loaded / event.total);
+        const progress = {
+          progress: Math.round(100 * event.loaded / event.total),
+          result: null
+        }
+        return progress;
       case HttpEventType.Response:
-        return event.body;
+        const result = {
+          progress: 100,
+          result: event.body
+        }
+        return result;
     }
   }
 
