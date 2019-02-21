@@ -1,60 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormDataService } from '../../../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
-import { FormHelper } from '@helpers/form.helper';
 
 import { ElementType } from './recycling-efficiency.types';
 import { groupBy } from 'ramda';
-import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { ReportsActions } from '../../../../store/reports';
+import { StepPageAbstract } from '../step-page.abstract';
+import { ToastrService } from 'ngx-toastr';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+
 
 @Component({
   templateUrl: './recycling-efficiency.page.html',
 })
-export class RecyclingEfficiencyPageComponent implements OnInit {
+export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
   public form: any;
   public types: any;
   public efficiency: number;
 
   constructor(
-    public codesService: CodesService,
-    public formData: FormDataService,
-    private toastrService: ToastrService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
+    codesService: CodesService,
+    formData: FormDataService,
+    toastrService: ToastrService,
+    reportProcessActions: ReportsProcessActions,
+    router: Router,
+    activatedRoute: ActivatedRoute,
+    reportActions: ReportsActions,
+  ) {
+    super(
+      codesService,
+      formData,
+      toastrService,
+      reportProcessActions,
+      router,
+      activatedRoute,
+      reportActions,
+      {
+        prevStep: 'output-fraction',
+        nextStep: 'additional-information',
+        formSection: 'outputFraction'
+      }
+    );
+  }
 
-  public ngOnInit() {
-    this.form = this.formData.getFormData().get('recyclingEfficiency');
-
+  public onFormReady() {
     this.mergeElements();
   }
 
-  public previousStep() {
-    this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
-  }
-
-  public nextStep() {
-    FormHelper.markAsDirty(this.form);
-
-    if (this.form.valid) {
-      this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
-    } else {
-      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
-    }
-  }
-
   private mergeElements() {
-    const inputs = this.formData.getFormData().get('inputFraction').get('elements').value.map(input => ({
-      element: input.element,
-      input: input.mass,
-    }));
+    const inputs = this.formData.getFormData().getRawValue().inputFraction.reduce((acc, step) => {
+      return acc.concat(step.data.elements.map((input) => ({
+        element: input.element,
+        input: input.mass,
+      })));
+    }, []);
 
-    const outputs = this.formData.getFormData().get('outputFraction').value.map(output => ({
-      element: output.element,
-      output: output.mass,
-    }));
+    const outputs = this.formData.getFormData().getRawValue().outputFraction.reduce((acc, step) => {
+      return acc.concat(step.data.map((input) => ({
+        element: input.element,
+        output: input.mass,
+      })));
+    }, []);
 
     const elements =  groupBy((item: ElementType) => item.element)([...inputs, ...outputs]);
 
@@ -95,5 +102,10 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
 
     const efficiency = (result.output / result.input) * 100;
     this.efficiency = parseFloat(efficiency.toFixed(2));
+
+    this.formData
+      .getFormData()
+      .get('recyclingEfficiency.calculatedEfficiency')
+      .setValue(this.efficiency);
   }
 }

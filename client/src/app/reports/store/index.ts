@@ -1,11 +1,11 @@
 import { ReportsActions } from './reports';
-import { ReportProcessActions } from './recycling-processes';
+import { ReportsProcessActions } from './recycling-processes';
 import { ReportsRepository } from '@api/reports';
 import { RecyclingProcessesRepository } from '@api/recycling-processes';
 
 export const ReportsStoreServices = [
     ReportsActions,
-    ReportProcessActions,
+    ReportsProcessActions,
     ReportsRepository,
     RecyclingProcessesRepository
 ];

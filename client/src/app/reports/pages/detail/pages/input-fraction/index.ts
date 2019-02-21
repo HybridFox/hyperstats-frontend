@@ -1,1 +1,1 @@
-export * from './input-fraction.page';
+export { InputFractionPageComponent } from './input-fraction.page';

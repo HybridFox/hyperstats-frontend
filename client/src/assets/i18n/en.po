@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-20T14:56:01.069Z\n"
+"POT-Creation-Date: 2019-02-21T09:58:42.158Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,6 +40,11 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##FUNCTION"
+msgid "GENERAL##LABELS##ACTIONS"
+msgstr "Function"
 
 msgid "GENERAL##LABELS##ACTIVATED"
 msgstr "Active"
@@ -119,6 +124,11 @@ msgstr "Function"
 msgid "GENERAL##LABELS##I-ACCEPT-THE"
 msgstr "I accept the"
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##LASTNAME"
+msgid "GENERAL##LABELS##LAST-UPDATED"
+msgstr "Lastname"
+
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
 
@@ -171,6 +181,11 @@ msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr "Sponsored by"
 
 #, fuzzy
+#| msgid "GENERAL##LABELS##SAVE"
+msgid "GENERAL##LABELS##STATES"
+msgstr "Save"
+
+#, fuzzy
 #| msgid "GENERAL##LABELS##STREETNAME"
 msgid "GENERAL##LABELS##STREET"
 msgstr "Street name"
@@ -201,6 +216,11 @@ msgstr "Update profile"
 
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##TYPE"
+msgid "GENERAL##LABELS##YEAR"
+msgstr "Type"
 
 msgid "GENERAL##LABELS##ZIPCODE"
 msgstr "Zipcode"
@@ -440,7 +460,9 @@ msgstr "An email has been send to you"
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
 
-msgid "PAGE##REPORTS##FILLED"
+#, fuzzy
+#| msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##FILED"
 msgstr "Filed"
 
 msgid "PAGE##REPORTS##TITLE"
@@ -645,6 +667,25 @@ msgstr "Input weight"
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
+msgstr ""
+"If your report is complete and ready you can file it. After you have filed "
+"your report you can’t make any further changes."
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##SAVE-REPORT"
+msgstr ""
+"You can save this report temporarily and change or complete it on a future "
+"date."
+
+msgid "WIZARD##FILE-REPORT##LABELS##FILE-REPORT"
+msgstr "File report"
+
+msgid "WIZARD##FILE-REPORT##LABELS##SAVE-REPORT"
+msgstr "Save report temporarily"
+
+msgid "WIZARD##FILE-REPORT##TITLES##FILE-SAVE-REPORT"
+msgstr "File or save report"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element"

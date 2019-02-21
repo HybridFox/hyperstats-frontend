@@ -15,6 +15,8 @@ import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
 import { ReportsServices } from './services';
+import { LoadingModule } from '@ui/loading';
+import { Components } from './components';
 
 @NgModule({
   imports: [
@@ -22,15 +24,17 @@ import { ReportsServices } from './services';
     ReportsRoutingModule,
     SharedModule,
     ReportsApiModule,
-    FormFieldsModule
+    FormFieldsModule,
+    LoadingModule,
   ],
   providers: [
     ...ReportsStoreServices,
-    ...ReportsServices
+    ...ReportsServices,
   ],
   declarations: [
     Pages,
-    ReportsComponent
+    ReportsComponent,
+    ...Components,
   ],
 })
 export class ReportsModule {

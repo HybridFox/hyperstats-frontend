@@ -2,8 +2,8 @@ export * from './actions';
 export * from './reducers';
 export * from './selectors';
 
-import { ReportProcessActions } from './actions';
+import { ReportsProcessActions } from './actions';
 
-export const ReportsStoreServices = [
-  ReportProcessActions
+export const ReportsProcessStoreServices = [
+  ReportsProcessActions
 ];

@@ -37,6 +37,9 @@ module.exports = (router) => {
 	 */
 
 
+	router.use("/users*", AuthMiddleware.isLoggedIn, AuthMiddleware.isAdmin);
+
+
 	/**
 	 * @swagger
 	 * /api/users:
@@ -66,7 +69,6 @@ module.exports = (router) => {
 	 */
 	router.route("/users")
 		.get(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("query", Validations.filters, Errors.ObjectValidationFailed),
 			Controller.getAll,
@@ -112,13 +114,11 @@ module.exports = (router) => {
 	 */
 	router.route("/users/:id")
 		.get(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			Controller.getById,
 		)
 		.put(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
@@ -155,7 +155,6 @@ module.exports = (router) => {
 	 */
 	router.route("/users/:id/status")
 		.patch(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.updateStatus, Errors.ObjectValidationFailed),
@@ -191,7 +190,6 @@ module.exports = (router) => {
 	 */
 	router.route("/users/:id/company")
 		.patch(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", validationPresets.byId, Errors.ObjectValidationFailed),
 			DataMiddleware.validate("body", Validations.updateCompany, Errors.ObjectValidationFailed),
