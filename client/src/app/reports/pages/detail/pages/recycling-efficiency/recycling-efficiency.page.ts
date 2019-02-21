@@ -26,8 +26,6 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.form = this.formData.getFormData().get('recyclingEfficiency');
-
     this.mergeElements();
   }
 
@@ -46,7 +44,7 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
   }
 
   private mergeElements() {
-    const inputs = this.formData.getFormData().get('inputFraction').get('elements').value.map(input => ({
+    const inputs = this.formData.getFormData().get('inputFraction').value[0].elements.map(input => ({
       element: input.element,
       input: input.mass,
     }));
@@ -95,5 +93,10 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
 
     const efficiency = (result.output / result.input) * 100;
     this.efficiency = parseFloat(efficiency.toFixed(2));
+
+    this.formData
+      .getFormData()
+      .get('recyclingEfficiency.calculatedEfficiency')
+      .setValue(this.efficiency);
   }
 }

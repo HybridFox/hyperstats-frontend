@@ -4,9 +4,9 @@ const { REPORT_STATUS } = require("../helpers/const");
 
 const savedData = {
 	information: joi.object().keys({
-		reportingYear: joi.number().allow(null).optional(),
-		recyclingProcess: joi.string().allow(null).optional(),
-		name: joi.string().allow("").optional(),
+		reportingYear: joi.number(),
+		recyclingProcess: joi.string(),
+		name: joi.string().allow(""),
 		// receiver: joi.string().allow(null).optional(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
