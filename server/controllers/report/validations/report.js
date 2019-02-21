@@ -12,41 +12,44 @@ const savedData = {
 	inputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
 		data: joi.object().keys({
-			processChemistry: joi.string().optional(),
-			weightInput: joi.number().optional(),
-			shareOfBatteryType: joi.number().optional(),
-			weightBatteryType: joi.number().optional(),
+			processChemistry: joi.string().allow("").optional(),
+			weightInput: joi.number().allow(null).optional(),
+			shareOfBatteryType: joi.number().allow(null).optional(),
+			weightBatteryType: joi.number().allow(null).optional(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
-				impurities: joi.number().optional(),
-				PackagingMaterial: joi.number().optional(),
+				impurities: joi.number().allow(null).optional(),
+				PackagingMaterial: joi.number().allow(null).optional(),
 			})),
 			elements: joi.array().items(joi.object().keys({
-				element: joi.string().optional(),
-				mass: joi.number().optional(),
+				element: joi.string().allow("").optional(),
+				mass: joi.number().allow(null).optional(),
 			})),
-			descriptionOfMethodologyShare: joi.string().optional(),
-			descriptionOfMethodologyChemicalComposition: joi.string().optional(),
-			massOfExternalJacket: joi.number().optional(),
-			massOfOuterCasings: joi.number().optional(),
+			descriptionOfMethodologyShare: joi.string().allow("").optional(),
+			descriptionOfMethodologyChemicalComposition: joi.string().allow("").optional(),
+			massOfExternalJacket: joi.number().allow(null).optional(),
+			massOfOuterCasings: joi.number().allow(null).optional(),
 		}),
 	})),
 	additives: joi.array().items(joi.object().keys({
-		type: joi.string().allow("").optional(),
-		weight: joi.number().allow(null).optional(),
-		chemicalComposition: joi.array().items(joi.object().keys({
-			element: joi.string().optional(),
-			weight: joi.number().optional(),
-		})),
+		siteRef: joi.string(),
+		data: joi.object().keys({
+			type: joi.string().allow("").optional(),
+			weight: joi.number().allow(null).optional(),
+			chemicalComposition: joi.array().items(joi.object().keys({
+				element: joi.string().allow("").optional(),
+				weight: joi.number().allow(null).optional(),
+			})),
+		}),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
 		data: joi.array().items(joi.object().keys({
-			element: joi.string().optional(),
-			mass: joi.number().optional(),
-			classification: joi.string().optional(),
-			replacedMaterial: joi.string().optional(),
-			elementCompound: joi.string().optional(),
-			shareOutputFraction: joi.string().optional(),
+			element: joi.string().allow("").optional(),
+			mass: joi.number().allow(null).optional(),
+			virginClassification: joi.string().allow("").optional(),
+			virginReplacedMaterial: joi.string().allow("").optional(),
+			elementClassification: joi.string().allow("").optional(),
+			elementReplacedMaterial: joi.string().allow("").optional(),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({
@@ -54,7 +57,7 @@ const savedData = {
 	}),
 	additionalInformation: joi.object().keys({
 		files: joi.array().items(joi.object().keys({
-			type: joi.string(),
+			type: joi.string().allow(""),
 		})),
 		additionalInformation: joi.string().allow("").optional(),
 	}),
@@ -65,7 +68,6 @@ const filedData = {
 		reportingYear: joi.number().required(),
 		recyclingProcess: joi.string().required(),
 		name: joi.string().required(),
-		// receiver: joi.string().required(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
@@ -89,22 +91,25 @@ const filedData = {
 		}),
 	})),
 	additives: joi.array().items(joi.object().keys({
-		type: joi.string().required(),
-		weight: joi.number().required(),
-		chemicalComposition: joi.array().items(joi.object().keys({
-			element: joi.string().required(),
+		siteRef: joi.string(),
+		data: joi.object().keys({
+			type: joi.string().required(),
 			weight: joi.number().required(),
-		})),
+			chemicalComposition: joi.array().items(joi.object().keys({
+				element: joi.string().required(),
+				weight: joi.number().required(),
+			})),
+		}),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
 		data: joi.array().items(joi.object().keys({
 			element: joi.string().required(),
 			mass: joi.number().required(),
-			classification: joi.string().required(),
-			replacedMaterial: joi.string().required(),
-			elementCompound: joi.string().required(),
-			shareOutputFraction: joi.string().required(),
+			virginClassification: joi.string().required(),
+			virginReplacedMaterial: joi.string().required(),
+			elementClassification: joi.string().required(),
+			elementReplacedMaterial: joi.string().required(),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({

@@ -38,7 +38,7 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
       )
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
-          const route = event.url.split('/').slice(-1)[0];
+          const route = (event.url.split('/').slice(-1)[0]).split('?')[0];
           [this.selectedIndex, this.currentTitle] = this.steps.reduce((acc, step, index) => step.route === route ? [
             index,
             step.name
@@ -54,7 +54,7 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
 
     this.report$
       .pipe(
-        filter((report) => !!report)
+        takeUntil(this.componentDestroyed$)
       )
       .subscribe((report) => {
         this.data = this.formData.setFormData(report);
@@ -62,10 +62,10 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
 
     this.route.params
       .pipe(
-          takeUntil(this.componentDestroyed$),
+        takeUntil(this.componentDestroyed$),
       )
       .subscribe(({ id }) => {
-          this.reportsActions.fetchById(id).subscribe();
+        this.reportsActions.fetchById(id).subscribe();
       });
 
     this.steps = [
@@ -106,8 +106,9 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
   }
 
   public ngAfterContentInit(): void {
-    this.selectedIndex = this.steps.reduce((acc, step, index) => step.route === this.router.url.split('/').slice(-1)[0] ? index : acc, 0);
+    this.selectedIndex = this.steps.reduce((acc, step, index) =>
+      step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? index : acc, 0);
     this.currentTitle = this.steps.reduce((acc, step) =>
-      step.route === this.router.url.split('/').slice(-1)[0] ? step.name : acc, '');
+      step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? step.name : acc, '');
   }
 }

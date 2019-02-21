@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap, catchError, finalize } from 'rxjs/operators';
 import { throwError as _throw } from 'rxjs';
 
@@ -19,29 +19,36 @@ export class ReportsActions {
   ) {}
 
   public fetchAll(): Observable<any> {
-    this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
+    this.handler.dispatchStart(ACTIONS.LIST.FETCH);
 
     return this.reportsRepository.fetchAll()
       .pipe(
         catchError((error) => {
-          this.handler.dispatchError(ACTIONS.OVERVIEW.FETCH, {
+          this.handler.dispatchError(ACTIONS.LIST.FETCH, {
             message: error.message,
           });
 
           return _throw(error);
         }),
         tap((response: any) => {
-          this.handler.dispatchSuccess(ACTIONS.OVERVIEW.FETCH, {
+          this.handler.dispatchSuccess(ACTIONS.LIST.FETCH, {
             payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.report])
           });
         }),
         finalize(() => {
-          this.handler.dispatchDone(ACTIONS.OVERVIEW.FETCH);
+          this.handler.dispatchDone(ACTIONS.LIST.FETCH);
         }),
       );
   }
 
   public fetchById(id: string): Observable<any> {
+    if (!id || id === 'new') {
+      this.handler.dispatch(ACTIONS.DETAIL.FETCH, {
+        payload: null
+      });
+      return of();
+    }
+
     this.handler.dispatchStart(ACTIONS.DETAIL.FETCH);
 
     return this.reportsRepository.fetchById(id)
@@ -68,7 +75,7 @@ export class ReportsActions {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
-          this.handler.dispatch(ACTIONS.OVERVIEW.ADD_TO_LIST, {
+          this.handler.dispatch(ACTIONS.LIST.ADD_TO_LIST, {
             payload: this.entitiesActions.normalize(response, EntitiesActions.schema.report),
           });
         })
@@ -79,7 +86,7 @@ export class ReportsActions {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
-          this.handler.dispatch(ACTIONS.OVERVIEW.ADD_TO_LIST, {
+          this.handler.dispatch(ACTIONS.LIST.ADD_TO_LIST, {
             payload: this.entitiesActions.normalize({
               ...response,
             }, EntitiesActions.schema.report),
