@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-19T13:16:22.512Z\n"
+"POT-Creation-Date: 2019-02-21T07:51:51.354Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -760,6 +760,9 @@ msgstr "Element or compound"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+msgstr "Replaced element material"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
