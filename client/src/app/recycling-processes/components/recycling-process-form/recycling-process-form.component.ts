@@ -9,13 +9,13 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
 import { AssetsApiModule } from '@api/assets';
+import { UploadPreviewComponent } from '@ui/upload/upload-preview/upload-preview.component';
 
 
 @Component({
     selector: 'app-recycling-process-form',
     templateUrl: './recycling-process-form.html'
 })
-
 export class RecyclingProcessFormComponent implements OnChanges {
     @Input() public recyclingProcess: any;
     @Input() public recyclingPartners: any;

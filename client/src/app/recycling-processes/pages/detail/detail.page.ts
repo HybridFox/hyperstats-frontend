@@ -226,7 +226,6 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                         };
                     }
                 }
-
             });
     }
 }
