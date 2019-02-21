@@ -64,15 +64,7 @@ export class ReportsActions {
       );
   }
 
-  public createDrafted(reportData: any): Observable<any> {
-    console.log(reportData);
-    const report = {
-      data: reportData,
-      meta: {
-        status: 'SAVED',
-      }
-    };
-
+  public createDrafted(report: any): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
@@ -83,14 +75,7 @@ export class ReportsActions {
       );
   }
 
-  public createFiled(reportData: any): Observable<any> {
-    const report = {
-      data: reportData,
-      meta: {
-        status: 'FILED',
-      }
-    };
-
+  public createFiled(report: any): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {

@@ -26,7 +26,13 @@ export class FilePageComponent implements OnInit {
   }
 
   public save() {
-    const data = this.form.getRawValue();
+    const data = {
+      data: this.form.getRawValue(),
+      meta: {
+        status: 'SAVED',
+      }
+    };
+    console.log(data);
 
     let promise: Promise<any>;
     promise = this.reportActions.createDrafted(data).toPromise();
