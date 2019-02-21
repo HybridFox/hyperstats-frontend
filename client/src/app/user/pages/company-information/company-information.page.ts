@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { select } from '@angular-redux/store';
 import { Subject, Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
@@ -8,7 +8,6 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
 
 import { AuthSelector, AuthActions } from '@store/auth';
 import { Option } from '@ui/form-fields/components/select/select.types';
-import { CompanyRepository } from '@api/company';
 import { FormHelper } from '@helpers/form.helper';
 
 @Component({
@@ -25,7 +24,6 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
 
     constructor(
         private formBuilder: FormBuilder,
-        private companyRepository: CompanyRepository,
         private toastrService: ToastrService,
         private authActions: AuthActions
     ) { }
@@ -75,7 +73,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             );
         }
 
-        this.companyRepository.update({
+        this.authActions.updateProfile({
             ...this.companyForm.value
         }).then((company) => {
             this.toastrService.success(

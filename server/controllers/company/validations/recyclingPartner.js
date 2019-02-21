@@ -14,17 +14,16 @@ const schema = joi.object().keys({
 			country: joi.string().required(),
 		}).required(),
 		contactPerson: joi.object().keys({
-			name: joi.string().allow("").optional(),
-			function: joi.string().allow("").optional(),
+			name: joi.string().required(),
+			function: joi.string().required(),
 			phone: joi.string().allow("").optional(),
 			mobile: joi.string().allow("").optional(),
-			email: joi.string().email().allow("").optional(),
+			email: joi.string().email().required(),
 		}).required(),
 	}),
 	meta: joi.object().keys({
-		managedBy: joi.string().optional().allow(null),
 		activated: joi.boolean().optional(),
-		type: joi.string().valid(["R", "RP", "CO", "AO"]),
+		type: joi.string().valid(["RP"]),
 	}),
 });
 

@@ -1,4 +1,5 @@
 const { expect } = require("chai");
+const { set, lensPath } = require("ramda");
 const profile = require("./profile");
 
 const setupReqObject = () => {
@@ -23,6 +24,7 @@ describe("profile", () => {
 			passwordReset: {
 				token: "some token",
 			},
+			isAdmin: true,
 		},
 	};
 	let req;
@@ -49,6 +51,7 @@ describe("profile", () => {
 		expect(req.session.profile).to.deep.equal(user);
 		expect(req.session.safeProfile).to.deep.equal({
 			firstname: "fname",
+			isAdmin: true,
 		});
 	});
 
@@ -58,6 +61,7 @@ describe("profile", () => {
 
 		expect(result).to.deep.equal({
 			firstname: "fname",
+			isAdmin: true,
 		});
 	});
 
@@ -72,11 +76,32 @@ describe("profile", () => {
 		profile.set(req, user);
 
 		expect(req.session.profile).to.deep.equal(user);
-		expect(req.session.safeProfile).to.deep.equal({ firstname: "fname" });
+		expect(req.session.safeProfile).to.deep.equal({
+			firstname: "fname",
+			isAdmin: true,
+		});
 
 		profile.unset(req);
 
 		expect(req.session.profile).to.be.undefined;
 		expect(req.session.safeProfile).to.be.undefined;
+	});
+
+	it("Should return true when user is admin", () => {
+		profile.set(req, user);
+
+		const result = profile.isAdmin(req);
+
+		expect(result).to.be.true;
+	});
+
+	it("Should return false when user is not a admin", () => {
+		const nonAdminUser = set(lensPath(["meta", "isAdmin"]), false)(user);
+
+		profile.set(req, nonAdminUser);
+
+		const result = profile.isAdmin(req);
+
+		expect(result).to.be.false;
 	});
 });

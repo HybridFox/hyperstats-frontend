@@ -40,64 +40,10 @@ describe("Integration", () => {
 
 			it("Should not create a company when not logged in", () => {
 				return supertest(server)
-					.post("/api/companies?type=R")
+					.post("/api/companies")
 					.send({
-						name: "Some Company",
-						vat: "BE12 3456 7890",
-						address: {
-							street: "Some street",
-							number: "33A",
-							box: "Some box",
-							zipCode: "Zip",
-							city: "Antwerp",
-							country: "Belgium",
-						},
-						contactPerson: {
-							name: "John Smith",
-							function: "Security",
-							phone: "+32 ...",
-							email: "john.smith@example.com",
-						},
-					})
-					.expect("Content-Type", /json/)
-					.expect(403);
-			});
-
-			it("Should return a validation error when no valid body is passed", () => {
-				return supertest(server)
-					.post("/api/companies?type=R")
-					.set("cookie", cookie)
-					.send({
-						address: {
-							street: "Some street",
-							number: "33A",
-							box: "Some box",
-							zipCode: "Zip",
-							city: "Antwerp",
-							country: "Belgium",
-						},
-						contactPerson: {
-							name: "John Smith",
-							function: "Security",
-							phone: "+32 ...",
-							email: "john.smith@example.com",
-						},
-					})
-					.expect("Content-Type", /json/)
-					.expect(400);
-			});
-
-			describe("Should create a company", () => {
-				let newCompanyId;
-
-				after(() => companyTestHelper.remove(newCompanyId));
-
-				it("should return the created company", () => {
-					return supertest(server)
-						.post("/api/companies?type=R")
-						.set("cookie", cookie)
-						.send({
-							name: "Some company name",
+						data: {
+							name: "Some Company",
 							vat: "BE12 3456 7890",
 							address: {
 								street: "Some street",
@@ -112,6 +58,75 @@ describe("Integration", () => {
 								function: "Security",
 								phone: "+32 ...",
 								email: "john.smith@example.com",
+							},
+						},
+						meta: {
+							type: "RP",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(403);
+			});
+
+			it("Should return a validation error when no valid body is passed", () => {
+				return supertest(server)
+					.post("/api/companies")
+					.set("cookie", cookie)
+					.send({
+						data: {
+							address: {
+								street: "Some street",
+								number: "33A",
+								box: "Some box",
+								zipCode: "Zip",
+								city: "Antwerp",
+								country: "Belgium",
+							},
+							contactPerson: {
+								name: "John Smith",
+								function: "Security",
+								phone: "+32 ...",
+								email: "john.smith@example.com",
+							},
+						},
+						meta: {
+							type: "RP",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(400);
+			});
+
+			describe("Should create a company", () => {
+				let newCompanyId;
+
+				after(() => companyTestHelper.remove(newCompanyId));
+
+				it("should return the created company", () => {
+					return supertest(server)
+						.post("/api/companies")
+						.set("cookie", cookie)
+						.send({
+							data: {
+								name: "Some company name",
+								vat: "BE12 3456 7890",
+								address: {
+									street: "Some street",
+									number: "33A",
+									box: "Some box",
+									zipCode: "Zip",
+									city: "Antwerp",
+									country: "Belgium",
+								},
+								contactPerson: {
+									name: "John Smith",
+									function: "Security",
+									phone: "+32 ...",
+									email: "john.smith@example.com",
+								},
+							},
+							meta: {
+								type: "RP",
 							},
 						})
 						.expect("Content-Type", /json/)
