@@ -19,6 +19,8 @@
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-BATTERY' | translate"
                     [control]="inputFraction.get('shareOfBatteryType')"
+                    type="number"
+                    suffix="%"
                 ></app-text-input>
                 <app-text-input
                     class="u-margin-top-x-large"
@@ -36,6 +38,7 @@
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.IMPURITIES' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('weightBatteryType')"
                 ></app-text-input>
@@ -44,6 +47,7 @@
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.PACKAGING-CASING' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('weightBatteryType')"
                 ></app-text-input>
@@ -54,6 +58,7 @@
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.IMPURITIES' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('weightBatteryType')"
                 ></app-text-input>
@@ -62,6 +67,7 @@
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.PACKAGING-CASING' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('weightBatteryType')"
                 ></app-text-input>
@@ -85,6 +91,8 @@
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-INPUT-FRACTION' | translate"
                     class="u-margin-top-large"
                     [control]="element.get('share')"
+                    type="number"
+                    suffix="%"
                 ></app-text-input>
             </div>
             <div class="l-grid__col-4-12">
@@ -92,6 +100,8 @@
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
                     class="u-margin-top-large"
                     [control]="element.get('mass')"
+                    type="number"
+                    suffix="kg"
                 ></app-text-input>
             </div>
         </div>
@@ -109,24 +119,28 @@
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.METHODOLOG-CHEMICAL' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('descriptionOfMethodologyShare')"
                 ></app-text-input>
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.METHODOLOG-WASTE' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('descriptionOfMethodologyChemicalComposition')"
                 ></app-text-input>
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS-JACKET' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('massOfExternalJacket')"
                 ></app-text-input>
                 <app-text-input
                     class="u-margin-top-x-large"
                     [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS-OUTER-CASINGS' | translate"
+                    type="number"
                     suffix="kg"
                     [control]="inputFraction.get('massOfOuterCasings')"
                 ></app-text-input>

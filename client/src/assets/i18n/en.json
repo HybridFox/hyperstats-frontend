@@ -76,7 +76,8 @@
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "YEAR": "Type",
-            "ZIPCODE": "Zipcode"
+            "ZIPCODE": "Zipcode",
+            "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -408,6 +409,7 @@
                 "CLASSIFICATION": "Classification",
                 "ELEMENT": "Element or compound",
                 "MASS": "Mass (t)",
+                "REPLACED-ELEMENT-MATERIAL": "Replaced element material",
                 "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
                 "SHARE-OUTPUT-FRACTION": "Share output fraction"
             },

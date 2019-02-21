@@ -6,21 +6,21 @@ import { throwError as _throw } from 'rxjs';
 import { EntitiesActions } from '@store/entities';
 import { Handler } from '@store/handler';
 
-import { RecyclingPartnerRepository } from './repository';
 import { ACTIONS } from './action-types';
+import { CompanyRepository, CompanyType } from '@api/company';
 
 @Injectable()
 export class RecyclingPartnerActions {
   constructor(
     private handler: Handler,
     private entitiesActions: EntitiesActions,
-    private recyclingPartnerRepository: RecyclingPartnerRepository,
+    private companyRepository: CompanyRepository,
   ) {}
 
   public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH_ALL);
 
-    return this.recyclingPartnerRepository.fetchAll()
+    return this.companyRepository.fetchByType([CompanyType.RP])
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.FETCH_ALL, {
@@ -40,10 +40,10 @@ export class RecyclingPartnerActions {
       );
   }
 
-  public fetchDetail(id: string): Observable<any> {
+  public fetchById(id: string): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH);
 
-    return this.recyclingPartnerRepository.fetchDetail(id)
+    return this.companyRepository.fetchById(id)
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.FETCH, {
@@ -64,7 +64,7 @@ export class RecyclingPartnerActions {
   }
 
   public create(partner: any) {
-    return this.recyclingPartnerRepository.create(partner)
+    return this.companyRepository.create(partner)
       .pipe(
         tap((response: any) => {
           const normalizedPayload = this.entitiesActions.normalize(response, EntitiesActions.schema.recyclingPartner);
@@ -76,8 +76,8 @@ export class RecyclingPartnerActions {
       );
   }
 
-  public update(id: string, partner: any) {
-    return this.recyclingPartnerRepository.update(id, partner)
+  public update(partner: any) {
+    return this.companyRepository.update(partner._id, partner)
       .pipe(
         tap((response: any) => {
           this.handler.dispatch(ACTIONS.UPDATE, {
@@ -88,7 +88,7 @@ export class RecyclingPartnerActions {
   }
 
   public delete(id: string) {
-    return this.recyclingPartnerRepository.remove(id)
+    return this.companyRepository.remove(id)
       .pipe(
         tap(() => {
           this.handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
@@ -99,7 +99,7 @@ export class RecyclingPartnerActions {
   }
 
   public activate(id: string) {
-    return this.recyclingPartnerRepository.activate(id)
+    return this.companyRepository.activate(id)
       .pipe(
         tap((response: any) => {
           this.handler.dispatch(ACTIONS.ACTIVATE, {
@@ -110,7 +110,7 @@ export class RecyclingPartnerActions {
   }
 
   public deactivate(id: string) {
-    return this.recyclingPartnerRepository.deactivate(id)
+    return this.companyRepository.deactivate(id)
       .pipe(
         tap((response: any) => {
           this.handler.dispatch(ACTIONS.DEACTIVATE, {

@@ -5,6 +5,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+
 @Component({
   templateUrl: './additional-information.page.html',
 })
@@ -33,7 +35,7 @@ export class AdditionalInformationPageComponent implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['../file-report'], {relativeTo: this.activatedRoute});
     } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
+      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
   }
 }

@@ -802,6 +802,9 @@ msgstr "Element or compound"
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+msgstr "Replaced element material"
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
 
@@ -849,6 +852,10 @@ msgstr "Output Fraction"
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr "Recycling Efficiency"
+
+msgctxt "FORM"
+msgid "GENERAL##LABELS##INVALID"
+msgstr "The form is invalid, make sure you have filled all the field"
 
 #~ msgid "GENERAL##LABELS##PRIVACY"
 #~ msgstr "Privacy"

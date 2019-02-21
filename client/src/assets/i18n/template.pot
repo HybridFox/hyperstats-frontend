@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-21T09:58:42.158Z\n"
-"PO-Revision-Date: 2019-02-21T09:58:42.158Z\n"
+"POT-Creation-Date: 2019-02-21T12:17:07.962Z\n"
+"PO-Revision-Date: 2019-02-21T12:17:07.962Z\n"
+
+msgid "Authorisation Organisation"
+msgstr ""
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -15,6 +18,9 @@ msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
 msgstr ""
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
+msgstr ""
+
+msgid "Compliance Organisation"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##CANCEL"
@@ -50,6 +56,9 @@ msgstr ""
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr ""
 
+msgid "GENERAL##LABELS##ADD-COMPANY"
+msgstr ""
+
 msgid "GENERAL##LABELS##ADD-PROXY"
 msgstr ""
 
@@ -78,6 +87,9 @@ msgid "GENERAL##LABELS##COMPANY"
 msgstr ""
 
 msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYTYPE"
 msgstr ""
 
 msgid "GENERAL##LABELS##COMPANYVAT"
@@ -126,6 +138,9 @@ msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##LOGIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##MANAGEDBY"
 msgstr ""
 
 msgid "GENERAL##LABELS##MESSAGE"
@@ -290,6 +305,15 @@ msgstr ""
 msgid "PAGE##ADMIN##FILTERS"
 msgstr ""
 
+msgid "PAGE##COMPANY##ADDRESSINFORMATION"
+msgstr ""
+
+msgid "PAGE##COMPANY##CONTACTPERSON"
+msgstr ""
+
+msgid "PAGE##COMPANY##META"
+msgstr ""
+
 msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
 msgstr ""
 
@@ -434,6 +458,12 @@ msgstr ""
 msgid "PROXIES##REVOKEPROXY"
 msgstr ""
 
+msgid "Recycler"
+msgstr ""
+
+msgid "Recycling Partner"
+msgstr ""
+
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr ""
 
@@ -450,6 +480,48 @@ msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##ACTIVATED"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##DEACTIVATED"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
@@ -573,6 +645,18 @@ msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TYPES##COMPANY##AUTHORISATION-ORG"
+msgstr ""
+
+msgid "TYPES##COMPANY##COMPLIANCE-ORG"
+msgstr ""
+
+msgid "TYPES##COMPANY##RECYCLER"
+msgstr ""
+
+msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr ""
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
@@ -704,6 +788,9 @@ msgstr ""
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr ""
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+msgstr ""
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr ""
 
@@ -750,4 +837,8 @@ msgid "WIZARD##TITLES##OUTPUT-FRACTION"
 msgstr ""
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+msgstr ""
+
+msgctxt "FORM"
+msgid "GENERAL##LABELS##INVALID"
 msgstr ""
