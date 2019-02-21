@@ -1,18 +1,18 @@
 import { ACTIONS } from '../action-types';
 import { progressReducer } from '@store/hor';
-import { MODULE, OVERVIEW } from '../../constants';
+import { MODULE, LIST } from '../../constants';
 
 export const reducer = (
     state = null,
     action,
 ) => {
-    if (action.type === ACTIONS.OVERVIEW.FETCH) {
+    if (action.type === ACTIONS.LIST.FETCH) {
         return [
             ...action.payload
         ];
     }
 
-    if (action.type === ACTIONS.OVERVIEW.ADD_TO_LIST) {
+    if (action.type === ACTIONS.LIST.ADD_TO_LIST) {
         if (state) {
             return state.concat(action.payload);
         }
@@ -23,6 +23,6 @@ export const reducer = (
     return state;
 };
 
-export const overviewReducer = progressReducer({
-    entityType: `${MODULE}/${OVERVIEW}`
+export const listReducer = progressReducer({
+    entityType: `${MODULE}/${LIST}`
 }, reducer);

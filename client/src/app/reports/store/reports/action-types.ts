@@ -1,7 +1,7 @@
-import { OVERVIEW_ACTIONS } from './overview/action-types';
+import { LIST_ACTIONS } from './list/action-types';
 import { DETAIL_ACTIONS } from './detail/action-types';
 
 export const ACTIONS = {
-    OVERVIEW: OVERVIEW_ACTIONS,
+    LIST: LIST_ACTIONS,
     DETAIL: DETAIL_ACTIONS,
 };

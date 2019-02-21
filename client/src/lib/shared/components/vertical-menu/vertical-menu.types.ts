@@ -1,5 +1,6 @@
 export interface MenuItem {
-    link: string;
+    link: string | string[];
+    queryParams?: any;
     label: string;
     class?: string;
 }

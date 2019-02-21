@@ -1,58 +1,70 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormDataService } from '../../../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ToastrService } from 'ngx-toastr';
 import { ReportsActions } from '../../../../store/reports';
+import { StepPageAbstract } from '../step-page.abstract';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 @Component({
   templateUrl: './file.page.html',
 })
 
-export class FilePageComponent implements OnInit {
+export class FilePageComponent extends StepPageAbstract {
   public form: any;
 
   constructor(
-      public codesService: CodesService,
-      public formData: FormDataService,
-      private router: Router,
-      private activatedRoute: ActivatedRoute,
-      private reportActions: ReportsActions
-  ) {}
-
-  public ngOnInit() {
-    this.form = this.formData.getFormData();
+    codesService: CodesService,
+    formData: FormDataService,
+    toastrService: ToastrService,
+    reportProcessActions: ReportsProcessActions,
+    router: Router,
+    activatedRoute: ActivatedRoute,
+    reportActions: ReportsActions,
+  ) {
+    super(
+      codesService,
+      formData,
+      toastrService,
+      reportProcessActions,
+      router,
+      activatedRoute,
+      reportActions,
+      {
+        prevStep: 'additional-information',
+      }
+    );
   }
+
+  public onFormReady() {}
 
   public save() {
     const data = {
-      _id: '5c6eb3b38f502f00387a8f16',
+      _id: this.reportId,
       data: this.form.getRawValue(),
     };
 
     let promise: Promise<any>;
     promise = this.reportActions.draft(data).toPromise();
-        promise.then((response) => {
-            console.log(response);
-        })
-        .catch(() => {});
+      promise.then(() => {
+        this.router.navigate(['/reports']);
+      })
+      .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
   }
 
   public file() {
     const data = {
-      _id: '5c6eb3b38f502f00387a8f16',
+      _id: this.reportId,
       data: this.form.getRawValue(),
     };
 
-    let promise: Promise<any>;
-    promise = this.reportActions.file(data).toPromise();
-        promise.then((response) => {
-            console.log(response);
-        })
-        .catch(() => {});
-  }
-
-  public previousStep() {
-    this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute}, );
+    this.reportActions.file(data)
+      .toPromise()
+      .then(() => {
+        this.router.navigate(['/reports']);
+      })
+      .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
   }
 }

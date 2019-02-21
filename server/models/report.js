@@ -23,13 +23,6 @@ const ReportSchema = mongoose.Schema({
 					return this.meta.status === REPORT_STATUS.FILED;
 				},
 			},
-			// receiver: {
-			// 	type: mongoose.Schema.Types.ObjectId,
-			// 	ref: "Company",
-			// 	required: function() {
-			// 		return this.meta.status === REPORT_STATUS.FILED;
-			// 	},
-			// },
 		},
 		inputFraction: [{
 			siteRef: {
@@ -79,20 +72,25 @@ const ReportSchema = mongoose.Schema({
 			},
 		}],
 		additives: [{
-			type: {
+			siteRef: {
 				type: String,
 			},
-			weight: {
-				type: Number,
-			},
-			chemicalComposition: [{
-				element: {
+			data: {
+				type: {
 					type: String,
 				},
 				weight: {
 					type: Number,
 				},
-			}],
+				chemicalComposition: [{
+					element: {
+						type: String,
+					},
+					weight: {
+						type: Number,
+					},
+				}],
+			},
 		}],
 		outputFraction: [{
 			siteRef: {
@@ -105,16 +103,16 @@ const ReportSchema = mongoose.Schema({
 				mass: {
 					type: Number,
 				},
-				classification: {
+				virginClassification: {
 					type: String,
 				},
-				replacedMaterial: {
+				virginReplacedMaterial: {
 					type: String,
 				},
-				elementCompound: {
+				elementClassification: {
 					type: String,
 				},
-				shareOutputFraction: {
+				elementReplacedMaterial: {
 					type: String,
 				},
 			}],

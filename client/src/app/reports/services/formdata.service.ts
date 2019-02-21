@@ -1,100 +1,140 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import pathOr from 'ramda/es/pathOr';
 
 @Injectable()
 export class FormDataService {
-    private formGroup: any;
-    public currentTitle: string;
+  public currentTitle: string;
 
-    constructor(
-        private formBuilder: FormBuilder
-    ) {
-        this.formGroup = this.formBuilder.group({
-            information: this.formBuilder.group({
-                reportingYear: [null, Validators.required],
-                recyclingProcess: [null, Validators.required],
-                name: ['', Validators.required],
-                // receiver: [null, Validators.required]
-            }),
-            inputFraction: this.formBuilder.array([this.createInputFraction()]),
-            additives: this.formBuilder.array([this.createAdditive()]),
-            outputFraction: this.formBuilder.array([this.createOutputElement()]),
-            recyclingEfficiency: this.formBuilder.group({
-              calculatedEfficiency: [null, Validators.required]
-            }),
-            additionalInformation: this.formBuilder.group({
-                files: [[]],
-                additionalInformation: ['']
-            }),
-        });
-    }
+  private formGroup: any;
 
-    public addInputElement(): void {
-      this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
-    }
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
+    this.formGroup = this.formBuilder.group({
+      information: this.formBuilder.group({
+        reportingYear: [null, Validators.required],
+        recyclingProcess: [null, Validators.required],
+        name: ['', Validators.required],
+      }),
+      inputFraction: this.formBuilder.array([this.createInputFraction()]),
+      additives: this.formBuilder.array([this.createAdditive()]),
+      outputFraction: this.formBuilder.array([this.createOutputElement()]),
+      recyclingEfficiency: this.formBuilder.group({
+        calculatedEfficiency: [null, Validators.required]
+      }),
+      additionalInformation: this.formBuilder.group({
+        files: [[]],
+        additionalInformation: ['']
+      }),
+    });
+  }
 
-    public addAdditive(): void {
-        this.formGroup.controls.additives.push(this.createAdditive());
-    }
+  public addInputElement(): void {
+    this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
+  }
 
-    public addOutputElement(): void {
-        this.formGroup.controls.outputFraction.push(this.createOutputElement());
-    }
+  public addAdditive(): void {
+    this.formGroup.controls.additives.push(this.createAdditive());
+  }
 
-    public addRecyclingElement(): void {
-        this.formGroup.controls.recyclingEfficiency.push(this.createOutputElement());
-    }
+  public addOutputElement(): void {
+    this.formGroup.controls.outputFraction.push(this.createOutputElement());
+  }
 
-    private createInputFraction(): FormGroup {
-      return this.formBuilder.group({
-            weightInput: ['', Validators.required],
-            shareOfBatteryType: ['', Validators.required],
-            weightBatteryType: ['', Validators.required],
-            elements: this.formBuilder.array([this.createInputElement()]),
-            descriptionOfMethodologyShare: ['', Validators.required],
-            descriptionOfMethodologyChemicalComposition: ['', Validators.required],
-            massOfExternalJacket: ['', Validators.required],
-            massOfOuterCasings: ['', Validators.required],
-        });
-    }
+  public addRecyclingElement(): void {
+    this.formGroup.controls.recyclingEfficiency.push(this.createOutputElement());
+  }
 
-    private createInputElement(): FormGroup {
-      return this.formBuilder.group({
-        element: ['', Validators.required],
-        share: ['', Validators.required],
-        mass: ['', Validators.required],
-      });
-    }
+  public createInputFraction(stepId = 'temp'): FormGroup {
+    return this.formBuilder.group({
+      siteRef: [stepId],
+      data: this.formBuilder.group({
+        processChemistry: ['', Validators.required],
+        weightInput: [null, Validators.required],
+        shareOfBatteryType: [null, Validators.required],
+        weightBatteryType: [null, Validators.required],
+        elements: this.formBuilder.array([this.createInputElement()]),
+        descriptionOfMethodologyShare: ['', Validators.required],
+        descriptionOfMethodologyChemicalComposition: ['', Validators.required],
+        massOfExternalJacket: [null, Validators.required],
+        massOfOuterCasings: [null, Validators.required],
+      })
+    });
+  }
 
-    private createOutputElement(): FormGroup {
-      return this.formBuilder.group({
+  public createInputElement(): FormGroup {
+    return this.formBuilder.group({
+      element: ['', Validators.required],
+      share: [null],
+      mass: [null, Validators.required],
+    });
+  }
+
+  public createOutputElement(stepId = 'temp'): FormGroup {
+    return this.formBuilder.group({
+      siteRef: [stepId],
+      data: this.formBuilder.array([this.formBuilder.group({
         element: ['', Validators.required],
         mass: [null, Validators.required],
-        classification: ['', Validators.required],
-        replacedMaterial: ['', Validators.required],
+        virginClassification: ['', Validators.required],
+        virginReplacedMaterial: ['', Validators.required],
         elementClassification: ['', Validators.required],
         elementReplacedMaterial: ['', Validators.required],
-      });
-    }
+      })])
+    });
+  }
 
-    private createAdditive(): FormGroup {
-      return this.formBuilder.group({
+  public createAdditive(stepId = 'temp'): FormGroup {
+    return this.formBuilder.group({
+      siteRef: stepId,
+      data: this.formBuilder.group({
         type: ['', Validators.required],
         weight: [null, Validators.required],
-      });
+      })
+    });
+  }
+
+  public getFormData(): FormGroup {
+    return this.formGroup;
+  }
+
+  public getRecyclingProcess(): string {
+    return this.formGroup.controls.information.controls.recyclingProcess.value;
+  }
+
+  public setFormData(report: any): FormGroup {
+    if (report) {
+      const steps = report.data.inputFraction.map((fraction) => ({
+        uuid: fraction.siteRef
+      }));
+
+      this.prepareProcessSteps({ data: { steps }});
+
+      this.formGroup.patchValue(report.data);
     }
 
-    public getFormData(): FormGroup {
-        return this.formGroup;
-    }
+    return this.formGroup;
+  }
 
-    public getRecyclingProcess(): string {
-        return this.formGroup.controls.information.controls.recyclingProcess.value;
-    }
+  private getProcessSteps (formCreator: Function, steps: any[]) {
+    return steps.map((step) => formCreator(step.uuid));
+  }
 
-    public setFormData(report: any): FormGroup {
-        this.formGroup.patchValue(report.data);
+  public prepareProcessSteps(process): void {
+    const steps = pathOr([], ['data', 'steps'])(process);
 
-        return this.formGroup;
-    }
+    this.formGroup.setControl(
+      'inputFraction',
+      this.formBuilder.array(this.getProcessSteps((id) => this.createInputFraction(id), steps))
+    );
+    this.formGroup.setControl(
+      'additives',
+      this.formBuilder.array(this.getProcessSteps((id) => this.createAdditive(id), steps))
+    );
+    this.formGroup.setControl(
+      'outputFraction',
+      this.formBuilder.array(this.getProcessSteps((id) => this.createOutputElement(id), steps))
+    );
+  }
 }

@@ -10,10 +10,10 @@ import { ReportsActions, ReportsSelector } from '../../store/reports';
     templateUrl: './reports.page.html',
 })
 export class ReportsPageComponent implements OnInit {
-    @select(ReportsSelector.overview.result) public reports$: Observable<any>;
-    @select(ReportsSelector.overview.loading) public reportsLoading$: Observable<boolean>;
+    @select(ReportsSelector.list.result) public reports$: Observable<any>;
+    @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
     @select$(
-        ReportsProcessSelector.recyclingProcesses,
+        ReportsProcessSelector.list.result,
         mapRecyclingProcessesToMenuItems
     ) public menuItems$: Observable<MenuItem>;
 

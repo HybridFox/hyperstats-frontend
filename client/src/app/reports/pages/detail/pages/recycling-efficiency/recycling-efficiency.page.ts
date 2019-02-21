@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormDataService } from '../../../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -6,57 +6,62 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ElementType } from './recycling-efficiency.types';
 import { groupBy } from 'ramda';
 import { ReportsActions } from '../../../../store/reports';
+import { StepPageAbstract } from '../step-page.abstract';
+import { ToastrService } from 'ngx-toastr';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 
 
 @Component({
   templateUrl: './recycling-efficiency.page.html',
 })
-export class RecyclingEfficiencyPageComponent implements OnInit {
+export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
   public form: any;
   public types: any;
   public efficiency: number;
-  private reportId: string;
 
   constructor(
-    public codesService: CodesService,
-    public formData: FormDataService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private reportActions: ReportsActions
-  ) {}
+    codesService: CodesService,
+    formData: FormDataService,
+    toastrService: ToastrService,
+    reportProcessActions: ReportsProcessActions,
+    router: Router,
+    activatedRoute: ActivatedRoute,
+    reportActions: ReportsActions,
+  ) {
+    super(
+      codesService,
+      formData,
+      toastrService,
+      reportProcessActions,
+      router,
+      activatedRoute,
+      reportActions,
+      {
+        prevStep: 'output-fraction',
+        nextStep: 'additional-information',
+        formSection: 'outputFraction'
+      }
+    );
+  }
 
-  public ngOnInit() {
+  public onFormReady() {
     this.mergeElements();
   }
 
-  public previousStep() {
-    this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
-  }
-
-  public nextStep() {
-    const data = {
-      _id: this.reportId,
-      data: this.formData.getFormData().getRawValue(),
-    };
-
-    let promise: Promise<any>;
-    promise = this.reportActions.draft(data).toPromise();
-        promise.then(() => {
-          this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
-        })
-        .catch(() => {});
-  }
-
   private mergeElements() {
-    const inputs = this.formData.getFormData().get('inputFraction').value[0].elements.map(input => ({
-      element: input.element,
-      input: input.mass,
-    }));
+    const inputs = this.formData.getFormData().getRawValue().inputFraction.reduce((acc, step) => {
+      return acc.concat(step.data.elements.map((input) => ({
+        element: input.element,
+        input: input.mass,
+      })));
+    }, []);
 
-    const outputs = this.formData.getFormData().get('outputFraction').value.map(output => ({
-      element: output.element,
-      output: output.mass,
-    }));
+    const outputs = this.formData.getFormData().getRawValue().outputFraction.reduce((acc, step) => {
+      return acc.concat(step.data.map((input) => ({
+        element: input.element,
+        output: input.mass,
+      })));
+    }, []);
 
     const elements =  groupBy((item: ElementType) => item.element)([...inputs, ...outputs]);
 
