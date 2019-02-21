@@ -80,11 +80,11 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
   public registerOnTouched() {}
 
   private calculatePercentage(total: number, mass: number) {
-    if (!isNil(total) && !isNil(mass)) {
-      const percentage = mass / total * 100;
-      return parseFloat(percentage.toFixed(2));
-    } else {
+    if (isNil(total) || isNil(mass)) {
       return;
     }
+
+    const percentage = mass / total * 100;
+    return parseFloat(percentage.toFixed(2));
   }
 }
