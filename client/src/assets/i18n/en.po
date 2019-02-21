@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-21T07:51:51.354Z\n"
+"POT-Creation-Date: 2019-02-20T14:56:01.069Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -811,6 +811,10 @@ msgstr "Output Fraction"
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr "Recycling Efficiency"
+
+msgctxt "FORM"
+msgid "GENERAL##LABELS##INVALID"
+msgstr "The form is invalid, make sure you have filled all the field"
 
 #~ msgid "GENERAL##LABELS##PRIVACY"
 #~ msgstr "Privacy"
