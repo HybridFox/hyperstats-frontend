@@ -65,7 +65,7 @@ const filedData = {
 		reportingYear: joi.number().required(),
 		recyclingProcess: joi.string().required(),
 		name: joi.string().required(),
-		receiver: joi.string().required(),
+		// receiver: joi.string().required(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),

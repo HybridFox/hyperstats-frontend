@@ -5,7 +5,6 @@ import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ToastrService } from 'ngx-toastr';
 import { ReportsActions } from '../../../../store/reports';
 
-
 @Component({
   templateUrl: './file.page.html',
 })
@@ -27,15 +26,12 @@ export class FilePageComponent implements OnInit {
 
   public save() {
     const data = {
+      _id: '5c6eb3b38f502f00387a8f16',
       data: this.form.getRawValue(),
-      meta: {
-        status: 'SAVED',
-      }
     };
-    console.log(data);
 
     let promise: Promise<any>;
-    promise = this.reportActions.createDrafted(data).toPromise();
+    promise = this.reportActions.draft(data).toPromise();
         promise.then((response) => {
             console.log(response);
         })
@@ -43,8 +39,13 @@ export class FilePageComponent implements OnInit {
   }
 
   public file() {
+    const data = {
+      _id: '5c6eb3b38f502f00387a8f16',
+      data: this.form.getRawValue(),
+    };
+
     let promise: Promise<any>;
-    promise = this.reportActions.createFiled(this.form.getRawValue()).toPromise();
+    promise = this.reportActions.file(data).toPromise();
         promise.then((response) => {
             console.log(response);
         })
@@ -52,6 +53,6 @@ export class FilePageComponent implements OnInit {
   }
 
   public previousStep() {
-    this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
+    this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute}, );
   }
 }
