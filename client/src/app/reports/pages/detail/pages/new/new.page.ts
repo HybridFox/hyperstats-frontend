@@ -9,6 +9,8 @@ import { ReportsProcessSelector } from '../../../../store/recycling-processes/se
 import { Observable } from 'rxjs';
 import { mapRecyclingProcessesToOptions } from '../../../../services/select.helpers';
 
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+
 @Component({
   templateUrl: './new.page.html',
 })
@@ -36,7 +38,7 @@ export class NewPageComponent implements OnInit {
     if (this.form.valid) {
       this.router.navigate(['../input-fraction'], {relativeTo: this.activatedRoute});
     } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
+      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
   }
 }

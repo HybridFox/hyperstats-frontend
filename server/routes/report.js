@@ -197,6 +197,15 @@ module.exports = (router) => {
 	 *       - report
 	 *     produces:
 	 *       - application/json
+	 *     parameters:
+	 *       - in: query
+	 *         name: recycling-process
+	 *         type: string
+	 *         description: The id of the recycling process
+	 *       - in: query
+	 *         name: sort
+	 *         type: string
+	 *         description: Sort the list on "name" or "reportingYear". Prefix with "-" to sort descending. Falls back to "name".
 	 *     responses:
 	 *       201:
 	 *         description: Report array
@@ -209,6 +218,7 @@ module.exports = (router) => {
 	router.route("/reports")
 		.get(
 			dataMiddleware.copy,
+			dataMiddleware.validate("query", reportValidations.getAllQuery, Errors.ItemNotFound),
 			reportController.getAll
 		);
 
