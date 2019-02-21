@@ -19,6 +19,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACTIONS": "",
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
@@ -45,6 +46,7 @@
 			"FORGOT-PASSWORD": "",
 			"FUNCTION": "",
 			"I-ACCEPT-THE": "",
+			"LAST-UPDATED": "",
 			"LASTNAME": "",
 			"LOGIN": "",
 			"MESSAGE": "",
@@ -62,6 +64,7 @@
 			"SELECT-OPTION": "",
 			"SORTBY": "",
 			"SPONSOREDBY": "",
+			"STATES": "",
 			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
@@ -72,6 +75,7 @@
 			"TYPE": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
+			"YEAR": "",
 			"ZIPCODE": ""
 		},
 		"MENU": {
@@ -172,7 +176,7 @@
 		},
 		"REPORTS": {
 			"DRAFT": "",
-			"FILLED": "",
+			"FILED": "",
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
@@ -339,6 +343,19 @@
 			},
 			"TITLES": {
 				"OVERVIEW": ""
+			}
+		},
+		"FILE-REPORT": {
+			"DESCRIPTION": {
+				"FILE-REPORT": "",
+				"SAVE-REPORT": ""
+			},
+			"LABELS": {
+				"FILE-REPORT": "",
+				"SAVE-REPORT": ""
+			},
+			"TITLES": {
+				"FILE-SAVE-REPORT": ""
 			}
 		},
 		"INPUT-FRACTION": {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-19T13:16:22.512Z\n"
-"PO-Revision-Date: 2019-02-19T13:16:22.512Z\n"
+"POT-Creation-Date: 2019-02-21T09:58:42.158Z\n"
+"PO-Revision-Date: 2019-02-21T09:58:42.158Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -36,6 +36,9 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACTIONS"
 msgstr ""
 
 msgid "GENERAL##LABELS##ACTIVATED"
@@ -116,6 +119,9 @@ msgstr ""
 msgid "GENERAL##LABELS##I-ACCEPT-THE"
 msgstr ""
 
+msgid "GENERAL##LABELS##LAST-UPDATED"
+msgstr ""
+
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
@@ -167,6 +173,9 @@ msgstr ""
 msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr ""
 
+msgid "GENERAL##LABELS##STATES"
+msgstr ""
+
 msgid "GENERAL##LABELS##STREET"
 msgstr ""
 
@@ -195,6 +204,9 @@ msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr ""
 
 msgid "GENERAL##LABELS##WELCOME"
+msgstr ""
+
+msgid "GENERAL##LABELS##YEAR"
 msgstr ""
 
 msgid "GENERAL##LABELS##ZIPCODE"
@@ -383,7 +395,7 @@ msgstr ""
 msgid "PAGE##REPORTS##DRAFT"
 msgstr ""
 
-msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##FILED"
 msgstr ""
 
 msgid "PAGE##REPORTS##TITLE"
@@ -579,6 +591,21 @@ msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
 msgstr ""
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##SAVE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##LABELS##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##LABELS##SAVE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##TITLES##FILE-SAVE-REPORT"
 msgstr ""
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"

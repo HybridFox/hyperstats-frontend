@@ -13,7 +13,11 @@ export const reducer = (
     }
 
     if (action.type === ACTIONS.OVERVIEW.ADD_TO_LIST) {
-        return state.concat(action.payload);
+        if (state) {
+            return state.concat(action.payload);
+        }
+
+        return [...action.payload];
     }
 
     return state;

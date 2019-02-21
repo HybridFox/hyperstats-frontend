@@ -23,11 +23,15 @@ export class AdditionalInformationPageComponent implements OnInit {
     this.form = this.formData.getFormData().get('additionalInformation');
   }
 
+  public previousStep() {
+    this.router.navigate(['../recycling-efficiency'], {relativeTo: this.activatedRoute});
+  }
+
   public nextStep() {
     FormHelper.markAsDirty(this.form);
 
     if (this.form.valid) {
-      this.router.navigate(['../input-fraction'], {relativeTo: this.activatedRoute});
+      this.router.navigate(['../file-report'], {relativeTo: this.activatedRoute});
     } else {
       this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
     }

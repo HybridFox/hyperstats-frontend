@@ -16,16 +16,7 @@ export class FormDataService {
                 name: ['', Validators.required],
                 receiver: ['', Validators.required]
             }),
-            inputFraction: this.formBuilder.group({
-                weightInput: ['', Validators.required],
-                shareOfBatteryType: ['', Validators.required],
-                weightBatteryType: ['', Validators.required],
-                elements: this.formBuilder.array([this.createInputElement()]),
-                descriptionOfMethodologyShare: ['', Validators.required],
-                descriptionOfMethodologyChemicalComposition: ['', Validators.required],
-                massOfExternalJacket: ['', Validators.required],
-                massOfOuterCasings: ['', Validators.required],
-            }),
+            inputFraction: this.formBuilder.array([this.createInputFraction()]),
             additives: this.formBuilder.array([this.createAdditive()]),
             outputFraction: this.formBuilder.array([this.createOutputElement()]),
             recyclingEfficiency: this.formBuilder.array([this.createRecyclingElement()]),
@@ -50,6 +41,19 @@ export class FormDataService {
 
     public addRecyclingElement(): void {
         this.formGroup.controls.recyclingEfficiency.push(this.createOutputElement());
+    }
+
+    private createInputFraction(): FormGroup {
+      return this.formBuilder.group({
+            weightInput: ['', Validators.required],
+            shareOfBatteryType: ['', Validators.required],
+            weightBatteryType: ['', Validators.required],
+            elements: this.formBuilder.array([this.createInputElement()]),
+            descriptionOfMethodologyShare: ['', Validators.required],
+            descriptionOfMethodologyChemicalComposition: ['', Validators.required],
+            massOfExternalJacket: ['', Validators.required],
+            massOfOuterCasings: ['', Validators.required],
+        });
     }
 
     private createInputElement(): FormGroup {

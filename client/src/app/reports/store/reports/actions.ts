@@ -18,8 +18,6 @@ export class ReportsActions {
     private reportsRepository: ReportsRepository,
   ) {}
 
-  public;
-
   public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
@@ -66,12 +64,40 @@ export class ReportsActions {
       );
   }
 
-  public create(report: any): Observable<any> {
+  public createDrafted(reportData: any): Observable<any> {
+    console.log(reportData);
+    const report = {
+      data: reportData,
+      meta: {
+        status: 'SAVED',
+      }
+    };
+
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
           this.handler.dispatch(ACTIONS.OVERVIEW.ADD_TO_LIST, {
             payload: this.entitiesActions.normalize(response, EntitiesActions.schema.report),
+          });
+        })
+      );
+  }
+
+  public createFiled(reportData: any): Observable<any> {
+    const report = {
+      data: reportData,
+      meta: {
+        status: 'FILED',
+      }
+    };
+
+    return this.reportsRepository.create(report)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.OVERVIEW.ADD_TO_LIST, {
+            payload: this.entitiesActions.normalize({
+              ...response,
+            }, EntitiesActions.schema.report),
           });
         })
       );

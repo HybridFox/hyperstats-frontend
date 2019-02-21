@@ -19,6 +19,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIONS": "Function",
             "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
@@ -45,6 +46,7 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "FUNCTION": "Function",
             "I-ACCEPT-THE": "I accept the",
+            "LAST-UPDATED": "Lastname",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
             "MESSAGE": "Message",
@@ -62,6 +64,7 @@
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
+            "STATES": "Save",
             "STREET": "Street name",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
@@ -72,6 +75,7 @@
             "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
+            "YEAR": "Type",
             "ZIPCODE": "Zipcode"
         },
         "MENU": {
@@ -172,7 +176,7 @@
         },
         "REPORTS": {
             "DRAFT": "Draft",
-            "FILLED": "Filed",
+            "FILED": "Filed",
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
@@ -339,6 +343,19 @@
             },
             "TITLES": {
                 "OVERVIEW": "Overview additives"
+            }
+        },
+        "FILE-REPORT": {
+            "DESCRIPTION": {
+                "FILE-REPORT": "If your report is complete and ready you can file it. After you have filed your report you can’t make any further changes.",
+                "SAVE-REPORT": "You can save this report temporarily and change or complete it on a future date."
+            },
+            "LABELS": {
+                "FILE-REPORT": "File report",
+                "SAVE-REPORT": "Save report temporarily"
+            },
+            "TITLES": {
+                "FILE-SAVE-REPORT": "File or save report"
             }
         },
         "INPUT-FRACTION": {
