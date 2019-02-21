@@ -25,6 +25,26 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
+  public ngOnInit() {
+    this.form = this.formData.getFormData().get('recyclingEfficiency');
+
+    this.mergeElements();
+  }
+
+  public previousStep() {
+    this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
+  }
+
+  public nextStep() {
+    FormHelper.markAsDirty(this.form);
+
+    if (this.form.valid) {
+      this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
+    } else {
+      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
+    }
+  }
+
   private mergeElements() {
     const inputs = this.formData.getFormData().get('inputFraction').get('elements').value.map(input => ({
       element: input.element,
@@ -75,25 +95,5 @@ export class RecyclingEfficiencyPageComponent implements OnInit {
 
     const efficiency = (result.output / result.input) * 100;
     this.efficiency = parseFloat(efficiency.toFixed(2));
-  }
-
-  public ngOnInit() {
-    this.form = this.formData.getFormData().get('recyclingEfficiency');
-
-    this.mergeElements();
-  }
-
-  public previousStep() {
-    this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
-  }
-
-  public nextStep() {
-    FormHelper.markAsDirty(this.form);
-
-    if (this.form.valid) {
-      this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
-    } else {
-      this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
-    }
   }
 }
