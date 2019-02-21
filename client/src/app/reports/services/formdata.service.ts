@@ -30,7 +30,7 @@ export class FormDataService {
     }
 
     public addInputElement(): void {
-        this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
+      this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
     }
 
     public addAdditive(): void {

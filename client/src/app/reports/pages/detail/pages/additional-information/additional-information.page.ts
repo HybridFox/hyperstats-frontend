@@ -25,7 +25,7 @@ export class AdditionalInformationPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.form = this.formData.getFormData().get('additionalInformation');
+    this.form = this.formData.getFormData();
     this.reportId = this.activatedRoute.snapshot.parent.params.id;
   }
 

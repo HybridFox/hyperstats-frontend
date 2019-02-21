@@ -5,7 +5,7 @@
     <app-sub-section-title
         [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
     ></app-sub-section-title>
-    <app-textarea-input></app-textarea-input>
+    <app-textarea-input [control]="form.get('additionalInformation')"></app-textarea-input>
     <div class="u-margin-top-large">
         <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
         <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
