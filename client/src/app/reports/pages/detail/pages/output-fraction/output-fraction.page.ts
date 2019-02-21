@@ -37,12 +37,10 @@ export class OutputFractionPageComponent implements OnInit {
   }
 
   public handleFormChanges(changes: OutputFraction[]) {
-    this.totalWeight = changes.reduce((totalWeight, item) => {
-      if (item.mass !== '' && !isNaN(parseInt(item.mass, 10))) {
-        return totalWeight + parseInt(item.mass, 10);
-      }
-      return totalWeight;
-    }, 0);
+    this.totalWeight = changes.reduce((totalWeight, item) =>
+      item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
+        totalWeight + parseInt(item.mass, 10) :
+        totalWeight, 0);
   }
 
   public addOutputFraction() {
