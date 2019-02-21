@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ApiConfigService } from '@api/config.service';
-import { CompanyType } from 'src/app/manage-companies/store/companies/types';
-import { UserType } from './types';
+import { CompanyType } from '@api/company';
 
 @Injectable()
 export class UsersRepository {

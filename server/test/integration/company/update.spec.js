@@ -17,6 +17,7 @@ describe("Integration", () => {
 			let cookie;
 			let companyId;
 			let otherCompanyId;
+			let managedByCompanyId;
 
 			before(async() => {
 				const { server: s, closeServer: c, reset: r } = await startServer();
@@ -26,11 +27,13 @@ describe("Integration", () => {
 				reset = r;
 				companyId = (await companyTestHelper.create())._id;
 				otherCompanyId = (await companyTestHelper.create(dissoc("_id", companyMock)))._id;
+				managedByCompanyId = (await companyTestHelper.create(dissoc("_id", companyMock), companyId))._id;
 
 				await createTestUser({
 					email: "test_company_user@example.com",
 					company: companyId,
 				});
+
 
 				cookie = (await loginUser(server, { email: "test_company_user@example.com" })).cookie;
 			});
@@ -46,85 +49,9 @@ describe("Integration", () => {
 
 			it("Should not update a company when not logged in", () => {
 				return supertest(server)
-					.put(`/api/companies/${companyId}`)
+					.put(`/api/companies/${managedByCompanyId}`)
 					.send({
-						name: "Some Company updated",
-						vat: "BE12 3456 7890",
-						address: {
-							street: "Some street updated",
-							number: "33A",
-							box: "Some box",
-							zipCode: "Zip",
-							city: "Antwerp updated",
-							country: "Belgium",
-						},
-						contactPerson: {
-							name: "John Smith",
-							function: "Security",
-							phone: "+32 ... updated",
-							email: "john.smith@example.com",
-						},
-					})
-					.expect("Content-Type", /json/)
-					.expect(403);
-			});
-
-			it("Should not update a company that is not managed by the user", () => {
-				return supertest(server)
-					.put(`/api/companies/${otherCompanyId}`)
-					.set("cookie", cookie)
-					.send({
-						name: "Some Company updated",
-						vat: "BE12 3456 7890",
-						address: {
-							street: "Some street updated",
-							number: "33A",
-							box: "Some box",
-							zipCode: "Zip",
-							city: "Antwerp updated",
-							country: "Belgium",
-						},
-						contactPerson: {
-							name: "John Smith",
-							function: "Security",
-							phone: "+32 ... updated",
-							email: "john.smith@example.com",
-						},
-					})
-					.expect("Content-Type", /json/)
-					.expect(500);
-			});
-
-			it("Should return a validation error when no valid body is passed", () => {
-				return supertest(server)
-					.put(`/api/companies/${companyId}`)
-					.set("cookie", cookie)
-					.send({
-						address: {
-							street: "Some street updated",
-							number: "33A",
-							box: "Some box",
-							zipCode: "Zip",
-							city: "Antwerp updated",
-							country: "Belgium",
-						},
-						contactPerson: {
-							name: "John Smith",
-							function: "Security",
-							phone: "+32 ... updated",
-							email: "john.smith@example.com",
-						},
-					})
-					.expect("Content-Type", /json/)
-					.expect(400);
-			});
-
-			describe("Should update a company", () => {
-				it("should return the created company", () => {
-					return supertest(server)
-						.put(`/api/companies/${companyId}`)
-						.set("cookie", cookie)
-						.send({
+						data: {
 							name: "Some Company updated",
 							vat: "BE12 3456 7890",
 							address: {
@@ -140,6 +67,102 @@ describe("Integration", () => {
 								function: "Security",
 								phone: "+32 ... updated",
 								email: "john.smith@example.com",
+							},
+						},
+						meta: {
+							type: "RP",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(403);
+			});
+
+			it("Should not update a company that is not managed by the user", () => {
+				return supertest(server)
+					.put(`/api/companies/${otherCompanyId}`)
+					.set("cookie", cookie)
+					.send({
+						data: {
+							name: "Some Company updated",
+							vat: "BE12 3456 7890",
+							address: {
+								street: "Some street updated",
+								number: "33A",
+								box: "Some box",
+								zipCode: "Zip",
+								city: "Antwerp updated",
+								country: "Belgium",
+							},
+							contactPerson: {
+								name: "John Smith",
+								function: "Security",
+								phone: "+32 ... updated",
+								email: "john.smith@example.com",
+							},
+						},
+						meta: {
+							type: "RP",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(404);
+			});
+
+			it("Should return a validation error when no valid body is passed", () => {
+				return supertest(server)
+					.put(`/api/companies/${managedByCompanyId}`)
+					.set("cookie", cookie)
+					.send({
+						data: {
+							address: {
+								street: "Some street updated",
+								number: "33A",
+								box: "Some box",
+								zipCode: "Zip",
+								city: "Antwerp updated",
+								country: "Belgium",
+							},
+							contactPerson: {
+								name: "John Smith",
+								function: "Security",
+								phone: "+32 ... updated",
+								email: "john.smith@example.com",
+							},
+						},
+						meta: {
+							type: "RP",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(400);
+			});
+
+			describe("Should update a company", () => {
+				it("should return the updated company", () => {
+					return supertest(server)
+						.put(`/api/companies/${managedByCompanyId}`)
+						.set("cookie", cookie)
+						.send({
+							data: {
+								name: "Some Company updated",
+								vat: "BE12 3456 7890",
+								address: {
+									street: "Some street updated",
+									number: "33A",
+									box: "Some box",
+									zipCode: "Zip",
+									city: "Antwerp updated",
+									country: "Belgium",
+								},
+								contactPerson: {
+									name: "John Smith",
+									function: "Security",
+									phone: "+32 ... updated",
+									email: "john.smith@example.com",
+								},
+							},
+							meta: {
+								type: "RP",
 							},
 						})
 						.expect("Content-Type", /json/)
@@ -175,7 +198,7 @@ describe("Integration", () => {
 
 				it("should have stored the created company", () => {
 					supertest(server)
-						.put(`/api/companies/${companyId}`)
+						.put(`/api/companies/${managedByCompanyId}`)
 						.set("cookie", cookie)
 						.expect(200)
 						.then(({ body }) => {

@@ -1,8 +1,10 @@
-module.exports = (_id, companyOfUser) => ({
+module.exports = (_id, companyOfUser, isAdmin = false) => ({
 	_id,
 	"meta.deleted": false,
-	$or: [
-		{ "meta.managedBy": companyOfUser },
-		{ "_id": companyOfUser },
-	],
+	...(!isAdmin ? {
+		$or: [
+			{ "meta.managedBy": companyOfUser },
+			{ "_id": companyOfUser },
+		],
+	} : {}),
 });
