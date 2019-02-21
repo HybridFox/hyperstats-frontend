@@ -1,0 +1,10 @@
+<app-upload-input
+    *ngIf="!response?.originalname"
+    (select)="onSelect($event)"
+></app-upload-input>
+
+<app-upload-preview
+    *ngIf="response?.originalname"
+    [progress]="response?.progress"
+    [name]="response?.originalname"
+></app-upload-preview>

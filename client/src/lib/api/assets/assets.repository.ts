@@ -13,15 +13,18 @@ export class AssetsRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public upload(asset): Observable<any> {
+  public upload(file: File): Observable<any> {
     const url = this.apiConfig.baseUrl('/assets');
 
-    const req = new HttpRequest('POST', url, asset, {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const req = new HttpRequest('POST', url, formData, {
       reportProgress: true,
     });
 
     return this.http.request(req).pipe(
-      map(event => this.getEventMessage(event, asset)),
+      map(event => this.getEventMessage(event, file)),
     );
   }
 
@@ -30,12 +33,14 @@ export class AssetsRepository {
       case HttpEventType.UploadProgress:
         const progress = {
           progress: Math.round(100 * event.loaded / event.total),
+          originalname: file.name,
           result: null
         };
         return progress;
       case HttpEventType.Response:
         const result = {
           progress: 100,
+          originalname: file.name,
           result: event.body
         };
         return result;

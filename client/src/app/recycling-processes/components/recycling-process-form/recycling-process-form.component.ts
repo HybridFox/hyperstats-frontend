@@ -1,19 +1,18 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
-import { createFileUploadControl } from '@ui/form-fields/components/file-upload/file-upload.helper';
+import { createFileUploadControl } from '@ui/upload/file-upload.helper';
 import { omit, prop, pathOr } from 'ramda';
 
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
-import { AssetsApiModule } from '@api/assets';
 
 
 @Component({
     selector: 'app-recycling-process-form',
-    templateUrl: './recycling-process-form.html'
+    templateUrl: './recycling-process-form.component.html'
 })
 
 export class RecyclingProcessFormComponent implements OnChanges {
@@ -25,6 +24,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
     @Output() public toggleActivation: EventEmitter<Toggle> = new EventEmitter<Toggle>();
     @Output() public duplicate: EventEmitter<string> = new EventEmitter<string>();
+    @Output() public upload: EventEmitter<any> = new EventEmitter<any>();
     @Output() public uploadAsset: EventEmitter<object> = new EventEmitter<object>();
     @Output() public uploadOverview: EventEmitter<object> = new EventEmitter<object>();
 
@@ -38,11 +38,13 @@ export class RecyclingProcessFormComponent implements OnChanges {
         private translateService: TranslateService
     ) {}
 
-    public ngOnChanges() {
-        this.recyclingProcessForm = this.formBuilder.group({
-            name: [pathOr('', ['data', 'name'])(this.recyclingProcess), Validators.required],
-            steps: this.createStepFormGroups(pathOr([], ['data', 'steps'])(this.recyclingProcess))
-        });
+    public ngOnChanges(changes: SimpleChanges) {
+        if (changes.recyclingProcess) {
+            this.recyclingProcessForm = this.formBuilder.group({
+                name: [pathOr('', ['data', 'name'])(this.recyclingProcess), Validators.required],
+                steps: this.createStepFormGroups(pathOr([], ['data', 'steps'])(this.recyclingProcess))
+            });
+        }
     }
 
     public saveForm() {
@@ -100,7 +102,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
                 text: [step.qualitativeDescription.text, Validators.required],
                 asset: createFileUploadControl(step.qualitativeDescription.asset)
             }),
-            schematicOverview: createFileUploadControl(step.schematicOverview),
+            schematicOverview: createFileUploadControl(step.qualitativeDescription.asset),
         });
     }
 
@@ -144,6 +146,14 @@ export class RecyclingProcessFormComponent implements OnChanges {
 
     public newStep(): void {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
+    }
+
+    public onUpload(fileList: FileList, stepIndex: number, input: String) {
+        this.upload.emit({
+            input,
+            stepIndex,
+            fileList
+        });
     }
 
     public onUploadAsset(formData, key: number) {

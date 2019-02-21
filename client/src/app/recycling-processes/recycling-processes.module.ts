@@ -11,6 +11,7 @@ import { RecylingProcessesServices } from './store';
 
 import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
+import { UploadModule } from '@ui/upload';
 import { AssetsApiModule } from '@api/assets';
 
 import { Pages } from './pages';
@@ -25,6 +26,7 @@ import { RecyclingPartnersModule } from '../recycling-partners/recycling-partner
     SharedModule,
     ReportsApiModule,
     FormFieldsModule,
+    UploadModule,
     RecyclingPartnersModule,
     AssetsApiModule,
   ],
