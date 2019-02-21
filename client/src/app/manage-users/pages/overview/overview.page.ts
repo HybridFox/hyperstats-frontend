@@ -8,8 +8,9 @@ import pathOr from 'ramda/es/pathOr';
 
 import { UsersActions } from '../../store/users/actions';
 import { UserSelector } from '../../store/users/selectors';
-import { CompanyType } from 'src/app/manage-companies/store/companies/types';
 import { UserType } from '../../store/users/types';
+import { CompanyType } from '@api/company/company.types';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     templateUrl: './overview.page.html',
@@ -26,7 +27,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         private usersActions: UsersActions,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private translateService: TranslateService
     ) {}
 
     public ngOnInit() {
@@ -73,9 +75,21 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             [CompanyType.R, CompanyType.RP, CompanyType.CO];
 
         this.filter = this.createFilterForm([
-            { value: CompanyType.R, label: 'Recycler', selected: types.indexOf(CompanyType.R) !== -1 },
-            { value: CompanyType.RP, label: 'Recycling Partner', selected: types.indexOf(CompanyType.RP) !== -1 },
-            { value: CompanyType.CO, label: 'Compliance organisation', selected: types.indexOf(CompanyType.CO) !== -1 }
+            {
+                value: CompanyType.R,
+                label: this.translateService.instant('TYPES.COMPANY.RECYCLER'),
+                selected: types.indexOf(CompanyType.R) !== -1
+            },
+            {
+                value: CompanyType.RP,
+                label: this.translateService.instant('TYPES.COMPANY.RECYCLER-PARTNER'),
+                selected: types.indexOf(CompanyType.RP) !== -1
+            },
+            {
+                value: CompanyType.CO,
+                label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
+                selected: types.indexOf(CompanyType.CO) !== -1
+            }
         ], originalParams.admin === 'true');
     }
 

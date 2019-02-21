@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-18T20:30:34.538Z\n"
-"PO-Revision-Date: 2019-02-18T20:30:34.538Z\n"
+"POT-Creation-Date: 2019-02-21T07:51:51.354Z\n"
+"PO-Revision-Date: 2019-02-21T07:51:51.354Z\n"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -38,10 +38,16 @@ msgstr ""
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr ""
 
+msgid "GENERAL##LABELS##ACTIVATED"
+msgstr ""
+
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-PROXY"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
@@ -63,6 +69,9 @@ msgid "GENERAL##LABELS##CANCEL"
 msgstr ""
 
 msgid "GENERAL##LABELS##CITY"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANY"
 msgstr ""
 
 msgid "GENERAL##LABELS##COMPANYNAME"
@@ -299,6 +308,12 @@ msgstr ""
 msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr ""
+
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr ""
 
@@ -389,6 +404,12 @@ msgstr ""
 msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
 msgstr ""
 
+msgid "PAGE##USER-ADMIN##CONFIGURATION"
+msgstr ""
+
+msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
+msgstr ""
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr ""
 
@@ -396,6 +417,9 @@ msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "PROXIES##REVOKEPROXY"
 msgstr ""
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
@@ -527,6 +551,18 @@ msgstr ""
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgstr ""
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr ""
 
@@ -639,6 +675,9 @@ msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"

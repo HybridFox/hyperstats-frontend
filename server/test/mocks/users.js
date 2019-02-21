@@ -14,6 +14,7 @@ module.exports = [
 				"token" : "db707909-f609-4963-bb24-6968fd0bb3b9-243724e0-4980-4b4f-9518-0539f2239521",
 			},
 			"status" : "ACTIVATED",
+			"deleted": "false",
 		},
 		"data" : {
 			"email" : "jonh.doe@studiohyperdrive.be",
@@ -38,6 +39,7 @@ module.exports = [
 				"token" : "db707909-f609-4963-bb24-6968fd0bb3b9-243724e0-4980-4b4f-9518-0539f2239521",
 			},
 			"status" : "ACTIVATED",
+			"deleted": "false",
 		},
 		"data" : {
 			"email" : "jan.peeters@studiohyperdrive.be",

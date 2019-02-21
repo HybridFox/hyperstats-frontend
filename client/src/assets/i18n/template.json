@@ -19,8 +19,10 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
+			"ADD-PROXY": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
 			"ADMIN": "",
@@ -28,6 +30,7 @@
 			"BROWSE": "",
 			"CANCEL": "",
 			"CITY": "",
+			"COMPANY": "",
 			"COMPANYNAME": "",
 			"COMPANYVAT": "",
 			"CONFIRMPASSWORD": "",
@@ -131,6 +134,10 @@
 		"PROFILE": {
 			"TITLE": ""
 		},
+		"PROXIES": {
+			"DESCRIPTION": "",
+			"TITLE": ""
+		},
 		"RECYCLING-PARTNERS": {
 			"ADDRESSINFORMATION": "",
 			"CONTACTPERSON": "",
@@ -177,6 +184,10 @@
 			"SUB-TITLE": "",
 			"TITLE": ""
 		},
+		"USER-ADMIN": {
+			"CONFIGURATION": "",
+			"MAIN-INFORMATION": ""
+		},
 		"VERIFICATION-FAILED": {
 			"CONTENT": "",
 			"TITLE": ""
@@ -184,6 +195,9 @@
 		"VERIFICATION-SUCCEEDED": {
 			"TITLE": ""
 		}
+	},
+	"PROXIES": {
+		"REVOKEPROXY": ""
 	},
 	"TOAST": {
 		"ADMIN-FORGOT-PASSWORD": {
@@ -294,6 +308,20 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"USER-ADMIN-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": ""
+			}
+		},
+		"USER-ADMIN-SAVEF": {
+			"SUCCESS": {
+				"TITLE": ""
+			}
 		}
 	},
 	"WIZARD": {
@@ -363,6 +391,7 @@
 				"CLASSIFICATION": "",
 				"ELEMENT": "",
 				"MASS": "",
+				"REPLACED-ELEMENT-MATERIAL": "",
 				"REPLACED-VIRGIN-MATERIAL": "",
 				"SHARE-OUTPUT-FRACTION": ""
 			},

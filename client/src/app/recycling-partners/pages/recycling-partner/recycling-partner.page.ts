@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import countryList from 'country-list';
 import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntil, distinctUntilChanged, filter } from 'rxjs/operators';
 import { select } from '@angular-redux/store';
@@ -9,7 +8,6 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
 import { ToastrService } from 'ngx-toastr';
 
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from '../../store';
-import { Option } from '@ui/form-fields/components/select/select.types';
 
 @Component({
   templateUrl: './recycling-partner.page.html',
@@ -17,7 +15,6 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
   @select(RecyclingPartnerSelector.detail.result) public recyclingPartner$: Observable<any>;
 
-  public countryList: Option[];
   public partner: any;
 
   private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
@@ -32,11 +29,6 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
   ) {}
 
   public ngOnInit() {
-    this.countryList = countryList.getData().map(({code, name}) => ({
-      value: code,
-      label: name,
-    }));
-
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),
@@ -57,7 +49,7 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
     let promise: Promise<any>;
 
     if (this.recyclingPartnerId && this.recyclingPartnerId !== 'new') {
-      promise = this.recyclingPartnerActions.update(this.recyclingPartnerId, recyclingPartner).toPromise();
+      promise = this.recyclingPartnerActions.update(recyclingPartner).toPromise();
     } else {
       promise = this.recyclingPartnerActions.create(recyclingPartner).toPromise();
     }
@@ -136,7 +128,7 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
         this.partnerSubscription.unsubscribe();
     }
 
-    this.recyclingPartnerActions.fetchDetail(this.recyclingPartnerId).toPromise();
+    this.recyclingPartnerActions.fetchById(this.recyclingPartnerId).toPromise();
     this.partnerSubscription = this.recyclingPartner$
         .pipe(takeUntil(this.componentDestroyed$))
         .pipe(filter((partner) => !this.partner || (partner && !equals(partner, this.partner))))
