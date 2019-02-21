@@ -1,7 +1,13 @@
 const { setActiveProp } = require("./helpers");
+const profileHelper = require("../../helpers/profile");
 
 module.exports = (req, res, next) => {
-	setActiveProp(req.params.id, false)
+	setActiveProp({
+		_id: req.params.id,
+		value: false,
+		isAdmin: profileHelper.isAdmin(req),
+		companyOfUser: profileHelper.getCompanyOfUser(req)._id,
+	})
 		.then((company) => res.status(200).json(company))
-		.then((error) => next(error));
+		.catch((error) => next(error));
 };

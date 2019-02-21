@@ -11,6 +11,7 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let nonAdminCookie;
 		let userId;
 
 		before(async() => {
@@ -30,7 +31,8 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
 		afterEach(() => reset());
@@ -61,6 +63,14 @@ describe("Integration", () => {
 						expect(body._id).to.equal(userId.toString());
 						expect(body.data.email).to.equal("test1@example.com");
 					});
+			});
+
+			it("Should fail to fetch user by id if user in session is not admin", async() => {
+				return supertest(server)
+					.get(`/api/users/${userId}`)
+					.set("cookie", nonAdminCookie)
+					.expect("Content-Type", /json/)
+					.expect(403);
 			});
 		});
 	});
