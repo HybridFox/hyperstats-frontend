@@ -1,5 +1,11 @@
 <h1>Detail page</h1>
 
 <div class="m-card--primary u-margin-bottom-large">
-    <app-company-form [company]="company$ | async"></app-company-form>
+    <app-company-form
+        [company]="company$ | async"
+        [companies]="companyOptions$ | async"
+        (save)="save($event)"
+        (remove)="remove($event)"
+        (toggleActivation)="toggleActivation($event)"
+    ></app-company-form>
 </div>

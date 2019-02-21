@@ -142,3 +142,25 @@
         margin-top: 0;
     }
 }
+
+.a-input__mass {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .a-input__mass--percentage {
+        height: 24px;
+    }
+}
+
+/* REMOVE NUMBER INPUT FIELD ARROWS */
+/* For Firefox */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

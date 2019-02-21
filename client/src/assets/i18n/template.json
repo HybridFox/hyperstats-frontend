@@ -1,4 +1,5 @@
 {
+	"Authorisation Organisation": "",
 	"CONSTANTS": {
 		"METHODS-OF-PROCESSING": {
 			"RECYCLING": "",
@@ -6,6 +7,7 @@
 			"TRANSPORT": ""
 		}
 	},
+	"Compliance Organisation": "",
 	"GENERAL": {
 		"BUTTONS": {
 			"CANCEL": "",
@@ -22,6 +24,7 @@
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
+			"ADD-COMPANY": "",
 			"ADD-PROXY": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
@@ -32,6 +35,7 @@
 			"CITY": "",
 			"COMPANY": "",
 			"COMPANYNAME": "",
+			"COMPANYTYPE": "",
 			"COMPANYVAT": "",
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
@@ -48,6 +52,7 @@
 			"INVALID_FORM": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"MANAGEDBY": "",
 			"MESSAGE": "",
 			"MOBILEPHONE": "",
 			"NAME": "",
@@ -110,6 +115,11 @@
 		},
 		"ADMIN": {
 			"FILTERS": ""
+		},
+		"COMPANY": {
+			"ADDRESSINFORMATION": "",
+			"CONTACTPERSON": "",
+			"META": ""
 		},
 		"COMPANYINFORMATION": {
 			"CONTACTPERSON": "",
@@ -200,6 +210,8 @@
 	"PROXIES": {
 		"REVOKEPROXY": ""
 	},
+	"Recycler": "",
+	"Recycling Partner": "",
 	"TOAST": {
 		"ADMIN-FORGOT-PASSWORD": {
 			"SUCCESS": {
@@ -208,6 +220,38 @@
 			}
 		},
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"COMPANY-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"COMPANY-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"COMPANY-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
@@ -325,6 +369,14 @@
 			}
 		}
 	},
+	"TYPES": {
+		"COMPANY": {
+			"AUTHORISATION-ORG": "",
+			"COMPLIANCE-ORG": "",
+			"RECYCLER": "",
+			"RECYCLER-PARTNER": ""
+		}
+	},
 	"WIZARD": {
 		"ADDITIONAL-INFORMATION": {
 			"TITLES": {
@@ -392,6 +444,7 @@
 				"CLASSIFICATION": "",
 				"ELEMENT": "",
 				"MASS": "",
+				"REPLACED-ELEMENT-MATERIAL": "",
 				"REPLACED-VIRGIN-MATERIAL": "",
 				"SHARE-OUTPUT-FRACTION": ""
 			},
