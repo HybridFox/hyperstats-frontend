@@ -31,13 +31,13 @@ export class AssetsRepository {
         const progress = {
           progress: Math.round(100 * event.loaded / event.total),
           result: null
-        }
+        };
         return progress;
       case HttpEventType.Response:
         const result = {
           progress: 100,
           result: event.body
-        }
+        };
         return result;
     }
   }
