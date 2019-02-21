@@ -1,14 +1,5 @@
 <div class="a-table-wrapper">
     <table class="a-table">
-        <thead>
-            <tr>
-                <th>{{ "GENERAL.LABELS.NAME" | translate }}</th>
-                <th>{{ "GENERAL.LABELS.YEAR" | translate }}</th>
-                <th>{{ "GENERAL.LABELS.LAST-UPDATED" | translate }}</th>
-                <th>{{ "GENERAL.LABELS.ACTIONS" | translate }}</th>
-                <th>{{ "GENERAL.LABELS.STATES" | translate }}</th>
-            </tr>
-        </thead>
         <tbody>
             <tr *ngFor="let report of reports">
                 <td>{{ report?.data?.information?.name }}</td>
