@@ -42,8 +42,6 @@ export const mapRecyclingProcessesToMenuItemsWithAll = mapper((process): MenuIte
   label: process.data.name,
 }), ALL_MENU_ITEM);
 
-
-
 export const mapToSiteMenuItems = (obs$: Observable<any>) => {
   return obs$
     .pipe(
