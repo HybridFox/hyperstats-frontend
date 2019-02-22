@@ -442,11 +442,8 @@
 				"REPORTING-YEAR": ""
 			},
 			"TITLES": {
-				"ADDITIVES": "",
 				"GENERAL-INFORMATION": "",
-				"INPUT-FRACTIONS": "",
-				"OUTPUT-FRACTIONS": "",
-				"RECYCLING-EFFICIENCY": ""
+				"INPUT-FRACTIONS": ""
 			}
 		},
 		"OUTPUT-FRACTION": {
