@@ -4,6 +4,7 @@ const errors = {
 	MissingAuthorization: "MISSING_AUTHORIZATION",
 	Forbidden: "FORBIDDEN",
 	ItemNotFound: "ITEM_NOT_FOUND",
+	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
 	PageNotFound: "PAGE_NOT_FOUND",
 };
 
@@ -40,6 +41,10 @@ const errorHandler = (err) => {
 		case errors.ItemNotFound:
 			statusCode = 404;
 			msg = "Item not found.";
+			break;
+		case errors.ItemCannotBeUpdated:
+			statusCode = 422;
+			msg = "Item cannot be updated.";
 			break;
 		case errors.PageNotFound:
 			statusCode = 404;
