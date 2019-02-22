@@ -11,23 +11,7 @@ export class FormDataService {
   constructor(
     private formBuilder: FormBuilder
   ) {
-    this.formGroup = this.formBuilder.group({
-      information: this.formBuilder.group({
-        reportingYear: [null, Validators.required],
-        recyclingProcess: [null, Validators.required],
-        name: ['', Validators.required],
-      }),
-      inputFraction: this.formBuilder.array([this.createInputFraction()]),
-      additives: this.formBuilder.array([this.createAdditive()]),
-      outputFraction: this.formBuilder.array([this.createOutputElement()]),
-      recyclingEfficiency: this.formBuilder.group({
-        calculatedEfficiency: [null, Validators.required]
-      }),
-      additionalInformation: this.formBuilder.group({
-        files: [[]],
-        additionalInformation: ['']
-      }),
-    });
+   this.initForm();
   }
 
   public addInputElement(): void {
@@ -112,13 +96,11 @@ export class FormDataService {
       this.prepareProcessSteps({ data: { steps }});
 
       this.formGroup.patchValue(report.data);
+    } else {
+      this.initForm();
     }
 
     return this.formGroup;
-  }
-
-  private getProcessSteps (formCreator: Function, steps: any[]) {
-    return steps.map((step) => formCreator(step.uuid));
   }
 
   public prepareProcessSteps(process): void {
@@ -136,5 +118,29 @@ export class FormDataService {
       'outputFraction',
       this.formBuilder.array(this.getProcessSteps((id) => this.createOutputElement(id), steps))
     );
+  }
+
+  private getProcessSteps (formCreator: Function, steps: any[]) {
+    return steps.map((step) => formCreator(step.uuid));
+  }
+
+  private initForm() {
+    this.formGroup = this.formBuilder.group({
+      information: this.formBuilder.group({
+        reportingYear: [null, Validators.required],
+        recyclingProcess: [null, Validators.required],
+        name: ['', Validators.required],
+      }),
+      inputFraction: this.formBuilder.array([this.createInputFraction()]),
+      additives: this.formBuilder.array([this.createAdditive()]),
+      outputFraction: this.formBuilder.array([this.createOutputElement()]),
+      recyclingEfficiency: this.formBuilder.group({
+        calculatedEfficiency: [null, Validators.required]
+      }),
+      additionalInformation: this.formBuilder.group({
+        files: [[]],
+        additionalInformation: ['']
+      }),
+    });
   }
 }

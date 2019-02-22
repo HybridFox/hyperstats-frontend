@@ -53,7 +53,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     if (this.reportId === 'new') {
       this.form = this.formData.getFormData().get(this.options.formSection);
 
-      this.onFormReady();
+      return this.onFormReady();
     }
 
     this.report$
@@ -68,13 +68,13 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
           this.reportProcessActions.getById(recyclingProcessId).toPromise();
         }
 
-        if (this.options.formSection) {
-          this.form = this.formData.getFormData().get(this.options.formSection);
-        } else {
-          this.form = this.formData.getFormData();
-        }
+        setTimeout(() => {
+          this.form = this.options.formSection ?
+          this.formData.getFormData().get(this.options.formSection) :
+          this.formData.getFormData();
 
-        this.onFormReady();
+          this.onFormReady();
+        });
       });
   }
 
