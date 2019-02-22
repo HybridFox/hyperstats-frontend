@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-22T07:49:42.811Z\n"
+"POT-Creation-Date: 2019-02-22T08:44:57.758Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.1\n"
 
 msgid "Authorisation Organisation"
-msgstr ""
+msgstr "Authorisation Organisation"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr "Recycling"
@@ -24,7 +24,7 @@ msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
 msgstr "Transport"
 
 msgid "Compliance Organisation"
-msgstr ""
+msgstr "Compliance Organisation"
 
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr "Cancel"
@@ -879,11 +879,6 @@ msgstr "Name this report"
 msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr "Reporting year"
 
-#, fuzzy
-#| msgid "WIZARD##TITLES##ADDITIVES"
-msgid "WIZARD##NEW-REPORT##TITLES##ADDITIVES"
-msgstr "Additives"
-
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
 
@@ -891,16 +886,6 @@ msgstr "General information"
 #| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
 msgstr "General information"
-
-#, fuzzy
-#| msgid "WIZARD##TITLES##OUTPUT-FRACTION"
-msgid "WIZARD##NEW-REPORT##TITLES##OUTPUT-FRACTIONS"
-msgstr "Output Fraction"
-
-#, fuzzy
-#| msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
-msgid "WIZARD##NEW-REPORT##TITLES##RECYCLING-EFFICIENCY"
-msgstr "Recycling Efficiency"
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
 msgstr "Of the element/compound"
@@ -971,6 +956,21 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the field"
+
+#, fuzzy
+#~| msgid "WIZARD##TITLES##ADDITIVES"
+#~ msgid "WIZARD##NEW-REPORT##TITLES##ADDITIVES"
+#~ msgstr "Additives"
+
+#, fuzzy
+#~| msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+#~ msgid "WIZARD##NEW-REPORT##TITLES##OUTPUT-FRACTIONS"
+#~ msgstr "Output Fraction"
+
+#, fuzzy
+#~| msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+#~ msgid "WIZARD##NEW-REPORT##TITLES##RECYCLING-EFFICIENCY"
+#~ msgstr "Recycling Efficiency"
 
 #~ msgid "GENERAL##LABELS##ACTIONS"
 #~ msgstr "Actions"

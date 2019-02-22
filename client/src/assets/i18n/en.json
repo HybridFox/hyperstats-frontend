@@ -1,5 +1,5 @@
 {
-    "Authorisation Organisation": "",
+    "Authorisation Organisation": "Authorisation Organisation",
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
             "RECYCLING": "Recycling",
@@ -7,7 +7,7 @@
             "TRANSPORT": "Transport"
         }
     },
-    "Compliance Organisation": "",
+    "Compliance Organisation": "Compliance Organisation",
     "GENERAL": {
         "BUTTONS": {
             "CANCEL": "Cancel",
@@ -442,11 +442,8 @@
                 "REPORTING-YEAR": "Reporting year"
             },
             "TITLES": {
-                "ADDITIVES": "Additives",
                 "GENERAL-INFORMATION": "General information",
-                "INPUT-FRACTIONS": "General information",
-                "OUTPUT-FRACTIONS": "Output Fraction",
-                "RECYCLING-EFFICIENCY": "Recycling Efficiency"
+                "INPUT-FRACTIONS": "General information"
             }
         },
         "OUTPUT-FRACTION": {
