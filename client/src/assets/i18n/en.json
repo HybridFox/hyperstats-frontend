@@ -1,4 +1,5 @@
 {
+    "Authorisation Organisation": "Authorisation Organisation",
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
             "RECYCLING": "Recycling",
@@ -6,6 +7,7 @@
             "TRANSPORT": "Transport"
         }
     },
+    "Compliance Organisation": "Compliance Organisation",
     "GENERAL": {
         "BUTTONS": {
             "CANCEL": "Cancel",
@@ -19,10 +21,10 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
-            "ACTIONS": "Function",
             "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
+            "ADD-COMPANY": "Company",
             "ADD-PROXY": "Add proxy",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
@@ -33,6 +35,7 @@
             "CITY": "City",
             "COMPANY": "Company",
             "COMPANYNAME": "Company name",
+            "COMPANYTYPE": "Company",
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
@@ -46,9 +49,9 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "FUNCTION": "Function",
             "I-ACCEPT-THE": "I accept the",
-            "LAST-UPDATED": "Lastname",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
+            "MANAGEDBY": "Name",
             "MESSAGE": "Message",
             "MOBILEPHONE": "Mobile phone",
             "NAME": "Name",
@@ -64,8 +67,7 @@
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
-            "STATES": "Save",
-            "STREET": "Street name",
+            "STREET": "Street",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
@@ -75,7 +77,6 @@
             "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
-            "YEAR": "Type",
             "ZIPCODE": "Zipcode",
             "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
         },
@@ -114,6 +115,11 @@
         },
         "ADMIN": {
             "FILTERS": "Filters:"
+        },
+        "COMPANY": {
+            "ADDRESSINFORMATION": "Address Information Recycling Plant",
+            "CONTACTPERSON": "Contact Person",
+            "META": "Use here your legal address information, not the address from for instance a certain processing location or office."
         },
         "COMPANYINFORMATION": {
             "CONTACTPERSON": "Contact Person",
@@ -204,6 +210,8 @@
     "PROXIES": {
         "REVOKEPROXY": "Revoke this proxy"
     },
+    "Recycler": "Recycler",
+    "Recycling Partner": "Recycling Partner",
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
@@ -212,6 +220,38 @@
             }
         },
         "COMPANY-INFORMATION": {
+            "ERROR": {
+                "DESCRIPTION": "Please try again later",
+                "TITLE": "Could not register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your inbox for a verification email",
+                "TITLE": "Registration successfull"
+            }
+        },
+        "COMPANY-REMOVE": {
+            "ERROR": {
+                "DESCRIPTION": "Please try again later",
+                "TITLE": "Could not register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Please check your inbox for a verification email",
+                "TITLE": "Registration successfull"
+            }
+        },
+        "COMPANY-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "There was en error sending your message",
+                "TITLE": "Could not register"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Success!",
+                "TITLE": "Registration successfull"
+            }
+        },
+        "COMPANY-TOGGLE": {
+            "ACTIVATED": "activated",
+            "DEACTIVATED": "deactivated",
             "ERROR": {
                 "DESCRIPTION": "Please try again later",
                 "TITLE": "Could not register"
@@ -329,6 +369,14 @@
             }
         }
     },
+    "TYPES": {
+        "COMPANY": {
+            "AUTHORISATION-ORG": "Authorisation Organisation",
+            "COMPLIANCE-ORG": "Compliance Organisation",
+            "RECYCLER": "Recycler",
+            "RECYCLER-PARTNER": "Recycling Partners"
+        }
+    },
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
@@ -386,17 +434,16 @@
             "DESCRIPTION": {
                 "RECYCLING-PROCESS": "Choose the recycling process and accompanying battery chemistry type for which you can to file a report.",
                 "REPORT-NAME": "Give this report a name. This can be the name of the process like “Nickel Cadnium 2017” or you can include the name of the receiver, like for instance “Nickel Cadnium processing for Name Client “.",
-                "REPORT-RECEIVER": "If this report is only intended for a specific organisation you can choose this organisation from the list.",
                 "REPORTING-YEAR": "Choose the year for which you want to file a report. The reporting year is the year over which you are declaring, not the actual year."
             },
             "LABELS": {
                 "RECYCLING-PROCESS": "Recycling process",
                 "REPORT-NAME": "Name this report",
-                "REPORT-RECEIVER": "Receiver of this report",
                 "REPORTING-YEAR": "Reporting year"
             },
             "TITLES": {
-                "GENERAL-INFORMATION": "General information"
+                "GENERAL-INFORMATION": "General information",
+                "INPUT-FRACTIONS": "General information"
             }
         },
         "OUTPUT-FRACTION": {
@@ -419,7 +466,6 @@
         },
         "RECYCLING-EFFICIENCY": {
             "LABELS": {
-                "EFFICIENCY": "Recycling efficiency",
                 "ELEMENTS": "Elements",
                 "INPUT": "Input",
                 "OUTPUT": "Output"

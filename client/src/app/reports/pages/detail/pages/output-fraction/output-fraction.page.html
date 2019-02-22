@@ -5,9 +5,6 @@
   <ng-container *ngIf="outputFraction" >
     <div class="l-grid__col-9-12 m-card--primary" *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
       <app-sub-section-title
-        [title]="'WIZARD.NEW-REPORT.TITLES.OUTPUT-FRACTIONS' | translate"
-      ></app-sub-section-title>
-      <app-sub-section-title
         class="u-margin-bottom"
         [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate"
       ></app-sub-section-title>
