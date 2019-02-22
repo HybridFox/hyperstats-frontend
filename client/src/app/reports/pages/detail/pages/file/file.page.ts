@@ -49,7 +49,7 @@ export class FilePageComponent extends StepPageAbstract {
     let promise: Promise<any>;
     promise = this.reportActions.draft(data).toPromise();
       promise.then(() => {
-        this.router.navigate(['/reports']);
+        this.router.navigate(['/', 'recycler', 'reports']);
       })
       .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
   }
@@ -63,7 +63,7 @@ export class FilePageComponent extends StepPageAbstract {
     this.reportActions.file(data)
       .toPromise()
       .then(() => {
-        this.router.navigate(['/reports']);
+        this.router.navigate((['/', 'recycler', 'reports']));
       })
       .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
   }

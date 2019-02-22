@@ -21,7 +21,6 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACTIONS": "",
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
@@ -51,7 +50,6 @@
 			"FORGOT-PASSWORD": "",
 			"FUNCTION": "",
 			"I-ACCEPT-THE": "",
-			"LAST-UPDATED": "",
 			"INVALID_FORM": "",
 			"LASTNAME": "",
 			"LOGIN": "",
@@ -71,7 +69,6 @@
 			"SELECT-OPTION": "",
 			"SORTBY": "",
 			"SPONSOREDBY": "",
-			"STATES": "",
 			"STREET": "",
 			"STREETNAME": "",
 			"STREETNUMBER": "",
@@ -82,7 +79,6 @@
 			"TYPE": "",
 			"UPDATE-PROFILE": "",
 			"WELCOME": "",
-			"YEAR": "",
 			"ZIPCODE": ""
 		},
 		"MENU": {
@@ -440,17 +436,16 @@
 			"DESCRIPTION": {
 				"RECYCLING-PROCESS": "",
 				"REPORT-NAME": "",
-				"REPORT-RECEIVER": "",
 				"REPORTING-YEAR": ""
 			},
 			"LABELS": {
 				"RECYCLING-PROCESS": "",
 				"REPORT-NAME": "",
-				"REPORT-RECEIVER": "",
 				"REPORTING-YEAR": ""
 			},
 			"TITLES": {
-				"GENERAL-INFORMATION": ""
+				"GENERAL-INFORMATION": "",
+				"INPUT-FRACTIONS": ""
 			}
 		},
 		"OUTPUT-FRACTION": {
@@ -473,7 +468,6 @@
 		},
 		"RECYCLING-EFFICIENCY": {
 			"LABELS": {
-				"EFFICIENCY": "",
 				"ELEMENTS": "",
 				"INPUT": "",
 				"OUTPUT": ""
