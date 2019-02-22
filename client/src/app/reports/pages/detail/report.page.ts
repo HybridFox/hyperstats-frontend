@@ -29,7 +29,7 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
     private reportsActions: ReportsActions,
     private router: Router,
     private route: ActivatedRoute,
-  ) {}
+  ) { }
 
   public ngOnInit() {
     this.router.events
@@ -102,15 +102,15 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
   }
 
   public ngOnDestroy() {
-      this.componentDestroyed$.next(true);
-      this.componentDestroyed$.complete();
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
   }
 
   public ngAfterContentInit(): void {
     this.selectedIndex = this.steps.reduce((acc, step, index) =>
       step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? index : acc, 0);
 
-      this.setReportTitle();
+    this.setReportTitle();
   }
 
   private setReportTitle() {
