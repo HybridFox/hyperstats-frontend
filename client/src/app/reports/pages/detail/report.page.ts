@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterContentInit } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterContentInit,
+  ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
@@ -13,8 +14,9 @@ import { select } from '@angular-redux/store';
 @Component({
   encapsulation: ViewEncapsulation.None,
   templateUrl: './report.page.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit {
+export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit, AfterViewInit {
   @select(ReportsSelector.detail.result) public report$: Observable<any>;
 
   public data: FormGroup;
@@ -29,6 +31,7 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
     private reportsActions: ReportsActions,
     private router: Router,
     private route: ActivatedRoute,
+    private cdRef: ChangeDetectorRef
   ) {}
 
   public ngOnInit() {
@@ -110,5 +113,9 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
       step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? index : acc, 0);
     this.currentTitle = this.steps.reduce((acc, step) =>
       step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? step.name : acc, '');
+  }
+
+  public ngAfterViewInit() {
+    this.cdRef.detectChanges();
   }
 }

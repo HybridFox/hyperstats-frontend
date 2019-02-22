@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { select, select$ } from '@angular-redux/store';
@@ -14,7 +13,6 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { FormHelper } from '@helpers/form.helper';
 import { companiesToSelectOptions } from '@helpers/select.helpers';
-import { AnonymousSubject } from 'rxjs/internal/Subject';
 import { AssetsRepository } from '@api/assets';
 
 @Component({
@@ -109,7 +107,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    public removeForm() {
+    public remove() {
         if (this.recyclingProcessId === 'new') {
             return;
         }

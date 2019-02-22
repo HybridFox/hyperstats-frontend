@@ -17,6 +17,8 @@ import { Pages } from './pages';
 import { ReportsServices } from './services';
 import { LoadingModule } from '@ui/loading';
 import { Components } from './components';
+import { UploadModule } from '@ui/upload';
+import { AssetsRepository } from '@api/assets';
 
 @NgModule({
   imports: [
@@ -26,10 +28,12 @@ import { Components } from './components';
     ReportsApiModule,
     FormFieldsModule,
     LoadingModule,
+    UploadModule
   ],
   providers: [
     ...ReportsStoreServices,
     ...ReportsServices,
+    AssetsRepository
   ],
   declarations: [
     Pages,
