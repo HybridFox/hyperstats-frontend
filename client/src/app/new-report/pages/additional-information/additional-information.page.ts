@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy,ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { FormDataService } from '../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -49,10 +49,5 @@ export class AdditionalInformationPageComponent implements OnInit, AfterViewInit
 
   public onUpload(filesList) {
     this.uploadResult = this.assetsRepository.upload(filesList[0]);
-
-    /* Array.from(filesList).map(file => {
-      this.uploadResult = this.assetsRepository.upload(file);
-      this.filesArray.push(this.uploadResult);
-    }); */
   }
 }
