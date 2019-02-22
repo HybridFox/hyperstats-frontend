@@ -48,9 +48,11 @@ export class AdditionalInformationPageComponent implements OnInit, AfterViewInit
   }
 
   public onUpload(filesList) {
+    this.uploadResult = this.assetsRepository.upload(filesList[0]);
+
     /* Array.from(filesList).map(file => {
       this.uploadResult = this.assetsRepository.upload(file);
       this.filesArray.push(this.uploadResult);
-    });*/
+    }); */
   }
 }
