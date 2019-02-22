@@ -29,23 +29,27 @@ describe("Activate/deactivate Recyling partner", () => {
 	});
 
 	it("Should activate the recycling process based on a correct _id", async() => {
-		await setActiveProp(processId, true);
-
-		const result = await Model.findOne({ _id: processId });
+		const result = await setActiveProp(processId, true);
+		const dbResult = await Model.findOne({ _id: processId });
 
 		expect(result).to.be.an("object");
 		expect(result.meta).to.be.an("object");
 		expect(result.meta.activated).to.be.true;
+		expect(dbResult).to.be.an("object");
+		expect(dbResult.meta).to.be.an("object");
+		expect(dbResult.meta.activated).to.be.true;
 	});
 
 	it("Should deactivate the recycling process based on a correct _id", async() => {
-		await setActiveProp(processId, false);
-
-		const result = await Model.findOne({ _id: processId });
+		const result = await setActiveProp(processId, false);
+		const dbResult = await Model.findOne({ _id: processId });
 
 		expect(result).to.be.an("object");
 		expect(result.meta).to.be.an("object");
 		expect(result.meta.activated).to.be.false;
+		expect(dbResult).to.be.an("object");
+		expect(dbResult.meta).to.be.an("object");
+		expect(dbResult.meta.activated).to.be.false;
 	});
 
 	it("Should throw error when company doesn't exist", async() => {

@@ -32,9 +32,11 @@ module.exports.getFull = (req) => path(["session", "profile"])(req);
  * @function unset Unset profile props in session
  * @param {Object} req Express request object
  */
-module.exports.unset = (req) => {
+module.exports.unset = async(req) => {
 	delete req.session.profile;
 	delete req.session.safeProfile;
+
+	await req.session.save();
 };
 
 /**
@@ -49,7 +51,7 @@ const set = module.exports.set = (req, user) => {
 			merge,
 			[
 				compose(omit(["password"]), path(["session", "profile", "data"])),
-				compose(omit(["validation", "passwordReset"]), path(["session", "profile", "meta"])),
+				compose(omit(["validation", "passwordReset", "deleted"]), path(["session", "profile", "meta"])),
 			]
 		)
 	)(req);
@@ -68,3 +70,7 @@ module.exports.reload = async(req) => {
 
 	set(req, updatedUser.toObject());
 };
+
+module.exports.isAdmin = (req) => !!path(["session", "profile", "meta", "isAdmin"])(req);
+
+module.exports.getCompanyOfUser = (req) => path(["session", "profile", "data", "company"])(req);

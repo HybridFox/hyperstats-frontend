@@ -6,29 +6,34 @@ export class CodesService {
     return [
       {
         label: 'Magnese',
-        key: 'ma'
+        key: 'ma',
+        value: 'Magnese',
       },
       {
         label: 'Mercury',
-        key: 'me'
+        key: 'me',
+        value: 'Mercury',
       },
       {
         label: 'Carbon',
-        key: 'cb'
+        key: 'cb',
+        value: 'Carbon',
       },
       {
         label: 'Plastics',
-        key: 'pl'
+        key: 'pl',
+        value: 'Plastics',
       },
       {
         label: 'Electrolyte',
-        key: 'ec'
+        key: 'ec',
+        value: 'Electrolyte',
       },
     ];
   }
 
   public years() {
-    return Array.from(new Array(100).keys()).map(val => ({
+    return Array((new Date()).getFullYear() - 2016 + 1).fill(0).map((_, idx) => 2016 + idx).map(val => ({
       label: val.toString(),
       value: val.toString()
     }));

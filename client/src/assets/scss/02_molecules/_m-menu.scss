@@ -83,6 +83,14 @@
                 line-height: 19px;
                 color: $blue;
                 display: block;
+                background-color: transparent;
+                border: none;
+                padding: 0;
+
+                &:focus {
+                    outline: none;
+                }
+
                 &:hover,
                 &:active {
                     text-decoration: none;
@@ -127,6 +135,24 @@
                 width: 5px;
                 height: 40px;
                 background-color: $yellow;
+            }
+        }
+        &.activated {
+            &:after {
+                content: '(activated)';
+                position: absolute;
+                right: 0;
+                font-size: $font-size-small;
+                color: $gray;
+            }
+        }
+        &.deactivated {
+            &:after {
+                content: '(deactivated)';
+                position: absolute;
+                right: 0;
+                font-size: $font-size-small;
+                color: $gray;
             }
         }
     }

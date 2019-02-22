@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RecyclingProcessesPageComponent } from './recycling-processes.page';
-
 import { SharedModule } from '@shared/shared.module';
 
 import { ReportsRoutingModule } from './recycling-processes-routing.module';
@@ -15,6 +13,8 @@ import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
+import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
+import { RecyclingProcessesApiModule } from '@api/recycling-processes';
 
 @NgModule({
   imports: [
@@ -22,14 +22,15 @@ import { Pages } from './pages';
     ReportsRoutingModule,
     SharedModule,
     ReportsApiModule,
-    FormFieldsModule
+    FormFieldsModule,
+    RecyclingPartnersModule,
+    RecyclingProcessesApiModule,
   ],
   providers: [
     RecylingProcessesServices,
   ],
   declarations: [
     Pages,
-    RecyclingProcessesPageComponent
   ],
 })
 export class RecyclingProcessesModule {

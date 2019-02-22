@@ -34,7 +34,6 @@ import { Components, CoreComponent } from './components';
 import { Pages } from './pages';
 import { Guards } from './guards';
 
-
 @NgModule({
   declarations: [
     Components,

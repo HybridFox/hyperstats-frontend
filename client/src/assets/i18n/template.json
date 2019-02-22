@@ -1,4 +1,5 @@
 {
+	"Authorisation Organisation": "",
 	"CONSTANTS": {
 		"METHODS-OF-PROCESSING": {
 			"RECYCLING": "",
@@ -6,10 +7,12 @@
 			"TRANSPORT": ""
 		}
 	},
+	"Compliance Organisation": "",
 	"GENERAL": {
 		"BUTTONS": {
 			"CANCEL": "",
 			"CREATENEWREPORT": "",
+			"GOTOAPP": "",
 			"SAVE": ""
 		},
 		"FIELD-ERRORS": {
@@ -18,9 +21,11 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
-			"ACCEPT_TERMS": "",
+			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ADD-ADDITIONAL-STEP": "",
+			"ADD-COMPANY": "",
+			"ADD-PROXY": "",
 			"ADD-RECYCLING-PARTNER": "",
 			"ADD-RECYCLING-PROCESS": "",
 			"ADMIN": "",
@@ -28,17 +33,26 @@
 			"BROWSE": "",
 			"CANCEL": "",
 			"CITY": "",
+			"COMPANY": "",
 			"COMPANYNAME": "",
+			"COMPANYTYPE": "",
+			"COMPANYVAT": "",
+			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
 			"DELETE-STEP": "",
+			"DISABLE": "",
 			"DRAGANDDROP": "",
 			"DUPLICATE-STEP": "",
 			"EMAIL": "",
+			"ENABLE": "",
 			"FIRSTNAME": "",
 			"FORGOT-PASSWORD": "",
 			"FUNCTION": "",
+			"I-ACCEPT-THE": "",
+			"INVALID_FORM": "",
 			"LASTNAME": "",
 			"LOGIN": "",
+			"MANAGEDBY": "",
 			"MESSAGE": "",
 			"MOBILEPHONE": "",
 			"NAME": "",
@@ -47,7 +61,6 @@
 			"PASSWORD": "",
 			"PHONE": "",
 			"PREVIOUS-STEP": "",
-			"PRIVACY": "",
 			"REGISTER": "",
 			"REMOVE": "",
 			"RESET-PASSWORD": "",
@@ -60,6 +73,7 @@
 			"STREETNUMBER": "",
 			"SUBJECT": "",
 			"SUBMIT": "",
+			"TERMS-AND-CONDITIONS": "",
 			"TRY-AGAIN": "",
 			"TYPE": "",
 			"UPDATE-PROFILE": "",
@@ -76,6 +90,7 @@
 			"LOGIN": "",
 			"LOGOFF": "",
 			"MORE": "",
+			"PRIVACY": "",
 			"PROXIES": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
@@ -83,6 +98,11 @@
 			"REPORTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
+		},
+		"POPUP": {
+			"CANCELREMOVE": "",
+			"CONFIRMREMOVE": "",
+			"DELETEITEM": ""
 		}
 	},
 	"PAGE": {
@@ -93,7 +113,16 @@
 			"SECTION-2": "",
 			"TITLE": ""
 		},
+		"ADMIN": {
+			"FILTERS": ""
+		},
+		"COMPANY": {
+			"ADDRESSINFORMATION": "",
+			"CONTACTPERSON": "",
+			"META": ""
+		},
 		"COMPANYINFORMATION": {
+			"CONTACTPERSON": "",
 			"HELP": "",
 			"SUBTITLE": "",
 			"TITLE": ""
@@ -116,11 +145,14 @@
 		"PROFILE": {
 			"TITLE": ""
 		},
+		"PROXIES": {
+			"DESCRIPTION": "",
+			"TITLE": ""
+		},
 		"RECYCLING-PARTNERS": {
 			"ADDRESSINFORMATION": "",
 			"CONTACTPERSON": "",
 			"DESCRIPTION": "",
-			"REMOVEPARTNER": "",
 			"TITLE": ""
 		},
 		"RECYCLING-PROCESSES": {
@@ -151,12 +183,21 @@
 		},
 		"REPORTS": {
 			"DRAFT": "",
-			"FILLED": "",
+			"FILED": "",
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",
 			"TITLE": ""
+		},
+		"TERMS-AND-CONDITIONS": {
+			"CONTENT": "",
+			"SUB-TITLE": "",
+			"TITLE": ""
+		},
+		"USER-ADMIN": {
+			"CONFIGURATION": "",
+			"MAIN-INFORMATION": ""
 		},
 		"VERIFICATION-FAILED": {
 			"CONTENT": "",
@@ -166,8 +207,51 @@
 			"TITLE": ""
 		}
 	},
+	"PROXIES": {
+		"REVOKEPROXY": ""
+	},
+	"Recycler": "",
+	"Recycling Partner": "",
 	"TOAST": {
+		"ADMIN-FORGOT-PASSWORD": {
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"COMPANY-INFORMATION": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"COMPANY-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"COMPANY-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"COMPANY-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
@@ -242,6 +326,18 @@
 				"TITLE": ""
 			}
 		},
+		"RECYCLING-PROCESS-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"REGISTER": {
 			"ERROR": {
 				"DESCRIPTION": "",
@@ -257,6 +353,28 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"USER-ADMIN-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": ""
+			}
+		},
+		"USER-ADMIN-SAVEF": {
+			"SUCCESS": {
+				"TITLE": ""
+			}
+		}
+	},
+	"TYPES": {
+		"COMPANY": {
+			"AUTHORISATION-ORG": "",
+			"COMPLIANCE-ORG": "",
+			"RECYCLER": "",
+			"RECYCLER-PARTNER": ""
 		}
 	},
 	"WIZARD": {
@@ -276,6 +394,19 @@
 				"OVERVIEW": ""
 			}
 		},
+		"FILE-REPORT": {
+			"DESCRIPTION": {
+				"FILE-REPORT": "",
+				"SAVE-REPORT": ""
+			},
+			"LABELS": {
+				"FILE-REPORT": "",
+				"SAVE-REPORT": ""
+			},
+			"TITLES": {
+				"FILE-SAVE-REPORT": ""
+			}
+		},
 		"INPUT-FRACTION": {
 			"LABELS": {
 				"ADD-ADDITIONAL-ELEMENT": "",
@@ -287,7 +418,7 @@
 				"METHODOLOG-CHEMICAL": "",
 				"METHODOLOG-WASTE": "",
 				"PACKAGING-CASING": "",
-				"PROCESS-CHEMESTRY": "",
+				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
 				"SHARE-INPUT-FRACTION": "",
 				"WEIGHT-BATTERY": "",
@@ -303,17 +434,16 @@
 			"DESCRIPTION": {
 				"RECYCLING-PROCESS": "",
 				"REPORT-NAME": "",
-				"REPORT-RECEIVER": "",
 				"REPORTING-YEAR": ""
 			},
 			"LABELS": {
 				"RECYCLING-PROCESS": "",
 				"REPORT-NAME": "",
-				"REPORT-RECEIVER": "",
 				"REPORTING-YEAR": ""
 			},
 			"TITLES": {
-				"GENERAL-INFORMATION": ""
+				"GENERAL-INFORMATION": "",
+				"INPUT-FRACTIONS": ""
 			}
 		},
 		"OUTPUT-FRACTION": {
@@ -326,6 +456,7 @@
 				"CLASSIFICATION": "",
 				"ELEMENT": "",
 				"MASS": "",
+				"REPLACED-ELEMENT-MATERIAL": "",
 				"REPLACED-VIRGIN-MATERIAL": "",
 				"SHARE-OUTPUT-FRACTION": ""
 			},
@@ -335,7 +466,6 @@
 		},
 		"RECYCLING-EFFICIENCY": {
 			"LABELS": {
-				"EFFICIENCY": "",
 				"ELEMENTS": "",
 				"INPUT": "",
 				"OUTPUT": ""

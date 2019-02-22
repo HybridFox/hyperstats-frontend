@@ -1,0 +1,22 @@
+<div class="a-table-wrapper">
+    <table class="a-table">
+        <tbody>
+            <tr *ngFor="let report of reports">
+                <td>{{ report?.data?.information?.name }}</td>
+                <td>{{ report?.data?.information?.reportingYear }}</td>
+                <td>{{report?.meta?.lastUpdated | date: 'dd/MM/yy'}}</td>
+                <td>
+                    <a [routerLink]="report._id" class="a-link u-margin-right-small">View</a>
+                    <a href="" class="a-link">Export</a>
+                </td>
+                <td>
+                    <button class="a-button--danger a-button-outline">{{
+                        report?.meta?.status === 'FILED' ?
+                        ('PAGE.REPORTS.FILED' | translate) :
+                        ('PAGE.REPORTS.DRAFT' | translate)
+                    }}</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

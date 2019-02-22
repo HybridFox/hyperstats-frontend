@@ -5,8 +5,8 @@ import { throwError as _throw } from 'rxjs';
 
 import { EntitiesActions } from '@store/entities';
 import { Handler } from '@store/handler';
+import { RecyclingProcessesRepository } from '@api/recycling-processes';
 
-import { RecyclingProcessesRepository } from './repository';
 import { ACTIONS } from './action-types';
 
 @Injectable()
@@ -93,6 +93,28 @@ export class RecyclingProcessesActions {
         tap(() => {
           this.handler.dispatch(ACTIONS.REMOVE_FROM_LIST, {
             payload: this.entitiesActions.remove('recyclingProcesses', id),
+          });
+        })
+      );
+  }
+
+  public activate(id: string) {
+    return this.recyclingProcessesRepository.activate(id)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.ACTIVATE, {
+            payload: this.entitiesActions.patch('recyclingProcesses', id, response),
+          });
+        })
+      );
+  }
+
+  public deactivate(id: string) {
+    return this.recyclingProcessesRepository.deactivate(id)
+      .pipe(
+        tap((response: any) => {
+          this.handler.dispatch(ACTIONS.DEACTIVATE, {
+            payload: this.entitiesActions.patch('recyclingProcesses', id, response),
           });
         })
       );

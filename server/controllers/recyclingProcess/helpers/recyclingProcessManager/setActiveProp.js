@@ -2,11 +2,11 @@ const RPModel = require("../../../../models/recyclingProcess");
 const errors = require("../../../../helpers/errorHandler");
 
 module.exports = async(_id, bool) => {
-	const updateResult = await RPModel.update({ _id }, { $set: { "meta.activated": bool } }).exec();
+	const process = await RPModel.findOneAndUpdate({ _id, "meta.deleted": false }, { $set: { "meta.activated": bool } }, { new: true }).exec();
 
-	if (updateResult.nModified === 0) {
+	if (!process) {
 		throw errors.ItemNotFound;
 	}
 
-	return;
+	return process.toObject();
 };

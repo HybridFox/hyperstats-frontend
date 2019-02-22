@@ -12,9 +12,26 @@ export class ReportsRepository {
   ) {}
 
   public fetchAll(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/5c23844b2f00006c00049604');
+    const url = this.apiConfig.baseUrl('/reports');
 
-    return this.http
-      .get(url);
+    return this.http.get(url);
+  }
+
+  public fetchById(id: string): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/reports/${id}`);
+
+    return this.http.get(url);
+  }
+
+  public create(report: any): Observable<any> {
+    const url = this.apiConfig.baseUrl('/reports');
+
+    return this.http.post(url, report);
+  }
+
+  public update(id: string, report: any): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/reports/${id}`);
+
+    return this.http.put(url, report);
   }
 }

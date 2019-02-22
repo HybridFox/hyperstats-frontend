@@ -14,3 +14,13 @@
     background-color: $athens-gray;
     color: $tundora;
 }
+
+.m-card__placeholder {
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    img {
+        max-width: 100%;
+    }
+}

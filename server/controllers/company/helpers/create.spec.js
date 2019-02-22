@@ -25,21 +25,28 @@ describe("Company", () => {
 		});
 
 		it("Should create a company", async() => {
-			const createdCompany = await createCompany({ type: "R", companyOfUser, company: {
-				name: "Some Company",
-				address: {
-					street: "Some street",
-					number: "33A",
-					box: "Some box",
-					zipCode: "Zip",
-					city: "Antwerp",
-					country: "Belgium",
+			const createdCompany = await createCompany({ companyOfUser, company: {
+				data: {
+					name: "Some Company",
+					vat: "BE12 3456 7890",
+					address: {
+						street: "Some street",
+						number: "33A",
+						box: "Some box",
+						zipCode: "Zip",
+						city: "Antwerp",
+						country: "Belgium",
+					},
+					contactPerson: {
+						name: "John Smith",
+						function: "Security",
+						phone: "+32 ...",
+						email: "john.smith@example.com",
+					},
 				},
-				contactPerson: {
-					name: "John Smith",
-					function: "Security",
-					phone: "+32 ...",
-					email: "john.smith@example.com",
+				meta: {
+					activated: true,
+					type: "R",
 				},
 			} });
 
@@ -62,6 +69,7 @@ describe("Company", () => {
 				phone: "+32 ...",
 				email: "john.smith@example.com",
 			});
+			expect();
 		});
 	});
 });

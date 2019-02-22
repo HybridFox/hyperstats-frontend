@@ -1,5 +1,10 @@
 <form>
     <ng-container *ngIf="form">
+        <app-sub-section-title
+            [title]="'PAGE.USER-ADMIN.MAIN-INFORMATION' | translate"
+            class="u-margin-bottom-large"
+        ></app-sub-section-title>
+
         <app-text-input
             class="u-margin-bottom-large"
             [control]="form.get('data.firstname')"
@@ -18,8 +23,41 @@
             [label]="'GENERAL.LABELS.EMAIL' | translate"
             type="email"
         ></app-text-input>
+
+        <app-sub-section-title
+            [title]="'PAGE.USER-ADMIN.CONFIGURATION' | translate"
+            class="u-margin-bottom-large"
+        ></app-sub-section-title>
+
+        <app-select-input
+            class="u-margin-bottom-large"
+            [control]="form.get('data.company')"
+            [label]="'GENERAL.LABELS.COMPANY' | translate"
+            [options]="companyOptions"
+        ></app-select-input>
+
+        <app-checkbox-input
+            class="u-margin-bottom-large"
+            [control]="form.get('meta.activated')"
+            [label]="'GENERAL.LABELS.ACTIVATED' | translate"
+        ></app-checkbox-input>
     </ng-container>
 
-    <button class="a-button--primary a-button--small u-margin-top-large u-margin-right-large" [disabled]="!form?.valid">{{ 'GENERAL.BUTTONS.SAVE' | translate }}</button>
-    <a class="a-link" [routerLink]="['../']">{{ 'GENERAL.BUTTONS.CANCEL' | translate }}</a>
+    <app-sub-section-title class="u-margin-top-x-large"></app-sub-section-title>
+
+    <button
+        type="button"
+        class="a-button--primary a-button--small u-margin-top-large u-margin-right-large"
+        (click)="saveUser()"
+        [disabled]="!form?.valid"
+    >
+        {{ 'GENERAL.BUTTONS.SAVE' | translate }}
+    </button>
+    <button
+        type="button"
+        class="a-button u-margin-left-x-large a-button--secondary a-button--small"
+        (click)="resetPassword()"
+    >
+        {{ 'GENERAL.LABELS.RESET-PASSWORD' | translate }}
+    </button>
 </form>

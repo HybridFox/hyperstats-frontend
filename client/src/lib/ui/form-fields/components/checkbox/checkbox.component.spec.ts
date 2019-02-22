@@ -50,7 +50,7 @@ describe('CheckboxInputComponent', () => {
       fixture.detectChanges();
 
       const label = fixture.nativeElement.querySelector('.a-input__label');
-      expect(label.textContent).toEqual('Test ');
+      expect(label.textContent).toEqual('Test');
     });
   });
 });

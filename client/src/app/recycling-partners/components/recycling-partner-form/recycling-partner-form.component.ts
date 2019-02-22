@@ -1,6 +1,7 @@
-import { Component, OnChanges, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnChanges, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { path, prop } from 'ramda';
+import countryList from 'country-list';
+import { prop, pathOr } from 'ramda';
 
 import { Option } from '@ui/form-fields/components/select/select.types';
 
@@ -9,21 +10,31 @@ import { Option } from '@ui/form-fields/components/select/select.types';
     templateUrl: './recycling-partner-form.html'
 })
 
-export class RecyclingPartnerFormComponent implements OnChanges {
-    @Input() public countryList: Option[];
+export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
     @Input() public recyclingPartner: any;
 
     @Output() public submit: EventEmitter<any> = new EventEmitter<any>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
+    @Output() public toggleActivation: EventEmitter<any> = new EventEmitter<any>();
 
+    public countryList: Option[];
     public recyclingPartnerForm: FormGroup;
+    public isActivated: boolean;
 
     constructor(
         private formBuilder: FormBuilder,
     ) {}
 
+    ngOnInit() {
+        this.countryList = countryList.getData().map(({ code, name }) => ({
+            value: code,
+            label: name,
+        }));
+    }
+
     public ngOnChanges() {
         this.buildForm(prop('data')(this.recyclingPartner));
+        this.isActivated = pathOr(false, ['meta', 'activated'])( this.recyclingPartner);
     }
 
     public saveForm() {
@@ -31,7 +42,13 @@ export class RecyclingPartnerFormComponent implements OnChanges {
             return;
         }
 
-        this.submit.emit(this.recyclingPartnerForm.getRawValue());
+        this.submit.emit({
+            ...this.recyclingPartner || {},
+            data: this.recyclingPartnerForm.getRawValue(),
+            meta: {
+                type: 'RP'
+            }
+        });
     }
 
     public removeForm() {
@@ -42,8 +59,19 @@ export class RecyclingPartnerFormComponent implements OnChanges {
         this.remove.emit(this.recyclingPartner._id);
     }
 
+    public toggleActivationForm() {
+        if (this.isActivated === true) {
+            this.isActivated = false;
+        } else {
+            this.isActivated = true;
+        }
+
+        this.toggleActivation.emit({id: this.recyclingPartner._id, isActivated: this.isActivated});
+    }
+
     private buildForm(value = {
         name: '',
+        vat: '',
         address: {
             street: '',
             number: '',
@@ -62,6 +90,7 @@ export class RecyclingPartnerFormComponent implements OnChanges {
     }) {
         this.recyclingPartnerForm = this.formBuilder.group({
             name: [value.name, Validators.required],
+            vat: [value.vat, Validators.required],
             address: this.formBuilder.group({
                 street: [value.address.street, Validators.required],
                 number: [value.address.number, Validators.required],

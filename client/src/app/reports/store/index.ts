@@ -1,9 +1,13 @@
-export * from './actions';
-export * from './reducers';
-export * from './selectors';
+import { ReportsActions } from './reports';
+import { ReportsProcessActions } from './recycling-processes';
+import { ReportsRepository } from '@api/reports';
+import { RecyclingProcessesRepository } from '@api/recycling-processes';
 
-import { ReportsActions } from './actions';
-
-export const ReportsServices = [
-  ReportsActions
+export const ReportsStoreServices = [
+    ReportsActions,
+    ReportsProcessActions,
+    ReportsRepository,
+    RecyclingProcessesRepository
 ];
+
+export { Reducers } from './reducers';

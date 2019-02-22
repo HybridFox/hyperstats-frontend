@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { ApiConfigService } from '@api/config.service';
+import { CompanyType } from '@api/company';
 
 @Injectable()
 export class UsersRepository {
@@ -11,11 +12,21 @@ export class UsersRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchAll(): Observable<any> {
-    return this.http.get(this.apiConfig.baseUrl('/users'));
+  public fetchByTypes(types: CompanyType[], admin: boolean): Observable<any> {
+
+    return this.http.get(this.apiConfig.baseUrl(`/users`), {
+      params: {
+        ...(types ? { 'company-type': types } : {}),
+        ...(admin ? { 'admin': true } : {}),
+      } as any
+    });
   }
 
   public fetchById(id: string): Observable<any> {
     return this.http.get(this.apiConfig.baseUrl(`/users/${id}`));
+  }
+
+  public updateUser(user: any): Observable<any> {
+    return this.http.put(this.apiConfig.baseUrl(`/users/${user._id}`), user);
   }
 }

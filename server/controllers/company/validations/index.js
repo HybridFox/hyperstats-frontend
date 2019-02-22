@@ -1,5 +1,5 @@
-const company = require("./company");
-
 module.exports = {
-	company,
+	company: require("./company"),
+	recyclingPartner: require("./recyclingPartner"),
+	types: require("./types"),
 };

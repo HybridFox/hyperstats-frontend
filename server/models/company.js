@@ -6,6 +6,10 @@ const CompanySchema = mongoose.Schema({
 			type: String,
 			required: true,
 		},
+		vat: {
+			type: String,
+			required: true,
+		},
 		address: {
 			street: {
 				type: String,
@@ -68,12 +72,16 @@ const CompanySchema = mongoose.Schema({
 			type: Boolean,
 			default: false,
 		},
+		deleted: {
+			type: Boolean,
+			default: false,
+		},
 		type: {
 			type: String,
 			// R => Recycler
 			// RP => Recycler Partner
 			// CO => Complience organization
-			enum: ["R", "RP", "CO"],
+			enum: ["R", "RP", "CO", "AO"],
 		},
 	},
 });

@@ -5,8 +5,11 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-07T13:44:26.046Z\n"
-"PO-Revision-Date: 2019-02-07T13:44:26.046Z\n"
+"POT-Creation-Date: 2019-02-22T08:44:57.758Z\n"
+"PO-Revision-Date: 2019-02-22T08:44:57.758Z\n"
+
+msgid "Authorisation Organisation"
+msgstr ""
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr ""
@@ -17,10 +20,16 @@ msgstr ""
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
 msgstr ""
 
+msgid "Compliance Organisation"
+msgstr ""
+
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr ""
+
+msgid "GENERAL##BUTTONS##GOTOAPP"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##SAVE"
@@ -35,10 +44,19 @@ msgstr ""
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr ""
 
+msgid "GENERAL##LABELS##ACTIVATED"
+msgstr ""
+
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-COMPANY"
+msgstr ""
+
+msgid "GENERAL##LABELS##ADD-PROXY"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
@@ -62,13 +80,28 @@ msgstr ""
 msgid "GENERAL##LABELS##CITY"
 msgstr ""
 
+msgid "GENERAL##LABELS##COMPANY"
+msgstr ""
+
 msgid "GENERAL##LABELS##COMPANYNAME"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYTYPE"
+msgstr ""
+
+msgid "GENERAL##LABELS##COMPANYVAT"
+msgstr ""
+
+msgid "GENERAL##LABELS##CONFIRMPASSWORD"
 msgstr ""
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
 msgid "GENERAL##LABELS##DELETE-STEP"
+msgstr ""
+
+msgid "GENERAL##LABELS##DISABLE"
 msgstr ""
 
 msgid "GENERAL##LABELS##DRAGANDDROP"
@@ -80,6 +113,9 @@ msgstr ""
 msgid "GENERAL##LABELS##EMAIL"
 msgstr ""
 
+msgid "GENERAL##LABELS##ENABLE"
+msgstr ""
+
 msgid "GENERAL##LABELS##FIRSTNAME"
 msgstr ""
 
@@ -89,10 +125,16 @@ msgstr ""
 msgid "GENERAL##LABELS##FUNCTION"
 msgstr ""
 
+msgid "GENERAL##LABELS##I-ACCEPT-THE"
+msgstr ""
+
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##LOGIN"
+msgstr ""
+
+msgid "GENERAL##LABELS##MANAGEDBY"
 msgstr ""
 
 msgid "GENERAL##LABELS##MESSAGE"
@@ -117,9 +159,6 @@ msgid "GENERAL##LABELS##PHONE"
 msgstr ""
 
 msgid "GENERAL##LABELS##PREVIOUS-STEP"
-msgstr ""
-
-msgid "GENERAL##LABELS##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##LABELS##REGISTER"
@@ -156,6 +195,9 @@ msgid "GENERAL##LABELS##SUBJECT"
 msgstr ""
 
 msgid "GENERAL##LABELS##SUBMIT"
+msgstr ""
+
+msgid "GENERAL##LABELS##TERMS-AND-CONDITIONS"
 msgstr ""
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
@@ -200,6 +242,9 @@ msgstr ""
 msgid "GENERAL##MENU##MORE"
 msgstr ""
 
+msgid "GENERAL##MENU##PRIVACY"
+msgstr ""
+
 msgid "GENERAL##MENU##PROXIES"
 msgstr ""
 
@@ -221,6 +266,15 @@ msgstr ""
 msgid "GENERAL##MENU##USERS"
 msgstr ""
 
+msgid "GENERAL##POPUP##CANCELREMOVE"
+msgstr ""
+
+msgid "GENERAL##POPUP##CONFIRMREMOVE"
+msgstr ""
+
+msgid "GENERAL##POPUP##DELETEITEM"
+msgstr ""
+
 msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
 
@@ -234,6 +288,21 @@ msgid "PAGE##ABOUT##SECTION-2"
 msgstr ""
 
 msgid "PAGE##ABOUT##TITLE"
+msgstr ""
+
+msgid "PAGE##ADMIN##FILTERS"
+msgstr ""
+
+msgid "PAGE##COMPANY##ADDRESSINFORMATION"
+msgstr ""
+
+msgid "PAGE##COMPANY##CONTACTPERSON"
+msgstr ""
+
+msgid "PAGE##COMPANY##META"
+msgstr ""
+
+msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
 msgstr ""
 
 msgid "PAGE##COMPANYINFORMATION##HELP"
@@ -263,6 +332,12 @@ msgstr ""
 msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr ""
+
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr ""
 
@@ -270,9 +345,6 @@ msgid "PAGE##RECYCLING-PARTNERS##CONTACTPERSON"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
-msgstr ""
-
-msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PARTNERS##TITLE"
@@ -335,7 +407,7 @@ msgstr ""
 msgid "PAGE##REPORTS##DRAFT"
 msgstr ""
 
-msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##FILED"
 msgstr ""
 
 msgid "PAGE##REPORTS##TITLE"
@@ -347,6 +419,21 @@ msgstr ""
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr ""
 
+msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
+msgstr ""
+
+msgid "PAGE##TERMS-AND-CONDITIONS##SUB-TITLE"
+msgstr ""
+
+msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
+msgstr ""
+
+msgid "PAGE##USER-ADMIN##CONFIGURATION"
+msgstr ""
+
+msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
+msgstr ""
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr ""
 
@@ -354,6 +441,21 @@ msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "PROXIES##REVOKEPROXY"
+msgstr ""
+
+msgid "Recycler"
+msgstr ""
+
+msgid "Recycling Partner"
+msgstr ""
+
+msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
@@ -366,6 +468,48 @@ msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-REMOVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-SAVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##ACTIVATED"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##DEACTIVATED"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##COMPANY-TOGGLE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
@@ -443,6 +587,24 @@ msgstr ""
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
+msgstr ""
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -461,6 +623,30 @@ msgstr ""
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TYPES##COMPANY##AUTHORISATION-ORG"
+msgstr ""
+
+msgid "TYPES##COMPANY##COMPLIANCE-ORG"
+msgstr ""
+
+msgid "TYPES##COMPANY##RECYCLER"
+msgstr ""
+
+msgid "TYPES##COMPANY##RECYCLER-PARTNER"
+msgstr ""
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr ""
 
@@ -477,6 +663,21 @@ msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
 msgstr ""
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##SAVE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##LABELS##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##LABELS##SAVE-REPORT"
+msgstr ""
+
+msgid "WIZARD##FILE-REPORT##TITLES##FILE-SAVE-REPORT"
 msgstr ""
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
@@ -506,7 +707,7 @@ msgstr ""
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr ""
 
-msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMISTRY"
 msgstr ""
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
@@ -536,9 +737,6 @@ msgstr ""
 msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-NAME"
 msgstr ""
 
-msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
-msgstr ""
-
 msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORTING-YEAR"
 msgstr ""
 
@@ -548,13 +746,13 @@ msgstr ""
 msgid "WIZARD##NEW-REPORT##LABELS##REPORT-NAME"
 msgstr ""
 
-msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
-msgstr ""
-
 msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr ""
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
@@ -575,6 +773,9 @@ msgstr ""
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr ""
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+msgstr ""
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr ""
 
@@ -582,9 +783,6 @@ msgid "WIZARD##OUTPUT-FRACTION##LABELS##SHARE-OUTPUT-FRACTION"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##TITLES##OVERVIEW"
-msgstr ""
-
-msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
 msgstr ""
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##ELEMENTS"
@@ -623,6 +821,6 @@ msgstr ""
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr ""
 
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
+msgctxt "FORM"
+msgid "GENERAL##LABELS##INVALID"
 msgstr ""

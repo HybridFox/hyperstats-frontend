@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { select } from '@angular-redux/store';
-import { Observable, combineLatest } from 'rxjs';
+import { select$ } from '@angular-redux/store';
+import { Observable } from 'rxjs';
 import { map, tap, filter } from 'rxjs/operators';
+
+const handle = (obs$) => {
+    return obs$
+        .pipe(
+            filter((user: any) => {
+                return !user || user.loading === false;
+            }),
+            map((user: any) => !!user.result),
+        );
+};
+
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-    @select(['auth', 'user', 'result']) private user$: Observable<any>;
-    @select(['auth', 'user', 'loading']) private loading$: Observable<any>;
+    @select$(['auth', 'user'], handle) private isLoggedIn$: Observable<any>;
 
     constructor(
         private router: Router,
     ) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return combineLatest(
-            this.user$,
-            this.loading$
-        )
+        return this.isLoggedIn$
             .pipe(
-                filter(([user, loading]) => {
-                    return loading === false;
-                }),
-                map(([user]) => {
-                    return !!user;
-                }),
-                tap((val) => {
-                    if (!val) {
-                        this.router.navigate(['/', 'login']);
+                tap((res) => {
+                    if (!res) {
+                        this.router.navigate(['/', 'auth']);
                     }
                 })
             );

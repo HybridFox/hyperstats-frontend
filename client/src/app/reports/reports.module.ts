@@ -8,13 +8,15 @@ import { SharedModule } from '@shared/shared.module';
 import { ReportsRoutingModule } from './reports-routing.module';
 
 import { StoreService } from '@store/store.service';
-import { reportsReducer } from './store/reducers';
-import { ReportsServices } from './store';
+import { ReportsStoreServices, Reducers } from './store';
 
 import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
+import { ReportsServices } from './services';
+import { LoadingModule } from '@ui/loading';
+import { Components } from './components';
 
 @NgModule({
   imports: [
@@ -22,20 +24,23 @@ import { Pages } from './pages';
     ReportsRoutingModule,
     SharedModule,
     ReportsApiModule,
-    FormFieldsModule
+    FormFieldsModule,
+    LoadingModule,
   ],
   providers: [
-    ReportsServices,
+    ...ReportsStoreServices,
+    ...ReportsServices,
   ],
   declarations: [
     Pages,
-    ReportsComponent
+    ReportsComponent,
+    ...Components,
   ],
 })
 export class ReportsModule {
   constructor(
     private storeService: StoreService,
   ) {
-    this.storeService.injectAsyncReducer('reports', reportsReducer);
+    this.storeService.injectAsyncReducer('reports', Reducers);
   }
 }

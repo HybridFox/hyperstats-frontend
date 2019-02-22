@@ -42,6 +42,7 @@
 // Organisms
 @import "./03_organisms/o-card-list";
 @import "./03_organisms/o-menu";
+@import "./03_organisms/o-popup";
 @import "./03_organisms/o-region";
 
 // Templates
@@ -49,10 +50,11 @@
 
 // Pages
 @import "./05_pages/p-home";
-@import "./05_pages/p-login";
+@import "./05_pages/p-app-root";
+@import "./05_pages/p-app";
+@import "./05_pages/p-auth";
 @import "./05_pages/p-profile";
-@import "./05_pages/p-register";
-@import "./05_pages/p-forgot-password";
+@import "./05_pages/p-proxies";
 @import "./05_pages/p-verification";
 @import "./05_pages/p-about";
 @import "./05_pages/p-contact";

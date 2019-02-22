@@ -1,6 +1,6 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
-const { dissoc, set, lensPath } = require("ramda");
+const { dissoc, set, lensPath, omit } = require("ramda");
 const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
@@ -14,6 +14,7 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let nonAdminCookie;
 		let rp;
 		let co;
 
@@ -58,7 +59,8 @@ describe("Integration", () => {
 				company: co._id,
 			});
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
 		afterEach(() => reset());
@@ -86,60 +88,106 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(7);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
 			it("Should fetch users by recycler type", () => {
 				return supertest(server)
-					.get("/api/users?type=R")
+					.get("/api/users?company-type=R")
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
-						expect(body).to.be.an("array").to.have.lengthOf(3);
-						expect(body[0].data).to.deep.equal({
+						expect(body).to.be.an("array").to.have.lengthOf(1);
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
+					});
+			});
+
+			it("Should fetch admin users", () => {
+				return supertest(server)
+					.get("/api/users?admin=true")
+					.set("cookie", cookie)
+					.expect("Content-Type", /json/)
+					.expect(200)
+					.then(({ body }) => {
+						expect(body).to.be.an("array").to.have.lengthOf(2);
+						expect(omit(["company"], body[0].data)).to.deep.equal({
+							email: "test1@example.com",
+							firstname: "__firstname_test-user__remove_identifier__",
+							lastname: "Smith",
+						});
+						expect(body[0].data.company).to.be.an("string");
+					});
+			});
+
+			it("Should fetch admin users and of type recycler and compliance organisation", () => {
+				return supertest(server)
+					.get("/api/users?admin=true&company-type=R&company-type=CO")
+					.set("cookie", cookie)
+					.expect("Content-Type", /json/)
+					.expect(200)
+					.then(({ body }) => {
+						expect(body).to.be.an("array").to.have.lengthOf(5);
+						expect(omit(["company"], body[0].data)).to.deep.equal({
+							email: "validuser@example.com",
+							firstname: "__firstname_test-user__remove_identifier__",
+							lastname: "Smith",
+						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
 			it("Should fetch users by recycler partner type", () => {
 				return supertest(server)
-					.get("/api/users?type=RP")
+					.get("/api/users?company-type=RP")
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(2);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "test3@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
 			});
 
 			it("Should fetch users by recycler process type", () => {
 				return supertest(server)
-					.get("/api/users?type=CO")
+					.get("/api/users?company-type=CO")
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(2);
-						expect(body[0].data).to.deep.equal({
+						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "test5@example.com",
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
+						expect(body[0].data.company).to.be.an("string");
 					});
+			});
+
+			it("Should fail to fetch users when user is not admin", async() => {
+				return supertest(server)
+					.get("/api/users")
+					.set("cookie", nonAdminCookie)
+					.expect("Content-Type", /json/)
+					.expect(403);
 			});
 		});
 	});

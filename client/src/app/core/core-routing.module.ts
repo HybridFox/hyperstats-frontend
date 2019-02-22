@@ -7,87 +7,58 @@ import * as Pages from './pages';
 
 const routes: Routes = [
   {
-    path: 'login',
-    component: Pages.LoginPageComponent,
-    data: {
-      menuState: 'transparant',
-      hideLogo: true,
-    }
-  },
-  {
-    path: 'about',
-    component: Pages.AboutPageComponent
-  },
-  {
-    path: 'register',
-    component: Pages.RegisterPageComponent,
-    data: {
-      menuState: 'transparant',
-      hideLogo: true,
-    }
-  },
-  {
-    path: 'forgot-password',
-    component: Pages.ForgotPasswordPageComponent,
-    data: {
-      menuState: 'transparant'
-    }
-  },
-  {
-    path: 'reset-password',
-    component: Pages.ResetPasswordPageComponent,
-    data: {
-      menuState: 'transparant'
-    }
-  },
-  {
-    path: 'verification-succeeded',
-    component: Pages.VerificationSucceededPageComponent,
-    data: {
-      menuState: 'transparant'
-    }
-  },
-  {
-    path: 'verification-failed',
-    component: Pages.VerificationFailedPageComponent,
-    data: {
-      menuState: 'transparant'
-    }
-  },
-  {
-    path: 'contact',
-    component: Pages.ContactPageComponent
-  },
-  {
-    path: 'privacy',
-    component: Pages.PrivacyPageComponent
+    path: '',
+    pathMatch: 'full',
+    canActivate: [AuthGuard],
+    component: Pages.LandingPageComponent
   },
   {
     path: '',
-    canActivate: [AuthGuard],
+    component: Pages.GeneralWrapperPageComponent,
     children: [
       {
-        path: '',
-        pathMatch: 'full',
-        component: Pages.LandingPageComponent,
-      },
-      { path: 'new-report', loadChildren: '../new-report/new-report.module#NewReportModule'},
-      {
-        path: 'reports',
-        component: Pages.ReportsPageComponent
+        path: 'about',
+        component: Pages.AboutPageComponent
       },
       {
-        path: 'profile',
-        component: Pages.ProfilePageComponent
+        path: 'contact',
+        component: Pages.ContactPageComponent
       },
       {
-        path: 'company-information',
-        component: Pages.CompanyPageComponent
+        path: 'terms-and-conditions',
+        component: Pages.TermsAndConditionsPageComponent
       },
-      { path: 'help', loadChildren: '../help/help.module#HelpModule'},
-      { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule'},
-      { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule'},
     ]
+  },
+  {
+    path: '',
+    component: Pages.AppWrapperPageComponent,
+    children: [
+      {
+        path: 'recycler',
+        canActivate: [AuthGuard],
+        loadChildren: '../recycler/recycler.module#RecyclerModule',
+      },
+      {
+        path: 'user',
+        canActivate: [AuthGuard],
+        loadChildren: '../user/user.module#UserModule',
+      },
+      {
+        path: 'admin',
+        canActivate: [AuthGuard, AdminGuard],
+        loadChildren: '../admin/admin.module#AdminModule',
+      },
+    ]
+  },
+  {
+    path: 'auth',
+    loadChildren: '../auth/auth.module#AuthModule',
+  },
+  {
+    path: 'recycler',
+    canActivate: [AuthGuard],
+    loadChildren: '../recycler/recycler.module#RecyclerModule',
   },
   {
     path: 'admin',

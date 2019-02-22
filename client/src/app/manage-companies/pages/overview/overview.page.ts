@@ -4,11 +4,12 @@ import { select } from '@angular-redux/store';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil, map } from 'rxjs/operators';
+import pathOr from 'ramda/es/pathOr';
 
 import { CompaniesActions } from '../../store/companies/actions';
 import { CompanySelector } from '../../store/companies/selectors';
-import { CompanyType } from '../../store/companies/types';
-
+import { CompanyType } from '@api/company';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     templateUrl: './overview.page.html',
@@ -18,13 +19,14 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(CompanySelector.overview.loading) public loading$: Observable<boolean>;
 
     public filter: FormGroup;
-    private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
     constructor(
-        public companiesActions: CompaniesActions,
-        public formBuilder: FormBuilder,
-        public router: Router,
-        public route: ActivatedRoute,
+        private companiesActions: CompaniesActions,
+        private formBuilder: FormBuilder,
+        private router: Router,
+        private route: ActivatedRoute,
+        private translateService: TranslateService
     ) {}
 
     public ngOnInit() {
@@ -35,23 +37,16 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 takeUntil(this.componentDestroyed$),
             )
             .subscribe((params) => {
-                // Todo: Use multiple params!
-                const type = params && params.types && params.types.length > 0 ? params.types[0] : CompanyType.R;
-                this.companiesActions.fetchByType(type).subscribe();
+                const types = pathOr(0, ['types', 'length'], params) > 0 ? params.types : null;
+                this.companiesActions.fetchByType(types).toPromise();
             });
 
         this.filter.valueChanges
             .pipe(
                 takeUntil(this.componentDestroyed$),
-                map((data) => {
-                    return data.types
-                        .filter((type) => {
-                            return type.selected;
-                        })
-                        .map((type) => {
-                            return type.value;
-                        });
-                })
+                map((data: any) => data.types.reduce((acc, type) => {
+                    return type.selected ? acc.concat([type.value]) : acc;
+                }, []))
             )
             .subscribe((value) => {
                 this.router.navigate([], {
@@ -69,13 +64,38 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     private setFilterForm (): void {
         const originalParams = this.route.snapshot.queryParams;
-        const types = originalParams.types || [CompanyType.R, CompanyType.RP, CompanyType.CO];
+        const types = pathOr(0, ['types', 'length'], originalParams) ?
+            originalParams.types :
+            [CompanyType.R, CompanyType.RP, CompanyType.CO, CompanyType.AO];
 
         this.filter = this.createFilterForm([
-            { value: CompanyType.R, label: 'Recycler', selected: types.indexOf(CompanyType.R) !== -1 },
-            { value: CompanyType.RP, label: 'Recycling Partner', selected: types.indexOf(CompanyType.RP) !== -1 },
-            { value: CompanyType.CO, label: 'Compliance organisation', selected: types.indexOf(CompanyType.CO) !== -1 }
+            {
+                value: CompanyType.R,
+                label: this.translateService.instant('TYPES.COMPANY.RECYCLER'),
+                selected: types.indexOf(CompanyType.R) !== -1
+            },
+            {
+                value: CompanyType.RP,
+                label: this.translateService.instant('TYPES.COMPANY.RECYCLER-PARTNER'),
+                selected: types.indexOf(CompanyType.RP) !== -1
+            },
+            {
+                value: CompanyType.CO,
+                label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
+                selected: types.indexOf(CompanyType.CO) !== -1
+            },
+            {
+                value: CompanyType.AO,
+                label: this.translateService.instant('TYPES.COMPANY.AUTHORISATION-ORG'),
+                selected: types.indexOf(CompanyType.AO) !== -1
+            }
         ]);
+
+        this.router.navigate([], {
+            queryParams: {
+                types: types,
+            },
+        });
     }
 
     private createFilterForm (types): FormGroup {

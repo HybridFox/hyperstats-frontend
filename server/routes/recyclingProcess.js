@@ -42,6 +42,8 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/RecyclingStep'
 	 */
 
+	router.use("/recycling-processes*", AuthMiddleware.isLoggedIn);
+
 	/**
 	 * @swagger
 	 * /api/recycling-processes:
@@ -69,12 +71,8 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/RecyclingProcess'
 	 */
 	router.route("/recycling-processes")
-		.get(
-			AuthMiddleware.isLoggedIn,
-			Controller.getAll
-		)
+		.get(Controller.getAll)
 		.post(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("body", Validations.create, Errors.ObjectValidationFailed),
 			Controller.create
@@ -114,20 +112,17 @@ module.exports = (router) => {
 	 */
 	router.route("/recycling-processes/:id")
 		.get(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			Controller.getById
 		)
 		.put(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			DataMiddleware.validate("body", Validations.update, Errors.ObjectValidationFailed),
 			Controller.update
 		)
 		.delete(
-			AuthMiddleware.isLoggedIn,
 			DataMiddleware.copy,
 			DataMiddleware.validate("params", ValidationPresets.byId, Errors.ItemNotFound),
 			Controller.remove
@@ -150,9 +145,10 @@ module.exports = (router) => {
 	 *     responses:
 	 *       200:
 	 *         description: Response
-	 *         properties:
-	 *           success:
-	 *              type: boolean
+	 *         schema:
+	 *           properties:
+	 *             success:
+	 *                type: boolean
 	 */
 	router.route("/recycling-processes/:id/activate").patch(
 		DataMiddleware.copy,
@@ -163,7 +159,7 @@ module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /api/company/{id}/deactivate:
-	 *   put:
+	 *   patch:
 	 *     description: Deactivate a recycling-process by Id
 	 *     tags:
 	 *       - recycling-processes
@@ -177,9 +173,10 @@ module.exports = (router) => {
 	 *     responses:
 	 *       200:
 	 *         description: Response
-	 *         properties:
-	 *           success:
-	 *              type: boolean
+	 *         schema:
+	 *           properties:
+	 *             success:
+	 *               type: boolean
 	 */
 	router.route("/recycling-processes/:id/deactivate").patch(
 		DataMiddleware.copy,

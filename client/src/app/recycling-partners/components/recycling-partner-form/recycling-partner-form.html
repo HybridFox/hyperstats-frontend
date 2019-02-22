@@ -6,6 +6,11 @@
                 class="u-margin-bottom-x-large"
                 [control]="recyclingPartnerForm.get('name')"
             ></app-text-input>
+            <app-text-input
+                [label]="'GENERAL.LABELS.COMPANYVAT' | translate"
+                class="u-margin-bottom-x-large"
+                [control]="recyclingPartnerForm.get('vat')"
+            ></app-text-input>
         </div>
     </div>
 
@@ -106,12 +111,25 @@
         >
             {{ 'GENERAL.LABELS.SAVE' | translate }}
         </button>
-        <button
-            *ngIf="!!recyclingPartner?._id"
-            class="a-button--danger has-icon-after u-pull-right u-text-uppercase"
-            (click)="removeForm()"
-        >
-            {{ 'PAGE.RECYCLING-PARTNERS.REMOVEPARTNER' | translate }}
-        </button>
+        <div class="u-pull-right">
+            <button
+                *ngIf="isActivated"
+                class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()"
+            >
+                {{ 'GENERAL.LABELS.DISABLE' | translate }}
+            </button>
+            <button
+                *ngIf="!isActivated"
+                class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()"
+            >
+                {{ 'GENERAL.LABELS.ENABLE' | translate }}
+            </button>
+            <app-delete-button
+                *ngIf="!!recyclingPartner?._id"
+                (deleteFunction)="removeForm()"
+            ></app-delete-button>
+        </div>
     </div>
 </div>

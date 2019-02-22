@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-07T16:58:35.224Z\n"
+"POT-Creation-Date: 2019-02-22T08:44:57.758Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +9,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2.1\n"
+
+msgid "Authorisation Organisation"
+msgstr "Authorisation Organisation"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
 msgstr "Recycling"
@@ -20,11 +23,17 @@ msgstr "Sorting"
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
 msgstr "Transport"
 
+msgid "Compliance Organisation"
+msgstr "Compliance Organisation"
+
 msgid "GENERAL##BUTTONS##CANCEL"
 msgstr "Cancel"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
+
+msgid "GENERAL##BUTTONS##GOTOAPP"
+msgstr "Go to app"
 
 msgid "GENERAL##BUTTONS##SAVE"
 msgstr "Save"
@@ -38,11 +47,22 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##LABELS##ACTIVATED"
+msgstr "Active"
+
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr "Active"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##COMPANY"
+msgid "GENERAL##LABELS##ADD-COMPANY"
+msgstr "Company"
+
+msgid "GENERAL##LABELS##ADD-PROXY"
+msgstr "Add proxy"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
 msgstr "Add recycling partner"
@@ -65,14 +85,31 @@ msgstr "Cancel"
 msgid "GENERAL##LABELS##CITY"
 msgstr "City"
 
+msgid "GENERAL##LABELS##COMPANY"
+msgstr "Company"
+
 msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company name"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##COMPANY"
+msgid "GENERAL##LABELS##COMPANYTYPE"
+msgstr "Company"
+
+msgid "GENERAL##LABELS##COMPANYVAT"
+msgstr "Company VAT"
+
+msgid "GENERAL##LABELS##CONFIRMPASSWORD"
+msgstr "Confirm password"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
 
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr "Delete step"
+
+msgid "GENERAL##LABELS##DISABLE"
+msgstr "Disable"
 
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
@@ -83,6 +120,9 @@ msgstr "Duplicate step"
 msgid "GENERAL##LABELS##EMAIL"
 msgstr "Email"
 
+msgid "GENERAL##LABELS##ENABLE"
+msgstr "Enable"
+
 msgid "GENERAL##LABELS##FIRSTNAME"
 msgstr "Firstname"
 
@@ -92,11 +132,19 @@ msgstr "Forgot Password"
 msgid "GENERAL##LABELS##FUNCTION"
 msgstr "Function"
 
+msgid "GENERAL##LABELS##I-ACCEPT-THE"
+msgstr "I accept the"
+
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
 
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##NAME"
+msgid "GENERAL##LABELS##MANAGEDBY"
+msgstr "Name"
 
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr "Message"
@@ -122,9 +170,6 @@ msgstr "Phone"
 msgid "GENERAL##LABELS##PREVIOUS-STEP"
 msgstr "Previous step"
 
-msgid "GENERAL##LABELS##PRIVACY"
-msgstr "Privacy"
-
 msgid "GENERAL##LABELS##REGISTER"
 msgstr "Register"
 
@@ -147,7 +192,7 @@ msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr "Sponsored by"
 
 msgid "GENERAL##LABELS##STREET"
-msgstr "Street name"
+msgstr "Street"
 
 msgid "GENERAL##LABELS##STREETNAME"
 msgstr "Street name"
@@ -160,6 +205,9 @@ msgstr "Subject"
 
 msgid "GENERAL##LABELS##SUBMIT"
 msgstr "Submit"
+
+msgid "GENERAL##LABELS##TERMS-AND-CONDITIONS"
+msgstr "terms and conditions"
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
@@ -203,6 +251,11 @@ msgstr "Logoff"
 msgid "GENERAL##MENU##MORE"
 msgstr "More..."
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##PRIVACY"
+msgid "GENERAL##MENU##PRIVACY"
+msgstr "Privacy"
+
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
 
@@ -223,6 +276,19 @@ msgstr "User profile"
 
 msgid "GENERAL##MENU##USERS"
 msgstr "Users"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##CANCEL"
+msgid "GENERAL##POPUP##CANCELREMOVE"
+msgstr "Cancel"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##CONFIRMREMOVE"
+msgid "GENERAL##POPUP##CONFIRMREMOVE"
+msgstr "Delete"
+
+msgid "GENERAL##POPUP##DELETEITEM"
+msgstr "Are you sure you want to delete this item?"
 
 msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
@@ -266,6 +332,29 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
+msgid "PAGE##ADMIN##FILTERS"
+msgstr "Filters:"
+
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
+msgid "PAGE##COMPANY##ADDRESSINFORMATION"
+msgstr "Address Information Recycling Plant"
+
+#, fuzzy
+#| msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
+msgid "PAGE##COMPANY##CONTACTPERSON"
+msgstr "Contact Person"
+
+#, fuzzy
+#| msgid "PAGE##COMPANYINFORMATION##HELP"
+msgid "PAGE##COMPANY##META"
+msgstr ""
+"Use here your legal address information, not the address from for instance a "
+"certain processing location or office."
+
+msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
+msgstr "Contact Person"
+
 msgid "PAGE##COMPANYINFORMATION##HELP"
 msgstr ""
 "Use here your legal address information, not the address from for instance a "
@@ -280,24 +369,29 @@ msgstr "Company information"
 msgid "PAGE##CONTACT##TITLE"
 msgstr "Contact"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "Please check your email for the link to reset your password"
 
-#, fuzzy
-#| msgid "TOAST##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
-msgstr "Manage Companies"
+msgstr "Manage companies"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
+
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+"Proxies are the organizations that have access to your reports. In this "
+"overview you can control who has access to your reports for a given "
+"reporting year and recycling process"
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr "Your proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
@@ -310,9 +404,6 @@ msgstr ""
 "Add here the legal information for all the different recycling partners you "
 "work with. Only add the address information where the actual recycling "
 "plants are located."
-
-msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
-msgstr "Remove recycling partner"
 
 msgid "PAGE##RECYCLING-PARTNERS##TITLE"
 msgstr "Recycling Partners"
@@ -385,7 +476,9 @@ msgstr "An email has been send to you"
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
 
-msgid "PAGE##REPORTS##FILLED"
+#, fuzzy
+#| msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##FILED"
 msgstr "Filed"
 
 msgid "PAGE##REPORTS##TITLE"
@@ -397,6 +490,28 @@ msgstr "Your password has been reset! Please login to continiou"
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
 
+msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
+"tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, "
+"quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo "
+"consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse "
+"cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat "
+"non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "
+"Donec elementum"
+
+msgid "PAGE##TERMS-AND-CONDITIONS##SUB-TITLE"
+msgstr "Lorem Ipsum Dolor Sit Amet Co"
+
+msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
+msgstr "Terms and conditions"
+
+msgid "PAGE##USER-ADMIN##CONFIGURATION"
+msgstr "Configuration"
+
+msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
+msgstr "User information"
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr "We are having trouble verifying your email, please try again later"
 
@@ -405,6 +520,21 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success! Your registration is now complete, please login to continue"
+
+msgid "PROXIES##REVOKEPROXY"
+msgstr "Revoke this proxy"
+
+msgid "Recycler"
+msgstr "Recycler"
+
+msgid "Recycling Partner"
+msgstr "Recycling Partner"
+
+msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
+msgstr "An email has ben sent to the user requesting a password reset."
+
+msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##TITLE"
+msgstr "Password reset requested"
 
 msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
 msgstr "Please try again later"
@@ -416,6 +546,76 @@ msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgstr "Please check your inbox for a verification email"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgstr "Registration successfull"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgid "TOAST##COMPANY-REMOVE##ERROR##DESCRIPTION"
+msgstr "Please try again later"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgid "TOAST##COMPANY-REMOVE##ERROR##TITLE"
+msgstr "Could not register"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgid "TOAST##COMPANY-REMOVE##SUCCESS##DESCRIPTION"
+msgstr "Please check your inbox for a verification email"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgid "TOAST##COMPANY-REMOVE##SUCCESS##TITLE"
+msgstr "Registration successfull"
+
+#, fuzzy
+#| msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
+msgid "TOAST##COMPANY-SAVE##ERROR##DESCRIPTION"
+msgstr "There was en error sending your message"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgid "TOAST##COMPANY-SAVE##ERROR##TITLE"
+msgstr "Could not register"
+
+#, fuzzy
+#| msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
+msgid "TOAST##COMPANY-SAVE##SUCCESS##DESCRIPTION"
+msgstr "Success!"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgid "TOAST##COMPANY-SAVE##SUCCESS##TITLE"
+msgstr "Registration successfull"
+
+#, fuzzy
+#| msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
+msgid "TOAST##COMPANY-TOGGLE##ACTIVATED"
+msgstr "activated"
+
+#, fuzzy
+#| msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
+msgid "TOAST##COMPANY-TOGGLE##DEACTIVATED"
+msgstr "deactivated"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
+msgid "TOAST##COMPANY-TOGGLE##ERROR##DESCRIPTION"
+msgstr "Please try again later"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
+msgid "TOAST##COMPANY-TOGGLE##ERROR##TITLE"
+msgstr "Could not register"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
+msgid "TOAST##COMPANY-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr "Please check your inbox for a verification email"
+
+#, fuzzy
+#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
+msgid "TOAST##COMPANY-TOGGLE##SUCCESS##TITLE"
 msgstr "Registration successfull"
 
 msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
@@ -471,31 +671,46 @@ msgstr "Success!"
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
 msgstr ""
-"Could not remove the recycling process. \n"
-"Please try again later or contact the administrator."
+"Could not remove the recycling process. Please contact an administrator."
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##TITLE"
-msgstr "Removing recycling-process failed!"
+msgstr "Recycling process removal failed"
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
-msgstr "The recycling process has been removed successfully."
+msgstr "Recycling process is successfully removed."
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
-msgstr "Recycling-process removed!"
+msgstr "Error removing recycling process"
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
-msgstr ""
-"Could not save the recycling process. \n"
-"Please try again later or contact the administrator."
+msgstr "Could not save the recycling process. Please contact an administrator."
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##TITLE"
-msgstr "Saving recycling-process failed!"
+msgstr "Error saving recycling process"
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
-msgstr "The recycling process has been saved successfully."
+msgstr "Recycling process is successfully saved."
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
-msgstr "Recycling-process saved!"
+msgstr "Recycling Processes saved"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
+msgstr "activated"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
+msgstr "deactivated"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##DESCRIPTION"
+msgstr "There recycling process could not be {{type}}."
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##TITLE"
+msgstr "Recycling process not {{type}}"
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr "The recycling process is {{type}}."
+
+msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
+msgstr "Recycling process {{type}}"
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
@@ -515,6 +730,32 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to save the user."
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##TITLE"
+msgstr "Error saving user"
+
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
+msgstr "The user is successfully saved!"
+
+msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgstr "User saved!"
+
+msgid "TYPES##COMPANY##AUTHORISATION-ORG"
+msgstr "Authorisation Organisation"
+
+msgid "TYPES##COMPANY##COMPLIANCE-ORG"
+msgstr "Compliance Organisation"
+
+msgid "TYPES##COMPANY##RECYCLER"
+msgstr "Recycler"
+
+#, fuzzy
+#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+msgid "TYPES##COMPANY##RECYCLER-PARTNER"
+msgstr "Recycling Partners"
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Addition information"
 
@@ -532,6 +773,25 @@ msgstr "Input weight"
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
+msgstr ""
+"If your report is complete and ready you can file it. After you have filed "
+"your report you can’t make any further changes."
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##SAVE-REPORT"
+msgstr ""
+"You can save this report temporarily and change or complete it on a future "
+"date."
+
+msgid "WIZARD##FILE-REPORT##LABELS##FILE-REPORT"
+msgstr "File report"
+
+msgid "WIZARD##FILE-REPORT##LABELS##SAVE-REPORT"
+msgstr "Save report temporarily"
+
+msgid "WIZARD##FILE-REPORT##TITLES##FILE-SAVE-REPORT"
+msgstr "File or save report"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element"
@@ -568,8 +828,10 @@ msgstr ""
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr "Packaging material / outer casing"
 
-msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
-msgstr "Process chemestry"
+#, fuzzy
+#| msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
+msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMISTRY"
+msgstr "Process chemistry"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr "Share of battery type in input fraction"
@@ -603,11 +865,6 @@ msgstr ""
 "Cadnium 2017” or you can include the name of the receiver, like for instance "
 "“Nickel Cadnium processing for Name Client “."
 
-msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
-msgstr ""
-"If this report is only intended for a specific organisation you can choose "
-"this organisation from the list."
-
 msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORTING-YEAR"
 msgstr ""
 "Choose the year for which you want to file a report. The reporting year is "
@@ -619,13 +876,15 @@ msgstr "Recycling process"
 msgid "WIZARD##NEW-REPORT##LABELS##REPORT-NAME"
 msgstr "Name this report"
 
-msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
-msgstr "Receiver of this report"
-
 msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr "Reporting year"
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr "General information"
+
+#, fuzzy
+#| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
 msgstr "General information"
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
@@ -646,6 +905,9 @@ msgstr "Element or compound"
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+msgstr "Replaced element material"
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
 
@@ -654,9 +916,6 @@ msgstr "Share output fraction"
 
 msgid "WIZARD##OUTPUT-FRACTION##TITLES##OVERVIEW"
 msgstr "Overview output elements"
-
-msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
-msgstr "Recycling efficiency"
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##ELEMENTS"
 msgstr "Elements"
@@ -694,28 +953,63 @@ msgstr "Output Fraction"
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr "Recycling Efficiency"
 
-msgctxt "TERMS"
-msgid "GENERAL##LABELS##ACCEPT"
-msgstr "I accept the terms and conditions"
+msgctxt "FORM"
+msgid "GENERAL##LABELS##INVALID"
+msgstr "The form is invalid, make sure you have filled all the field"
 
 #, fuzzy
-#~| msgid "PAGE##RECYCLING-PARTNERS##TITLE"
-#~ msgid "TOAST##RECYCLING##TITLE"
-#~ msgstr "Recycling Partners"
+#~| msgid "WIZARD##TITLES##ADDITIVES"
+#~ msgid "WIZARD##NEW-REPORT##TITLES##ADDITIVES"
+#~ msgstr "Additives"
 
 #, fuzzy
-#~| msgid "PAGE##RECYCLING-PARTNERS##DESCRIPTION"
-#~ msgid "TOAST##RECYCLING##DESCRIPTION"
+#~| msgid "WIZARD##TITLES##OUTPUT-FRACTION"
+#~ msgid "WIZARD##NEW-REPORT##TITLES##OUTPUT-FRACTIONS"
+#~ msgstr "Output Fraction"
+
+#, fuzzy
+#~| msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
+#~ msgid "WIZARD##NEW-REPORT##TITLES##RECYCLING-EFFICIENCY"
+#~ msgstr "Recycling Efficiency"
+
+#~ msgid "GENERAL##LABELS##ACTIONS"
+#~ msgstr "Actions"
+
+#~ msgid "GENERAL##LABELS##LAST-UPDATED"
+#~ msgstr "Last updated"
+
+#, fuzzy
+#~| msgid "GENERAL##LABELS##SAVE"
+#~ msgid "GENERAL##LABELS##STATES"
+#~ msgstr "Save"
+
+#, fuzzy
+#~| msgid "GENERAL##LABELS##TYPE"
+#~ msgid "GENERAL##LABELS##YEAR"
+#~ msgstr "Type"
+
+#~ msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
 #~ msgstr ""
-#~ "Add here the legal information for all the different recycling partners "
-#~ "you work with. Only add the address information where the actual "
-#~ "recycling plants are located."
+#~ "If this report is only intended for a specific organisation you can "
+#~ "choose this organisation from the list."
+
+#~ msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
+#~ msgstr "Receiver of this report"
+
+#~ msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
+#~ msgstr "Recycling efficiency"
+
+#~ msgid "GENERAL##LABELS##PRIVACY"
+#~ msgstr "Privacy"
+
+#~ msgid "PAGE##RECYCLING-PARTNERS##DISABLEPARTNER"
+#~ msgstr "Disable"
+
+#~ msgid "PAGE##RECYCLING-PARTNERS##REMOVEPARTNER"
+#~ msgstr "Remove recycling partner"
 
 #~ msgid "GENERAL##LABELS##COPYRIGHT"
 #~ msgstr "© Eucobat 2018"
-
-#~ msgid "PAGE##VERIFICATION-SUCCEEDED##CONTENT"
-#~ msgstr "Your registration is now complete, please login to continue"
 
 #~ msgid "GENERAL##LABELS##TOKEN"
 #~ msgstr "Token"

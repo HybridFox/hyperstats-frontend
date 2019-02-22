@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { progressReducer } from '@store/hor';
 
 import { MODULE, OVERVIEW, DETAIL, ACTIONS } from './action-types';
@@ -26,7 +25,7 @@ const DetailReducer = (
 };
 
 
-export const Reducer = combineReducers({
+export const ReducerConfig = {
     overview: progressReducer(
         { entityType: `${MODULE}/${OVERVIEW}` },
         OverviewReducer,
@@ -35,4 +34,4 @@ export const Reducer = combineReducers({
         { entityType: `${MODULE}/${DETAIL}` },
         DetailReducer,
     ),
-});
+};

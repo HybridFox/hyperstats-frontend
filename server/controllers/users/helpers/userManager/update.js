@@ -1,17 +1,25 @@
 const UserModel = require("../../../../models/user");
 const Errors = require("../../../../helpers/errorHandler");
 
-module.exports = (id, data) => {
-	return UserModel.findOneAndUpdate(
-		{ _id: id },
-		{ ...data },
-		{ new: true },
-	).lean().exec()
-		.then((response) => {
-			if (!response) {
-				throw Errors.ItemNotFound;
-			}
+module.exports = async(id, data) => {
+	const user = await UserModel.findOne({ _id: id, "meta.deleted": false }).exec();
+	const originalUserObject = user.toObject();
 
-			return response;
-		});
+	if (!user) {
+		throw Errors.ItemNotFound;
+	}
+
+	user.data = {
+		...originalUserObject.data,
+		...data.data,
+	};
+	user.meta = {
+		...originalUserObject.meta,
+		...data.meta,
+	};
+
+
+	await user.save();
+
+	return user.toObject();
 };
