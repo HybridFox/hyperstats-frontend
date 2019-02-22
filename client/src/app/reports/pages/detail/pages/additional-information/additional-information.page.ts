@@ -8,7 +8,7 @@ import { AssetsRepository } from '@api/assets';
 import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
-import { ReportProcessActions } from 'src/app/reports/store/recycling-processes';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 
 @Component({
   templateUrl: './additional-information.page.html',
@@ -23,7 +23,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
     codesService: CodesService,
     formData: FormDataService,
     toastrService: ToastrService,
-    reportProcessActions: ReportProcessActions,
+    reportsProcessActions: ReportsProcessActions,
     router: Router,
     activatedRoute: ActivatedRoute,
     reportActions: ReportsActions,
@@ -34,7 +34,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
       codesService,
       formData,
       toastrService,
-      reportProcessActions,
+      reportsProcessActions,
       router,
       activatedRoute,
       reportActions,
