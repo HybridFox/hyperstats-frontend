@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-21T12:17:07.962Z\n"
-"PO-Revision-Date: 2019-02-21T12:17:07.962Z\n"
+"POT-Creation-Date: 2019-02-22T07:49:42.811Z\n"
+"PO-Revision-Date: 2019-02-22T07:49:42.811Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -42,9 +42,6 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
-msgstr ""
-
-msgid "GENERAL##LABELS##ACTIONS"
 msgstr ""
 
 msgid "GENERAL##LABELS##ACTIVATED"
@@ -131,9 +128,6 @@ msgstr ""
 msgid "GENERAL##LABELS##I-ACCEPT-THE"
 msgstr ""
 
-msgid "GENERAL##LABELS##LAST-UPDATED"
-msgstr ""
-
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
@@ -188,9 +182,6 @@ msgstr ""
 msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr ""
 
-msgid "GENERAL##LABELS##STATES"
-msgstr ""
-
 msgid "GENERAL##LABELS##STREET"
 msgstr ""
 
@@ -219,9 +210,6 @@ msgid "GENERAL##LABELS##UPDATE-PROFILE"
 msgstr ""
 
 msgid "GENERAL##LABELS##WELCOME"
-msgstr ""
-
-msgid "GENERAL##LABELS##YEAR"
 msgstr ""
 
 msgid "GENERAL##LABELS##ZIPCODE"
@@ -749,9 +737,6 @@ msgstr ""
 msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-NAME"
 msgstr ""
 
-msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORT-RECEIVER"
-msgstr ""
-
 msgid "WIZARD##NEW-REPORT##DESCRIPTION##REPORTING-YEAR"
 msgstr ""
 
@@ -761,13 +746,22 @@ msgstr ""
 msgid "WIZARD##NEW-REPORT##LABELS##REPORT-NAME"
 msgstr ""
 
-msgid "WIZARD##NEW-REPORT##LABELS##REPORT-RECEIVER"
-msgstr ""
-
 msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr ""
 
+msgid "WIZARD##NEW-REPORT##TITLES##ADDITIVES"
+msgstr ""
+
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##TITLES##OUTPUT-FRACTIONS"
+msgstr ""
+
+msgid "WIZARD##NEW-REPORT##TITLES##RECYCLING-EFFICIENCY"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
@@ -798,9 +792,6 @@ msgid "WIZARD##OUTPUT-FRACTION##LABELS##SHARE-OUTPUT-FRACTION"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##TITLES##OVERVIEW"
-msgstr ""
-
-msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##EFFICIENCY"
 msgstr ""
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##ELEMENTS"
