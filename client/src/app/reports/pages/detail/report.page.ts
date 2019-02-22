@@ -39,10 +39,11 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
           const route = (event.url.split('/').slice(-1)[0]).split('?')[0];
-          [this.selectedIndex, this.currentTitle] = this.steps.reduce((acc, step, index) => step.route === route ? [
+          [this.selectedIndex] = this.steps.reduce((acc, step, index) => step.route === route ? [
             index,
             step.name
           ] : acc, []);
+          this.setReportTitle();
         }
       });
 
@@ -108,7 +109,12 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit 
   public ngAfterContentInit(): void {
     this.selectedIndex = this.steps.reduce((acc, step, index) =>
       step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? index : acc, 0);
-    this.currentTitle = this.steps.reduce((acc, step) =>
-      step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? step.name : acc, '');
+
+      this.setReportTitle();
+  }
+
+  private setReportTitle() {
+    const reportName = this.data.get('information').get('name').value;
+    this.currentTitle = (reportName && reportName !== '') ? reportName : 'WIZARD.TITLES.NEW-REPORT';
   }
 }
