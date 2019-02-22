@@ -1,5 +1,6 @@
 export enum CompanyType {
     R = 'R',
     RP = 'RP',
-    CO = 'CO'
+    CO = 'CO',
+    AO = 'AO'
 }

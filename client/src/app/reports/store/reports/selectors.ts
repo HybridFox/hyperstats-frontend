@@ -5,10 +5,10 @@ import {
 } from './detail/selectors';
 
 import {
-  overview,
-  overviewLoading,
-  overviewError,
-} from './overview/selectors';
+  list,
+  listLoading,
+  listError,
+} from './list/selectors';
 
 export const ReportsSelector = {
   detail: {
@@ -16,9 +16,9 @@ export const ReportsSelector = {
     loading: detailLoading,
     error: detailError,
   },
-  overview: {
-    result: overview,
-    loading: overviewLoading,
-    error: overviewError,
+  list: {
+    result: list,
+    loading: listLoading,
+    error: listError,
   },
 };

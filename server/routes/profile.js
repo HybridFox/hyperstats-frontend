@@ -82,6 +82,8 @@ module.exports = (router) => {
 	 *         $ref: '#/definitions/CompanyMeta'
 	 */
 
+	router.use("/profile*", authMiddleware.isLoggedIn);
+
 	/**
 	 * @swagger
 	 * /api/auth/profile:
@@ -115,9 +117,8 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/UserProfileResponse'
 	 */
 	router.route("/profile")
-		.get(authMiddleware.isLoggedIn, profileController.get)
+		.get(profileController.get)
 		.put(
-			authMiddleware.isLoggedIn,
 			dataMiddleware.copy,
 			dataMiddleware.validate("body", profileValidations.update, Errors.ObjectValidationFailed),
 			profileController.update
@@ -146,7 +147,6 @@ module.exports = (router) => {
 	 */
 	router.route("/profile/company")
 		.put(
-			authMiddleware.isLoggedIn,
 			dataMiddleware.copy,
 			dataMiddleware.validate("body", profileValidations.updateCompany, Errors.ObjectValidationFailed),
 			profileController.updateCompany

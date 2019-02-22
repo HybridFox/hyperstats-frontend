@@ -1,7 +1,7 @@
-import { MODULE } from '../constants';
-
-export const RECYCLING_PROCESSES = 'RECYCLING_PROCESSES';
+import { LIST_ACTIONS } from './list/action-types';
+import { DETAIL_ACTIONS } from './detail/action-types';
 
 export const ACTIONS = {
-  FETCH: `${MODULE}/${RECYCLING_PROCESSES}/FETCH`,
+    LIST: LIST_ACTIONS,
+    DETAIL: DETAIL_ACTIONS,
 };

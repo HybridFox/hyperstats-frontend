@@ -1,39 +1,111 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormDataService } from '../../../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { ElementType } from './recycling-efficiency.types';
+import { groupBy } from 'ramda';
+import { ReportsActions } from '../../../../store/reports';
+import { StepPageAbstract } from '../step-page.abstract';
 import { ToastrService } from 'ngx-toastr';
-import { FormHelper } from '@helpers/form.helper';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+
 
 @Component({
   templateUrl: './recycling-efficiency.page.html',
 })
-export class RecyclingEfficiencyPageComponent implements OnInit {
+export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
   public form: any;
+  public types: any;
+  public efficiency: number;
 
   constructor(
-    public codesService: CodesService,
-    public formData: FormDataService,
-    private toastrService: ToastrService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
-
-  public ngOnInit() {
-    this.form = this.formData.getFormData().get('recyclingEfficiency');
+    codesService: CodesService,
+    formData: FormDataService,
+    toastrService: ToastrService,
+    reportProcessActions: ReportsProcessActions,
+    router: Router,
+    activatedRoute: ActivatedRoute,
+    reportActions: ReportsActions,
+  ) {
+    super(
+      codesService,
+      formData,
+      toastrService,
+      reportProcessActions,
+      router,
+      activatedRoute,
+      reportActions,
+      {
+        prevStep: 'output-fraction',
+        nextStep: 'additional-information',
+        formSection: 'outputFraction'
+      }
+    );
   }
 
-  public previousStep() {
-    this.router.navigate(['../output-fraction'], {relativeTo: this.activatedRoute});
+  public onFormReady() {
+    this.mergeElements();
   }
 
-  public nextStep() {
-    FormHelper.markAsDirty(this.form);
+  private mergeElements() {
+    const inputs = this.formData.getFormData().getRawValue().inputFraction.reduce((acc, step) => {
+      return acc.concat(step.data.elements.map((input) => ({
+        element: input.element,
+        input: input.mass,
+      })));
+    }, []);
 
-    if (this.form.valid) {
-      this.router.navigate(['../additional-information'], {relativeTo: this.activatedRoute});
-    } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
-    }
+    const outputs = this.formData.getFormData().getRawValue().outputFraction.reduce((acc, step) => {
+      return acc.concat(step.data.map((input) => ({
+        element: input.element,
+        output: input.mass,
+      })));
+    }, []);
+
+    const elements =  groupBy((item: ElementType) => item.element)([...inputs, ...outputs]);
+
+    this.types = Object.keys(elements).map(element => {
+      const inputNumbers = elements[element].reduce((previousState, currentItem) => {
+        if (currentItem.input && !isNaN(parseInt(currentItem.input, 10))) {
+            return previousState + parseInt(currentItem.input, 10);
+        }
+
+        return previousState;
+      }, 0);
+
+      const outputNumbers = elements[element].reduce((previousState, currentItem) => {
+        if (currentItem.output && !isNaN(parseInt(currentItem.output, 10))) {
+            return previousState + parseInt(currentItem.output, 10);
+        }
+
+        return previousState;
+      }, 0);
+
+      return {
+        element: element,
+        input: inputNumbers,
+        output: outputNumbers,
+      };
+    });
+
+    this.calculateEfficiency();
+  }
+
+  private calculateEfficiency () {
+    const result = this.types.reduce((currentTotals, newItem) => (
+      {
+        input: (currentTotals.input + newItem.input),
+        output: (currentTotals.output + newItem.output),
+      }
+    ), {input: 0, output: 0});
+
+    const efficiency = (result.output / result.input) * 100;
+    this.efficiency = parseFloat(efficiency.toFixed(2));
+
+    this.formData
+      .getFormData()
+      .get('recyclingEfficiency.calculatedEfficiency')
+      .setValue(this.efficiency);
   }
 }

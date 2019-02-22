@@ -2,10 +2,7 @@ import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { pathOr } from 'ramda';
 import { ToastrService } from 'ngx-toastr';
-import { AuthActions, AuthSelector } from '@store/auth';
-import { select } from '@angular-redux/store';
-import { UserInterface } from '@store/auth/auth.interface';
-import { Observable } from 'rxjs';
+import { AuthActions } from '@store/auth';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Option } from '@ui/form-fields/components/select/select.types';
 
@@ -71,10 +68,7 @@ export class UserFormComponent implements OnChanges {
     private formatUser(user: any, formValues: any) {
         return {
             ...user,
-            data: {
-                ...user.data,
-                ...formValues.data
-            },
+            data: formValues.data,
             meta: {
                 ...user.meta,
                 ...formValues.meta,

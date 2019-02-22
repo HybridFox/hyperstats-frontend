@@ -1,14 +1,14 @@
 const { getCompanyIdOfUser, update } = require("./helpers");
-const ResponseError = require("../../helpers/errors/responseError");
+const profileHelper = require("../../helpers/profile");
 
 module.exports = (req, res, next) => {
-	const companyOfUser = getCompanyIdOfUser(req);
+	let companyOfUser;
 
-	if (!companyOfUser) {
-		next(new ResponseError({ type: 400, msg: "User has no owner company" }));
+	if (!profileHelper.isAdmin(req)) {
+		companyOfUser = getCompanyIdOfUser(req);
 	}
 
-	return update({ _id: req.data.params.id, companyOfUser: companyOfUser, update: req.data.body })
+	return update({ _id: req.data.params.id, companyOfUser, update: req.data.body })
 		.then((company) => res.status(200).json(company))
 		.catch((error) => next(error));
 };

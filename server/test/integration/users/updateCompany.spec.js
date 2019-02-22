@@ -12,6 +12,7 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let nonAdminCookie;
 		let userId;
 
 		before(async() => {
@@ -31,7 +32,8 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
 		afterEach(() => reset());
@@ -67,6 +69,17 @@ describe("Integration", () => {
 						const res = await UserModel.findOne({ _id: userId }).lean().exec();
 						expect(res.data.company.toString()).to.equal("507f1f77bcf86cd799439011");
 					});
+			});
+
+			it("Should fail to update user company by id if user in session is not admin", async() => {
+				return supertest(server)
+					.patch(`/api/users/${userId}/company`)
+					.set("cookie", nonAdminCookie)
+					.send({
+						company: "507f1f77bcf86cd799439011",
+					})
+					.expect("Content-Type", /json/)
+					.expect(403);
 			});
 		});
 	});

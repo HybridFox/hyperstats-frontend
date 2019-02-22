@@ -25,7 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'input-fraction',
-        component: ReportSections.InputFractionPageComponent
+        component: ReportSections.InputFractionPageComponent,
       },
       {
         path: 'additives',

@@ -4,6 +4,6 @@ export * from './selectors';
 
 import { ReportsProcessActions } from './actions';
 
-export const ReportsStoreServices = [
+export const ReportsProcessStoreServices = [
   ReportsProcessActions
 ];

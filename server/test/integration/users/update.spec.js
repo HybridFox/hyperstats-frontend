@@ -11,6 +11,7 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let nonAdminCookie;
 		let userId;
 
 		before(async() => {
@@ -30,7 +31,8 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
 		afterEach(() => reset());
@@ -70,6 +72,21 @@ describe("Integration", () => {
 						expect(body.data.firstname).to.equal("__firstname_test-user__remove_identifier__");
 						expect(body.data.lastname).to.equal("Janssens");
 					});
+			});
+
+			it("Should fail to update user by id of user in session is not admin", async() => {
+				return supertest(server)
+					.put(`/api/users/${userId}`)
+					.set("cookie", nonAdminCookie)
+					.send({
+						"data": {
+							"firstname": "__firstname_test-user__remove_identifier__",
+							"lastname": "Janssens",
+							"email": "joske.janssens.be",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(403);
 			});
 		});
 	});

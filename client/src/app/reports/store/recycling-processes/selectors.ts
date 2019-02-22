@@ -1,9 +1,24 @@
-import { selectDenormalized } from '@store/utils/selector';
-import * as schema from '@core/schemas';
+import {
+  detailLoading,
+  detail,
+  detailError
+} from './detail/selectors';
+
+import {
+  list,
+  listLoading,
+  listError,
+} from './list/selectors';
 
 export const ReportsProcessSelector = {
-  recyclingProcesses: selectDenormalized({
-    schema: schema.recyclingProcess,
-    selector: 'reports.recyclingProcesses.result',
-  })
+  detail: {
+    result: detail,
+    loading: detailLoading,
+    error: detailError,
+  },
+  list: {
+    result: list,
+    loading: listLoading,
+    error: listError,
+  },
 };

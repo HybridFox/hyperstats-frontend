@@ -26,7 +26,7 @@ describe("Company", () => {
 		});
 
 		it("Should activate a company", async() => {
-			const result = await setActiveProp(company._id, true);
+			const result = await setActiveProp({ _id: company._id, value: true });
 
 			const dbResult = await CompanyModel.findOne({ _id: company._id }).lean().exec();
 
@@ -39,7 +39,7 @@ describe("Company", () => {
 		});
 
 		it("Should deactivate a company", async() => {
-			const result = await setActiveProp(company._id, false);
+			const result = await setActiveProp({ _id: company._id, value: false });
 			const dbResult = await CompanyModel.findOne({ _id: company._id }).lean().exec();
 
 			expect(result).to.be.an("object");
