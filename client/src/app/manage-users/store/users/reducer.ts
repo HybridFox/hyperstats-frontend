@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { progressReducer } from '@store/hor';
 
 import { MODULE, OVERVIEW, DETAIL, ACTIONS } from './action-types';

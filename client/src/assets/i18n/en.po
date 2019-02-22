@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-18T20:30:34.538Z\n"
+"POT-Creation-Date: 2019-02-21T09:58:42.158Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -41,11 +41,22 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+#, fuzzy
+#| msgid "GENERAL##LABELS##FUNCTION"
+msgid "GENERAL##LABELS##ACTIONS"
+msgstr "Function"
+
+msgid "GENERAL##LABELS##ACTIVATED"
+msgstr "Active"
+
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr "Active"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
+
+msgid "GENERAL##LABELS##ADD-PROXY"
+msgstr "Add proxy"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
 msgstr "Add recycling partner"
@@ -67,6 +78,9 @@ msgstr "Cancel"
 
 msgid "GENERAL##LABELS##CITY"
 msgstr "City"
+
+msgid "GENERAL##LABELS##COMPANY"
+msgstr "Company"
 
 msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company name"
@@ -112,6 +126,11 @@ msgstr "Function"
 
 msgid "GENERAL##LABELS##I-ACCEPT-THE"
 msgstr "I accept the"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##LASTNAME"
+msgid "GENERAL##LABELS##LAST-UPDATED"
+msgstr "Lastname"
 
 msgid "GENERAL##LABELS##LASTNAME"
 msgstr "Lastname"
@@ -165,6 +184,11 @@ msgid "GENERAL##LABELS##SPONSOREDBY"
 msgstr "Sponsored by"
 
 #, fuzzy
+#| msgid "GENERAL##LABELS##SAVE"
+msgid "GENERAL##LABELS##STATES"
+msgstr "Save"
+
+#, fuzzy
 #| msgid "GENERAL##LABELS##STREETNAME"
 msgid "GENERAL##LABELS##STREET"
 msgstr "Street name"
@@ -195,6 +219,11 @@ msgstr "Update profile"
 
 msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##TYPE"
+msgid "GENERAL##LABELS##YEAR"
+msgstr "Type"
 
 msgid "GENERAL##LABELS##ZIPCODE"
 msgstr "Zipcode"
@@ -251,6 +280,19 @@ msgstr "User profile"
 
 msgid "GENERAL##MENU##USERS"
 msgstr "Users"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##CANCEL"
+msgid "GENERAL##POPUP##CANCELREMOVE"
+msgstr "Cancel"
+
+#, fuzzy
+#| msgid "GENERAL##LABELS##CONFIRMREMOVE"
+msgid "GENERAL##POPUP##CONFIRMREMOVE"
+msgstr "Delete"
+
+msgid "GENERAL##POPUP##DELETEITEM"
+msgstr "Are you sure you want to delete this item?"
 
 msgid "PAGE##ABOUT##CONTENT-1"
 msgstr ""
@@ -328,6 +370,15 @@ msgstr "Manage users"
 
 msgid "PAGE##PROFILE##TITLE"
 msgstr "Profile"
+
+msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+"Proxies are the organizations that have access to your reports. In this "
+"overview you can control who has access to your reports for a given "
+"reporting year and recycling process"
+
+msgid "PAGE##PROXIES##TITLE"
+msgstr "Your proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
@@ -415,7 +466,9 @@ msgstr "An email has been send to you"
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
 
-msgid "PAGE##REPORTS##FILLED"
+#, fuzzy
+#| msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##FILED"
 msgstr "Filed"
 
 msgid "PAGE##REPORTS##TITLE"
@@ -443,6 +496,12 @@ msgstr "Lorem Ipsum Dolor Sit Amet Co"
 msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
 msgstr "Terms and conditions"
 
+msgid "PAGE##USER-ADMIN##CONFIGURATION"
+msgstr "Configuration"
+
+msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
+msgstr "User information"
+
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
 msgstr "We are having trouble verifying your email, please try again later"
 
@@ -451,6 +510,9 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success! Your registration is now complete, please login to continue"
+
+msgid "PROXIES##REVOKEPROXY"
+msgstr "Revoke this proxy"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "An email has ben sent to the user requesting a password reset."
@@ -582,6 +644,18 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to save the user."
+
+msgid "TOAST##USER-ADMIN-SAVE##ERROR##TITLE"
+msgstr "Error saving user"
+
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
+msgstr "The user is successfully saved!"
+
+msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgstr "User saved!"
+
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Addition information"
 
@@ -599,6 +673,25 @@ msgstr "Input weight"
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
+msgstr ""
+"If your report is complete and ready you can file it. After you have filed "
+"your report you can’t make any further changes."
+
+msgid "WIZARD##FILE-REPORT##DESCRIPTION##SAVE-REPORT"
+msgstr ""
+"You can save this report temporarily and change or complete it on a future "
+"date."
+
+msgid "WIZARD##FILE-REPORT##LABELS##FILE-REPORT"
+msgstr "File report"
+
+msgid "WIZARD##FILE-REPORT##LABELS##SAVE-REPORT"
+msgstr "Save report temporarily"
+
+msgid "WIZARD##FILE-REPORT##TITLES##FILE-SAVE-REPORT"
+msgstr "File or save report"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element"
@@ -715,6 +808,9 @@ msgstr "Element or compound"
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+msgstr "Replaced element material"
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
 
@@ -762,6 +858,10 @@ msgstr "Output Fraction"
 
 msgid "WIZARD##TITLES##RECYCLING-EFFICIENCY"
 msgstr "Recycling Efficiency"
+
+msgctxt "FORM"
+msgid "GENERAL##LABELS##INVALID"
+msgstr "The form is invalid, make sure you have filled all the field"
 
 #~ msgid "GENERAL##LABELS##PRIVACY"
 #~ msgstr "Privacy"

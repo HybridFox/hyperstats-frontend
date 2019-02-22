@@ -1,5 +1,7 @@
-export const TYPE = 'NEW_REPORT';
+import { LIST_ACTIONS } from './list/action-types';
+import { DETAIL_ACTIONS } from './detail/action-types';
 
 export const ACTIONS = {
-  FETCH_RECYCLINGPROCESSES: `${TYPE}/FETCH_RECYCLINGPROCESSES`,
+    LIST: LIST_ACTIONS,
+    DETAIL: DETAIL_ACTIONS,
 };

@@ -7,9 +7,9 @@ import { EntitiesActions } from '@store/entities';
 
 import { UsersRepository } from './repository';
 import { ACTIONS } from './action-types';
-import { CompanyType } from 'src/app/manage-companies/store/companies/types';
 import path from 'ramda/es/path';
 import prop from 'ramda/es/prop';
+import { CompanyType } from '@api/company';
 
 @Injectable()
 export class UsersActions {

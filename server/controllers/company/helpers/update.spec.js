@@ -38,28 +38,30 @@ describe("Company", () => {
 				_id: managedCompany.toObject()._id,
 				companyOfUser,
 				update: {
-					name: "Some Company updated",
-					vat: "BE12 3456 7890",
-					address: {
-						street: "Some street updated",
-						number: "33A",
-						box: "Some box updated",
-						zipCode: "Zip updated",
-						city: "Antwerp",
-						country: "Belgium updated",
-					},
-					contactPerson: {
-						name: "John Smith",
-						function: "Security updated",
-						phone: "+32 ... updated",
-						email: "john.smith@example.com",
+					data: {
+						name: "Some Company updated",
+						vat: "BE12 3456 7890",
+						address: {
+							street: "Some street updated",
+							number: "33A",
+							box: "Some box updated",
+							zipCode: "Zip updated",
+							city: "Antwerp",
+							country: "Belgium updated",
+						},
+						contactPerson: {
+							name: "John Smith",
+							function: "Security updated",
+							phone: "+32 ... updated",
+							email: "john.smith@example.com",
+						},
 					},
 				},
 			});
 
 			expect(company).to.be.an("object");
 			expect(company.data).to.be.an("object");
-			expect(company.toObject().data).to.deep.equal({
+			expect(company.data).to.deep.equal({
 				name: "Some Company updated",
 				vat: "BE12 3456 7890",
 				address: {

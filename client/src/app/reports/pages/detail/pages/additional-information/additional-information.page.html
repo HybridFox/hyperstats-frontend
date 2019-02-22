@@ -1,6 +1,7 @@
 <div class="m-card--primary u-margin-top">
+  <ng-container *ngIf="form">
     <app-sub-section-title
-        [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.FILE-UPLOADS' | translate"
+      [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.FILE-UPLOADS' | translate"
     ></app-sub-section-title>
     <app-file-upload
         class="u-margin-bottom-x-large"
@@ -11,13 +12,12 @@
         (upload)=onUpload($event);
     ></app-file-upload>
     <app-sub-section-title
-        [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
+      [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
     ></app-sub-section-title>
-    <app-textarea-input
-        [control]="form.get('additionalInformation')"
-    ></app-textarea-input>
+    <app-textarea-input [control]="form.get('additionalInformation')"></app-textarea-input>
     <div class="u-margin-top-large">
-        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
-        <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
+      <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+      <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
     </div>
+  </ng-container>
 </div>

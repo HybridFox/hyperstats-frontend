@@ -70,3 +70,7 @@ module.exports.reload = async(req) => {
 
 	set(req, updatedUser.toObject());
 };
+
+module.exports.isAdmin = (req) => !!path(["session", "profile", "meta", "isAdmin"])(req);
+
+module.exports.getCompanyOfUser = (req) => path(["session", "profile", "data", "company"])(req);

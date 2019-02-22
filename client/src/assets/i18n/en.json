@@ -19,8 +19,11 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACTIONS": "Function",
+            "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ADD-ADDITIONAL-STEP": "Add additional step",
+            "ADD-PROXY": "Add proxy",
             "ADD-RECYCLING-PARTNER": "Add recycling partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
             "ADMIN": "Admin",
@@ -28,6 +31,7 @@
             "BROWSE": "Browse",
             "CANCEL": "Cancel",
             "CITY": "City",
+            "COMPANY": "Company",
             "COMPANYNAME": "Company name",
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
@@ -43,6 +47,7 @@
             "FORGOT-PASSWORD": "Forgot Password",
             "FUNCTION": "Function",
             "I-ACCEPT-THE": "I accept the",
+            "LAST-UPDATED": "Lastname",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
             "MESSAGE": "Message",
@@ -60,6 +65,7 @@
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
+            "STATES": "Save",
             "STREET": "Street name",
             "STREETNAME": "Street name",
             "STREETNUMBER": "Number",
@@ -70,7 +76,9 @@
             "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode"
+            "YEAR": "Type",
+            "ZIPCODE": "Zipcode",
+            "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -90,6 +98,11 @@
             "REPORTS": "Reports",
             "USERPROFILE": "User profile",
             "USERS": "Users"
+        },
+        "POPUP": {
+            "CANCELREMOVE": "Cancel",
+            "CONFIRMREMOVE": "Delete",
+            "DELETEITEM": "Are you sure you want to delete this item?"
         }
     },
     "PAGE": {
@@ -127,6 +140,10 @@
         "PROFILE": {
             "TITLE": "Profile"
         },
+        "PROXIES": {
+            "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
+            "TITLE": "Your proxies"
+        },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
             "CONTACTPERSON": "Contact Person",
@@ -162,7 +179,7 @@
         },
         "REPORTS": {
             "DRAFT": "Draft",
-            "FILLED": "Filed",
+            "FILED": "Filed",
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
@@ -174,6 +191,10 @@
             "SUB-TITLE": "Lorem Ipsum Dolor Sit Amet Co",
             "TITLE": "Terms and conditions"
         },
+        "USER-ADMIN": {
+            "CONFIGURATION": "Configuration",
+            "MAIN-INFORMATION": "User information"
+        },
         "VERIFICATION-FAILED": {
             "CONTENT": "We are having trouble verifying your email, please try again later",
             "TITLE": "Something went wrong"
@@ -181,6 +202,9 @@
         "VERIFICATION-SUCCEEDED": {
             "TITLE": "Success! Your registration is now complete, please login to continue"
         }
+    },
+    "PROXIES": {
+        "REVOKEPROXY": "Revoke this proxy"
     },
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
@@ -291,6 +315,20 @@
                 "DESCRIPTION": "You can now use your new password to login",
                 "TITLE": "Success!"
             }
+        },
+        "USER-ADMIN-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to save the user.",
+                "TITLE": "Error saving user"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully saved!"
+            }
+        },
+        "USER-ADMIN-SAVEF": {
+            "SUCCESS": {
+                "TITLE": "User saved!"
+            }
         }
     },
     "WIZARD": {
@@ -308,6 +346,19 @@
             },
             "TITLES": {
                 "OVERVIEW": "Overview additives"
+            }
+        },
+        "FILE-REPORT": {
+            "DESCRIPTION": {
+                "FILE-REPORT": "If your report is complete and ready you can file it. After you have filed your report you can’t make any further changes.",
+                "SAVE-REPORT": "You can save this report temporarily and change or complete it on a future date."
+            },
+            "LABELS": {
+                "FILE-REPORT": "File report",
+                "SAVE-REPORT": "Save report temporarily"
+            },
+            "TITLES": {
+                "FILE-SAVE-REPORT": "File or save report"
             }
         },
         "INPUT-FRACTION": {
@@ -360,6 +411,7 @@
                 "CLASSIFICATION": "Classification",
                 "ELEMENT": "Element or compound",
                 "MASS": "Mass (t)",
+                "REPLACED-ELEMENT-MATERIAL": "Replaced element material",
                 "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
                 "SHARE-OUTPUT-FRACTION": "Share output fraction"
             },

@@ -1,45 +1,38 @@
 <div class="m-card--primary u-margin-top">
-    <app-section-title
-        [title]="formData.getRecyclingProcess()"
-        class="u-margin-bottom"
-    ></app-section-title>
+    <app-sub-section-title
+        [title]="'WIZARD.NEW-REPORT.TITLES.RECYCLING-EFFICIENCY' | translate"
+    ></app-sub-section-title>
     <app-sub-section-title
         [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.OVERVIEW-ELEMENTS' | translate"
     ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins" *ngFor="let element of form.controls; let i = index">
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.ELEMENTS' | translate"
-                [control]="element.get('element')"
-            ></app-text-input>
-        </div>
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.INPUT' | translate"
-                [control]="element.get('input')"
-            ></app-text-input>
-        </div>
-        <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.OUTPUT' | translate"
-                [control]="element.get('output')"
-            ></app-text-input>
-        </div>
+    <div class="a-table-wrapper">
+        <table class="a-table">
+            <thead>
+                <tr>
+                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.ELEMENTS' | translate }}</th>
+                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.INPUT' | translate }}</th>
+                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.OUTPUT' | translate }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="a-table__row--small" *ngFor="let type of types">
+                    <ng-container *ngIf="type.element">
+                        <td>{{ type.element }}</td>
+                        <td>{{ type.input }}</td>
+                        <td>{{ type.output }}</td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <app-sub-section-title
         class="u-margin-top-x-large"
         [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.CALCULATED-EFFICIENCY' | translate"
     ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins" *ngFor="let element of form.controls; let i = index">
+    <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-4-12">
-            <app-text-input
-                class="u-margin-top"
-                [label]="'WIZARD.RECYCLING-EFFICIENCY.LABELS.EFFICIENCY' | translate"
-                suffix="%"
-            ></app-text-input>
+            <p *ngIf='efficiency'>{{ efficiency }}%</p>
+            <p *ngIf='!efficiency'>0%</p>
         </div>
     </div>
     <div class="u-margin-top-large">

@@ -1,43 +1,78 @@
-import { Component, OnInit } from '@angular/core';
-import { FormDataService } from '../../../../services/formdata.service';
+import { Component } from '@angular/core';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
-import { FormHelper } from '@helpers/form.helper';
 import { ToastrService } from 'ngx-toastr';
+import { takeUntil } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+
+import { FormDataService } from '../../../../services/formdata.service';
+import { OutputFraction } from '../../../../store/reports/types';
+import { ReportsActions } from '../../../../store/reports';
+import { StepPageAbstract } from '../step-page.abstract';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 
 @Component({
   templateUrl: './output-fraction.page.html',
 })
-export class OutputFractionPageComponent implements OnInit {
-  public form: any;
+export class OutputFractionPageComponent extends StepPageAbstract {
+  public activeStepIndex = 0;
+  public outputFraction: FormGroup;
+  public totalWeight = 0;
+
+  private stepId: string;
 
   constructor(
-    public codesService: CodesService,
-    public formData: FormDataService,
-    private toastrService: ToastrService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
-  ) {}
-
-  public ngOnInit() {
-    this.form = this.formData.getFormData().get('outputFraction');
+    codesService: CodesService,
+    formData: FormDataService,
+    toastrService: ToastrService,
+    reportProcessActions: ReportsProcessActions,
+    router: Router,
+    activatedRoute: ActivatedRoute,
+    reportActions: ReportsActions,
+  ) {
+    super(
+      codesService,
+      formData,
+      toastrService,
+      reportProcessActions,
+      router,
+      activatedRoute,
+      reportActions,
+      {
+        prevStep: 'additives',
+        nextStep: 'recycling-efficiency',
+        formSection: 'outputFraction'
+      }
+    );
   }
 
-  public addOutputFraction() {
-    this.formData.addOutputElement();
+  public handleFormChanges(changes: OutputFraction[]) {
+    this.totalWeight = changes.reduce((totalWeight, item) =>
+      item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
+        totalWeight + parseInt(item.mass, 10) :
+        totalWeight, 0);
   }
 
-  public previousStep() {
-    this.router.navigate(['../additives'], {relativeTo: this.activatedRoute});
+  public onFormReady(): void {
+    this.activatedRoute.queryParams.pipe(
+      takeUntil(this.componentDestroyed$),
+    ).subscribe((query) => {
+      this.stepId = query.step;
+      this.setActiveStepById(this.stepId);
+    });
   }
 
-  public nextStep() {
-    FormHelper.markAsDirty(this.form);
+  private setActiveStepById(stepId: string) {
+    if (!stepId) {
+      this.outputFraction = this.form.get('0');
 
-    if (this.form.valid) {
-      this.router.navigate(['../recycling-efficiency'], {relativeTo: this.activatedRoute});
-    } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
+      return setTimeout(() =>
+        this.router.navigate([], { relativeTo: this.activatedRoute, queryParams: { step: this.outputFraction.get('siteRef').value } })
+      );
     }
+
+    const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+
+    this.outputFraction = this.form.get(`${stepIndex}`);
   }
 }

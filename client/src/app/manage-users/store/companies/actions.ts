@@ -5,21 +5,21 @@ import { tap, finalize, catchError } from 'rxjs/operators';
 import { Handler } from '@store/handler';
 import { EntitiesActions } from '@store/entities';
 
-import { UserCompanyRepository } from './repository';
 import { ACTIONS } from './action-types';
+import { CompanyRepository, CompanyType } from '@api/company';
 
 @Injectable()
 export class UserCompanyActions {
     constructor(
         private handler: Handler,
         private entitiesActions: EntitiesActions,
-        private userCompanyRepository: UserCompanyRepository,
+        private userCompanyRepository: CompanyRepository,
     ) { }
 
     public fetchUserCompanies(): Observable<any> {
         this.handler.dispatchStart(ACTIONS.FETCH);
 
-        return this.userCompanyRepository.fetchUserCompanies()
+        return this.userCompanyRepository.fetchByType([CompanyType.R, CompanyType.CO, CompanyType.AO])
             .pipe(
                 catchError((error) => {
                     this.handler.dispatchError(ACTIONS.FETCH, {

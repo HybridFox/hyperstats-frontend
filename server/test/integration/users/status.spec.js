@@ -11,6 +11,7 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let nonAdminCookie;
 		let userId;
 
 		before(async() => {
@@ -30,7 +31,8 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
 		afterEach(() => reset());
@@ -55,15 +57,32 @@ describe("Integration", () => {
 					.patch(`/api/users/${userId}/status`)
 					.set("cookie", cookie)
 					.send({
-						status: "DEACTIVATED",
+						status: {
+							type: "DEACTIVATED",
+						},
 					})
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("object");
 						expect(body._id).to.equal(userId.toString());
-						expect(body.meta.status).to.equal("DEACTIVATED");
+						expect(body.meta.status).to.deep.equal({
+							type: "DEACTIVATED",
+						});
 					});
+			});
+
+			it("Should fail to update user status by id if user in session is not admin", async() => {
+				return supertest(server)
+					.patch(`/api/users/${userId}/status`)
+					.set("cookie", nonAdminCookie)
+					.send({
+						status: {
+							type: "DEACTIVATED",
+						},
+					})
+					.expect("Content-Type", /json/)
+					.expect(403);
 			});
 		});
 	});

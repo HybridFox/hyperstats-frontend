@@ -4,26 +4,47 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 import { AssetsRepository } from '@api/assets';
-import { FormDataService } from 'src/app/reports/services/formdata.service';
+
+import { FormDataService } from '../../../../services/formdata.service';
+import { ReportsActions } from '../../../../store/reports';
+import { StepPageAbstract } from '../step-page.abstract';
+import { ReportProcessActions } from 'src/app/reports/store/recycling-processes';
 
 @Component({
   templateUrl: './additional-information.page.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdditionalInformationPageComponent implements OnInit, AfterViewInit {
+export class AdditionalInformationPageComponent extends StepPageAbstract implements OnInit, AfterViewInit {
   public form: any;
   public uploadResult;
   public filesArray = [];
 
   constructor(
-    public codesService: CodesService,
-    public formData: FormDataService,
-    private toastrService: ToastrService,
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
+    codesService: CodesService,
+    formData: FormDataService,
+    toastrService: ToastrService,
+    reportProcessActions: ReportProcessActions,
+    router: Router,
+    activatedRoute: ActivatedRoute,
+    reportActions: ReportsActions,
     private assetsRepository: AssetsRepository,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) {
+    super(
+      codesService,
+      formData,
+      toastrService,
+      reportProcessActions,
+      router,
+      activatedRoute,
+      reportActions,
+      {
+        prevStep: 'recycling-efficiency',
+        nextStep: 'file-report',
+        formSection: 'additionalInformation'
+      }
+    );
+  }
 
   public ngOnInit() {
     this.form = this.formData.getFormData().get('additionalInformation');
@@ -33,21 +54,9 @@ export class AdditionalInformationPageComponent implements OnInit, AfterViewInit
     this.cdRef.detectChanges();
   }
 
-  public previousStep() {
-    this.router.navigate(['../recycling-efficiency'], {relativeTo: this.activatedRoute});
-  }
-
-  public nextStep() {
-    FormHelper.markAsDirty(this.form);
-
-    if (this.form.valid) {
-      this.router.navigate(['../file-report'], {relativeTo: this.activatedRoute});
-    } else {
-      this.toastrService.error('GENERAL.LABELS.INVALID_FORM');
-    }
-  }
-
   public onUpload(filesList) {
     this.uploadResult = this.assetsRepository.upload(filesList[0]);
   }
+
+  public onFormReady() {}
 }

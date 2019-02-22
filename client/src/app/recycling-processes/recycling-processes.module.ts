@@ -16,8 +16,8 @@ import { AssetsApiModule } from '@api/assets';
 
 import { Pages } from './pages';
 import { Components } from './components';
-import { recyclingPartnersServices, recyclingPartnerReducer } from '../recycling-partners/store';
 import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
+import { RecyclingProcessesApiModule } from '@api/recycling-processes';
 
 @NgModule({
   imports: [
@@ -29,6 +29,7 @@ import { RecyclingPartnersModule } from '../recycling-partners/recycling-partner
     UploadModule,
     RecyclingPartnersModule,
     AssetsApiModule,
+    RecyclingProcessesApiModule,
   ],
   providers: [
     RecylingProcessesServices,

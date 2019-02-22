@@ -6,23 +6,28 @@ export class CodesService {
     return [
       {
         label: 'Magnese',
-        key: 'ma'
+        key: 'ma',
+        value: 'Magnese',
       },
       {
         label: 'Mercury',
-        key: 'me'
+        key: 'me',
+        value: 'Mercury',
       },
       {
         label: 'Carbon',
-        key: 'cb'
+        key: 'cb',
+        value: 'Carbon',
       },
       {
         label: 'Plastics',
-        key: 'pl'
+        key: 'pl',
+        value: 'Plastics',
       },
       {
         label: 'Electrolyte',
-        key: 'ec'
+        key: 'ec',
+        value: 'Electrolyte',
       },
     ];
   }
