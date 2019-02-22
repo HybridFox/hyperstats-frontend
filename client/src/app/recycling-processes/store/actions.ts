@@ -5,8 +5,8 @@ import { throwError as _throw } from 'rxjs';
 
 import { EntitiesActions } from '@store/entities';
 import { Handler } from '@store/handler';
+import { RecyclingProcessesRepository } from '@api/recycling-processes';
 
-import { RecyclingProcessesRepository } from './repository';
 import { ACTIONS } from './action-types';
 import { AssetsRepository } from '@api/assets';
 

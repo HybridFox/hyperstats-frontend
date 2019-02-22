@@ -9,7 +9,6 @@ import { CompaniesActions } from '../../store/companies/actions';
 import { CompanySelector } from '../../store/companies/selectors';
 import { CompanyType } from '../../store/companies/types';
 
-
 @Component({
     templateUrl: './overview.page.html',
 })
@@ -18,13 +17,13 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(CompanySelector.overview.loading) public loading$: Observable<boolean>;
 
     public filter: FormGroup;
-    private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
     constructor(
-        public companiesActions: CompaniesActions,
-        public formBuilder: FormBuilder,
-        public router: Router,
-        public route: ActivatedRoute,
+        private companiesActions: CompaniesActions,
+        private formBuilder: FormBuilder,
+        private router: Router,
+        private route: ActivatedRoute,
     ) {}
 
     public ngOnInit() {
@@ -36,22 +35,16 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             )
             .subscribe((params) => {
                 // Todo: Use multiple params!
-                const type = params && params.types && params.types.length > 0 ? params.types : null;
-                this.companiesActions.fetchByType(type).subscribe();
+                const types = params && params.types && params.types.length > 0 ? params.types : null;
+                this.companiesActions.fetchByTypes(types).toPromise();
             });
 
         this.filter.valueChanges
             .pipe(
                 takeUntil(this.componentDestroyed$),
-                map((data) => {
-                    return data.types
-                        .filter((type) => {
-                            return type.selected;
-                        })
-                        .map((type) => {
-                            return type.value;
-                        });
-                })
+                map((data: any) => data.types.reduce((acc, type) => {
+                    return type.selected ? acc.concat([type.value]) : acc;
+                }, []))
             )
             .subscribe((value) => {
                 this.router.navigate([], {

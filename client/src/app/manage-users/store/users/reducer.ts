@@ -26,7 +26,7 @@ const DetailReducer = (
 };
 
 
-export const Reducer = combineReducers({
+export const ReducerConfig = {
     overview: progressReducer(
         { entityType: `${MODULE}/${OVERVIEW}` },
         OverviewReducer,
@@ -35,4 +35,4 @@ export const Reducer = combineReducers({
         { entityType: `${MODULE}/${DETAIL}` },
         DetailReducer,
     ),
-});
+};
