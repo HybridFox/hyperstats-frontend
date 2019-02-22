@@ -4,6 +4,9 @@ import { FileUploadComponent } from './file-upload.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { AssetsRepository } from '@api/assets';
 import { HttpClient, HttpHandler } from '@angular/common/http';
+import { UploadInputComponent } from '../upload-input/upload-input.component';
+import { UploadPreviewComponent } from '../upload-preview/upload-preview.component';
+import { UploadedListComponent } from '../uploaded-list/uploaded-list.component';
 
 describe('FileUploadComponent', () => {
     let fixture: ComponentFixture<FileUploadComponent>;
@@ -19,7 +22,12 @@ describe('FileUploadComponent', () => {
                 TranslateModule.forRoot(),
                 ReactiveFormsModule,
             ],
-            declarations: [ FileUploadComponent ],
+            declarations: [
+                FileUploadComponent,
+                UploadInputComponent,
+                UploadPreviewComponent,
+                UploadedListComponent
+             ],
             providers: [
                 { provide: AssetsRepository, useClass: MockRepository }
             ]
