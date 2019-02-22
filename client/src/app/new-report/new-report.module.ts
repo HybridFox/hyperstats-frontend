@@ -16,6 +16,8 @@ import { FormFieldsModule } from '@ui/form-fields';
 
 import { Pages } from './pages';
 import { FormDataService } from './services/formdata.service';
+import { UploadModule } from '@ui/upload';
+import { AssetsRepository } from '@api/assets';
 
 @NgModule({
   imports: [
@@ -23,11 +25,13 @@ import { FormDataService } from './services/formdata.service';
     NewReportRoutingModule,
     SharedModule,
     ReportsApiModule,
-    FormFieldsModule
+    FormFieldsModule,
+    UploadModule
   ],
   providers: [
     ReportsServices,
-    FormDataService
+    FormDataService,
+    AssetsRepository
   ],
   declarations: [
     Pages,

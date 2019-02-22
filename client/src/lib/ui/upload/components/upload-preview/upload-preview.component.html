@@ -5,12 +5,12 @@
         </div>
         <div class="l-grid__col-10-12">
             <div>
-                <span class="m-file-upload__progress__file-name">{{ name }}</span>
+                <span class="m-file-upload__progress__file-name">{{ name || storedFile }}</span>
             </div>
-            <progress [max]="100" [value]="progress || 0" class="m-file-upload__progress__bar"></progress>
+            <progress [max]="100" [value]="progress || 100" class="m-file-upload__progress__bar"></progress>
         </div>
         <div class="l-grid__col-1-12">
-            <span class="m-file-upload__progress__percentage">{{ progress || 0 }}%</span>
+            <span *ngIf="!storedFile" class="m-file-upload__progress__percentage">{{ progress || 100 }}%</span>
         </div>
     </li>
 </ul>

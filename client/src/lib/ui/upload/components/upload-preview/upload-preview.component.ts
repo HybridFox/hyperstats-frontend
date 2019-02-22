@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-upload-preview',
@@ -8,4 +7,5 @@ import { Subject } from 'rxjs';
 export class UploadPreviewComponent {
     @Input() public name: string;
     @Input() public progress: number;
+    @Input() public storedFile: string;
 }

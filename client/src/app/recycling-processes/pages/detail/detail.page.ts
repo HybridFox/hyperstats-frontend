@@ -161,6 +161,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     private fetchProcessIfNeeded(): void {
+        this.uploadResults = null;
         if (!this.recyclingProcessId || (this.process && prop('_id', this.process) === this.recyclingProcessId)) {
             return;
         }

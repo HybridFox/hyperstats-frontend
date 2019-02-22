@@ -7,7 +7,10 @@ import { FormControl } from '@angular/forms';
 })
 export class FileUploadComponent implements OnChanges {
     @Input() public response: any;
+    @Input() public label?: string;
     @Input() public control: FormControl;
+    @Input() public storedFile: string;
+    @Input() public multiple: boolean;
     @Output() public upload: EventEmitter<FileList> = new EventEmitter<FileList>();
 
     public updateValue = (_: any) => {};

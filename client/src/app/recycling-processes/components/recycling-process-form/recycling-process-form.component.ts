@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ChangeDetectionStrategy,
+    ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,14 +9,16 @@ import { omit, prop, pathOr } from 'ramda';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
+import { recyclingProcess } from '@core/schemas';
 
 
 @Component({
     selector: 'app-recycling-process-form',
-    templateUrl: './recycling-process-form.component.html'
+    templateUrl: './recycling-process-form.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class RecyclingProcessFormComponent implements OnChanges {
+export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     @Input() public recyclingProcess: any;
     @Input() public recyclingPartners: any;
     @Input() public uploadResponse: any;
@@ -35,8 +38,13 @@ export class RecyclingProcessFormComponent implements OnChanges {
 
     constructor(
         private formBuilder: FormBuilder,
-        private translateService: TranslateService
+        private translateService: TranslateService,
+        private cdRef: ChangeDetectorRef,
     ) {}
+
+    ngAfterViewInit() {
+        this.cdRef.detectChanges();
+    }
 
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.recyclingProcess) {
@@ -102,7 +110,7 @@ export class RecyclingProcessFormComponent implements OnChanges {
                 text: [step.qualitativeDescription.text, Validators.required],
                 asset: createFileUploadControl(step.qualitativeDescription.asset)
             }),
-            schematicOverview: createFileUploadControl(step.qualitativeDescription.asset),
+            schematicOverview: createFileUploadControl(step.schematicOverview),
         });
     }
 

@@ -65,15 +65,17 @@
                 class="u-margin-bottom-x-large"
                 [control]="step.value.get('qualitativeDescription.asset')"
                 [response]="(uploadResponse ? uploadResponse[index]?.ASSET : null) | async"
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
+                [storedFile]="recyclingProcess?.data?.steps[index]?.qualitativeDescription?.asset?.originalname"
                 (upload)="onUpload($event, index, 'ASSET')"
             ></app-file-upload>
-
-            {{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}
-            <p>{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
+            <p class="m-file-upload__title">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}</p>
+            <p class="m-file-upload__description">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
             <app-file-upload
                 class="u-margin-bottom-x-large"
                 [control]="step.value.get('schematicOverview')"
                 [response]="(uploadResponse ? uploadResponse[index]?.SCHEMATIC : null) | async"
+                [storedFile]="recyclingProcess?.data?.steps[index]?.schematicOverview?.originalname"
                 (upload)="onUpload($event, index, 'SCHEMATIC')"
             ></app-file-upload>
         </div>
