@@ -11,8 +11,12 @@ export class ReportsRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchAll(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/reports');
+  public fetchAll(id: string): Observable<any> {
+    let url = this.apiConfig.baseUrl('/reports');
+
+    if (id) {
+      url = this.apiConfig.baseUrl(`/reports?recycling-process=${id}`);
+    }
 
     return this.http.get(url);
   }
