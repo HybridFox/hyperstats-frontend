@@ -68,6 +68,7 @@ const filedData = {
 		reportingYear: joi.number().required(),
 		recyclingProcess: joi.string().required(),
 		name: joi.string().required(),
+		// receiver: joi.string().allow(null).required(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
@@ -124,7 +125,7 @@ const filedData = {
 };
 
 const schema = joi.object().keys({
-	data: joi.alternatives().when("meta.status", { is: REPORT_STATUS.FILED, then: joi.object().keys(filedData), otherwise: joi.object().keys(savedData) }),
+	data: joi.alternatives().when("meta.status", { is: REPORT_STATUS.FILED, then: joi.object().keys(filedData), otherwise: joi.object().keys(savedData) }).required(),
 	meta: joi.object().keys({
 		approvedCompanies: joi.array().items(joi.string()).optional(),
 		status: joi.string().valid([REPORT_STATUS.FILED, REPORT_STATUS.SAVED]).optional(),
