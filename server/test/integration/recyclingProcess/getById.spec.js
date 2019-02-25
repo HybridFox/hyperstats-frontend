@@ -102,7 +102,7 @@ describe("Integration", () => {
 							},
 							"meta": {
 								"deleted": false,
-								"activated": false,
+								"activated": true,
 								"created": "2019-01-24T14:34:19.351Z",
 								"lastUpdated": "2019-01-24T14:34:19.351Z",
 							},

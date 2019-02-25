@@ -10,11 +10,11 @@
                     <a href="" class="a-link">Export</a>
                 </td>
                 <td>
-                    <button class="a-button--danger a-button-outline">{{
+                    <p [ngClass]="report?.meta?.status === 'FILED'?'a-label--success':'a-label--danger'" class="a-label u-align-center">{{
                         report?.meta?.status === 'FILED' ?
                         ('PAGE.REPORTS.FILED' | translate) :
                         ('PAGE.REPORTS.DRAFT' | translate)
-                    }}</button>
+                    }}</p>
                 </td>
             </tr>
         </tbody>
