@@ -3,12 +3,15 @@
     <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
   </div>
   <ng-container *ngIf="outputFraction" >
-    <div class="l-grid__col-9-12 m-card--primary" *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
+    <div class="l-grid__col-9-12 m-card--primary">
+      <app-section-title
+        [title]="(selectedProcess$ | async)?.data?.name"
+      ></app-section-title>
       <app-sub-section-title
         class="u-margin-bottom"
         [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate"
       ></app-sub-section-title>
-      <div class="m-card--secondary u-margin-bottom">
+      <div class="m-card--secondary u-margin-bottom" *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
         <div class="l-grid__row l-grid--with-margins">
           <div class="l-grid__col-6-12">
             <app-select-input
