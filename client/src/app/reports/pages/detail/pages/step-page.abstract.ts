@@ -83,10 +83,6 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     this.componentDestroyed$.complete();
   }
 
-  public addElement() {
-    this.formData.addInputElement();
-  }
-
   public previousStep() {
     if (!this.options.prevStep) {
       return;
