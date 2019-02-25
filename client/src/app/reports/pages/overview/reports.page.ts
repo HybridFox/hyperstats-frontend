@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { select, select$ } from '@angular-redux/store';
-import { mapRecyclingProcessesToMenuItems } from '../../services/select.helpers';
+import { mapRecyclingProcessesToMenuItemsWithAll } from '../../services/select.helpers';
 import { Observable } from 'rxjs';
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
@@ -15,7 +15,7 @@ export class ReportsPageComponent implements OnInit {
     @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
     @select$(
         ReportsProcessSelector.list.result,
-        mapRecyclingProcessesToMenuItems
+        mapRecyclingProcessesToMenuItemsWithAll
     ) public menuItems$: Observable<MenuItem>;
 
     constructor(

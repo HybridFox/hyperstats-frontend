@@ -32,15 +32,10 @@ export const mapRecyclingProcessesToOptions = mapper((process): Option => ({
   label: process.data.name,
 }));
 
-export const mapRecyclingProcessesToMenuItems = mapper((process): MenuItem => ({
+export const mapRecyclingProcessesToMenuItemsWithAll = mapper((process): MenuItem => ({
   link: ['./'],
   label: process.data.name,
   queryParams: { recyclingProcess: process._id}
-}));
-
-export const mapRecyclingProcessesToMenuItemsWithAll = mapper((process): MenuItem => ({
-  link: process._id,
-  label: process.data.name,
 }), ALL_MENU_ITEM);
 
 export const mapToSiteMenuItems = (obs$: Observable<any>) => {
