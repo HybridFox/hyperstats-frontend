@@ -18,9 +18,11 @@ export class FileUploadComponent implements OnChanges {
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.response) {
             if (this.response && this.response.result) {
+              if (this.control) {
                 this.control.patchValue({
-                    ...this.response.result,
+                  ...this.response.result,
                 });
+              }
             }
         }
     }

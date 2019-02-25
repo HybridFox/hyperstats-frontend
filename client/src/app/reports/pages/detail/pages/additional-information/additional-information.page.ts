@@ -3,6 +3,7 @@ import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { FormGroup } from '@angular/forms';
 
 import { AssetsRepository } from '@api/assets';
 
@@ -10,6 +11,7 @@ import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   templateUrl: './additional-information.page.html',
@@ -57,6 +59,20 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
 
   public onUpload(filesList: FileList) {
     this.uploadResult$ = this.assetsRepository.upload(filesList[0]);
+
+    this.uploadResult$
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+      )
+      .subscribe((response) => {
+        if (response && response.result) {
+          const files = this.form.get('files').value || [];
+          (this.form.get('files') as FormGroup).setValue([
+            ...files,
+            response.result,
+          ]);
+        }
+      });
   }
 
   public onFormReady() {}
