@@ -48,6 +48,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
   public abstract onFormReady(): void;
 
   public ngOnInit() {
+    console.log('onInit StepPageAbstract');
     this.reportId = this.activatedRoute.snapshot.parent.params.id;
 
     if (this.reportId === 'new') {
@@ -84,7 +85,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
   }
 
   public addElement() {
-    this.formData.addInputElement();
+    // this.formData.addInputElement();
   }
 
   public previousStep() {

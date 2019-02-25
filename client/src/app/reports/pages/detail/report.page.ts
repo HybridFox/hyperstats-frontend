@@ -1,5 +1,4 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterContentInit,
-  ChangeDetectionStrategy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
 import { Subject, Observable } from 'rxjs';
@@ -12,29 +11,67 @@ import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   templateUrl: './report.page.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit, AfterViewInit {
+export class ReportPageComponent implements OnInit, OnDestroy {
   @select(ReportsSelector.detail.result) public report$: Observable<any>;
 
-  public data: FormGroup;
-  public steps: Step[];
+  public form: FormGroup;
+  public steps: Step[] = [
+    {
+      name: 'WIZARD.TITLES.NEW-REPORT',
+      route: 'information'
+    },
+    {
+      name: 'WIZARD.TITLES.INPUT-FRACTION',
+      route: 'input-fraction'
+    },
+    {
+      name: 'WIZARD.TITLES.ADDITIVES',
+      route: 'additives'
+    },
+    {
+      name: 'WIZARD.TITLES.OUTPUT-FRACTION',
+      route: 'output-fraction'
+    },
+    {
+      name: 'WIZARD.TITLES.RECYCLING-EFFICIENCY',
+      route: 'recycling-efficiency'
+    },
+    {
+      name: 'WIZARD.TITLES.ADDITIONAL-INFORMATION',
+      route: 'additional-information'
+    },
+    {
+      name: 'WIZARD.TITLES.FILE-REPORT',
+      route: 'file-report'
+    },
+  ];
   public selectedIndex = 0;
-  public currentTitle: string;
-  public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+
+  private  componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   constructor(
-    public formData: FormDataService,
+    public reportFormService: FormDataService,
     private recyclingProcessesActions: ReportsProcessActions,
     private reportsActions: ReportsActions,
     private router: Router,
     private route: ActivatedRoute,
-    private cdRef: ChangeDetectorRef
   ) {}
 
   public ngOnInit() {
+    this.fetchReport();
+    this.setSelectedStep();
+    this.fetchRecyclingProcesses();
+    this.initForm();
+  }
+
+  public ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
+  }
+
+  private setSelectedStep() {
     this.router.events
       .pipe(
         takeUntil(this.componentDestroyed$)
@@ -46,24 +83,21 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit,
             index,
             step.name
           ] : acc, []);
-          this.setReportTitle();
         }
       });
+  }
 
-    this.recyclingProcessesActions.fetchAllRecyclingProcesses()
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe();
-
+  private initForm() {
     this.report$
       .pipe(
         takeUntil(this.componentDestroyed$)
       )
       .subscribe((report) => {
-        this.data = this.formData.setFormData(report);
+        this.form = this.reportFormService.initForm(report);
       });
+  }
 
+  private fetchReport() {
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),
@@ -71,57 +105,13 @@ export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit,
       .subscribe(({ id }) => {
         this.reportsActions.fetchById(id).subscribe();
       });
-
-    this.steps = [
-      {
-        name: 'WIZARD.TITLES.NEW-REPORT',
-        route: 'information'
-      },
-      {
-        name: 'WIZARD.TITLES.INPUT-FRACTION',
-        route: 'input-fraction'
-      },
-      {
-        name: 'WIZARD.TITLES.ADDITIVES',
-        route: 'additives'
-      },
-      {
-        name: 'WIZARD.TITLES.OUTPUT-FRACTION',
-        route: 'output-fraction'
-      },
-      {
-        name: 'WIZARD.TITLES.RECYCLING-EFFICIENCY',
-        route: 'recycling-efficiency'
-      },
-      {
-        name: 'WIZARD.TITLES.ADDITIONAL-INFORMATION',
-        route: 'additional-information'
-      },
-      {
-        name: 'WIZARD.TITLES.FILE-REPORT',
-        route: 'file-report'
-      },
-    ];
   }
 
-  public ngOnDestroy() {
-    this.componentDestroyed$.next(true);
-    this.componentDestroyed$.complete();
-  }
-
-  public ngAfterContentInit(): void {
-    this.selectedIndex = this.steps.reduce((acc, step, index) =>
-      step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? index : acc, 0);
-
-    this.setReportTitle();
-  }
-
-  private setReportTitle() {
-    const reportName = this.data.get('information').get('name').value;
-    this.currentTitle = (reportName && reportName !== '') ? reportName : 'WIZARD.TITLES.NEW-REPORT';
-  }
-
-  public ngAfterViewInit() {
-    this.cdRef.detectChanges();
+  private fetchRecyclingProcesses() {
+    this.recyclingProcessesActions.fetchAllRecyclingProcesses()
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe();
   }
 }

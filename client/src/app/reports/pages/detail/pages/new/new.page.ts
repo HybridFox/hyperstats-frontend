@@ -74,7 +74,7 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
     const reportProcessId = this.form.get('recyclingProcess').value;
     const process = (this.processes || []).find((p) => p._id === reportProcessId);
 
-    this.formData.prepareProcessSteps(process);
+    // this.formData.prepareProcessSteps(process);
 
     const data = {
       _id: this.reportId,
