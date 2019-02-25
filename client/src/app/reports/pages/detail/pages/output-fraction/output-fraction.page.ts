@@ -78,7 +78,5 @@ export class OutputFractionPageComponent extends StepPageAbstract {
     const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
 
     this.outputFraction = this.form.get(`${stepIndex}`);
-    console.log(this.form);
-
   }
 }
