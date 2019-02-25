@@ -34,7 +34,6 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
 
     public ngOnChanges() {
         this.buildForm(prop('data')(this.recyclingPartner));
-        // this.isActivated = pathOr(false, ['meta', 'activated'])( this.recyclingPartner);
     }
 
     public saveForm() {
