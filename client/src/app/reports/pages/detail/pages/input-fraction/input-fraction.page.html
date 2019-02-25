@@ -4,7 +4,7 @@
   </div>
   <div class="l-grid__col-9-12 m-card--primary" *ngIf="inputFraction">
     <app-section-title
-      [title]="(selectedProcess$ | async)?.data?.name"
+      [title]="(selectedProcess$ | async)?.data?.name || 'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS' | translate"
     ></app-section-title>
     <app-sub-section-title
       [title]="'WIZARD.NEW-REPORT.TITLES.INPUT-FRACTIONS' | translate"

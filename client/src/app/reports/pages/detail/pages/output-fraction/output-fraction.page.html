@@ -5,7 +5,7 @@
   <ng-container *ngIf="outputFraction" >
     <div class="l-grid__col-9-12 m-card--primary">
       <app-section-title
-        [title]="(selectedProcess$ | async)?.data?.name"
+        [title]="(selectedProcess$ | async)?.data?.name || 'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS' | translate"
       ></app-section-title>
       <app-sub-section-title
         class="u-margin-bottom"
