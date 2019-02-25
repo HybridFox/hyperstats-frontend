@@ -531,7 +531,7 @@ msgid "Recycling Partner"
 msgstr "Recycling Partner"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "An email has ben sent to the user requesting a password reset."
+msgstr "An email has been sent to the user requesting a password reset."
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
