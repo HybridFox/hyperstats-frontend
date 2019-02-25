@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-22T08:44:57.758Z\n"
-"PO-Revision-Date: 2019-02-22T08:44:57.758Z\n"
+"POT-Creation-Date: 2019-02-25T09:04:03.516Z\n"
+"PO-Revision-Date: 2019-02-25T09:04:03.517Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -561,6 +561,48 @@ msgid "TOAST##PROFILE##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ACTIVATED"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##DEACTIVATED"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"

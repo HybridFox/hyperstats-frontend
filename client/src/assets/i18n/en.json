@@ -306,6 +306,38 @@
                 "TITLE": "Success!"
             }
         },
+        "RECYCLING-PARTNER-REMOVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not remove the recycling partner. Please contact an administrator.",
+                "TITLE": "Recycling partner removal failed"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Recycling partner is successfully removed.",
+                "TITLE": "Recycling partner removed"
+            }
+        },
+        "RECYCLING-PARTNER-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not save the recycling partner. Please contact an administrator.",
+                "TITLE": "Error saving recycling partner"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Recycling partner is successfully saved.",
+                "TITLE": "Recycling partner saved"
+            }
+        },
+        "RECYCLING-PARTNER-TOGGLE": {
+            "ACTIVATED": "activated",
+            "DEACTIVATED": "deactivated",
+            "ERROR": {
+                "DESCRIPTION": "The recycling partner could not be {{type}}.",
+                "TITLE": "Recycling partner not {{type}}"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling partner is {{type}}.",
+                "TITLE": "Recycling partner {{type}}"
+            }
+        },
         "RECYCLING-PROCESS-REMOVE": {
             "ERROR": {
                 "DESCRIPTION": "Could not remove the recycling process. Please contact an administrator.",
@@ -330,7 +362,7 @@
             "ACTIVATED": "activated",
             "DEACTIVATED": "deactivated",
             "ERROR": {
-                "DESCRIPTION": "There recycling process could not be {{type}}.",
+                "DESCRIPTION": "The recycling process could not be {{type}}.",
                 "TITLE": "Recycling process not {{type}}"
             },
             "SUCCESS": {

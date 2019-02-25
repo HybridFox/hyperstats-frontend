@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-22T08:44:57.758Z\n"
+"POT-Creation-Date: 2019-02-25T09:04:03.516Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -669,6 +669,49 @@ msgstr "Your profile has been saved!"
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+"Could not remove the recycling partner. Please contact an administrator."
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##ERROR##TITLE"
+msgstr "Recycling partner removal failed"
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##SUCCESS##DESCRIPTION"
+msgstr "Recycling partner is successfully removed."
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##SUCCESS##TITLE"
+msgstr "Recycling partner removed"
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##ERROR##DESCRIPTION"
+msgstr "Could not save the recycling partner. Please contact an administrator."
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##ERROR##TITLE"
+msgstr "Error saving recycling partner"
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##SUCCESS##DESCRIPTION"
+msgstr "Recycling partner is successfully saved."
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##SUCCESS##TITLE"
+msgstr "Recycling partner saved"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ACTIVATED"
+msgstr "activated"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##DEACTIVATED"
+msgstr "deactivated"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ERROR##DESCRIPTION"
+msgstr "The recycling partner could not be {{type}}."
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ERROR##TITLE"
+msgstr "Recycling partner not {{type}}"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr "The recycling partner is {{type}}."
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##SUCCESS##TITLE"
+msgstr "Recycling partner {{type}}"
+
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
 msgstr ""
 "Could not remove the recycling process. Please contact an administrator."
@@ -701,7 +744,7 @@ msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
 msgstr "deactivated"
 
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##DESCRIPTION"
-msgstr "There recycling process could not be {{type}}."
+msgstr "The recycling process could not be {{type}}."
 
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##TITLE"
 msgstr "Recycling process not {{type}}"
@@ -955,7 +998,7 @@ msgstr "Recycling Efficiency"
 
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
-msgstr "The form is invalid, make sure you have filled all the field"
+msgstr "The form is invalid, make sure you have filled all the fields"
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"
