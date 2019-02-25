@@ -3,6 +3,10 @@
     <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
   </div>
   <div class="l-grid__col-9-12 m-card--primary">
+    <app-section-title
+      [title]="title$ | async | translate"
+    ></app-section-title>
+
     <router-outlet></router-outlet>
   </div>
 </div>

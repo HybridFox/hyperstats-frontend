@@ -42,19 +42,9 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
     );
   }
 
-<<<<<<< HEAD
   public ngOnInit() {
     super.ngOnInit();
   }
-=======
-  public addElement() {
-    this.formData.addInputElement();
-  }
-
-  private setActiveStepById(stepId: string) {
-    if (!stepId) {
-      this.inputFraction = this.form.get('0');
->>>>>>> 438df412e4587ab0004cf7c48dc2ccf7c9a9d83d
 
   public addElement() {
     (this.inputFraction.get('data.elements') as FormArray).push(this.formData.getInputFractionElementFormGroup(null));

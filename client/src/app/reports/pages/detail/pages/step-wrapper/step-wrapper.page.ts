@@ -1,18 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject, Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
-import { select$ } from '@angular-redux/store';
+import { select$, select } from '@angular-redux/store';
+import { map, filter } from 'rxjs/operators';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 import { mapToSiteMenuItems } from 'src/app/reports/services/select.helpers';
+
+const mapToObject = (obs$) => {
+  return obs$.pipe(
+    filter(process => !!process),
+    map((process: any) => {
+      return Object.assign({}, ...process.data.steps.map((step) => {
+        return {
+          [step._id]: step
+        };
+      }));
+    }),
+  );
+};
 
 @Component({
   templateUrl: './step-wrapper.page.html',
 })
 export class StepWrapperPageComponent implements OnInit {
   @select$(ReportsProcessSelector.detail.result, mapToSiteMenuItems) public siteMenuItems$: BehaviorSubject<MenuItem[]>;
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
+  public title$;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -33,5 +49,29 @@ export class StepWrapperPageComponent implements OnInit {
           }
         });
     }
+
+    setTimeout(() => {
+      this.title$ = combineLatest(
+        this.process$,
+        this.route.firstChild ? this.route.firstChild.params : null
+      )
+      .pipe(
+        map(([process, params]) => {
+          if (!process) {
+            return;
+          }
+          console.log(process);
+          return process.data.steps.find((step) => {
+            return step.uuid === params.stepId;
+          });
+        }),
+        map((step) => {
+          if (!step) {
+            return;
+          }
+          return step.description || 'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS';
+        }),
+      );
+    }, 1);
   }
 }
