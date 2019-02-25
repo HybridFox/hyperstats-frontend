@@ -313,7 +313,7 @@
             },
             "SUCCESS": {
                 "DESCRIPTION": "Recycling process is successfully removed.",
-                "TITLE": "Error removing recycling process"
+                "TITLE": "Recycling process removed"
             }
         },
         "RECYCLING-PROCESS-SAVE": {

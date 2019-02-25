@@ -680,7 +680,7 @@ msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
 msgstr "Recycling process is successfully removed."
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
-msgstr "Error removing recycling process"
+msgstr "Recycling process removed"
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
 msgstr "Could not save the recycling process. Please contact an administrator."
