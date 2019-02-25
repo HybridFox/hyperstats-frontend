@@ -53,6 +53,10 @@ export class OutputFractionPageComponent extends StepPageAbstract {
         totalWeight, 0);
   }
 
+  public addOutputFraction() {
+    this.formData.addOutputElement();
+  }
+
   public onFormReady(): void {
     this.activatedRoute.queryParams.pipe(
       takeUntil(this.componentDestroyed$),

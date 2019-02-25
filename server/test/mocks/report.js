@@ -5,10 +5,10 @@ const NEW_REPORT = {
 		reportingYear: 2019,
 		recyclingProcess: createObjectId(),
 		name: "name",
-		receiver: createObjectId(),
+		// receiver: createObjectId(),
 	},
 	inputFraction: [{
-		siteRef: "siteRef",
+		siteRef: "inputFraction",
 		data: {
 			processChemistry: "processChemistry",
 			weightInput: 1,
@@ -29,22 +29,25 @@ const NEW_REPORT = {
 		},
 	}],
 	additives: [{
-		type: "type",
-		weight: 1,
-		chemicalComposition: [{
-			element: "element",
+		siteRef: "addtive",
+		data: {
+			type: "type",
 			weight: 1,
-		}],
+			chemicalComposition: [{
+				element: "element",
+				weight: 1,
+			}],
+		},
 	}],
 	outputFraction: [{
 		siteRef: "outputFraction",
 		data: [{
 			element: "element",
 			mass: 1,
-			classification: "classification",
-			replacedMaterial: "replacedMaterial",
-			elementCompound: "elementCompound",
-			shareOutputFraction: "shareOutputFraction",
+			virginClassification: "virginClassification",
+			virginReplacedMaterial: "virginReplacedMaterial",
+			elementClassification: "elementClassification",
+			elementReplacedMaterial: "elementReplacedMaterial",
 		}],
 	}],
 	recyclingEfficiency: {
@@ -58,6 +61,20 @@ const NEW_REPORT = {
 	},
 };
 
+const mock = {
+	_id: "5c6d59333a069902e233b624",
+	data: NEW_REPORT,
+	meta: {
+		status: "FILED",
+		lastUpdated: "2019-02-20T13:45:03.792Z",
+		approvedCompanies: [],
+		deleted: false,
+		reportingCompany: "5c485d0029abc50032947f91",
+		created: "2019-02-20T13:42:11.546Z",
+	},
+};
+
 module.exports = {
 	NEW_REPORT,
+	mock,
 };

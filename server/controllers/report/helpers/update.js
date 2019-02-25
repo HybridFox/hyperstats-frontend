@@ -1,18 +1,18 @@
-const ReportModel = require("../../../models/report");
-const ResponseError = require("../../../helpers/errors/responseError");
-const getReportQuery = require("./getQuery");
 const { mergeDeepLeft, pathOr } = require("ramda");
+const ReportModel = require("../../../models/report");
+const errors = require("../../../helpers/errorHandler");
+const getReportQuery = require("./getQuery");
 const { REPORT_STATUS } = require("./const");
 
 const getCurrentReport = async(id, query) => {
 	const report = await ReportModel.findOne(query).lean().exec();
 
 	if (!report) {
-		throw new ResponseError({ type: 404, msg: "Report not found", error: `Report not found for id: ${id}` });
+		throw errors.ItemNotFound;
 	}
 
 	if (pathOr(REPORT_STATUS.FILED, ["meta", "status"], report) === REPORT_STATUS.FILED) {
-		throw new ResponseError({ type: 422, msg: "Report cannot be updated", error: "This report cannot be updated because it has already been filed" });
+		throw errors.ItemCannotBeUpdated;
 	}
 
 	return report;
@@ -32,7 +32,7 @@ const updateReport = async(id, query, updatedData, updatedStatus, currentReport)
 	);
 
 	if (!report) {
-		throw new ResponseError({ type: 404, msg: "Report not found", error: `Report not found for id: ${id}` });
+		throw errors.ItemNotFound;
 	}
 
 	return report;

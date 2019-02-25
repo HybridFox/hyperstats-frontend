@@ -44,6 +44,10 @@ export class InputFractionPageComponent extends StepPageAbstract {
     );
   }
 
+  public addElement() {
+    this.formData.addInputElement();
+  }
+
   private setActiveStepById(stepId: string) {
     if (!stepId) {
       this.inputFraction = this.form.get('0');

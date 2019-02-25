@@ -70,7 +70,7 @@ const CompanySchema = mongoose.Schema({
 		},
 		activated: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 		deleted: {
 			type: Boolean,
