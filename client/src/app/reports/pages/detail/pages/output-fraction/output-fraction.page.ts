@@ -53,6 +53,10 @@ export class OutputFractionPageComponent extends StepPageAbstract {
         totalWeight, 0);
   }
 
+  public addOutputFraction() {
+    this.formData.addOutputElement();
+  }
+
   public onFormReady(): void {
     this.activatedRoute.queryParams.pipe(
       takeUntil(this.componentDestroyed$),
@@ -74,5 +78,7 @@ export class OutputFractionPageComponent extends StepPageAbstract {
     const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
 
     this.outputFraction = this.form.get(`${stepIndex}`);
+    console.log(this.form);
+
   }
 }
