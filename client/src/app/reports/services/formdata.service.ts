@@ -6,6 +6,7 @@ import pathOr from 'ramda/es/pathOr';
 export class FormDataService {
   public currentTitle: string;
   public formGroup: FormGroup;
+  public reportId: string;
 
   constructor(
     private formBuilder: FormBuilder
@@ -37,6 +38,7 @@ export class FormDataService {
 
   // Todo: Add type
   public initForm(report: any) {
+    this.reportId = pathOr('new', ['_id'])(report);
     this.formGroup = this.formBuilder.group({
       information: this.getInformationFormGroup(pathOr(null, ['data', 'information'])(report)),
       inputFraction: this.getInputFractionsFormArray(pathOr([], ['data', 'inputFraction'])(report)),
@@ -45,7 +47,6 @@ export class FormDataService {
       recyclingEfficiency: this.getRecyclingEfficiencyFormGroup(pathOr(null, ['data', 'recyclingEfficiency'])(report)),
       additionalInformation: this.getAdditionalInformationFormGroup(pathOr(null, ['data', 'additionalInformation'])(report)),
     });
-
     return this.formGroup;
   }
 
@@ -99,12 +100,18 @@ export class FormDataService {
     }));
   }
 
+  public addInputFraction(siteRef: string): void {
+    (this.formGroup.get('inputFraction') as FormArray).push(this.getInputFractionFormGroup({
+      siteRef,
+    }));
+  }
+
   // Todo: Add type
   public getAdditiveFormGroup(additive: any): FormGroup {
     return this.formBuilder.group({
       siteRef: pathOr(null, ['siteRef'])(additive),
       data: this.formBuilder.group({
-        type: [pathOr(null, ['data', 'type'])(additive), Validators.required],
+        type: [pathOr('', ['data', 'type'])(additive), Validators.required],
         weight: [pathOr(null, ['data', 'weight'])(additive), Validators.required],
       })
     });
@@ -114,6 +121,12 @@ export class FormDataService {
   public getAdditivesFormArray(additives: any[]): FormArray {
     return this.formBuilder.array(additives.map((additive) => {
       return this.getAdditiveFormGroup(additive);
+    }));
+  }
+
+  public addAdditive(siteRef: string): void {
+    (this.formGroup.get('additives') as FormArray).push(this.getAdditiveFormGroup({
+      siteRef,
     }));
   }
 
@@ -147,7 +160,13 @@ export class FormDataService {
   // Todo: Add type
   public getOutputFractionsFormArray(outputFractions: any[]): FormArray {
     return this.formBuilder.array(outputFractions.map((fraction) => {
-      return this.getOutputFractionElementFormGroup(fraction);
+      return this.getOutputFractionFormGroup(fraction);
+    }));
+  }
+
+  public addOutputFraction(siteRef: string): void {
+    (this.formGroup.get('outputFraction') as FormArray).push(this.getOutputFractionFormGroup({
+      siteRef,
     }));
   }
 
@@ -161,8 +180,8 @@ export class FormDataService {
   // Todo: Add type
   public getAdditionalInformationFormGroup(additionalInformation: any): FormGroup {
     return this.formBuilder.group({
-      files: pathOr([], ['files'])(additionalInformation),
-      additionalInformation: pathOr('', ['additionalInformation'])(additionalInformation),
+      files: [pathOr([], ['files'])(additionalInformation)],
+      additionalInformation: [pathOr('', ['additionalInformation'])(additionalInformation)],
     });
   }
 }

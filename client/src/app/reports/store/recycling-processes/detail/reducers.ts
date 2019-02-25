@@ -10,6 +10,10 @@ const reducer = (
       return action.payload;
   }
 
+  if (action.type === ACTIONS.DETAIL.CLEAR) {
+    return null;
+  }
+
   return state;
 };
 

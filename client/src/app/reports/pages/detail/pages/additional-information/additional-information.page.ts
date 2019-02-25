@@ -40,8 +40,8 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
       activatedRoute,
       reportActions,
       {
-        prevStep: 'recycling-efficiency',
-        nextStep: 'file-report',
+        prevStep: ['../recycling-efficiency'],
+        nextStep: ['../file-report'],
         formSection: 'additionalInformation'
       }
     );

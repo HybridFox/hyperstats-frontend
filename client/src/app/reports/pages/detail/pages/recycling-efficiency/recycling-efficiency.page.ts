@@ -37,8 +37,8 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
       activatedRoute,
       reportActions,
       {
-        prevStep: 'output-fraction',
-        nextStep: 'additional-information',
+        prevStep: ['../output-fraction'],
+        nextStep: ['../file-report'],
         formSection: 'outputFraction'
       }
     );

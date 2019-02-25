@@ -47,53 +47,39 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       route: 'file-report'
     },
   ];
-  public selectedIndex = 0;
 
   private  componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   constructor(
     public reportFormService: FormDataService,
-    private recyclingProcessesActions: ReportsProcessActions,
+    private reportProcessActions: ReportsProcessActions,
     private reportsActions: ReportsActions,
-    private router: Router,
     private route: ActivatedRoute,
   ) {}
 
   public ngOnInit() {
     this.fetchReport();
-    this.setSelectedStep();
     this.fetchRecyclingProcesses();
-    this.initForm();
+    this.watchReport();
   }
 
   public ngOnDestroy() {
+    this.reportsActions.clearDetail();
+    this.reportProcessActions.clearDetail();
     this.componentDestroyed$.next(true);
     this.componentDestroyed$.complete();
   }
 
-  private setSelectedStep() {
-    this.router.events
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe((event) => {
-        if (event instanceof NavigationStart) {
-          const route = (event.url.split('/').slice(-1)[0]).split('?')[0];
-          [this.selectedIndex] = this.steps.reduce((acc, step, index) => step.route === route ? [
-            index,
-            step.name
-          ] : acc, []);
-        }
-      });
-  }
-
-  private initForm() {
+  private watchReport() {
     this.report$
       .pipe(
+        filter((report) => {
+          return !!report;
+        }),
         takeUntil(this.componentDestroyed$)
       )
       .subscribe((report) => {
-        this.form = this.reportFormService.initForm(report);
+        this.initForm(report);
       });
   }
 
@@ -103,15 +89,39 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         takeUntil(this.componentDestroyed$),
       )
       .subscribe(({ id }) => {
-        this.reportsActions.fetchById(id).subscribe();
+        if (id === 'new') {
+          this.initForm();
+        } else {
+          this.reportsActions.fetchById(id).subscribe();
+        }
       });
   }
 
   private fetchRecyclingProcesses() {
-    this.recyclingProcessesActions.fetchAllRecyclingProcesses()
+    this.reportProcessActions.fetchAllRecyclingProcesses()
       .pipe(
         takeUntil(this.componentDestroyed$)
       )
       .subscribe();
+  }
+
+  private initForm(report = null) {
+    this.form = this.reportFormService.initForm(report);
+
+    const control = this.form.get('information.recyclingProcess');
+
+    if (control.value) {
+      this.reportProcessActions.getById(control.value).toPromise();
+    }
+
+    control
+      .valueChanges
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+      )
+      .subscribe((id) => {
+        console.log('FETH');
+        this.reportProcessActions.getById(id).toPromise();
+      });
   }
 }

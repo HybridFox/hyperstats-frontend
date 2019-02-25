@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ReportsComponent } from './reports.component';
 
@@ -28,7 +29,8 @@ import { AssetsRepository } from '@api/assets';
     ReportsApiModule,
     FormFieldsModule,
     LoadingModule,
-    UploadModule
+    UploadModule,
+    ReactiveFormsModule,
   ],
   providers: [
     ...ReportsStoreServices,

@@ -1,0 +1,8 @@
+<div class="l-grid__row l-grid--with-margins u-margin-top">
+  <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
+    <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
+  </div>
+  <div class="l-grid__col-9-12 m-card--primary">
+    <router-outlet></router-outlet>
+  </div>
+</div>
