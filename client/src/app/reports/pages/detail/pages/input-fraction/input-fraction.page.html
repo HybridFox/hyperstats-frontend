@@ -1,6 +1,6 @@
 <div *ngIf="inputFraction">
   <app-sub-section-title
-    [title]="'WIZARD.NEW-REPORT.TITLES.INPUT-FRACTIONS' | translate"
+    [title]="(selectedProcess$ | async)?.data?.name || 'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS' | translate"
   ></app-sub-section-title>
   <div class="m-card--secondary u-margin-bottom" *ngIf="inputFraction">
     <div class="l-grid__row">

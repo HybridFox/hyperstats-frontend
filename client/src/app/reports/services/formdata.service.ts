@@ -12,22 +12,6 @@ export class FormDataService {
     private formBuilder: FormBuilder
   ) {}
 
-  // public addInputElement(): void {
-  //   this.formGroup.controls.inputFraction.controls.elements.push(this.createInputElement());
-  // }
-
-  // public addAdditive(): void {
-  //   this.formGroup.controls.additives.push(this.createAdditive());
-  // }
-
-  // public addOutputElement(): void {
-  //   this.formGroup.controls.outputFraction.push(this.createOutputElement());
-  // }
-
-  // public addRecyclingElement(): void {
-  //   this.formGroup.controls.recyclingEfficiency.push(this.createOutputElement());
-  // }
-
   public getFormData(): FormGroup {
     return this.formGroup;
   }
