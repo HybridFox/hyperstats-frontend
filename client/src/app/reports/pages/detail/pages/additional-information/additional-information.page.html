@@ -7,7 +7,7 @@
         class="u-margin-bottom-x-large"
         [multiple]="true"
         [control]="form.get('files')"
-        [response]="uploadResult | async"
+        [response]="uploadResult$ | async"
         [storedFile]="form?.value?.files?.originalname"
         (upload)=onUpload($event);
     ></app-file-upload>

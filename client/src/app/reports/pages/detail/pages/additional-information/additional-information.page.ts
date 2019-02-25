@@ -2,7 +2,8 @@ import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, AfterVie
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { FormHelper } from '@helpers/form.helper';
+import { Observable } from 'rxjs';
+
 import { AssetsRepository } from '@api/assets';
 
 import { FormDataService } from '../../../../services/formdata.service';
@@ -16,7 +17,7 @@ import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes
 })
 export class AdditionalInformationPageComponent extends StepPageAbstract implements OnInit, AfterViewInit {
   public form: any;
-  public uploadResult;
+  public uploadResult$: Observable<any>;
   public filesArray = [];
 
   constructor(
@@ -54,8 +55,8 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
     this.cdRef.detectChanges();
   }
 
-  public onUpload(filesList) {
-    this.uploadResult = this.assetsRepository.upload(filesList[0]);
+  public onUpload(filesList: FileList) {
+    this.uploadResult$ = this.assetsRepository.upload(filesList[0]);
   }
 
   public onFormReady() {}
