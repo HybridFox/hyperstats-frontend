@@ -10,8 +10,7 @@ import { groupBy } from 'ramda';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ToastrService } from 'ngx-toastr';
-import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
-import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
+import { ReportsProcessActions, ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 
 
 @Component({
