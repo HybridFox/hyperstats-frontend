@@ -44,8 +44,8 @@ export class OutputFractionPageComponent extends StepPageAbstract {
     );
   }
 
-  public handleFormChanges(changes: OutputFraction[]) {
-    this.totalWeight = changes.reduce((totalWeight, item) =>
+  public handleFormChanges(changes: any[]) {
+    this.totalWeight = changes[0].data.reduce((totalWeight, item) =>
       item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
         totalWeight + parseInt(item.mass, 10) :
         totalWeight, 0);
@@ -73,5 +73,11 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       .subscribe((params) => {
         this.setActiveStepById(params.stepId);
       });
+
+    this.formData.getFormData().get('outputFraction').valueChanges.pipe(
+      takeUntil(this.componentDestroyed$),
+    ).subscribe((value) => {
+      this.handleFormChanges(value);
+    });
   }
 }

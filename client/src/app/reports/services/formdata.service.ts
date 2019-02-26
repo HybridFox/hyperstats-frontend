@@ -52,7 +52,7 @@ export class FormDataService {
         weightInput: [pathOr(null, ['data', 'weightInput'])(inputFraction), Validators.required],
         shareOfBatteryType: [pathOr(null, ['data', 'shareOfBatteryType'])(inputFraction), Validators.required],
         weightBatteryType: [pathOr(null, ['data', 'weightBatteryType'])(inputFraction), Validators.required],
-        elements: this.getInputFractionElementsFormArray(pathOr([], ['data', 'elements'])(inputFraction)),
+        elements: this.getInputFractionElementsFormArray(pathOr(['new'], ['data', 'elements'])(inputFraction)),
         descriptionOfMethodologyShare: [pathOr('', ['data', 'descriptionOfMethodologyShare'])(inputFraction), Validators.required],
         descriptionOfMethodologyChemicalComposition: [pathOr('', ['data', 'descriptionOfMethodologyChemicalComposition'])(inputFraction), Validators.required], // tslint:disable-line
         massOfExternalJacket: [pathOr(null, ['data', 'massOfExternalJacket'])(inputFraction), Validators.required],

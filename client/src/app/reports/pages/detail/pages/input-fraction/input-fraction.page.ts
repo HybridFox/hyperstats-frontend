@@ -16,6 +16,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class InputFractionPageComponent extends StepPageAbstract implements OnInit {
   public inputFraction: FormGroup;
+  public totalWeight = 0;
 
   constructor(
     public codesService: CodesService,
@@ -40,6 +41,13 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
         formSection: 'inputFraction'
       }
     );
+  }
+
+  public handleFormChanges(changes: any[]) {
+    this.totalWeight = changes[0].data.elements.reduce((totalWeight, item) =>
+      item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
+        totalWeight + parseInt(item.mass, 10) :
+        totalWeight, 0);
   }
 
   public ngOnInit() {
@@ -68,5 +76,11 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
       .subscribe((params) => {
         this.setActiveStepById(params.stepId);
       });
+
+    this.formData.getFormData().get('inputFraction').valueChanges.pipe(
+      takeUntil(this.componentDestroyed$),
+    ).subscribe((value) => {
+      this.handleFormChanges(value);
+    });
   }
 }
