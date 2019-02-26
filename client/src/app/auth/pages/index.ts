@@ -6,6 +6,8 @@ import { RegisterPageComponent } from './register/register.page';
 export { RegisterPageComponent } from './register/register.page';
 import { ResetPasswordPageComponent } from './reset-password/reset-password.page';
 export { ResetPasswordPageComponent } from './reset-password/reset-password.page';
+import { ValidationPageComponent } from './validation/validation.page';
+export { ValidationPageComponent } from './validation/validation.page';
 import { VerificationFailedPageComponent } from './verification-failed/verification-failed.page';
 export { VerificationFailedPageComponent } from './verification-failed/verification-failed.page';
 import { VerificationSucceededPageComponent } from './verification-succeeded/verification-succeeded.page';
@@ -18,6 +20,7 @@ export const Pages = [
     LoginPageComponent,
     RegisterPageComponent,
     ResetPasswordPageComponent,
+    ValidationPageComponent,
     VerificationFailedPageComponent,
     VerificationSucceededPageComponent,
     WrapperPageComponent,

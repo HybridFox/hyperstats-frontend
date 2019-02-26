@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard, AdminGuard } from './guards';
+import { AuthGuard, AdminGuard, ValidationGuard } from './guards';
 
 import * as Pages from './pages';
 
@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, ValidationGuard],
     component: Pages.LandingPageComponent
   },
   {
@@ -36,17 +36,17 @@ const routes: Routes = [
     children: [
       {
         path: 'recycler',
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, ValidationGuard],
         loadChildren: '../recycler/recycler.module#RecyclerModule',
       },
       {
         path: 'user',
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, ValidationGuard],
         loadChildren: '../user/user.module#UserModule',
       },
       {
         path: 'admin',
-        canActivate: [AuthGuard, AdminGuard],
+        canActivate: [AuthGuard, AdminGuard, ValidationGuard],
         loadChildren: '../admin/admin.module#AdminModule',
       },
     ]
@@ -57,12 +57,12 @@ const routes: Routes = [
   },
   {
     path: 'recycler',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, ValidationGuard],
     loadChildren: '../recycler/recycler.module#RecyclerModule',
   },
   {
     path: 'admin',
-    canActivate: [AuthGuard, AdminGuard],
+    canActivate: [AuthGuard, AdminGuard, ValidationGuard],
     loadChildren: '../admin/admin.module#AdminModule',
   },
 ];

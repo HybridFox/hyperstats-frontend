@@ -179,6 +179,7 @@
 			"TITLE": ""
 		},
 		"REGISTER": {
+			"EMAIL-CONFIRMED": "",
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {

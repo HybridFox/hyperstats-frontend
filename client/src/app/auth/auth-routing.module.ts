@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import * as Pages from './pages';
+import { AuthGuard } from '../core/guards';
 
 const routes: Routes = [
     {
@@ -42,6 +43,14 @@ const routes: Routes = [
                 data: {
                     menuState: 'transparant'
                 }
+            },
+            {
+              path: 'validation',
+              component: Pages.ValidationPageComponent,
+              data: {
+                  menuState: 'transparant',
+                  hideLogo: true,
+              },
             },
             {
                 path: 'verification-succeeded',
