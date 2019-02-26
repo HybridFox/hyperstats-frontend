@@ -100,8 +100,10 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
       }
     ), {input: 0, output: 0});
 
-    const efficiency = (result.output / result.input) * 100;
-    this.efficiency = parseFloat(efficiency.toFixed(2));
+    if (result.output !== 0 && result.input !== 0) {
+      const efficiency = (result.output / result.input) * 100;
+      this.efficiency = parseFloat(efficiency.toFixed(2));
+    }
 
     this.formData
       .getFormData()
