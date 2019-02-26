@@ -55,7 +55,7 @@ const RecyclingProcessSchema = mongoose.Schema({
 		},
 		activated: {
 			type: Boolean,
-			default: false,
+			default: true,
 		},
 	},
 });

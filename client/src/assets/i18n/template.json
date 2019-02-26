@@ -307,6 +307,38 @@
 				"TITLE": ""
 			}
 		},
+		"RECYCLING-PARTNER-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"RECYCLING-PROCESS-REMOVE": {
 			"ERROR": {
 				"DESCRIPTION": "",

@@ -54,8 +54,11 @@ export class AdditivesPageComponent extends StepPageAbstract {
     }
 
     const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-
     this.additive = this.form.get(`${stepIndex}`);
+  }
+
+  public addAdditive() {
+    this.formData.addAdditive();
   }
 
   public onFormReady(): void {
