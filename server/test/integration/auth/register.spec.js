@@ -148,6 +148,9 @@ describe("Integration", () => {
 							status: {
 								type: "ACTIVATED",
 							},
+							validation: {
+								isValidated: true,
+							},
 						});
 					});
 			});

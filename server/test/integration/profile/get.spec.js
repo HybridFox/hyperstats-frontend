@@ -53,6 +53,9 @@ describe("Integration", () => {
 						status: {
 							type: "ACTIVATED",
 						},
+						validation: {
+							isValidated: true,
+						},
 						isAdmin: false,
 						email: "validuser@example.com",
 					});

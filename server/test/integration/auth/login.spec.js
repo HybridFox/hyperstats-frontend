@@ -40,6 +40,9 @@ describe("Integration", () => {
 						status: {
 							type: "ACTIVATED",
 						},
+						validation: {
+							isValidated: true,
+						},
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");

@@ -7,7 +7,7 @@ module.exports = async(req, res, next) => {
 		const user = await loginHandler(req.data.body.email, req.data.body.password);
 
 		if (user.meta.validation.isValidated) {
-			profile.set(req, user);
+			await profile.set(req, user);
 		}
 
 		res.status(200).json(profile.get(req));

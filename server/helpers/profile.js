@@ -1,4 +1,5 @@
 const {
+	dissocPath,
 	omit,
 	path,
 	compose,
@@ -43,7 +44,7 @@ module.exports.unset = async(req) => {
  * @function set Set user on session
  * @param {Object} req Express request object
  */
-const set = module.exports.set = (req, user) => {
+const set = module.exports.set = async(req, user) => {
 	req.session.profile = user;
 	req.session.safeProfile = compose(
 		when(isEmpty, always(null)),
@@ -53,10 +54,12 @@ const set = module.exports.set = (req, user) => {
 				compose(omit(["password"]), path(["session", "profile", "data"])),
 				compose(omit(["passwordReset", "deleted"]), path(["session", "profile", "meta"])),
 			]
-		)
+		),
 	)(req);
 
-	req.session.save();
+	req.session.safeProfile = dissocPath(["validation", "token"], req.session.safeProfile);
+
+	return new Promise((resolve, reject) => req.session.save((err) => err ? reject(err) : resolve()));
 };
 
 module.exports.reload = async(req) => {
