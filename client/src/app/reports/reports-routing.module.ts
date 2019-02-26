@@ -25,15 +25,33 @@ const routes: Routes = [
       },
       {
         path: 'input-fraction',
-        component: ReportSections.InputFractionPageComponent,
+        component: ReportSections.StepWrapperPageComponent,
+        children: [
+          {
+            path: ':stepId',
+            component: ReportSections.InputFractionPageComponent,
+          }
+        ]
       },
       {
         path: 'additives',
-        component: ReportSections.AdditivesPageComponent
+        component: ReportSections.StepWrapperPageComponent,
+        children: [
+          {
+            path: ':stepId',
+            component: ReportSections.AdditivesPageComponent
+          }
+        ]
       },
       {
         path: 'output-fraction',
-        component: ReportSections.OutputFractionPageComponent
+        component: ReportSections.StepWrapperPageComponent,
+        children: [
+          {
+            path: ':stepId',
+            component: ReportSections.OutputFractionPageComponent
+          }
+        ]
       },
       {
         path: 'recycling-efficiency',
@@ -56,4 +74,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ReportsRoutingModule { }
-

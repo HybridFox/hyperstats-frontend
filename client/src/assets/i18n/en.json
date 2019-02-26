@@ -42,6 +42,7 @@
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
             "DRAGANDDROP": "Drag files here or",
+            "DUPLICATE-PROCESS": "Duplicate process",
             "DUPLICATE-STEP": "Duplicate step",
             "EMAIL": "Email",
             "ENABLE": "Enable",
@@ -158,7 +159,7 @@
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
             "LABELS": {
-                "DESCRIPTION": "Choose a description for this recycling step",
+                "DESCRIPTION": "Choose a name for this recycling step",
                 "DESCRIPTION-DESCRIPTION": "This is the identifier you typically use in your organisation for this recycling step. Take something that everyone in your organisation understands",
                 "NAME": "Choose a name for this recycling process",
                 "PRECEDING-STEP": "If any, choose a preceding step",
@@ -179,6 +180,7 @@
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
+            "LOADING": "Registering",
             "VERIFY-EMAIL": "An email has been send to you"
         },
         "REPORTS": {

@@ -107,6 +107,9 @@ msgstr ""
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr ""
 
+msgid "GENERAL##LABELS##DUPLICATE-PROCESS"
+msgstr ""
+
 msgid "GENERAL##LABELS##DUPLICATE-STEP"
 msgstr ""
 
@@ -399,6 +402,9 @@ msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
+msgstr ""
+
+msgid "PAGE##REGISTER##LOADING"
 msgstr ""
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"

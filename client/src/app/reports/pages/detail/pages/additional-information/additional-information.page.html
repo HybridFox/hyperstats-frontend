@@ -3,6 +3,15 @@
     <app-sub-section-title
       [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.FILE-UPLOADS' | translate"
     ></app-sub-section-title>
+    <app-file-upload
+        class="u-margin-bottom-x-large"
+        [multiple]="true"
+        [response]="uploadResult$ | async"
+        [storedFile]="form?.value?.files?.originalname"
+        (upload)=onUpload($event);
+    ></app-file-upload>
+    Todo: multiple files
+    {{ form?.value?.files | json}}
     <app-sub-section-title
       [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
     ></app-sub-section-title>

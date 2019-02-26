@@ -82,10 +82,20 @@ describe("Integration", () => {
 										"methodOfProcessing": "methodOfProcessing 1",
 										"precedingStep": "precedingStep 1",
 										"qualitativeDescription": {
-											"asset": " qualitativeDescription asset 1",
+											"asset": {
+												"id": "",
+												"mimetype": "",
+												"uploadDate": "",
+												"originalname": "",
+											},
 											"text": "qualitativeDescription text 1",
 										},
-										"schematicOverview": "schematicOverview 1",
+										"schematicOverview": {
+											"id": "",
+											"mimetype": "",
+											"uploadDate": "",
+											"originalname": "",
+										},
 										"site": "site 1",
 									},
 								],

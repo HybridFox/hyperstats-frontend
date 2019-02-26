@@ -15,6 +15,9 @@ import { AdditionalInformationPageComponent } from './pages/additional-informati
 import { ReportPageComponent } from './report.page';
 import { FilePageComponent } from './pages/file';
 
+import { StepWrapperPageComponent } from './pages/step-wrapper/step-wrapper.page';
+export { StepWrapperPageComponent } from './pages/step-wrapper/step-wrapper.page';
+
 export const Pages = [
   NewPageComponent,
   InputFractionPageComponent,
@@ -24,6 +27,7 @@ export const Pages = [
   AdditionalInformationPageComponent,
   FilePageComponent,
   ReportPageComponent,
+  StepWrapperPageComponent,
 ];
 
 export {

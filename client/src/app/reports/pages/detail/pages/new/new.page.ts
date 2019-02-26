@@ -1,29 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { select$ } from '@angular-redux/store';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
-import { select } from '@angular-redux/store';
 import { BehaviorSubject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
 
-import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsActions } from '../../../../store/reports';
+import { mapRecyclingProcessesToOptions } from '../../../../services/select.helpers';
+import { Option } from '@ui/form-fields/components/select/select.types';
+import { FormDataService } from '../../../../services/formdata.service';
 import { StepPageAbstract } from '../step-page.abstract';
-import { ReportsProcessActions, ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
+import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store/recycling-processes';
 
 @Component({
   templateUrl: './new.page.html',
 })
 export class NewPageComponent extends StepPageAbstract implements OnInit {
-  @select(ReportsProcessSelector.list.result) private processes$: BehaviorSubject<any>;
+  @select$(ReportsProcessSelector.list.result, mapRecyclingProcessesToOptions) public processOptions$: BehaviorSubject<Option>;
 
   private processes: any;
 
   constructor(
     codesService: CodesService,
-    formData: FormDataService,
+    reportFormService: FormDataService,
     toastrService: ToastrService,
     reportProcessActions: ReportsProcessActions,
     router: Router,
@@ -32,36 +33,24 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
   ) {
     super(
       codesService,
-      formData,
+      reportFormService,
       toastrService,
       reportProcessActions,
       router,
       activatedRoute,
       reportActions,
       {
-        nextStep: 'input-fraction',
+        nextStep: ['../input-fraction'],
         formSection: 'information'
     });
   }
 
   ngOnInit() {
     super.ngOnInit();
-
-    this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
-
-    this.processes$
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe((p) => this.processes = p);
-
-    if (this.reportId && this.reportId !== 'new') {
-      this.form.get('recyclingProcess').disable();
-    }
   }
 
   public nextStep() {
-    if (this.reportId && this.reportId !== 'new') {
+    if (this.formData.reportId && this.formData.reportId !== 'new') {
       return super.nextStep();
     }
 
@@ -71,13 +60,9 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
       return this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
 
-    const reportProcessId = this.form.get('recyclingProcess').value;
-    const process = (this.processes || []).find((p) => p._id === reportProcessId);
-
-    this.formData.prepareProcessSteps(process);
 
     const data = {
-      _id: this.reportId,
+      _id: this.formData.reportId,
       data: this.formData.getFormData().getRawValue()
     };
 
@@ -85,11 +70,15 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
       .toPromise()
       .then(response => {
         if (this.options.nextStep) {
-          this.router.navigate([`/recycler/reports/${response._id}/${this.options.nextStep}`]);
+          this.router.navigate([`/recycler/reports/${response._id}/${this.options.nextStep}`], { relativeTo: this.activatedRoute });
         }
       })
       .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
   }
 
-  public onFormReady() {}
+  public onFormReady() {
+    if (this.formData.reportId && this.formData.reportId !== 'new' && this.form.get('recyclingProcess').value) {
+      this.form.get('recyclingProcess').disable();
+    }
+  }
 }
