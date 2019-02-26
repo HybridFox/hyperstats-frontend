@@ -72,4 +72,8 @@ export class ReportsProcessActions {
         }),
       );
   }
+
+  public clearDetail() {
+    this.handler.dispatch(ACTIONS.DETAIL.CLEAR);
+  }
 }

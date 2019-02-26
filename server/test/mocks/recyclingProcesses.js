@@ -6,7 +6,12 @@ module.exports = [
 				{
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 1",
-						"asset": " qualitativeDescription asset 1",
+						"asset": {
+							"id": "",
+							"mimetype": "",
+							"uploadDate": "",
+							"originalname": "",
+						},
 					},
 					"_id": "5c49bbebe9fe3f0a757f0001",
 					"uuid": "a991ec11-2ed6-4d04-a724-b8ba74b7ba7e",
@@ -14,7 +19,12 @@ module.exports = [
 					"description": "description 1",
 					"site": "site 1",
 					"methodOfProcessing": "methodOfProcessing 1",
-					"schematicOverview": "schematicOverview 1",
+					"schematicOverview": {
+						"id": "",
+						"mimetype": "",
+						"uploadDate": "",
+						"originalname": "",
+					},
 				},
 			],
 		},
@@ -32,7 +42,12 @@ module.exports = [
 				{
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 2",
-						"asset": " qualitativeDescription asset 2",
+						"asset": {
+							"id": "",
+							"mimetype": "",
+							"uploadDate": "",
+							"originalname": "",
+						},
 					},
 					"_id": "5c49bbebe9fe3f0a757f0002",
 					"uuid": "a991ec11-2ed6-4d04-a724-b8ba74b7ba7d",
@@ -40,7 +55,12 @@ module.exports = [
 					"description": "description 2",
 					"site": "site 2",
 					"methodOfProcessing": "methodOfProcessing 2",
-					"schematicOverview": "schematicOverview 2",
+					"schematicOverview": {
+						"id": "",
+						"mimetype": "",
+						"uploadDate": "",
+						"originalname": "",
+					},
 				},
 			],
 		},
@@ -58,7 +78,12 @@ module.exports = [
 				{
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 3",
-						"asset": " qualitativeDescription asset 3",
+						"asset": {
+							"id": "",
+							"mimetype": "",
+							"uploadDate": "",
+							"originalname": "",
+						},
 					},
 					"uuid": "a991ec11-2ed6-4d04-a724-b8ba74b7ba7f",
 					"_id": "5c49bbebe9fe3f0a757f0003",
@@ -66,7 +91,12 @@ module.exports = [
 					"description": "description 3",
 					"site": "site 3",
 					"methodOfProcessing": "methodOfProcessing 3",
-					"schematicOverview": "schematicOverview 3",
+					"schematicOverview": {
+						"id": "",
+						"mimetype": "",
+						"uploadDate": "",
+						"originalname": "",
+					},
 				},
 			],
 		},
@@ -84,7 +114,12 @@ module.exports = [
 				{
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 4",
-						"asset": " qualitativeDescription asset 4",
+						"asset": {
+							"id": "",
+							"mimetype": "",
+							"uploadDate": "",
+							"originalname": "",
+						},
 					},
 					"uuid": "a991ec11-2ed6-4d04-a724-b8ba74b7ba7g",
 					"_id": "5c49bbebe9fe3f0a757f0004",
@@ -92,7 +127,12 @@ module.exports = [
 					"description": "description 4",
 					"site": "site 4",
 					"methodOfProcessing": "methodOfProcessing 4",
-					"schematicOverview": "schematicOverview 4",
+					"schematicOverview": {
+						"id": "",
+						"mimetype": "",
+						"uploadDate": "",
+						"originalname": "",
+					},
 				},
 			],
 		},

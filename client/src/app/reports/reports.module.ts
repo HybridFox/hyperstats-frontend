@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ReportsComponent } from './reports.component';
 
@@ -17,6 +18,8 @@ import { Pages } from './pages';
 import { ReportsServices } from './services';
 import { LoadingModule } from '@ui/loading';
 import { Components } from './components';
+import { UploadModule } from '@ui/upload';
+import { AssetsRepository } from '@api/assets';
 
 @NgModule({
   imports: [
@@ -26,10 +29,13 @@ import { Components } from './components';
     ReportsApiModule,
     FormFieldsModule,
     LoadingModule,
+    UploadModule,
+    ReactiveFormsModule,
   ],
   providers: [
     ...ReportsStoreServices,
     ...ReportsServices,
+    AssetsRepository
   ],
   declarations: [
     Pages,

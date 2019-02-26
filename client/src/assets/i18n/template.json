@@ -42,6 +42,7 @@
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
+			"DUPLICATE-PROCESS": "",
 			"DUPLICATE-STEP": "",
 			"EMAIL": "",
 			"ENABLE": "",
@@ -180,6 +181,7 @@
 		},
 		"REGISTER": {
 			"EMAIL-CONFIRMED": "",
+			"LOADING": "",
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {

@@ -1,0 +1,22 @@
+<div class="m-file-upload__action u-margin-bottom">
+    <input
+        #filesInput
+        type="file"
+        class="m-file-upload__input"
+        (change)="onSelect($event)"
+    >
+    <div *ngIf="!multiple; then singleFile else dragAndDrop"></div>
+    <ng-template #singleFile>
+        <div class="m-file-upload--single-file">
+            <i class="a-icon--upload"></i>
+            <span (click)="filesInput.click()" class="m-file-upload__upload">Upload attachment</span>
+            <label *ngIf="label" for="file" class="m-file-upload__label">{{ label }}</label>
+        </div>
+    </ng-template>
+
+    <ng-template #dragAndDrop>
+        <div class="m-file-upload--drag-and-drop">
+            <p>{{ 'GENERAL.LABELS.DRAGANDDROP' | translate }} <a (click)="filesInput.click()" class="m-file-upload__upload">{{ 'GENERAL.LABELS.BROWSE' | translate }}</a></p>
+        </div>
+    </ng-template>
+</div>

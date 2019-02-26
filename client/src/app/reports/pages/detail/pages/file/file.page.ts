@@ -33,7 +33,7 @@ export class FilePageComponent extends StepPageAbstract {
       activatedRoute,
       reportActions,
       {
-        prevStep: 'additional-information',
+        prevStep: ['../additional-information'],
       }
     );
   }
@@ -42,7 +42,7 @@ export class FilePageComponent extends StepPageAbstract {
 
   public save() {
     const data = {
-      _id: this.reportId,
+      _id: this.formData.reportId,
       data: this.form.getRawValue(),
     };
 
@@ -56,7 +56,7 @@ export class FilePageComponent extends StepPageAbstract {
 
   public file() {
     const data = {
-      _id: this.reportId,
+      _id: this.formData.reportId,
       data: this.form.getRawValue(),
     };
 
