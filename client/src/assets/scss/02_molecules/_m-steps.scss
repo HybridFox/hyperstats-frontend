@@ -17,6 +17,11 @@
                 color: $zodiac;
                 font-weight: bold;
             }
+
+            .m-steps__step-icon {
+              color: $white;
+              background: $zodiac;
+            }
         }
 
         &:not(:first-of-type)::after {
@@ -40,11 +45,6 @@
             justify-content: center;
             align-items: center;
             font-weight: bold;
-
-            &.m-steps__step-icon--selected {
-                color: $white;
-                background: $zodiac;
-            }
 
             &.m-steps__step-icon--passed {
                 color: $white;
