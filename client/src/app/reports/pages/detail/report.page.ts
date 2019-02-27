@@ -68,18 +68,6 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     this.fetchReport();
     this.fetchRecyclingProcesses();
     this.watchReport();
-
-    if (this.form) {
-
-      this.form.valueChanges
-        .pipe(
-          takeUntil(this.componentDestroyed$),
-        )
-        .subscribe((form) => {
-          console.log(form);
-          console.log(form.inputFraction);
-        });
-    }
   }
 
   public ngOnDestroy() {
