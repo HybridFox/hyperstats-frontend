@@ -15,7 +15,7 @@
                 <td>{{ user?.data.firstname }}</td>
                 <td>{{ user?.data.lastname }}</td>
                 <td>{{ user?.data.email }}</td>
-                <td>{{ user?.data.company }}</td>
+                <td>{{ user?.data?.company?.data?.name }}</td>
                 <td class="a-table__cell--center">
                     <span *ngIf="!user?.meta?.isAdmin" class="fa fa-circle-o"></span>
                     <span *ngIf="user?.meta?.isAdmin" class="fa fa-dot-circle-o"></span>

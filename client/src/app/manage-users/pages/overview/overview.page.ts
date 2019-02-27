@@ -11,7 +11,6 @@ import { UserSelector } from '../../store/users/selectors';
 import { UserType } from '../../store/users/types';
 import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
-import { UserCompanySelector } from '../../store/companies/selectors';
 import { UserCompanyActions } from '../../store/companies/actions';
 
 @Component({
@@ -19,11 +18,9 @@ import { UserCompanyActions } from '../../store/companies/actions';
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(UserSelector.overview.result) public users$: Observable<any>;
-    @select(UserCompanySelector.list.result) public companies$: Observable<any>;
     @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
 
     public filter: FormGroup;
-    public companiesList: any[];
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -67,13 +64,6 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                     }
                 });
             });
-
-        this.companies$.subscribe(companies => {
-          if (companies) {
-            this.companiesList = companies;
-          }
-          this.setUserCompany();
-        });
     }
 
     public ngOnDestroy() {
@@ -121,20 +111,5 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 });
             })),
         });
-    }
-
-    public setUserCompany() {
-      this.users$.subscribe(u => {
-        if (!u || !this.companiesList) {
-          return;
-        }
-        u.map(user => {
-          this.companiesList.forEach(comp => {
-            if (comp._id === user.data.company) {
-              user.data.company = comp.data.name;
-            }
-          });
-        });
-      });
     }
 }
