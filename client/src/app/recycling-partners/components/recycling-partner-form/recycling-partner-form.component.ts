@@ -37,7 +37,6 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
     }
 
     public saveForm() {
-      console.log(this.recyclingPartnerForm);
         if (this.recyclingPartnerForm.invalid) {
             return;
         }
