@@ -79,7 +79,7 @@
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
-            "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
+            "INVALID_FORM": "The form is invalid, make sure you have filled all the fields"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -414,7 +414,7 @@
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
-                "ADDITIONAL-INFORMATION": "Addition information",
+                "ADDITIONAL-INFORMATION": "Additional information",
                 "FILE-UPLOADS": "File uploads"
             }
         },

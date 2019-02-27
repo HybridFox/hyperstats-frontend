@@ -20,31 +20,38 @@ export class ReportPageComponent implements OnInit, OnDestroy {
   public steps: Step[] = [
     {
       name: 'WIZARD.TITLES.NEW-REPORT',
-      route: 'information'
+      route: 'information',
+      key: 'information',
     },
     {
       name: 'WIZARD.TITLES.INPUT-FRACTION',
-      route: 'input-fraction'
+      route: 'input-fraction',
+      key: 'inputFraction',
     },
     {
       name: 'WIZARD.TITLES.ADDITIVES',
-      route: 'additives'
+      route: 'additives',
+      key: 'additives',
     },
     {
       name: 'WIZARD.TITLES.OUTPUT-FRACTION',
-      route: 'output-fraction'
+      route: 'output-fraction',
+      key: 'outputFraction',
     },
     {
       name: 'WIZARD.TITLES.RECYCLING-EFFICIENCY',
-      route: 'recycling-efficiency'
+      route: 'recycling-efficiency',
+      key: 'recyclingEfficiency',
     },
     {
       name: 'WIZARD.TITLES.ADDITIONAL-INFORMATION',
-      route: 'additional-information'
+      route: 'additional-information',
+      key: 'additionalInformation',
     },
     {
       name: 'WIZARD.TITLES.FILE-REPORT',
-      route: 'file-report'
+      route: 'file-report',
+      key: ''
     },
   ];
 
@@ -61,6 +68,18 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     this.fetchReport();
     this.fetchRecyclingProcesses();
     this.watchReport();
+
+    if (this.form) {
+
+      this.form.valueChanges
+        .pipe(
+          takeUntil(this.componentDestroyed$),
+        )
+        .subscribe((form) => {
+          console.log(form);
+          console.log(form.inputFraction);
+        });
+    }
   }
 
   public ngOnDestroy() {

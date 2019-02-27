@@ -10,7 +10,6 @@ import { StepPageAbstract } from '../step-page.abstract';
 import { ToastrService } from 'ngx-toastr';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 
-
 @Component({
   templateUrl: './recycling-efficiency.page.html',
 })

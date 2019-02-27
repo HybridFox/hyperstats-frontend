@@ -806,7 +806,7 @@ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr "Recycling Partners"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Addition information"
+msgstr "Additional information"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"
