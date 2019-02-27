@@ -114,6 +114,9 @@ msgstr "Disable"
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
 
+msgid "GENERAL##LABELS##DUPLICATE-PROCESS"
+msgstr "Duplicate process"
+
 msgid "GENERAL##LABELS##DUPLICATE-STEP"
 msgstr "Duplicate step"
 
@@ -415,7 +418,7 @@ msgstr ""
 "information regarding the recycling process."
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
-msgstr "Choose a description for this recycling step"
+msgstr "Choose a name for this recycling step"
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
 msgstr ""
@@ -469,6 +472,9 @@ msgstr "Recycling Step {{ key }}"
 
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr "Recycling Processes"
+
+msgid "PAGE##REGISTER##LOADING"
+msgstr "Registering"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr "An email has been send to you"

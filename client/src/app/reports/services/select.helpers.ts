@@ -50,11 +50,9 @@ export const mapToSiteMenuItems = (obs$: Observable<any>) => {
       }),
       map((process: any[]) => {
         return pathOr([], ['data', 'steps'], process).map((step): MenuItem => ({
-          link: ['./'],
-          queryParams: { step: step.uuid },
+          link: ['./', step.uuid],
           label: step.description,
         }));
       })
     );
 };
-
