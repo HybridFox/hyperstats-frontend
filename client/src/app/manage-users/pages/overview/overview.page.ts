@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { select, select$ } from '@angular-redux/store';
-import { Observable, Subject, combineLatest } from 'rxjs';
+import { select } from '@angular-redux/store';
+import { Observable, Subject } from 'rxjs';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntil, map } from 'rxjs/operators';
@@ -13,7 +13,6 @@ import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
 import { UserCompanySelector } from '../../store/companies/selectors';
 import { UserCompanyActions } from '../../store/companies/actions';
-import { company } from '@core/schemas';
 
 @Component({
     templateUrl: './overview.page.html',

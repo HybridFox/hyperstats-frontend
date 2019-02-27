@@ -3,7 +3,6 @@ export const OVERVIEW = 'OVERVIEW';
 export const DETAIL = 'DETAIL';
 
 export const OVERVIEW_ACTIONS = {
-    FETCH_ALL: `${MODULE}/${OVERVIEW}/FETCH_ALL`,
     FETCH: `${MODULE}/${OVERVIEW}/FETCH`,
     CLEAR: `${MODULE}/${OVERVIEW}/CLEAR`,
     ADD_TO_LIST: `${MODULE}/${OVERVIEW}/ADD_TO_LIST`,
