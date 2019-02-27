@@ -44,6 +44,8 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
 
   public ngOnInit() {
     super.ngOnInit();
+
+    console.log(this.formData);
   }
 
   public addElement() {
@@ -61,6 +63,8 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
   }
 
   public onFormReady(): void {
+    console.log(this.formData);
+
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),

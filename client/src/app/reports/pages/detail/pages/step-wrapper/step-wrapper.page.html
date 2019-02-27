@@ -1,12 +1,21 @@
-<div class="l-grid__row l-grid--with-margins u-margin-top">
-  <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
-    <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
+<div class="u-margin-top">
+  <div *ngIf="!(process$ | async)" class="m-card--primary">
+      <div class="p-report__no-process">
+          <app-section-title
+            [title]="'WIZARD.NO-PROCESS' | translate"
+          ></app-section-title>
+          <img class="p-report__visual" src="/assets/images/choose.svg" alt="Choose image" >
+      </div>
   </div>
-  <div class="l-grid__col-9-12 m-card--primary">
-    <app-section-title
-      [title]="title$ | async | translate"
-    ></app-section-title>
-
-    <router-outlet></router-outlet>
-  </div>
+  <ng-container *ngIf="process$ | async">
+      <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
+          <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
+        </div>
+        <div class="l-grid__col-9-12 m-card--primary">
+          <app-section-title
+            [title]="title$ | async | translate"
+          ></app-section-title>
+          <router-outlet></router-outlet>
+        </div>
+  </ng-container>
 </div>
