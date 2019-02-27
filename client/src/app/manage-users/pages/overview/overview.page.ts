@@ -13,6 +13,7 @@ import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
 import { UserCompanySelector } from '../../store/companies/selectors';
 import { UserCompanyActions } from '../../store/companies/actions';
+import { company } from '@core/schemas';
 
 @Component({
     templateUrl: './overview.page.html',
@@ -23,6 +24,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
 
     public filter: FormGroup;
+    public companiesList: any[];
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -37,7 +39,6 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     public ngOnInit() {
         this.setFilterForm();
-        this.setUserCompany();
 
         this.route.queryParams
             .pipe(
@@ -67,6 +68,13 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                     }
                 });
             });
+
+        this.companies$.subscribe(companies => {
+          if (companies) {
+            this.companiesList = companies;
+          }
+          this.setUserCompany();
+        });
     }
 
     public ngOnDestroy() {
@@ -118,19 +126,16 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     public setUserCompany() {
       this.users$.subscribe(u => {
-        if (u) {
-          u.map( user => {
-            this.companies$.subscribe(c => {
-              if (c) {
-                c.map (company => {
-                  if (user.data.company === company._id) {
-                    user.data.company = company.data.name;
-                  }
-                });
-              }
-            });
-          });
+        if (!u || !this.companiesList) {
+          return;
         }
+        u.map(user => {
+          this.companiesList.forEach(comp => {
+            if (comp._id === user.data.company) {
+              user.data.company = comp.data.name;
+            }
+          });
+        });
       });
     }
 }
