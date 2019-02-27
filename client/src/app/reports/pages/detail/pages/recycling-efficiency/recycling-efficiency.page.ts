@@ -100,7 +100,6 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
 
     if (result.output !== 0 && result.input !== 0) {
       const efficiency = (result.output / result.input) * 100;
-      console.log(this.form);
       this.formData
         .getFormData()
         .get('recyclingEfficiency.calculatedEfficiency')
