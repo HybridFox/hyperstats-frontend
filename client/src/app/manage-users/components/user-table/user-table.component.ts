@@ -6,4 +6,5 @@ import { Component, Input } from '@angular/core';
 })
 export class UserTableComponent {
     @Input() public users: any[];
+    @Input() public companies: any[];
 }

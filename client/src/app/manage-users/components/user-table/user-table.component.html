@@ -5,6 +5,7 @@
                 <th>{{ "GENERAL.LABELS.FIRSTNAME" | translate }}</th>
                 <th>{{ "GENERAL.LABELS.LASTNAME" | translate }}</th>
                 <th>{{ "GENERAL.LABELS.EMAIL" | translate }}</th>
+                <th>{{ "GENERAL.LABELS.COMPANY" | translate }}</th>
                 <th class="a-table__cell--center">{{ "GENERAL.LABELS.ADMIN" | translate }}</th>
                 <th></th>
             </tr>
@@ -14,6 +15,7 @@
                 <td>{{ user?.data.firstname }}</td>
                 <td>{{ user?.data.lastname }}</td>
                 <td>{{ user?.data.email }}</td>
+                <td>{{ user?.data.company }}</td>
                 <td class="a-table__cell--center">
                     <span *ngIf="!user?.meta?.isAdmin" class="fa fa-circle-o"></span>
                     <span *ngIf="user?.meta?.isAdmin" class="fa fa-dot-circle-o"></span>

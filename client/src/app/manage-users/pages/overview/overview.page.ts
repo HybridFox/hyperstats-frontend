@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { select } from '@angular-redux/store';
-import { Observable, Subject } from 'rxjs';
+import { select, select$ } from '@angular-redux/store';
+import { Observable, Subject, combineLatest } from 'rxjs';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { takeUntil, map } from 'rxjs/operators';
@@ -11,12 +11,15 @@ import { UserSelector } from '../../store/users/selectors';
 import { UserType } from '../../store/users/types';
 import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
+import { UserCompanySelector } from '../../store/companies/selectors';
+import { UserCompanyActions } from '../../store/companies/actions';
 
 @Component({
     templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(UserSelector.overview.result) public users$: Observable<any>;
+    @select(UserCompanySelector.list.result) public companies$: Observable<any>;
     @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
 
     public filter: FormGroup;
@@ -25,6 +28,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     constructor(
         private usersActions: UsersActions,
+        private userCompanyActions: UserCompanyActions,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
@@ -33,6 +37,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     public ngOnInit() {
         this.setFilterForm();
+        this.setUserCompany();
 
         this.route.queryParams
             .pipe(
@@ -41,6 +46,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             .subscribe((params) => {
                 const types = pathOr(0, ['types', 'length'])(params) > 0 ? params.types : null;
                 this.usersActions.fetchByTypes(types, params.admin === 'true').toPromise();
+                this.userCompanyActions.fetchUserCompanies().toPromise();
             });
 
         this.filter.valueChanges
@@ -108,5 +114,23 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 });
             })),
         });
+    }
+
+    public setUserCompany() {
+      this.users$.subscribe(u => {
+        if (u) {
+          u.map( user => {
+            this.companies$.subscribe(c => {
+              if (c) {
+                c.map (company => {
+                  if (user.data.company === company._id) {
+                    user.data.company = company.data.name;
+                  }
+                });
+              }
+            });
+          });
+        }
+      });
     }
 }

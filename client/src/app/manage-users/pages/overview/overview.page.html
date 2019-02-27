@@ -24,7 +24,7 @@
     <div class="l-grid__col-8-12">
         <div class="m-card--primary u-margin-bottom-large">
             <app-loading [loading]="loading$ | async">
-                <app-user-table *ngIf="users$ | async" [users]="users$ | async"></app-user-table>
+                <app-user-table *ngIf="users$ | async" [users]="users$ | async" [companies]="companies$ | async"></app-user-table>
             </app-loading>
         </div>
     </div>
