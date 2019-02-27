@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { select, select$ } from '@angular-redux/store';
 import { mapRecyclingProcessesToMenuItemsWithAll } from '../../services/select.helpers';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { ActivatedRoute } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     templateUrl: './reports.page.html',
@@ -18,6 +19,8 @@ export class ReportsPageComponent implements OnInit {
         mapRecyclingProcessesToMenuItemsWithAll
     ) public menuItems$: Observable<MenuItem>;
 
+    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+
     constructor(
         private reportsActions: ReportsActions,
         private reportsProcessActions: ReportsProcessActions,
@@ -25,10 +28,13 @@ export class ReportsPageComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-      this.activatedRoute.queryParams.subscribe(params => {
-        const id = params['recyclingProcess'];
-        this.reportsActions.fetchAll(id).toPromise();
-      });
+      this.activatedRoute.queryParams
+        .pipe(
+          takeUntil(this.componentDestroyed$)
+        )
+        .subscribe(params => {
+          this.reportsActions.fetchAll(params.recyclingProcess).toPromise();
+        });
 
       this.reportsProcessActions.fetchAllRecyclingProcesses().toPromise();
     }
