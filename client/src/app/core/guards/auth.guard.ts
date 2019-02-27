@@ -10,9 +10,7 @@ const handle = (obs$) => {
             filter((user: any) => {
                 return !user || user.loading === false;
             }),
-            map((user: any) => {
-              return !!user.result;
-            }),
+            map((user: any) => !!user.result),
         );
 };
 

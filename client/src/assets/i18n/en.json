@@ -79,7 +79,7 @@
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
-            "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
+            "INVALID_FORM": "The form is invalid, make sure you have filled all the fields"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -113,6 +113,13 @@
             "SECTION-1": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing",
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
+        },
+        "ACCESS-DENIED": {
+            "DEACTIVATED": {
+                "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
+                "TITLE": "Admin is reviewing your signup request."
+            },
+            "TITLE": "Access denied"
         },
         "ADMIN": {
             "FILTERS": "Filters:"
@@ -180,7 +187,6 @@
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
-            "EMAIL-CONFIRMED": "Email confirmed! Signup request send to admin.",
             "LOADING": "Registering",
             "VERIFY-EMAIL": "An email has been send to you"
         },

@@ -18,7 +18,7 @@ describe("profile", () => {
 		},
 		meta: {
 			validation: {
-				isValidated: true,
+				isValidated: false,
 				token: "someToken",
 			},
 			passwordReset: {
@@ -52,9 +52,6 @@ describe("profile", () => {
 		expect(req.session.safeProfile).to.deep.equal({
 			firstname: "fname",
 			isAdmin: true,
-			validation: {
-				isValidated: true,
-			},
 		});
 	});
 
@@ -65,9 +62,6 @@ describe("profile", () => {
 		expect(result).to.deep.equal({
 			firstname: "fname",
 			isAdmin: true,
-			validation: {
-				isValidated: true,
-			},
 		});
 	});
 
@@ -85,9 +79,6 @@ describe("profile", () => {
 		expect(req.session.safeProfile).to.deep.equal({
 			firstname: "fname",
 			isAdmin: true,
-			validation: {
-				isValidated: true,
-			},
 		});
 
 		profile.unset(req);

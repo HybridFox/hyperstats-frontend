@@ -114,6 +114,13 @@
 			"SECTION-2": "",
 			"TITLE": ""
 		},
+		"ACCESS-DENIED": {
+			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"ADMIN": {
 			"FILTERS": ""
 		},
@@ -180,7 +187,6 @@
 			"TITLE": ""
 		},
 		"REGISTER": {
-			"EMAIL-CONFIRMED": "",
 			"LOADING": "",
 			"VERIFY-EMAIL": ""
 		},

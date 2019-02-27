@@ -28,6 +28,11 @@ const routes: Routes = [
         path: 'terms-and-conditions',
         component: Pages.TermsAndConditionsPageComponent
       },
+      {
+        path: 'validation',
+        canActivate: [AuthGuard],
+        component: Pages.ValidationPageComponent,
+      },
     ]
   },
   {

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-02-25T11:57:42.718Z\n"
-"PO-Revision-Date: 2019-02-25T11:57:42.719Z\n"
+"POT-Creation-Date: 2019-02-27T09:25:59.383Z\n"
+"PO-Revision-Date: 2019-02-27T09:25:59.384Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -293,6 +293,15 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr ""
 
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##TITLE"
+msgstr ""
+
 msgid "PAGE##ADMIN##FILTERS"
 msgstr ""
 
@@ -402,9 +411,6 @@ msgid "PAGE##RECYCLING-PROCESSES##RECYCLING-STEP"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
-msgstr ""
-
-msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
 msgstr ""
 
 msgid "PAGE##REGISTER##LOADING"
