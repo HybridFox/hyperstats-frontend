@@ -55,7 +55,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     },
   ];
 
-  private  componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   constructor(
     public reportFormService: FormDataService,
