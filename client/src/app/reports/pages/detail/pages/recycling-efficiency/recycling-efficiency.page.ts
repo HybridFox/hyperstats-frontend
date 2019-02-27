@@ -10,14 +10,12 @@ import { StepPageAbstract } from '../step-page.abstract';
 import { ToastrService } from 'ngx-toastr';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 
-
 @Component({
   templateUrl: './recycling-efficiency.page.html',
 })
 export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
   public form: any;
   public types: any;
-  public efficiency: number;
 
   constructor(
     codesService: CodesService,
@@ -102,12 +100,11 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
 
     if (result.output !== 0 && result.input !== 0) {
       const efficiency = (result.output / result.input) * 100;
-      this.efficiency = parseFloat(efficiency.toFixed(2));
+      console.log(this.form);
+      this.formData
+        .getFormData()
+        .get('recyclingEfficiency.calculatedEfficiency')
+        .setValue(parseFloat(efficiency.toFixed(2)));
     }
-
-    this.formData
-      .getFormData()
-      .get('recyclingEfficiency.calculatedEfficiency')
-      .setValue(this.efficiency);
   }
 }

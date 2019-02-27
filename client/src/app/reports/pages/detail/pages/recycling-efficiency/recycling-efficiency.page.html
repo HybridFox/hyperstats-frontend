@@ -31,8 +31,7 @@
     ></app-sub-section-title>
     <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-4-12">
-            <p *ngIf='efficiency'>{{ efficiency }}%</p>
-            <p *ngIf='!efficiency'>0%</p>
+            <p>{{formData.getFormData().get('recyclingEfficiency.calculatedEfficiency').value || 0 }}%</p>
         </div>
     </div>
     <div class="u-margin-top-large">
