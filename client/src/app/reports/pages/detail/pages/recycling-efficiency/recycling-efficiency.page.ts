@@ -2,18 +2,22 @@ import { Component } from '@angular/core';
 import { FormDataService } from '../../../../services/formdata.service';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { select } from '@angular-redux/store';
+import { BehaviorSubject } from 'rxjs';
 
 import { ElementType } from './recycling-efficiency.types';
 import { groupBy } from 'ramda';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ToastrService } from 'ngx-toastr';
-import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+import { ReportsProcessActions, ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 
 @Component({
   templateUrl: './recycling-efficiency.page.html',
 })
 export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
+  @select(ReportsProcessSelector.detail.result) public selectedProcess$: BehaviorSubject<any>;
+
   public form: any;
   public types: any;
   public efficiency: number;
