@@ -97,7 +97,7 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
                 function: [value.contactPerson.function, Validators.required],
                 phone: [value.contactPerson.phone, Validators.required],
                 mobile: [value.contactPerson.mobile, Validators.required],
-                email: [value.contactPerson.email, Validators.required],
+                email: [value.contactPerson.email, [Validators.required, Validators.email]],
             })
         });
     }

@@ -148,7 +148,7 @@
         },
         "PROXIES": {
             "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
-            "TITLE": "Your proxies"
+            "TITLE": "{{ name }} proxies"
         },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
@@ -217,7 +217,7 @@
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
-                "DESCRIPTION": "An email has ben sent to the user requesting a password reset.",
+                "DESCRIPTION": "An email has been sent to the user requesting a password reset.",
                 "TITLE": "Password reset requested"
             }
         },

@@ -6,7 +6,7 @@
         >
             <div action>
                 <button
-                    *ngIf="!!recyclingProcess?._id"
+                    *ngIf="!!recyclingProcess?._id && !isDuplicate"
                     class="a-button--link"
                     (click)="duplicateProcess()">
                     {{ 'GENERAL.LABELS.DUPLICATE-PROCESS' | translate }}
@@ -88,20 +88,21 @@
                 {{ 'GENERAL.LABELS.SAVE' | translate }}
             </button>
             <button
-                *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id"
+                *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
                 class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
                 (click)="toggleActivationForm()">
                 {{ 'GENERAL.LABELS.DISABLE' | translate }}
             </button>
             <button
-                *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id"
+                *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
                 class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
                 (click)="toggleActivationForm()">
                 {{ 'GENERAL.LABELS.ENABLE' | translate }}
             </button>
-            <button *ngIf="!!recyclingProcess?._id" class="a-button--danger has-icon-after u-pull-right u-text-uppercase" (click)="removeForm()">
-                {{ 'GENERAL.LABELS.REMOVE' | translate }}
-            </button>
+            <app-delete-button
+                *ngIf="!!recyclingProcess?._id && !isDuplicate"
+                (deleteFunction)="removeForm()"
+            ></app-delete-button>
         </div>
     </div>
 </div>

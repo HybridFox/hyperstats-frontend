@@ -394,7 +394,7 @@ msgstr ""
 "reporting year and recycling process"
 
 msgid "PAGE##PROXIES##TITLE"
-msgstr "Your proxies"
+msgstr "{{ name }} proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
@@ -537,7 +537,7 @@ msgid "Recycling Partner"
 msgstr "Recycling Partner"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "An email has ben sent to the user requesting a password reset."
+msgstr "An email has been sent to the user requesting a password reset."
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"

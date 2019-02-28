@@ -6,7 +6,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormArray } from '@angular/forms';
 
 import { FormDataService } from '../../../../services/formdata.service';
-import { OutputFraction } from '../../../../store/reports/types';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
@@ -17,7 +16,6 @@ import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes
 export class OutputFractionPageComponent extends StepPageAbstract {
   public activeStepIndex = 0;
   public outputFraction: FormGroup;
-  public totalWeight = 0;
 
   constructor(
     public codesService: CodesService,
@@ -42,13 +40,6 @@ export class OutputFractionPageComponent extends StepPageAbstract {
         formSection: 'outputFraction'
       }
     );
-  }
-
-  public handleFormChanges(changes: OutputFraction[]) {
-    this.totalWeight = changes.reduce((totalWeight, item) =>
-      item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
-        totalWeight + parseInt(item.mass, 10) :
-        totalWeight, 0);
   }
 
   public addElement() {

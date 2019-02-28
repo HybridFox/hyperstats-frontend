@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 import { ApiConfigService } from '@api/config.service';
+
+import { ReportsType } from './reports.types';
 
 @Injectable()
 export class ReportsRepository {
@@ -11,10 +12,13 @@ export class ReportsRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchAll(): Observable<any> {
+  public fetchAll(filters: ReportsType): Observable<any> {
     const url = this.apiConfig.baseUrl('/reports');
 
-    return this.http.get(url);
+    const options = filters.processId ?
+      { params: new HttpParams().set('recycling-process', filters.processId) } : {};
+
+    return this.http.get(url, options);
   }
 
   public fetchById(id: string): Observable<any> {
