@@ -7,11 +7,11 @@ module.exports = (type, includeAdmin = false) => {
 	const isAdmin = !!includeAdmin && includeAdmin !== "false";
 	const matchQuery = includeAdmin ? {
 		$or: [
-			{ "_company.meta.type": typeQuery },
+			{ "data.company.meta.type": typeQuery },
 			{ "meta.isAdmin": isAdmin },
 		],
 	} : {
-		"_company.meta.type": typeQuery,
+		"data.company.meta.type": typeQuery,
 		"meta.isAdmin": isAdmin,
 	};
 
@@ -24,13 +24,17 @@ module.exports = (type, includeAdmin = false) => {
 			from: "companies",
 			localField: "data.company",
 			foreignField: "_id",
-			as: "_company",
+			as: "data.company",
 		},
 	}, {
 		$project: {
-			data: "$$ROOT.data",
+			data: {
+				firstname: "$$ROOT.data.firstname",
+				lastname: "$$ROOT.data.lastname",
+				email: "$$ROOT.data.email",
+				company: { $arrayElemAt: ["$data.company", 0] },
+			},
 			meta: "$$ROOT.meta",
-			_company: { $arrayElemAt: ["$_company", 0] },
 		},
 	}, {
 		$match: matchQuery,
