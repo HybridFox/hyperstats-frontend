@@ -26,7 +26,7 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
   @Input() class?: string;
   @Input() disabled = false;
   @Input() control: FormControl = new FormControl('');
-  @Input() form: FormArray;
+  @Input() form: FormArray = new FormArray([]);
 
   public percentage = 0;
 
