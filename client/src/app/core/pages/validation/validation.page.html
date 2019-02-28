@@ -4,7 +4,7 @@
           [title]="'PAGE.ACCESS-DENIED.TITLE' | translate"
       ></app-page-title>
       <div class="m-card--primary">
-          <div *ngIf="type === 'DEACTIVATED'">
+          <div *ngIf="(user$ | async)?.status?.type === 'DEACTIVATED'">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.DEACTIVATED.TITLE' | translate"
             ></app-section-title>

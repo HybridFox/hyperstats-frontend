@@ -30,11 +30,7 @@ export class ValidationGuard implements CanActivate {
       return this.isValidated$
             .pipe(
                 map((user) => {
-                  if (user !== 'ACTIVATED') {
-                    return false;
-                  } else {
-                    return true;
-                  }
+                  return user === 'ACTIVATED';
                 }),
                 tap((res) => {
                     if (!res) {
