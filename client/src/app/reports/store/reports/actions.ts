@@ -18,10 +18,10 @@ export class ReportsActions {
     private reportsRepository: ReportsRepository,
   ) {}
 
-  public fetchAll(id): Observable<any> {
+  public fetchAll(filters: any): Observable<any> {
     this.handler.dispatchStart(ACTIONS.LIST.FETCH);
 
-    return this.reportsRepository.fetchAll(id)
+    return this.reportsRepository.fetchAll(filters)
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.LIST.FETCH, {

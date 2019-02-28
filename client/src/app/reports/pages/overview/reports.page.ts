@@ -33,7 +33,9 @@ export class ReportsPageComponent implements OnInit {
           takeUntil(this.componentDestroyed$)
         )
         .subscribe(params => {
-          this.reportsActions.fetchAll(params.recyclingProcess).toPromise();
+          this.reportsActions.fetchAll({
+            processId: params.recyclingProcess
+          }).toPromise();
         });
 
       this.reportsProcessActions.fetchAllRecyclingProcesses().toPromise();
