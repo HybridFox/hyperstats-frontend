@@ -9,8 +9,6 @@ import { omit, prop, pathOr } from 'ramda';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
-import { select } from '@angular-redux/store';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -20,10 +18,10 @@ import { Observable } from 'rxjs';
 })
 
 export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
-    @select(['auth', 'user', 'result']) public user$: Observable<any>;
     @Input() public recyclingProcess: any;
     @Input() public recyclingPartners: any;
     @Input() public uploadResponse: any;
+    @Input() public user: any;
 
     @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
@@ -50,13 +48,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
     public ngOnChanges(changes: SimpleChanges) {
         if (this.recyclingPartners && changes.recyclingPartners) {
-          this.user$.subscribe(user => {
-            const ownCompany = {
-              value: user.company._id,
-              label: user.company.data.name,
-            };
-            this.recyclingPartners.unshift(ownCompany);
-          });
+          const ownCompany = {
+            value: this.user.company._id,
+            label: this.user.company.data.name,
+          };
+          this.recyclingPartners.unshift(ownCompany);
         }
         if (changes.recyclingProcess) {
             this.recyclingProcessForm = this.formBuilder.group({
