@@ -13,8 +13,6 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/uti
 })
 
 export class FilePageComponent extends StepPageAbstract {
-  public form: any;
-
   constructor(
     codesService: CodesService,
     formData: FormDataService,
@@ -43,7 +41,7 @@ export class FilePageComponent extends StepPageAbstract {
   public save() {
     const data = {
       _id: this.formData.reportId,
-      data: this.form.getRawValue(),
+      data: this.formData.formGroup.getRawValue(),
     };
 
     let promise: Promise<any>;
@@ -57,7 +55,7 @@ export class FilePageComponent extends StepPageAbstract {
   public file() {
     const data = {
       _id: this.formData.reportId,
-      data: this.form.getRawValue(),
+      data: this.formData.formGroup.getRawValue(),
     };
 
     this.reportActions.file(data)
