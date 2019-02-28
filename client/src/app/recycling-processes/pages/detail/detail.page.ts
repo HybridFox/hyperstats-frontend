@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { select, select$ } from '@angular-redux/store';
 import { prop, pathOr, equals } from 'ramda';
-import { Observable, Subscription, Subject } from 'rxjs';
+import { Observable, Subscription, Subject, of } from 'rxjs';
 import { filter, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
@@ -195,5 +195,23 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 [fileObject.input]: this.assetsRepository.upload(fileObject.fileList[0])
             })
         });
+    }
+
+    public onRemoveFile(fileObject) {
+      const emptyObject = of({
+        progress: '',
+        result: {
+          id: '',
+          mimetype: '',
+          uploadDate: '',
+          originalname: '',
+        },
+        originalname: '',
+      });
+      this.uploadResults = Object.assign({}, this.uploadResults, {
+        [fileObject.stepIndex]: Object.assign({}, this.uploadResults ? this.uploadResults[fileObject.stepIndex] : {}, {
+            [fileObject.input]: emptyObject,
+        })
+      });
     }
 }

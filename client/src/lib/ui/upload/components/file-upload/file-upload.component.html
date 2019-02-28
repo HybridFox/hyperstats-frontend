@@ -9,6 +9,7 @@
     *ngIf="response?.originalname && !storedFile"
     [progress]="response?.progress"
     [name]="response?.originalname"
+    (removeFile)="onRemoveFile($event)"
 ></app-upload-preview>
 
 <div>

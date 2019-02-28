@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { registerContentQuery } from '@angular/core/src/render3';
 
 @Component({
     selector: 'app-file-upload',
@@ -12,6 +13,7 @@ export class FileUploadComponent implements OnChanges {
     @Input() public storedFile: string;
     @Input() public multiple: boolean;
     @Output() public upload: EventEmitter<FileList> = new EventEmitter<FileList>();
+    @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     public updateValue = (_: any) => {};
 
@@ -30,4 +32,8 @@ export class FileUploadComponent implements OnChanges {
     public onSelect(fileList: FileList) {
         this.upload.emit(fileList);
     }
+
+    public onRemoveFile() {
+      this.removeFile.emit();
+  }
 }

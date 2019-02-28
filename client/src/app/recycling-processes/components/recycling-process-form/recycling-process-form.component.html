@@ -68,6 +68,7 @@
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
                 [storedFile]="recyclingProcess?.data?.steps[index]?.qualitativeDescription?.asset?.originalname"
                 (upload)="onUpload($event, index, 'ASSET')"
+                (removeFile)="onRemoveFile(index, 'ASSET')"
             ></app-file-upload>
             <p class="m-file-upload__title">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}</p>
             <p class="m-file-upload__description">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
@@ -77,6 +78,7 @@
                 [response]="(uploadResponse ? uploadResponse[index]?.SCHEMATIC : null) | async"
                 [storedFile]="recyclingProcess?.data?.steps[index]?.schematicOverview?.originalname"
                 (upload)="onUpload($event, index, 'SCHEMATIC')"
+                (removeFile)="onRemoveFile(index, 'SCHEMATIC')"
             ></app-file-upload>
         </div>
         <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">
