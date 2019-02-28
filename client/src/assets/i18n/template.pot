@@ -293,6 +293,15 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr ""
 
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##TITLE"
+msgstr ""
+
 msgid "PAGE##ADMIN##FILTERS"
 msgstr ""
 

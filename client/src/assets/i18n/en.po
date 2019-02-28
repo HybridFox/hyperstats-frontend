@@ -335,6 +335,17 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr ""
+"Your account needs to be activated by an admin before you can enter. Your "
+"signup request is being reviewed."
+
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr "Admin is reviewing your signup request."
+
+msgid "PAGE##ACCESS-DENIED##TITLE"
+msgstr "Access denied"
+
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
 
@@ -1008,6 +1019,9 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#~ msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
+#~ msgstr "Email confirmed! Signup request send to admin."
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"

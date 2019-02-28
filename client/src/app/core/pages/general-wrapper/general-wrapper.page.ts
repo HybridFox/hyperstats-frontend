@@ -3,6 +3,7 @@ import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
 
 import { AuthActions } from '@store/auth/auth.actions';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './general-wrapper.page.html',
@@ -12,9 +13,14 @@ export class GeneralWrapperPageComponent {
 
   constructor (
     private authActions: AuthActions,
+    private router: Router,
   ) {}
 
   public onLogout() {
-    this.authActions.logout().toPromise();
+    this.authActions.logout()
+      .toPromise()
+      .then(() => {
+        this.router.navigate(['/', 'auth']);
+      });
   }
 }

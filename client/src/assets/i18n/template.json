@@ -114,6 +114,13 @@
 			"SECTION-2": "",
 			"TITLE": ""
 		},
+		"ACCESS-DENIED": {
+			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"ADMIN": {
 			"FILTERS": ""
 		},
