@@ -25,6 +25,12 @@ export class InputFractionFormComponent implements OnChanges {
     }, 10);
   }
 
+  public addElement() {
+    const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.siteRef);
+    (this.inputFractionsForm.controls[stepIndex].get('data.elements') as FormArray)
+      .push(this.formData.getInputFractionElementFormGroup(null));
+  }
+
   private setActiveStepById() {
     const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.siteRef);
     if (stepIndex !== -1) {

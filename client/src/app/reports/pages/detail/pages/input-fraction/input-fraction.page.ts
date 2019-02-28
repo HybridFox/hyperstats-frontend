@@ -15,8 +15,6 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './input-fraction.page.html',
 })
 export class InputFractionPageComponent extends StepPageAbstract implements OnInit {
-  public inputFraction: FormGroup;
-
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
@@ -44,10 +42,6 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
 
   public ngOnInit() {
     super.ngOnInit();
-  }
-
-  public addElement() {
-    (this.inputFraction.get('data.elements') as FormArray).push(this.formData.getInputFractionElementFormGroup(null));
   }
 
   public onFormReady(): void {
