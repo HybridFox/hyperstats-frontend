@@ -34,7 +34,6 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
 
     public ngOnChanges() {
         this.buildForm(prop('data')(this.recyclingPartner));
-        this.isActivated = pathOr(false, ['meta', 'activated'])( this.recyclingPartner);
     }
 
     public saveForm() {
@@ -60,13 +59,7 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
     }
 
     public toggleActivationForm() {
-        if (this.isActivated === true) {
-            this.isActivated = false;
-        } else {
-            this.isActivated = true;
-        }
-
-        this.toggleActivation.emit({id: this.recyclingPartner._id, isActivated: this.isActivated});
+        this.toggleActivation.emit(this.recyclingPartner._id);
     }
 
     private buildForm(value = {
@@ -104,7 +97,7 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
                 function: [value.contactPerson.function, Validators.required],
                 phone: [value.contactPerson.phone, Validators.required],
                 mobile: [value.contactPerson.mobile, Validators.required],
-                email: [value.contactPerson.email, Validators.required],
+                email: [value.contactPerson.email, [Validators.required, Validators.email]],
             })
         });
     }

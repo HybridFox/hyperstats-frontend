@@ -11,8 +11,11 @@ import { RecylingProcessesServices } from './store';
 
 import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
+import { UploadModule } from '@ui/upload';
+import { AssetsApiModule } from '@api/assets';
 
 import { Pages } from './pages';
+import { Components } from './components';
 import { RecyclingPartnersModule } from '../recycling-partners/recycling-partners.module';
 import { RecyclingProcessesApiModule } from '@api/recycling-processes';
 
@@ -23,7 +26,9 @@ import { RecyclingProcessesApiModule } from '@api/recycling-processes';
     SharedModule,
     ReportsApiModule,
     FormFieldsModule,
+    UploadModule,
     RecyclingPartnersModule,
+    AssetsApiModule,
     RecyclingProcessesApiModule,
   ],
   providers: [
@@ -31,6 +36,7 @@ import { RecyclingProcessesApiModule } from '@api/recycling-processes';
   ],
   declarations: [
     Pages,
+    Components
   ],
 })
 export class RecyclingProcessesModule {

@@ -71,6 +71,10 @@ export class ReportsActions {
       );
   }
 
+  public clearDetail() {
+    this.handler.dispatch(ACTIONS.DETAIL.CLEAR);
+  }
+
   public createDrafted(report: any): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(

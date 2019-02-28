@@ -24,12 +24,33 @@ const RecyclingStepSchema = mongoose.Schema({
 			type: String,
 		},
 		asset: {
-			type: String,
-
+			id: {
+				type: String,
+			},
+			mimetype: {
+				type: String,
+			},
+			uploadDate: {
+				type: String,
+			},
+			originalname: {
+				type: String,
+			},
 		},
 	},
 	schematicOverview: {
-		type: String,
+		id: {
+			type: String,
+		},
+		mimetype: {
+			type: String,
+		},
+		uploadDate: {
+			type: String,
+		},
+		originalname: {
+			type: String,
+		},
 	},
 });
 

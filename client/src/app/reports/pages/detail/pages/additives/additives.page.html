@@ -1,39 +1,34 @@
-<div class="l-grid__row l-grid--with-margins u-margin-top">
-  <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
-    <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
-  </div>
-  <div class="l-grid__col-9-12 m-card--primary" *ngIf="additive">
-    <app-sub-section-title
-      class="u-margin-bottom"
-      [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
-    ></app-sub-section-title>
-    <div class="m-card--secondary u-margin-bottom">
-      <div class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-5-12">
-          <app-select-input
-            [label]="'WIZARD.ADDITIVES.LABELS.TYPE' | translate"
-            [control]="additive.get('data.type')"
-            [options]="codesService.elements()"
-          ></app-select-input>
-        </div>
-        <div class="l-grid__col-7-12">
-          <app-text-input
-            [label]="'WIZARD.ADDITIVES.LABELS.WEIGHT' | translate"
-            [control]="additive.get('data.weight')"
-            type="number"
-            suffix="kg"
-          ></app-text-input>
-        </div>
+<div *ngIf="additive">
+  <app-sub-section-title
+    class="u-margin-bottom"
+    [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
+  ></app-sub-section-title>
+  <div class="m-card--secondary u-margin-bottom">
+    <div class="l-grid__row l-grid--with-margins">
+      <div class="l-grid__col-5-12">
+        <app-select-input
+          [label]="'WIZARD.ADDITIVES.LABELS.TYPE' | translate"
+          [control]="additive.get('data.type')"
+          [options]="codesService.elements()"
+        ></app-select-input>
+      </div>
+      <div class="l-grid__col-7-12">
+        <app-text-input
+          [label]="'WIZARD.ADDITIVES.LABELS.WEIGHT' | translate"
+          [control]="additive.get('data.weight')"
+          type="number"
+          suffix="kg"
+        ></app-text-input>
       </div>
     </div>
-    <a
-      class="a-button--primary a-button-outline has-icon-after"
-      (click)="addAdditive()">
-        {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
-    </a>
-    <div class="u-margin-top-large">
-      <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
-      <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
-    </div>
+  </div>
+  <a
+    class="a-button--primary a-button-outline has-icon-after"
+    (click)="addAdditive()">
+      {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
+  </a>
+  <div class="u-margin-top-large">
+    <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+    <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
   </div>
 </div>

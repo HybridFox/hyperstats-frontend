@@ -1,0 +1,108 @@
+<div class="m-card--primary u-margin-bottom-large">
+    <div *ngIf="recyclingProcessForm">
+        <app-section-title
+            [title]="recyclingProcessForm.get('name').value"
+            class="u-margin-bottom"
+        >
+            <div action>
+                <button
+                    *ngIf="!!recyclingProcess?._id && !isDuplicate"
+                    class="a-button--link"
+                    (click)="duplicateProcess()">
+                    {{ 'GENERAL.LABELS.DUPLICATE-PROCESS' | translate }}
+                </button>
+            </div>
+        </app-section-title>
+        <app-text-input
+            [label]="'PAGE.RECYCLING-PROCESSES.LABELS.NAME' | translate"
+            [control]="recyclingProcessForm.get('name')"
+            class="u-margin-bottom-x-large"
+        ></app-text-input>
+        <div class="m-card--secondary u-margin-bottom-x-large">
+            <p class="u-no-margin u-margin-bottom"><b>{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-TITLE' | translate }}</b></p>
+            <p class="u-no-margin">{{ 'PAGE.RECYCLING-PROCESSES.PROCESS-DESCRIPTION' | translate }}</p>
+        </div>
+        <div *ngFor="let step of recyclingProcessForm.controls.steps.controls | keyvalue; let index = index">
+            <app-sub-section-title
+                [title]="step.value.get('description').value || ('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{ key: getStepKey(step.key) })"
+                class="u-margin-bottom-large"
+            >
+                <div action>
+                    <button class="a-button--link a-button--small" (click)="deleteStep(step.key)">{{ 'GENERAL.LABELS.DELETE-STEP' | translate }}</button>
+                    <button class="a-button--link a-button--small" (click)="duplicateStep(step.key)">{{ 'GENERAL.LABELS.DUPLICATE-STEP' | translate }}</button>
+                </div>
+            </app-sub-section-title>
+            <app-select-input
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PRECEDING-STEP' | translate"
+                [control]="step.value.get('precedingStep')"
+                [options]="precedingSteps(step)"
+                class="u-margin-bottom-x-large"
+            ></app-select-input>
+            <app-text-input
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.DESCRIPTION' | translate"
+                [description]="'PAGE.RECYCLING-PROCESSES.LABELS.DESCRIPTION-DESCRIPTION' | translate"
+                [control]="step.value.get('description')"
+                class="u-margin-bottom-x-large"
+            ></app-text-input>
+            <app-select-input
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.RECYCLING-SITE-OWNER' | translate"
+                [control]="step.value.get('site')"
+                [options]="(recyclingPartners)"
+                class="u-margin-bottom-large"
+            ></app-select-input>
+            <app-select-input
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.PROCESSING-METHOD' | translate"
+                [control]="step.value.get('methodOfProcessing')"
+                [options]="methodsOfProcessing"
+                class="u-margin-bottom-x-large"
+            ></app-select-input>
+            <app-textarea-input
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION' | translate"
+                [description]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION-DESCRIPTION' | translate"
+                [control]="step.value.get('qualitativeDescription').get('text')"
+            ></app-textarea-input>
+            <app-file-upload
+                class="u-margin-bottom-x-large"
+                [control]="step.value.get('qualitativeDescription.asset')"
+                [response]="(uploadResponse ? uploadResponse[index]?.ASSET : null) | async"
+                [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
+                [storedFile]="recyclingProcess?.data?.steps[index]?.qualitativeDescription?.asset?.originalname"
+                (upload)="onUpload($event, index, 'ASSET')"
+            ></app-file-upload>
+            <p class="m-file-upload__title">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}</p>
+            <p class="m-file-upload__description">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
+            <app-file-upload
+                class="u-margin-bottom-x-large"
+                [control]="step.value.get('schematicOverview')"
+                [response]="(uploadResponse ? uploadResponse[index]?.SCHEMATIC : null) | async"
+                [storedFile]="recyclingProcess?.data?.steps[index]?.schematicOverview?.originalname"
+                (upload)="onUpload($event, index, 'SCHEMATIC')"
+            ></app-file-upload>
+        </div>
+        <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">
+            {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' | translate }}
+        </button>
+        <app-sub-section-title class="u-margin-top-large"></app-sub-section-title>
+        <div class="u-margin-top-large">
+            <button class="a-button--primary has-icon-after u-margin-right" (click)="saveForm()">
+                {{ 'GENERAL.LABELS.SAVE' | translate }}
+            </button>
+            <button
+                *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
+                class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()">
+                {{ 'GENERAL.LABELS.DISABLE' | translate }}
+            </button>
+            <button
+                *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
+                class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
+                (click)="toggleActivationForm()">
+                {{ 'GENERAL.LABELS.ENABLE' | translate }}
+            </button>
+            <app-delete-button
+                *ngIf="!!recyclingProcess?._id && !isDuplicate"
+                (deleteFunction)="removeForm()"
+            ></app-delete-button>
+        </div>
+    </div>
+</div>

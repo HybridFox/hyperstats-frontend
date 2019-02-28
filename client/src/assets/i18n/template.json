@@ -42,6 +42,7 @@
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
+			"DUPLICATE-PROCESS": "",
 			"DUPLICATE-STEP": "",
 			"EMAIL": "",
 			"ENABLE": "",
@@ -179,6 +180,7 @@
 			"TITLE": ""
 		},
 		"REGISTER": {
+			"LOADING": "",
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {
@@ -297,6 +299,38 @@
 			}
 		},
 		"PROFILE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

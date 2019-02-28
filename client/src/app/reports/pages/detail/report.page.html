@@ -1,17 +1,16 @@
 <div class="u-margin-bottom-x-large">
   <app-page-title
-    [title]="currentTitle | translate"
+    [title]="(form?.get('information').value?.name || 'WIZARD.TITLES.NEW-REPORT') | translate"
   ></app-page-title>
   <div class="m-card--primary u-margin-top">
-    <pre *ngIf="data?.value" style="display: none;">{{ data.value | json }}</pre>
     <div class="m-card">
       <div class="m-steps">
-        <div class="m-steps__step" *ngFor="let step of steps; let i = index;" [ngClass]="{'m-steps__step--selected': i === selectedIndex}">
+        <div class="m-steps__step" *ngFor="let step of steps; let i = index;" routerLinkActive="m-steps__step--selected">
           <a [routerLink]="step.route">
-            <div *ngIf="selectedIndex <= i" class="m-steps__step-icon" [ngClass]="{'m-steps__step-icon--selected': i === selectedIndex}">
+            <div *ngIf="!this.form?.valid" class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
-            <div *ngIf="selectedIndex > i" class="m-steps__step-icon m-steps__step-icon--passed">
+            <div *ngIf="this.form?.valid" class="m-steps__step-icon m-steps__step-icon--passed">
               <span class="a-icon a-icon--checkmark"></span>
             </div>
             <div class="m-steps__step-text">
@@ -22,5 +21,5 @@
       </div>
     </div>
   </div>
-  <router-outlet></router-outlet>
+  <router-outlet *ngIf="form"></router-outlet>
 </div>
