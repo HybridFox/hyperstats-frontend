@@ -23,7 +23,7 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
     protected toastrService: ToastrService,
     protected reportProcessActions: ReportsProcessActions,
     protected router: Router,
-    protected route: ActivatedRoute,
+    public route: ActivatedRoute,
     protected reportActions: ReportsActions,
   ) {
     super(
@@ -61,12 +61,12 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
   }
 
   public onFormReady(): void {
-    this.route.params
-      .pipe(
-        takeUntil(this.componentDestroyed$),
-      )
-      .subscribe((params) => {
-        this.setActiveStepById(params.stepId);
-      });
+    // this.route.params
+    //   .pipe(
+    //     takeUntil(this.componentDestroyed$),
+    //   )
+    //   .subscribe((params) => {
+    //     this.setActiveStepById(params.stepId);
+    //   });
   }
 }
