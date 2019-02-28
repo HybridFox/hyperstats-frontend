@@ -41,7 +41,7 @@ export class FilePageComponent extends StepPageAbstract {
   public save() {
     const data = {
       _id: this.formData.reportId,
-      data: this.formData.formGroup.getRawValue(),
+      data: this.formData.getFormData().value,
     };
 
     let promise: Promise<any>;
@@ -55,7 +55,7 @@ export class FilePageComponent extends StepPageAbstract {
   public file() {
     const data = {
       _id: this.formData.reportId,
-      data: this.formData.formGroup.getRawValue(),
+      data: this.formData.getFormData().value,
     };
 
     this.reportActions.file(data)
