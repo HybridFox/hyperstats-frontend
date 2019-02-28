@@ -79,7 +79,7 @@
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
-            "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
+            "INVALID_FORM": "The form is invalid, make sure you have filled all the fields"
         },
         "MENU": {
             "ABOUT": "About us",
@@ -217,7 +217,7 @@
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
-                "DESCRIPTION": "An email has ben sent to the user requesting a password reset.",
+                "DESCRIPTION": "An email has been sent to the user requesting a password reset.",
                 "TITLE": "Password reset requested"
             }
         },

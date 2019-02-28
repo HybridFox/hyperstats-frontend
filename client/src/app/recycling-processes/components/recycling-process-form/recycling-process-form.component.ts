@@ -35,6 +35,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
     public recyclingProcessId: string;
     public isActivated: boolean;
+    public isDuplicate: boolean;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -59,7 +60,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         if (this.recyclingProcessForm.invalid) {
             return;
         }
-
+        this.isDuplicate = false;
         this.submit.emit(this.recyclingProcessForm);
     }
 
@@ -77,6 +78,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     }
 
     public duplicateProcess() {
+        this.isDuplicate = true;
         this.duplicate.emit(this.recyclingProcess._id);
     }
 
