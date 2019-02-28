@@ -185,7 +185,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         this.uploadOverview.emit(file);
     }
 
-    validateFormFields(formGroup: FormGroup) {
+    public validateFormFields(formGroup: FormGroup) {
       Object.keys(formGroup.controls).forEach(field => {
         const control = formGroup.get(field);
         if (control instanceof FormArray) {

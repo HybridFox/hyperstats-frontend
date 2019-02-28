@@ -103,7 +103,7 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
         });
     }
 
-    validateFormFields(formGroup: FormGroup) {
+    public validateFormFields(formGroup: FormGroup) {
       Object.keys(formGroup.controls).forEach(field => {
         const control = formGroup.get(field);
         if (control instanceof FormControl) {
