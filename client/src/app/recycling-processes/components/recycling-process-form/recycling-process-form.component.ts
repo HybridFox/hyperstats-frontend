@@ -58,6 +58,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
     public saveForm() {
         if (this.recyclingProcessForm.invalid) {
+            this.validateFormFields(this.recyclingProcessForm);
             return;
         }
         this.isDuplicate = false;
@@ -182,5 +183,27 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
             type: 'overview'
         };
         this.uploadOverview.emit(file);
+    }
+
+    validateFormFields(formGroup: FormGroup) {
+      Object.keys(formGroup.controls).forEach(field => {
+        const control = formGroup.get(field);
+        if (control instanceof FormArray) {
+          for (const step of control.controls) {
+            if (step instanceof FormControl) {
+              step.markAsDirty({
+                onlySelf: true
+              });
+            }
+            if (step instanceof FormGroup) {
+              this.validateFormFields(step);
+            }
+          }
+        } else if (control instanceof FormControl) {
+          control.markAsDirty({ onlySelf: true });
+        } else if (control instanceof FormGroup) {
+          this.validateFormFields(control);
+        }
+      });
     }
 }
