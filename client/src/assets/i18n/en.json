@@ -148,7 +148,7 @@
         },
         "PROXIES": {
             "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
-            "TITLE": "Your proxies"
+            "TITLE": "{{ name }} proxies"
         },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
