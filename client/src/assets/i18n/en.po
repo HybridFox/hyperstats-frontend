@@ -394,7 +394,7 @@ msgstr ""
 "reporting year and recycling process"
 
 msgid "PAGE##PROXIES##TITLE"
-msgstr "Your proxies"
+msgstr "{{ name }} proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
