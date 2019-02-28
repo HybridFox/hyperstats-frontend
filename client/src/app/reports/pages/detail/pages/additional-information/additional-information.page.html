@@ -9,9 +9,8 @@
         [response]="uploadResult$ | async"
         [storedFile]="form?.value?.files?.originalname"
         (upload)=onUpload($event);
+        [control]="form.get('files')"
     ></app-file-upload>
-    Todo: multiple files
-    {{ form?.value?.files | json}}
     <app-sub-section-title
       [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
     ></app-sub-section-title>
