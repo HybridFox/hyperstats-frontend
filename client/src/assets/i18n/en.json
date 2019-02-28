@@ -114,6 +114,13 @@
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
         },
+        "ACCESS-DENIED": {
+            "DEACTIVATED": {
+                "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
+                "TITLE": "Admin is reviewing your signup request."
+            },
+            "TITLE": "Access denied"
+        },
         "ADMIN": {
             "FILTERS": "Filters:"
         },

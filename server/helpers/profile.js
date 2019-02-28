@@ -53,7 +53,7 @@ const set = module.exports.set = (req, user) => {
 				compose(omit(["password"]), path(["session", "profile", "data"])),
 				compose(omit(["validation", "passwordReset", "deleted"]), path(["session", "profile", "meta"])),
 			]
-		)
+		),
 	)(req);
 
 	req.session.save();
