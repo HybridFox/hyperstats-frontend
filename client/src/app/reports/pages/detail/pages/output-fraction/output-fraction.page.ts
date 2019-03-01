@@ -46,8 +46,13 @@ export class OutputFractionPageComponent extends StepPageAbstract {
     (this.outputFraction.get('data') as FormArray).push(this.formData.getOutputFractionElementFormGroup(null));
   }
 
+  public removeElement(fraction: any, elementNumber: number) {
+    (fraction.parent as FormArray).removeAt(elementNumber);
+  }
+
   private setActiveStepById(stepId: string) {
     const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    this.activeStepIndex = stepIndex;
     if (stepIndex !== -1) {
       this.outputFraction = this.form.get(`${stepIndex}`) as FormGroup;
     } else {
