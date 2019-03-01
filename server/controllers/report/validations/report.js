@@ -93,14 +93,14 @@ const filedData = {
 	})),
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
-		data: joi.object().keys({
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().required(),
 			weight: joi.number().required(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
 				weight: joi.number().required(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
