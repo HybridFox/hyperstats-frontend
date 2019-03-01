@@ -492,6 +492,7 @@
                 "INPUT-FRACTIONS": "General information"
             }
         },
+        "NO-PROCESS": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
             "DESCRIPTIONS": {
                 "OF-ELEMENT": "Of the element/compound",
