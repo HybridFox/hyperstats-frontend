@@ -13,10 +13,10 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td>Khad Y. added Pilar G. to the Customer Support Group</td>
-                  <td>2016/09/07 at 7:56 pm</td>
-                  <td>Khad Young</td>
+              <tr *ngFor="let log of logs">
+                  <td>{{ log.activity }}</td>
+                  <td>{{ log.date }}</td>
+                  <td>{{ log.user }}</td>
               </tr>
           </tbody>
       </table>
