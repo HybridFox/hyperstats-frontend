@@ -1,4 +1,4 @@
-<div class="u-margin-bottom-x-large">
+<div class="p-report u-margin-bottom-x-large">
   <app-page-title
     [title]="(form?.get('information').value?.name || 'WIZARD.TITLES.NEW-REPORT') | translate"
   ></app-page-title>
@@ -7,12 +7,14 @@
       <div class="m-steps">
         <div class="m-steps__step" *ngFor="let step of steps; let i = index;" routerLinkActive="m-steps__step--selected">
           <a [routerLink]="step.route">
-            <div *ngIf="!this.form?.valid" class="m-steps__step-icon">
+            <div *ngIf="!this.form?.get(step.key)?.valid || this.form?.get(step.key).value.length === 0; else itemValid" class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
-            <div *ngIf="this.form?.valid" class="m-steps__step-icon m-steps__step-icon--passed">
-              <span class="a-icon a-icon--checkmark"></span>
-            </div>
+            <ng-template #itemValid>
+                <div class="m-steps__step-icon m-steps__step-icon--passed">
+                  <span class="a-icon a-icon--checkmark"></span>
+                </div>
+            </ng-template>
             <div class="m-steps__step-text">
               {{ step.name | translate }}
             </div>

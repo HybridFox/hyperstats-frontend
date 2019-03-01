@@ -1,6 +1,7 @@
 export interface Step {
     name: string;
     route: string;
+    key: string;
 }
 
 export interface Information {
