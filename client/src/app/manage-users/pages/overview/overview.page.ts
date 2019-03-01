@@ -94,6 +94,13 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 selected: types.indexOf(CompanyType.CO) !== -1
             }
         ], originalParams.admin === 'true');
+
+        this.router.navigate([], {
+          queryParams: {
+              types: types,
+              admin: originalParams.admin
+          },
+      });
     }
 
     private createFilterForm(types, isAdmin) {
