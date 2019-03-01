@@ -28,7 +28,7 @@
                 class="u-margin-bottom-large"
             >
                 <div action>
-                    <button class="a-button--link a-button--small" (click)="deleteStep(step.key)">{{ 'GENERAL.LABELS.DELETE-STEP' | translate }}</button>
+                    <button *ngIf="recyclingProcessForm.controls.steps.controls.length > 1" class="a-button--link a-button--small" (click)="deleteStep(step.key)">{{ 'GENERAL.LABELS.DELETE-STEP' | translate }}</button>
                     <button class="a-button--link a-button--small" (click)="duplicateStep(step.key)">{{ 'GENERAL.LABELS.DUPLICATE-STEP' | translate }}</button>
                 </div>
             </app-sub-section-title>
