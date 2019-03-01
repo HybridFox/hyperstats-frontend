@@ -193,6 +193,7 @@
 		"REPORTS": {
 			"DRAFT": "",
 			"FILED": "",
+			"NOREPORTS": "",
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
@@ -461,7 +462,6 @@
 				"PACKAGING-CASING": "",
 				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
-				"SHARE-INPUT-FRACTION": "",
 				"WEIGHT-BATTERY": "",
 				"WEIGHT-INPUT-FRACTION": ""
 			},
