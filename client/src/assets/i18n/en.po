@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-01T14:04:14.677Z\n"
+"POT-Creation-Date: 2019-03-01T16:04:33.332Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -52,6 +52,9 @@ msgstr "Active"
 
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr "Active"
+
+msgid "GENERAL##LABELS##ACTIVITY"
+msgstr "Activity"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
@@ -104,6 +107,9 @@ msgstr "Confirm password"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
+
+msgid "GENERAL##LABELS##DATE"
+msgstr "Date"
 
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr "Delete step"
@@ -230,6 +236,11 @@ msgstr "Zipcode"
 msgid "GENERAL##MENU##ABOUT"
 msgstr "About us"
 
+#, fuzzy
+#| msgid "GENERAL##MENU##AUDITTRIAL"
+msgid "GENERAL##MENU##AUDITTRAIL"
+msgstr "Audit Trial"
+
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
@@ -348,6 +359,9 @@ msgstr "Access denied"
 
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
+
+msgid "PAGE##AUDITTRAIL##TITLE"
+msgstr "Audit Trail"
 
 #, fuzzy
 #| msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
@@ -1019,20 +1033,6 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
-
-#~ msgid "GENERAL##LABELS##ACTIVITY"
-#~ msgstr "Activity"
-
-#~ msgid "GENERAL##LABELS##DATE"
-#~ msgstr "Date"
-
-#, fuzzy
-#~| msgid "GENERAL##MENU##AUDITTRIAL"
-#~ msgid "GENERAL##MENU##AUDITTRAIL"
-#~ msgstr "Audit Trial"
-
-#~ msgid "PAGE##AUDITTRAIL##TITLE"
-#~ msgstr "Audit Trail"
 
 #~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 #~ msgstr "Share of input fraction (%)"
