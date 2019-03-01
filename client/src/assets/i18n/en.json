@@ -23,6 +23,7 @@
         "LABELS": {
             "ACTIVATED": "Active",
             "ACTIVE": "Active",
+            "ACTIVITY": "Activity",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-COMPANY": "Company",
             "ADD-PROXY": "Add proxy",
@@ -39,6 +40,7 @@
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
+            "DATE": "Date",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
             "DRAGANDDROP": "Drag files here or",
@@ -83,6 +85,7 @@
         },
         "MENU": {
             "ABOUT": "About us",
+            "AUDITTRAIL": "Audit Trial",
             "AUDITTRIAL": "Audit Trial",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
@@ -116,6 +119,9 @@
         },
         "ADMIN": {
             "FILTERS": "Filters:"
+        },
+        "AUDITTRAIL": {
+            "TITLE": "Audit Trail"
         },
         "COMPANY": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
