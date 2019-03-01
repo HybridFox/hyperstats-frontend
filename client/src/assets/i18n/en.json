@@ -116,10 +116,10 @@
         },
         "ACCESS-DENIED": {
             "DEACTIVATED": {
-                "DESCRIPTION": "Choose a name for this recycling step",
-                "TITLE": "Contact"
+                "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
+                "TITLE": "Admin is reviewing your signup request."
             },
-            "TITLE": "Manage companies"
+            "TITLE": "Access denied"
         },
         "ADMIN": {
             "FILTERS": "Filters:"
@@ -422,7 +422,7 @@
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
-                "ADDITIONAL-INFORMATION": "Addition information",
+                "ADDITIONAL-INFORMATION": "Additional information",
                 "FILE-UPLOADS": "File uploads"
             }
         },
