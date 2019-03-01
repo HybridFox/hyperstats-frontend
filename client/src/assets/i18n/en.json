@@ -12,6 +12,7 @@
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
+            "DELETE": "Delete",
             "GOTOAPP": "Go to app",
             "SAVE": "Save"
         },
@@ -461,7 +462,6 @@
                 "PACKAGING-CASING": "Packaging material / outer casing",
                 "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
-                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
                 "WEIGHT-INPUT-FRACTION": "Weight input fraction"
             },

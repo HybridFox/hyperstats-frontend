@@ -81,7 +81,7 @@
         [options]="elements"
       ></app-select-input>
     </div>
-    <div class="l-grid__col-8-12">
+    <div class="l-grid__col-7-12">
       <app-mass-input
         suffix="kg"
         type="number"
@@ -89,6 +89,14 @@
         [control]="element.get('mass')"
         [form]="form.get('data.elements')"
     ></app-mass-input>
+    </div>
+    <div class="l-grid__col-1-12">
+        <button
+          class="u-margin-top-large a-button--link a-button--small"
+          (click)="removeElement(i)"
+        >
+          {{ 'GENERAL.BUTTONS.DELETE' | translate }}
+        </button>
     </div>
   </div>
   <button

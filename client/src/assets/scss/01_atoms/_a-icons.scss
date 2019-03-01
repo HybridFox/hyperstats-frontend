@@ -66,11 +66,19 @@
         content: "\e905";
     }
 }
+
 .a-icon--plus {
     @extend .a-icon;
     &::before {
         content: "\e906";
     }
+}
+
+.a-icon--min {
+  @extend .a-icon;
+  &::before {
+      content: "\e906";
+  }
 }
 
 .a-icon--upload {
