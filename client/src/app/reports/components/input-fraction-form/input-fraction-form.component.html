@@ -73,30 +73,34 @@
     class="u-margin-top-x-large"
     [title]="'WIZARD.INPUT-FRACTION.TITLES.ELEMENTS-COMPONENTS' | translate"
   ></app-sub-section-title>
-  <div class="l-grid__row l-grid--with-margins u-margin-top" *ngFor="let element of form.get('data.elements').controls; let i = index">
-    <div class="l-grid__col-4-12">
-      <app-select-input
-        [label]="'WIZARD.INPUT-FRACTION.LABELS.ELEMENTS' | translate"
-        [control]="element.get('element')"
-        [options]="elements"
-      ></app-select-input>
+  <div *ngFor="let element of form.get('data.elements').controls; let i = index">
+    <div class="l-grid__row l-grid--with-margins u-margin-top-large">
+        <div class="l-grid__col-4-12">
+            <app-select-input
+              [label]="'WIZARD.INPUT-FRACTION.LABELS.ELEMENTS' | translate"
+              [control]="element.get('element')"
+              [options]="elements"
+            ></app-select-input>
+          </div>
+          <div class="l-grid__col-8-12">
+            <app-mass-input
+              suffix="kg"
+              type="number"
+              [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
+              [control]="element.get('mass')"
+              [form]="form.get('data.elements')"
+          ></app-mass-input>
+          </div>
     </div>
-    <div class="l-grid__col-7-12">
-      <app-mass-input
-        suffix="kg"
-        type="number"
-        [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
-        [control]="element.get('mass')"
-        [form]="form.get('data.elements')"
-    ></app-mass-input>
-    </div>
-    <div class="l-grid__col-1-12">
-        <button
-          class="u-margin-top-large a-button--link a-button--small"
-          (click)="removeElement(i)"
-        >
-          {{ 'GENERAL.BUTTONS.DELETE' | translate }}
-        </button>
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col">
+          <button
+            class="a-button--link a-button--small"
+            (click)="removeElement(i)"
+          >
+            {{ 'GENERAL.BUTTONS.DELETE' | translate }}
+          </button>
+        </div>
     </div>
   </div>
   <button
