@@ -1,6 +1,10 @@
 <h1>{{ 'PAGE.REPORTS.TITLE' | translate}}</h1>
 
-<div *ngIf="reports$">
+<div *ngIf="!reportsActive">
+  <p>{{ 'PAGE.REPORTS.NOREPORTS' | translate }}</p>
+</div>
+
+<div *ngIf="reportsActive">
   <div class="l-grid__row l-grid--with-margins u-margin-bottom">
       <div class="l-grid__col-3-12"></div>
       <div class="l-grid__col-9-12">
@@ -19,9 +23,6 @@
           <app-loading [loading]="reportsLoading$ | async">
               <app-report-table [reports]="reports$ | async"></app-report-table>
           </app-loading>
+      </div>
   </div>
-</div>
-
-<div *ngIf="!reports$">
-  <p>{{ 'PAGE.REPORTS.NOREPORTS' | translate }}</p>
 </div>
