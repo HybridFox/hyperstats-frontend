@@ -1,0 +1,24 @@
+<app-page-title
+    [title]="('PAGE.AUDITTRAIL.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })"
+></app-page-title>
+
+<div class="m-card--primary u-margin-bottom-large">
+  <div class="a-table-wrapper">
+      <table class="a-table">
+          <thead>
+              <tr>
+                  <th>{{ "GENERAL.LABELS.ACTIVITY" | translate }}</th>
+                  <th>{{ "GENERAL.LABELS.DATE" | translate }}</th>
+                  <th>{{ "GENERAL.LABELS.NAME" | translate }}</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Khad Y. added Pilar G. to the Customer Support Group</td>
+                  <td>2016/09/07 at 7:56 pm</td>
+                  <td>Khad Young</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+</div>
