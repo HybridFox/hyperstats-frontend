@@ -14,7 +14,6 @@ import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes
   templateUrl: './output-fraction.page.html',
 })
 export class OutputFractionPageComponent extends StepPageAbstract {
-  public activeStepIndex = 0;
   public outputFraction: FormGroup;
 
   constructor(
@@ -52,7 +51,6 @@ export class OutputFractionPageComponent extends StepPageAbstract {
 
   private setActiveStepById(stepId: string) {
     const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-    this.activeStepIndex = stepIndex;
     if (stepIndex !== -1) {
       this.outputFraction = this.form.get(`${stepIndex}`) as FormGroup;
     } else {
