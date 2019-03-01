@@ -3,19 +3,19 @@
     class="u-margin-bottom"
     [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
   ></app-sub-section-title>
-  <div class="m-card--secondary u-margin-bottom">
+  <div *ngFor="let additiveItem of additive.controls.data.controls" class="m-card--secondary u-margin-bottom">
     <div class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-5-12">
         <app-select-input
           [label]="'WIZARD.ADDITIVES.LABELS.TYPE' | translate"
-          [control]="additive.get('data.type')"
+          [control]="additiveItem.get('type')"
           [options]="codesService.elements()"
         ></app-select-input>
       </div>
       <div class="l-grid__col-7-12">
         <app-text-input
           [label]="'WIZARD.ADDITIVES.LABELS.WEIGHT' | translate"
-          [control]="additive.get('data.weight')"
+          [control]="additiveItem.get('weight')"
           type="number"
           suffix="kg"
         ></app-text-input>

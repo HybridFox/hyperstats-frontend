@@ -90,19 +90,40 @@ export class FormDataService {
     }));
   }
 
+  public getAdditive(additiveItem: any): FormGroup {
+    console.log('A4');
+    console.log(additiveItem);
+
+    return this.formBuilder.group({
+      type: [pathOr('', ['data', 'type'])(additiveItem), Validators.required],
+      weight: [pathOr(null, ['data', 'weight'])(additiveItem), Validators.required],
+    });
+  }
+
+  public getAdditives(additiveItems: any[]): FormArray {
+    console.log('A3');
+    console.log(additiveItems);
+
+    return this.formBuilder.array(additiveItems.map((element) => {
+      return this.getAdditive(element);
+    }));
+  }
+
   // Todo: Add type
   public getAdditiveFormGroup(additive: any): FormGroup {
+    console.log('A2');
+    console.log(additive);
+
     return this.formBuilder.group({
       siteRef: pathOr(null, ['siteRef'])(additive),
-      data: this.formBuilder.group({
-        type: [pathOr('', ['data', 'type'])(additive), Validators.required],
-        weight: [pathOr(null, ['data', 'weight'])(additive), Validators.required],
-      })
+      data: this.getAdditives(pathOr([null], ['data'])(additive)),
     });
   }
 
   // Todo: Add type
   public getAdditivesFormArray(additives: any[]): FormArray {
+    console.log('A1');
+    console.log(additives);
     return this.formBuilder.array(additives.map((additive) => {
       return this.getAdditiveFormGroup(additive);
     }));
@@ -116,6 +137,9 @@ export class FormDataService {
 
   // Todo: Add type
   public getOutputFractionElementFormGroup(element: any): FormGroup {
+    console.log('O4');
+    console.log(element);
+
     return this.formBuilder.group({
       element: [pathOr('', ['element'])(element), Validators.required],
       mass: [pathOr(null, ['mass'])(element), Validators.required],
@@ -128,6 +152,8 @@ export class FormDataService {
 
   // Todo: Add type
   public getOutputFractionElementFormArray(outputFractionElements: any[]): FormArray {
+    console.log('O3');
+    console.log(outputFractionElements);
     return this.formBuilder.array(outputFractionElements.map((element) => {
       return this.getOutputFractionElementFormGroup(element);
     }));
@@ -135,6 +161,8 @@ export class FormDataService {
 
   // Todo: Add type
   public getOutputFractionFormGroup(fraction: any): FormGroup {
+    console.log('O2');
+    console.log(fraction);
     return this.formBuilder.group({
       siteRef: pathOr(null, ['siteRef'])(fraction),
       data: this.getOutputFractionElementFormArray(pathOr([null], ['data'])(fraction)),
@@ -143,6 +171,9 @@ export class FormDataService {
 
   // Todo: Add type
   public getOutputFractionsFormArray(outputFractions: any[]): FormArray {
+    console.log('O1');
+    console.log(outputFractions);
+
     return this.formBuilder.array(outputFractions.map((fraction) => {
       return this.getOutputFractionFormGroup(fraction);
     }));

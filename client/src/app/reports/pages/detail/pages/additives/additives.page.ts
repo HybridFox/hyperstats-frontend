@@ -18,8 +18,6 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   public activeStepIndex = 0;
   public additive: FormGroup;
 
-  private stepId: string;
-
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
@@ -50,7 +48,7 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   }
 
   public addAdditive() {
-    (this.additive.get('data') as FormArray).push(this.formData.getInputFractionElementFormGroup(null));
+    (this.additive.get('data') as FormArray).push(this.formData.getAdditive(null));
   }
 
   private setActiveStepById(stepId: string) {
