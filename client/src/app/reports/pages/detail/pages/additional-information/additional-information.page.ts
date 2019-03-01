@@ -54,9 +54,16 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
   }
 
   public onUpload(filesList: FileList) {
-    this.uploadResult = Array.from(filesList).map(file => {
-      return this.assetsRepository.upload(file);
-    });
+    if (this.uploadResult) {
+      Array.from(filesList).map(file => {
+        this.uploadResult.push(this.assetsRepository.upload(file));
+      });
+    } else {
+      this.uploadResult = Array.from(filesList).map(file => {
+        return this.assetsRepository.upload(file);
+      });
+    }
+    this.uploadResult = [].concat(this.uploadResult);
   }
 
   public onFormReady() {}

@@ -15,30 +15,21 @@ export class FileUploadComponent implements OnChanges {
     @Output() public upload: EventEmitter<FileList> = new EventEmitter<FileList>();
     @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-    public files: any[];
-
     public updateValue = (_: any) => {};
 
     public ngOnChanges(changes: SimpleChanges) {
-        if (changes.response) {
-          if (this.response) {
-            console.log(this.response);
-          }
-            // if (this.response) {
-            //   this.response.map((file, index) => {
-            //     file.subscribe(res => {
-            //       this.files[index] = {
-            //         ...res,
-            //       };
-            //       console.log(this.files[index]);
-            //     });
-            //   });
-            //   if (this.control) {
-            //     this.control.patchValue({
-            //       ...this.response.result,
-            //     });
-            //   }
-            // }
+        if (changes.response && this.response) {
+          const files = [];
+          this.response.map((file, index) => {
+            file.subscribe(res => {
+              if (res && res.result) {
+                files[index] = res.result;
+                if (this.control) {
+                  this.control.patchValue(files);
+                }
+              }
+            });
+          });
         }
     }
 

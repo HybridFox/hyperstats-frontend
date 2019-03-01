@@ -5,21 +5,19 @@
     [multiple]="multiple"
 ></app-upload-input>
 
-<div *ngFor="let file of response; let index = index">
-    <pre>{{ file | json }}</pre>
+<div *ngFor="let file of response">
     <app-upload-preview
-
-      [progress]="response?.progress"
-      [name]="response?.originalname"
+      *ngIf="response"
+      [progress]="(file | async)?.progress"
+      [name]="(file | async)?.originalname"
       (removeFile)="onRemoveFile($event)"
     ></app-upload-preview>
 </div>
 
-
-<div *ngFor="let file of files; let index = index">
+<div *ngFor="let file of control.value">
     <app-uploaded-list
-        *ngIf="storedFile"
-        [storedFile]="storedFile"
+        *ngIf="!response && control.value"
+        [storedFile]="file.originalname"
     ></app-uploaded-list>
 </div>
 
