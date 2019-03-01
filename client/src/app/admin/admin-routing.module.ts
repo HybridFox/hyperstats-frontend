@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'companies',
-    loadChildren: '../manage-companies/manage-companies.module#ManageComapniesModule',
+    loadChildren: '../manage-companies/manage-companies.module#ManageCompaniesModule',
   },
 ];
 

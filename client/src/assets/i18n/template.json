@@ -117,6 +117,13 @@
 			"SECTION-2": "",
 			"TITLE": ""
 		},
+		"ACCESS-DENIED": {
+			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"ADMIN": {
 			"FILTERS": ""
 		},
@@ -460,7 +467,6 @@
 				"PACKAGING-CASING": "",
 				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
-				"SHARE-INPUT-FRACTION": "",
 				"WEIGHT-BATTERY": "",
 				"WEIGHT-INPUT-FRACTION": ""
 			},

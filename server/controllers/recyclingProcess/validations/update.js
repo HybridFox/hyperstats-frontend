@@ -16,14 +16,14 @@ const schema = Joi.object().keys({
 					id: Joi.string().allow(""),
 					mimetype: Joi.string().allow(""),
 					uploadDate: Joi.string().allow(""),
-					originalname: Joi.string().allow("")
+					originalname: Joi.string().allow(""),
 				}).optional(),
 			}),
 			schematicOverview: Joi.object().keys({
 				id: Joi.string().allow("", null),
 				mimetype: Joi.string().allow("", null),
 				uploadDate: Joi.string().allow("", null),
-				originalname: Joi.string().allow("", null)
+				originalname: Joi.string().allow("", null),
 			}).optional(),
 		})),
 	}),

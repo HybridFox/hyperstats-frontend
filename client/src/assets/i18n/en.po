@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-01T09:17:10.244Z\n"
+"POT-Creation-Date: 2019-03-01T09:24:45.704Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -345,6 +345,21 @@ msgstr ""
 
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
+
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr "Choose a name for this recycling step"
+
+#, fuzzy
+#| msgid "PAGE##CONTACT##TITLE"
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr "Contact"
+
+#, fuzzy
+#| msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgid "PAGE##ACCESS-DENIED##TITLE"
+msgstr "Manage companies"
 
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
@@ -899,9 +914,6 @@ msgstr "Process chemistry"
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr "Share of battery type in input fraction"
 
-msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
-msgstr "Share of input fraction (%)"
-
 msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
 msgstr "Weight battery type in input fraction"
 
@@ -1019,6 +1031,9 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+#~ msgstr "Share of input fraction (%)"
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"

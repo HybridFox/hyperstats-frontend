@@ -60,7 +60,6 @@ export class StepWrapperPageComponent implements OnInit {
           if (!process) {
             return;
           }
-          console.log(process);
           return process.data.steps.find((step) => {
             return step.uuid === params.stepId;
           });

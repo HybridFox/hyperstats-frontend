@@ -9,7 +9,6 @@ import { omit, prop, pathOr } from 'ramda';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
-import { recyclingProcess } from '@core/schemas';
 
 
 @Component({
@@ -22,6 +21,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     @Input() public recyclingProcess: any;
     @Input() public recyclingPartners: any;
     @Input() public uploadResponse: any;
+    @Input() public user: any;
 
     @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
     @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
@@ -48,6 +48,13 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     }
 
     public ngOnChanges(changes: SimpleChanges) {
+        if (this.recyclingPartners && changes.recyclingPartners) {
+          const ownCompany = {
+            value: this.user.company._id,
+            label: this.user.company.data.name,
+          };
+          this.recyclingPartners.unshift(ownCompany);
+        }
         if (changes.recyclingProcess) {
             this.recyclingProcessForm = this.formBuilder.group({
                 name: [pathOr('', ['data', 'name'])(this.recyclingProcess), Validators.required],
@@ -58,6 +65,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
     public saveForm() {
         if (this.recyclingProcessForm.invalid) {
+            this.validateFormFields(this.recyclingProcessForm);
             return;
         }
         this.isDuplicate = false;
@@ -182,5 +190,27 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
             type: 'overview'
         };
         this.uploadOverview.emit(file);
+    }
+
+    public validateFormFields(formGroup: FormGroup) {
+      Object.keys(formGroup.controls).forEach(field => {
+        const control = formGroup.get(field);
+        if (control instanceof FormArray) {
+          for (const step of control.controls) {
+            if (step instanceof FormControl) {
+              step.markAsDirty({
+                onlySelf: true
+              });
+            }
+            if (step instanceof FormGroup) {
+              this.validateFormFields(step);
+            }
+          }
+        } else if (control instanceof FormControl) {
+          control.markAsDirty({ onlySelf: true });
+        } else if (control instanceof FormGroup) {
+          this.validateFormFields(control);
+        }
+      });
     }
 }

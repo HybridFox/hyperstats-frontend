@@ -78,39 +78,29 @@
       class="u-margin-top-x-large"
       [title]="'WIZARD.INPUT-FRACTION.TITLES.ELEMENTS-COMPONENTS' | translate"
     ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins" *ngFor="let element of inputFraction.get('data.elements').controls; let i = index">
+    <div class="l-grid__row l-grid--with-margins u-margin-top" *ngFor="let element of inputFraction.get('data.elements').controls; let i = index">
       <div class="l-grid__col-4-12">
         <app-select-input
-          class="u-margin-top-large"
           [label]="'WIZARD.INPUT-FRACTION.LABELS.ELEMENTS' | translate"
           [control]="element.get('element')"
           [options]="codesService.elements()"
         ></app-select-input>
       </div>
-      <div class="l-grid__col-4-12">
-        <app-text-input
-          [label]="'WIZARD.INPUT-FRACTION.LABELS.SHARE-INPUT-FRACTION' | translate"
-          class="u-margin-top-large"
-          [control]="element.get('share')"
-          type="number"
-          suffix="%"
-        ></app-text-input>
-      </div>
-      <div class="l-grid__col-4-12">
-        <app-text-input
-          [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
-          class="u-margin-top-large"
-          [control]="element.get('mass')"
-          type="number"
+      <div class="l-grid__col-8-12">
+        <app-mass-input
           suffix="kg"
-        ></app-text-input>
+          type="number"
+          [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
+          [control]="element.get('mass')"
+          [form]="inputFraction.get('data.elements')"
+      ></app-mass-input>
       </div>
     </div>
-    <a
+    <button
       class="u-margin-top-large a-button--primary a-button-outline has-icon-after"
       (click)="addElement()">
         {{ 'WIZARD.INPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
-    </a>
+    </button>
     <app-sub-section-title
       class="u-margin-top-x-large"
       [title]="'WIZARD.INPUT-FRACTION.TITLES.ADDITIONAL-INFORMATION' | translate"

@@ -5,30 +5,36 @@ import { Observable } from 'rxjs';
 import { map, tap, filter } from 'rxjs/operators';
 
 const handle = (obs$) => {
-    return obs$
-        .pipe(
-            filter((user: any) => {
-                return !user || user.loading === false;
-            }),
-            map((user: any) => !!user.result),
-        );
+  return obs$
+      .pipe(
+          filter((user: any) => {
+              return !user || user.loading === false;
+          }),
+          map((user: any) => {
+            if (user) {
+              return user.result.status.type;
+            }
+          }),
+      );
 };
 
-
 @Injectable()
-export class AuthGuard implements CanActivate {
-    @select$(['auth', 'user'], handle) private isLoggedIn$: Observable<any>;
+export class ValidationGuard implements CanActivate {
+  @select$(['auth', 'user'], handle) private isValidated$: Observable<any>;
 
     constructor(
         private router: Router,
     ) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.isLoggedIn$
+      return this.isValidated$
             .pipe(
+                map((user) => {
+                  return user === 'ACTIVATED';
+                }),
                 tap((res) => {
                     if (!res) {
-                      this.router.navigate(['/', 'auth']);
+                      return this.router.navigate(['/', 'validation']);
                     }
                 })
             );

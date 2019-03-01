@@ -117,6 +117,13 @@
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
         },
+        "ACCESS-DENIED": {
+            "DEACTIVATED": {
+                "DESCRIPTION": "Choose a name for this recycling step",
+                "TITLE": "Contact"
+            },
+            "TITLE": "Manage companies"
+        },
         "ADMIN": {
             "FILTERS": "Filters:"
         },
@@ -460,7 +467,6 @@
                 "PACKAGING-CASING": "Packaging material / outer casing",
                 "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
-                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
                 "WEIGHT-INPUT-FRACTION": "Weight input fraction"
             },
