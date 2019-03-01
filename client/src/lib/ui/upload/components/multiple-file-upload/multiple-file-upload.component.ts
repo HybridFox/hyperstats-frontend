@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { registerContentQuery } from '@angular/core/src/render3';
 
 @Component({
-    selector: 'app-file-upload',
-    templateUrl: './file-upload.component.html',
+    selector: 'app-multiple-file-upload',
+    templateUrl: './multiple-file-upload.component.html',
 })
-export class FileUploadComponent implements OnChanges {
+export class MultipleFileUploadComponent implements OnChanges {
     @Input() public response: any;
     @Input() public label?: string;
     @Input() public control: FormControl;

@@ -1,14 +1,14 @@
 import { FormBuilder } from '@angular/forms';
 
 export const createFileUploadControl = (asset = {
-    id: '',
+    assetId: '',
     mimetype: '',
     uploadDate: '',
     originalname: ''
 }) => {
     const formBuilder = new FormBuilder();
     return formBuilder.group({
-        id: [asset.id],
+        assetId: [asset.assetId],
         mimetype: [asset.mimetype],
         uploadDate: [asset.uploadDate],
         originalname: [asset.originalname]

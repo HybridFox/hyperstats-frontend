@@ -1,6 +1,6 @@
 import { ReactiveFormsModule } from '@angular/forms';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
-import { FileUploadComponent } from './file-upload.component';
+import { MultipleFileUploadComponent } from './multiple-file-upload.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { AssetsRepository } from '@api/assets';
 import { HttpClient, HttpHandler } from '@angular/common/http';
@@ -9,8 +9,8 @@ import { UploadPreviewComponent } from '../upload-preview/upload-preview.compone
 import { UploadedListComponent } from '../uploaded-list/uploaded-list.component';
 
 describe('FileUploadComponent', () => {
-    let fixture: ComponentFixture<FileUploadComponent>;
-    let component: FileUploadComponent;
+    let fixture: ComponentFixture<MultipleFileUploadComponent>;
+    let component: MultipleFileUploadComponent;
 
     class MockRepository {
         return;
@@ -23,7 +23,7 @@ describe('FileUploadComponent', () => {
                 ReactiveFormsModule,
             ],
             declarations: [
-                FileUploadComponent,
+                MultipleFileUploadComponent,
                 UploadInputComponent,
                 UploadPreviewComponent,
                 UploadedListComponent
@@ -36,7 +36,7 @@ describe('FileUploadComponent', () => {
     }));
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(FileUploadComponent);
+        fixture = TestBed.createComponent(MultipleFileUploadComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

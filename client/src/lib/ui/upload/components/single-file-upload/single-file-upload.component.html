@@ -1,0 +1,18 @@
+<app-upload-input
+    *ngIf="!response?.originalname && !storedFile || multiple "
+    (select)="onSelect($event)"
+    [label]="label ? label : null"
+    [multiple]="multiple"
+></app-upload-input>
+
+<app-upload-preview
+    *ngIf="response?.originalname && !storedFile"
+    [progress]="response?.progress"
+    [name]="response?.originalname"
+></app-upload-preview>
+
+
+<app-uploaded-list
+    *ngIf="storedFile"
+    [storedFile]="storedFile"
+></app-uploaded-list>

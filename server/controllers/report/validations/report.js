@@ -57,8 +57,11 @@ const savedData = {
 	}),
 	additionalInformation: joi.object().keys({
 		files: joi.array().items(joi.object().keys({
-			type: joi.string().allow(""),
-		})),
+			assetId: joi.string().allow(""),
+			mimetype: joi.string().allow(""),
+			uploadDate: joi.string().allow(""),
+			originalname: joi.string().allow(""),
+		})).optional().allow(null),
 		additionalInformation: joi.string().allow("").optional(),
 	}),
 };

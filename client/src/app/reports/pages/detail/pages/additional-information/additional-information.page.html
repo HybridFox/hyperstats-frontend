@@ -3,14 +3,14 @@
     <app-sub-section-title
       [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.FILE-UPLOADS' | translate"
     ></app-sub-section-title>
-    <app-file-upload
+    <app-multiple-file-upload
         class="u-margin-bottom-x-large"
         [multiple]="true"
         [response]="uploadResult"
         [storedFile]="form?.value?.files?.originalname"
         (upload)=onUpload($event);
         [control]="form.get('files')"
-    ></app-file-upload>
+    ></app-multiple-file-upload>
     <app-sub-section-title
       [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
     ></app-sub-section-title>

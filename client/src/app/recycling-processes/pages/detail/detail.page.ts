@@ -202,7 +202,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
       const emptyObject = of({
         progress: '',
         result: {
-          id: '',
+          assetId: '',
           mimetype: '',
           uploadDate: '',
           originalname: '',

@@ -7,7 +7,7 @@ module.exports = [
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 1",
 						"asset": {
-							"id": "",
+							"assetId": "",
 							"mimetype": "",
 							"uploadDate": "",
 							"originalname": "",
@@ -20,7 +20,7 @@ module.exports = [
 					"site": "site 1",
 					"methodOfProcessing": "methodOfProcessing 1",
 					"schematicOverview": {
-						"id": "",
+						"assetId": "",
 						"mimetype": "",
 						"uploadDate": "",
 						"originalname": "",
@@ -43,7 +43,7 @@ module.exports = [
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 2",
 						"asset": {
-							"id": "",
+							"assetId": "",
 							"mimetype": "",
 							"uploadDate": "",
 							"originalname": "",
@@ -56,7 +56,7 @@ module.exports = [
 					"site": "site 2",
 					"methodOfProcessing": "methodOfProcessing 2",
 					"schematicOverview": {
-						"id": "",
+						"assetId": "",
 						"mimetype": "",
 						"uploadDate": "",
 						"originalname": "",
@@ -79,7 +79,7 @@ module.exports = [
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 3",
 						"asset": {
-							"id": "",
+							"assetId": "",
 							"mimetype": "",
 							"uploadDate": "",
 							"originalname": "",
@@ -92,7 +92,7 @@ module.exports = [
 					"site": "site 3",
 					"methodOfProcessing": "methodOfProcessing 3",
 					"schematicOverview": {
-						"id": "",
+						"assetId": "",
 						"mimetype": "",
 						"uploadDate": "",
 						"originalname": "",
@@ -115,7 +115,7 @@ module.exports = [
 					"qualitativeDescription": {
 						"text": "qualitativeDescription text 4",
 						"asset": {
-							"id": "",
+							"assetId": "",
 							"mimetype": "",
 							"uploadDate": "",
 							"originalname": "",
@@ -128,7 +128,7 @@ module.exports = [
 					"site": "site 4",
 					"methodOfProcessing": "methodOfProcessing 4",
 					"schematicOverview": {
-						"id": "",
+						"assetId": "",
 						"mimetype": "",
 						"uploadDate": "",
 						"originalname": "",
