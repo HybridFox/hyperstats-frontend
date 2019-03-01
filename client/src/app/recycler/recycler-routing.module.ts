@@ -12,6 +12,7 @@ const routes: Routes = [
     { path: 'recycling-processes', loadChildren: '../recycling-processes/recycling-processes.module#RecyclingProcessesModule' },
     { path: 'recycling-partners', loadChildren: '../recycling-partners/recycling-partners.module#RecyclingPartnersModule' },
     { path: 'proxies', loadChildren: '../proxies/proxies.module#ProxiesModule' },
+    { path: 'audit-trail', loadChildren: '../audit-trail/audit-trail.module#AuditTrailModule' },
 ];
 
 @NgModule({
