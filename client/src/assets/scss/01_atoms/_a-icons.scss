@@ -9,7 +9,6 @@
  * e907 = upload
  * e908 = file
  */
-
 .a-icon {
     color:inherit;
     font-size: $font-size-large;
@@ -72,13 +71,6 @@
     &::before {
         content: "\e906";
     }
-}
-
-.a-icon--min {
-  @extend .a-icon;
-  &::before {
-      content: "\e906";
-  }
 }
 
 .a-icon--upload {

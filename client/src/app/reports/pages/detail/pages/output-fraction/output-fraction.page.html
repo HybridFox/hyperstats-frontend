@@ -1,47 +1,70 @@
 <ng-container *ngIf="outputFraction">
-  <app-sub-section-title class="u-margin-bottom" [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate">
-  </app-sub-section-title>
-  <div class="m-card--secondary u-margin-bottom"
+  <app-sub-section-title
+    class="u-margin-bottom"
+    [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate"
+  ></app-sub-section-title>
+  <div
+    class="m-card--secondary u-margin-bottom"
     *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
     <div class="m-card--secondary u-margin-bottom">
       <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-6-12">
-          <app-select-input [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
-            [control]="fraction.get('element')" [options]="codesService.elements()"></app-select-input>
+          <app-select-input
+            [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
+            [control]="fraction.get('element')"
+            [options]="codesService.elements()"
+          ></app-select-input>
         </div>
         <div class="l-grid__col-6-12">
-          <app-mass-input suffix="kg" type="number" [label]="'WIZARD.OUTPUT-FRACTION.LABELS.MASS' | translate"
+          <app-mass-input
+            suffix="kg"
+            type="number"
+            [label]="'WIZARD.OUTPUT-FRACTION.LABELS.MASS' | translate"
             [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.ON-DRY-WEIGHT-BASIS' | translate"
-            [control]="fraction.get('mass')"></app-mass-input>
+            [control]="fraction.get('mass')"
+          ></app-mass-input>
         </div>
       </div>
       <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-6-12">
-          <app-select-input class="u-margin-top-x-large"
+          <app-select-input
+            class="u-margin-top-x-large"
             [label]="'WIZARD.OUTPUT-FRACTION.LABELS.CLASSIFICATION' | translate"
-            [control]="fraction.get('virginClassification')" [options]="codesService.elements()"></app-select-input>
+            [control]="fraction.get('virginClassification')"
+            [options]="codesService.elements()"
+          ></app-select-input>
         </div>
         <div class="l-grid__col-6-12">
-          <app-text-input class="u-margin-top-x-large"
+          <app-text-input
+            class="u-margin-top-x-large"
             [label]="'WIZARD.OUTPUT-FRACTION.LABELS.REPLACED-VIRGIN-MATERIAL' | translate"
-            [control]="fraction.get('virginReplacedMaterial')"></app-text-input>
+            [control]="fraction.get('virginReplacedMaterial')"
+          ></app-text-input>
         </div>
       </div>
       <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-6-12">
-          <app-select-input class="u-margin-top-x-large u-margin-bottom"
+          <app-select-input
+            class="u-margin-top-x-large u-margin-bottom"
             [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
             [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.OF-ELEMENT' | translate"
-            [control]="fraction.get('elementClassification')" [options]="codesService.elements()"></app-select-input>
+            [control]="fraction.get('elementClassification')"
+            [options]="codesService.elements()"
+          ></app-select-input>
         </div>
         <div class="l-grid__col-6-12">
-          <app-text-input class="u-margin-top-x-large u-margin-bottom"
+          <app-text-input
+            class="u-margin-top-x-large u-margin-bottom"
             [label]="'WIZARD.OUTPUT-FRACTION.LABELS.REPLACED-ELEMENT-MATERIAL' | translate"
-            [control]="fraction.get('elementReplacedMaterial')"></app-text-input>
+            [control]="fraction.get('elementReplacedMaterial')"
+          ></app-text-input>
         </div>
       </div>
       <div class="l-grid__row l-grid--with-margins">
-        <button class="u-margin-top-large a-button--link a-button--small" (click)="removeElement(fraction, i)">
+        <button
+          class="u-margin-top-large a-button--link a-button--small"
+          (click)="removeElement(fraction, i)"
+        >
           {{ 'GENERAL.BUTTONS.DELETE-ELEMENT' | translate }}
         </button>
       </div>
@@ -51,8 +74,12 @@
     {{ 'WIZARD.OUTPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
   </button>
   <div class="u-margin-top-large">
-    <button (click)="previousStep()"
-      class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+    <button
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}
+    </button>
     <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
   </div>
 </ng-container>
