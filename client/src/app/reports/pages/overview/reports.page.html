@@ -1,21 +1,27 @@
 <h1>{{ 'PAGE.REPORTS.TITLE' | translate}}</h1>
 
-<div class="l-grid__row l-grid--with-margins u-margin-bottom">
-    <div class="l-grid__col-3-12"></div>
-    <div class="l-grid__col-9-12">
-        <div class="m-filter u-pull-right">
-            <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
-        </div>
-        <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
-    </div>
+<div *ngIf="reports$">
+  <div class="l-grid__row l-grid--with-margins u-margin-bottom">
+      <div class="l-grid__col-3-12"></div>
+      <div class="l-grid__col-9-12">
+          <div class="m-filter u-pull-right">
+              <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
+          </div>
+          <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
+      </div>
+  </div>
+
+  <div class="l-grid__row l-grid--with-margins">
+      <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
+          <app-vertical-menu [menuItems]="menuItems$ | async"></app-vertical-menu>
+      </div>
+      <div class="l-grid__col-9-12 m-card--primary">
+          <app-loading [loading]="reportsLoading$ | async">
+              <app-report-table [reports]="reports$ | async"></app-report-table>
+          </app-loading>
+  </div>
 </div>
 
-<div class="l-grid__row l-grid--with-margins">
-    <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
-        <app-vertical-menu [menuItems]="menuItems$ | async"></app-vertical-menu>
-    </div>
-    <div class="l-grid__col-9-12 m-card--primary">
-        <app-loading [loading]="reportsLoading$ | async">
-            <app-report-table [reports]="reports$ | async"></app-report-table>
-        </app-loading>
+<div *ngIf="!reports$">
+  <p>{{ 'PAGE.REPORTS.NOREPORTS' | translate }}</p>
 </div>
