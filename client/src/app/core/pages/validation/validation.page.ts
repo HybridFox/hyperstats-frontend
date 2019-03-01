@@ -6,5 +6,5 @@ import { select } from '@angular-redux/store';
     templateUrl: './validation.page.html',
 })
 export class ValidationPageComponent {
-  @select(['auth', 'user', 'result']) private user$: Observable<any>;
+  @select(['auth', 'user', 'result']) public user$: Observable<any>;
 }
