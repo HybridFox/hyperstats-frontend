@@ -88,7 +88,7 @@
               type="number"
               [label]="'WIZARD.INPUT-FRACTION.LABELS.MASS' | translate"
               [control]="element.get('mass')"
-              [form]="form.get('data.elements')"
+              [elements]="form.get('data.elements').value"
             ></app-mass-input>
           </div>
     </div>

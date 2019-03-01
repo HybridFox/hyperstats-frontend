@@ -26,7 +26,7 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
   @Input() class?: string;
   @Input() disabled = false;
   @Input() control: FormControl = new FormControl('');
-  @Input() form: FormArray = new FormArray([]);
+  @Input() elements: any[] = [];
 
   public percentage = 0;
 
@@ -40,19 +40,9 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
     ).subscribe((value) => {
       this.updateValue(value);
     });
-
-    this.form.valueChanges.pipe(
-      takeUntil(this.componentDestroyed$),
-    ).subscribe((value) => {
-      this.percentage = this.calculatePercentage(this.control.value);
-    });
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
-    if (changes.disabled) {
-      this.setDisabledState(this.disabled);
-    }
-
+  public ngOnChanges() {
     this.percentage = this.calculatePercentage(this.control.value);
   }
 
@@ -84,7 +74,7 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
   public registerOnTouched() {}
 
   private calculatePercentage(mass: number) {
-    const totalWeight = this.form.value.reduce((currentTotal, item) =>
+    const totalWeight = this.elements.reduce((currentTotal, item) =>
       item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
       currentTotal + parseInt(item.mass, 10) :
       currentTotal,
