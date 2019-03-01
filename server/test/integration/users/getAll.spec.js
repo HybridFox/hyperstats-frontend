@@ -93,7 +93,7 @@ describe("Integration", () => {
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
-						expect(body[0].data.company).to.be.an("string");
+						expect(body[0].data.company).to.be.an("object");
 					});
 			});
 
@@ -110,7 +110,7 @@ describe("Integration", () => {
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
-						expect(body[0].data.company).to.be.an("string");
+						expect(body[0].data.company).to.be.an("object");
 					});
 			});
 
@@ -127,7 +127,7 @@ describe("Integration", () => {
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
-						expect(body[0].data.company).to.be.an("string");
+						expect(body[0].data.company).to.be.an("object");
 					});
 			});
 
@@ -144,7 +144,7 @@ describe("Integration", () => {
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
-						expect(body[0].data.company).to.be.an("string");
+						expect(body[0].data.company).to.be.an("object");
 					});
 			});
 
@@ -161,7 +161,7 @@ describe("Integration", () => {
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
-						expect(body[0].data.company).to.be.an("string");
+						expect(body[0].data.company).to.be.an("object");
 					});
 			});
 
@@ -178,7 +178,7 @@ describe("Integration", () => {
 							firstname: "__firstname_test-user__remove_identifier__",
 							lastname: "Smith",
 						});
-						expect(body[0].data.company).to.be.an("string");
+						expect(body[0].data.company).to.be.an("object");
 					});
 			});
 

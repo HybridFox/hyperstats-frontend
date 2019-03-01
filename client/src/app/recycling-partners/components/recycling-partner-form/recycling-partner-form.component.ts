@@ -1,7 +1,7 @@
 import { Component, OnChanges, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import countryList from 'country-list';
-import { prop, pathOr } from 'ramda';
+import { prop } from 'ramda';
 
 import { Option } from '@ui/form-fields/components/select/select.types';
 
@@ -38,6 +38,7 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
 
     public saveForm() {
         if (this.recyclingPartnerForm.invalid) {
+            this.validateFormFields(this.recyclingPartnerForm);
             return;
         }
 
@@ -102,4 +103,14 @@ export class RecyclingPartnerFormComponent implements OnChanges, OnInit {
         });
     }
 
+    public validateFormFields(formGroup: FormGroup) {
+      Object.keys(formGroup.controls).forEach(field => {
+        const control = formGroup.get(field);
+        if (control instanceof FormControl) {
+          control.markAsDirty({ onlySelf: true });
+        } else if (control instanceof FormGroup) {
+          this.validateFormFields(control);
+        }
+      });
+    }
 }

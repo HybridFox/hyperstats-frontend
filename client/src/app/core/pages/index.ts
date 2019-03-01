@@ -10,6 +10,8 @@ import { GeneralWrapperPageComponent } from './general-wrapper/general-wrapper.p
 export { GeneralWrapperPageComponent } from './general-wrapper/general-wrapper.page';
 import { TermsAndConditionsPageComponent } from './terms-and-conditions';
 export { TermsAndConditionsPageComponent } from './terms-and-conditions';
+import { ValidationPageComponent } from './validation/validation.page';
+export { ValidationPageComponent } from './validation/validation.page';
 
 export const Pages = [
     AboutPageComponent,
@@ -17,5 +19,6 @@ export const Pages = [
     ContactPageComponent,
     LandingPageComponent,
     GeneralWrapperPageComponent,
-    TermsAndConditionsPageComponent
+    TermsAndConditionsPageComponent,
+    ValidationPageComponent,
 ];

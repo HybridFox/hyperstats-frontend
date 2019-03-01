@@ -8,7 +8,7 @@ import { LoadingModule } from '@ui/loading';
 import { FormFieldsModule } from '@ui/form-fields';
 import { SharedModule } from '@shared/shared.module';
 
-import { ManageComapniesRoutingModule } from './manage-companies-routing.module';
+import { ManageCompaniesRoutingModule } from './manage-companies-routing.module';
 
 import { Services, Reducer } from './store';
 import { Pages } from './pages';
@@ -25,7 +25,7 @@ import { Components } from './components';
     HttpClientModule,
     ReactiveFormsModule,
 
-    ManageComapniesRoutingModule,
+    ManageCompaniesRoutingModule,
     SharedModule,
     LoadingModule,
     FormFieldsModule,
@@ -34,7 +34,7 @@ import { Components } from './components';
     Services,
   ],
 })
-export class ManageComapniesModule {
+export class ManageCompaniesModule {
   constructor(private storeService: StoreService) {
     this.storeService.injectAsyncReducer('company-management', Reducer);
   }

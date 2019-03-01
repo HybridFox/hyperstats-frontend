@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
+import { select } from '@angular-redux/store';
 
 @Component({
-  templateUrl: './overview.page.html',
+    templateUrl: './validation.page.html',
 })
-export class OverviewPageComponent {
+export class ValidationPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
 }

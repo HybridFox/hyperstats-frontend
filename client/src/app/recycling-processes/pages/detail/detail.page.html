@@ -6,6 +6,7 @@
     *ngIf="recyclingProcessId"
     [recyclingProcess]="process"
     [recyclingPartners]="partners$ | async"
+    [user]="user$ | async"
     (submit)="save($event)"
     (remove)="remove($event)"
     (toggleActivation)="toggleActivation($event)"

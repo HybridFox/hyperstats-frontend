@@ -114,6 +114,13 @@
 			"SECTION-2": "",
 			"TITLE": ""
 		},
+		"ACCESS-DENIED": {
+			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"ADMIN": {
 			"FILTERS": ""
 		},
@@ -480,6 +487,7 @@
 				"INPUT-FRACTIONS": ""
 			}
 		},
+		"NO-PROCESS": "",
 		"OUTPUT-FRACTION": {
 			"DESCRIPTIONS": {
 				"OF-ELEMENT": "",

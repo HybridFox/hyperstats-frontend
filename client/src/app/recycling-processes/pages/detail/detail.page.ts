@@ -19,6 +19,7 @@ import { AssetsRepository } from '@api/assets';
   templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
+    @select(['auth', 'user', 'result']) public user$: Observable<any>;
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
     @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partners$: Observable<any[]>;
 

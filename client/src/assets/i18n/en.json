@@ -114,6 +114,13 @@
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
         },
+        "ACCESS-DENIED": {
+            "DEACTIVATED": {
+                "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
+                "TITLE": "Admin is reviewing your signup request."
+            },
+            "TITLE": "Access denied"
+        },
         "ADMIN": {
             "FILTERS": "Filters:"
         },
@@ -148,7 +155,7 @@
         },
         "PROXIES": {
             "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
-            "TITLE": "Your proxies"
+            "TITLE": "{{ name }} proxies"
         },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
@@ -414,7 +421,7 @@
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
-                "ADDITIONAL-INFORMATION": "Addition information",
+                "ADDITIONAL-INFORMATION": "Additional information",
                 "FILE-UPLOADS": "File uploads"
             }
         },
@@ -480,6 +487,7 @@
                 "INPUT-FRACTIONS": "General information"
             }
         },
+        "NO-PROCESS": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
             "DESCRIPTIONS": {
                 "OF-ELEMENT": "Of the element/compound",

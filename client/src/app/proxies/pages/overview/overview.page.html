@@ -1,5 +1,5 @@
 <app-page-title
-    [title]="'PAGE.PROXIES.TITLE' | translate"
+    [title]="('PAGE.PROXIES.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })"
 ></app-page-title>
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-8-12">

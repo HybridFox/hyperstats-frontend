@@ -15,15 +15,13 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './input-fraction.page.html',
 })
 export class InputFractionPageComponent extends StepPageAbstract implements OnInit {
-  public inputFraction: FormGroup;
-
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
     protected toastrService: ToastrService,
     protected reportProcessActions: ReportsProcessActions,
     protected router: Router,
-    protected route: ActivatedRoute,
+    public route: ActivatedRoute,
     protected reportActions: ReportsActions,
   ) {
     super(
@@ -46,27 +44,6 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
     super.ngOnInit();
   }
 
-  public addElement() {
-    (this.inputFraction.get('data.elements') as FormArray).push(this.formData.getInputFractionElementFormGroup(null));
-  }
-
-  private setActiveStepById(stepId: string) {
-    const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-    if (stepIndex !== -1) {
-      this.inputFraction = this.form.get(`${stepIndex}`) as FormGroup;
-    } else {
-      this.formData.addInputFraction(stepId);
-      this.setActiveStepById(stepId);
-    }
-  }
-
   public onFormReady(): void {
-    this.route.params
-      .pipe(
-        takeUntil(this.componentDestroyed$),
-      )
-      .subscribe((params) => {
-        this.setActiveStepById(params.stepId);
-      });
   }
 }

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-25T09:04:03.516Z\n"
+"POT-Creation-Date: 2019-02-27T12:03:55.539Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -335,6 +335,17 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr ""
+"Your account needs to be activated by an admin before you can enter. Your "
+"signup request is being reviewed."
+
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr "Admin is reviewing your signup request."
+
+msgid "PAGE##ACCESS-DENIED##TITLE"
+msgstr "Access denied"
+
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
 
@@ -394,7 +405,7 @@ msgstr ""
 "reporting year and recycling process"
 
 msgid "PAGE##PROXIES##TITLE"
-msgstr "Your proxies"
+msgstr "{{ name }} proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
@@ -806,7 +817,7 @@ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr "Recycling Partners"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Addition information"
+msgstr "Additional information"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"
@@ -936,6 +947,9 @@ msgstr "General information"
 msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
 msgstr "General information"
 
+msgid "WIZARD##NO-PROCESS"
+msgstr "Please select a recycling process in step 1"
+
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
 msgstr "Of the element/compound"
 
@@ -1005,6 +1019,9 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#~ msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
+#~ msgstr "Email confirmed! Signup request send to admin."
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"

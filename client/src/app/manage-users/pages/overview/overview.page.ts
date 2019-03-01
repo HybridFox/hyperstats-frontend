@@ -11,6 +11,7 @@ import { UserSelector } from '../../store/users/selectors';
 import { UserType } from '../../store/users/types';
 import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
+import { UserCompanyActions } from '../../store/companies/actions';
 
 @Component({
     templateUrl: './overview.page.html',
@@ -25,6 +26,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     constructor(
         private usersActions: UsersActions,
+        private userCompanyActions: UserCompanyActions,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
@@ -41,6 +43,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             .subscribe((params) => {
                 const types = pathOr(0, ['types', 'length'])(params) > 0 ? params.types : null;
                 this.usersActions.fetchByTypes(types, params.admin === 'true').toPromise();
+                this.userCompanyActions.fetchUserCompanies().toPromise();
             });
 
         this.filter.valueChanges
@@ -91,6 +94,13 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 selected: types.indexOf(CompanyType.CO) !== -1
             }
         ], originalParams.admin === 'true');
+
+        this.router.navigate([], {
+          queryParams: {
+              types: types,
+              admin: originalParams.admin
+          },
+      });
     }
 
     private createFilterForm(types, isAdmin) {
