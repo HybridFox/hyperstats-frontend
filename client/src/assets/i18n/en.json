@@ -12,6 +12,7 @@
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
+            "DELETE-ELEMENT": "Delete element",
             "GOTOAPP": "Go to app",
             "SAVE": "Save"
         },
