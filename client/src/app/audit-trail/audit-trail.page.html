@@ -1,0 +1,24 @@
+<app-page-title
+    [title]="('PAGE.AUDITTRAIL.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })"
+></app-page-title>
+
+<div class="m-card--primary u-margin-bottom-large">
+  <div class="a-table-wrapper">
+      <table class="a-table">
+          <thead>
+              <tr>
+                  <th>{{ "GENERAL.LABELS.ACTIVITY" | translate }}</th>
+                  <th>{{ "GENERAL.LABELS.DATE" | translate }}</th>
+                  <th>{{ "GENERAL.LABELS.NAME" | translate }}</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let log of logs">
+                  <td>{{ log.activity }}</td>
+                  <td>{{ log.date }}</td>
+                  <td>{{ log.user }}</td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+</div>
