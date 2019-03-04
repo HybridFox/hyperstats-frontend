@@ -18,8 +18,6 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   public activeStepIndex = 0;
   public additive: FormGroup;
 
-  private stepId: string;
-
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
