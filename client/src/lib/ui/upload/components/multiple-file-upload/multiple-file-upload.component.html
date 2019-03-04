@@ -1,23 +1,22 @@
 <app-upload-input
-    *ngIf="!response?.originalname && !storedFile || multiple "
     (select)="onSelect($event)"
     [label]="label ? label : null"
     [multiple]="multiple"
 ></app-upload-input>
 
-<div *ngFor="let file of response">
+<div *ngFor="let file of response; let index = index">
+  <app-uploaded-list
+      *ngIf="response && file?.state === 'SAVED'"
+      [storedFile]="(file.file | async)?.originalname"
+      (removeFile)="onRemoveFile(index)"
+  ></app-uploaded-list>
+</div>
+
+<div *ngFor="let file of response; let index = index">
     <app-upload-preview
-      *ngIf="response"
-      [progress]="(file | async)?.progress"
-      [name]="(file | async)?.originalname"
-      (removeFile)="onRemoveFile($event)"
+      *ngIf="response && file?.state === 'NEW'"
+      [progress]="(file.file | async)?.progress"
+      [name]="(file.file | async)?.originalname"
+      (removeFile)="onRemoveFile(index)"
     ></app-upload-preview>
 </div>
-
-<div *ngFor="let file of control.value">
-    <app-uploaded-list
-        *ngIf="!response && control.value"
-        [storedFile]="file.originalname"
-    ></app-uploaded-list>
-</div>
-

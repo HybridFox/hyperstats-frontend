@@ -199,6 +199,9 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     public onRemoveFile(fileObject) {
+      if (!this.uploadResults) {
+        this.fetchFiles();
+      }
       const emptyObject = of({
         progress: '',
         result: {
@@ -213,6 +216,26 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         [fileObject.stepIndex]: Object.assign({}, this.uploadResults ? this.uploadResults[fileObject.stepIndex] : {}, {
             [fileObject.input]: emptyObject,
         })
+      });
+    }
+
+    public fetchFiles() {
+      this.process.data.steps.forEach((element, index) => {
+        this.uploadResults = Object.assign({}, this.uploadResults, {
+          [index]: Object.assign({}, this.uploadResults ? this.uploadResults[index] : {}, {
+              ASSET: of({
+                  progress: '',
+                  result: {
+                    assetId: element.qualitativeDescription.asset.assetId,
+                    mimetype: element.qualitativeDescription.asset.mimetype,
+                    uploadDate: element.qualitativeDescription.asset.uploadDate,
+                    originalname: element.qualitativeDescription.asset.originalname,
+                  },
+                  originalname: element.qualitativeDescription.asset.originalname,
+              }),
+              SCHEMATIC: of(element.schematicOverview)
+          })
+        });
       });
     }
 }

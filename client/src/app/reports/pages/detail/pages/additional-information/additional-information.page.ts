@@ -8,6 +8,7 @@ import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+import { of } from 'rxjs';
 
 @Component({
   templateUrl: './additional-information.page.html',
@@ -47,24 +48,67 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
 
   public ngOnInit() {
     this.form = this.formData.getFormData().get('additionalInformation');
+    this.fetchFilesIfNeeded();
   }
 
   public ngAfterViewInit() {
     this.cdRef.detectChanges();
   }
 
+  public onFormReady() {}
+
   public onUpload(filesList: FileList) {
+    this.fetchFilesIfNeeded();
     if (this.uploadResult) {
       Array.from(filesList).map(file => {
-        this.uploadResult.push(this.assetsRepository.upload(file));
+        this.uploadResult.push({
+          state: 'NEW',
+          file: this.assetsRepository.upload(file)
+        });
       });
     } else {
       this.uploadResult = Array.from(filesList).map(file => {
-        return this.assetsRepository.upload(file);
+        return {
+          state: 'NEW',
+          file: this.assetsRepository.upload(file)
+        };
       });
     }
     this.uploadResult = [].concat(this.uploadResult);
   }
 
-  public onFormReady() {}
+  public fetchFilesIfNeeded() {
+    if (this.formData.getFormData().get('additionalInformation.files').value.length > 0 && !this.uploadResult) {
+      this.uploadResult = this.formData.getFormData().get('additionalInformation.files').value.map(file => {
+        const fileObject = {
+          progress: 100,
+          originalname: file.originalname,
+          result: file,
+        };
+        return {
+          state: 'SAVED',
+          file: of(fileObject),
+        };
+      });
+    }
+  }
+
+  public onRemoveFile(index) {
+    if (this.uploadResult) {
+      this.uploadResult.splice(index, 1);
+      this.uploadResult = [].concat(this.uploadResult);
+    } else {
+      this.uploadResult = this.formData.getFormData().get('additionalInformation.files').value
+        .map(file => {
+          const fileObject = {
+            progress: 100,
+            originalname: file.originalname,
+            result: file,
+          };
+          return of(fileObject);
+        });
+      this.uploadResult.splice(index, 1);
+      this.uploadResult = [].concat(this.uploadResult);
+    }
+  }
 }

@@ -9,18 +9,17 @@ export class MultipleFileUploadComponent implements OnChanges {
     @Input() public response: any;
     @Input() public label?: string;
     @Input() public control: FormControl;
-    @Input() public storedFile: string;
     @Input() public multiple: boolean;
     @Output() public upload: EventEmitter<FileList> = new EventEmitter<FileList>();
-    @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public removeFile: EventEmitter<Number> = new EventEmitter<Number>();
 
     public updateValue = (_: any) => {};
 
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.response && this.response) {
           const files = [];
-          this.response.map((file, index) => {
-            file.subscribe(res => {
+          this.response.map((object, index) => {
+            object.file.subscribe(res => {
               if (res && res.result) {
                 files[index] = res.result;
                 if (this.control) {
@@ -36,7 +35,7 @@ export class MultipleFileUploadComponent implements OnChanges {
         this.upload.emit(fileList);
     }
 
-    public onRemoveFile() {
-      this.removeFile.emit();
-  }
+    public onRemoveFile(index) {
+      this.removeFile.emit(index);
+    }
 }

@@ -7,9 +7,9 @@
         class="u-margin-bottom-x-large"
         [multiple]="true"
         [response]="uploadResult"
-        [storedFile]="form?.value?.files?.originalname"
-        (upload)=onUpload($event);
+        (upload)=onUpload($event)
         [control]="form.get('files')"
+        (removeFile)="onRemoveFile($event)"
     ></app-multiple-file-upload>
     <app-sub-section-title
       [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"

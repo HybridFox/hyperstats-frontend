@@ -12,6 +12,7 @@ export class SingleFileUploadComponent implements OnChanges {
     @Input() public storedFile: string;
     @Input() public multiple: boolean;
     @Output() public upload: EventEmitter<FileList> = new EventEmitter<FileList>();
+    @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     public updateValue = (_: any) => {};
 
@@ -30,4 +31,9 @@ export class SingleFileUploadComponent implements OnChanges {
     public onSelect(fileList: FileList) {
         this.upload.emit(fileList);
     }
+
+    public onRemoveFile() {
+      this.storedFile = null;
+      this.removeFile.emit();
+  }
 }
