@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import pathOr from 'ramda/es/pathOr';
+import { select } from '@angular-redux/store';
+import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class FormDataService {
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
+
   public currentTitle: string;
   public formGroup: FormGroup;
   public reportId: string;
@@ -16,16 +21,16 @@ export class FormDataService {
     return this.formGroup;
   }
 
-  // public getRecyclingProcess(): string {
-  //   return this.formGroup.controls.information.controls.recyclingProcess.value;
-  // }
-
   // Todo: Add type
   public initForm(report: any) {
+    this.process$.subscribe(process => {
+      // console.log(process.data.steps);
+    });
+
     this.reportId = pathOr('new', ['_id'])(report);
     this.formGroup = this.formBuilder.group({
       information: this.getInformationFormGroup(pathOr(null, ['data', 'information'])(report)),
-      inputFraction: this.getInputFractionsFormArray(pathOr([], ['data', 'inputFraction'])(report)),
+      inputFraction: this.getInputFractionsFormArray(pathOr([null, null], ['data', 'inputFraction'])(report)),
       additives: this.getAdditivesFormArray(pathOr([], ['data', 'additives'])(report)),
       outputFraction: this.getOutputFractionsFormArray(pathOr([], ['data', 'outputFraction'])(report)),
       recyclingEfficiency: this.getRecyclingEfficiencyFormGroup(pathOr(null, ['data', 'recyclingEfficiency'])(report)),
@@ -46,9 +51,9 @@ export class FormDataService {
   // Todo: Add type
   public getInputFractionFormGroup(inputFraction: any): FormGroup {
     return this.formBuilder.group({
-      siteRef: [pathOr(null, ['siteRef'])(inputFraction)],
+      siteRef: pathOr('', ['siteRef'])(inputFraction),
       data: this.formBuilder.group({
-        processChemistry: [pathOr(null, ['data', 'processChemistry'])(inputFraction), Validators.required],
+        processChemistry: [pathOr('', ['data', 'processChemistry'])(inputFraction), Validators.required],
         weightInput: [pathOr(null, ['data', 'weightInput'])(inputFraction), Validators.required],
         shareOfBatteryType: [pathOr(null, ['data', 'shareOfBatteryType'])(inputFraction), Validators.required],
         weightBatteryType: [pathOr(null, ['data', 'weightBatteryType'])(inputFraction), Validators.required],
@@ -93,7 +98,7 @@ export class FormDataService {
   // Todo: Add type
   public getAdditiveFormGroup(additive: any): FormGroup {
     return this.formBuilder.group({
-      siteRef: pathOr(null, ['siteRef'])(additive),
+      siteRef: pathOr('', ['siteRef'])(additive),
       data: this.formBuilder.group({
         type: [pathOr('', ['data', 'type'])(additive), Validators.required],
         weight: [pathOr(null, ['data', 'weight'])(additive), Validators.required],
@@ -136,7 +141,7 @@ export class FormDataService {
   // Todo: Add type
   public getOutputFractionFormGroup(fraction: any): FormGroup {
     return this.formBuilder.group({
-      siteRef: pathOr(null, ['siteRef'])(fraction),
+      siteRef: pathOr('', ['siteRef'])(fraction),
       data: this.getOutputFractionElementFormArray(pathOr([null], ['data'])(fraction)),
     });
   }
