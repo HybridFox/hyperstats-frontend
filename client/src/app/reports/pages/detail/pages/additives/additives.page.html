@@ -3,7 +3,7 @@
     class="u-margin-bottom"
     [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
   ></app-sub-section-title>
-  <div *ngFor="let additiveItem of additive.controls.data.controls" class="m-card--secondary u-margin-bottom">
+  <div *ngFor="let additiveItem of additive.controls.data.controls; let i = index" class="m-card--secondary u-margin-bottom">
     <div class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-5-12">
         <app-select-input
@@ -20,6 +20,16 @@
           suffix="kg"
         ></app-text-input>
       </div>
+    </div>
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col">
+          <button
+            class="a-button--link a-button--small"
+            (click)="removeElement(additiveItem, i)"
+          >
+            {{ 'GENERAL.BUTTONS.DELETE-ELEMENT' | translate }}
+          </button>
+        </div>
     </div>
   </div>
   <button
