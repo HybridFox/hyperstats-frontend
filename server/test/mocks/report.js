@@ -29,15 +29,15 @@ const NEW_REPORT = {
 		},
 	}],
 	additives: [{
-		siteRef: "addtive",
-		data: {
+		siteRef: "additive",
+		data: [{
 			type: "type",
 			weight: 1,
 			chemicalComposition: [{
 				element: "element",
 				weight: 1,
 			}],
-		},
+		}],
 	}],
 	outputFraction: [{
 		siteRef: "outputFraction",
