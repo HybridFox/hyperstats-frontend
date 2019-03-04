@@ -29,6 +29,9 @@ msgstr ""
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr ""
 
+msgid "GENERAL##BUTTONS##DELETE-ELEMENT"
+msgstr ""
+
 msgid "GENERAL##BUTTONS##GOTOAPP"
 msgstr ""
 

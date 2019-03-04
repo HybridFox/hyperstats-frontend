@@ -120,7 +120,7 @@ const filedData = {
 		files: joi.array().items(joi.object().keys({
 			type: joi.string(),
 		})),
-		additionalInformation: joi.string().optional(),
+		additionalInformation: joi.string().allow("").optional(),
 	}),
 };
 

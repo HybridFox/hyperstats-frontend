@@ -32,6 +32,9 @@ msgstr "Cancel"
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
 
+msgid "GENERAL##BUTTONS##DELETE-ELEMENT"
+msgstr "Delete element"
+
 msgid "GENERAL##BUTTONS##GOTOAPP"
 msgstr "Go to app"
 
@@ -1037,6 +1040,9 @@ msgstr "The form is invalid, make sure you have filled all the fields"
 
 #~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 #~ msgstr "Share of input fraction (%)"
+
+#~ msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
+#~ msgstr "Email confirmed! Signup request send to admin."
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"
