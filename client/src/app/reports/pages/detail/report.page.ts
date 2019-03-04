@@ -127,7 +127,6 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         takeUntil(this.componentDestroyed$),
       )
       .subscribe((id) => {
-        console.log('FETH');
         this.reportProcessActions.getById(id).toPromise();
       });
   }
