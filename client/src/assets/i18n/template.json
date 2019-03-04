@@ -24,6 +24,7 @@
 		"LABELS": {
 			"ACTIVATED": "",
 			"ACTIVE": "",
+			"ACTIVITY": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-COMPANY": "",
 			"ADD-PROXY": "",
@@ -40,6 +41,7 @@
 			"COMPANYVAT": "",
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
+			"DATE": "",
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
@@ -84,6 +86,7 @@
 		},
 		"MENU": {
 			"ABOUT": "",
+			"AUDITTRAIL": "",
 			"AUDITTRIAL": "",
 			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
@@ -124,6 +127,9 @@
 		},
 		"ADMIN": {
 			"FILTERS": ""
+		},
+		"AUDITTRAIL": {
+			"TITLE": ""
 		},
 		"COMPANY": {
 			"ADDRESSINFORMATION": "",

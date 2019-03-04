@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-01T12:03:06.466Z\n"
-"PO-Revision-Date: 2019-03-01T12:03:06.466Z\n"
+"POT-Creation-Date: 2019-03-01T13:04:29.244Z\n"
+"PO-Revision-Date: 2019-03-01T13:04:29.244Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -51,6 +51,9 @@ msgid "GENERAL##LABELS##ACTIVATED"
 msgstr ""
 
 msgid "GENERAL##LABELS##ACTIVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACTIVITY"
 msgstr ""
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
@@ -99,6 +102,9 @@ msgid "GENERAL##LABELS##CONFIRMPASSWORD"
 msgstr ""
 
 msgid "GENERAL##LABELS##COUNTRY"
+msgstr ""
+
+msgid "GENERAL##LABELS##DATE"
 msgstr ""
 
 msgid "GENERAL##LABELS##DELETE-STEP"
@@ -224,6 +230,9 @@ msgstr ""
 msgid "GENERAL##MENU##ABOUT"
 msgstr ""
 
+msgid "GENERAL##MENU##AUDITTRAIL"
+msgstr ""
+
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
@@ -306,6 +315,9 @@ msgid "PAGE##ACCESS-DENIED##TITLE"
 msgstr ""
 
 msgid "PAGE##ADMIN##FILTERS"
+msgstr ""
+
+msgid "PAGE##AUDITTRAIL##TITLE"
 msgstr ""
 
 msgid "PAGE##COMPANY##ADDRESSINFORMATION"

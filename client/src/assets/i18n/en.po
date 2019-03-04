@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-01T12:03:06.466Z\n"
+"POT-Creation-Date: 2019-03-01T13:04:29.244Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,6 +56,9 @@ msgstr "Active"
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr "Active"
 
+msgid "GENERAL##LABELS##ACTIVITY"
+msgstr "Activity"
+
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
 
@@ -107,6 +110,9 @@ msgstr "Confirm password"
 
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
+
+msgid "GENERAL##LABELS##DATE"
+msgstr "Date"
 
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr "Delete step"
@@ -233,6 +239,11 @@ msgstr "Zipcode"
 msgid "GENERAL##MENU##ABOUT"
 msgstr "About us"
 
+#, fuzzy
+#| msgid "GENERAL##MENU##AUDITTRIAL"
+msgid "GENERAL##MENU##AUDITTRAIL"
+msgstr "Audit Trial"
+
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
@@ -338,19 +349,26 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
+#, fuzzy
+#| msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
-msgstr ""
-"Your account needs to be activated by an admin before you can enter. Your "
-"signup request is being reviewed."
+msgstr "Choose a name for this recycling step"
 
+#, fuzzy
+#| msgid "PAGE##CONTACT##TITLE"
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
-msgstr "Admin is reviewing your signup request."
+msgstr "Contact"
 
+#, fuzzy
+#| msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgid "PAGE##ACCESS-DENIED##TITLE"
-msgstr "Access denied"
+msgstr "Manage companies"
 
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
+
+msgid "PAGE##AUDITTRAIL##TITLE"
+msgstr "Audit Trail"
 
 #, fuzzy
 #| msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
@@ -820,7 +838,7 @@ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr "Recycling Partners"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Additional information"
+msgstr "Addition information"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"
