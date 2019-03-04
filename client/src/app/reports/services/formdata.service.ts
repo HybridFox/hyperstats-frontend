@@ -30,7 +30,7 @@ export class FormDataService {
     this.reportId = pathOr('new', ['_id'])(report);
     this.formGroup = this.formBuilder.group({
       information: this.getInformationFormGroup(pathOr(null, ['data', 'information'])(report)),
-      inputFraction: this.getInputFractionsFormArray(pathOr([null, null], ['data', 'inputFraction'])(report)),
+      inputFraction: this.getInputFractionsFormArray(pathOr([], ['data', 'inputFraction'])(report)),
       additives: this.getAdditivesFormArray(pathOr([], ['data', 'additives'])(report)),
       outputFraction: this.getOutputFractionsFormArray(pathOr([], ['data', 'outputFraction'])(report)),
       recyclingEfficiency: this.getRecyclingEfficiencyFormGroup(pathOr(null, ['data', 'recyclingEfficiency'])(report)),
