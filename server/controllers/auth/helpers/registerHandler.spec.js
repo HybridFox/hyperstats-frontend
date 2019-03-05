@@ -5,6 +5,7 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
 const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
@@ -37,7 +38,7 @@ describe("RegisterHandler", () => {
 		password: "validPassword",
 		firstname: "firstname",
 		lastname: "lastname",
-	})).to.eventually.rejectedWith(Error));
+	})).to.eventually.rejectedWith(errors.EmailAlreadyTaken));
 
 	it("Register a new user", () => expect(registerHandler({
 		email: "validuser2@example.com",
