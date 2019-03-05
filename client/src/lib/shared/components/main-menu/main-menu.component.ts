@@ -43,6 +43,7 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
             this.navItems = [
                 { title: ngxExtract('GENERAL.MENU.USERS'), link: ['/admin/users'] },
                 { title: ngxExtract('GENERAL.MENU.COMPANIES'), link: ['/admin/companies'] },
+                { title: ngxExtract('GENERAL.MENU.SIGNUP-REQUESTS'), link: ['/admin/signup-requests'] },
             ];
         } else {
             this.navItems = [
