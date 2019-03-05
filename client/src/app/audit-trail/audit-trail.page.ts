@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   templateUrl: './audit-trail.page.html',
 })
 export class AuditTrailComponent {
-  @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  @select(['auth', 'user', 'result']) public user$: Observable<object>;
 
   logs = [
     {

@@ -6,6 +6,7 @@ const errors = {
 	ItemNotFound: "ITEM_NOT_FOUND",
 	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
 	PageNotFound: "PAGE_NOT_FOUND",
+	EmailAlreadyTaken: "EMAIL_ALREADY_TAKEN",
 };
 
 const errorHandler = (err) => {
@@ -49,6 +50,10 @@ const errorHandler = (err) => {
 		case errors.PageNotFound:
 			statusCode = 404;
 			msg = "Page not found.";
+			break;
+		case errors.EmailAlreadyTaken:
+			statusCode = 409;
+			msg = "Email already taken.";
 			break;
 
 		default:

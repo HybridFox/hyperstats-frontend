@@ -1,5 +1,4 @@
 const { registerHandler } = require("./helpers");
-const errors = require("../../helpers/errorHandler");
 
 module.exports = async(req, res, next) => {
 	try {
@@ -9,6 +8,6 @@ module.exports = async(req, res, next) => {
 
 		res.status(200).json({ success: true });
 	} catch (error) {
-		return next({ message: errors.ObjectValidationFailed });
+		return next(error);
 	}
 };
