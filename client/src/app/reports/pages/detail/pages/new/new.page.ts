@@ -13,7 +13,6 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 import { FormDataService } from '../../../../services/formdata.service';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store/recycling-processes';
-import { FormArray } from '@angular/forms';
 
 @Component({
   templateUrl: './new.page.html',
@@ -79,9 +78,5 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
     if (this.formData.reportId && this.formData.reportId !== 'new' && this.form.get('recyclingProcess').value) {
       this.form.get('recyclingProcess').disable();
     }
-
-    // this.form.get('recyclingProcess').valueChanges.subscribe((process) => {
-    //   console.log(process);
-    // });
   }
 }

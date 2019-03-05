@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
-import { takeUntil, filter, tap, mergeMap, map, switchMap } from 'rxjs/operators';
+import { takeUntil, filter, tap, map, switchMap } from 'rxjs/operators';
 
 import { FormDataService } from '../../services/formdata.service';
 import { Step } from '../../store/reports/types';
@@ -128,11 +128,6 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         takeUntil(this.componentDestroyed$),
         tap((id) => {
           this.reportProcessActions.getById(id).toPromise();
-        }),
-        tap(() => {
-          // this.reportFormService.clearInputFractions();
-          // this.reportFormService.clearOutputFractions();
-          // this.reportFormService.clearAdditives();
         }),
         switchMap(() => {
           return this.process$;
