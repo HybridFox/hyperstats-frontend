@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import pathOr from 'ramda/es/pathOr';
-import { select } from '@angular-redux/store';
-import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class FormDataService {
-  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
 
   public currentTitle: string;
   public formGroup: FormGroup;
@@ -23,10 +19,6 @@ export class FormDataService {
 
   // Todo: Add type
   public initForm(report: any) {
-    this.process$.subscribe(process => {
-      // console.log(process.data.steps);
-    });
-
     this.reportId = pathOr('new', ['_id'])(report);
     this.formGroup = this.formBuilder.group({
       information: this.getInformationFormGroup(pathOr(null, ['data', 'information'])(report)),
@@ -95,6 +87,10 @@ export class FormDataService {
     }));
   }
 
+  public clearInputFractions(): void {
+    (this.formGroup.get('inputFraction') as FormArray).setValue([]);
+  }
+
   // Todo: Add type
   public getAdditiveFormGroup(additive: any): FormGroup {
     return this.formBuilder.group({
@@ -117,6 +113,10 @@ export class FormDataService {
     (this.formGroup.get('additives') as FormArray).push(this.getAdditiveFormGroup({
       siteRef,
     }));
+  }
+
+  public clearAdditives(): void {
+    (this.formGroup.get('additives') as FormArray).setValue([]);
   }
 
   // Todo: Add type
@@ -157,6 +157,10 @@ export class FormDataService {
     (this.formGroup.get('outputFraction') as FormArray).push(this.getOutputFractionFormGroup({
       siteRef,
     }));
+  }
+
+  public clearOutputFractions(): void {
+    (this.formGroup.get('outputFraction') as FormArray).setValue([]);
   }
 
   // Todo: Add type

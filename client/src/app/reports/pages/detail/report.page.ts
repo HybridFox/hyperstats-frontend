@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil, filter } from 'rxjs/operators';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { takeUntil, filter, tap, mergeMap, map, switchMap } from 'rxjs/operators';
 
 import { FormDataService } from '../../services/formdata.service';
 import { Step } from '../../store/reports/types';
-import { ReportsProcessActions } from '../../store/recycling-processes';
+import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
 
@@ -15,6 +15,7 @@ import { select } from '@angular-redux/store';
 })
 export class ReportPageComponent implements OnInit, OnDestroy {
   @select(ReportsSelector.detail.result) public report$: Observable<any>;
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
 
   public form: FormGroup;
   public steps: Step[] = [
@@ -125,9 +126,34 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       .valueChanges
       .pipe(
         takeUntil(this.componentDestroyed$),
+        tap((id) => {
+          this.reportProcessActions.getById(id).toPromise();
+        }),
+        tap(() => {
+          this.reportFormService.clearInputFractions();
+          this.reportFormService.clearOutputFractions();
+          this.reportFormService.clearAdditives();
+        }),
+        switchMap(() => {
+          return this.process$;
+        }),
+        filter((process) => {
+          return !!process;
+        }),
+        map((process) => {
+          return process.data.steps;
+        }),
+        filter((steps) => {
+          return steps.length > 0;
+        }),
       )
-      .subscribe((id) => {
-        this.reportProcessActions.getById(id).toPromise();
+      .subscribe((steps) => {
+        steps.forEach((step) => {
+          console.log(step);
+          this.reportFormService.addInputFraction(step._id);
+          this.reportFormService.addOutputFraction(step._id);
+          this.reportFormService.addAdditive(step._id);
+        });
       });
   }
 }

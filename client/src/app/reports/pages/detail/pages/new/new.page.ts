@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { select$ } from '@angular-redux/store';
+import { select$, select } from '@angular-redux/store';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
@@ -13,12 +13,14 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 import { FormDataService } from '../../../../services/formdata.service';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store/recycling-processes';
+import { FormArray } from '@angular/forms';
 
 @Component({
   templateUrl: './new.page.html',
 })
 export class NewPageComponent extends StepPageAbstract implements OnInit {
   @select$(ReportsProcessSelector.list.result, mapRecyclingProcessesToOptions) public processOptions$: BehaviorSubject<Option>;
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
 
   constructor(
     codesService: CodesService,
@@ -58,7 +60,6 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
       return this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
 
-
     const data = {
       _id: this.formData.reportId,
       data: this.formData.getFormData().getRawValue()
@@ -78,5 +79,9 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
     if (this.formData.reportId && this.formData.reportId !== 'new' && this.form.get('recyclingProcess').value) {
       this.form.get('recyclingProcess').disable();
     }
+
+    // this.form.get('recyclingProcess').valueChanges.subscribe((process) => {
+    //   console.log(process);
+    // });
   }
 }
