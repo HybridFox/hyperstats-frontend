@@ -49,7 +49,7 @@ export class TextInputComponent implements OnInit, OnChanges, OnDestroy, Control
   }
 
   public writeValue(value: string) {
-    this.control.setValue(value);
+    this.control.setValue(value.toLowerCase());
   }
 
   public registerOnChange(fn) {
