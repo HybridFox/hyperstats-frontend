@@ -57,8 +57,6 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
   public nextStep() {
     FormHelper.markAsDirty(this.form);
 
-    console.log(this.form);
-
     if (!this.form.valid) {
       return this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
