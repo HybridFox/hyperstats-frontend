@@ -5,7 +5,7 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
 const ResponseError = require("../../../helpers/errors/responseError");
-const errors = require("../../helpers/errorHandler");
+const errors = require("../../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
