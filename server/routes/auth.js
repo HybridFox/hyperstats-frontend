@@ -80,6 +80,7 @@ module.exports = (router) => {
 	 */
 	router.route("/auth/login").post(
 		dataMiddleware.copy,
+		authMiddleware.lowerCaseEmail,
 		dataMiddleware.validate("body", authValidations.login, Errors.ObjectValidationFailed),
 		authController.login
 	);
@@ -128,6 +129,7 @@ module.exports = (router) => {
 	 */
 	router.route("/auth/register").post(
 		dataMiddleware.copy,
+		authMiddleware.lowerCaseEmail,
 		dataMiddleware.validate("body", authValidations.register, Errors.ObjectValidationFailed),
 		authController.register
 	);
@@ -177,6 +179,7 @@ module.exports = (router) => {
 	 */
 	router.route("/auth/request-password-reset").post(
 		dataMiddleware.copy,
+		authMiddleware.lowerCaseEmail,
 		dataMiddleware.validate("body", authValidations.requestPasswordReset, Errors.ObjectValidationFailed),
 		authController.requestPasswordReset
 	);
