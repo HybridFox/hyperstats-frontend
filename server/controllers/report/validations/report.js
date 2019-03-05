@@ -32,14 +32,14 @@ const savedData = {
 	})),
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
-		data: joi.object().keys({
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().allow("").optional(),
 			weight: joi.number().allow(null).optional(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
 				weight: joi.number().allow(null).optional(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
@@ -93,14 +93,14 @@ const filedData = {
 	})),
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
-		data: joi.object().keys({
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().required(),
 			weight: joi.number().required(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
 				weight: joi.number().required(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),

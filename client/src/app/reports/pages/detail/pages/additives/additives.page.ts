@@ -17,8 +17,7 @@ import { takeUntil } from 'rxjs/operators';
 export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   public activeStepIndex = 0;
   public additive: FormGroup;
-
-  private stepId: string;
+  private stepId: number;
 
   constructor(
     public codesService: CodesService,
@@ -50,13 +49,16 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   }
 
   public addAdditive() {
-    (this.additive.get('data') as FormArray).push(this.formData.getInputFractionElementFormGroup(null));
+    (this.additive.get('data') as FormArray).push(this.formData.getAdditive(null));
   }
 
+  public removeElement(additive: any, elementNumber: number) {
+    (additive.parent as FormArray).removeAt(elementNumber);
+  }
   private setActiveStepById(stepId: string) {
-    const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-    if (stepIndex !== -1) {
-      this.additive = this.form.get(`${stepIndex}`) as FormGroup;
+   this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    if (this.stepId !== -1) {
+      this.additive = this.form.get(`${this.stepId}`) as FormGroup;
     } else {
       this.formData.addAdditive(stepId);
       this.setActiveStepById(stepId);
