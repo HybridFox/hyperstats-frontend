@@ -130,9 +130,9 @@ export class ReportPageComponent implements OnInit, OnDestroy {
           this.reportProcessActions.getById(id).toPromise();
         }),
         tap(() => {
-          this.reportFormService.clearInputFractions();
-          this.reportFormService.clearOutputFractions();
-          this.reportFormService.clearAdditives();
+          // this.reportFormService.clearInputFractions();
+          // this.reportFormService.clearOutputFractions();
+          // this.reportFormService.clearAdditives();
         }),
         switchMap(() => {
           return this.process$;
@@ -148,6 +148,10 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         }),
       )
       .subscribe((steps) => {
+        this.reportFormService.clearInputFractions();
+        this.reportFormService.clearOutputFractions();
+        this.reportFormService.clearAdditives();
+
         steps.forEach((step) => {
           this.reportFormService.addInputFraction(step.uuid);
           this.reportFormService.addOutputFraction(step.uuid);

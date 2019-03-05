@@ -88,7 +88,9 @@ export class FormDataService {
   }
 
   public clearInputFractions(): void {
-    (this.formGroup.get('inputFraction') as FormArray).setValue([]);
+    while ((this.formGroup.get('inputFraction') as FormArray).controls.length > 0) {
+      (this.formGroup.get('inputFraction') as FormArray).removeAt(0);
+    }
   }
 
   // Todo: Add type
@@ -116,7 +118,9 @@ export class FormDataService {
   }
 
   public clearAdditives(): void {
-    (this.formGroup.get('additives') as FormArray).setValue([]);
+    while ((this.formGroup.get('additives') as FormArray).controls.length > 0) {
+      (this.formGroup.get('additives') as FormArray).removeAt(0);
+    }
   }
 
   // Todo: Add type
@@ -160,7 +164,9 @@ export class FormDataService {
   }
 
   public clearOutputFractions(): void {
-    (this.formGroup.get('outputFraction') as FormArray).setValue([]);
+    while ((this.formGroup.get('outputFraction') as FormArray).controls.length > 0) {
+      (this.formGroup.get('outputFraction') as FormArray).removeAt(0);
+    }
   }
 
   // Todo: Add type
