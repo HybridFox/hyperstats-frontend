@@ -7,7 +7,7 @@
       <div class="m-steps">
         <div class="m-steps__step" *ngFor="let step of steps; let i = index;" routerLinkActive="m-steps__step--selected">
           <a [routerLink]="step.route">
-            <div *ngIf="!this.form?.get(step.key)?.valid || this.form?.get(step.key).value.length === 0; else itemValid" class="m-steps__step-icon">
+            <div *ngIf="!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0; else itemValid" class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
             <ng-template #itemValid>
