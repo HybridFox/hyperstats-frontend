@@ -509,7 +509,7 @@ msgid "PAGE##REGISTER##LOADING"
 msgstr "Registering"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr "An email has been send to you"
+msgstr "An email has been sent to you"
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
