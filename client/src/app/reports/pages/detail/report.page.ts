@@ -149,10 +149,9 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       )
       .subscribe((steps) => {
         steps.forEach((step) => {
-          console.log(step);
-          this.reportFormService.addInputFraction(step._id);
-          this.reportFormService.addOutputFraction(step._id);
-          this.reportFormService.addAdditive(step._id);
+          this.reportFormService.addInputFraction(step.uuid);
+          this.reportFormService.addOutputFraction(step.uuid);
+          this.reportFormService.addAdditive(step.uuid);
         });
       });
   }
