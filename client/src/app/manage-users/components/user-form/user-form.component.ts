@@ -28,6 +28,7 @@ export class UserFormComponent implements OnChanges {
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.user && this.user) {
             this.form = this.createForm(this.user);
+            this.form.get('data.company').setValue(this.form.value.data.company._id);
         }
     }
 
