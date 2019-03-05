@@ -4,7 +4,7 @@
 ></app-sub-section-title>
 <div class="m-card--secondary u-margin-bottom">
   <app-input-fraction-form
-    [inputFractionsForm]="formData.formGroup.get('inputFraction')"
+    [inputFractionsForm]="inputFractionsForm"
     [siteRef]="(route.params | async)?.stepId"
     [elements]="codesService.elements()"
   ></app-input-fraction-form>
