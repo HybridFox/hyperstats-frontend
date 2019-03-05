@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UploadPreviewComponent {
     @Input() public name: string;
-    @Input() public progress: any;
+    @Input() public progress: number;
     @Input() public storedFile: string;
     @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
 

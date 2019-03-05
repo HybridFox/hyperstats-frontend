@@ -10,13 +10,11 @@
       [storedFile]="(file.file | async)?.originalname"
       (removeFile)="onRemoveFile(index)"
   ></app-uploaded-list>
-</div>
 
-<div *ngFor="let file of response; let index = index">
-    <app-upload-preview
+  <app-upload-preview
       *ngIf="response && file?.state === 'NEW'"
       [progress]="(file.file | async)?.progress"
       [name]="(file.file | async)?.originalname"
       (removeFile)="onRemoveFile(index)"
-    ></app-upload-preview>
+  ></app-upload-preview>
 </div>
