@@ -388,7 +388,7 @@
         },
         "REGISTER": {
             "EMAIL-ALREADY-TAKEN": {
-                "DESCRIPTION": "Email already taken.",
+                "DESCRIPTION": "Email already taken",
                 "TITLE": "Cannot register"
             },
             "ERROR": {

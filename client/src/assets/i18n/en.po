@@ -794,10 +794,8 @@ msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
 msgstr "Recycling process {{type}}"
 
 msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##DESCRIPTION"
-msgstr "Email already taken."
+msgstr "Email already taken"
 
-#, fuzzy
-#| msgid "TOAST##REGISTER##ERROR##TITLE"
 msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##TITLE"
 msgstr "Cannot register"
 
