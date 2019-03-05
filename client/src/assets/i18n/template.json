@@ -387,6 +387,10 @@
 			}
 		},
 		"REGISTER": {
+			"EMAIL-ALREADY-TAKEN": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""

@@ -387,6 +387,10 @@
             }
         },
         "REGISTER": {
+            "EMAIL-ALREADY-TAKEN": {
+                "DESCRIPTION": "Email already taken.",
+                "TITLE": "Cannot register"
+            },
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
