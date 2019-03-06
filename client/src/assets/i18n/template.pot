@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-05T12:19:08.831Z\n"
-"PO-Revision-Date: 2019-03-05T12:19:08.832Z\n"
+"POT-Creation-Date: 2019-03-06T10:55:40.533Z\n"
+"PO-Revision-Date: 2019-03-06T10:55:40.534Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -45,6 +45,9 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""
 
 msgid "GENERAL##LABELS##ACTIVATED"
@@ -105,6 +108,9 @@ msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
 msgid "GENERAL##LABELS##DATE"
+msgstr ""
+
+msgid "GENERAL##LABELS##DECLINE"
 msgstr ""
 
 msgid "GENERAL##LABELS##DELETE-STEP"
@@ -450,6 +456,9 @@ msgid "PAGE##RESET-PASSWORD##ISRESET"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "PAGE##SIGNUP-REQUESTS##TITLE"
 msgstr ""
 
 msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"

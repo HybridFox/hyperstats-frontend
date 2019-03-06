@@ -1,6 +1,6 @@
 import { progressReducer } from '@store/hor';
 
-import { MODULE, OVERVIEW, DETAIL, ACTIONS } from './action-types';
+import { MODULE, OVERVIEW, DETAIL, ACTIONS, REQUESTS } from './action-types';
 
 const OverviewReducer = (
     state = null,
@@ -24,6 +24,17 @@ const DetailReducer = (
     return state;
 };
 
+const RequestsReducer = (
+  state = null,
+  action,
+) => {
+  if (action.type === ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS) {
+      return action.payload;
+  }
+
+  return state;
+};
+
 
 export const ReducerConfig = {
     overview: progressReducer(
@@ -33,5 +44,9 @@ export const ReducerConfig = {
     detail: progressReducer(
         { entityType: `${MODULE}/${DETAIL}` },
         DetailReducer,
+    ),
+    requests: progressReducer(
+      { entityType: `${MODULE}/${REQUESTS}` },
+        RequestsReducer,
     ),
 };

@@ -16,6 +16,7 @@ export class UserFormComponent implements OnChanges {
 
     @Output() public save: EventEmitter<any> = new EventEmitter<any>();
     @Output() public toggleActivation: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public updateRequest: EventEmitter<object> = new EventEmitter<object>();
 
     public form: FormGroup;
 
@@ -77,6 +78,11 @@ export class UserFormComponent implements OnChanges {
                 }
             }
         } ;
+    }
+
+    public handleRequest(bool) {
+      const user = this.formatUser(this.user, this.form.getRawValue());
+      this.updateRequest.emit({ bool, user });
     }
 
 }

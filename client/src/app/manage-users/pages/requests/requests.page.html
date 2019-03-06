@@ -1,0 +1,12 @@
+<app-page-title
+    [title]="'PAGE.SIGNUP-REQUESTS.TITLE' | translate"
+></app-page-title>
+<div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-12-12">
+        <div class="m-card--primary u-margin-bottom-large">
+            <app-loading [loading]="loading$ | async">
+                <app-signup-requests-table *ngIf="users$ | async" [requests]="users$ | async"></app-signup-requests-table>
+            </app-loading>
+        </div>
+    </div>
+</div>

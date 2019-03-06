@@ -6,12 +6,22 @@ import * as Pages from './pages';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'overview',
+  }, {
+    path: 'overview',
     component: Pages.OverviewPageComponent,
+  }, {
+    path: 'overview/:id',
+    component: Pages.DetailPageComponent,
+  }, {
+      path: 'signup-requests',
+      component: Pages.RequestsPageComponent,
   },
   {
-    path: ':id',
+    path: 'signup-requests/:id',
     component: Pages.DetailPageComponent,
-  },
+},
 ];
 
 @NgModule({

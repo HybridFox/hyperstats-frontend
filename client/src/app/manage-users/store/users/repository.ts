@@ -29,4 +29,10 @@ export class UsersRepository {
   public updateUser(user: any): Observable<any> {
     return this.http.put(this.apiConfig.baseUrl(`/users/${user._id}`), user);
   }
+
+  public fetchPendingRequests(): Observable<any> {
+    return this.http.get(this.apiConfig.baseUrl(`/users`), {
+      params: { 'status': 'PENDING' } as any,
+    });
+  }
 }

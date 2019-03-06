@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-05T12:19:08.831Z\n"
+"POT-Creation-Date: 2019-03-06T10:54:19.481Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -49,6 +49,9 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
+
+msgid "GENERAL##LABELS##ACCEPT"
+msgstr "Accept"
 
 msgid "GENERAL##LABELS##ACTIVATED"
 msgstr "Active"
@@ -113,6 +116,9 @@ msgstr "Country"
 
 msgid "GENERAL##LABELS##DATE"
 msgstr "Date"
+
+msgid "GENERAL##LABELS##DECLINE"
+msgstr "Decline"
 
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr "Delete step"
@@ -530,6 +536,9 @@ msgstr "Your password has been reset! Please login to continiou"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
+
+msgid "PAGE##SIGNUP-REQUESTS##TITLE"
+msgstr "Signup Requests"
 
 msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
 msgstr ""

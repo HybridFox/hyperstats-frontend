@@ -22,6 +22,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACCEPT": "",
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ACTIVITY": "",
@@ -42,6 +43,7 @@
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
 			"DATE": "",
+			"DECLINE": "",
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
@@ -205,6 +207,9 @@
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",
+			"TITLE": ""
+		},
+		"SIGNUP-REQUESTS": {
 			"TITLE": ""
 		},
 		"TERMS-AND-CONDITIONS": {

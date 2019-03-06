@@ -22,6 +22,7 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACCEPT": "Accept",
             "ACTIVATED": "Active",
             "ACTIVE": "Active",
             "ACTIVITY": "Activity",
@@ -42,6 +43,7 @@
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
             "DATE": "Date",
+            "DECLINE": "Decline",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
             "DRAGANDDROP": "Drag files here or",
@@ -206,6 +208,9 @@
         "RESET-PASSWORD": {
             "ISRESET": "Your password has been reset! Please login to continiou",
             "TITLE": "Reset your password"
+        },
+        "SIGNUP-REQUESTS": {
+            "TITLE": "Signup Requests"
         },
         "TERMS-AND-CONDITIONS": {
             "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum",
