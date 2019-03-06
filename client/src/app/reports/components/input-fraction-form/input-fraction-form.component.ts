@@ -20,9 +20,7 @@ export class InputFractionFormComponent implements OnChanges {
   ) {}
 
   public ngOnChanges() {
-    setTimeout(() => {
-      this.setActiveStepById();
-    }, 10);
+    this.setActiveStepById();
   }
 
   public addElement() {
@@ -39,7 +37,7 @@ export class InputFractionFormComponent implements OnChanges {
   private setActiveStepById() {
     const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.siteRef);
     if (stepIndex !== -1) {
-      this.form = this.inputFractionsForm.get(`${stepIndex}`) as FormGroup;
+      this.form = this.formData.formGroup.get('inputFraction').get(`${stepIndex}`) as FormGroup;
     } else {
       this.setActiveStepById();
     }

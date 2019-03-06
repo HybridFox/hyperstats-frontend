@@ -45,5 +45,6 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
 
   public onFormReady(): void {
     this.inputFractionsForm = this.formData.formGroup.get('inputFraction');
+    // this.inputFractionsForm = this.form;
   }
 }
