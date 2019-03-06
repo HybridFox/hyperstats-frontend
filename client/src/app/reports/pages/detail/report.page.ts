@@ -18,6 +18,8 @@ export class ReportPageComponent implements OnInit, OnDestroy {
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
 
   public form: FormGroup;
+  public currentId = 'new';
+
   public steps: Step[] = [
     {
       name: 'WIZARD.TITLES.NEW-REPORT',
@@ -97,6 +99,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         takeUntil(this.componentDestroyed$),
       )
       .subscribe(({ id }) => {
+        this.currentId = id;
         if (id === 'new') {
           this.initForm();
         } else {
@@ -143,15 +146,17 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         }),
       )
       .subscribe((steps) => {
-        this.reportFormService.clearInputFractions();
-        this.reportFormService.clearOutputFractions();
-        this.reportFormService.clearAdditives();
+        if (this.currentId === 'new') {
+          this.reportFormService.clearInputFractions();
+          this.reportFormService.clearOutputFractions();
+          this.reportFormService.clearAdditives();
 
-        steps.forEach((step) => {
-          this.reportFormService.addInputFraction(step.uuid);
-          this.reportFormService.addOutputFraction(step.uuid);
-          this.reportFormService.addAdditive(step.uuid);
-        });
+          steps.forEach((step) => {
+            this.reportFormService.addInputFraction(step.uuid);
+            this.reportFormService.addOutputFraction(step.uuid);
+            this.reportFormService.addAdditive(step.uuid);
+          });
+        }
       });
   }
 }
