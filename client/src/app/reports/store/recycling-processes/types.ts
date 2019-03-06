@@ -6,10 +6,10 @@ export interface RecyclingProcess {
 
 interface Data {
   name: string;
-  steps: Step[];
+  steps: ProcessStep[];
 }
 
-interface Step {
+export interface ProcessStep {
   description: string;
   methodOfProcessing: string;
   precedingStep: string;

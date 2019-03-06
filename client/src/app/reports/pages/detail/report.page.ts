@@ -6,7 +6,7 @@ import { takeUntil, filter, tap, map, switchMap } from 'rxjs/operators';
 
 import { FormDataService } from '../../services/formdata.service';
 import { Step, Report } from '../../store/reports/types';
-import { RecyclingProcess } from '../../store/recycling-processes/types';
+import { RecyclingProcess, ProcessStep } from '../../store/recycling-processes/types';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
@@ -136,13 +136,13 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         switchMap(() => {
           return this.process$;
         }),
-        filter((process: any) => {
+        filter((process: RecyclingProcess) => {
           return !!process;
         }),
-        map((process) => {
+        map((process: RecyclingProcess) => {
           return process.data.steps;
         }),
-        filter((steps) => {
+        filter((steps: ProcessStep[]) => {
           return steps.length > 0;
         }),
       )
