@@ -75,7 +75,7 @@ const ReportSchema = mongoose.Schema({
 			siteRef: {
 				type: String,
 			},
-			data: {
+			data: [{
 				type: {
 					type: String,
 				},
@@ -90,7 +90,7 @@ const ReportSchema = mongoose.Schema({
 						type: Number,
 					},
 				}],
-			},
+			}],
 		}],
 		outputFraction: [{
 			siteRef: {

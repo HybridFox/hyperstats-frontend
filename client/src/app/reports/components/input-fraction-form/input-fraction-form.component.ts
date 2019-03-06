@@ -31,6 +31,11 @@ export class InputFractionFormComponent implements OnChanges {
       .push(this.formData.getInputFractionElementFormGroup(null));
   }
 
+  public removeElement(elementNumber: number) {
+    const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.siteRef);
+    (this.inputFractionsForm.controls[stepIndex].get('data.elements') as FormArray).removeAt(elementNumber);
+  }
+
   private setActiveStepById() {
     const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.siteRef);
     if (stepIndex !== -1) {

@@ -9,7 +9,6 @@
  * e907 = upload
  * e908 = file
  */
-
 .a-icon {
     color:inherit;
     font-size: $font-size-large;
@@ -66,6 +65,7 @@
         content: "\e905";
     }
 }
+
 .a-icon--plus {
     @extend .a-icon;
     &::before {

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-01T13:04:29.244Z\n"
+"POT-Creation-Date: 2019-03-05T08:57:39.420Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -31,6 +31,9 @@ msgstr "Cancel"
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
+
+msgid "GENERAL##BUTTONS##DELETE-ELEMENT"
+msgstr "Delete element"
 
 msgid "GENERAL##BUTTONS##GOTOAPP"
 msgstr "Go to app"
@@ -506,7 +509,7 @@ msgid "PAGE##REGISTER##LOADING"
 msgstr "Registering"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr "An email has been send to you"
+msgstr "An email has been sent to you"
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
@@ -790,6 +793,12 @@ msgstr "The recycling process is {{type}}."
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
 msgstr "Recycling process {{type}}"
 
+msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##DESCRIPTION"
+msgstr "Email already taken"
+
+msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##TITLE"
+msgstr "Cannot register"
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
 
@@ -1037,6 +1046,9 @@ msgstr "The form is invalid, make sure you have filled all the fields"
 
 #~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 #~ msgstr "Share of input fraction (%)"
+
+#~ msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
+#~ msgstr "Email confirmed! Signup request send to admin."
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"

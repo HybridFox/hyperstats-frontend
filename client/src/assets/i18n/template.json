@@ -12,6 +12,7 @@
 		"BUTTONS": {
 			"CANCEL": "",
 			"CREATENEWREPORT": "",
+			"DELETE-ELEMENT": "",
 			"GOTOAPP": "",
 			"SAVE": ""
 		},
@@ -386,6 +387,10 @@
 			}
 		},
 		"REGISTER": {
+			"EMAIL-ALREADY-TAKEN": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
