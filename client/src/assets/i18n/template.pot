@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-06T10:55:40.533Z\n"
-"PO-Revision-Date: 2019-03-06T10:55:40.534Z\n"
+"POT-Creation-Date: 2019-03-06T13:25:28.303Z\n"
+"PO-Revision-Date: 2019-03-06T13:25:28.303Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -318,6 +318,12 @@ msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##PENDING##TITLE"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##TITLE"
@@ -713,6 +719,30 @@ msgstr ""
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##TITLE"
+msgstr ""
+
 msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -722,7 +752,7 @@ msgstr ""
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr ""
 
-msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TYPES##COMPANY##AUTHORISATION-ORG"

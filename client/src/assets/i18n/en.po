@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-06T10:54:19.481Z\n"
+"POT-Creation-Date: 2019-03-06T13:25:28.303Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -358,20 +358,20 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
-msgstr "Choose a name for this recycling step"
+msgstr "Your account is deactivated. Contact an administrator if necessary."
 
-#, fuzzy
-#| msgid "PAGE##CONTACT##TITLE"
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
-msgstr "Contact"
+msgstr "Account Deactivated"
 
-#, fuzzy
-#| msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
+msgstr "An administrator is looking into your signup request. "
+
+msgid "PAGE##ACCESS-DENIED##PENDING##TITLE"
+msgstr "Signup request sent to admin"
+
 msgid "PAGE##ACCESS-DENIED##TITLE"
-msgstr "Manage companies"
+msgstr "Access Denied"
 
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
@@ -829,6 +829,30 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to grant access."
+
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##TITLE"
+msgstr "Error granting access"
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##DESCRIPTION"
+msgstr "The user is granted access!"
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##TITLE"
+msgstr "Access granted!"
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to decline the user."
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##TITLE"
+msgstr "Error declining user"
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##DESCRIPTION"
+msgstr "The user is successfully declined!"
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##TITLE"
+msgstr "User declined!"
+
 msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
 msgstr "An error occurred while trying to save the user."
 
@@ -838,7 +862,9 @@ msgstr "Error saving user"
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr "The user is successfully saved!"
 
-msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+#, fuzzy
+#| msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##TITLE"
 msgstr "User saved!"
 
 msgid "TYPES##COMPANY##AUTHORISATION-ORG"

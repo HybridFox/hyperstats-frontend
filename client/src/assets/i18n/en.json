@@ -123,10 +123,14 @@
         },
         "ACCESS-DENIED": {
             "DEACTIVATED": {
-                "DESCRIPTION": "Choose a name for this recycling step",
-                "TITLE": "Contact"
+                "DESCRIPTION": "Your account is deactivated. Contact an administrator if necessary.",
+                "TITLE": "Account Deactivated"
             },
-            "TITLE": "Manage companies"
+            "PENDING": {
+                "DESCRIPTION": "An administrator is looking into your signup request. ",
+                "TITLE": "Signup request sent to admin"
+            },
+            "TITLE": "Access Denied"
         },
         "ADMIN": {
             "FILTERS": "Filters:"
@@ -412,17 +416,33 @@
                 "TITLE": "Success!"
             }
         },
+        "USER-ADMIN-ACCEPT": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to grant access.",
+                "TITLE": "Error granting access"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is granted access!",
+                "TITLE": "Access granted!"
+            }
+        },
+        "USER-ADMIN-DECLINE": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to decline the user.",
+                "TITLE": "Error declining user"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully declined!",
+                "TITLE": "User declined!"
+            }
+        },
         "USER-ADMIN-SAVE": {
             "ERROR": {
                 "DESCRIPTION": "An error occurred while trying to save the user.",
                 "TITLE": "Error saving user"
             },
             "SUCCESS": {
-                "DESCRIPTION": "The user is successfully saved!"
-            }
-        },
-        "USER-ADMIN-SAVEF": {
-            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully saved!",
                 "TITLE": "User saved!"
             }
         }

@@ -126,6 +126,10 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
+			"PENDING": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
 			"TITLE": ""
 		},
 		"ADMIN": {
@@ -412,17 +416,33 @@
 				"TITLE": ""
 			}
 		},
+		"USER-ADMIN-ACCEPT": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-DECLINE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"USER-ADMIN-SAVE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
 			"SUCCESS": {
-				"DESCRIPTION": ""
-			}
-		},
-		"USER-ADMIN-SAVEF": {
-			"SUCCESS": {
+				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		}
