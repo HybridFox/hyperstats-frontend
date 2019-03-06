@@ -28,7 +28,6 @@ export class UserFormComponent implements OnChanges {
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.user && this.user) {
             this.form = this.createForm(this.user);
-            this.form.get('data.company').setValue(this.form.value.data.company._id);
         }
     }
 
@@ -38,7 +37,7 @@ export class UserFormComponent implements OnChanges {
                 firstname: this.formBuilder.control(pathOr('', ['data', 'firstname'], user)),
                 lastname: this.formBuilder.control(pathOr('', ['data', 'lastname'], user)),
                 email: this.formBuilder.control(pathOr('', ['data', 'email'], user)),
-                company: this.formBuilder.control(pathOr('', ['data', 'company'], user))
+                company: this.formBuilder.control(pathOr('', ['data', 'company', '_id'], user))
             }),
             meta: this.formBuilder.group({
                 activated: this.formBuilder.control(pathOr('DEACTIVATED', ['meta', 'status', 'type'], user) === 'ACTIVATED')
