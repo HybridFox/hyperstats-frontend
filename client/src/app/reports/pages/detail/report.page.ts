@@ -136,7 +136,6 @@ export class ReportPageComponent implements OnInit, OnDestroy {
           return this.process$;
         }),
         filter((process: any) => {
-          console.log(process);
           return !!process;
         }),
         map((process) => {
