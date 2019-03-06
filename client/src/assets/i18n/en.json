@@ -195,7 +195,7 @@
         },
         "REGISTER": {
             "LOADING": "Registering",
-            "VERIFY-EMAIL": "An email has been send to you"
+            "VERIFY-EMAIL": "An email has been sent to you"
         },
         "REPORTS": {
             "DRAFT": "Draft",
@@ -387,6 +387,10 @@
             }
         },
         "REGISTER": {
+            "EMAIL-ALREADY-TAKEN": {
+                "DESCRIPTION": "Email already taken",
+                "TITLE": "Cannot register"
+            },
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"

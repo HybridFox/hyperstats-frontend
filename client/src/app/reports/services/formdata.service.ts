@@ -93,14 +93,24 @@ export class FormDataService {
     }
   }
 
+  public getAdditive(additiveItem: any): FormGroup {
+    return this.formBuilder.group({
+      type: [pathOr('', ['type'])(additiveItem), Validators.required],
+      weight: [pathOr(null, ['weight'])(additiveItem), Validators.required],
+    });
+  }
+
+  public getAdditives(additiveItems: any[]): FormArray {
+    return this.formBuilder.array(additiveItems.map((element) => {
+      return this.getAdditive(element);
+    }));
+  }
+
   // Todo: Add type
   public getAdditiveFormGroup(additive: any): FormGroup {
     return this.formBuilder.group({
       siteRef: pathOr('', ['siteRef'])(additive),
-      data: this.formBuilder.group({
-        type: [pathOr('', ['data', 'type'])(additive), Validators.required],
-        weight: [pathOr(null, ['data', 'weight'])(additive), Validators.required],
-      })
+      data: this.getAdditives(pathOr([null], ['data'])(additive)),
     });
   }
 

@@ -53,12 +53,19 @@ export class RegisterPageComponent implements OnInit, OnDestroy {
             ...this.registerForm.value
         }).then(() => {
             this.registerSucceeded = true;
-        }).catch(() => {
+        }).catch((error) => {
             this.loadingRegister = false;
-            this.toastrService.error(
+            if (error.status === 409) {
+              this.toastrService.error(
+                ngxExtract('TOAST.REGISTER.EMAIL-ALREADY-TAKEN.DESCRIPTION') as string,
+                ngxExtract('TOAST.REGISTER.EMAIL-ALREADY-TAKEN.TITLE') as string
+              );
+            } else {
+              this.toastrService.error(
                 ngxExtract('TOAST.REGISTER.ERROR.DESCRIPTION') as string,
                 ngxExtract('TOAST.REGISTER.ERROR.TITLE') as string
-            );
+              );
+            }
         });
     }
 }
