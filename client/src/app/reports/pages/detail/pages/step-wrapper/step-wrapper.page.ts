@@ -44,6 +44,7 @@ export class StepWrapperPageComponent implements OnInit {
       )
       .pipe(
         map(([process, params]) => {
+          console.log(process);
           if (!process) {
             return;
           }

@@ -6,6 +6,7 @@ import { takeUntil, filter, tap, map, switchMap } from 'rxjs/operators';
 
 import { FormDataService } from '../../services/formdata.service';
 import { Step, Report } from '../../store/reports/types';
+import { RecyclingProcess } from '../../store/recycling-processes/types';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
@@ -15,7 +16,7 @@ import { select } from '@angular-redux/store';
 })
 export class ReportPageComponent implements OnInit, OnDestroy {
   @select(ReportsSelector.detail.result) public report$: Observable<Report>;
-  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<RecyclingProcess>;
 
   public form: FormGroup;
   public currentId = 'new';
