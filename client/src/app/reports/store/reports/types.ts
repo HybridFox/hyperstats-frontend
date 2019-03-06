@@ -34,7 +34,6 @@ interface ChemicalComposition {
     weight: number;
 }
 
-
 export interface Additives {
   siteRef: string;
   data: AdditivesData;
