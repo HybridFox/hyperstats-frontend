@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-01T16:04:33.332Z\n"
-"PO-Revision-Date: 2019-03-01T16:04:33.332Z\n"
+"POT-Creation-Date: 2019-03-06T08:54:18.163Z\n"
+"PO-Revision-Date: 2019-03-06T08:54:18.163Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -27,6 +27,9 @@ msgid "GENERAL##BUTTONS##CANCEL"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
+msgstr ""
+
+msgid "GENERAL##BUTTONS##DELETE-ELEMENT"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##GOTOAPP"
@@ -675,6 +678,12 @@ msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##TITLE"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"

@@ -1,9 +1,11 @@
-<ng-container *ngIf="outputFraction" >
+<ng-container *ngIf="outputFraction">
   <app-sub-section-title
     class="u-margin-bottom"
     [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate"
   ></app-sub-section-title>
-  <div class="m-card--secondary u-margin-bottom" *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
+  <div
+    class="m-card--secondary u-margin-bottom"
+    *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
     <div class="m-card--secondary u-margin-bottom">
       <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-6-12">
@@ -20,6 +22,7 @@
             [label]="'WIZARD.OUTPUT-FRACTION.LABELS.MASS' | translate"
             [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.ON-DRY-WEIGHT-BASIS' | translate"
             [control]="fraction.get('mass')"
+            [elements]="outputFraction.get('data').value"
           ></app-mass-input>
         </div>
       </div>
@@ -58,15 +61,26 @@
           ></app-text-input>
         </div>
       </div>
+      <div class="l-grid__row l-grid--with-margins">
+        <button
+          class="u-margin-top-large a-button--link a-button--small"
+          (click)="removeElement(fraction, i)"
+        >
+          {{ 'GENERAL.BUTTONS.DELETE-ELEMENT' | translate }}
+        </button>
+      </div>
     </div>
   </div>
-  <button
-    class="a-button--primary a-button-outline has-icon-after"
-    (click)="addElement()">
-      {{ 'WIZARD.OUTPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
+  <button class="a-button--primary a-button-outline has-icon-after" (click)="addElement()">
+    {{ 'WIZARD.OUTPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
   </button>
   <div class="u-margin-top-large">
-    <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+    <button
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}
+    </button>
     <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
   </div>
 </ng-container>

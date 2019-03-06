@@ -36,7 +36,7 @@ describe("Integration", () => {
 					lastname: "Smith",
 				})
 				.expect("Content-Type", /json/)
-				.expect(400);
+				.expect(409);
 		});
 
 		it("Should not be able to get register user when no email is passed", () => {
