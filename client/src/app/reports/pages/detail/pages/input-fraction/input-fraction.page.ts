@@ -12,8 +12,6 @@ import { StepPageAbstract } from '../step-page.abstract';
   templateUrl: './input-fraction.page.html',
 })
 export class InputFractionPageComponent extends StepPageAbstract implements OnInit {
-  public inputFractionsForm;
-
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
@@ -44,7 +42,5 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
   }
 
   public onFormReady(): void {
-    this.inputFractionsForm = this.formData.formGroup.get('inputFraction');
-    // this.inputFractionsForm = this.form;
   }
 }
