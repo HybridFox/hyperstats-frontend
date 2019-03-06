@@ -200,6 +200,7 @@
         "REPORTS": {
             "DRAFT": "Draft",
             "FILED": "Filed",
+            "NOPROCESSREPORTS": "There are no reports for this recycling process",
             "NOREPORTS": "You don’t have any reports yet",
             "TITLE": "Reports"
         },

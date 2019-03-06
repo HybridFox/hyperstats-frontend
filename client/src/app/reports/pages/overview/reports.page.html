@@ -21,7 +21,10 @@
       </div>
       <div class="l-grid__col-9-12 m-card--primary">
           <app-loading [loading]="reportsLoading$ | async">
-              <app-report-table [reports]="reports$ | async"></app-report-table>
+            <div *ngIf="!(reports$ | async)?.length">
+              <p>{{ 'PAGE.REPORTS.NOPROCESSREPORTS' | translate }}</p>
+            </div>
+            <app-report-table [reports]="reports$ | async"></app-report-table>
           </app-loading>
       </div>
   </div>

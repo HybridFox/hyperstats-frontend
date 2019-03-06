@@ -200,6 +200,7 @@
 		"REPORTS": {
 			"DRAFT": "",
 			"FILED": "",
+			"NOPROCESSREPORTS": "",
 			"NOREPORTS": "",
 			"TITLE": ""
 		},
