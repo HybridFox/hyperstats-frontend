@@ -129,13 +129,14 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       .valueChanges
       .pipe(
         takeUntil(this.componentDestroyed$),
-        tap((id) => {
+        tap((id: string) => {
           this.reportProcessActions.getById(id).toPromise();
         }),
         switchMap(() => {
           return this.process$;
         }),
-        filter((process) => {
+        filter((process: any) => {
+          console.log(process);
           return !!process;
         }),
         map((process) => {

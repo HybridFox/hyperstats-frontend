@@ -22,7 +22,7 @@ export interface InputFractionData {
     shareOfBatteryType: number;
     weightBatteryType: number;
     excessMaterialReceived: ExcessMaterialReceived[];
-    elements: AdditivesElements[];
+    elements: AdditionalElement[];
     descriptionOfMethodologyShare: string;
     descriptionOfMethodologyChemicalComposition: string;
     massOfExternalJacket: number;
@@ -34,7 +34,13 @@ interface ChemicalComposition {
     weight: number;
 }
 
+
 export interface Additives {
+  siteRef: string;
+  data: AdditivesData;
+}
+
+export interface AdditivesData {
     type: string;
     weight: number;
     chemicalComposition: ChemicalComposition;
@@ -45,7 +51,7 @@ interface ExcessMaterialReceived {
     packagingMaterial: number;
 }
 
-interface AdditivesElements {
+export interface AdditionalElement {
     element: string;
     mass: number;
 }
@@ -89,4 +95,8 @@ export interface Report {
         additionalInformation: AdditionalInformation,
     };
     meta: Meta;
+}
+
+export interface SiteRef {
+  siteRef: string;
 }
