@@ -19,7 +19,6 @@ import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store
 })
 export class NewPageComponent extends StepPageAbstract implements OnInit {
   @select$(ReportsProcessSelector.list.result, mapRecyclingProcessesToOptions) public processOptions$: BehaviorSubject<Option>;
-  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
 
   constructor(
     codesService: CodesService,
