@@ -155,5 +155,18 @@
                 color: $gray;
             }
         }
+        &--invalid {
+          color: $yellow;
+          &::after {
+              position: absolute;
+              content: '';
+              top: $spacer;
+              right: -$spacer-x-large;
+              width: 5px;
+              height: 40px;
+              background-color: $yellow;
+          }
+
+        }
     }
 }

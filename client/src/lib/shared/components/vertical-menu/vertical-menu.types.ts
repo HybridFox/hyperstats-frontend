@@ -4,3 +4,10 @@ export interface MenuItem {
     label: string;
     class?: string;
 }
+
+export interface StepMenuItem {
+  link: string[];
+  queryParams?: any;
+  label: string;
+  valid: boolean;
+}

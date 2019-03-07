@@ -3,34 +3,49 @@ import { BehaviorSubject, Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { select$, select } from '@angular-redux/store';
-import { map, filter } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
-import { mapToSiteMenuItems } from 'src/app/reports/services/select.helpers';
+import { mapToStepMenuItems } from 'src/app/reports/services/select.helpers';
+import { FormDataService } from 'src/app/reports/services/formdata.service';
 
 @Component({
   templateUrl: './step-wrapper.page.html',
 })
 export class StepWrapperPageComponent implements OnInit {
-  @select$(ReportsProcessSelector.detail.result, mapToSiteMenuItems) public siteMenuItems$: BehaviorSubject<MenuItem[]>;
+  @select$(ReportsProcessSelector.detail.result, mapToStepMenuItems) public siteMenuItems$: BehaviorSubject<MenuItem[]>;
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
   public title$;
+  public currentForm;
+  public sideItems = [];
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+
+  public stepWrapperItems = {
+    'input-fraction': 'inputFraction',
+    'additives': 'additives',
+    'output-fraction': 'outputFraction',
+  };
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    public formData: FormDataService,
   ) {}
 
   public ngOnInit() {
+
     if (!this.route.firstChild) {
       this.siteMenuItems$
         .pipe(
           takeUntil(this.componentDestroyed$)
         )
         .subscribe((links) => {
+          if (this.sideItems.length === 0) {
+            this.sideItems = links;
+            this.handleStepValidation();
+          }
           if (links.length > 0) {
             this.router.navigate(links[0].link, { relativeTo: this.route });
           }
@@ -59,5 +74,22 @@ export class StepWrapperPageComponent implements OnInit {
         }),
       );
     }, 1);
+  }
+
+  private handleStepValidation() {
+    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]);
+    this.currentForm.controls.forEach(control => {
+      this.setValidValue(control);
+      control.valueChanges.subscribe(() => {
+        this.setValidValue(control);
+      });
+    });
+  }
+
+  private setValidValue(control: any) {
+    const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
+    if (currentItem) {
+      currentItem.valid = control.valid;
+    }
   }
 }

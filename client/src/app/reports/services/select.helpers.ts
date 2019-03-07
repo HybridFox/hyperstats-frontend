@@ -1,6 +1,6 @@
 import { map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
+import { MenuItem, StepMenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import pathOr from 'ramda/es/pathOr';
 
@@ -48,6 +48,22 @@ export const mapToSiteMenuItems = (obs$: Observable<any>) => {
         return pathOr([], ['data', 'steps'], process).map((step): MenuItem => ({
           link: ['./', step.uuid],
           label: step.description,
+        }));
+      })
+    );
+};
+
+export const mapToStepMenuItems = (obs$: Observable<any>) => {
+  return obs$
+    .pipe(
+      filter((process: any[]) => {
+        return !!process;
+      }),
+      map((process: any[]) => {
+        return pathOr([], ['data', 'steps'], process).map((step): StepMenuItem => ({
+          link: ['./', step.uuid],
+          label: step.description,
+          valid: false,
         }));
       })
     );
