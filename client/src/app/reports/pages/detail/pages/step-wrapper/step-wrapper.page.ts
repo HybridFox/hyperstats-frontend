@@ -9,6 +9,7 @@ import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 import { mapToStepMenuItems } from 'src/app/reports/services/select.helpers';
 import { FormDataService } from 'src/app/reports/services/formdata.service';
+import { FormArray } from '@angular/forms';
 
 @Component({
   templateUrl: './step-wrapper.page.html',
@@ -17,7 +18,7 @@ export class StepWrapperPageComponent implements OnInit {
   @select$(ReportsProcessSelector.detail.result, mapToStepMenuItems) public siteMenuItems$: BehaviorSubject<MenuItem[]>;
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
   public title$;
-  public currentForm;
+  public currentForm: FormArray;
   public sideItems = [];
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -35,7 +36,6 @@ export class StepWrapperPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-
     if (!this.route.firstChild) {
       this.siteMenuItems$
         .pipe(
@@ -77,7 +77,7 @@ export class StepWrapperPageComponent implements OnInit {
   }
 
   private handleStepValidation() {
-    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]);
+    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
     this.currentForm.controls.forEach(control => {
       this.setValidValue(control);
       control.valueChanges.subscribe(() => {
