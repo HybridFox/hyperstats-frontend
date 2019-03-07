@@ -47,7 +47,7 @@ module.exports = async(body) => {
 	const newUser = new UserModel({
 		data: {
 			...body,
-			company: "5c485d0029abc50032947f91",
+			company: null,
 		},
 		meta: {
 			validation: {

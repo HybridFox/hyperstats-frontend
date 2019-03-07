@@ -2,7 +2,7 @@ const UserModel = require("../../../../models/user");
 const Errors = require("../../../../helpers/errorHandler");
 
 module.exports = async(id, data) => {
-	const user = await UserModel.findOne({ _id: id, "meta.deleted": false }).exec();
+	const user = await UserModel.findOne({ _id: id, "meta.deleted": false }).populate("data.company").exec();
 	const originalUserObject = user.toObject();
 
 	if (!user) {
@@ -17,7 +17,6 @@ module.exports = async(id, data) => {
 		...originalUserObject.meta,
 		...data.meta,
 	};
-
 
 	await user.save();
 
