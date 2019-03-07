@@ -94,7 +94,6 @@ export class StepWrapperPageComponent implements OnInit {
   }
 
   private setValidValue(control: FormGroup) {
-    console.log(control);
     const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
     if (currentItem) {
       currentItem.valid = control.valid;
