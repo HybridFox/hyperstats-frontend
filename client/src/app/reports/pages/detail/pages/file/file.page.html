@@ -8,7 +8,13 @@
     </div>
     <div class="u-margin-top-x-large">
         <p>{{ 'WIZARD.FILE-REPORT.DESCRIPTION.FILE-REPORT' | translate }}</p>
-        <button (click)="file()" class="a-button--primary">{{ 'WIZARD.FILE-REPORT.LABELS.FILE-REPORT' | translate }}</button>
+        <button
+          (click)="file()"
+          class="a-button--primary"
+          disabled="!formData?.formGroup?.valid"
+        >
+          {{ 'WIZARD.FILE-REPORT.LABELS.FILE-REPORT' | translate }}
+        </button>
     </div>
     <div class="u-margin-top-large">
         <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>

@@ -47,7 +47,7 @@ export class StepWrapperPageComponent implements OnInit {
 
             setTimeout(() => {
               this.handleStepValidation();
-            }, 1);
+            }, 0);
           }
           if (links.length > 0) {
             this.router.navigate(links[0].link, { relativeTo: this.route });
