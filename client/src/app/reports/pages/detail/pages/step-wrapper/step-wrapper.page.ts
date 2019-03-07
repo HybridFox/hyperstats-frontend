@@ -45,6 +45,7 @@ export class StepWrapperPageComponent implements OnInit {
           if (this.sideItems.length === 0) {
             this.sideItems = links;
 
+            // TODO: look for a better solution
             setTimeout(() => {
               this.handleStepValidation();
             }, 0);
