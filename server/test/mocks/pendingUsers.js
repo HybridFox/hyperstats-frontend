@@ -20,6 +20,7 @@ module.exports = [
 		},
 		"data" : {
 			"email" : "jonh.doe@studiohyperdrive.be",
+			"username" : "jonh.doe@studiohyperdrive.be",
 			"firstname" : "John",
 			"lastname" : "Doe",
 			"password" : "$2b$08$LDC06tp3t0q7c9lYPMH8Je3UcTXT58WRtIZOil6wEUshBmXIhmi1C",
@@ -47,6 +48,7 @@ module.exports = [
 		},
 		"data" : {
 			"email" : "jan.peeters@studiohyperdrive.be",
+			"username" : "jan.peeters@studiohyperdrive.be",
 			"firstname" : "Jan",
 			"lastname" : "Peeters",
 			"password" : "$2b$08$LDC06tp3t0q7c9lYPMH8Je3UcTXT58WRtIZOil6wEUshBmXIhmi1C",
