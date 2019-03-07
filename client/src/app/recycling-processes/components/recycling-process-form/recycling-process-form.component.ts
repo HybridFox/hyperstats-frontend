@@ -92,7 +92,9 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
     private createStepFormGroups(steps: any[]): FormArray {
         if (!steps.length) {
-            return this.formBuilder.array([this.createStep()]);
+          const newStepForm = this.formBuilder.array([this.createStep()]);
+          newStepForm.controls[0].get('precedingStep').setValue('none');
+          return newStepForm;
         }
 
         return this.formBuilder.array(steps.map((step) => this.createStep(step)));
@@ -112,7 +114,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     }): FormGroup {
         return this.formBuilder.group({
             uuid: [step.uuid],
-            precedingStep: [step.precedingStep],
+            precedingStep: [step.precedingStep, Validators.required],
             description: [step.description, Validators.required],
             site: [step.site, Validators.required],
             methodOfProcessing: [step.methodOfProcessing, Validators.required],
@@ -128,9 +130,10 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         return parseInt(key, 16) + 1;
     }
 
-    public precedingSteps(step: FormControl) {
+    public precedingSteps(step) {
         return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
-            if (step.value.value.uuid === x.value.uuid) {
+
+          if (step.value.value.uuid === x.value.uuid) {
                 return acc;
             }
 
@@ -146,12 +149,16 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
             return acc;
         }, [{
             label: ngxExtract('PAGE.RECYCLING-PROCESSES.PRECEDING-STEP.NONE'),
-            value: null
+            value: 'none'
         }]);
     }
 
     public deleteStep(key: number) {
         this.recyclingProcessForm.controls.steps.controls.splice(key, 1);
+        const steps = this.recyclingProcessForm.controls.steps.controls;
+        if (steps.length > 1) {
+          steps[steps.length - 1].get('precedingStep').setValue(steps[steps.length - 2].value.uuid);
+        }
     }
 
     public duplicateStep(key: number) {
@@ -164,6 +171,8 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
     public newStep(): void {
         this.recyclingProcessForm.controls.steps.push(this.createStep());
+        const steps = this.recyclingProcessForm.controls.steps.controls;
+        steps[steps.length - 1].get('precedingStep').setValue(steps[steps.length - 2].value.uuid);
     }
 
     public onUpload(fileList: FileList, stepIndex: number, input: String) {
