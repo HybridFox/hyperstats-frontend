@@ -19,7 +19,7 @@ export class StepWrapperPageComponent implements OnInit {
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
   public title$;
   public currentForm: FormArray;
-  public sideItems = [];
+  public sideItems: MenuItem[] = [];
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
