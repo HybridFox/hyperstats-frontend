@@ -107,22 +107,22 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         site: '',
         methodOfProcessing: '',
         qualitativeDescription: {
-            text: '',
-            asset: undefined
+          text: '',
+          asset: undefined
         },
         schematicOverview: undefined
     }): FormGroup {
         return this.formBuilder.group({
-            uuid: [step.uuid],
-            precedingStep: [step.precedingStep, Validators.required],
-            description: [step.description, Validators.required],
-            site: [step.site, Validators.required],
-            methodOfProcessing: [step.methodOfProcessing, Validators.required],
-            qualitativeDescription: this.formBuilder.group({
-                text: [step.qualitativeDescription.text, Validators.required],
-                asset: createFileUploadControl(step.qualitativeDescription.asset)
-            }),
-            schematicOverview: createFileUploadControl(step.schematicOverview),
+          uuid: [step.uuid],
+          precedingStep: [step.precedingStep, Validators.required],
+          description: [step.description, Validators.required],
+          site: [step.site, Validators.required],
+          methodOfProcessing: [step.methodOfProcessing, Validators.required],
+          qualitativeDescription: this.formBuilder.group({
+              text: [step.qualitativeDescription.text, Validators.required],
+              asset: createFileUploadControl(step.qualitativeDescription.asset)
+          }),
+          schematicOverview: createFileUploadControl(step.schematicOverview),
         });
     }
 
@@ -132,7 +132,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
     public precedingSteps(step: FormControl) {
         return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
-
             if (step.value.value.uuid === x.value.uuid) {
                 return acc;
             }
@@ -157,7 +156,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         this.recyclingProcessForm.controls.steps.controls.splice(key, 1);
         const steps = this.recyclingProcessForm.controls.steps.controls;
         if (steps.length > 1) {
-          steps[steps.length - 1].get('precedingStep').setValue(steps[steps.length - 2].value.uuid);
+          steps[key].get('precedingStep').setValue(steps[key - 1].value.uuid);
         }
     }
 
