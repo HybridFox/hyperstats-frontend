@@ -130,10 +130,10 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         return parseInt(key, 16) + 1;
     }
 
-    public precedingSteps(step) {
+    public precedingSteps(step: FormControl) {
         return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
 
-          if (step.value.value.uuid === x.value.uuid) {
+            if (step.value.value.uuid === x.value.uuid) {
                 return acc;
             }
 
