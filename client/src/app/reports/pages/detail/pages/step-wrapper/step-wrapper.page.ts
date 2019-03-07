@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { select$, select } from '@angular-redux/store';
 import { map } from 'rxjs/operators';
 
-import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
+import { StepMenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 import { mapToStepMenuItems } from 'src/app/reports/services/select.helpers';
 import { FormDataService } from 'src/app/reports/services/formdata.service';
@@ -15,11 +15,11 @@ import { FormArray, FormGroup } from '@angular/forms';
   templateUrl: './step-wrapper.page.html',
 })
 export class StepWrapperPageComponent implements OnInit {
-  @select$(ReportsProcessSelector.detail.result, mapToStepMenuItems) public siteMenuItems$: BehaviorSubject<MenuItem[]>;
+  @select$(ReportsProcessSelector.detail.result, mapToStepMenuItems) public siteMenuItems$: BehaviorSubject<StepMenuItem[]>;
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
   public title$;
   public currentForm: FormArray;
-  public sideItems: MenuItem[] = [];
+  public sideItems: StepMenuItem[] = [];
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
