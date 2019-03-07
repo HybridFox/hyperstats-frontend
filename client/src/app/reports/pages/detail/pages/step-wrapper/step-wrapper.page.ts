@@ -9,7 +9,7 @@ import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 import { mapToStepMenuItems } from 'src/app/reports/services/select.helpers';
 import { FormDataService } from 'src/app/reports/services/formdata.service';
-import { FormArray } from '@angular/forms';
+import { FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   templateUrl: './step-wrapper.page.html',
@@ -82,18 +82,19 @@ export class StepWrapperPageComponent implements OnInit {
   private handleStepValidation() {
     this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
     this.currentForm.controls.forEach(control => {
-      this.setValidValue(control);
+      this.setValidValue(control as FormGroup);
       control.valueChanges
         .pipe(
           takeUntil(this.componentDestroyed$)
         )
         .subscribe(() => {
-          this.setValidValue(control);
+          this.setValidValue(control as FormGroup);
         });
     });
   }
 
-  private setValidValue(control: any) {
+  private setValidValue(control: FormGroup) {
+    console.log(control);
     const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
     if (currentItem) {
       currentItem.valid = control.valid;
