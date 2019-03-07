@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { select$ } from '@angular-redux/store';
+import { select$, select } from '@angular-redux/store';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
@@ -19,8 +19,6 @@ import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store
 })
 export class NewPageComponent extends StepPageAbstract implements OnInit {
   @select$(ReportsProcessSelector.list.result, mapRecyclingProcessesToOptions) public processOptions$: BehaviorSubject<Option>;
-
-  private processes: any;
 
   constructor(
     codesService: CodesService,
@@ -59,7 +57,6 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
     if (!this.form.valid) {
       return this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
-
 
     const data = {
       _id: this.formData.reportId,

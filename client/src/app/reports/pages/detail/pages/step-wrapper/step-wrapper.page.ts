@@ -9,19 +9,6 @@ import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
 import { mapToSiteMenuItems } from 'src/app/reports/services/select.helpers';
 
-const mapToObject = (obs$) => {
-  return obs$.pipe(
-    filter(process => !!process),
-    map((process: any) => {
-      return Object.assign({}, ...process.data.steps.map((step) => {
-        return {
-          [step._id]: step
-        };
-      }));
-    }),
-  );
-};
-
 @Component({
   templateUrl: './step-wrapper.page.html',
 })

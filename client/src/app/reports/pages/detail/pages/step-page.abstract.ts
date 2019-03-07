@@ -55,9 +55,11 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
   }
 
   public nextStep() {
-    FormHelper.markAsDirty(this.form);
+    const currentFormSection = this.formData.formGroup.get(this.options.formSection);
 
-    if (!this.form.valid) {
+    FormHelper.markAsDirty(currentFormSection);
+
+    if (!currentFormSection.valid) {
       return this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string);
     }
 

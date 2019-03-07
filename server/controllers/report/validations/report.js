@@ -10,7 +10,7 @@ const savedData = {
 		// receiver: joi.string().allow(null).optional(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.object().keys({
 			processChemistry: joi.string().allow("").optional(),
 			weightInput: joi.number().allow(null).optional(),
@@ -31,7 +31,7 @@ const savedData = {
 		}),
 	})),
 	additives: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.array().items(joi.object().keys({
 			type: joi.string().allow("").optional(),
 			weight: joi.number().allow(null).optional(),
@@ -42,7 +42,7 @@ const savedData = {
 		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.array().items(joi.object().keys({
 			element: joi.string().allow("").optional(),
 			mass: joi.number().allow(null).optional(),
