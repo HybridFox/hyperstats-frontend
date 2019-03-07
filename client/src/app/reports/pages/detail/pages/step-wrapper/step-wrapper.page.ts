@@ -44,7 +44,10 @@ export class StepWrapperPageComponent implements OnInit {
         .subscribe((links) => {
           if (this.sideItems.length === 0) {
             this.sideItems = links;
-            this.handleStepValidation();
+
+            setTimeout(() => {
+              this.handleStepValidation();
+            }, 1);
           }
           if (links.length > 0) {
             this.router.navigate(links[0].link, { relativeTo: this.route });
@@ -80,9 +83,13 @@ export class StepWrapperPageComponent implements OnInit {
     this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
     this.currentForm.controls.forEach(control => {
       this.setValidValue(control);
-      control.valueChanges.subscribe(() => {
-        this.setValidValue(control);
-      });
+      control.valueChanges
+        .pipe(
+          takeUntil(this.componentDestroyed$)
+        )
+        .subscribe(() => {
+          this.setValidValue(control);
+        });
     });
   }
 
