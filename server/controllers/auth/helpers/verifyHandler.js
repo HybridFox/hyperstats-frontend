@@ -1,4 +1,5 @@
 const UserModel = require("../../../models/user");
+const errors = require("../../../helpers/errorHandler");
 
 /**
  * @function verifyHandler Get user based on verify token an make the user verified
@@ -9,7 +10,7 @@ module.exports = async(token) => {
 	const user = await UserModel.findOne({ "meta.deleted": false, "meta.validation": { isValidated: false, token } }).exec();
 
 	if (!user) {
-		throw new Error({ type: 400, msg: "Invalid token!" });
+		throw errors.UserNotFound;
 	}
 
 	user.meta.validation.isValidated = true;

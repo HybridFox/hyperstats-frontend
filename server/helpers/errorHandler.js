@@ -1,13 +1,16 @@
 const { pathOr } = require("ramda");
 const errors = {
 	ObjectValidationFailed: "OBJECT_VALIDATION_FAILED",
+	FileIsRequired: "FILE_IS_REQUIRED",
+	InvalidPassword: "INVALID_PASSWORD",
 	MissingAuthorization: "MISSING_AUTHORIZATION",
 	Forbidden: "FORBIDDEN",
 	ItemNotFound: "ITEM_NOT_FOUND",
-	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
 	PageNotFound: "PAGE_NOT_FOUND",
+	UserNotFound: "USER_NOT_FOUND",
 	EmailAlreadyTaken: "EMAIL_ALREADY_TAKEN",
-	FileIsRequired: "FILE_IS_REQUIRED",
+	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
+	SendingEmailFailed: "SENDING_EMAIL_FAILED",
 };
 
 const errorHandler = (err) => {
@@ -32,35 +35,47 @@ const errorHandler = (err) => {
 				};
 			});
 			break;
+		case errors.FileIsRequired:
+			statusCode = 400;
+			msg = `"file" is required.`;
+			break;
+		case errors.InvalidPassword:
+			statusCode = 400;
+			msg = `Invalid password.`;
+			break;
 		case errors.MissingAuthorization:
 			statusCode = 401;
-			msg = "Not authorized.";
+			msg = `Not authorized.`;
 			break;
 		case errors.Forbidden:
 			statusCode = 403;
-			msg = "Forbidden.";
+			msg = `Forbidden.`;
 			break;
 		case errors.ItemNotFound:
 			statusCode = 404;
-			msg = "Item not found.";
-			break;
-		case errors.ItemCannotBeUpdated:
-			statusCode = 422;
-			msg = "Item cannot be updated.";
+			msg = `Item not found.`;
 			break;
 		case errors.PageNotFound:
 			statusCode = 404;
-			msg = "Page not found.";
+			msg = `Page not found.`;
+			break;
+		case errors.UserNotFound:
+			statusCode = 404;
+			msg = `User not found.`;
 			break;
 		case errors.EmailAlreadyTaken:
 			statusCode = 409;
-			msg = "Email already taken.";
+			msg = `Email already taken.`;
 			break;
-		case errors.FileIsRequired:
-			statusCode = 400;
-			msg = `"file" is required`;
+		case errors.ItemCannotBeUpdated:
+			statusCode = 422;
+			msg = `Item cannot be updated.`;
 			break;
-
+		case errors.SendingEmailFailed:
+			statusCode = 500;
+			msg = `Sending mail failed`;
+			break;
+			
 		default:
 			statusCode = 500;
 			msg = err.message || "Something unexpected happened.";

@@ -10,6 +10,6 @@ module.exports = async(req, res, next) => {
 
 		res.status(200).json(profile.get(req));
 	} catch (error) {
-		return next({ message: errors.ItemNotFound });
+		return next(error);
 	}
 };

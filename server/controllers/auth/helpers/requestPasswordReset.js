@@ -2,7 +2,7 @@ const { v4: uuid } = require("node-uuid");
 const { join } = require("path");
 const UserModel = require("../../../models/user");
 const mailer = require("../../../helpers/mail");
-const Errors = require("../../../helpers/errorHandler");
+const errors = require("../../../helpers/errorHandler");
 
 const getFutureDate = (days) => {
 	return new Date(new Date().getTime() + (86400000 * days));
@@ -20,7 +20,7 @@ module.exports = async(username) => {
 	}, { new: true });
 
 	if (!user) {
-		throw Errors.ItemNotFound;
+		throw errors.UserNotFound;
 	}
 
 	await mailer({

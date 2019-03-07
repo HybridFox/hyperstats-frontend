@@ -3,7 +3,7 @@ const uuid = require("node-uuid").v4;
 const { path: rPath } = require("ramda");
 const UserModel = require("../../../models/user");
 const mailer = require("../../../helpers/mail");
-const ResponseError = require("../../../helpers/errors/responseError");
+// const ResponseError = require("../../../helpers/errors/responseError");
 const errors = require("../../../helpers/errorHandler");
 
 // Send confirm email
@@ -15,10 +15,10 @@ const registerMail = (user) => mailer({
 		firstname: user.data.firstname,
 		confirmPath: `/api/auth/verify?token=${user.meta.validation.token}`,
 	},
-}).catch(async(error) => {
+}).catch(async() => {
 	await user.remove();
 
-	throw new ResponseError({ type: 500, msg: "Sending mail failed", error });
+	throw errors.SendingEmailFailed;
 });
 
 const processUser = async(user) => {
