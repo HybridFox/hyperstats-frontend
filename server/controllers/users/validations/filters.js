@@ -7,6 +7,7 @@ const schema = Joi.object().keys({
 		Joi.string().valid(["R", "RP", "CO"]),
 	]).optional(),
 	"admin": Joi.string().optional(),
+	"status": Joi.string().optional(),
 });
 
 module.exports = {

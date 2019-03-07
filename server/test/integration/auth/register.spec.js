@@ -146,7 +146,7 @@ describe("Integration", () => {
 							isAdmin: false,
 							lastname: "Awesome",
 							status: {
-								type: "ACTIVATED",
+								type: "PENDING",
 							},
 						});
 					});
