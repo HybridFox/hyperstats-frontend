@@ -40,7 +40,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
 
     public resetPassword(): Promise<any> {
         return this.authAction.requestPasswordReset({
-            email: this.user.email
+            username: this.user.email
         }).then(() => {
             this.toastrService.success(
                 ngxExtract('TOAST.FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,

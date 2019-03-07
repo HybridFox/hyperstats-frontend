@@ -36,7 +36,7 @@ const processUser = async(user) => {
  * @returns {Promise} Saved user data
  */
 module.exports = async(body) => {
-	const user = await UserModel.findOne({ "data.email": body.email, "meta.deleted": false }).exec();
+	const user = await UserModel.findOne({ "data.username": body.username, "meta.deleted": false }).exec();
 
 	if (rPath(["meta", "validation", "isValidated"], user)) {
 		throw errors.EmailAlreadyTaken;

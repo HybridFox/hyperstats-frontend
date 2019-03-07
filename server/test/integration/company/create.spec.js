@@ -56,8 +56,8 @@ describe("Integration", () => {
 					isAdmin: true,
 				});
 
-				cookie = (await loginUser(server, { email: "test_company_user@example.com" })).cookie;
-				adminCookie = (await loginUser(server, { email: "admin_user@example.com" })).cookie;
+				cookie = (await loginUser(server, { username: "test_company_user@example.com" })).cookie;
+				adminCookie = (await loginUser(server, { username: "admin_user@example.com" })).cookie;
 			});
 
 			afterEach(() => reset());

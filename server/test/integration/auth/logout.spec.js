@@ -27,7 +27,7 @@ describe("Integration", () => {
 			await supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "validuser@example.com",
+					username: "validuser@example.com",
 					password: "validPassword",
 				})
 				.expect("Content-Type", /json/)
@@ -50,6 +50,7 @@ describe("Integration", () => {
 						},
 						isAdmin: false,
 						email: "validuser@example.com",
+						username: "validuser@example.com",
 					});
 				});
 

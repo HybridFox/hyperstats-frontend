@@ -31,7 +31,7 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			cookie = (await loginUser(server, { username: "test1@example.com" })).cookie;
 			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 

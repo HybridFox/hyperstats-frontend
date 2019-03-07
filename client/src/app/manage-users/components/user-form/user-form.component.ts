@@ -50,7 +50,7 @@ export class UserFormComponent implements OnChanges {
 
     public resetPassword(): Promise<any> {
         return this.authAction.requestPasswordReset({
-            email: this.user.data.email
+            username: this.user.data.username
         }).then(() => {
             this.toastrService.success(
                 ngxExtract('TOAST.ADMIN-FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,

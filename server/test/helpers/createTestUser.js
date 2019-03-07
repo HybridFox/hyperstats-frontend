@@ -33,6 +33,7 @@ module.exports = async({
 	const testUser = new UserModel({
 		data: {
 			email,
+			username: email,
 			firstname,
 			lastname,
 			password,
