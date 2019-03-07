@@ -1,10 +1,18 @@
 <div class="m-file-upload__action u-margin-bottom">
     <input
-        #filesInput
+        #fileInput
         type="file"
         class="m-file-upload__input"
         (change)="onSelect($event)"
     >
+    <input
+        #filesInput
+        type="file"
+        class="m-file-upload__input"
+        (change)="onSelect($event)"
+        multiple
+    >
+
     <div *ngIf="!multiple; then singleFile else dragAndDrop"></div>
     <ng-template #singleFile>
         <div class="m-file-upload--single-file">
