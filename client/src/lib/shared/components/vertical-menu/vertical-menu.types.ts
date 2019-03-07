@@ -1,8 +1,8 @@
 export interface MenuItem {
-    link: string[];
-    queryParams?: any;
-    label: string;
-    class?: string;
+  link: string[];
+  queryParams?: any;
+  label: string;
+  class?: string;
 }
 
 export interface StepMenuItem {
