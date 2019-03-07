@@ -24,7 +24,7 @@ module.exports = [upload.single("file"), (req, res) => {
 	}
 
 	return res.status(201).json({
-		id: req.file.id,
+		assetId: req.file.id,
 		mimetype: req.file.mimetype,
 		uploadDate: req.file.uploadDate,
 		originalname: req.file.originalname,

@@ -75,7 +75,7 @@ const ReportSchema = mongoose.Schema({
 			siteRef: {
 				type: String,
 			},
-			data: {
+			data: [{
 				type: {
 					type: String,
 				},
@@ -90,7 +90,7 @@ const ReportSchema = mongoose.Schema({
 						type: Number,
 					},
 				}],
-			},
+			}],
 		}],
 		outputFraction: [{
 			siteRef: {
@@ -127,9 +127,17 @@ const ReportSchema = mongoose.Schema({
 		},
 		additionalInformation: {
 			files: [{
-				type: {
-					type: mongoose.Schema.Types.ObjectId,
-					ref: "Asset",
+				assetId: {
+					type: String,
+				},
+				mimetype: {
+					type: String,
+				},
+				uploadDate: {
+					type: String,
+				},
+				originalname: {
+					type: String,
 				},
 			}],
 			additionalInformation: {

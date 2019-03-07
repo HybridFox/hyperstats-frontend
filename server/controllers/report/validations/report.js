@@ -10,7 +10,7 @@ const savedData = {
 		// receiver: joi.string().allow(null).optional(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.object().keys({
 			processChemistry: joi.string().allow("").optional(),
 			weightInput: joi.number().allow(null).optional(),
@@ -31,18 +31,18 @@ const savedData = {
 		}),
 	})),
 	additives: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
-		data: joi.object().keys({
+		siteRef: joi.string().allow(""),
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().allow("").optional(),
 			weight: joi.number().allow(null).optional(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
 				weight: joi.number().allow(null).optional(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.array().items(joi.object().keys({
 			element: joi.string().allow("").optional(),
 			mass: joi.number().allow(null).optional(),
@@ -57,8 +57,11 @@ const savedData = {
 	}),
 	additionalInformation: joi.object().keys({
 		files: joi.array().items(joi.object().keys({
-			type: joi.string().allow(""),
-		})),
+			assetId: joi.string().allow(""),
+			mimetype: joi.string().allow(""),
+			uploadDate: joi.string().allow(""),
+			originalname: joi.string().allow(""),
+		})).optional().allow(null),
 		additionalInformation: joi.string().allow("").optional(),
 	}),
 };
@@ -93,14 +96,14 @@ const filedData = {
 	})),
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
-		data: joi.object().keys({
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().required(),
 			weight: joi.number().required(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
 				weight: joi.number().required(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),

@@ -21,6 +21,8 @@ export class ReportsPageComponent implements OnInit {
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
+    public reportsActive = false;
+
     constructor(
         private reportsActions: ReportsActions,
         private reportsProcessActions: ReportsProcessActions,
@@ -28,6 +30,12 @@ export class ReportsPageComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+      this.reports$.subscribe((reports) => {
+        if (reports && reports.length > 0) {
+          this.reportsActive = true;
+        }
+      });
+
       this.activatedRoute.queryParams
         .pipe(
           takeUntil(this.componentDestroyed$)

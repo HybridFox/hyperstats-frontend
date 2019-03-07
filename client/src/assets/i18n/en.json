@@ -127,8 +127,8 @@
                 "TITLE": "Account Deactivated"
             },
             "PENDING": {
-                "DESCRIPTION": "An administrator is looking into your signup request. ",
-                "TITLE": "Signup request sent to admin"
+                "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
+                "TITLE": "Admin is reviewing your signup request."
             },
             "TITLE": "Access Denied"
         },
@@ -207,6 +207,8 @@
         "REPORTS": {
             "DRAFT": "Draft",
             "FILED": "Filed",
+            "NOPROCESSREPORTS": "There are no reports for this recycling process",
+            "NOREPORTS": "You don’t have any reports yet",
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
@@ -458,7 +460,7 @@
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
-                "ADDITIONAL-INFORMATION": "Addition information",
+                "ADDITIONAL-INFORMATION": "Additional information",
                 "FILE-UPLOADS": "File uploads"
             }
         },

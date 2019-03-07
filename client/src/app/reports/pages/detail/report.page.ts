@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil, filter } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { takeUntil, filter, tap, map, switchMap } from 'rxjs/operators';
 
 import { FormDataService } from '../../services/formdata.service';
-import { Step } from '../../store/reports/types';
-import { ReportsProcessActions } from '../../store/recycling-processes';
+import { Step, Report } from '../../store/reports/types';
+import { RecyclingProcess, ProcessStep } from '../../store/recycling-processes/types';
+import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
 
@@ -14,9 +15,12 @@ import { select } from '@angular-redux/store';
   templateUrl: './report.page.html',
 })
 export class ReportPageComponent implements OnInit, OnDestroy {
-  @select(ReportsSelector.detail.result) public report$: Observable<any>;
+  @select(ReportsSelector.detail.result) public report$: Observable<Report>;
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<RecyclingProcess>;
 
   public form: FormGroup;
+  public currentId = 'new';
+
   public steps: Step[] = [
     {
       name: 'WIZARD.TITLES.NEW-REPORT',
@@ -96,6 +100,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
         takeUntil(this.componentDestroyed$),
       )
       .subscribe(({ id }) => {
+        this.currentId = id;
         if (id === 'new') {
           this.initForm();
         } else {
@@ -125,10 +130,34 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       .valueChanges
       .pipe(
         takeUntil(this.componentDestroyed$),
+        tap((id: string) => {
+          this.reportProcessActions.getById(id).toPromise();
+        }),
+        switchMap(() => {
+          return this.process$;
+        }),
+        filter((process: RecyclingProcess) => {
+          return !!process;
+        }),
+        map((process: RecyclingProcess) => {
+          return process.data.steps;
+        }),
+        filter((steps: ProcessStep[]) => {
+          return steps.length > 0;
+        }),
       )
-      .subscribe((id) => {
-        console.log('FETH');
-        this.reportProcessActions.getById(id).toPromise();
+      .subscribe((steps) => {
+        if (this.currentId === 'new') {
+          this.reportFormService.clearInputFractions();
+          this.reportFormService.clearOutputFractions();
+          this.reportFormService.clearAdditives();
+
+          steps.forEach((step) => {
+            this.reportFormService.addInputFraction(step.uuid);
+            this.reportFormService.addOutputFraction(step.uuid);
+            this.reportFormService.addAdditive(step.uuid);
+          });
+        }
       });
   }
 }

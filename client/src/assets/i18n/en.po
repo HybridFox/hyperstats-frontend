@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-06T13:25:28.303Z\n"
+"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -365,10 +365,12 @@ msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
 msgstr "Account Deactivated"
 
 msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
-msgstr "An administrator is looking into your signup request. "
+msgstr ""
+"Your account needs to be activated by an admin before you can enter. Your "
+"signup request is being reviewed."
 
 msgid "PAGE##ACCESS-DENIED##PENDING##TITLE"
-msgstr "Signup request sent to admin"
+msgstr "Admin is reviewing your signup request."
 
 msgid "PAGE##ACCESS-DENIED##TITLE"
 msgstr "Access Denied"
@@ -527,6 +529,12 @@ msgstr "Draft"
 #| msgid "PAGE##REPORTS##FILLED"
 msgid "PAGE##REPORTS##FILED"
 msgstr "Filed"
+
+msgid "PAGE##REPORTS##NOPROCESSREPORTS"
+msgstr "There are no reports for this recycling process"
+
+msgid "PAGE##REPORTS##NOREPORTS"
+msgstr "You don’t have any reports yet"
 
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
@@ -882,7 +890,7 @@ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr "Recycling Partners"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Addition information"
+msgstr "Additional information"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"

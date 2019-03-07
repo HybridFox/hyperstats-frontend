@@ -207,6 +207,8 @@
 		"REPORTS": {
 			"DRAFT": "",
 			"FILED": "",
+			"NOPROCESSREPORTS": "",
+			"NOREPORTS": "",
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {

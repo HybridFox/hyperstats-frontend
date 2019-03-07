@@ -16,9 +16,10 @@ import { UserSelector, UsersActions } from 'src/app/manage-users/store';
     templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
-    @select(UserSelector.detail.result) public user$: Observable<any>;
+    @select(UserSelector.detail.result) public user$: Observable<object>;
     @select$(UserCompanySelector.list.result, companiesToSelectOptions) public companyOptions$: Observable<Option>;
     @select(UserSelector.detail.loading) public loading$: Observable<boolean>;
+    @select(['entities', 'companies']) public companies$: Observable<object>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
@@ -46,6 +47,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     }
 
     public update(user: any) {
+        this.companies$.subscribe((company) => user.data.company = company[user.data.company]);
         this.usersActions.updateUser(user).toPromise()
             .then(() => this.toastrService.success(
                 ngxExtract('TOAST.USER-ADMIN-SAVE.SUCCESS.DESCRIPTION') as string,

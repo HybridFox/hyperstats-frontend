@@ -13,14 +13,14 @@ const schema = Joi.object().keys({
 			qualitativeDescription: Joi.object().keys({
 				text: Joi.string(),
 				asset: Joi.object().keys({
-					id: Joi.string().allow("", null),
+					assetId: Joi.string().allow("", null),
 					mimetype: Joi.string().allow("", null),
 					uploadDate: Joi.string().allow("", null),
 					originalname: Joi.string().allow("", null),
 				}).optional().allow(null),
 			}),
 			schematicOverview: Joi.object().keys({
-				id: Joi.string().allow("", null),
+				assetId: Joi.string().allow("", null),
 				mimetype: Joi.string().allow("", null),
 				uploadDate: Joi.string().allow("", null),
 				originalname: Joi.string().allow("", null),
