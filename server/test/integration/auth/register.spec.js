@@ -23,7 +23,7 @@ describe("Integration", () => {
 
 		after(async() => {
 			await closeServer();
-			await removeTestUsers(["otheruser@example.com"], false);
+			await removeTestUsers(["otherUser@example.com"], false);
 		});
 
 		it("Should not be able to get register user with an email that already exists", () => {
@@ -110,7 +110,7 @@ describe("Integration", () => {
 						const sentMail = nodemailerMock.mock.sentMail();
 
 						expect(sentMail).to.have.lengthOf(1);
-						expect(sentMail[0].to).to.equal("otheruser@example.com");
+						expect(sentMail[0].to).to.equal("otherUser@example.com");
 
 						// Get verify token from e-mail
 						const myRegexp = /\/api\/auth\/verify\?token=(.*)"/g;
@@ -141,7 +141,8 @@ describe("Integration", () => {
 					.then(({ body }) => {
 						expect(body).to.be.an("object");
 						expect(omit(["created", "lastUpdated", "company"], body)).to.deep.equal({
-							email: "otheruser@example.com",
+							email: "otherUser@example.com",
+							username: "otheruser@example.com",
 							firstname: "Jef",
 							isAdmin: false,
 							lastname: "Awesome",
