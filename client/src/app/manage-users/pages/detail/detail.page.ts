@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { UserCompanyActions } from 'src/app/manage-users/store/companies/actions';
 import { UserSelector, UsersActions } from 'src/app/manage-users/store';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     templateUrl: './detail.page.html',
@@ -22,6 +23,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     @select(['entities', 'companies']) public companies$: Observable<object>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public statusTypes: any[] = STATUS_TYPES;
 
     constructor(
         private route: ActivatedRoute,
@@ -61,6 +63,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
     public updateRequest(event) {
       if (event.bool) {
+        this.companies$.subscribe((company) => event.user.data.company = company[event.user.data.company]);
         this.usersActions.updateUser(event.user).toPromise()
             .then(() => this.toastrService.success(
                 ngxExtract('TOAST.USER-ADMIN-ACCEPT.SUCCESS.DESCRIPTION') as string,
@@ -71,7 +74,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.USER-ADMIN-ACCEPT.ERROR.TITLE') as string
             ));
       } else {
-        event.user.meta.status.type = 'DEACTIVATED';
+        event.user.meta.status.type = 'statusTypes[1].type';
         this.usersActions.updateUser(event.user).toPromise()
             .then(() => this.toastrService.success(
                 ngxExtract('TOAST.USER-ADMIN-DECLINE.SUCCESS.DESCRIPTION') as string,

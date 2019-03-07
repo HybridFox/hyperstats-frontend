@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthActions } from '@store/auth';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Option } from '@ui/form-fields/components/select/select.types';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     selector: 'app-user-form',
@@ -19,6 +20,7 @@ export class UserFormComponent implements OnChanges {
     @Output() public updateRequest: EventEmitter<object> = new EventEmitter<object>();
 
     public form: FormGroup;
+    public statusTypes: any[] = STATUS_TYPES;
 
     constructor(
         private formBuilder: FormBuilder,

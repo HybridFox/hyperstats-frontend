@@ -13,6 +13,7 @@ export class RequestsPageComponent implements OnInit, OnDestroy {
   @select(UserSelector.requests.loading) public loading$: Observable<boolean>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+  public data: boolean;
 
   constructor(
       private usersActions: UsersActions,
@@ -20,6 +21,11 @@ export class RequestsPageComponent implements OnInit, OnDestroy {
   ) {}
 
   public ngOnInit() {
+    this.users$.subscribe(users => {
+      if (users) {
+        users.length !== 0 ? this.data = true : this.data = false;
+      }
+    });
     this.route.queryParams
       .pipe(
           takeUntil(this.componentDestroyed$)

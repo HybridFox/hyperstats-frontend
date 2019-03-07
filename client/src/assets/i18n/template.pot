@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
-"PO-Revision-Date: 2019-03-06T13:12:15.217Z\n"
+"POT-Creation-Date: 2019-03-07T10:21:29.421Z\n"
+"PO-Revision-Date: 2019-03-07T10:21:29.422Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -470,6 +470,9 @@ msgstr ""
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr ""
 
+msgid "PAGE##SIGNUP-REQUESTS##NO-REQUESTS"
+msgstr ""
+
 msgid "PAGE##SIGNUP-REQUESTS##TITLE"
 msgstr ""
 
@@ -768,9 +771,6 @@ msgid "TYPES##COMPANY##COMPLIANCE-ORG"
 msgstr ""
 
 msgid "TYPES##COMPANY##RECYCLER"
-msgstr ""
-
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr ""
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"

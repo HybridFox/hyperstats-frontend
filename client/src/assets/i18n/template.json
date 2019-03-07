@@ -216,6 +216,7 @@
 			"TITLE": ""
 		},
 		"SIGNUP-REQUESTS": {
+			"NO-REQUESTS": "",
 			"TITLE": ""
 		},
 		"TERMS-AND-CONDITIONS": {
@@ -453,8 +454,7 @@
 		"COMPANY": {
 			"AUTHORISATION-ORG": "",
 			"COMPLIANCE-ORG": "",
-			"RECYCLER": "",
-			"RECYCLER-PARTNER": ""
+			"RECYCLER": ""
 		}
 	},
 	"WIZARD": {

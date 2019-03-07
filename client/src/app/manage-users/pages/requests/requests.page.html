@@ -5,8 +5,15 @@
     <div class="l-grid__col-12-12">
         <div class="m-card--primary u-margin-bottom-large">
             <app-loading [loading]="loading$ | async">
-                <app-signup-requests-table *ngIf="users$ | async" [requests]="users$ | async"></app-signup-requests-table>
+                <app-signup-requests-table *ngIf="(users$ | async) && data" [requests]="users$ | async"></app-signup-requests-table>
             </app-loading>
+            <div *ngIf="!data" class="u-align-center">
+              <app-sub-section-title
+                  [title]="'PAGE.SIGNUP-REQUESTS.NO-REQUESTS' | translate"
+                  class="u-margin-bottom-large"
+              ></app-sub-section-title>
+              <img src="./assets/images/no_data.svg" alt="no signup requests" class="p-admin__visual">
+            </div>
         </div>
     </div>
 </div>

@@ -216,6 +216,7 @@
             "TITLE": "Reset your password"
         },
         "SIGNUP-REQUESTS": {
+            "NO-REQUESTS": "No signup requests",
             "TITLE": "Signup Requests"
         },
         "TERMS-AND-CONDITIONS": {
@@ -453,8 +454,7 @@
         "COMPANY": {
             "AUTHORISATION-ORG": "Authorisation Organisation",
             "COMPLIANCE-ORG": "Compliance Organisation",
-            "RECYCLER": "Recycler",
-            "RECYCLER-PARTNER": "Recycling Partners"
+            "RECYCLER": "Recycler"
         }
     },
     "WIZARD": {

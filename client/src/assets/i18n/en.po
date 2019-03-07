@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
+"POT-Creation-Date: 2019-03-07T10:21:29.421Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -545,6 +545,9 @@ msgstr "Your password has been reset! Please login to continiou"
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
 
+msgid "PAGE##SIGNUP-REQUESTS##NO-REQUESTS"
+msgstr "No signup requests"
+
 msgid "PAGE##SIGNUP-REQUESTS##TITLE"
 msgstr "Signup Requests"
 
@@ -884,11 +887,6 @@ msgstr "Compliance Organisation"
 msgid "TYPES##COMPANY##RECYCLER"
 msgstr "Recycler"
 
-#, fuzzy
-#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
-msgstr "Recycling Partners"
-
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Additional information"
 
@@ -1089,6 +1087,11 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#, fuzzy
+#~| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+#~ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
+#~ msgstr "Recycling Partners"
 
 #~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 #~ msgstr "Share of input fraction (%)"
