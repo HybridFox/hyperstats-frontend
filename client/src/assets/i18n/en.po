@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-05T08:57:39.420Z\n"
+"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -349,20 +349,16 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
-msgstr "Choose a name for this recycling step"
+msgstr ""
+"Your account needs to be activated by an admin before you can enter. Your "
+"signup request is being reviewed."
 
-#, fuzzy
-#| msgid "PAGE##CONTACT##TITLE"
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
-msgstr "Contact"
+msgstr "Admin is reviewing your signup request."
 
-#, fuzzy
-#| msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgid "PAGE##ACCESS-DENIED##TITLE"
-msgstr "Manage companies"
+msgstr "Access denied"
 
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
@@ -518,6 +514,12 @@ msgstr "Draft"
 #| msgid "PAGE##REPORTS##FILLED"
 msgid "PAGE##REPORTS##FILED"
 msgstr "Filed"
+
+msgid "PAGE##REPORTS##NOPROCESSREPORTS"
+msgstr "There are no reports for this recycling process"
+
+msgid "PAGE##REPORTS##NOREPORTS"
+msgstr "You don’t have any reports yet"
 
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
@@ -844,7 +846,7 @@ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr "Recycling Partners"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Addition information"
+msgstr "Additional information"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"

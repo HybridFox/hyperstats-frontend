@@ -24,7 +24,7 @@ const RecyclingStepSchema = mongoose.Schema({
 			type: String,
 		},
 		asset: {
-			id: {
+			assetId: {
 				type: String,
 			},
 			mimetype: {
@@ -39,7 +39,7 @@ const RecyclingStepSchema = mongoose.Schema({
 		},
 	},
 	schematicOverview: {
-		id: {
+		assetId: {
 			type: String,
 		},
 		mimetype: {

@@ -6,11 +6,10 @@
   <div *ngFor="let additiveItem of additive.controls.data.controls; let i = index" class="m-card--secondary u-margin-bottom">
     <div class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-5-12">
-        <app-select-input
+        <app-text-input
           [label]="'WIZARD.ADDITIVES.LABELS.TYPE' | translate"
           [control]="additiveItem.get('type')"
-          [options]="codesService.elements()"
-        ></app-select-input>
+        ></app-text-input>
       </div>
       <div class="l-grid__col-7-12">
         <app-text-input
