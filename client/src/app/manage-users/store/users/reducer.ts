@@ -35,7 +35,6 @@ const RequestsReducer = (
   return state;
 };
 
-
 export const ReducerConfig = {
     overview: progressReducer(
         { entityType: `${MODULE}/${OVERVIEW}` },

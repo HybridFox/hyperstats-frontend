@@ -79,12 +79,12 @@ export class UserFormComponent implements OnChanges {
                     type: formValues.meta.activated ? 'ACTIVATED' : 'DEACTIVATED'
                 }
             }
-        } ;
+        };
     }
 
     public handleRequest(bool) {
-      const user = this.formatUser(this.user, this.form.getRawValue());
-      this.updateRequest.emit({ bool, user });
+        const user = this.formatUser(this.user, this.form.getRawValue());
+        this.updateRequest.emit({ bool, user });
     }
 
 }

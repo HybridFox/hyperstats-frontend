@@ -17,11 +17,10 @@ const routes: Routes = [
   }, {
       path: 'signup-requests',
       component: Pages.RequestsPageComponent,
-  },
-  {
+  }, {
     path: 'signup-requests/:id',
     component: Pages.DetailPageComponent,
-},
+  },
 ];
 
 @NgModule({
