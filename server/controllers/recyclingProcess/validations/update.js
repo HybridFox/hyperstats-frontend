@@ -6,7 +6,7 @@ const schema = Joi.object().keys({
 		name: Joi.string().required(),
 		steps: Joi.array().items(Joi.object().keys({
 			uuid: Joi.string(),
-			precedingStep: Joi.string().allow("").optional(),
+			precedingStep: Joi.string().allow(""),
 			description: Joi.string(),
 			site: Joi.string(),
 			methodOfProcessing: Joi.string(),
