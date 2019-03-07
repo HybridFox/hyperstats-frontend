@@ -12,8 +12,6 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
 
-
-
 @Component({
   selector: 'app-recycling-process-form',
   templateUrl: './recycling-process-form.component.html',
