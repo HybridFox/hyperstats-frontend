@@ -7,6 +7,7 @@ const errors = {
 	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
 	PageNotFound: "PAGE_NOT_FOUND",
 	EmailAlreadyTaken: "EMAIL_ALREADY_TAKEN",
+	FileIsRequired: "FILE_IS_REQUIRED",
 };
 
 const errorHandler = (err) => {
@@ -54,6 +55,10 @@ const errorHandler = (err) => {
 		case errors.EmailAlreadyTaken:
 			statusCode = 409;
 			msg = "Email already taken.";
+			break;
+		case errors.FileIsRequired:
+			statusCode = 400;
+			msg = `"file" is required`;
 			break;
 
 		default:
