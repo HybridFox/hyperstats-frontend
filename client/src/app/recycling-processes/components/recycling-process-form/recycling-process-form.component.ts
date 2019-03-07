@@ -7,8 +7,10 @@ import { createFileUploadControl } from '@ui/upload/file-upload.helper';
 import { omit, prop, pathOr } from 'ramda';
 
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
+import { UPLOAD_TYPES } from '@ui/upload/components/single-file-upload/single-file-upload.const';
 import * as uuid from 'uuid';
-import { Toggle } from './recycling-process.interface';
+import { Toggle, Remove } from './recycling-process.interface';
+
 
 
 @Component({
@@ -30,10 +32,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     @Output() public upload: EventEmitter<any> = new EventEmitter<any>();
     @Output() public uploadAsset: EventEmitter<object> = new EventEmitter<object>();
     @Output() public uploadOverview: EventEmitter<object> = new EventEmitter<object>();
-    @Output() public removeFile: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public removeFile: EventEmitter<Remove> = new EventEmitter<Remove>();
 
     public recyclingProcessForm: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
+    public uploadTypes: any[] = UPLOAD_TYPES;
     public recyclingProcessId: string;
     public isActivated: boolean;
     public isDuplicate: boolean;

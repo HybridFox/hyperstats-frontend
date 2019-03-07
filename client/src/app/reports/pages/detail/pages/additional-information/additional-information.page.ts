@@ -9,6 +9,7 @@ import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 import { of } from 'rxjs';
+import { UPLOAD_STATES } from '@ui/upload/components/multiple-file-upload/multiple-file-upload.const';
 
 @Component({
   templateUrl: './additional-information.page.html',
@@ -18,6 +19,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
   public form: any;
   public uploadResult: any;
   public filesArray: [];
+  public uploadStates: any[] = UPLOAD_STATES;
 
   constructor(
     codesService: CodesService,
@@ -62,14 +64,14 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
     if (this.uploadResult) {
       Array.from(filesList).map(file => {
         this.uploadResult.push({
-          state: 'NEW',
+          state: this.uploadStates[0].state,
           file: this.assetsRepository.upload(file)
         });
       });
     } else {
       this.uploadResult = Array.from(filesList).map(file => {
         return {
-          state: 'NEW',
+          state: this.uploadStates[0].state,
           file: this.assetsRepository.upload(file)
         };
       });
@@ -86,7 +88,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
           result: file,
         };
         return {
-          state: 'SAVED',
+          state: this.uploadStates[1].state,
           file: of(fileObject),
         };
       });

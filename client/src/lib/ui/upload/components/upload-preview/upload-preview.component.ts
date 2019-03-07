@@ -8,7 +8,7 @@ export class UploadPreviewComponent {
     @Input() public name: string;
     @Input() public progress: number;
     @Input() public storedFile: string;
-    @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public removeFile: EventEmitter<any> = new EventEmitter();
 
     public onRemoveFile() {
       this.removeFile.emit();

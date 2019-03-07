@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UploadedListComponent {
     @Input() public storedFile: string;
-    @Output() public removeFile: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public removeFile: EventEmitter<any> = new EventEmitter();
 
     public onRemoveFile() {
       this.removeFile.emit();

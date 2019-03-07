@@ -3,7 +3,6 @@ import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { SingleFileUploadComponent } from './single-file-upload.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { AssetsRepository } from '@api/assets';
-import { HttpClient, HttpHandler } from '@angular/common/http';
 import { UploadInputComponent } from '../upload-input/upload-input.component';
 import { UploadPreviewComponent } from '../upload-preview/upload-preview.component';
 import { UploadedListComponent } from '../uploaded-list/uploaded-list.component';

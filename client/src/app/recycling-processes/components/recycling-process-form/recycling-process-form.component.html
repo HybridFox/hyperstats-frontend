@@ -67,8 +67,8 @@
                 [response]="(uploadResponse ? uploadResponse[index]?.ASSET : null) | async"
                 [label]="'PAGE.RECYCLING-PROCESSES.LABELS.UPLOAD-FILE-WITH-FURTHER-DETAILS' | translate"
                 [storedFile]="recyclingProcess?.data?.steps[index]?.qualitativeDescription?.asset?.originalname"
-                (upload)="onUpload($event, index, 'ASSET')"
-                (removeFile)="onRemoveFile(index, 'ASSET')"
+                (upload)="onUpload($event, index, uploadTypes[0].type)"
+                (removeFile)="onRemoveFile(index, uploadTypes[0].type)"
             ></app-single-file-upload>
             <p class="m-file-upload__title">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}</p>
             <p class="m-file-upload__description">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
@@ -77,8 +77,8 @@
                 [control]="step.value.get('schematicOverview')"
                 [response]="(uploadResponse ? uploadResponse[index]?.SCHEMATIC : null) | async"
                 [storedFile]="recyclingProcess?.data?.steps[index]?.schematicOverview?.originalname"
-                (upload)="onUpload($event, index, 'SCHEMATIC')"
-                (removeFile)="onRemoveFile(index, 'SCHEMATIC')"
+                (upload)="onUpload($event, index, uploadTypes[1].type)"
+                (removeFile)="onRemoveFile(index, uploadTypes[1].type)"
             ></app-single-file-upload>
         </div>
         <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()">
