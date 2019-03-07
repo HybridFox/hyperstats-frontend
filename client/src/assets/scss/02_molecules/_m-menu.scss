@@ -155,5 +155,21 @@
                 color: $gray;
             }
         }
+        &--invalid {
+          color: $danger;
+        }
+        &--error {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+
+          width: $spacer-large;
+          height: $spacer-large;
+
+          border: 1px solid $danger;
+          border-radius: $spacer;
+
+          margin-left: $spacer-xx-small;
+        }
     }
 }
