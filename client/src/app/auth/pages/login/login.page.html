@@ -3,7 +3,7 @@
 <form [formGroup]="loginForm" (ngSubmit)="submit()">
     <app-text-input
         class="u-margin-bottom-large"
-        [control]="loginForm.get('email')"
+        [control]="loginForm.get('username')"
         [label]="'GENERAL.LABELS.EMAIL' | translate"
         type="email"
     ></app-text-input>

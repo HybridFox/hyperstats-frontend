@@ -1,9 +1,9 @@
 const isAdmin = require("./isAdmin");
 const isLoggedIn = require("./isLoggedIn");
-const lowerCaseEmail = require("./lowerCaseEmail");
+const setUserName = require("./setUserName");
 
 module.exports = {
 	isAdmin,
 	isLoggedIn,
-	lowerCaseEmail,
+	setUserName,
 };

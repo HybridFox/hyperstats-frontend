@@ -22,11 +22,11 @@ export class AuthActions {
     private handler: Handler
   ) {}
 
-  public login({ email, password }: LoginInterface): Promise<any> {
+  public login({ username, password }: LoginInterface): Promise<any> {
     this.handler.dispatchStart(ACTIONS.LOGIN_USER);
 
     return this.authRepository
-      .login({ email, password })
+      .login({ username, password })
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.LOGIN_USER, {
@@ -119,11 +119,11 @@ export class AuthActions {
       ).toPromise();
   }
 
-  public requestPasswordReset({ email }: RequestPasswordResetInterface): Promise<any>  {
+  public requestPasswordReset({ username }: RequestPasswordResetInterface): Promise<any>  {
     this.handler.dispatchStart(ACTIONS.REGISTER_USER);
 
     return this.authRepository
-      .requestPasswordReset({ email })
+      .requestPasswordReset({ username })
       .toPromise();
   }
 
