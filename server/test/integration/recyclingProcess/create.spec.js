@@ -96,7 +96,7 @@ describe("Integration", () => {
 									"qualitativeDescription": {
 										"text": "qualitativeDescription text 100",
 										"asset": {
-											"id": "",
+											"assetId": "",
 											"mimetype": "",
 											"uploadDate": "",
 											"originalname": "",
@@ -108,7 +108,7 @@ describe("Integration", () => {
 									"site": "site 120",
 									"methodOfProcessing": "methodOfProcessing 1",
 									"schematicOverview": {
-										"id": "",
+										"assetId": "",
 										"mimetype": "",
 										"uploadDate": "",
 										"originalname": "",

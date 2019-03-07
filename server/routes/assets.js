@@ -29,7 +29,7 @@ module.exports = (router) => {
 	 *         schema:
 	 *           type: object
 	 *           properties:
-	 *             id:
+	 *             assetId:
 	 *               type: string
 	 *             mimetype:
 	 *               type: string

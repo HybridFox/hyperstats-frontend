@@ -76,7 +76,7 @@ describe("Integration", () => {
 										"precedingStep": "precedingStep 1",
 										"qualitativeDescription": {
 											"asset": {
-												"id": "",
+												"assetId": "",
 												"mimetype": "",
 												"uploadDate": "",
 												"originalname": "",
@@ -84,7 +84,7 @@ describe("Integration", () => {
 											"text": "qualitativeDescription text 1",
 										},
 										"schematicOverview": {
-											"id": "",
+											"assetId": "",
 											"mimetype": "",
 											"uploadDate": "",
 											"originalname": "",
