@@ -3,12 +3,12 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { select$ } from '@angular-redux/store';
 import { Observable, Subject } from 'rxjs';
 
-import { RecyclingPartnerActions, RecyclingPartnerSelector } from './store';
-import { recyclingPartners } from './recycling-partners.helper';
+import { RecyclingPartnerActions, RecyclingPartnerSelector } from '../../store';
+import { recyclingPartners } from './overview.helper';
 
 @Component({
   selector: 'app-recycling-partners',
-  templateUrl: './recycling-partners.component.html',
+  templateUrl: './overview.page.html',
 })
 
 export class RecyclingPartnersComponent implements OnInit, OnDestroy {

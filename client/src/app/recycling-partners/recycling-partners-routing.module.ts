@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { RecyclingPartnersComponent } from './recycling-partners.component';
-
-import { RecyclingPartnerPageComponent } from './pages';
+import { RecyclingPartnerPageComponent, RecyclingPartnersComponent } from './pages';
 
 const routes: Routes = [
   {
     path: '',
     component: RecyclingPartnersComponent,
     children: [
+      {
+        path: '',
+        component: RecyclingPartnerPageComponent,
+      },
       {
         path: ':recyclingPartner',
         component: RecyclingPartnerPageComponent,
