@@ -17,9 +17,9 @@ export class RecyclingPartnerPageComponent implements OnInit, OnDestroy {
   @select(RecyclingPartnerSelector.detail.result) public recyclingPartner$: Observable<any>;
 
   public partner: any;
+  public recyclingPartnerId: string = null;
 
   private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
-  private recyclingPartnerId: string = null;
   private partnerSubscription: Subscription;
 
   constructor(
