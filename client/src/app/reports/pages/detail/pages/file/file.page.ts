@@ -36,7 +36,9 @@ export class FilePageComponent extends StepPageAbstract {
     );
   }
 
-  public onFormReady() {}
+  public onFormReady() {
+    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
+  }
 
   public save() {
     const data = {

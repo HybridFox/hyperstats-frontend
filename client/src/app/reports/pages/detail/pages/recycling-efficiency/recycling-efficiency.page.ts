@@ -41,13 +41,14 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
       {
         prevStep: ['../output-fraction'],
         nextStep: ['../additional-information'],
-        formSection: 'outputFraction'
+        formSection: 'recyclingEfficiency'
       }
     );
   }
 
   public onFormReady() {
     this.mergeElements();
+    this.formData.getFormMetaData().get('recyclingEfficiency').setValue(false);
   }
 
   private mergeElements() {

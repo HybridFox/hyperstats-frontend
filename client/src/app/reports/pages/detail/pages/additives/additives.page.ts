@@ -57,6 +57,8 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   }
 
   public onFormReady(): void {
+    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
+
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),

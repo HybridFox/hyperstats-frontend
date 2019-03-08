@@ -54,6 +54,7 @@ export class FormDataService {
       recyclingEfficiency: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'recyclingEfficiency'])(report),
       additionalInformation: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'additionalInformation'])(report),
     });
+
     return this.formGroup;
   }
 

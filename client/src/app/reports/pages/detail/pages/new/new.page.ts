@@ -79,6 +79,8 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
   }
 
   public onFormReady() {
+    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
+
     if (this.formData.reportId && this.formData.reportId !== 'new' && this.form.get('recyclingProcess').value) {
       this.form.get('recyclingProcess').disable();
     }
