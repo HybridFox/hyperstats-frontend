@@ -37,7 +37,14 @@
       {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
   </button>
   <div class="u-margin-top-large">
-    <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}{{ 'WIZARD.BUTTON.BACK-TO-INPUT' | translate }}</button>
+    <button *ngIf="stepId === 0" (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-INPUT' | translate }}</button>
+    <a
+      *ngIf="stepId > 0"
+      class="a-button--ghost u-margin-right"
+      [routerLink]="['../', form.controls[stepId - 1].value.siteRef]"
+    >
+      {{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}
+    </a>
     <a
       *ngIf="stepId < (form.controls.length - 1)"
       class="a-button--primary"
