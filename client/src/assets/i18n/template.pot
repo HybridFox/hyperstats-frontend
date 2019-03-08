@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-08T13:31:48.859Z\n"
-"PO-Revision-Date: 2019-03-08T13:31:48.859Z\n"
+"POT-Creation-Date: 2019-03-08T15:24:30.155Z\n"
+"PO-Revision-Date: 2019-03-08T15:24:30.156Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -324,6 +324,15 @@ msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##RESEND-EMAIL"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##TITLE"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
@@ -720,6 +729,18 @@ msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr ""
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##TITLE"
 msgstr ""
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"

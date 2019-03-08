@@ -211,4 +211,25 @@ module.exports = (router) => {
 		dataMiddleware.validate("body", authValidations.resetPassword, Errors.ObjectValidationFailed),
 		authController.resetPassword
 	);
+
+	/**
+	 * @swagger
+	 * /api/auth/resend-validate-mail:
+	 *   post:
+	 *     description: Request resend validation mail
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - token
+	 *     responses:
+	 *       200:
+	 *         description: Success
+	 */
+	router.route("/auth/resend-validate-mail").post(
+		dataMiddleware.copy,
+		dataMiddleware.validate("body", authValidations.resendValidateMail, Errors.ObjectValidationFailed),
+		authController.resendValidateMail
+	);
 };

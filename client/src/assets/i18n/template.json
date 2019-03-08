@@ -130,6 +130,11 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
+			"NOTVALIDATED": {
+				"DESCRIPTION": "",
+				"RESEND-EMAIL": "",
+				"TITLE": ""
+			},
 			"PENDING": {
 				"DESCRIPTION": "",
 				"TITLE": ""
@@ -412,6 +417,14 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"RESEND-EMAIL": {
+			"DESCRIPTION": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"ERROR": {

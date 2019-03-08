@@ -130,6 +130,11 @@
                 "DESCRIPTION": "You don’t have a company assigned. Contact the administrator for more info. ",
                 "TITLE": "You don’t have a company assigned."
             },
+            "NOTVALIDATED": {
+                "DESCRIPTION": "Please validate your email address.",
+                "RESEND-EMAIL": "Resend validation mail",
+                "TITLE": "Email address not validated."
+            },
             "PENDING": {
                 "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
                 "TITLE": "Admin is reviewing your signup request."
@@ -412,6 +417,14 @@
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
             }
+        },
+        "RESEND-EMAIL": {
+            "DESCRIPTION": "Validation mail successfully sent",
+            "ERROR": {
+                "DESCRIPTION": "Something went wrong",
+                "TITLE": "Cannot resend validation email"
+            },
+            "TITLE": "Success!"
         },
         "RESET-PASSWORD": {
             "ERROR": {
