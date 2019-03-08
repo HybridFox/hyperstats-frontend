@@ -17,12 +17,12 @@
       {{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}
     </a>
     <a
-      *ngIf="stepId < (form.controls.length - 1)"
+      *ngIf="stepId < formLength"
       class="a-button--primary"
       [routerLink]="['../', form.controls[stepId + 1].value.siteRef]"
     >
       {{ 'GENERAL.LABELS.NEXT-STEP' | translate }}
     </a>
-    <button *ngIf="stepId >= (form.controls.length - 1)" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-ADDITVES' | translate }}</button>
+    <button *ngIf="stepId >= formLength" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-ADDITVES' | translate }}</button>
   </div>
 </div>
