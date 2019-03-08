@@ -11,7 +11,7 @@
         <button
           (click)="file()"
           class="a-button--primary"
-          disabled="!formData?.formGroup?.valid"
+          [disabled]="!formData?.formGroup?.valid"
         >
           {{ 'WIZARD.FILE-REPORT.LABELS.FILE-REPORT' | translate }}
         </button>
