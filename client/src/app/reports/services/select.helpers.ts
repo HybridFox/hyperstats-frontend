@@ -59,7 +59,6 @@ export const mapToStepMenuItems = (obs$: Observable<any>) => {
   return obs$
     .pipe(
       filter((process: RecyclingProcess) => {
-        console.log(process);
         return !!process;
       }),
       map((process: RecyclingProcess) => {

@@ -474,6 +474,20 @@
 				"OVERVIEW": ""
 			}
 		},
+		"BUTTON": {
+			"BACK-TO-ADD-INFO": "",
+			"BACK-TO-ADDITIVES": "",
+			"BACK-TO-EFFICIENCY": "",
+			"BACK-TO-INPUT": "",
+			"BACK-TO-NEW": "",
+			"BACK-TO-OUTPUT": "",
+			"GO-TO-ADD-INFO": "",
+			"GO-TO-ADDITVES": "",
+			"GO-TO-EFFICIENCY": "",
+			"GO-TO-FILE-REPORT": "",
+			"GO-TO-INPUT": "",
+			"GO-TO-OUTPUT": ""
+		},
 		"FILE-REPORT": {
 			"DESCRIPTION": {
 				"FILE-REPORT": "",

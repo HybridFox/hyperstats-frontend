@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-07T10:21:29.421Z\n"
-"PO-Revision-Date: 2019-03-07T10:21:29.422Z\n"
+"POT-Creation-Date: 2019-03-08T10:55:02.383Z\n"
+"PO-Revision-Date: 2019-03-08T10:55:02.383Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -789,6 +789,42 @@ msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
 msgstr ""
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-ADD-INFO"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-ADDITIVES"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-INPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-NEW"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-OUTPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITVES"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-INPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-OUTPUT"
 msgstr ""
 
 msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
