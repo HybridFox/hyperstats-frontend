@@ -2,22 +2,30 @@
 
 const UserModel = require("../../../../models/user");
 
-module.exports = (admin, status) => {
+const getQuery = (admin, status) => {
 	const adminQuery = admin && admin.toLowerCase() !== "false" ? { "meta.isAdmin": true } : {};
 	const statusQuery = status ? { "meta.status.type": status } : {};
 
-	let matchQuery = null;
-
 	if (admin && status) {
-		matchQuery = { $or: [
-			adminQuery,
-			statusQuery,
-		] };
-	} else if (admin) {
-		matchQuery = adminQuery;
-	} else if (status) {
-		matchQuery = statusQuery;
+		return {
+			$or: [
+				adminQuery,
+				statusQuery,
+			],
+		};
 	}
 
-	return UserModel.find({ "meta.deleted": false, ...matchQuery }).populate("data.company").lean().exec();
+	if (admin) {
+		return adminQuery;
+	}
+
+	if (status) {
+		return statusQuery;
+	}
+
+	return {};
+};
+
+module.exports = (admin, status) => {
+	return UserModel.find({ "meta.deleted": false, ...getQuery(admin, status) }).populate("data.company").lean().exec();
 };
