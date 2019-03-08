@@ -12,12 +12,13 @@ export class UsersRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchByTypes(types: CompanyType[], admin: boolean): Observable<any> {
+  public fetchByTypes(types: CompanyType[], admin: boolean, pending: boolean): Observable<any> {
 
     return this.http.get(this.apiConfig.baseUrl(`/users`), {
       params: {
         ...(types ? { 'company-type': types } : {}),
         ...(admin ? { 'admin': true } : {}),
+        ...(pending ? { 'status': 'PENDING' } : {}),
       } as any
     });
   }

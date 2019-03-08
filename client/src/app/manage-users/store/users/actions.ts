@@ -18,8 +18,8 @@ export class UsersActions {
         private usersRepository: UsersRepository,
     ) { }
 
-    public fetchByTypes(types: CompanyType[], admin: boolean): Observable<any> {
-        if (!prop('length')(types) && !admin) {
+    public fetchByTypes(types: CompanyType[], admin: boolean, pending: boolean): Observable<any> {
+        if (!prop('length')(types) && !admin && !pending) {
             return of(this.handler.dispatchSuccess(ACTIONS.OVERVIEW.FETCH, {
                 payload: [],
                 pagination: null
@@ -28,7 +28,7 @@ export class UsersActions {
 
         this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
-        return this.usersRepository.fetchByTypes(types, admin)
+        return this.usersRepository.fetchByTypes(types, admin, pending)
             .pipe(
                 catchError((error) => {
                     this.handler.dispatchError(ACTIONS.OVERVIEW.FETCH, {

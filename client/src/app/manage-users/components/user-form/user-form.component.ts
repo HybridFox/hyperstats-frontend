@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { pathOr } from 'ramda';
 import { ToastrService } from 'ngx-toastr';
 import { AuthActions } from '@store/auth';
@@ -40,7 +40,7 @@ export class UserFormComponent implements OnChanges {
                 firstname: this.formBuilder.control(pathOr('', ['data', 'firstname'], user)),
                 lastname: this.formBuilder.control(pathOr('', ['data', 'lastname'], user)),
                 email: this.formBuilder.control(pathOr('', ['data', 'email'], user)),
-                company: this.formBuilder.control(pathOr('', ['data', 'company', '_id'], user))
+                company: this.formBuilder.control(pathOr(user.data.company, ['data', 'company', '_id'], user), Validators.required)
             }),
             meta: this.formBuilder.group({
                 activated: this.formBuilder.control(pathOr('DEACTIVATED', ['meta', 'status', 'type'], user) === 'ACTIVATED')
