@@ -2,16 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 
 import { ReportsActions } from '../../../../store/reports';
 import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 import { StepPageAbstract } from '../step-page.abstract';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   templateUrl: './input-fraction.page.html',
 })
 export class InputFractionPageComponent extends StepPageAbstract implements OnInit {
+  private stepId: number;
+
   constructor(
     public codesService: CodesService,
     public formData: FormDataService,
@@ -42,5 +46,16 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
   }
 
   public onFormReady(): void {
+    this.route.params
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+      )
+      .subscribe((params) => {
+        this.setActiveStepById(params.stepId);
+      });
   }
+
+  private setActiveStepById(stepId: string) {
+    this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+   }
 }
