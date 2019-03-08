@@ -448,8 +448,13 @@
 			}
 		},
 		"BUTTON": {
+			"BACK-TO-ADD-INFO": "",
+			"BACK-TO-ADDITIVES": "",
+			"BACK-TO-EFFICIENCY": "",
+			"BACK-TO-INPUT": "",
+			"BACK-TO-NEW": "",
+			"BACK-TO-OUTPUT": "",
 			"GO-TO-ADD-INFO": "",
-			"GO-TO-ADDITIVES": "",
 			"GO-TO-EFFICIENCY": "",
 			"GO-TO-FILE-REPORT": "",
 			"GO-TO-INPUT": "",

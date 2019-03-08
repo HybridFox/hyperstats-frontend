@@ -37,7 +37,7 @@
       {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
   </button>
   <div class="u-margin-top-large">
-    <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
+    <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}{{ 'WIZARD.BUTTON.BACK-TO-INPUT' | translate }}</button>
     <a
       *ngIf="stepId < (form.controls.length - 1)"
       class="a-button--primary"

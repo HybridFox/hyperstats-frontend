@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-08T07:59:26.168Z\n"
+"POT-Creation-Date: 2019-03-08T08:37:58.607Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -858,11 +858,26 @@ msgstr "Input weight"
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
 
+msgid "WIZARD##BUTTON##BACK-TO-ADD-INFO"
+msgstr "Go back to Add. Information"
+
+msgid "WIZARD##BUTTON##BACK-TO-ADDITIVES"
+msgstr "Go back to Additives"
+
+msgid "WIZARD##BUTTON##BACK-TO-EFFICIENCY"
+msgstr "Go back to Recycling Efficiency"
+
+msgid "WIZARD##BUTTON##BACK-TO-INPUT"
+msgstr "Go back to Input Fraction"
+
+msgid "WIZARD##BUTTON##BACK-TO-NEW"
+msgstr "Go back to New Report"
+
+msgid "WIZARD##BUTTON##BACK-TO-OUTPUT"
+msgstr "Go back to Output Fraction"
+
 msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
 msgstr "Go to Add. Information"
-
-msgid "WIZARD##BUTTON##GO-TO-ADDITIVES"
-msgstr "Go to Additives"
 
 msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
 msgstr "Go to Recycling Efficiency"

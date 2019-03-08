@@ -448,8 +448,13 @@
             }
         },
         "BUTTON": {
+            "BACK-TO-ADD-INFO": "Go back to Add. Information",
+            "BACK-TO-ADDITIVES": "Go back to Additives",
+            "BACK-TO-EFFICIENCY": "Go back to Recycling Efficiency",
+            "BACK-TO-INPUT": "Go back to Input Fraction",
+            "BACK-TO-NEW": "Go back to New Report",
+            "BACK-TO-OUTPUT": "Go back to Output Fraction",
             "GO-TO-ADD-INFO": "Go to Add. Information",
-            "GO-TO-ADDITIVES": "Go to Additives",
             "GO-TO-EFFICIENCY": "Go to Recycling Efficiency",
             "GO-TO-FILE-REPORT": "Go to File Report",
             "GO-TO-INPUT": "Go to Input Fraction",
