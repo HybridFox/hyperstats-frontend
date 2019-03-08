@@ -55,15 +55,6 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   public removeElement(additive: any, elementNumber: number) {
     (additive.parent as FormArray).removeAt(elementNumber);
   }
-  private setActiveStepById(stepId: string) {
-   this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-    if (this.stepId !== -1) {
-      this.additive = this.form.get(`${this.stepId}`) as FormGroup;
-    } else {
-      this.formData.addAdditive(stepId);
-      this.setActiveStepById(stepId);
-    }
-  }
 
   public onFormReady(): void {
     this.route.params
@@ -73,5 +64,15 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
       .subscribe((params) => {
         this.setActiveStepById(params.stepId);
       });
+  }
+
+  private setActiveStepById(stepId: string) {
+   this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    if (this.stepId !== -1) {
+      this.additive = this.form.get(`${this.stepId}`) as FormGroup;
+    } else {
+      this.formData.addAdditive(stepId);
+      this.setActiveStepById(stepId);
+    }
   }
 }

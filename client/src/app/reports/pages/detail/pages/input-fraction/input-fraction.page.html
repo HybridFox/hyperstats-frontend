@@ -4,12 +4,25 @@
 ></app-sub-section-title>
 <div class="m-card--secondary u-margin-bottom">
   <app-input-fraction-form
-    [inputFractionsForm]="form"
-    [siteRef]="(route.params | async)?.stepId"
+    [stepId]="stepId"
     [elements]="codesService.elements()"
   ></app-input-fraction-form>
   <div class="u-margin-top-large">
-    <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
-    <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
+    <button *ngIf="stepId === 0" (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-NEW' | translate }}</button>
+    <a
+      *ngIf="stepId > 0"
+      class="a-button--ghost u-margin-right"
+      [routerLink]="['../', form.controls[stepId - 1].value.siteRef]"
+    >
+      {{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}
+    </a>
+    <a
+      *ngIf="stepId < formLength"
+      class="a-button--primary"
+      [routerLink]="['../', form.controls[stepId + 1].value.siteRef]"
+    >
+      {{ 'GENERAL.LABELS.NEXT-STEP' | translate }}
+    </a>
+    <button *ngIf="stepId >= formLength" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-ADDITVES' | translate }}</button>
   </div>
 </div>
