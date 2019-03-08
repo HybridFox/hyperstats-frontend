@@ -18,7 +18,7 @@ const savedData = {
 			weightBatteryType: joi.number().allow(null).optional(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().allow(null).optional(),
-				PackagingMaterial: joi.number().allow(null).optional(),
+				packagingMaterial: joi.number().allow(null).optional(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
@@ -82,7 +82,7 @@ const filedData = {
 			weightBatteryType: joi.number().required(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().required(),
-				PackagingMaterial: joi.number().required(),
+				packagingMaterial: joi.number().required(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
