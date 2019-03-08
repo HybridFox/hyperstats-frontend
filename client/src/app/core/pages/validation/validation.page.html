@@ -20,7 +20,7 @@
                 {{ 'PAGE.ACCESS-DENIED.PENDING.DESCRIPTION' | translate }}
             </p>
           </div>
-          <div *ngIf="!(user$ | async)?.company && (user$ | async)?.validation.isValidated">
+          <div *ngIf="!(user$ | async)?.company && (user$ | async)?.validation?.isValidated">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.NOCOMPANY.TITLE' | translate"
             ></app-section-title>
@@ -28,7 +28,7 @@
                 {{ 'PAGE.ACCESS-DENIED.NOCOMPANY.DESCRIPTION' | translate }}
             </p>
           </div>
-          <div *ngIf="!(user$ | async)?.validation.isValidated">
+          <div *ngIf="!(user$ | async)?.validation?.isValidated">
               <app-section-title
                 [title]="'PAGE.ACCESS-DENIED.NOTVALIDATED.TITLE' | translate"
               ></app-section-title>
