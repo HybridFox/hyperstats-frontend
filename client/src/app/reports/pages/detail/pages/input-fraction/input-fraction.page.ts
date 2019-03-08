@@ -14,7 +14,8 @@ import { takeUntil } from 'rxjs/operators';
   templateUrl: './input-fraction.page.html',
 })
 export class InputFractionPageComponent extends StepPageAbstract implements OnInit {
-  private stepId: number;
+  public stepId = 0;
+  public formLength = 0;
 
   constructor(
     public codesService: CodesService,
@@ -57,5 +58,7 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
 
   private setActiveStepById(stepId: string) {
     this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    const currentLength: unknown = this.form.controls.length;
+    this.formLength = (currentLength as number) - 1;
    }
 }
