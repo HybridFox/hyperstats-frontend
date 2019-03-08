@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
+"POT-Creation-Date: 2019-03-08T07:59:26.168Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -840,11 +840,6 @@ msgstr "Compliance Organisation"
 msgid "TYPES##COMPANY##RECYCLER"
 msgstr "Recycler"
 
-#, fuzzy
-#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
-msgstr "Recycling Partners"
-
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Additional information"
 
@@ -862,6 +857,24 @@ msgstr "Input weight"
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
+
+msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
+msgstr "Go to Add. Information"
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITIVES"
+msgstr "Go to Additives"
+
+msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
+msgstr "Go to Recycling Efficiency"
+
+msgid "WIZARD##BUTTON##GO-TO-FILE-REPORT"
+msgstr "Go to File Report"
+
+msgid "WIZARD##BUTTON##GO-TO-INPUT"
+msgstr "Go to Input Fraction"
+
+msgid "WIZARD##BUTTON##GO-TO-OUTPUT"
+msgstr "Go to Output Fraction"
 
 msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
 msgstr ""
@@ -1045,6 +1058,11 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#, fuzzy
+#~| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+#~ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
+#~ msgstr "Recycling Partners"
 
 #~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 #~ msgstr "Share of input fraction (%)"

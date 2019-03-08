@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
-"PO-Revision-Date: 2019-03-06T13:12:15.217Z\n"
+"POT-Creation-Date: 2019-03-08T07:59:26.168Z\n"
+"PO-Revision-Date: 2019-03-08T07:59:26.168Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -728,9 +728,6 @@ msgstr ""
 msgid "TYPES##COMPANY##RECYCLER"
 msgstr ""
 
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
-msgstr ""
-
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr ""
 
@@ -747,6 +744,24 @@ msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
 msgstr ""
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITIVES"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-INPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-OUTPUT"
 msgstr ""
 
 msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
