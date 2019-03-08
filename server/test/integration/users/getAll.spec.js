@@ -87,7 +87,6 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
-						console.log(body);
 						expect(body).to.be.an("array").to.have.lengthOf(7);
 						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",

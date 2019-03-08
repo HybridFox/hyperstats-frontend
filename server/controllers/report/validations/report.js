@@ -1,6 +1,6 @@
 const joi = require("joi");
 const { schemas } = require("../../../helpers/validation");
-const { REPORT_STATUS } = require("../helpers/const");
+const { REPORT_STATUS, DEFAULT_REPORT_STATE } = require("../helpers/const");
 
 const savedData = {
 	information: joi.object().keys({
@@ -18,7 +18,7 @@ const savedData = {
 			weightBatteryType: joi.number().allow(null).optional(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().allow(null).optional(),
-				PackagingMaterial: joi.number().allow(null).optional(),
+				packagingMaterial: joi.number().allow(null).optional(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
@@ -82,7 +82,7 @@ const filedData = {
 			weightBatteryType: joi.number().required(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().required(),
-				PackagingMaterial: joi.number().required(),
+				packagingMaterial: joi.number().required(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
@@ -132,6 +132,16 @@ const schema = joi.object().keys({
 	meta: joi.object().keys({
 		approvedCompanies: joi.array().items(joi.string()).optional(),
 		status: joi.string().valid([REPORT_STATUS.FILED, REPORT_STATUS.SAVED]).optional(),
+		state: joi.object().keys({
+			isPristine: joi.object().keys({
+				information: joi.boolean().optional().default(true),
+				inputFraction: joi.boolean().optional().default(true),
+				additives: joi.boolean().optional().default(true),
+				outputFraction: joi.boolean().optional().default(true),
+				recyclingEfficiency: joi.boolean().optional().default(true),
+				additionalInformation: joi.boolean().optional().default(true),
+			}).optional().default(DEFAULT_REPORT_STATE.isPristine),
+		}).optional().default(DEFAULT_REPORT_STATE),
 	}),
 });
 
