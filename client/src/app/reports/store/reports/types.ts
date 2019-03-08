@@ -45,7 +45,7 @@ export interface AdditivesData {
     chemicalComposition: ChemicalComposition;
 }
 
-interface ExcessMaterialReceived {
+export interface ExcessMaterialReceived {
     impurities: number;
     packagingMaterial: number;
 }
