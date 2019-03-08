@@ -115,6 +115,10 @@ describe("Integration", () => {
 						isAdmin: false,
 						email: "passwordreset@example.com",
 						username: "passwordreset@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 				})
 			);

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-08T13:31:48.859Z\n"
+"POT-Creation-Date: 2019-03-08T15:24:30.155Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -370,6 +370,15 @@ msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
 msgstr "You don’t have a company assigned."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##DESCRIPTION"
+msgstr "Please validate your email address."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##RESEND-EMAIL"
+msgstr "Resend validation mail"
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##TITLE"
+msgstr "Email address not validated."
 
 msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
 msgstr ""
@@ -834,6 +843,18 @@ msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
+
+msgid "TOAST##RESEND-EMAIL##DESCRIPTION"
+msgstr "Validation mail successfully sent"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##DESCRIPTION"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##TITLE"
+msgstr "Cannot resend validation email"
+
+msgid "TOAST##RESEND-EMAIL##TITLE"
+msgstr "Success!"
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"

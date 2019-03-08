@@ -20,13 +20,27 @@
                 {{ 'PAGE.ACCESS-DENIED.PENDING.DESCRIPTION' | translate }}
             </p>
           </div>
-          <div *ngIf="!(user$ | async)?.company">
+          <div *ngIf="!(user$ | async)?.company && (user$ | async)?.validation.isValidated">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.NOCOMPANY.TITLE' | translate"
             ></app-section-title>
             <p>
                 {{ 'PAGE.ACCESS-DENIED.NOCOMPANY.DESCRIPTION' | translate }}
             </p>
+          </div>
+          <div *ngIf="!(user$ | async)?.validation.isValidated">
+              <app-section-title
+                [title]="'PAGE.ACCESS-DENIED.NOTVALIDATED.TITLE' | translate"
+              ></app-section-title>
+              <p>
+                  {{ 'PAGE.ACCESS-DENIED.NOTVALIDATED.DESCRIPTION' | translate }}
+              </p>
+              <button
+                class="a-button a-button--primary a-button--small u-margin-right"
+                (click)="resendMail()"
+              >
+                  {{ 'PAGE.ACCESS-DENIED.NOTVALIDATED.RESEND-EMAIL' | translate }}
+              </button>
           </div>
       </div>
   </div>

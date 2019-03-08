@@ -56,6 +56,10 @@ describe("Integration", () => {
 						isAdmin: false,
 						email: "validuser@example.com",
 						username: "validuser@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");
