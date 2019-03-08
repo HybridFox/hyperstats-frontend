@@ -20,6 +20,14 @@
                 {{ 'PAGE.ACCESS-DENIED.PENDING.DESCRIPTION' | translate }}
             </p>
           </div>
+          <div *ngIf="!(user$ | async)?.company">
+            <app-section-title
+              [title]="'PAGE.ACCESS-DENIED.NOCOMPANY.TITLE' | translate"
+            ></app-section-title>
+            <p>
+                {{ 'PAGE.ACCESS-DENIED.NOCOMPANY.DESCRIPTION' | translate }}
+            </p>
+          </div>
       </div>
   </div>
 </div>
