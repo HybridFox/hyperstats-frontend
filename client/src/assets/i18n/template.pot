@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-08T10:55:02.383Z\n"
-"PO-Revision-Date: 2019-03-08T10:55:02.383Z\n"
+"POT-Creation-Date: 2019-03-08T13:31:48.859Z\n"
+"PO-Revision-Date: 2019-03-08T13:31:48.859Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -318,6 +318,12 @@ msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"

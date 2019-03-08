@@ -12,7 +12,7 @@ const handle = (obs$) => {
           }),
           map((user: any) => {
             if (user) {
-              return user.result.status.type;
+              return user.result;
             }
           }),
       );
@@ -30,7 +30,11 @@ export class ValidationGuard implements CanActivate {
       return this.isValidated$
             .pipe(
                 map((user) => {
-                  return user === 'ACTIVATED';
+                  if (user.status.type === 'ACTIVATED' && user.company) {
+                    return true;
+                  } else {
+                    return false;
+                  }
                 }),
                 tap((res) => {
                     if (!res) {
