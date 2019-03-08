@@ -75,8 +75,8 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
 
   private calculatePercentage(mass: number) {
     const totalWeight = this.elements.reduce((currentTotal, item) =>
-      item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
-      currentTotal + parseInt(item.mass, 10) :
+      item.mass !== '' && !isNaN(parseFloat(item.mass)) ?
+      currentTotal + parseFloat(item.mass) :
       currentTotal,
     0);
 
