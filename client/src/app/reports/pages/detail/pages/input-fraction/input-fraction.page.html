@@ -5,7 +5,7 @@
 <div class="m-card--secondary u-margin-bottom">
   <app-input-fraction-form
     [inputFractionsForm]="form"
-    [siteRef]="(route.params | async)?.stepId"
+    [stepId]="stepId"
     [elements]="codesService.elements()"
   ></app-input-fraction-form>
   <div class="u-margin-top-large">
