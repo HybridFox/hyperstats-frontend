@@ -15,6 +15,7 @@ import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes
 })
 export class OutputFractionPageComponent extends StepPageAbstract {
   public outputFraction: FormGroup;
+  private stepId: number;
 
   constructor(
     public codesService: CodesService,
@@ -50,9 +51,9 @@ export class OutputFractionPageComponent extends StepPageAbstract {
   }
 
   private setActiveStepById(stepId: string) {
-    const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-    if (stepIndex !== -1) {
-      this.outputFraction = this.form.get(`${stepIndex}`) as FormGroup;
+    this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    if (this.stepId !== -1) {
+      this.outputFraction = this.form.get(`${this.stepId}`) as FormGroup;
     } else {
       this.formData.addOutputFraction(stepId);
       this.setActiveStepById(stepId);
