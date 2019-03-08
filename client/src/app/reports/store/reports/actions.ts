@@ -100,6 +100,7 @@ export class ReportsActions {
   }
 
   public draft(report: any): Observable<any> {
+    console.log(report);
     return this.update(report, REPORT_STATE.SAVED);
   }
 

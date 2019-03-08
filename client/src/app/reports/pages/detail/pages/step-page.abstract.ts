@@ -60,7 +60,11 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     const data = {
       _id: this.formData.reportId,
       data: this.formData.getFormData().value,
-      meta: this.formData.getFormMetaData(),
+      meta: {
+        state: {
+          isPristine: this.formData.getFormMetaData().getRawValue(),
+        }
+      }
     };
 
     this.reportActions.draft(data)

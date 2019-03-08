@@ -46,7 +46,7 @@ export class FormDataService {
     });
 
     this.metaFormGroup = this.formBuilder.group({
-      information: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'information'])(report),
+      information: pathOr(false, ['meta', 'state', 'state', 'isPristine', 'information'])(report),
       inputFraction: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'inputFraction'])(report),
       additives: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'additives'])(report),
       outputFraction: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'outputFraction'])(report),
