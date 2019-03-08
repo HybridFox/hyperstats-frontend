@@ -60,7 +60,8 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
 
     const data = {
       _id: this.formData.reportId,
-      data: this.formData.getFormData().getRawValue()
+      data: this.formData.getFormData().getRawValue(),
+      meta: this.formData.getFormMetaData().getRawValue(),
     };
 
     this.reportActions.createDrafted(data)

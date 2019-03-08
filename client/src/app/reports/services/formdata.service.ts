@@ -19,6 +19,7 @@ import {
 export class FormDataService {
   public currentTitle: string;
   public formGroup: FormGroup;
+  public metaFormGroup: FormGroup;
   public reportId: string;
 
   constructor(
@@ -27,6 +28,10 @@ export class FormDataService {
 
   public getFormData(): FormGroup {
     return this.formGroup;
+  }
+
+  public getFormMetaData(): FormGroup {
+    return this.metaFormGroup;
   }
 
   public initForm(report: Report) {
@@ -38,6 +43,15 @@ export class FormDataService {
       outputFraction: this.getOutputFractionsFormArray(pathOr([], ['data', 'outputFraction'])(report)),
       recyclingEfficiency: this.getRecyclingEfficiencyFormGroup(pathOr(null, ['data', 'recyclingEfficiency'])(report)),
       additionalInformation: this.getAdditionalInformationFormGroup(pathOr(null, ['data', 'additionalInformation'])(report)),
+    });
+
+    this.metaFormGroup = this.formBuilder.group({
+      information: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'information'])(report),
+      inputFraction: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'inputFraction'])(report),
+      additives: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'additives'])(report),
+      outputFraction: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'outputFraction'])(report),
+      recyclingEfficiency: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'recyclingEfficiency'])(report),
+      additionalInformation: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'additionalInformation'])(report),
     });
     return this.formGroup;
   }

@@ -39,6 +39,8 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
   public ngOnInit() {
     this.form = this.formData.getFormData().get(this.options.formSection) as FormGroup;
     this.onFormReady();
+
+    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
   }
 
   public ngOnDestroy() {
@@ -58,6 +60,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     const data = {
       _id: this.formData.reportId,
       data: this.formData.getFormData().value,
+      meta: this.formData.getFormMetaData(),
     };
 
     this.reportActions.draft(data)
