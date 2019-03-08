@@ -51,6 +51,10 @@ describe("Integration", () => {
 						isAdmin: false,
 						email: "validuser@example.com",
 						username: "validuser@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 				});
 

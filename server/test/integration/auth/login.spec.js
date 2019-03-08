@@ -41,6 +41,10 @@ describe("Integration", () => {
 						status: {
 							type: "PENDING",
 						},
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");
