@@ -59,7 +59,7 @@ describe("Integration", () => {
 				company: co._id,
 			});
 
-			cookie = (await loginUser(server, { email: "test1@example.com" })).cookie;
+			cookie = (await loginUser(server, { username: "test1@example.com" })).cookie;
 			nonAdminCookie = (await loginUser(server)).cookie;
 		});
 
@@ -87,6 +87,7 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
+						console.log(body);
 						expect(body).to.be.an("array").to.have.lengthOf(7);
 						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",

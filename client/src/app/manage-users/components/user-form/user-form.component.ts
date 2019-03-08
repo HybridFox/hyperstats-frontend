@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { AuthActions } from '@store/auth';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Option } from '@ui/form-fields/components/select/select.types';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     selector: 'app-user-form',
@@ -16,8 +17,10 @@ export class UserFormComponent implements OnChanges {
 
     @Output() public save: EventEmitter<any> = new EventEmitter<any>();
     @Output() public toggleActivation: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public updateRequest: EventEmitter<object> = new EventEmitter<object>();
 
     public form: FormGroup;
+    public statusTypes: any[] = STATUS_TYPES;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -47,7 +50,7 @@ export class UserFormComponent implements OnChanges {
 
     public resetPassword(): Promise<any> {
         return this.authAction.requestPasswordReset({
-            email: this.user.data.email
+            username: this.user.data.username
         }).then(() => {
             this.toastrService.success(
                 ngxExtract('TOAST.ADMIN-FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
@@ -76,7 +79,12 @@ export class UserFormComponent implements OnChanges {
                     type: formValues.meta.activated ? 'ACTIVATED' : 'DEACTIVATED'
                 }
             }
-        } ;
+        };
+    }
+
+    public handleRequest(bool) {
+        const user = this.formatUser(this.user, this.form.getRawValue());
+        this.updateRequest.emit({ bool, user });
     }
 
 }

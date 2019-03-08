@@ -8,10 +8,10 @@ const getFutureDate = (days) => {
 	return new Date(new Date().getTime() + (86400000 * days));
 };
 
-module.exports = async(email) => {
+module.exports = async(username) => {
 	const resetToken = `${uuid()}-${uuid()}`;
 	const user = await UserModel.findOneAndUpdate({
-		"data.email": email,
+		"data.username": username,
 		"meta.deleted": false,
 		"meta.validation.isValidated": true,
 	}, {
@@ -24,7 +24,7 @@ module.exports = async(email) => {
 	}
 
 	await mailer({
-		to: email,
+		to: user.data.email,
 		subject: "Rare - Reset password",
 		templatePath: join(process.cwd(), "controllers/auth/templates/passwordReset.html"),
 		data: {

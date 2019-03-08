@@ -44,8 +44,25 @@
     </ng-container>
 
     <app-sub-section-title class="u-margin-top-x-large"></app-sub-section-title>
+    <button
+        type='button'
+        *ngIf="user?.meta?.status?.type === statusTypes[2].type"
+        class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right u-margin-top-large"
+        (click)="handleRequest(true)"
+    >
+        {{ 'GENERAL.LABELS.ACCEPT' | translate }}
+    </button>
+    <button
+        type='button'
+        *ngIf="user?.meta?.status?.type === statusTypes[2].type"
+        class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right u-margin-top-large"
+        (click)="handleRequest(false)"
+    >
+        {{ 'GENERAL.LABELS.DECLINE' | translate }}
+    </button>
 
     <button
+        *ngIf="user?.meta?.status?.type !== statusTypes[2].type"
         type="button"
         class="a-button--primary a-button--small u-margin-top-large u-margin-right-large"
         (click)="saveUser()"
@@ -54,6 +71,7 @@
         {{ 'GENERAL.BUTTONS.SAVE' | translate }}
     </button>
     <button
+        *ngIf="user?.meta?.status?.type !== statusTypes[2].type"
         type="button"
         class="a-button u-margin-left-x-large a-button--secondary a-button--small"
         (click)="resetPassword()"

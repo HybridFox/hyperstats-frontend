@@ -12,6 +12,14 @@
                 {{ 'PAGE.ACCESS-DENIED.DEACTIVATED.DESCRIPTION' | translate }}
             </p>
           </div>
+          <div *ngIf="(user$ | async)?.status?.type === 'PENDING'">
+            <app-section-title
+              [title]="'PAGE.ACCESS-DENIED.PENDING.TITLE' | translate"
+            ></app-section-title>
+            <p>
+                {{ 'PAGE.ACCESS-DENIED.PENDING.DESCRIPTION' | translate }}
+            </p>
+          </div>
       </div>
   </div>
 </div>

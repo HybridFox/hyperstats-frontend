@@ -14,10 +14,10 @@ export const Services = [
     UserCompanyActions,
     UsersActions,
     UsersRepository,
-    CompaniesActions
+    CompaniesActions,
 ];
 
 export const Reducer = combineReducers({
     ...UserReducer,
-    ...CompanyReducer
+    ...CompanyReducer,
 });

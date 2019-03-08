@@ -25,7 +25,7 @@ describe("Integration", () => {
 			return supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "validuser@example.com",
+					username: "validuser@example.com",
 					password: "validPassword",
 				})
 				.expect("Content-Type", /json/)
@@ -36,9 +36,10 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						isAdmin: false,
+						username: "validuser@example.com",
 						email: "validuser@example.com",
 						status: {
-							type: "ACTIVATED",
+							type: "PENDING",
 						},
 					});
 					expect(body.company).to.be.an("object");
@@ -51,7 +52,7 @@ describe("Integration", () => {
 			return supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "invalidUser@example.com",
+					username: "invalidUser@example.com",
 					password: "validPassword",
 				})
 				.expect("Content-Type", /json/)
@@ -62,7 +63,7 @@ describe("Integration", () => {
 			return supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "validuser@example.com",
+					username: "validuser@example.com",
 					password: "invalidPassword",
 				})
 				.expect("Content-Type", /json/)
@@ -73,7 +74,7 @@ describe("Integration", () => {
 			return supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "validuser@example.com",
+					username: "validuser@example.com",
 				})
 				.expect("Content-Type", /json/)
 				.expect(400);

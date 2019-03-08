@@ -4,6 +4,8 @@ import { MenuItem, StepMenuItem } from '@shared/components/vertical-menu/vertica
 import { Option } from '@ui/form-fields/components/select/select.types';
 import pathOr from 'ramda/es/pathOr';
 
+import { RecyclingProcess, ProcessStep} from '../store/recycling-processes/types';
+
 const ALL_MENU_ITEM: MenuItem = {
   link: ['./'],
   label: 'All',
@@ -56,11 +58,12 @@ export const mapToSiteMenuItems = (obs$: Observable<any>) => {
 export const mapToStepMenuItems = (obs$: Observable<any>) => {
   return obs$
     .pipe(
-      filter((process: any[]) => {
+      filter((process: RecyclingProcess) => {
+        console.log(process);
         return !!process;
       }),
-      map((process: any[]) => {
-        return pathOr([], ['data', 'steps'], process).map((step): StepMenuItem => ({
+      map((process: RecyclingProcess) => {
+        return pathOr([], ['data', 'steps'], process).map((step: ProcessStep): StepMenuItem => ({
           link: ['./', step.uuid],
           label: step.description,
           valid: false,

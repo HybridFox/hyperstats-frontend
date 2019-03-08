@@ -33,12 +33,16 @@ module.exports = async({
 	const testUser = new UserModel({
 		data: {
 			email,
+			username: email,
 			firstname,
 			lastname,
 			password,
 			company: newCompany,
 		},
 		meta: {
+			status: {
+				type: "PENDING",
+			},
 			validation: {
 				isValidated,
 				companyName,

@@ -142,11 +142,12 @@ describe("Integration", () => {
 						expect(body).to.be.an("object");
 						expect(omit(["created", "lastUpdated", "company"], body)).to.deep.equal({
 							email: "otherUser@example.com",
+							username: "otheruser@example.com",
 							firstname: "Jef",
 							isAdmin: false,
 							lastname: "Awesome",
 							status: {
-								type: "ACTIVATED",
+								type: "PENDING",
 							},
 						});
 					});

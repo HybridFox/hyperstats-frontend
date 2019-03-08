@@ -18,12 +18,12 @@ export class AuthRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public login({ email, password }: LoginInterface) {
+  public login({ username, password }: LoginInterface) {
     const url = this.apiConfig.baseUrl('/auth/login');
 
     return this.http
       .post(url, {
-        email,
+        username,
         password
       });
   }
@@ -47,12 +47,12 @@ export class AuthRepository {
       });
   }
 
-  public requestPasswordReset({ email }: RequestPasswordResetInterface) {
+  public requestPasswordReset({ username }: RequestPasswordResetInterface) {
     const url = this.apiConfig.baseUrl('/auth/request-password-reset');
 
     return this.http
       .post(url, {
-        email
+        username
       });
   }
 

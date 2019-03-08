@@ -55,7 +55,7 @@ export class ResetPasswordPageComponent implements OnInit, OnDestroy {
 
     public submit() {
         this.authAction.resetPassword({
-            password: this.resetPasswordForm.value.password,
+            password: this.resetPasswordForm.value.passwords.password,
             token: this.token
         }).then(() => {
             this.toastrService.success(

@@ -7,7 +7,6 @@ import { EntitiesActions } from '@store/entities';
 
 import { UsersRepository } from './repository';
 import { ACTIONS } from './action-types';
-import path from 'ramda/es/path';
 import prop from 'ramda/es/prop';
 import { CompanyType } from '@api/company';
 
@@ -84,5 +83,29 @@ export class UsersActions {
                     });
                 })
             );
+    }
+
+    public fetchPendingRequests(): Observable<any> {
+      this.handler.dispatchStart(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS);
+
+      return this.usersRepository.fetchPendingRequests()
+          .pipe(
+              catchError((error) => {
+                  this.handler.dispatchError(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS, {
+                    message: error.message,
+                  });
+
+                  return throwError(error);
+              }),
+              tap((response) => {
+                  this.handler.dispatchSuccess(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS, {
+                      payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.user]),
+                      pagination: null,
+                  });
+              }),
+              finalize(() => {
+                  this.handler.dispatchDone(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS);
+              })
+          );
     }
 }

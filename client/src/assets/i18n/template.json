@@ -22,6 +22,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACCEPT": "",
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ACTIVITY": "",
@@ -42,6 +43,7 @@
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
 			"DATE": "",
+			"DECLINE": "",
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
@@ -101,6 +103,7 @@
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
 			"REPORTS": "",
+			"SIGNUP-REQUESTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
 		},
@@ -120,6 +123,10 @@
 		},
 		"ACCESS-DENIED": {
 			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"PENDING": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
@@ -206,6 +213,10 @@
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",
+			"TITLE": ""
+		},
+		"SIGNUP-REQUESTS": {
+			"NO-REQUESTS": "",
 			"TITLE": ""
 		},
 		"TERMS-AND-CONDITIONS": {
@@ -408,17 +419,33 @@
 				"TITLE": ""
 			}
 		},
+		"USER-ADMIN-ACCEPT": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-DECLINE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"USER-ADMIN-SAVE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
 			"SUCCESS": {
-				"DESCRIPTION": ""
-			}
-		},
-		"USER-ADMIN-SAVEF": {
-			"SUCCESS": {
+				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		}
