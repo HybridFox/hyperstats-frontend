@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-08T10:55:02.383Z\n"
+"POT-Creation-Date: 2019-03-08T13:31:48.859Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -363,6 +363,13 @@ msgstr "Your account is deactivated. Contact an administrator if necessary."
 
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
 msgstr "Account Deactivated"
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
+msgstr ""
+"You don’t have a company assigned. Contact the administrator for more info. "
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
+msgstr "You don’t have a company assigned."
 
 msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
 msgstr ""

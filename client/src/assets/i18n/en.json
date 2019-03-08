@@ -126,6 +126,10 @@
                 "DESCRIPTION": "Your account is deactivated. Contact an administrator if necessary.",
                 "TITLE": "Account Deactivated"
             },
+            "NOCOMPANY": {
+                "DESCRIPTION": "You don’t have a company assigned. Contact the administrator for more info. ",
+                "TITLE": "You don’t have a company assigned."
+            },
             "PENDING": {
                 "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
                 "TITLE": "Admin is reviewing your signup request."
