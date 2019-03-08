@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-08T08:37:58.607Z\n"
+"POT-Creation-Date: 2019-03-08T10:55:02.383Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -925,6 +925,9 @@ msgstr "Go back to Output Fraction"
 
 msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
 msgstr "Go to Add. Information"
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITVES"
+msgstr "Go to Additives"
 
 msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
 msgstr "Go to Recycling Efficiency"
