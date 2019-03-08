@@ -1,31 +1,42 @@
-<h1>{{ 'PAGE.REPORTS.TITLE' | translate}}</h1>
+<app-page-title
+    [title]="'PAGE.REPORTS.TITLE' | translate"
+></app-page-title>
 
-<div *ngIf="!reportsActive">
-  <p>{{ 'PAGE.REPORTS.NOREPORTS' | translate }}</p>
+<div class="l-grid__row l-grid--with-margins u-margin-bottom">
+  <div class="l-grid__col-4-12"></div>
+  <div class="l-grid__col-8-12">
+    <div class="m-filter u-pull-right">
+        <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
+    </div>
+    <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
+  </div>
 </div>
 
-<div *ngIf="reportsActive">
-  <div class="l-grid__row l-grid--with-margins u-margin-bottom">
-      <div class="l-grid__col-3-12"></div>
-      <div class="l-grid__col-9-12">
-          <div class="m-filter u-pull-right">
-              <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
+<div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-4-12">
+      <div class="m-card--primary">
+        <app-vertical-menu
+          [menuItems]="menuItems$ | async"
+        ></app-vertical-menu>
+        <button class="a-button--primary a-button-outline has-icon-after u-margin-top" routerLink="new">
+            {{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate }}
+        </button>
+        <p class="u-text-description">
+            {{ 'PAGE.REPORTS.DESCRIPTION' | translate }}
+        </p>
+      </div>
+    </div>
+    <div class="l-grid__col-8-12">
+      <div class="m-card--primary">
+        <div *ngIf="!reportsActive">
+          <p>{{ 'PAGE.REPORTS.NOREPORTS' | translate }}</p>
+        </div>
+        <app-loading *ngIf="reportsActive" [loading]="reportsLoading$ | async">
+          <div *ngIf="!(reports$ | async)?.length">
+            <p>{{ 'PAGE.REPORTS.NOPROCESSREPORTS' | translate }}</p>
           </div>
-          <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
+          <app-report-table [reports]="reports$ | async"></app-report-table>
+        </app-loading>
       </div>
-  </div>
-
-  <div class="l-grid__row l-grid--with-margins">
-      <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
-          <app-vertical-menu [menuItems]="menuItems$ | async"></app-vertical-menu>
-      </div>
-      <div class="l-grid__col-9-12 m-card--primary">
-          <app-loading [loading]="reportsLoading$ | async">
-            <div *ngIf="!(reports$ | async)?.length">
-              <p>{{ 'PAGE.REPORTS.NOPROCESSREPORTS' | translate }}</p>
-            </div>
-            <app-report-table [reports]="reports$ | async"></app-report-table>
-          </app-loading>
-      </div>
-  </div>
+    </div>
 </div>
