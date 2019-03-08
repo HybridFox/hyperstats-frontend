@@ -9,7 +9,6 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './input-fraction-form.component.html',
 })
 export class InputFractionFormComponent implements OnChanges {
-  @Input() public inputFractionsForm: FormArray;
   @Input() public stepId: number;
   @Input() public elements: string;
 
@@ -24,14 +23,15 @@ export class InputFractionFormComponent implements OnChanges {
   }
 
   public addElement() {
-    const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.stepId);
-    (this.inputFractionsForm.controls[stepIndex].get('data.elements') as FormArray)
+    ((this.formData.formGroup.get('inputFraction') as FormArray)
+      .controls[this.stepId].get('data.elements') as FormArray)
       .push(this.formData.getInputFractionElementFormGroup(null));
   }
 
   public removeElement(elementNumber: number) {
-    const stepIndex = this.inputFractionsForm.getRawValue().findIndex((step) => step.siteRef === this.stepId);
-    (this.inputFractionsForm.controls[stepIndex].get('data.elements') as FormArray).removeAt(elementNumber);
+    ((this.formData.formGroup.get('inputFraction') as FormArray)
+      .controls[this.stepId].get('data.elements') as FormArray)
+      .removeAt(elementNumber);
   }
 
   private setActiveStepById() {
