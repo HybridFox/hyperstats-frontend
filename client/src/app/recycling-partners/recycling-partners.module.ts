@@ -4,7 +4,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 import { StoreService } from '@store/store.service';
 import { SharedModule } from '@shared/shared.module';
 
-import { RecyclingPartnersComponent } from './recycling-partners.component';
+import { RecyclingPartnersComponent } from './pages';
 import { ReportsRoutingModule } from './recycling-partners-routing.module';
 import { recyclingPartnerReducer } from './store/reducers';
 import { recyclingPartnersServices } from './store';
