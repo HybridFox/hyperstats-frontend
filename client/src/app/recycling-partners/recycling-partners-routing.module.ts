@@ -9,6 +9,10 @@ const routes: Routes = [
     component: RecyclingPartnersComponent,
     children: [
       {
+        path: '',
+        component: RecyclingPartnerPageComponent,
+      },
+      {
         path: ':recyclingPartner',
         component: RecyclingPartnerPageComponent,
       }
