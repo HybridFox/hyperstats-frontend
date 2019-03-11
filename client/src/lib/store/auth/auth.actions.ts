@@ -15,6 +15,7 @@ import {
   ProfileInterface
 } from './auth.interface';
 import { CompanyInterface } from '@api/company/company.interface';
+import { CompanyData } from '@api/company/company.types';
 
 @Injectable()
 export class AuthActions {
@@ -153,7 +154,7 @@ export class AuthActions {
       .then(() => this.handler.dispatch(ACTIONS.CLEAR_USER));
   }
 
-  public updateCompanyOfProfile(company: any): Promise<CompanyInterface> {
+  public updateCompanyOfProfile(company: CompanyData): Promise<CompanyInterface> {
     this.handler.dispatchStart(ACTIONS.UPDATE_COMPANY);
 
     return this.authRepository.updateProfileCompany(company)
