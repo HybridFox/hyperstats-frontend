@@ -10,7 +10,7 @@ export class UserMenuComponent {
     @Output() logout: EventEmitter<any> = new EventEmitter<any>();
 
     public visible = false;
-    public statusTypes: any[] = STATUS_TYPES;
+    public statusTypes = STATUS_TYPES;
 
     @HostListener('document:click', ['$event']) clickout() {
         if (this.visible) {

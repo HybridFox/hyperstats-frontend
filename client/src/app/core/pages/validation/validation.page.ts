@@ -12,7 +12,7 @@ import { STATUS_TYPES } from 'src/lib/constants';
 export class ValidationPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
 
-  public statusTypes: any[] = STATUS_TYPES;
+  public statusTypes = STATUS_TYPES;
 
   constructor(
     private authAction: AuthActions,

@@ -9,7 +9,7 @@ export class CoreNavigationComponent {
     @Input() public user: any;
     @Output() public logout: EventEmitter<any> = new EventEmitter();
 
-    public statusTypes: any[] = STATUS_TYPES;
+    public statusTypes = STATUS_TYPES;
 
     public onLogout() {
         this.logout.emit();
