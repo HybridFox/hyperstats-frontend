@@ -8,14 +8,15 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 should();
 use(chaiAsPromised);
 
-const verifyHandler = require("./verifyHandler");
-
 describe("Verify handler", () => {
 	let mongoServer;
+	let verifyHandler;
 
 	before(async() => {
 		mockery.enable({ warnOnUnregistered: false });
 		mockery.registerMock("nodemailer", nodemailerMock);
+
+		verifyHandler = require("./verifyHandler");
 
 		mongoServer = await mockMongoose();
 		await createTestUser({
