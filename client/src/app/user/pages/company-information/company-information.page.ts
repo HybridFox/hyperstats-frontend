@@ -9,6 +9,8 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
 import { AuthSelector, AuthActions } from '@store/auth';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { FormHelper } from '@helpers/form.helper';
+import { CompanyData } from '@api/company/company.types';
+import { CompanyInterface } from '@api/company/company.interface';
 
 @Component({
     templateUrl: './company-information.page.html',
@@ -21,6 +23,8 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
     public companyForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
     public countryList: Option[];
+
+    private originalCompanyData: CompanyData = null;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -48,6 +52,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
 
         this.user$.subscribe((user) => {
             if (user && user.company && user.company.data) {
+                this.originalCompanyData = user.company.data;
                 this.companyForm.patchValue(user.company.data);
             }
         });
@@ -73,14 +78,14 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
             );
         }
 
-        this.authActions.updateProfile({
+        this.authActions.updateCompanyOfProfile({
+            ...this.originalCompanyData,
             ...this.companyForm.value
-        }).then((company) => {
+        }).then((company: CompanyInterface) => {
             this.toastrService.success(
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.TITLE') as string
             );
-            this.authActions.updateCompanyOfProfile(company);
             this.companyForm.setValue(company.data);
         }).catch(() => {
             this.toastrService.error(

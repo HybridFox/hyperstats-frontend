@@ -10,6 +10,7 @@ import {
   RequestPasswordResetInterface,
   ProfileInterface
 } from './auth.interface';
+import { CompanyData } from '@api/company/company.types';
 
 @Injectable()
 export class AuthRepository {
@@ -45,6 +46,13 @@ export class AuthRepository {
         lastname,
         password
       });
+  }
+
+  public updateProfileCompany(company:  CompanyData) {
+    const url = this.apiConfig.baseUrl('/profile/company');
+
+    return this.http
+      .put(url, company);
   }
 
   public requestPasswordReset({ username }: RequestPasswordResetInterface) {

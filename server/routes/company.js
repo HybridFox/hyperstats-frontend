@@ -23,6 +23,8 @@ module.exports = (router) => {
 	 *     properties:
 	 *       name:
 	 *         type: string
+	 *       vat:
+	 *         type: string
 	 *       address:
 	 *         type: object
 	 *         properties:
