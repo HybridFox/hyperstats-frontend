@@ -127,7 +127,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       this.reportProcessActions.getById(control.value).toPromise();
     }
 
-    if (pathOr('SAVED', ['meta', 'status'], report) === 'FILED') {
+    if (!this.form && pathOr('SAVED', ['meta', 'status'], report) === 'FILED') {
       this.form.disable();
     }
 
