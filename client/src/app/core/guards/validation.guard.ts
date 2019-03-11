@@ -3,6 +3,7 @@ import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from
 import { select$ } from '@angular-redux/store';
 import { Observable } from 'rxjs';
 import { map, tap, filter } from 'rxjs/operators';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 const handle = (obs$) => {
   return obs$
@@ -20,22 +21,18 @@ const handle = (obs$) => {
 
 @Injectable()
 export class ValidationGuard implements CanActivate {
-  @select$(['auth', 'user'], handle) private isValidated$: Observable<any>;
+    @select$(['auth', 'user'], handle) private user$: Observable<any>;
+
+    public statusTypes = STATUS_TYPES;
 
     constructor(
         private router: Router,
     ) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-      return this.isValidated$
+      return this.user$
             .pipe(
-                map((user) => {
-                  if (user.status.type === 'ACTIVATED' && user.company && user.validation.isValidated) {
-                    return true;
-                  } else {
-                    return false;
-                  }
-                }),
+                map((user) => user.status.type === this.statusTypes.ACTIVATED && user.company && user.validation.isValidated),
                 tap((res) => {
                     if (!res) {
                       return this.router.navigate(['/', 'validation']);

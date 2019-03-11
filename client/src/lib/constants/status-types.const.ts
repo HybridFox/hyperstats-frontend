@@ -1,7 +1,5 @@
-export const STATUS_TYPES = [{
-  type: 'ACTIVATED',
-}, {
-  type: 'DEACTIVATED',
-}, {
-  type: 'PENDING',
-}];
+export const STATUS_TYPES = {
+  ACTIVATED: 'ACTIVATED',
+  DEACTIVATED: 'DEACTIVATED',
+  PENDING: 'PENDING'
+};
