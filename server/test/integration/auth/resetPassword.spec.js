@@ -110,7 +110,7 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						status: {
-							type: "PENDING",
+							type: "DEACTIVATED",
 						},
 						isAdmin: false,
 						email: "passwordreset@example.com",

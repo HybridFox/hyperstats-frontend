@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, Observable, BehaviorSubject } from 'rxjs';
 import { takeUntil, filter, tap, map, switchMap } from 'rxjs/operators';
+import { pathOr } from 'ramda';
 
 import { FormDataService } from '../../services/formdata.service';
 import { Step, Report } from '../../store/reports/types';
@@ -124,6 +125,10 @@ export class ReportPageComponent implements OnInit, OnDestroy {
 
     if (control.value) {
       this.reportProcessActions.getById(control.value).toPromise();
+    }
+
+    if (pathOr('SAVED', ['meta', 'status'], report) === 'FILED') {
+      this.form.disable();
     }
 
     control

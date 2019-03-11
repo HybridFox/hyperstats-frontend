@@ -16,7 +16,7 @@ const NEW_REPORT = {
 			weightBatteryType: 1,
 			excessMaterialReceived: [{
 				impurities: 1,
-				PackagingMaterial: 1,
+				packagingMaterial: 1,
 			}],
 			elements: [{
 				element: "element",

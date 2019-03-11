@@ -87,7 +87,6 @@ describe("Integration", () => {
 					.expect("Content-Type", /json/)
 					.expect(200)
 					.then(({ body }) => {
-						console.log(body);
 						expect(body).to.be.an("array").to.have.lengthOf(7);
 						expect(omit(["company"], body[0].data)).to.deep.equal({
 							email: "validuser@example.com",
@@ -149,24 +148,7 @@ describe("Integration", () => {
 					});
 			});
 
-			it("Should fetch users by recycler partner type", () => {
-				return supertest(server)
-					.get("/api/users?company-type=RP")
-					.set("cookie", cookie)
-					.expect("Content-Type", /json/)
-					.expect(200)
-					.then(({ body }) => {
-						expect(body).to.be.an("array").to.have.lengthOf(2);
-						expect(omit(["company"], body[0].data)).to.deep.equal({
-							email: "test3@example.com",
-							firstname: "__firstname_test-user__remove_identifier__",
-							lastname: "Smith",
-						});
-						expect(body[0].data.company).to.be.an("object");
-					});
-			});
-
-			it("Should fetch users by recycler process type", () => {
+			it("Should fetch users by compliance type", () => {
 				return supertest(server)
 					.get("/api/users?company-type=CO")
 					.set("cookie", cookie)

@@ -18,13 +18,14 @@ const getCurrentReport = async(id, query) => {
 	return report;
 };
 
-const updateReport = async(id, query, updatedData, updatedStatus, currentReport) => {
+const updateReport = async(id, query, updatedData, updatedStatus, updatedState, currentReport) => {
 	const report = await ReportModel.findOneAndUpdate(
 		query,
 		{ $set: mergeDeepLeft({
 			data: updatedData,
 			meta: {
 				status: updatedStatus,
+				state: updatedState,
 				lastUpdated: new Date(),
 			},
 		}, currentReport) },
@@ -38,9 +39,9 @@ const updateReport = async(id, query, updatedData, updatedStatus, currentReport)
 	return report;
 };
 
-module.exports = async({ _id, reportedById, updatedData, updatedStatus } = {}) => {
+module.exports = async({ _id, reportedById, updatedData, updatedStatus, updatedState } = {}) => {
 	const query = getReportQuery(_id, reportedById);
 	const currentReport = await getCurrentReport(_id, query);
 
-	return await updateReport(_id, query, updatedData, updatedStatus, currentReport);
+	return await updateReport(_id, query, updatedData, updatedStatus, updatedState, currentReport);
 };
