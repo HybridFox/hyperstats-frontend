@@ -4,7 +4,7 @@
           [title]="'PAGE.ACCESS-DENIED.TITLE' | translate"
       ></app-page-title>
       <div class="m-card--primary">
-          <div *ngIf="(user$ | async)?.status?.type === 'DEACTIVATED'">
+          <div *ngIf="(user$ | async)?.status?.type === statusTypes[1]?.type && (user$ | async)?.validation?.isValidated">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.DEACTIVATED.TITLE' | translate"
             ></app-section-title>
@@ -12,7 +12,7 @@
                 {{ 'PAGE.ACCESS-DENIED.DEACTIVATED.DESCRIPTION' | translate }}
             </p>
           </div>
-          <div *ngIf="(user$ | async)?.status?.type === 'PENDING'">
+          <div *ngIf="(user$ | async)?.status?.type === statusTypes[2]?.type">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.PENDING.TITLE' | translate"
             ></app-section-title>
@@ -20,7 +20,7 @@
                 {{ 'PAGE.ACCESS-DENIED.PENDING.DESCRIPTION' | translate }}
             </p>
           </div>
-          <div *ngIf="!(user$ | async)?.company && (user$ | async)?.validation?.isValidated">
+          <div *ngIf="!(user$ | async)?.company && (user$ | async)?.validation?.isValidated && (user$ | async)?.status?.type === statusTypes[0]?.type">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.NOCOMPANY.TITLE' | translate"
             ></app-section-title>

@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     selector: 'app-user-menu',
@@ -9,6 +10,7 @@ export class UserMenuComponent {
     @Output() logout: EventEmitter<any> = new EventEmitter<any>();
 
     public visible = false;
+    public statusTypes: any[] = STATUS_TYPES;
 
     @HostListener('document:click', ['$event']) clickout() {
         if (this.visible) {

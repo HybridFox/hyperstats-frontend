@@ -4,12 +4,15 @@ import { select } from '@angular-redux/store';
 import { AuthActions } from '@store/auth';
 import { ToastrService } from 'ngx-toastr';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     templateUrl: './validation.page.html',
 })
 export class ValidationPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
+
+  public statusTypes: any[] = STATUS_TYPES;
 
   constructor(
     private authAction: AuthActions,

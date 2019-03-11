@@ -3,10 +3,10 @@
         {{ profile.firstname }} {{ profile.lastname }}<i class="a-icon a-icon--arrow-bottom"></i>
     </span>
     <ul (click)="preventClick($event)" [hidden]="!visible" class="m-menu--user__sub-menu">
-        <li *ngIf="profile?.status?.type === 'ACTIVATED' && profile?.company && profile.validation?.isValidated" class="m-menu--user__sub-menu__item">
+        <li *ngIf="profile?.status?.type === this.statusTypes[0].type && profile?.company && profile.validation?.isValidated" class="m-menu--user__sub-menu__item">
             <a (click)="close()" [routerLink]="['/user/profile']" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.USERPROFILE' | translate }}</a>
         </li>
-        <li *ngIf="profile?.status?.type === 'ACTIVATED' && profile?.company && profile.validation?.isValidated" class="m-menu--user__sub-menu__item">
+        <li *ngIf="profile?.status?.type === this.statusTypes[0].type && profile?.company && profile.validation?.isValidated" class="m-menu--user__sub-menu__item">
             <a (click)="close()" [routerLink]="['/user/company-information']" class="m-menu--user__sub-menu__item__link">{{ 'GENERAL.MENU.COMPANYINFORMATION' | translate }}</a>
         </li>
         <li class="m-menu--user__sub-menu__item">

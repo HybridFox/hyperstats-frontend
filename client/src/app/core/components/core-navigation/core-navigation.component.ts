@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     selector: 'app-core-navigation',
@@ -7,6 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CoreNavigationComponent {
     @Input() public user: any;
     @Output() public logout: EventEmitter<any> = new EventEmitter();
+
+    public statusTypes: any[] = STATUS_TYPES;
 
     public onLogout() {
         this.logout.emit();

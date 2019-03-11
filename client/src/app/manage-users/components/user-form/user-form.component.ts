@@ -43,7 +43,8 @@ export class UserFormComponent implements OnChanges {
                 company: this.formBuilder.control(pathOr(user.data.company, ['data', 'company', '_id'], user), Validators.required)
             }),
             meta: this.formBuilder.group({
-                activated: this.formBuilder.control(pathOr('DEACTIVATED', ['meta', 'status', 'type'], user) === 'ACTIVATED')
+                activated: this.formBuilder.control(pathOr(this.statusTypes[1].type,
+                  ['meta', 'status', 'type'], user) === this.statusTypes[2].type)
             })
         });
     }
@@ -76,7 +77,7 @@ export class UserFormComponent implements OnChanges {
                 ...user.meta,
                 ...formValues.meta,
                 status: {
-                    type: formValues.meta.activated ? 'ACTIVATED' : 'DEACTIVATED'
+                    type: formValues.meta.activated ? this.statusTypes[0].type : this.statusTypes[1].type
                 }
             }
         };
