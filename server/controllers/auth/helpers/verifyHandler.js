@@ -25,13 +25,9 @@ const mailToAdmins = (user, admins) => mailer({
  */
 module.exports = async(token) => {
 	const user = await UserModel.findOne({ "meta.deleted": false, "meta.validation": { isValidated: false, token } }).exec();
-	let admins = await UserModel.find({ "meta.deleted": false, "meta.isAdmin": true }).select("data.email").exec();
+	const admins = await UserModel.find({ "meta.deleted": false, "meta.isAdmin": true }).select("data.email").exec();
 
-	admins = admins.reduce((acc, admin) => {
-		acc.push(admin.data.email);
-
-		return acc;
-	}, []);
+	const adminEmails = admins.reduce((acc, admin) => [...acc, admin.data.email], []);
 
 	if (!user) {
 		throw new Error({ type: 400, msg: "Invalid token!" });
@@ -41,7 +37,7 @@ module.exports = async(token) => {
 	user.meta.validation.isValidated = true;
 
 	await Promise.all([
-		mailToAdmins(user, admins),
+		mailToAdmins(user, adminEmails),
 	]);
 
 	await user.save();
