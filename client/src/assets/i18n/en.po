@@ -540,9 +540,9 @@ msgstr "An email has been sent to you"
 
 msgid "PAGE##REPORTS##DESCRIPTION"
 msgstr ""
-"Proxies are the organizations that have access to your reports. In this "
-"overview you can control who has access to your reports for a given "
-"reporting year and recycling process"
+"Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize "
+"authentic create enable dynamic podcasting synergies architectures. Redefine "
+"authentic methodologies."
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
