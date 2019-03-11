@@ -110,11 +110,15 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						status: {
-							type: "ACTIVATED",
+							type: "DEACTIVATED",
 						},
 						isAdmin: false,
 						email: "passwordreset@example.com",
 						username: "passwordreset@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 				})
 			);

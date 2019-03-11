@@ -5,6 +5,7 @@
     "ng": "./node_modules/.bin/ng",
     "start": "./node_modules/.bin/ng serve --host 0.0.0.0 --proxy-config proxy.conf.json --disable-host-check",
     "build": "./node_modules/.bin/ng build",
+    "build:prod": "npm run build -- --prod",
     "lint": "./node_modules/.bin/ng lint",
     "precommit": "npm run lint",
     "e2e": "./node_modules/.bin/ng e2e",

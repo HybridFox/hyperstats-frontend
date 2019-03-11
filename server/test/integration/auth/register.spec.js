@@ -100,6 +100,10 @@ describe("Integration", () => {
 						password: "somePassword",
 						firstname: "Jef",
 						lastname: "Awesome",
+						validation: {
+							isValidated: false,
+							token: "someToken",
+						},
 					})
 					.expect("Content-Type", /json/)
 					.expect(200)
@@ -140,14 +144,14 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("object");
-						expect(omit(["created", "lastUpdated", "company"], body)).to.deep.equal({
+						expect(omit(["created", "lastUpdated", "company", "validation"], body)).to.deep.equal({
 							email: "otherUser@example.com",
 							username: "otheruser@example.com",
 							firstname: "Jef",
 							isAdmin: false,
 							lastname: "Awesome",
 							status: {
-								type: "ACTIVATED",
+								type: "PENDING",
 							},
 						});
 					});

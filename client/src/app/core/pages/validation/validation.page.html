@@ -4,13 +4,43 @@
           [title]="'PAGE.ACCESS-DENIED.TITLE' | translate"
       ></app-page-title>
       <div class="m-card--primary">
-          <div *ngIf="(user$ | async)?.status?.type === 'DEACTIVATED'">
+          <div *ngIf="(user$ | async)?.status?.type === statusTypes?.DEACTIVATED && (user$ | async)?.validation?.isValidated">
             <app-section-title
               [title]="'PAGE.ACCESS-DENIED.DEACTIVATED.TITLE' | translate"
             ></app-section-title>
             <p>
                 {{ 'PAGE.ACCESS-DENIED.DEACTIVATED.DESCRIPTION' | translate }}
             </p>
+          </div>
+          <div *ngIf="(user$ | async)?.status?.type === statusTypes?.PENDING">
+            <app-section-title
+              [title]="'PAGE.ACCESS-DENIED.PENDING.TITLE' | translate"
+            ></app-section-title>
+            <p>
+                {{ 'PAGE.ACCESS-DENIED.PENDING.DESCRIPTION' | translate }}
+            </p>
+          </div>
+          <div *ngIf="!(user$ | async)?.company && (user$ | async)?.validation?.isValidated && (user$ | async)?.status?.type === statusTypes?.ACTIVATED">
+            <app-section-title
+              [title]="'PAGE.ACCESS-DENIED.NOCOMPANY.TITLE' | translate"
+            ></app-section-title>
+            <p>
+                {{ 'PAGE.ACCESS-DENIED.NOCOMPANY.DESCRIPTION' | translate }}
+            </p>
+          </div>
+          <div *ngIf="!(user$ | async)?.validation?.isValidated">
+              <app-section-title
+                [title]="'PAGE.ACCESS-DENIED.NOTVALIDATED.TITLE' | translate"
+              ></app-section-title>
+              <p>
+                  {{ 'PAGE.ACCESS-DENIED.NOTVALIDATED.DESCRIPTION' | translate }}
+              </p>
+              <button
+                class="a-button a-button--primary a-button--small u-margin-right"
+                (click)="resendMail()"
+              >
+                  {{ 'PAGE.ACCESS-DENIED.NOTVALIDATED.RESEND-EMAIL' | translate }}
+              </button>
           </div>
       </div>
   </div>

@@ -22,6 +22,7 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACCEPT": "",
 			"ACTIVATED": "",
 			"ACTIVE": "",
 			"ACTIVITY": "",
@@ -42,6 +43,7 @@
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
 			"DATE": "",
+			"DECLINE": "",
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
@@ -101,6 +103,7 @@
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
 			"REPORTS": "",
+			"SIGNUP-REQUESTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
 		},
@@ -120,6 +123,19 @@
 		},
 		"ACCESS-DENIED": {
 			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"NOCOMPANY": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"NOTVALIDATED": {
+				"DESCRIPTION": "",
+				"RESEND-EMAIL": "",
+				"TITLE": ""
+			},
+			"PENDING": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
@@ -198,6 +214,7 @@
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {
+			"DESCRIPTION": "",
 			"DRAFT": "",
 			"FILED": "",
 			"NOPROCESSREPORTS": "",
@@ -206,6 +223,10 @@
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",
+			"TITLE": ""
+		},
+		"SIGNUP-REQUESTS": {
+			"NO-REQUESTS": "",
 			"TITLE": ""
 		},
 		"TERMS-AND-CONDITIONS": {
@@ -398,7 +419,35 @@
 				"TITLE": ""
 			}
 		},
+		"RESEND-EMAIL": {
+			"DESCRIPTION": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"RESET-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-ACCEPT": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-DECLINE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
@@ -414,11 +463,7 @@
 				"TITLE": ""
 			},
 			"SUCCESS": {
-				"DESCRIPTION": ""
-			}
-		},
-		"USER-ADMIN-SAVEF": {
-			"SUCCESS": {
+				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		}
@@ -427,8 +472,7 @@
 		"COMPANY": {
 			"AUTHORISATION-ORG": "",
 			"COMPLIANCE-ORG": "",
-			"RECYCLER": "",
-			"RECYCLER-PARTNER": ""
+			"RECYCLER": ""
 		}
 	},
 	"WIZARD": {
@@ -447,6 +491,20 @@
 			"TITLES": {
 				"OVERVIEW": ""
 			}
+		},
+		"BUTTON": {
+			"BACK-TO-ADD-INFO": "",
+			"BACK-TO-ADDITIVES": "",
+			"BACK-TO-EFFICIENCY": "",
+			"BACK-TO-INPUT": "",
+			"BACK-TO-NEW": "",
+			"BACK-TO-OUTPUT": "",
+			"GO-TO-ADD-INFO": "",
+			"GO-TO-ADDITVES": "",
+			"GO-TO-EFFICIENCY": "",
+			"GO-TO-FILE-REPORT": "",
+			"GO-TO-INPUT": "",
+			"GO-TO-OUTPUT": ""
 		},
 		"FILE-REPORT": {
 			"DESCRIPTION": {

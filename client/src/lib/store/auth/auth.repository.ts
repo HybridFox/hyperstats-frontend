@@ -10,6 +10,7 @@ import {
   RequestPasswordResetInterface,
   ProfileInterface
 } from './auth.interface';
+import { CompanyData } from '@api/company/company.types';
 
 @Injectable()
 export class AuthRepository {
@@ -47,12 +48,28 @@ export class AuthRepository {
       });
   }
 
+  public updateProfileCompany(company:  CompanyData) {
+    const url = this.apiConfig.baseUrl('/profile/company');
+
+    return this.http
+      .put(url, company);
+  }
+
   public requestPasswordReset({ username }: RequestPasswordResetInterface) {
     const url = this.apiConfig.baseUrl('/auth/request-password-reset');
 
     return this.http
       .post(url, {
         username
+      });
+  }
+
+  public resendValidateMail(user) {
+    const url = this.apiConfig.baseUrl('/auth/resend-validate-mail');
+
+    return this.http
+      .post(url, {
+        user
       });
   }
 

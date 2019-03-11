@@ -51,11 +51,15 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						status: {
-							type: "ACTIVATED",
+							type: "DEACTIVATED",
 						},
 						isAdmin: false,
 						email: "validuser@example.com",
 						username: "validuser@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");

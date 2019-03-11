@@ -155,5 +155,8 @@
                 color: $gray;
             }
         }
+        &--valid {
+          color: $success;
+        }
     }
 }

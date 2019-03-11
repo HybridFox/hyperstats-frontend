@@ -28,7 +28,7 @@ module.exports = (router) => {
 	 *     properties:
 	 *       impurities:
 	 *         type: number
-	 *       PackagingMaterial:
+	 *       packagingMaterial:
 	 *         type: number
 	 *   ReportChemicalComposition:
 	 *     type: object
@@ -166,6 +166,24 @@ module.exports = (router) => {
 	 *         type: boolean
 	 *       status:
 	 *         $ref: '#/definitions/ReportStatuses'
+	 *       state:
+	 *         type: object
+	 *         properties:
+	 *           isPristine:
+	 *             type: object
+	 *             properties:
+	 *               information:
+	 *                 type: boolean
+	 *               inputFraction:
+	 *                 type: boolean
+	 *               additives:
+	 *                 type: boolean
+	 *               outputFraction:
+	 *                 type: boolean
+	 *               recyclingEfficiency:
+	 *                 type: boolean
+	 *               additionalInformation:
+	 *                 type: boolean
 	 *   ReportBody:
 	 *       type: object
 	 *       properties:
@@ -176,6 +194,24 @@ module.exports = (router) => {
 	 *           properties:
 	 *             status:
 	 *               $ref: '#/definitions/ReportStatuses'
+	 *             state:
+	 *               type: object
+	 *               properties:
+	 *                 isPristine:
+	 *                   type: object
+	 *                   properties:
+	 *                     information:
+	 *                       type: boolean
+	 *                     inputFraction:
+	 *                       type: boolean
+	 *                     additives:
+	 *                       type: boolean
+	 *                     outputFraction:
+	 *                       type: boolean
+	 *                     recyclingEfficiency:
+	 *                       type: boolean
+	 *                     additionalInformation:
+	 *                       type: boolean
 	 *   ReportResponse:
 	 *     type: object
 	 *     properties:

@@ -7,7 +7,6 @@ import { EntitiesActions } from '@store/entities';
 
 import { UsersRepository } from './repository';
 import { ACTIONS } from './action-types';
-import path from 'ramda/es/path';
 import prop from 'ramda/es/prop';
 import { CompanyType } from '@api/company';
 
@@ -19,8 +18,8 @@ export class UsersActions {
         private usersRepository: UsersRepository,
     ) { }
 
-    public fetchByTypes(types: CompanyType[], admin: boolean): Observable<any> {
-        if (!prop('length')(types) && !admin) {
+    public fetchByTypes(types: CompanyType[], admin: boolean, pending: boolean): Observable<any> {
+        if (!prop('length')(types) && !admin && !pending) {
             return of(this.handler.dispatchSuccess(ACTIONS.OVERVIEW.FETCH, {
                 payload: [],
                 pagination: null
@@ -29,7 +28,7 @@ export class UsersActions {
 
         this.handler.dispatchStart(ACTIONS.OVERVIEW.FETCH);
 
-        return this.usersRepository.fetchByTypes(types, admin)
+        return this.usersRepository.fetchByTypes(types, admin, pending)
             .pipe(
                 catchError((error) => {
                     this.handler.dispatchError(ACTIONS.OVERVIEW.FETCH, {
@@ -84,5 +83,29 @@ export class UsersActions {
                     });
                 })
             );
+    }
+
+    public fetchPendingRequests(): Observable<any> {
+      this.handler.dispatchStart(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS);
+
+      return this.usersRepository.fetchPendingRequests()
+          .pipe(
+              catchError((error) => {
+                  this.handler.dispatchError(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS, {
+                    message: error.message,
+                  });
+
+                  return throwError(error);
+              }),
+              tap((response) => {
+                  this.handler.dispatchSuccess(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS, {
+                      payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.user]),
+                      pagination: null,
+                  });
+              }),
+              finalize(() => {
+                  this.handler.dispatchDone(ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS);
+              })
+          );
     }
 }

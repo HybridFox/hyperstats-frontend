@@ -11,7 +11,7 @@ export const OverviewSelector = {
 };
 
 export const DetailSelector = {
-  loading: ['user-management', 'detal', 'loading'],
+  loading: ['user-management', 'detail', 'loading'],
   result: selectDenormalized({
     relations: ['roles'],
     schema: schema.user,
@@ -19,7 +19,17 @@ export const DetailSelector = {
   }),
 };
 
+export const RequestsSelector = {
+  loading: ['user-management', 'requests', 'loading'],
+  result: selectDenormalized({
+    relations: ['roles'],
+    schema: schema.user,
+    selector: 'user-management.requests.result',
+  }),
+};
+
 export const UserSelector = {
   overview: OverviewSelector,
   detail: DetailSelector,
+  requests: RequestsSelector,
 };

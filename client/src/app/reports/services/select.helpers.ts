@@ -1,8 +1,10 @@
 import { map, filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
+import { MenuItem, StepMenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import pathOr from 'ramda/es/pathOr';
+
+import { RecyclingProcess, ProcessStep} from '../store/recycling-processes/types';
 
 const ALL_MENU_ITEM: MenuItem = {
   link: ['./'],
@@ -48,6 +50,22 @@ export const mapToSiteMenuItems = (obs$: Observable<any>) => {
         return pathOr([], ['data', 'steps'], process).map((step): MenuItem => ({
           link: ['./', step.uuid],
           label: step.description,
+        }));
+      })
+    );
+};
+
+export const mapToStepMenuItems = (obs$: Observable<any>) => {
+  return obs$
+    .pipe(
+      filter((process: RecyclingProcess) => {
+        return !!process;
+      }),
+      map((process: RecyclingProcess) => {
+        return pathOr([], ['data', 'steps'], process).map((step: ProcessStep): StepMenuItem => ({
+          link: ['./', step.uuid],
+          label: step.description,
+          valid: false,
         }));
       })
     );

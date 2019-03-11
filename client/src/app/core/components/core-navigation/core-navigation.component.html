@@ -11,7 +11,7 @@
         </div>
 
         <div class="o-menu__right">
-            <a *ngIf="user?.status?.type === 'ACTIVATED'" [routerLink]="['/', 'recycler']" class="m-menu--user__title a-button--secondary a-button-outline">{{ 'GENERAL.BUTTONS.GOTOAPP' | translate }}</a>
+            <a *ngIf="user?.status?.type === statusTypes.ACTIVATED && user?.company && user?.validation?.isValidated" [routerLink]="['/', 'recycler']" class="m-menu--user__title a-button--secondary a-button-outline">{{ 'GENERAL.BUTTONS.GOTOAPP' | translate }}</a>
             <app-user-menu [profile]="user" (logout)="onLogout()"></app-user-menu>
         </div>
     </div>

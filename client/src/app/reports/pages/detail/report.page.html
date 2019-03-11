@@ -5,9 +5,17 @@
   <div class="m-card--primary u-margin-top">
     <div class="m-card">
       <div class="m-steps">
-        <div class="m-steps__step" *ngFor="let step of steps; let i = index;" routerLinkActive="m-steps__step--selected">
-          <a [routerLink]="step.route">
-            <div *ngIf="!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0; else itemValid" class="m-steps__step-icon">
+        <div
+          class="m-steps__step"
+          *ngFor="let step of steps; let i = index;"
+          routerLinkActive="m-steps__step--selected"
+          [ngClass]="{
+            'm-steps__step--selected': (currentId === 'new' && i === 0),
+            'm-steps__step--disabled': (currentId === 'new' && i !== 0)
+          }"
+        >
+          <a [routerLink]="(currentId !== 'new') ? step.route : '#'">
+            <div *ngIf="!form?.disabled && (!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0); else itemValid" class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
             <ng-template #itemValid>

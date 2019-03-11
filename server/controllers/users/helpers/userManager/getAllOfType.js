@@ -2,19 +2,45 @@
 
 const UserModel = require("../../../../models/user");
 
-module.exports = (type, includeAdmin = false) => {
+const getQuery = (type, includeAdmin = false, status) => {
 	const typeQuery = Array.isArray(type) ? { $in: type } : type;
+	const statusQuery = status === "PENDING" ? status : { $in: [ "ACTIVATED", "DEACTIVATED" ] };
 	const isAdmin = !!includeAdmin && includeAdmin !== "false";
-	const matchQuery = includeAdmin ? {
-		$or: [
-			{ "data.company.meta.type": typeQuery },
-			{ "meta.isAdmin": isAdmin },
-		],
-	} : {
-		"data.company.meta.type": typeQuery,
-		"meta.isAdmin": isAdmin,
-	};
 
+	if (includeAdmin && status) {
+		return {
+			$or: [
+				{ "data.company.meta.type": typeQuery },
+				{ "meta.isAdmin": isAdmin },
+				{ "meta.status.type": statusQuery },
+			],
+		};
+	} else if (includeAdmin) {
+		return {
+			$or: [
+				{ "data.company.meta.type": typeQuery },
+				{ "meta.isAdmin": isAdmin },
+			],
+		};
+	} else if (status) {
+		return {
+			$and: [
+				{ $or: [
+					{ "data.company.meta.type": typeQuery },
+					{ "meta.status.type": statusQuery },
+				] },
+				{ "meta.isAdmin": isAdmin }],
+		};
+	} else {
+		return {
+			"data.company.meta.type": typeQuery,
+			"meta.isAdmin": isAdmin,
+			"meta.status.type": statusQuery,
+		};
+	}
+};
+
+module.exports = (type, includeAdmin, status) => {
 	return UserModel.aggregate([{
 		$match: {
 			"meta.deleted": false,
@@ -37,7 +63,7 @@ module.exports = (type, includeAdmin = false) => {
 			meta: "$$ROOT.meta",
 		},
 	}, {
-		$match: matchQuery,
+		$match: getQuery(type, includeAdmin, status),
 	}, {
 		$project: {
 			data: "$$ROOT.data",

@@ -55,5 +55,9 @@
         .m-steps__step-text {
             color: $tundora;
         }
+
+        &--disabled {
+          pointer-events: none;
+      }
     }
 }
