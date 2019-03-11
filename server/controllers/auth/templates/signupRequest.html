@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Rare | Password reset request</title>
+	<title>Rare | Signup request</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 	<style type="text/css">
 		p {
@@ -29,7 +29,7 @@
 											<tbody>
 												<tr valign="middle" style="background-color: #11598B;padding: 20px;">
 													<td align="left" style="padding: 0 20px;"><img src="https://rare-a.studiohyperdrive.be/assets/images/logo.png"></td>
-													<td align="right" style="padding: 0 20px;"><h1 style="font-family: 'Lato', sans-serif;font-size: 24px;line-height: 50px;color: #FFFFFF;">Password reset request!</h1></td>
+													<td align="right" style="padding: 0 20px;"><h1 style="font-family: 'Lato', sans-serif;font-size: 24px;line-height: 50px;color: #FFFFFF;">New signup request!</h1></td>
 												</tr>
 											</tbody>
 										</table>
@@ -50,10 +50,9 @@
 											<tbody>
 												<tr>
 													<td style="padding: 20px;">
-														<p>Hi {{firstname}},</p>
 														<p>
-															You have requested a password reset for your account. <br>
-															Please click on the link below to reset:
+															New signup request from {{userFirstName}} {{userLastName}}.<br>
+															Click the link below to (dis)approve the request:
 														</p>
 														<p>
 															<a href="{{frontendHostname}}{{confirmPath}}">{{frontendHostname}}{{confirmPath}}</a>

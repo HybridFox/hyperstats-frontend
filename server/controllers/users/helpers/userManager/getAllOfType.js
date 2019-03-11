@@ -24,11 +24,12 @@ const getQuery = (type, includeAdmin = false, status) => {
 		};
 	} else if (status) {
 		return {
-			$or: [
-				{ "data.company.meta.type": typeQuery },
-				{ "meta.isAdmin": isAdmin },
-				{ "meta.status.type": statusQuery },
-			],
+			$and: [
+				{ $or: [
+					{ "data.company.meta.type": typeQuery },
+					{ "meta.status.type": statusQuery },
+				] },
+				{ "meta.isAdmin": isAdmin }],
 		};
 	} else {
 		return {

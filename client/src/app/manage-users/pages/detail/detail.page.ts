@@ -23,7 +23,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     @select(['entities', 'companies']) public companies$: Observable<object>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
-    public statusTypes: any[] = STATUS_TYPES;
+    public statusTypes = STATUS_TYPES;
 
     constructor(
         private route: ActivatedRoute,
@@ -74,7 +74,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.USER-ADMIN-ACCEPT.ERROR.TITLE') as string
             ));
       } else {
-        event.user.meta.status.type = 'statusTypes[1].type';
+        event.user.meta.status.type = this.statusTypes.DEACTIVATED;
         this.usersActions.updateUser(event.user).toPromise()
             .then(() => this.toastrService.success(
                 ngxExtract('TOAST.USER-ADMIN-DECLINE.SUCCESS.DESCRIPTION') as string,
