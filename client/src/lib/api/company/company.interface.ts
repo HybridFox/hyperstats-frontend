@@ -1,6 +1,6 @@
 import { CompanyData, CompanyMeta } from './company.types';
 
 export interface CompanyInterface {
- data: CompanyData;
- meta: CompanyMeta;
+  data: CompanyData;
+  meta: CompanyMeta;
 }
