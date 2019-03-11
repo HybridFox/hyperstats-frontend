@@ -214,6 +214,7 @@
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {
+			"DESCRIPTION": "",
 			"DRAFT": "",
 			"FILED": "",
 			"NOPROCESSREPORTS": "",
