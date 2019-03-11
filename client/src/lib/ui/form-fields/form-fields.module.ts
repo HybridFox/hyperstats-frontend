@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 
 import { Components } from './components';
+import { UploadModule } from '@ui/upload';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { Components } from './components';
     ReactiveFormsModule,
     TranslateModule,
     RouterModule,
+    UploadModule
   ],
   providers: [],
   declarations: [

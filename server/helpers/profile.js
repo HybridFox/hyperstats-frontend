@@ -51,9 +51,9 @@ const set = module.exports.set = (req, user) => {
 			merge,
 			[
 				compose(omit(["password"]), path(["session", "profile", "data"])),
-				compose(omit(["validation", "passwordReset", "deleted"]), path(["session", "profile", "meta"])),
+				compose(omit(["passwordReset", "deleted"]), path(["session", "profile", "meta"])),
 			]
-		)
+		),
 	)(req);
 
 	req.session.save();

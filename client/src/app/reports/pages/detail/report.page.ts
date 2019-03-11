@@ -1,114 +1,168 @@
-import { Component, ViewEncapsulation, OnInit, OnDestroy, AfterContentInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil, filter } from 'rxjs/operators';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { takeUntil, filter, tap, map, switchMap } from 'rxjs/operators';
+import { pathOr } from 'ramda';
 
 import { FormDataService } from '../../services/formdata.service';
-import { Step } from '../../store/reports/types';
-import { ReportsProcessActions } from '../../store/recycling-processes';
+import { Step, Report } from '../../store/reports/types';
+import { RecyclingProcess, ProcessStep } from '../../store/recycling-processes/types';
+import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
   templateUrl: './report.page.html',
 })
-export class ReportPageComponent implements OnInit, OnDestroy, AfterContentInit {
-  @select(ReportsSelector.detail.result) public report$: Observable<any>;
+export class ReportPageComponent implements OnInit, OnDestroy {
+  @select(ReportsSelector.detail.result) public report$: Observable<Report>;
+  @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<RecyclingProcess>;
 
-  public data: FormGroup;
-  public steps: Step[];
-  public selectedIndex = 0;
-  public currentTitle: string;
-  public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+  public form: FormGroup;
+  public currentId = 'new';
+
+  public steps: Step[] = [
+    {
+      name: 'WIZARD.TITLES.NEW-REPORT',
+      route: 'information',
+      key: 'information',
+    },
+    {
+      name: 'WIZARD.TITLES.INPUT-FRACTION',
+      route: 'input-fraction',
+      key: 'inputFraction',
+    },
+    {
+      name: 'WIZARD.TITLES.ADDITIVES',
+      route: 'additives',
+      key: 'additives',
+    },
+    {
+      name: 'WIZARD.TITLES.OUTPUT-FRACTION',
+      route: 'output-fraction',
+      key: 'outputFraction',
+    },
+    {
+      name: 'WIZARD.TITLES.RECYCLING-EFFICIENCY',
+      route: 'recycling-efficiency',
+      key: 'recyclingEfficiency',
+    },
+    {
+      name: 'WIZARD.TITLES.ADDITIONAL-INFORMATION',
+      route: 'additional-information',
+      key: 'additionalInformation',
+    },
+    {
+      name: 'WIZARD.TITLES.FILE-REPORT',
+      route: 'file-report',
+      key: ''
+    },
+  ];
+
+  private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   constructor(
-    public formData: FormDataService,
-    private recyclingProcessesActions: ReportsProcessActions,
+    public reportFormService: FormDataService,
+    private reportProcessActions: ReportsProcessActions,
     private reportsActions: ReportsActions,
-    private router: Router,
     private route: ActivatedRoute,
   ) {}
 
   public ngOnInit() {
-    this.router.events
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe((event) => {
-        if (event instanceof NavigationStart) {
-          const route = (event.url.split('/').slice(-1)[0]).split('?')[0];
-          [this.selectedIndex, this.currentTitle] = this.steps.reduce((acc, step, index) => step.route === route ? [
-            index,
-            step.name
-          ] : acc, []);
-        }
-      });
+    this.fetchReport();
+    this.fetchRecyclingProcesses();
+    this.watchReport();
+  }
 
-    this.recyclingProcessesActions.fetchAllRecyclingProcesses()
-      .pipe(
-        takeUntil(this.componentDestroyed$)
-      )
-      .subscribe();
+  public ngOnDestroy() {
+    this.reportsActions.clearDetail();
+    this.reportProcessActions.clearDetail();
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
+  }
 
+  private watchReport() {
     this.report$
       .pipe(
+        filter((report) => {
+          return !!report;
+        }),
         takeUntil(this.componentDestroyed$)
       )
       .subscribe((report) => {
-        this.data = this.formData.setFormData(report);
+        this.initForm(report);
       });
+  }
 
+  private fetchReport() {
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),
       )
       .subscribe(({ id }) => {
-        this.reportsActions.fetchById(id).subscribe();
+        this.currentId = id;
+        if (id === 'new') {
+          this.initForm();
+        } else {
+          this.reportsActions.fetchById(id).subscribe();
+        }
       });
-
-    this.steps = [
-      {
-        name: 'WIZARD.TITLES.NEW-REPORT',
-        route: 'information'
-      },
-      {
-        name: 'WIZARD.TITLES.INPUT-FRACTION',
-        route: 'input-fraction'
-      },
-      {
-        name: 'WIZARD.TITLES.ADDITIVES',
-        route: 'additives'
-      },
-      {
-        name: 'WIZARD.TITLES.OUTPUT-FRACTION',
-        route: 'output-fraction'
-      },
-      {
-        name: 'WIZARD.TITLES.RECYCLING-EFFICIENCY',
-        route: 'recycling-efficiency'
-      },
-      {
-        name: 'WIZARD.TITLES.ADDITIONAL-INFORMATION',
-        route: 'additional-information'
-      },
-      {
-        name: 'WIZARD.TITLES.FILE-REPORT',
-        route: 'file-report'
-      },
-    ];
   }
 
-  public ngOnDestroy() {
-      this.componentDestroyed$.next(true);
-      this.componentDestroyed$.complete();
+  private fetchRecyclingProcesses() {
+    this.reportProcessActions.fetchAllRecyclingProcesses()
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe();
   }
 
-  public ngAfterContentInit(): void {
-    this.selectedIndex = this.steps.reduce((acc, step, index) =>
-      step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? index : acc, 0);
-    this.currentTitle = this.steps.reduce((acc, step) =>
-      step.route === (this.router.url.split('/').slice(-1)[0]).split('?')[0] ? step.name : acc, '');
+  private initForm(report = null) {
+    this.form = this.reportFormService.initForm(report);
+
+    const control = this.form.get('information.recyclingProcess');
+
+    if (control.value) {
+      this.reportProcessActions.getById(control.value).toPromise();
+    }
+
+    if (!this.form && pathOr('SAVED', ['meta', 'status'], report) === 'FILED') {
+      this.form.disable();
+    }
+
+    control
+      .valueChanges
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+        tap((id: string) => {
+          this.reportProcessActions.getById(id).toPromise();
+        }),
+        switchMap(() => {
+          return this.process$;
+        }),
+        filter((process: RecyclingProcess) => {
+          return !!process;
+        }),
+        map((process: RecyclingProcess) => {
+          return process.data.steps;
+        }),
+        filter((steps: ProcessStep[]) => {
+          return steps.length > 0;
+        }),
+      )
+      .subscribe((steps) => {
+        if (this.currentId === 'new') {
+          this.reportFormService.clearInputFractions();
+          this.reportFormService.clearOutputFractions();
+          this.reportFormService.clearAdditives();
+
+          steps.forEach((step) => {
+            this.reportFormService.addInputFraction(step.uuid);
+            this.reportFormService.addOutputFraction(step.uuid);
+            this.reportFormService.addAdditive(step.uuid);
+          });
+        }
+      });
   }
 }

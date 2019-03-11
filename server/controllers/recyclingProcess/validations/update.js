@@ -6,15 +6,25 @@ const schema = Joi.object().keys({
 		name: Joi.string().required(),
 		steps: Joi.array().items(Joi.object().keys({
 			uuid: Joi.string(),
-			precedingStep: Joi.string().allow("").optional(),
+			precedingStep: Joi.string().allow(""),
 			description: Joi.string(),
 			site: Joi.string(),
 			methodOfProcessing: Joi.string(),
 			qualitativeDescription: Joi.object().keys({
 				text: Joi.string(),
-				asset: Joi.string().optional().allow(""),
+				asset: Joi.object().keys({
+					assetId: Joi.string().allow(""),
+					mimetype: Joi.string().allow(""),
+					uploadDate: Joi.string().allow(""),
+					originalname: Joi.string().allow(""),
+				}).optional(),
 			}),
-			schematicOverview: Joi.string().optional().allow(""),
+			schematicOverview: Joi.object().keys({
+				assetId: Joi.string().allow("", null),
+				mimetype: Joi.string().allow("", null),
+				uploadDate: Joi.string().allow("", null),
+				originalname: Joi.string().allow("", null),
+			}).optional(),
 		})),
 	}),
 });

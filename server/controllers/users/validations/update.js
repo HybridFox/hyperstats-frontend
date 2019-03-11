@@ -10,7 +10,7 @@ const schema = Joi.object().keys({
 	}),
 	meta: Joi.object().keys({
 		status: Joi.object().keys({
-			type: Joi.string().valid(["ACTIVATED", "DEACTIVATED"]).required(),
+			type: Joi.string().valid(["ACTIVATED", "DEACTIVATED", "PENDING"]).required(),
 		}).required(),
 		isAdmin: Joi.boolean().required(),
 	}),

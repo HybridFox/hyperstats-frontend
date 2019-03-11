@@ -76,6 +76,17 @@ describe("Error handler helper", () => {
 		done();
 	});
 
+	it("Should return the item cannot be updated error", (done) => {
+		const err = new Error("ITEM_CANNOT_BE_UPDATED");
+		const result = errorHandler.create(err);
+
+		expect(result).to.be.an("object");
+		expect(result).to.have.property("statusCode", 422);
+		expect(result).to.have.property("msg", "Item cannot be updated.");
+
+		done();
+	});
+
 	it("Should return the default error", (done) => {
 		const err = "Random error";
 		const result = errorHandler.create(err);

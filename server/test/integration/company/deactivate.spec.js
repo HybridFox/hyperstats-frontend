@@ -47,9 +47,9 @@ describe("Integration", () => {
 					isAdmin: true,
 				});
 
-				const userResponse = await loginUser(server, { email: "test_company_user@example.com" });
+				const userResponse = await loginUser(server, { username: "test_company_user@example.com" });
 
-				adminCookie = (await loginUser(server, { email: "admin_user@example.com" })).cookie;
+				adminCookie = (await loginUser(server, { username: "admin_user@example.com" })).cookie;
 				linkedRecyclerId = (await companyTestHelper.create(dissoc("_id", companyMock), userResponse.body.company._id))._id;
 				cookie = userResponse.cookie;
 			});

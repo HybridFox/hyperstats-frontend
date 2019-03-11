@@ -8,7 +8,7 @@ export const recyclingPartners = (obs$) => {
             }),
             map((partners: any[]) => {
                 return partners.reduce((acc, partner) => {
-                    if (!partner) {
+                    if (!partner || !acc) {
                         return;
                     }
                     return acc.concat({

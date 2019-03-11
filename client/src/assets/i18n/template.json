@@ -12,6 +12,7 @@
 		"BUTTONS": {
 			"CANCEL": "",
 			"CREATENEWREPORT": "",
+			"DELETE-ELEMENT": "",
 			"GOTOAPP": "",
 			"SAVE": ""
 		},
@@ -21,8 +22,10 @@
 			"REQUIRED": ""
 		},
 		"LABELS": {
+			"ACCEPT": "",
 			"ACTIVATED": "",
 			"ACTIVE": "",
+			"ACTIVITY": "",
 			"ADD-ADDITIONAL-STEP": "",
 			"ADD-COMPANY": "",
 			"ADD-PROXY": "",
@@ -39,9 +42,12 @@
 			"COMPANYVAT": "",
 			"CONFIRMPASSWORD": "",
 			"COUNTRY": "",
+			"DATE": "",
+			"DECLINE": "",
 			"DELETE-STEP": "",
 			"DISABLE": "",
 			"DRAGANDDROP": "",
+			"DUPLICATE-PROCESS": "",
 			"DUPLICATE-STEP": "",
 			"EMAIL": "",
 			"ENABLE": "",
@@ -82,6 +88,7 @@
 		},
 		"MENU": {
 			"ABOUT": "",
+			"AUDITTRAIL": "",
 			"AUDITTRIAL": "",
 			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
@@ -96,6 +103,7 @@
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
 			"REPORTS": "",
+			"SIGNUP-REQUESTS": "",
 			"USERPROFILE": "",
 			"USERS": ""
 		},
@@ -113,8 +121,31 @@
 			"SECTION-2": "",
 			"TITLE": ""
 		},
+		"ACCESS-DENIED": {
+			"DEACTIVATED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"NOCOMPANY": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"NOTVALIDATED": {
+				"DESCRIPTION": "",
+				"RESEND-EMAIL": "",
+				"TITLE": ""
+			},
+			"PENDING": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"ADMIN": {
 			"FILTERS": ""
+		},
+		"AUDITTRAIL": {
+			"TITLE": ""
 		},
 		"COMPANY": {
 			"ADDRESSINFORMATION": "",
@@ -179,15 +210,23 @@
 			"TITLE": ""
 		},
 		"REGISTER": {
+			"LOADING": "",
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {
+			"DESCRIPTION": "",
 			"DRAFT": "",
 			"FILED": "",
+			"NOPROCESSREPORTS": "",
+			"NOREPORTS": "",
 			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",
+			"TITLE": ""
+		},
+		"SIGNUP-REQUESTS": {
+			"NO-REQUESTS": "",
 			"TITLE": ""
 		},
 		"TERMS-AND-CONDITIONS": {
@@ -306,6 +345,38 @@
 				"TITLE": ""
 			}
 		},
+		"RECYCLING-PARTNER-REMOVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-SAVE": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"RECYCLING-PARTNER-TOGGLE": {
+			"ACTIVATED": "",
+			"DEACTIVATED": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
 		"RECYCLING-PROCESS-REMOVE": {
 			"ERROR": {
 				"DESCRIPTION": "",
@@ -339,12 +410,44 @@
 			}
 		},
 		"REGISTER": {
+			"EMAIL-ALREADY-TAKEN": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		},
+		"RESEND-EMAIL": {
+			"DESCRIPTION": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
+		},
 		"RESET-PASSWORD": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-ACCEPT": {
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"SUCCESS": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			}
+		},
+		"USER-ADMIN-DECLINE": {
 			"ERROR": {
 				"DESCRIPTION": "",
 				"TITLE": ""
@@ -360,11 +463,7 @@
 				"TITLE": ""
 			},
 			"SUCCESS": {
-				"DESCRIPTION": ""
-			}
-		},
-		"USER-ADMIN-SAVEF": {
-			"SUCCESS": {
+				"DESCRIPTION": "",
 				"TITLE": ""
 			}
 		}
@@ -373,8 +472,7 @@
 		"COMPANY": {
 			"AUTHORISATION-ORG": "",
 			"COMPLIANCE-ORG": "",
-			"RECYCLER": "",
-			"RECYCLER-PARTNER": ""
+			"RECYCLER": ""
 		}
 	},
 	"WIZARD": {
@@ -393,6 +491,20 @@
 			"TITLES": {
 				"OVERVIEW": ""
 			}
+		},
+		"BUTTON": {
+			"BACK-TO-ADD-INFO": "",
+			"BACK-TO-ADDITIVES": "",
+			"BACK-TO-EFFICIENCY": "",
+			"BACK-TO-INPUT": "",
+			"BACK-TO-NEW": "",
+			"BACK-TO-OUTPUT": "",
+			"GO-TO-ADD-INFO": "",
+			"GO-TO-ADDITVES": "",
+			"GO-TO-EFFICIENCY": "",
+			"GO-TO-FILE-REPORT": "",
+			"GO-TO-INPUT": "",
+			"GO-TO-OUTPUT": ""
 		},
 		"FILE-REPORT": {
 			"DESCRIPTION": {
@@ -420,7 +532,6 @@
 				"PACKAGING-CASING": "",
 				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
-				"SHARE-INPUT-FRACTION": "",
 				"WEIGHT-BATTERY": "",
 				"WEIGHT-INPUT-FRACTION": ""
 			},
@@ -446,6 +557,7 @@
 				"INPUT-FRACTIONS": ""
 			}
 		},
+		"NO-PROCESS": "",
 		"OUTPUT-FRACTION": {
 			"DESCRIPTIONS": {
 				"OF-ELEMENT": "",

@@ -28,12 +28,11 @@
     ></app-sub-section-title>
     <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-4-12">
-            <p *ngIf='efficiency'>{{ efficiency }}%</p>
-            <p *ngIf='!efficiency'>0%</p>
+            <p>{{formData.getFormData().get('recyclingEfficiency.calculatedEfficiency').value || 0 }}%</p>
         </div>
     </div>
     <div class="u-margin-top-large">
-        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
-        <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
+        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-OUTPUT' | translate }}</button>
+        <button (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-ADD-INFO' | translate }}</button>
     </div>
 </div>

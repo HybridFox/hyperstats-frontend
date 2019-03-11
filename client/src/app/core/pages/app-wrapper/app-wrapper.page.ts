@@ -10,7 +10,7 @@ import { AuthActions } from '@store/auth/auth.actions';
 })
 export class AppWrapperPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<any>;
-  public actionButton = { label: 'New report', link: ['/', 'recycler', 'new-report'] };
+  public actionButton = { label: 'New report', link: ['/', 'recycler', 'reports', 'new'] };
 
   constructor (
     private authActions: AuthActions,

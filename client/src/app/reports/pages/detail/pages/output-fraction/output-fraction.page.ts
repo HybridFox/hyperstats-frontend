@@ -3,10 +3,9 @@ import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ToastrService } from 'ngx-toastr';
 import { takeUntil } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormArray } from '@angular/forms';
 
 import { FormDataService } from '../../../../services/formdata.service';
-import { OutputFraction } from '../../../../store/reports/types';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
@@ -15,20 +14,17 @@ import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes
   templateUrl: './output-fraction.page.html',
 })
 export class OutputFractionPageComponent extends StepPageAbstract {
-  public activeStepIndex = 0;
   public outputFraction: FormGroup;
-  public totalWeight = 0;
-
-  private stepId: string;
+  private stepId: number;
 
   constructor(
-    codesService: CodesService,
-    formData: FormDataService,
-    toastrService: ToastrService,
-    reportProcessActions: ReportsProcessActions,
-    router: Router,
-    activatedRoute: ActivatedRoute,
-    reportActions: ReportsActions,
+    public codesService: CodesService,
+    public formData: FormDataService,
+    protected toastrService: ToastrService,
+    protected reportProcessActions: ReportsProcessActions,
+    protected router: Router,
+    protected route: ActivatedRoute,
+    protected reportActions: ReportsActions,
   ) {
     super(
       codesService,
@@ -36,43 +32,41 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       toastrService,
       reportProcessActions,
       router,
-      activatedRoute,
+      route,
       reportActions,
       {
-        prevStep: 'additives',
-        nextStep: 'recycling-efficiency',
+        prevStep: ['../../additives'],
+        nextStep: ['../../recycling-efficiency'],
         formSection: 'outputFraction'
       }
     );
   }
 
-  public handleFormChanges(changes: OutputFraction[]) {
-    this.totalWeight = changes.reduce((totalWeight, item) =>
-      item.mass !== '' && !isNaN(parseInt(item.mass, 10)) ?
-        totalWeight + parseInt(item.mass, 10) :
-        totalWeight, 0);
+  public addElement() {
+    (this.outputFraction.get('data') as FormArray).push(this.formData.getOutputFractionElementFormGroup(null));
   }
 
-  public onFormReady(): void {
-    this.activatedRoute.queryParams.pipe(
-      takeUntil(this.componentDestroyed$),
-    ).subscribe((query) => {
-      this.stepId = query.step;
-      this.setActiveStepById(this.stepId);
-    });
+  public removeElement(fraction: any, elementNumber: number) {
+    (fraction.parent as FormArray).removeAt(elementNumber);
   }
 
   private setActiveStepById(stepId: string) {
-    if (!stepId) {
-      this.outputFraction = this.form.get('0');
-
-      return setTimeout(() =>
-        this.router.navigate([], { relativeTo: this.activatedRoute, queryParams: { step: this.outputFraction.get('siteRef').value } })
-      );
+    this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    if (this.stepId !== -1) {
+      this.outputFraction = this.form.get(`${this.stepId}`) as FormGroup;
+    } else {
+      this.formData.addOutputFraction(stepId);
+      this.setActiveStepById(stepId);
     }
+  }
 
-    const stepIndex = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
-
-    this.outputFraction = this.form.get(`${stepIndex}`);
+  public onFormReady(): void {
+    this.route.params
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+      )
+      .subscribe((params) => {
+        this.setActiveStepById(params.stepId);
+      });
   }
 }

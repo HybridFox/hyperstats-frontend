@@ -1,6 +1,6 @@
 const joi = require("joi");
 const { schemas } = require("../../../helpers/validation");
-const { REPORT_STATUS } = require("../helpers/const");
+const { REPORT_STATUS, DEFAULT_REPORT_STATE } = require("../helpers/const");
 
 const savedData = {
 	information: joi.object().keys({
@@ -10,7 +10,7 @@ const savedData = {
 		// receiver: joi.string().allow(null).optional(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.object().keys({
 			processChemistry: joi.string().allow("").optional(),
 			weightInput: joi.number().allow(null).optional(),
@@ -18,7 +18,7 @@ const savedData = {
 			weightBatteryType: joi.number().allow(null).optional(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().allow(null).optional(),
-				PackagingMaterial: joi.number().allow(null).optional(),
+				packagingMaterial: joi.number().allow(null).optional(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
@@ -31,18 +31,18 @@ const savedData = {
 		}),
 	})),
 	additives: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
-		data: joi.object().keys({
+		siteRef: joi.string().allow(""),
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().allow("").optional(),
 			weight: joi.number().allow(null).optional(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
 				weight: joi.number().allow(null).optional(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
-		siteRef: joi.string(),
+		siteRef: joi.string().allow(""),
 		data: joi.array().items(joi.object().keys({
 			element: joi.string().allow("").optional(),
 			mass: joi.number().allow(null).optional(),
@@ -57,8 +57,11 @@ const savedData = {
 	}),
 	additionalInformation: joi.object().keys({
 		files: joi.array().items(joi.object().keys({
-			type: joi.string().allow(""),
-		})),
+			assetId: joi.string().allow(""),
+			mimetype: joi.string().allow(""),
+			uploadDate: joi.string().allow(""),
+			originalname: joi.string().allow(""),
+		})).optional().allow(null),
 		additionalInformation: joi.string().allow("").optional(),
 	}),
 };
@@ -68,6 +71,7 @@ const filedData = {
 		reportingYear: joi.number().required(),
 		recyclingProcess: joi.string().required(),
 		name: joi.string().required(),
+		// receiver: joi.string().allow(null).required(),
 	}),
 	inputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
@@ -78,7 +82,7 @@ const filedData = {
 			weightBatteryType: joi.number().required(),
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().required(),
-				PackagingMaterial: joi.number().required(),
+				packagingMaterial: joi.number().required(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
@@ -92,14 +96,14 @@ const filedData = {
 	})),
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
-		data: joi.object().keys({
+		data: joi.array().items(joi.object().keys({
 			type: joi.string().required(),
 			weight: joi.number().required(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
 				weight: joi.number().required(),
 			})),
-		}),
+		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
@@ -119,15 +123,25 @@ const filedData = {
 		files: joi.array().items(joi.object().keys({
 			type: joi.string(),
 		})),
-		additionalInformation: joi.string().optional(),
+		additionalInformation: joi.string().allow("").optional(),
 	}),
 };
 
 const schema = joi.object().keys({
-	data: joi.alternatives().when("meta.status", { is: REPORT_STATUS.FILED, then: joi.object().keys(filedData), otherwise: joi.object().keys(savedData) }),
+	data: joi.alternatives().when("meta.status", { is: REPORT_STATUS.FILED, then: joi.object().keys(filedData), otherwise: joi.object().keys(savedData) }).required(),
 	meta: joi.object().keys({
 		approvedCompanies: joi.array().items(joi.string()).optional(),
 		status: joi.string().valid([REPORT_STATUS.FILED, REPORT_STATUS.SAVED]).optional(),
+		state: joi.object().keys({
+			isPristine: joi.object().keys({
+				information: joi.boolean().optional().default(true),
+				inputFraction: joi.boolean().optional().default(true),
+				additives: joi.boolean().optional().default(true),
+				outputFraction: joi.boolean().optional().default(true),
+				recyclingEfficiency: joi.boolean().optional().default(true),
+				additionalInformation: joi.boolean().optional().default(true),
+			}).optional().default(DEFAULT_REPORT_STATE.isPristine),
+		}).optional().default(DEFAULT_REPORT_STATE),
 	}),
 });
 

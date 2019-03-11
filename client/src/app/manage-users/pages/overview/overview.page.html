@@ -19,6 +19,13 @@
                     [label]="type.value.label"
                 ></app-checkbox-input>
             </div>
+            <div>
+              <app-checkbox-input
+                  class="u-margin-bottom-large"
+                  [control]="filter.get('pending').get('selected')"
+                  [label]="filter.get('pending').value.label"
+              ></app-checkbox-input>
+            </div>
         </div>
     </div>
     <div class="l-grid__col-8-12">

@@ -124,11 +124,9 @@
     }
 
     &__error {
-        position: absolute;
-        display: block;
         color: $danger;
-        margin: 0;
         font-size: $font-size-x-small;
+        margin: 0;
     }
 }
 

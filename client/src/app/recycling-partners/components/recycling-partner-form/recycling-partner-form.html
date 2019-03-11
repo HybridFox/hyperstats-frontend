@@ -98,6 +98,7 @@
                 [label]="'GENERAL.LABELS.EMAIL' | translate"
                 class="u-margin-bottom-large"
                 [control]="recyclingPartnerForm.get('contactPerson').get('email')"
+                type="email"
             ></app-text-input>
         </div>
     </div>
@@ -113,14 +114,14 @@
         </button>
         <div class="u-pull-right">
             <button
-                *ngIf="isActivated"
+                *ngIf="recyclingPartner?.meta.activated"
                 class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
                 (click)="toggleActivationForm()"
             >
                 {{ 'GENERAL.LABELS.DISABLE' | translate }}
             </button>
             <button
-                *ngIf="!isActivated"
+                *ngIf="!!recyclingPartner?._id && !recyclingPartner?.meta.activated"
                 class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
                 (click)="toggleActivationForm()"
             >

@@ -27,7 +27,7 @@ describe("Integration", () => {
 				company: companyMock._id,
 			});
 
-			cookie = (await loginUser(server, { email: "test_company_user@example.com" })).cookie;
+			cookie = (await loginUser(server, { username: "test_company_user@example.com" })).cookie;
 		});
 
 		afterEach(() => reset());

@@ -4,7 +4,7 @@ const profile = require("../../helpers/profile");
 
 module.exports = async(req, res, next) => {
 	try {
-		const user = await loginHandler(req.data.body.email, req.data.body.password);
+		const user = await loginHandler(req.data.body.username, req.data.body.password);
 
 		profile.set(req, user);
 

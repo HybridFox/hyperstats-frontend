@@ -18,10 +18,10 @@ export class ReportsActions {
     private reportsRepository: ReportsRepository,
   ) {}
 
-  public fetchAll(): Observable<any> {
+  public fetchAll(filters: any): Observable<any> {
     this.handler.dispatchStart(ACTIONS.LIST.FETCH);
 
-    return this.reportsRepository.fetchAll()
+    return this.reportsRepository.fetchAll(filters)
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.LIST.FETCH, {
@@ -69,6 +69,10 @@ export class ReportsActions {
           this.handler.dispatchDone(ACTIONS.DETAIL.FETCH);
         }),
       );
+  }
+
+  public clearDetail() {
+    this.handler.dispatch(ACTIONS.DETAIL.CLEAR);
   }
 
   public createDrafted(report: any): Observable<any> {

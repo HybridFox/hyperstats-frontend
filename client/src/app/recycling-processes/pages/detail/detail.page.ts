@@ -1,12 +1,10 @@
 import { Component, OnInit, OnDestroy, } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { select, select$ } from '@angular-redux/store';
-import * as uuid from 'uuid';
-import { omit, prop, pathOr, equals } from 'ramda';
-import { Observable, Subscription, Subject } from 'rxjs';
+import { prop, pathOr, equals } from 'ramda';
+import { Observable, Subscription, Subject, of } from 'rxjs';
 import { filter, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
@@ -15,18 +13,23 @@ import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { FormHelper } from '@helpers/form.helper';
 import { companiesToSelectOptions } from '@helpers/select.helpers';
+import { AssetsRepository } from '@api/assets';
 
 @Component({
   templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
+    @select(['auth', 'user', 'result']) public user$: Observable<any>;
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
-    @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partnerOptions$: Observable<any[]>;
+    @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partners$: Observable<any[]>;
 
     public recyclingProcessForm: any;
     public process: any;
     public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
     public recyclingProcessId: string;
+    public duplicateProcessId: string;
+    public uploadResponse: any;
+    public uploadResults;
 
     private processSubscription: Subscription;
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -34,15 +37,14 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     constructor(
         private processActions: RecyclingProcessesActions,
         private partnerActions: RecyclingPartnerActions,
-        private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
         private toastrService: ToastrService,
         private translateService: TranslateService,
+        private assetsRepository: AssetsRepository
     ) {}
 
     public ngOnInit() {
-        this.setupForm();
         this.partnerActions.fetchAll().toPromise();
         this.route.params
             .pipe(
@@ -61,56 +63,20 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         this.componentDestroyed$.complete();
     }
 
-    public getStepKey(key: string) {
-        return parseInt(key, 16) + 1;
+    public duplicateProcess(event) {
+        this.duplicateProcessId = event;
+        this.router.navigate(['../new'], { relativeTo: this.route });
     }
 
-    public deleteStep(key: number) {
-        this.recyclingProcessForm.controls.steps.controls.splice(key, 1);
-    }
+    public save(recyclingProcessForm: any) {
+        FormHelper.markAsDirty(recyclingProcessForm);
 
-    public duplicateStep(key: number) {
-        const newStep = this.createStep();
-        newStep.patchValue(
-            omit(['uuid'], this.recyclingProcessForm.controls.steps.controls[key].value)
-        );
-        this.recyclingProcessForm.controls.steps.push(newStep);
-    }
-
-    public addStep(): void {
-        this.recyclingProcessForm.controls.steps.push(this.createStep());
-    }
-
-    public precedingSteps(step: FormControl) {
-        return this.recyclingProcessForm.controls.steps.controls.reduce((acc: any[], x: any, key: number) => {
-            if (step.value.value.uuid === x.value.uuid) {
-                return acc;
-            }
-
-            const label = x.value.description
-                ? x.value.description
-                : `${this.translateService.instant('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP', { key: key + 1 })}`;
-
-            acc.push({
-                label: x.value.methodOfProcessing ? `${label} (${x.value.methodOfProcessing})` : label,
-                value: x.value.uuid
-            });
-
-            return acc;
-        }, [{
-            label: ngxExtract('PAGE.RECYCLING-PROCESSES.PRECEDING-STEP.NONE'),
-            value: null
-        }]);
-    }
-
-    public save() {
-        FormHelper.markAsDirty(this.recyclingProcessForm);
-
-        if (this.recyclingProcessForm.invalid) {
+        if (recyclingProcessForm.invalid) {
             return;
         }
 
-        const rawValue = this.recyclingProcessForm.getRawValue();
+        const rawValue = recyclingProcessForm.getRawValue();
+
         const toSave = {
             ...this.process,
             data: {
@@ -142,7 +108,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    public removeForm() {
+    public remove() {
         if (this.recyclingProcessId === 'new') {
             return;
         }
@@ -165,7 +131,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    public toggleActivation() {
+    public toggleActivation(event) {
         const isCurrentlyActive = pathOr(false, ['meta', 'activated'])(this.process);
         const type = this.translateService.instant(
             isCurrentlyActive ?
@@ -193,48 +159,8 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             });
     }
 
-    private setupForm(process?: any): void {
-        this.recyclingProcessForm = this.formBuilder.group({
-            name: [pathOr('', ['data', 'name'])(process), Validators.required],
-            steps: this.createStepFormGroups(pathOr([], ['data', 'steps'])(process))
-        });
-    }
-
-    private createStepFormGroups(steps: any[]): FormArray {
-        if (!steps.length) {
-            return this.formBuilder.array([this.createStep()]);
-        }
-
-        return this.formBuilder.array(steps.map((step) => this.createStep(step)));
-    }
-
-    private createStep(step = {
-        uuid: uuid.v4(),
-        precedingStep: 0,
-        description: '',
-        site: '',
-        methodOfProcessing: '',
-        qualitativeDescription: {
-            text: '',
-            asset: ''
-        },
-        schematicOverview: ''
-    }): FormGroup {
-        return this.formBuilder.group({
-            uuid: [step.uuid],
-            precedingStep: [step.precedingStep],
-            description: [step.description, Validators.required],
-            site: [step.site, Validators.required],
-            methodOfProcessing: [step.methodOfProcessing, Validators.required],
-            qualitativeDescription: this.formBuilder.group({
-                text: [step.qualitativeDescription.text, Validators.required],
-                asset: [step.qualitativeDescription.asset]
-            }),
-            schematicOverview: [step.schematicOverview],
-        });
-    }
-
     private fetchProcessIfNeeded(): void {
+        this.uploadResults = null;
         if (!this.recyclingProcessId || (this.process && prop('_id', this.process) === this.recyclingProcessId)) {
             return;
         }
@@ -243,18 +169,73 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             this.processSubscription.unsubscribe();
         }
 
-        if (this.recyclingProcessId === 'new') {
-            return this.setupForm();
+        const duplicate = (this.process && prop('_id', this.process) === this.duplicateProcessId);
+        let id = this.recyclingProcessId;
+
+        if (this.recyclingProcessId === 'new' && !duplicate) {
+            this.process = null;
+            return this.process;
         }
 
-        this.processActions.fetchById(this.recyclingProcessId).toPromise();
+        if (this.recyclingProcessId === 'new' && duplicate) {
+            id = this.duplicateProcessId;
+        }
+        this.processActions.fetchById(id).toPromise();
         this.processSubscription = this.$process
             .pipe(takeUntil(this.componentDestroyed$))
             .pipe(filter((process) => process && !equals(process, this.process)))
             .subscribe((process) => {
                 this.process = process;
-
-                this.setupForm(this.process);
             });
+        this.duplicateProcessId = null;
+    }
+
+    public onUpload(fileObject) {
+        this.uploadResults = Object.assign({}, this.uploadResults, {
+            [fileObject.stepIndex]: Object.assign({}, this.uploadResults ? this.uploadResults[fileObject.stepIndex] : {}, {
+                [fileObject.input]: this.assetsRepository.upload(fileObject.fileList[0])
+            })
+        });
+    }
+
+    public onRemoveFile(fileObject) {
+      if (!this.uploadResults) {
+        this.fetchFiles();
+      }
+      const emptyObject = of({
+        progress: '',
+        result: {
+          assetId: '',
+          mimetype: '',
+          uploadDate: '',
+          originalname: '',
+        },
+        originalname: '',
+      });
+      this.uploadResults = Object.assign({}, this.uploadResults, {
+        [fileObject.stepIndex]: Object.assign({}, this.uploadResults ? this.uploadResults[fileObject.stepIndex] : {}, {
+            [fileObject.input]: emptyObject,
+        })
+      });
+    }
+
+    public fetchFiles() {
+      this.process.data.steps.forEach((element, index) => {
+        this.uploadResults = Object.assign({}, this.uploadResults, {
+          [index]: Object.assign({}, this.uploadResults ? this.uploadResults[index] : {}, {
+              ASSET: of({
+                  progress: '',
+                  result: {
+                    assetId: element.qualitativeDescription.asset.assetId,
+                    mimetype: element.qualitativeDescription.asset.mimetype,
+                    uploadDate: element.qualitativeDescription.asset.uploadDate,
+                    originalname: element.qualitativeDescription.asset.originalname,
+                  },
+                  originalname: element.qualitativeDescription.asset.originalname,
+              }),
+              SCHEMATIC: of(element.schematicOverview)
+          })
+        });
+      });
     }
 }

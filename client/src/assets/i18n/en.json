@@ -12,6 +12,7 @@
         "BUTTONS": {
             "CANCEL": "Cancel",
             "CREATENEWREPORT": "Create new report",
+            "DELETE-ELEMENT": "Delete element",
             "GOTOAPP": "Go to app",
             "SAVE": "Save"
         },
@@ -21,8 +22,10 @@
             "REQUIRED": "This field is required"
         },
         "LABELS": {
+            "ACCEPT": "Accept",
             "ACTIVATED": "Active",
             "ACTIVE": "Active",
+            "ACTIVITY": "Activity",
             "ADD-ADDITIONAL-STEP": "Add additional step",
             "ADD-COMPANY": "Company",
             "ADD-PROXY": "Add proxy",
@@ -39,9 +42,12 @@
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
+            "DATE": "Date",
+            "DECLINE": "Decline",
             "DELETE-STEP": "Delete step",
             "DISABLE": "Disable",
             "DRAGANDDROP": "Drag files here or",
+            "DUPLICATE-PROCESS": "Duplicate process",
             "DUPLICATE-STEP": "Duplicate step",
             "EMAIL": "Email",
             "ENABLE": "Enable",
@@ -78,10 +84,11 @@
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
             "ZIPCODE": "Zipcode",
-            "INVALID_FORM": "The form is invalid, make sure you have filled all the field"
+            "INVALID_FORM": "The form is invalid, make sure you have filled all the fields"
         },
         "MENU": {
             "ABOUT": "About us",
+            "AUDITTRAIL": "Audit Trial",
             "AUDITTRIAL": "Audit Trial",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
@@ -96,6 +103,7 @@
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
             "REPORTS": "Reports",
+            "SIGNUP-REQUESTS": "Signup Requests",
             "USERPROFILE": "User profile",
             "USERS": "Users"
         },
@@ -113,8 +121,31 @@
             "SECTION-2": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tem",
             "TITLE": "About"
         },
+        "ACCESS-DENIED": {
+            "DEACTIVATED": {
+                "DESCRIPTION": "Your account is deactivated. Contact an administrator if necessary.",
+                "TITLE": "Account Deactivated"
+            },
+            "NOCOMPANY": {
+                "DESCRIPTION": "You don’t have a company assigned. Contact the administrator for more info. ",
+                "TITLE": "You don’t have a company assigned."
+            },
+            "NOTVALIDATED": {
+                "DESCRIPTION": "Please validate your email address.",
+                "RESEND-EMAIL": "Resend validation mail",
+                "TITLE": "Email address not validated."
+            },
+            "PENDING": {
+                "DESCRIPTION": "Your account needs to be activated by an admin before you can enter. Your signup request is being reviewed.",
+                "TITLE": "Admin is reviewing your signup request."
+            },
+            "TITLE": "Access Denied"
+        },
         "ADMIN": {
             "FILTERS": "Filters:"
+        },
+        "AUDITTRAIL": {
+            "TITLE": "Audit Trail"
         },
         "COMPANY": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
@@ -147,7 +178,7 @@
         },
         "PROXIES": {
             "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
-            "TITLE": "Your proxies"
+            "TITLE": "{{ name }} proxies"
         },
         "RECYCLING-PARTNERS": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
@@ -158,7 +189,7 @@
         "RECYCLING-PROCESSES": {
             "DESCRIPTION": "Add all the different battery chemistry types you process. Per battery type define which recycling site sare involved and provide some additional information regarding the recycling process.",
             "LABELS": {
-                "DESCRIPTION": "Choose a description for this recycling step",
+                "DESCRIPTION": "Choose a name for this recycling step",
                 "DESCRIPTION-DESCRIPTION": "This is the identifier you typically use in your organisation for this recycling step. Take something that everyone in your organisation understands",
                 "NAME": "Choose a name for this recycling process",
                 "PRECEDING-STEP": "If any, choose a preceding step",
@@ -179,16 +210,24 @@
             "TITLE": "Recycling Processes"
         },
         "REGISTER": {
-            "VERIFY-EMAIL": "An email has been send to you"
+            "LOADING": "Registering",
+            "VERIFY-EMAIL": "An email has been sent to you"
         },
         "REPORTS": {
+            "DESCRIPTION": "Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize authentic create enable dynamic podcasting synergies architectures. Redefine authentic methodologies.",
             "DRAFT": "Draft",
             "FILED": "Filed",
+            "NOPROCESSREPORTS": "There are no reports for this recycling process",
+            "NOREPORTS": "You don’t have any reports yet",
             "TITLE": "Reports"
         },
         "RESET-PASSWORD": {
             "ISRESET": "Your password has been reset! Please login to continiou",
             "TITLE": "Reset your password"
+        },
+        "SIGNUP-REQUESTS": {
+            "NO-REQUESTS": "No signup requests",
+            "TITLE": "Signup Requests"
         },
         "TERMS-AND-CONDITIONS": {
             "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum",
@@ -215,7 +254,7 @@
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
-                "DESCRIPTION": "An email has ben sent to the user requesting a password reset.",
+                "DESCRIPTION": "An email has been sent to the user requesting a password reset.",
                 "TITLE": "Password reset requested"
             }
         },
@@ -306,6 +345,38 @@
                 "TITLE": "Success!"
             }
         },
+        "RECYCLING-PARTNER-REMOVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not remove the recycling partner. Please contact an administrator.",
+                "TITLE": "Recycling partner removal failed"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Recycling partner is successfully removed.",
+                "TITLE": "Recycling partner removed"
+            }
+        },
+        "RECYCLING-PARTNER-SAVE": {
+            "ERROR": {
+                "DESCRIPTION": "Could not save the recycling partner. Please contact an administrator.",
+                "TITLE": "Error saving recycling partner"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "Recycling partner is successfully saved.",
+                "TITLE": "Recycling partner saved"
+            }
+        },
+        "RECYCLING-PARTNER-TOGGLE": {
+            "ACTIVATED": "activated",
+            "DEACTIVATED": "deactivated",
+            "ERROR": {
+                "DESCRIPTION": "The recycling partner could not be {{type}}.",
+                "TITLE": "Recycling partner not {{type}}"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The recycling partner is {{type}}.",
+                "TITLE": "Recycling partner {{type}}"
+            }
+        },
         "RECYCLING-PROCESS-REMOVE": {
             "ERROR": {
                 "DESCRIPTION": "Could not remove the recycling process. Please contact an administrator.",
@@ -313,7 +384,7 @@
             },
             "SUCCESS": {
                 "DESCRIPTION": "Recycling process is successfully removed.",
-                "TITLE": "Error removing recycling process"
+                "TITLE": "Recycling process removed"
             }
         },
         "RECYCLING-PROCESS-SAVE": {
@@ -330,7 +401,7 @@
             "ACTIVATED": "activated",
             "DEACTIVATED": "deactivated",
             "ERROR": {
-                "DESCRIPTION": "There recycling process could not be {{type}}.",
+                "DESCRIPTION": "The recycling process could not be {{type}}.",
                 "TITLE": "Recycling process not {{type}}"
             },
             "SUCCESS": {
@@ -339,10 +410,22 @@
             }
         },
         "REGISTER": {
+            "EMAIL-ALREADY-TAKEN": {
+                "DESCRIPTION": "Email already taken",
+                "TITLE": "Cannot register"
+            },
             "ERROR": {
                 "DESCRIPTION": "Make sure all fields are filled in",
                 "TITLE": "Cannot register"
             }
+        },
+        "RESEND-EMAIL": {
+            "DESCRIPTION": "Validation mail successfully sent",
+            "ERROR": {
+                "DESCRIPTION": "Something went wrong",
+                "TITLE": "Cannot resend validation email"
+            },
+            "TITLE": "Success!"
         },
         "RESET-PASSWORD": {
             "ERROR": {
@@ -354,17 +437,33 @@
                 "TITLE": "Success!"
             }
         },
+        "USER-ADMIN-ACCEPT": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to grant access.",
+                "TITLE": "Error granting access"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is granted access!",
+                "TITLE": "Access granted!"
+            }
+        },
+        "USER-ADMIN-DECLINE": {
+            "ERROR": {
+                "DESCRIPTION": "An error occurred while trying to decline the user.",
+                "TITLE": "Error declining user"
+            },
+            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully declined!",
+                "TITLE": "User declined!"
+            }
+        },
         "USER-ADMIN-SAVE": {
             "ERROR": {
                 "DESCRIPTION": "An error occurred while trying to save the user.",
                 "TITLE": "Error saving user"
             },
             "SUCCESS": {
-                "DESCRIPTION": "The user is successfully saved!"
-            }
-        },
-        "USER-ADMIN-SAVEF": {
-            "SUCCESS": {
+                "DESCRIPTION": "The user is successfully saved!",
                 "TITLE": "User saved!"
             }
         }
@@ -373,14 +472,13 @@
         "COMPANY": {
             "AUTHORISATION-ORG": "Authorisation Organisation",
             "COMPLIANCE-ORG": "Compliance Organisation",
-            "RECYCLER": "Recycler",
-            "RECYCLER-PARTNER": "Recycling Partners"
+            "RECYCLER": "Recycler"
         }
     },
     "WIZARD": {
         "ADDITIONAL-INFORMATION": {
             "TITLES": {
-                "ADDITIONAL-INFORMATION": "Addition information",
+                "ADDITIONAL-INFORMATION": "Additional information",
                 "FILE-UPLOADS": "File uploads"
             }
         },
@@ -393,6 +491,20 @@
             "TITLES": {
                 "OVERVIEW": "Overview additives"
             }
+        },
+        "BUTTON": {
+            "BACK-TO-ADD-INFO": "Go back to Add. Information",
+            "BACK-TO-ADDITIVES": "Go back to Additives",
+            "BACK-TO-EFFICIENCY": "Go back to Recycling Efficiency",
+            "BACK-TO-INPUT": "Go back to Input Fraction",
+            "BACK-TO-NEW": "Go back to New Report",
+            "BACK-TO-OUTPUT": "Go back to Output Fraction",
+            "GO-TO-ADD-INFO": "Go to Add. Information",
+            "GO-TO-ADDITVES": "Go to Additives",
+            "GO-TO-EFFICIENCY": "Go to Recycling Efficiency",
+            "GO-TO-FILE-REPORT": "Go to File Report",
+            "GO-TO-INPUT": "Go to Input Fraction",
+            "GO-TO-OUTPUT": "Go to Output Fraction"
         },
         "FILE-REPORT": {
             "DESCRIPTION": {
@@ -420,7 +532,6 @@
                 "PACKAGING-CASING": "Packaging material / outer casing",
                 "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
-                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
                 "WEIGHT-INPUT-FRACTION": "Weight input fraction"
             },
@@ -446,6 +557,7 @@
                 "INPUT-FRACTIONS": "General information"
             }
         },
+        "NO-PROCESS": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
             "DESCRIPTIONS": {
                 "OF-ELEMENT": "Of the element/compound",

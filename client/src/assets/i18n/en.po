@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-02-22T08:44:57.758Z\n"
+"POT-Creation-Date: 2019-03-11T07:33:45.562Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -32,6 +32,9 @@ msgstr "Cancel"
 msgid "GENERAL##BUTTONS##CREATENEWREPORT"
 msgstr "Create new report"
 
+msgid "GENERAL##BUTTONS##DELETE-ELEMENT"
+msgstr "Delete element"
+
 msgid "GENERAL##BUTTONS##GOTOAPP"
 msgstr "Go to app"
 
@@ -47,11 +50,17 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##LABELS##ACCEPT"
+msgstr "Accept"
+
 msgid "GENERAL##LABELS##ACTIVATED"
 msgstr "Active"
 
 msgid "GENERAL##LABELS##ACTIVE"
 msgstr "Active"
+
+msgid "GENERAL##LABELS##ACTIVITY"
+msgstr "Activity"
 
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
@@ -105,6 +114,12 @@ msgstr "Confirm password"
 msgid "GENERAL##LABELS##COUNTRY"
 msgstr "Country"
 
+msgid "GENERAL##LABELS##DATE"
+msgstr "Date"
+
+msgid "GENERAL##LABELS##DECLINE"
+msgstr "Decline"
+
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr "Delete step"
 
@@ -113,6 +128,9 @@ msgstr "Disable"
 
 msgid "GENERAL##LABELS##DRAGANDDROP"
 msgstr "Drag files here or"
+
+msgid "GENERAL##LABELS##DUPLICATE-PROCESS"
+msgstr "Duplicate process"
 
 msgid "GENERAL##LABELS##DUPLICATE-STEP"
 msgstr "Duplicate step"
@@ -227,6 +245,11 @@ msgstr "Zipcode"
 msgid "GENERAL##MENU##ABOUT"
 msgstr "About us"
 
+#, fuzzy
+#| msgid "GENERAL##MENU##AUDITTRIAL"
+msgid "GENERAL##MENU##AUDITTRAIL"
+msgstr "Audit Trial"
+
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
@@ -270,6 +293,9 @@ msgstr "Register"
 
 msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
+
+msgid "GENERAL##MENU##SIGNUP-REQUESTS"
+msgstr "Signup Requests"
 
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
@@ -332,8 +358,44 @@ msgstr ""
 msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr "Your account is deactivated. Contact an administrator if necessary."
+
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr "Account Deactivated"
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
+msgstr ""
+"You don’t have a company assigned. Contact the administrator for more info. "
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
+msgstr "You don’t have a company assigned."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##DESCRIPTION"
+msgstr "Please validate your email address."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##RESEND-EMAIL"
+msgstr "Resend validation mail"
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##TITLE"
+msgstr "Email address not validated."
+
+msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
+msgstr ""
+"Your account needs to be activated by an admin before you can enter. Your "
+"signup request is being reviewed."
+
+msgid "PAGE##ACCESS-DENIED##PENDING##TITLE"
+msgstr "Admin is reviewing your signup request."
+
+msgid "PAGE##ACCESS-DENIED##TITLE"
+msgstr "Access Denied"
+
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
+
+msgid "PAGE##AUDITTRAIL##TITLE"
+msgstr "Audit Trail"
 
 #, fuzzy
 #| msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
@@ -391,7 +453,7 @@ msgstr ""
 "reporting year and recycling process"
 
 msgid "PAGE##PROXIES##TITLE"
-msgstr "Your proxies"
+msgstr "{{ name }} proxies"
 
 msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
@@ -415,7 +477,7 @@ msgstr ""
 "information regarding the recycling process."
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION"
-msgstr "Choose a description for this recycling step"
+msgstr "Choose a name for this recycling step"
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##DESCRIPTION-DESCRIPTION"
 msgstr ""
@@ -470,8 +532,17 @@ msgstr "Recycling Step {{ key }}"
 msgid "PAGE##RECYCLING-PROCESSES##TITLE"
 msgstr "Recycling Processes"
 
+msgid "PAGE##REGISTER##LOADING"
+msgstr "Registering"
+
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
-msgstr "An email has been send to you"
+msgstr "An email has been sent to you"
+
+msgid "PAGE##REPORTS##DESCRIPTION"
+msgstr ""
+"Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize "
+"authentic create enable dynamic podcasting synergies architectures. Redefine "
+"authentic methodologies."
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
@@ -481,6 +552,12 @@ msgstr "Draft"
 msgid "PAGE##REPORTS##FILED"
 msgstr "Filed"
 
+msgid "PAGE##REPORTS##NOPROCESSREPORTS"
+msgstr "There are no reports for this recycling process"
+
+msgid "PAGE##REPORTS##NOREPORTS"
+msgstr "You don’t have any reports yet"
+
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
 
@@ -489,6 +566,12 @@ msgstr "Your password has been reset! Please login to continiou"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
+
+msgid "PAGE##SIGNUP-REQUESTS##NO-REQUESTS"
+msgstr "No signup requests"
+
+msgid "PAGE##SIGNUP-REQUESTS##TITLE"
+msgstr "Signup Requests"
 
 msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
 msgstr ""
@@ -531,7 +614,7 @@ msgid "Recycling Partner"
 msgstr "Recycling Partner"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
-msgstr "An email has ben sent to the user requesting a password reset."
+msgstr "An email has been sent to the user requesting a password reset."
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
@@ -669,6 +752,49 @@ msgstr "Your profile has been saved!"
 msgid "TOAST##PROFILE##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##ERROR##DESCRIPTION"
+msgstr ""
+"Could not remove the recycling partner. Please contact an administrator."
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##ERROR##TITLE"
+msgstr "Recycling partner removal failed"
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##SUCCESS##DESCRIPTION"
+msgstr "Recycling partner is successfully removed."
+
+msgid "TOAST##RECYCLING-PARTNER-REMOVE##SUCCESS##TITLE"
+msgstr "Recycling partner removed"
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##ERROR##DESCRIPTION"
+msgstr "Could not save the recycling partner. Please contact an administrator."
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##ERROR##TITLE"
+msgstr "Error saving recycling partner"
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##SUCCESS##DESCRIPTION"
+msgstr "Recycling partner is successfully saved."
+
+msgid "TOAST##RECYCLING-PARTNER-SAVE##SUCCESS##TITLE"
+msgstr "Recycling partner saved"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ACTIVATED"
+msgstr "activated"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##DEACTIVATED"
+msgstr "deactivated"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ERROR##DESCRIPTION"
+msgstr "The recycling partner could not be {{type}}."
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##ERROR##TITLE"
+msgstr "Recycling partner not {{type}}"
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##SUCCESS##DESCRIPTION"
+msgstr "The recycling partner is {{type}}."
+
+msgid "TOAST##RECYCLING-PARTNER-TOGGLE##SUCCESS##TITLE"
+msgstr "Recycling partner {{type}}"
+
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##ERROR##DESCRIPTION"
 msgstr ""
 "Could not remove the recycling process. Please contact an administrator."
@@ -680,7 +806,7 @@ msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##DESCRIPTION"
 msgstr "Recycling process is successfully removed."
 
 msgid "TOAST##RECYCLING-PROCESS-REMOVE##SUCCESS##TITLE"
-msgstr "Error removing recycling process"
+msgstr "Recycling process removed"
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##ERROR##DESCRIPTION"
 msgstr "Could not save the recycling process. Please contact an administrator."
@@ -701,7 +827,7 @@ msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
 msgstr "deactivated"
 
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##DESCRIPTION"
-msgstr "There recycling process could not be {{type}}."
+msgstr "The recycling process could not be {{type}}."
 
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ERROR##TITLE"
 msgstr "Recycling process not {{type}}"
@@ -712,11 +838,29 @@ msgstr "The recycling process is {{type}}."
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##SUCCESS##TITLE"
 msgstr "Recycling process {{type}}"
 
+msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##DESCRIPTION"
+msgstr "Email already taken"
+
+msgid "TOAST##REGISTER##EMAIL-ALREADY-TAKEN##TITLE"
+msgstr "Cannot register"
+
 msgid "TOAST##REGISTER##ERROR##DESCRIPTION"
 msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
+
+msgid "TOAST##RESEND-EMAIL##DESCRIPTION"
+msgstr "Validation mail successfully sent"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##DESCRIPTION"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##TITLE"
+msgstr "Cannot resend validation email"
+
+msgid "TOAST##RESEND-EMAIL##TITLE"
+msgstr "Success!"
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"
@@ -730,6 +874,30 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to grant access."
+
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##TITLE"
+msgstr "Error granting access"
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##DESCRIPTION"
+msgstr "The user is granted access!"
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##TITLE"
+msgstr "Access granted!"
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to decline the user."
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##TITLE"
+msgstr "Error declining user"
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##DESCRIPTION"
+msgstr "The user is successfully declined!"
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##TITLE"
+msgstr "User declined!"
+
 msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
 msgstr "An error occurred while trying to save the user."
 
@@ -739,7 +907,9 @@ msgstr "Error saving user"
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr "The user is successfully saved!"
 
-msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+#, fuzzy
+#| msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##TITLE"
 msgstr "User saved!"
 
 msgid "TYPES##COMPANY##AUTHORISATION-ORG"
@@ -751,13 +921,8 @@ msgstr "Compliance Organisation"
 msgid "TYPES##COMPANY##RECYCLER"
 msgstr "Recycler"
 
-#, fuzzy
-#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
-msgstr "Recycling Partners"
-
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Addition information"
+msgstr "Additional information"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##FILE-UPLOADS"
 msgstr "File uploads"
@@ -773,6 +938,42 @@ msgstr "Input weight"
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
+
+msgid "WIZARD##BUTTON##BACK-TO-ADD-INFO"
+msgstr "Go back to Add. Information"
+
+msgid "WIZARD##BUTTON##BACK-TO-ADDITIVES"
+msgstr "Go back to Additives"
+
+msgid "WIZARD##BUTTON##BACK-TO-EFFICIENCY"
+msgstr "Go back to Recycling Efficiency"
+
+msgid "WIZARD##BUTTON##BACK-TO-INPUT"
+msgstr "Go back to Input Fraction"
+
+msgid "WIZARD##BUTTON##BACK-TO-NEW"
+msgstr "Go back to New Report"
+
+msgid "WIZARD##BUTTON##BACK-TO-OUTPUT"
+msgstr "Go back to Output Fraction"
+
+msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
+msgstr "Go to Add. Information"
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITVES"
+msgstr "Go to Additives"
+
+msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
+msgstr "Go to Recycling Efficiency"
+
+msgid "WIZARD##BUTTON##GO-TO-FILE-REPORT"
+msgstr "Go to File Report"
+
+msgid "WIZARD##BUTTON##GO-TO-INPUT"
+msgstr "Go to Input Fraction"
+
+msgid "WIZARD##BUTTON##GO-TO-OUTPUT"
+msgstr "Go to Output Fraction"
 
 msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
 msgstr ""
@@ -836,9 +1037,6 @@ msgstr "Process chemistry"
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr "Share of battery type in input fraction"
 
-msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
-msgstr "Share of input fraction (%)"
-
 msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
 msgstr "Weight battery type in input fraction"
 
@@ -886,6 +1084,9 @@ msgstr "General information"
 #| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
 msgstr "General information"
+
+msgid "WIZARD##NO-PROCESS"
+msgstr "Please select a recycling process in step 1"
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
 msgstr "Of the element/compound"
@@ -955,7 +1156,18 @@ msgstr "Recycling Efficiency"
 
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
-msgstr "The form is invalid, make sure you have filled all the field"
+msgstr "The form is invalid, make sure you have filled all the fields"
+
+#, fuzzy
+#~| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+#~ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
+#~ msgstr "Recycling Partners"
+
+#~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+#~ msgstr "Share of input fraction (%)"
+
+#~ msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
+#~ msgstr "Email confirmed! Signup request send to admin."
 
 #, fuzzy
 #~| msgid "WIZARD##TITLES##ADDITIVES"

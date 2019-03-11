@@ -95,14 +95,24 @@ describe("Integration", () => {
 								{
 									"qualitativeDescription": {
 										"text": "qualitativeDescription text 100",
-										"asset": " qualitativeDescription asset 1",
+										"asset": {
+											"assetId": "",
+											"mimetype": "",
+											"uploadDate": "",
+											"originalname": "",
+										},
 									},
 									"_id": "5c49bbebe9fe3f0a757f0001",
 									"precedingStep": "precedingStep 1",
 									"description": "description 1",
 									"site": "site 120",
 									"methodOfProcessing": "methodOfProcessing 1",
-									"schematicOverview": "schematicOverview 1",
+									"schematicOverview": {
+										"assetId": "",
+										"mimetype": "",
+										"uploadDate": "",
+										"originalname": "",
+									},
 								},
 							],
 						},

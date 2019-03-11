@@ -1,39 +1,57 @@
-<div class="l-grid__row l-grid--with-margins u-margin-top">
-  <div class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
-    <app-vertical-menu [menuItems]="siteMenuItems$ | async"></app-vertical-menu>
-  </div>
-  <div class="l-grid__col-9-12 m-card--primary" *ngIf="additive">
-    <app-sub-section-title
-      class="u-margin-bottom"
-      [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
-    ></app-sub-section-title>
-    <div class="m-card--secondary u-margin-bottom">
-      <div class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-5-12">
-          <app-select-input
-            [label]="'WIZARD.ADDITIVES.LABELS.TYPE' | translate"
-            [control]="additive.get('data.type')"
-            [options]="codesService.elements()"
-          ></app-select-input>
-        </div>
-        <div class="l-grid__col-7-12">
-          <app-text-input
-            [label]="'WIZARD.ADDITIVES.LABELS.WEIGHT' | translate"
-            [control]="additive.get('data.weight')"
-            type="number"
-            suffix="kg"
-          ></app-text-input>
-        </div>
+<div *ngIf="additive">
+  <app-sub-section-title
+    class="u-margin-bottom"
+    [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
+  ></app-sub-section-title>
+  <div *ngFor="let additiveItem of additive.controls.data.controls; let i = index" class="m-card--secondary u-margin-bottom">
+    <div class="l-grid__row l-grid--with-margins">
+      <div class="l-grid__col-5-12">
+        <app-text-input
+          [label]="'WIZARD.ADDITIVES.LABELS.TYPE' | translate"
+          [control]="additiveItem.get('type')"
+        ></app-text-input>
+      </div>
+      <div class="l-grid__col-7-12">
+        <app-text-input
+          [label]="'WIZARD.ADDITIVES.LABELS.WEIGHT' | translate"
+          [control]="additiveItem.get('weight')"
+          type="number"
+          suffix="kg"
+        ></app-text-input>
       </div>
     </div>
-    <a
-      class="a-button--primary a-button-outline has-icon-after"
-      (click)="addAdditive()">
-        {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
-    </a>
-    <div class="u-margin-top-large">
-      <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}</button>
-      <button (click)="nextStep()" class="a-button--primary">{{ 'GENERAL.LABELS.NEXT-STEP' | translate }}</button>
+    <div class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col">
+          <button
+            class="a-button--link a-button--small"
+            (click)="removeElement(additiveItem, i)"
+          >
+            {{ 'GENERAL.BUTTONS.DELETE-ELEMENT' | translate }}
+          </button>
+        </div>
     </div>
+  </div>
+  <button
+    class="a-button--primary a-button-outline has-icon-after"
+    (click)="addAdditive()">
+      {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
+  </button>
+  <div class="u-margin-top-large">
+    <button *ngIf="stepId === 0" (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-INPUT' | translate }}</button>
+    <a
+      *ngIf="stepId > 0"
+      class="a-button--ghost u-margin-right"
+      [routerLink]="['../', form.controls[stepId - 1].value.siteRef]"
+    >
+      {{ 'GENERAL.LABELS.PREVIOUS-STEP' | translate }}
+    </a>
+    <a
+      *ngIf="stepId < (form.controls.length - 1)"
+      class="a-button--primary"
+      [routerLink]="['../', form.controls[stepId + 1].value.siteRef]"
+    >
+      {{ 'GENERAL.LABELS.NEXT-STEP' | translate }}
+    </a>
+    <button *ngIf="stepId >= (form.controls.length - 1)" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-OUTPUT' | translate }}</button>
   </div>
 </div>

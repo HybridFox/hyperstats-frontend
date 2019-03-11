@@ -1,6 +1,7 @@
 export const MODULE = 'MANAGE_USERS';
 export const OVERVIEW = 'OVERVIEW';
 export const DETAIL = 'DETAIL';
+export const REQUESTS = 'REQUESTS';
 
 export const OVERVIEW_ACTIONS = {
     FETCH: `${MODULE}/${OVERVIEW}/FETCH`,
@@ -13,7 +14,12 @@ export const DETAIL_ACTIONS = {
     UPDATE: `${MODULE}/${DETAIL}/UPDATE`,
 };
 
+export const REQUESTS_ACTIONS = {
+  FETCH_PENDING_REQUESTS: `${MODULE}/${REQUESTS}/FETCH_PENDING_REQUESTS`,
+};
+
 export const ACTIONS = {
     OVERVIEW: OVERVIEW_ACTIONS,
     DETAIL: DETAIL_ACTIONS,
+    REQUESTS: REQUESTS_ACTIONS,
 };

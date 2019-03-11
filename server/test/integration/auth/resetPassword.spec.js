@@ -43,7 +43,7 @@ describe("Integration", () => {
 			return supertest(server)
 				.post("/api/auth/request-password-reset")
 				.send({
-					email: "Invalid email",
+					emaiusernamel: "Invalid email",
 				})
 				.expect(400);
 		});
@@ -64,7 +64,7 @@ describe("Integration", () => {
 			it("Should request a password reset", () => supertest(server)
 				.post("/api/auth/request-password-reset")
 				.send({
-					email: "passwordreset@example.com",
+					username: "passwordreset@example.com",
 				})
 				.expect(200)
 				.then(({ body }) => {
@@ -100,7 +100,7 @@ describe("Integration", () => {
 			it("Should login with the new password", () => supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "passwordreset@example.com",
+					username: "passwordreset@example.com",
 					password: "newPassword",
 				})
 				.expect(200)
@@ -110,10 +110,15 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						status: {
-							type: "ACTIVATED",
+							type: "DEACTIVATED",
 						},
 						isAdmin: false,
 						email: "passwordreset@example.com",
+						username: "passwordreset@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 				})
 			);

@@ -1,5 +1,5 @@
 import { Component, forwardRef, OnInit, OnDestroy, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { FormControl, NG_VALUE_ACCESSOR, ControlValueAccessor, FormArray } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -26,7 +26,7 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
   @Input() class?: string;
   @Input() disabled = false;
   @Input() control: FormControl = new FormControl('');
-  @Input() totalWeight: number;
+  @Input() elements: any[] = [];
 
   public percentage = 0;
 
@@ -42,14 +42,8 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
     });
   }
 
-  public ngOnChanges(changes: SimpleChanges) {
-    if (changes.disabled) {
-      this.setDisabledState(this.disabled);
-    }
-
-    if (!isNil(changes.totalWeight) && changes.totalWeight.currentValue !== changes.totalWeight.previousValue) {
-      this.percentage = this.calculatePercentage(this.totalWeight, this.control.value);
-    }
+  public ngOnChanges() {
+    this.percentage = this.calculatePercentage(this.control.value);
   }
 
   public ngOnDestroy() {
@@ -79,12 +73,18 @@ export class MassInputComponent implements OnInit, OnChanges, OnDestroy, Control
 
   public registerOnTouched() {}
 
-  private calculatePercentage(total: number, mass: number) {
-    if (isNil(total) || isNil(mass)) {
+  private calculatePercentage(mass: number) {
+    const totalWeight = this.elements.reduce((currentTotal, item) =>
+      item.mass !== '' && !isNaN(parseFloat(item.mass)) ?
+      currentTotal + parseFloat(item.mass) :
+      currentTotal,
+    0);
+
+    if (isNil(totalWeight) || isNil(mass)) {
       return;
     }
 
-    const percentage = mass / total * 100;
+    const percentage = mass / totalWeight * 100;
     return parseFloat(percentage.toFixed(2));
   }
 }

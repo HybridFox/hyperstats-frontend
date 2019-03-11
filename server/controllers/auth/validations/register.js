@@ -3,6 +3,7 @@ const { schemas } = require("../../../helpers/validation");
 
 const schema = joi.object().keys({
 	email: joi.string().email().required(),
+	username: joi.string().email().required().lowercase(),
 	password: joi.string().required(),
 	firstname: joi.string().required(),
 	lastname: joi.string().required(),

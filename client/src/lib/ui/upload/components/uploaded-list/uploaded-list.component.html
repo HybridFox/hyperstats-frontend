@@ -1,0 +1,15 @@
+<ul class="m-file-upload__list">
+    <li class="l-grid__row u-margin-bottom u-margin-top">
+        <div class="l-grid__col-1-12">
+            <i class="a-icon--file"></i>
+        </div>
+        <div class="l-grid__col-6-12">
+            <div>
+                <span class="m-file-upload__list__file-name">{{ storedFile }}</span>
+            </div>
+        </div>
+        <div class="l-grid__col-5-12">
+          <button class="a-button--link u-no-padding" (click)="onRemoveFile()" >{{ 'GENERAL.LABELS.REMOVE' | translate }}</button>
+        </div>
+    </li>
+</ul>

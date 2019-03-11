@@ -8,9 +8,10 @@ import pathOr from 'ramda/es/pathOr';
 
 import { UsersActions } from '../../store/users/actions';
 import { UserSelector } from '../../store/users/selectors';
-import { UserType } from '../../store/users/types';
+import { UserType, StatusType } from '../../store/users/types';
 import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
+import { UserCompanyActions } from '../../store/companies/actions';
 
 @Component({
     templateUrl: './overview.page.html',
@@ -25,6 +26,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
     constructor(
         private usersActions: UsersActions,
+        private userCompanyActions: UserCompanyActions,
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
@@ -40,7 +42,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             )
             .subscribe((params) => {
                 const types = pathOr(0, ['types', 'length'])(params) > 0 ? params.types : null;
-                this.usersActions.fetchByTypes(types, params.admin === 'true').toPromise();
+                this.usersActions.fetchByTypes(types, params.admin === 'true', params.pending === 'true').toPromise();
+                this.userCompanyActions.fetchUserCompanies().toPromise();
             });
 
         this.filter.valueChanges
@@ -50,7 +53,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                     types: data.types.reduce((acc, type) => {
                         return type.selected ? acc.concat([type.value]) : acc;
                     }, []),
-                    admin: data.admin.selected
+                    admin: data.admin.selected,
+                    pending: data.pending.selected
                 }))
             )
             .subscribe((value) => {
@@ -58,6 +62,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                     queryParams: {
                         types: value.types,
                         admin: value.admin,
+                        pending: value.pending
                     }
                 });
             });
@@ -72,7 +77,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         const originalParams = this.route.snapshot.queryParams;
         const types = pathOr(false, ['types', 'length'])(originalParams) ?
             originalParams.types :
-            [CompanyType.R, CompanyType.RP, CompanyType.CO];
+            [CompanyType.R, CompanyType.CO];
 
         this.filter = this.createFilterForm([
             {
@@ -81,19 +86,22 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 selected: types.indexOf(CompanyType.R) !== -1
             },
             {
-                value: CompanyType.RP,
-                label: this.translateService.instant('TYPES.COMPANY.RECYCLER-PARTNER'),
-                selected: types.indexOf(CompanyType.RP) !== -1
-            },
-            {
                 value: CompanyType.CO,
                 label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
                 selected: types.indexOf(CompanyType.CO) !== -1
             }
-        ], originalParams.admin === 'true');
+        ], originalParams.admin === 'true', originalParams.pending === 'true');
+
+        this.router.navigate([], {
+          queryParams: {
+              types: types,
+              admin: originalParams.admin,
+              pending: originalParams.pending
+          },
+      });
     }
 
-    private createFilterForm(types, isAdmin) {
+    private createFilterForm(types, isAdmin, isPending) {
         return this.formBuilder.group({
             admin: this.formBuilder.group({
                 value: UserType.ADMIN,
@@ -107,6 +115,11 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                     selected: type.selected,
                 });
             })),
+            pending: this.formBuilder.group({
+                value: StatusType.PENDING,
+                label: 'Pending Approvals',
+                selected: isPending,
+            })
         });
     }
 }

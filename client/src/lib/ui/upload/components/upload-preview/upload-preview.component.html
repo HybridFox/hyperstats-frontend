@@ -1,0 +1,19 @@
+<ul class="m-file-upload__progress">
+    <li class="l-grid__row u-margin-bottom u-margin-top">
+        <div class="l-grid__col-1-12">
+            <i class="a-icon--file"></i>
+        </div>
+        <div class="l-grid__col-6-12">
+            <div>
+                <span class="m-file-upload__progress__file-name">{{ name || storedFile }}</span>
+            </div>
+            <progress [max]="100" [value]="progress || 100" class="m-file-upload__progress__bar"></progress>
+        </div>
+        <div class="l-grid__col-4-12">
+            <button class="a-button--link" (click)="onRemoveFile()" >{{ 'GENERAL.LABELS.REMOVE' | translate }}</button>
+        </div>
+        <div class="l-grid__col-2-12">
+            <span *ngIf="!storedFile" class="m-file-upload__progress__percentage">{{ progress || 100 }}%</span>
+        </div>
+    </li>
+</ul>

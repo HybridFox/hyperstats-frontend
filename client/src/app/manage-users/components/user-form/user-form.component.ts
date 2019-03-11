@@ -1,10 +1,11 @@
 import { Component, Input, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { pathOr } from 'ramda';
 import { ToastrService } from 'ngx-toastr';
 import { AuthActions } from '@store/auth';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Option } from '@ui/form-fields/components/select/select.types';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     selector: 'app-user-form',
@@ -16,8 +17,10 @@ export class UserFormComponent implements OnChanges {
 
     @Output() public save: EventEmitter<any> = new EventEmitter<any>();
     @Output() public toggleActivation: EventEmitter<boolean> = new EventEmitter<boolean>();
+    @Output() public updateRequest: EventEmitter<object> = new EventEmitter<object>();
 
     public form: FormGroup;
+    public statusTypes: any[] = STATUS_TYPES;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -37,7 +40,7 @@ export class UserFormComponent implements OnChanges {
                 firstname: this.formBuilder.control(pathOr('', ['data', 'firstname'], user)),
                 lastname: this.formBuilder.control(pathOr('', ['data', 'lastname'], user)),
                 email: this.formBuilder.control(pathOr('', ['data', 'email'], user)),
-                company: this.formBuilder.control(pathOr('', ['data', 'company'], user))
+                company: this.formBuilder.control(pathOr(user.data.company, ['data', 'company', '_id'], user), Validators.required)
             }),
             meta: this.formBuilder.group({
                 activated: this.formBuilder.control(pathOr('DEACTIVATED', ['meta', 'status', 'type'], user) === 'ACTIVATED')
@@ -47,7 +50,7 @@ export class UserFormComponent implements OnChanges {
 
     public resetPassword(): Promise<any> {
         return this.authAction.requestPasswordReset({
-            email: this.user.data.email
+            username: this.user.data.username
         }).then(() => {
             this.toastrService.success(
                 ngxExtract('TOAST.ADMIN-FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
@@ -76,7 +79,12 @@ export class UserFormComponent implements OnChanges {
                     type: formValues.meta.activated ? 'ACTIVATED' : 'DEACTIVATED'
                 }
             }
-        } ;
+        };
+    }
+
+    public handleRequest(bool) {
+        const user = this.formatUser(this.user, this.form.getRawValue());
+        this.updateRequest.emit({ bool, user });
     }
 
 }

@@ -12,11 +12,14 @@ module.exports = (router) => {
 	 *     type: object
 	 *     required:
 	 *       - email
+	 *       - username
 	 *       - password
 	 *       - firstname
 	 *       - lastname
 	 *     properties:
 	 *       email:
+	 *         type: string
+	 *       username:
 	 *         type: string
 	 *       password:
 	 *         type: string
@@ -27,16 +30,18 @@ module.exports = (router) => {
 	 *   UserLoginBody:
 	 *     type: object
 	 *     required:
-	 *       - email
+	 *       - username
 	 *       - password
 	 *     properties:
-	 *       email:
+	 *       username:
 	 *         type: string
 	 *       password:
 	 *         type: string
 	 *   UserLoginResponse:
 	 *     type: object
 	 *     properties:
+	 *       username:
+	 *         type: string
 	 *       email:
 	 *         type: string
 	 *       firstname:
@@ -53,7 +58,7 @@ module.exports = (router) => {
 	 *   ResetRequestBody:
 	 *     type: object
 	 *     properties:
-	 *       email:
+	 *       username:
 	 *         type: string
 	 */
 
@@ -128,6 +133,7 @@ module.exports = (router) => {
 	 */
 	router.route("/auth/register").post(
 		dataMiddleware.copy,
+		authMiddleware.setUserName,
 		dataMiddleware.validate("body", authValidations.register, Errors.ObjectValidationFailed),
 		authController.register
 	);
@@ -204,5 +210,26 @@ module.exports = (router) => {
 		dataMiddleware.copy,
 		dataMiddleware.validate("body", authValidations.resetPassword, Errors.ObjectValidationFailed),
 		authController.resetPassword
+	);
+
+	/**
+	 * @swagger
+	 * /api/auth/resend-validate-mail:
+	 *   post:
+	 *     description: Request resend validation mail
+	 *     tags:
+	 *       - auth
+	 *     produces:
+	 *       - application/json
+	 *     parameters:
+	 *       - token
+	 *     responses:
+	 *       200:
+	 *         description: Success
+	 */
+	router.route("/auth/resend-validate-mail").post(
+		dataMiddleware.copy,
+		dataMiddleware.validate("body", authValidations.resendValidateMail, Errors.ObjectValidationFailed),
+		authController.resendValidateMail
 	);
 };

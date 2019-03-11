@@ -4,6 +4,7 @@ const { path: rPath } = require("ramda");
 const UserModel = require("../../../models/user");
 const mailer = require("../../../helpers/mail");
 const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../../helpers/errorHandler");
 
 // Send confirm email
 const registerMail = (user) => mailer({
@@ -35,10 +36,10 @@ const processUser = async(user) => {
  * @returns {Promise} Saved user data
  */
 module.exports = async(body) => {
-	const user = await UserModel.findOne({ "data.email": body.email, "meta.deleted": false }).exec();
+	const user = await UserModel.findOne({ "data.username": body.username, "meta.deleted": false }).exec();
 
 	if (rPath(["meta", "validation", "isValidated"], user)) {
-		throw new ResponseError({ type: 409, msg: "Email already taken" });
+		throw errors.EmailAlreadyTaken;
 	} else if (rPath(["meta", "validation", "isValidated"], user) === false) { // When user is registered but not validated yet => sent new email
 		return processUser(user);
 	}
@@ -46,7 +47,7 @@ module.exports = async(body) => {
 	const newUser = new UserModel({
 		data: {
 			...body,
-			company: "5c485d0029abc50032947f91",
+			company: null,
 		},
 		meta: {
 			validation: {
