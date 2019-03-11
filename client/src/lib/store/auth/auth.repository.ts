@@ -56,6 +56,15 @@ export class AuthRepository {
       });
   }
 
+  public resendValidateMail(user) {
+    const url = this.apiConfig.baseUrl('/auth/resend-validate-mail');
+
+    return this.http
+      .post(url, {
+        user
+      });
+  }
+
   public register({ firstname, lastname, email, password }: RegisterInterface): Observable<any> {
     const url = this.apiConfig.baseUrl('/auth/register');
 

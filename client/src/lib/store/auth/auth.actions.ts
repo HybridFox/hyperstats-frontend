@@ -127,6 +127,14 @@ export class AuthActions {
       .toPromise();
   }
 
+  public resendValidateMail(user): Promise<any>  {
+    this.handler.dispatchStart(ACTIONS.REGISTER_USER);
+
+    return this.authRepository
+      .resendValidateMail(user)
+      .toPromise();
+  }
+
   public logout(): Observable<any> {
     return this.authRepository
       .logout()

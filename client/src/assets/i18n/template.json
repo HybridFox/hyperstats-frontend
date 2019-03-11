@@ -126,6 +126,15 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			},
+			"NOCOMPANY": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"NOTVALIDATED": {
+				"DESCRIPTION": "",
+				"RESEND-EMAIL": "",
+				"TITLE": ""
+			},
 			"PENDING": {
 				"DESCRIPTION": "",
 				"TITLE": ""
@@ -205,6 +214,7 @@
 			"VERIFY-EMAIL": ""
 		},
 		"REPORTS": {
+			"DESCRIPTION": "",
 			"DRAFT": "",
 			"FILED": "",
 			"NOPROCESSREPORTS": "",
@@ -408,6 +418,14 @@
 				"DESCRIPTION": "",
 				"TITLE": ""
 			}
+		},
+		"RESEND-EMAIL": {
+			"DESCRIPTION": "",
+			"ERROR": {
+				"DESCRIPTION": "",
+				"TITLE": ""
+			},
+			"TITLE": ""
 		},
 		"RESET-PASSWORD": {
 			"ERROR": {

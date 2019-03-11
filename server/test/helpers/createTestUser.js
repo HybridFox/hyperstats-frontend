@@ -40,9 +40,6 @@ module.exports = async({
 			company: newCompany,
 		},
 		meta: {
-			status: {
-				type: "PENDING",
-			},
 			validation: {
 				isValidated,
 				companyName,

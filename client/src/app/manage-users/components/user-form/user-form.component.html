@@ -49,6 +49,7 @@
         *ngIf="user?.meta?.status?.type === statusTypes[2].type"
         class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right u-margin-top-large"
         (click)="handleRequest(true)"
+        [disabled]="!form?.valid"
     >
         {{ 'GENERAL.LABELS.ACCEPT' | translate }}
     </button>
@@ -57,6 +58,7 @@
         *ngIf="user?.meta?.status?.type === statusTypes[2].type"
         class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right u-margin-top-large"
         (click)="handleRequest(false)"
+        [disabled]="!form?.valid"
     >
         {{ 'GENERAL.LABELS.DECLINE' | translate }}
     </button>

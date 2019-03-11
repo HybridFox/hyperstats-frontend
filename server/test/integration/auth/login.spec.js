@@ -39,7 +39,11 @@ describe("Integration", () => {
 						username: "validuser@example.com",
 						email: "validuser@example.com",
 						status: {
-							type: "PENDING",
+							type: "DEACTIVATED",
+						},
+						validation: {
+							isValidated: true,
+							token: "someToken",
 						},
 					});
 					expect(body.company).to.be.an("object");

@@ -46,11 +46,15 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						status: {
-							type: "PENDING",
+							type: "DEACTIVATED",
 						},
 						isAdmin: false,
 						email: "validuser@example.com",
 						username: "validuser@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 				});
 

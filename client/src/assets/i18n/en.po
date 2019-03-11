@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-08T10:55:02.383Z\n"
+"POT-Creation-Date: 2019-03-11T07:33:45.562Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -364,6 +364,22 @@ msgstr "Your account is deactivated. Contact an administrator if necessary."
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
 msgstr "Account Deactivated"
 
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
+msgstr ""
+"You don’t have a company assigned. Contact the administrator for more info. "
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
+msgstr "You don’t have a company assigned."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##DESCRIPTION"
+msgstr "Please validate your email address."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##RESEND-EMAIL"
+msgstr "Resend validation mail"
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##TITLE"
+msgstr "Email address not validated."
+
 msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
 msgstr ""
 "Your account needs to be activated by an admin before you can enter. Your "
@@ -521,6 +537,12 @@ msgstr "Registering"
 
 msgid "PAGE##REGISTER##VERIFY-EMAIL"
 msgstr "An email has been sent to you"
+
+msgid "PAGE##REPORTS##DESCRIPTION"
+msgstr ""
+"Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize "
+"authentic create enable dynamic podcasting synergies architectures. Redefine "
+"authentic methodologies."
 
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
@@ -827,6 +849,18 @@ msgstr "Make sure all fields are filled in"
 
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
+
+msgid "TOAST##RESEND-EMAIL##DESCRIPTION"
+msgstr "Validation mail successfully sent"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##DESCRIPTION"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##TITLE"
+msgstr "Cannot resend validation email"
+
+msgid "TOAST##RESEND-EMAIL##TITLE"
+msgstr "Success!"
 
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"

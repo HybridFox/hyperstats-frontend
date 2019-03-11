@@ -15,7 +15,6 @@
           }"
         >
           <a [routerLink]="(currentId !== 'new') ? step.route : '#'">
-            <pre>{{ reportFormService.getFormMetaData()?.get(step.key)?.value }}</pre>
             <div *ngIf="(step.key && reportFormService.getFormMetaData()?.get(step.key)?.value) || (!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0); else itemValid" class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
