@@ -55,7 +55,11 @@ describe("Integration", () => {
 					password: "newPassword",
 					token: "invalid token",
 				})
-				.expect(400);
+				.expect(404)
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(body.err).to.equal("User not found.");
+				});
 		});
 
 		const resetPasswordTest = () => {

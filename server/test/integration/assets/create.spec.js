@@ -59,7 +59,7 @@ describe("Integration", () => {
 					.expect(400)
 					.then(({ body }) => {
 						expect(body).to.be.an("object");
-						expect(body.err[0].err).to.equal('"file" is required');
+						expect(body.err).to.equal('"file" is required.');
 					});
 			});
 

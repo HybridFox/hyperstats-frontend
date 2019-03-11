@@ -16,7 +16,9 @@ const storage = gridfs({
 const upload = multer({ storage: storage });
 
 module.exports = [upload.single("file"), (req, res, next) => {
-	next(errors.FileIsRequired);
+	if (!req.file) {
+		next(errors.FileIsRequired);
+	}
 
 	return res.status(201).json({
 		assetId: req.file.id,
