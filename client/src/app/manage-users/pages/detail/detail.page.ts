@@ -5,13 +5,13 @@ import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
-import { UsersActions } from '../../store/users/actions';
-import { UserSelector } from '../../store/users/selectors';
-import { UserCompanyActions } from '../../store/companies/actions';
 import { UserCompanySelector } from '../../store/companies/selectors';
 import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { ToastrService } from 'ngx-toastr';
 import { Option } from '@ui/form-fields/components/select/select.types';
+import { UserCompanyActions } from 'src/app/manage-users/store/companies/actions';
+import { UserSelector, UsersActions } from 'src/app/manage-users/store';
+import { STATUS_TYPES } from 'src/lib/constants';
 
 @Component({
     templateUrl: './detail.page.html',
@@ -23,6 +23,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     @select(['entities', 'companies']) public companies$: Observable<object>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public statusTypes: any[] = STATUS_TYPES;
 
     constructor(
         private route: ActivatedRoute,
@@ -52,11 +53,37 @@ export class DetailPageComponent implements OnInit, OnDestroy {
         this.usersActions.updateUser(user).toPromise()
             .then(() => this.toastrService.success(
                 ngxExtract('TOAST.USER-ADMIN-SAVE.SUCCESS.DESCRIPTION') as string,
-                ngxExtract('TOAST.USER-ADMIN-SAVEF.SUCCESS.TITLE') as string
+                ngxExtract('TOAST.USER-ADMIN-SAVE.SUCCESS.TITLE') as string
             ))
             .catch(() => this.toastrService.error(
                 ngxExtract('TOAST.USER-ADMIN-SAVE.ERROR.DESCRIPTION') as string,
                 ngxExtract('TOAST.USER-ADMIN-SAVE.ERROR.TITLE') as string
             ));
+    }
+
+    public updateRequest(event) {
+      if (event.bool) {
+        this.companies$.subscribe((company) => event.user.data.company = company[event.user.data.company]);
+        this.usersActions.updateUser(event.user).toPromise()
+            .then(() => this.toastrService.success(
+                ngxExtract('TOAST.USER-ADMIN-ACCEPT.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.USER-ADMIN-ACCEPT.SUCCESS.TITLE') as string
+            ))
+            .catch(() => this.toastrService.error(
+                ngxExtract('TOAST.USER-ADMIN-ACCEPT.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.USER-ADMIN-ACCEPT.ERROR.TITLE') as string
+            ));
+      } else {
+        event.user.meta.status.type = 'statusTypes[1].type';
+        this.usersActions.updateUser(event.user).toPromise()
+            .then(() => this.toastrService.success(
+                ngxExtract('TOAST.USER-ADMIN-DECLINE.SUCCESS.DESCRIPTION') as string,
+                ngxExtract('TOAST.USER-ADMIN-DECLINE.SUCCESS.TITLE') as string
+            ))
+            .catch(() => this.toastrService.error(
+                ngxExtract('TOAST.USER-ADMIN-DECLINE.ERROR.DESCRIPTION') as string,
+                ngxExtract('TOAST.USER-ADMIN-DECLINE.ERROR.TITLE') as string
+            ));
+      }
     }
 }

@@ -33,7 +33,7 @@ describe("Integration", () => {
 			await supertest(server)
 				.post("/api/auth/login")
 				.send({
-					email: "validuser@example.com",
+					username: "validuser@example.com",
 					password: "validPassword",
 				})
 				.expect("Content-Type", /json/)
@@ -51,10 +51,15 @@ describe("Integration", () => {
 						firstname: "__firstname_test-user__remove_identifier__",
 						lastname: "Smith",
 						status: {
-							type: "ACTIVATED",
+							type: "DEACTIVATED",
 						},
 						isAdmin: false,
 						email: "validuser@example.com",
+						username: "validuser@example.com",
+						validation: {
+							isValidated: true,
+							token: "someToken",
+						},
 					});
 					expect(body.company).to.be.an("object");
 					expect(body.company.data).to.be.an("object");

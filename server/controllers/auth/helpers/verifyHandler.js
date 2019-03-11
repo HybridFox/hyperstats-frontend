@@ -37,6 +37,7 @@ module.exports = async(token) => {
 		throw new Error({ type: 400, msg: "Invalid token!" });
 	}
 
+	user.meta.status.type = "PENDING";
 	user.meta.validation.isValidated = true;
 
 	await Promise.all([

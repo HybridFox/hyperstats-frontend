@@ -21,7 +21,7 @@ export class ForgotPasswordPageComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.resetPasswordForm = new FormGroup({
-            email: new FormControl('', [Validators.required, Validators.email]),
+            username: new FormControl('', [Validators.required, Validators.email]),
         });
     }
 

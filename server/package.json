@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-boilerplate",
+  "name": "rare_api_nodejs",
   "version": "1.0.0",
-  "description": "Boilerplate for consistent project structures and maintenance.",
+  "description": "A nodejs api built for the Eucobat R.A.R.E app, based on the SHD nodejs boilerplate.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

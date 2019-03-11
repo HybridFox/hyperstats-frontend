@@ -29,7 +29,7 @@ describe("Integration", () => {
 					company: companyId,
 				});
 
-				cookie = (await loginUser(server, { email: "test_company_user@example.com" })).cookie;
+				cookie = (await loginUser(server, { username: "test_company_user@example.com" })).cookie;
 				report = await reportTestHelper.create(companyId, { data: NEW_REPORT });
 			});
 

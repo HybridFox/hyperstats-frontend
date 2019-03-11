@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
-"PO-Revision-Date: 2019-03-06T13:12:15.217Z\n"
+"POT-Creation-Date: 2019-03-08T15:24:30.155Z\n"
+"PO-Revision-Date: 2019-03-08T15:24:30.156Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -45,6 +45,9 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##LABELS##ACCEPT"
 msgstr ""
 
 msgid "GENERAL##LABELS##ACTIVATED"
@@ -105,6 +108,9 @@ msgid "GENERAL##LABELS##COUNTRY"
 msgstr ""
 
 msgid "GENERAL##LABELS##DATE"
+msgstr ""
+
+msgid "GENERAL##LABELS##DECLINE"
 msgstr ""
 
 msgid "GENERAL##LABELS##DELETE-STEP"
@@ -275,6 +281,9 @@ msgstr ""
 msgid "GENERAL##MENU##REPORTS"
 msgstr ""
 
+msgid "GENERAL##MENU##SIGNUP-REQUESTS"
+msgstr ""
+
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr ""
 
@@ -309,6 +318,27 @@ msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##RESEND-EMAIL"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##TITLE"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##ACCESS-DENIED##PENDING##TITLE"
 msgstr ""
 
 msgid "PAGE##ACCESS-DENIED##TITLE"
@@ -453,6 +483,12 @@ msgid "PAGE##RESET-PASSWORD##ISRESET"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
+msgstr ""
+
+msgid "PAGE##SIGNUP-REQUESTS##NO-REQUESTS"
+msgstr ""
+
+msgid "PAGE##SIGNUP-REQUESTS##TITLE"
 msgstr ""
 
 msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
@@ -695,6 +731,18 @@ msgstr ""
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr ""
 
+msgid "TOAST##RESEND-EMAIL##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##RESEND-EMAIL##TITLE"
+msgstr ""
+
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -707,6 +755,30 @@ msgstr ""
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##TITLE"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##TITLE"
+msgstr ""
+
 msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -716,7 +788,7 @@ msgstr ""
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr ""
 
-msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##TITLE"
 msgstr ""
 
 msgid "TYPES##COMPANY##AUTHORISATION-ORG"
@@ -726,9 +798,6 @@ msgid "TYPES##COMPANY##COMPLIANCE-ORG"
 msgstr ""
 
 msgid "TYPES##COMPANY##RECYCLER"
-msgstr ""
-
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 msgstr ""
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
@@ -747,6 +816,42 @@ msgid "WIZARD##ADDITIVES##LABELS##WEIGHT"
 msgstr ""
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-ADD-INFO"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-ADDITIVES"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-INPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-NEW"
+msgstr ""
+
+msgid "WIZARD##BUTTON##BACK-TO-OUTPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITVES"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-INPUT"
+msgstr ""
+
+msgid "WIZARD##BUTTON##GO-TO-OUTPUT"
 msgstr ""
 
 msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"

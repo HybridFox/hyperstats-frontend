@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-06T13:12:15.217Z\n"
+"POT-Creation-Date: 2019-03-08T15:24:30.155Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -49,6 +49,9 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
+
+msgid "GENERAL##LABELS##ACCEPT"
+msgstr "Accept"
 
 msgid "GENERAL##LABELS##ACTIVATED"
 msgstr "Active"
@@ -113,6 +116,9 @@ msgstr "Country"
 
 msgid "GENERAL##LABELS##DATE"
 msgstr "Date"
+
+msgid "GENERAL##LABELS##DECLINE"
+msgstr "Decline"
 
 msgid "GENERAL##LABELS##DELETE-STEP"
 msgstr "Delete step"
@@ -288,6 +294,9 @@ msgstr "Register"
 msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
 
+msgid "GENERAL##MENU##SIGNUP-REQUESTS"
+msgstr "Signup Requests"
+
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
 
@@ -350,15 +359,37 @@ msgid "PAGE##ABOUT##TITLE"
 msgstr "About"
 
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
+msgstr "Your account is deactivated. Contact an administrator if necessary."
+
+msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgstr "Account Deactivated"
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
+msgstr ""
+"You don’t have a company assigned. Contact the administrator for more info. "
+
+msgid "PAGE##ACCESS-DENIED##NOCOMPANY##TITLE"
+msgstr "You don’t have a company assigned."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##DESCRIPTION"
+msgstr "Please validate your email address."
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##RESEND-EMAIL"
+msgstr "Resend validation mail"
+
+msgid "PAGE##ACCESS-DENIED##NOTVALIDATED##TITLE"
+msgstr "Email address not validated."
+
+msgid "PAGE##ACCESS-DENIED##PENDING##DESCRIPTION"
 msgstr ""
 "Your account needs to be activated by an admin before you can enter. Your "
 "signup request is being reviewed."
 
-msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
+msgid "PAGE##ACCESS-DENIED##PENDING##TITLE"
 msgstr "Admin is reviewing your signup request."
 
 msgid "PAGE##ACCESS-DENIED##TITLE"
-msgstr "Access denied"
+msgstr "Access Denied"
 
 msgid "PAGE##ADMIN##FILTERS"
 msgstr "Filters:"
@@ -529,6 +560,12 @@ msgstr "Your password has been reset! Please login to continiou"
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
+
+msgid "PAGE##SIGNUP-REQUESTS##NO-REQUESTS"
+msgstr "No signup requests"
+
+msgid "PAGE##SIGNUP-REQUESTS##TITLE"
+msgstr "Signup Requests"
 
 msgid "PAGE##TERMS-AND-CONDITIONS##CONTENT"
 msgstr ""
@@ -807,6 +844,18 @@ msgstr "Make sure all fields are filled in"
 msgid "TOAST##REGISTER##ERROR##TITLE"
 msgstr "Cannot register"
 
+msgid "TOAST##RESEND-EMAIL##DESCRIPTION"
+msgstr "Validation mail successfully sent"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##DESCRIPTION"
+msgstr "Something went wrong"
+
+msgid "TOAST##RESEND-EMAIL##ERROR##TITLE"
+msgstr "Cannot resend validation email"
+
+msgid "TOAST##RESEND-EMAIL##TITLE"
+msgstr "Success!"
+
 msgid "TOAST##RESET-PASSWORD##ERROR##DESCRIPTION"
 msgstr "Could not reset your password, try again later"
 
@@ -819,6 +868,30 @@ msgstr "You can now use your new password to login"
 msgid "TOAST##RESET-PASSWORD##SUCCESS##TITLE"
 msgstr "Success!"
 
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to grant access."
+
+msgid "TOAST##USER-ADMIN-ACCEPT##ERROR##TITLE"
+msgstr "Error granting access"
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##DESCRIPTION"
+msgstr "The user is granted access!"
+
+msgid "TOAST##USER-ADMIN-ACCEPT##SUCCESS##TITLE"
+msgstr "Access granted!"
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##DESCRIPTION"
+msgstr "An error occurred while trying to decline the user."
+
+msgid "TOAST##USER-ADMIN-DECLINE##ERROR##TITLE"
+msgstr "Error declining user"
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##DESCRIPTION"
+msgstr "The user is successfully declined!"
+
+msgid "TOAST##USER-ADMIN-DECLINE##SUCCESS##TITLE"
+msgstr "User declined!"
+
 msgid "TOAST##USER-ADMIN-SAVE##ERROR##DESCRIPTION"
 msgstr "An error occurred while trying to save the user."
 
@@ -828,7 +901,9 @@ msgstr "Error saving user"
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr "The user is successfully saved!"
 
-msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+#, fuzzy
+#| msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
+msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##TITLE"
 msgstr "User saved!"
 
 msgid "TYPES##COMPANY##AUTHORISATION-ORG"
@@ -839,11 +914,6 @@ msgstr "Compliance Organisation"
 
 msgid "TYPES##COMPANY##RECYCLER"
 msgstr "Recycler"
-
-#, fuzzy
-#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
-msgid "TYPES##COMPANY##RECYCLER-PARTNER"
-msgstr "Recycling Partners"
 
 msgid "WIZARD##ADDITIONAL-INFORMATION##TITLES##ADDITIONAL-INFORMATION"
 msgstr "Additional information"
@@ -862,6 +932,42 @@ msgstr "Input weight"
 
 msgid "WIZARD##ADDITIVES##TITLES##OVERVIEW"
 msgstr "Overview additives"
+
+msgid "WIZARD##BUTTON##BACK-TO-ADD-INFO"
+msgstr "Go back to Add. Information"
+
+msgid "WIZARD##BUTTON##BACK-TO-ADDITIVES"
+msgstr "Go back to Additives"
+
+msgid "WIZARD##BUTTON##BACK-TO-EFFICIENCY"
+msgstr "Go back to Recycling Efficiency"
+
+msgid "WIZARD##BUTTON##BACK-TO-INPUT"
+msgstr "Go back to Input Fraction"
+
+msgid "WIZARD##BUTTON##BACK-TO-NEW"
+msgstr "Go back to New Report"
+
+msgid "WIZARD##BUTTON##BACK-TO-OUTPUT"
+msgstr "Go back to Output Fraction"
+
+msgid "WIZARD##BUTTON##GO-TO-ADD-INFO"
+msgstr "Go to Add. Information"
+
+msgid "WIZARD##BUTTON##GO-TO-ADDITVES"
+msgstr "Go to Additives"
+
+msgid "WIZARD##BUTTON##GO-TO-EFFICIENCY"
+msgstr "Go to Recycling Efficiency"
+
+msgid "WIZARD##BUTTON##GO-TO-FILE-REPORT"
+msgstr "Go to File Report"
+
+msgid "WIZARD##BUTTON##GO-TO-INPUT"
+msgstr "Go to Input Fraction"
+
+msgid "WIZARD##BUTTON##GO-TO-OUTPUT"
+msgstr "Go to Output Fraction"
 
 msgid "WIZARD##FILE-REPORT##DESCRIPTION##FILE-REPORT"
 msgstr ""
@@ -1045,6 +1151,11 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#, fuzzy
+#~| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+#~ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
+#~ msgstr "Recycling Partners"
 
 #~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 #~ msgstr "Share of input fraction (%)"

@@ -3,7 +3,7 @@ const { schemas } = require("../../../helpers/validation");
 
 const schema = Joi.object().keys({
 	status: Joi.object().keys({
-		type: Joi.string().valid(["ACTIVATED", "DEACTIVATED"]).required(),
+		type: Joi.string().valid(["ACTIVATED", "DEACTIVATED", "PENDING"]).required(),
 	}).required(),
 });
 

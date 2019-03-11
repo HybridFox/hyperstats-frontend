@@ -10,6 +10,10 @@ const UserSchema = mongoose.Schema({
 			type: String,
 			required: true,
 		},
+		username: {
+			type: String,
+			required: true,
+		},
 		password: {
 			type: String,
 			required: true,
@@ -45,8 +49,8 @@ const UserSchema = mongoose.Schema({
 		status: {
 			type: {
 				type: String,
-				enum: ["ACTIVATED", "DEACTIVATED"],
-				default: "ACTIVATED",
+				enum: ["ACTIVATED", "DEACTIVATED", "PENDING"],
+				default: "DEACTIVATED",
 			},
 		},
 		isAdmin: {

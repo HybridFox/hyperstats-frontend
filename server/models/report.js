@@ -174,6 +174,40 @@ const ReportSchema = mongoose.Schema({
 			enum: [REPORT_STATUS.SAVED, REPORT_STATUS.FILED],
 			default: REPORT_STATUS.SAVED,
 		},
+		state: {
+			isPristine: {
+				information: {
+					type: Boolean,
+					required: true,
+					default: true,
+				},
+				inputFraction: {
+					type: Boolean,
+					required: true,
+					default: true,
+				},
+				additives: {
+					type: Boolean,
+					required: true,
+					default: true,
+				},
+				outputFraction: {
+					type: Boolean,
+					required: true,
+					default: true,
+				},
+				recyclingEfficiency: {
+					type: Boolean,
+					required: true,
+					default: true,
+				},
+				additionalInformation: {
+					type: Boolean,
+					required: true,
+					default: true,
+				},
+			},
+		},
 	},
 });
 

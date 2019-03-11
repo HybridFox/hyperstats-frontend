@@ -15,7 +15,7 @@ export interface ProfileInterface {
 }
 
 export interface LoginInterface {
-    email: string;
+    username: string;
     password: string;
 }
 
@@ -34,5 +34,5 @@ export interface ResetPasswordInterface {
 }
 
 export interface RequestPasswordResetInterface {
-    email: string;
+    username: string;
 }

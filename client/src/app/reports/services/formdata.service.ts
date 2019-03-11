@@ -6,6 +6,7 @@ import {
   Report,
   Information,
   InputFraction,
+  ExcessMaterialReceived,
   OutputFraction,
   AdditionalElement,
   RecyclingEfficiency,
@@ -58,12 +59,26 @@ export class FormDataService {
         weightInput: [pathOr(null, ['data', 'weightInput'])(inputFraction), Validators.required],
         shareOfBatteryType: [pathOr(null, ['data', 'shareOfBatteryType'])(inputFraction), Validators.required],
         weightBatteryType: [pathOr(null, ['data', 'weightBatteryType'])(inputFraction), Validators.required],
+        excessMaterialReceived: this.getExcessMaterialReceivedFormArray(pathOr([{}], ['data', 'excessMaterialReceived'])(inputFraction)),
         elements: this.getInputFractionElementsFormArray(pathOr([{}], ['data', 'elements'])(inputFraction)),
         descriptionOfMethodologyShare: [pathOr('', ['data', 'descriptionOfMethodologyShare'])(inputFraction), Validators.required],
         descriptionOfMethodologyChemicalComposition: [pathOr('', ['data', 'descriptionOfMethodologyChemicalComposition'])(inputFraction), Validators.required], // tslint:disable-line
         massOfExternalJacket: [pathOr(null, ['data', 'massOfExternalJacket'])(inputFraction), Validators.required],
         massOfOuterCasings: [pathOr(null, ['data', 'massOfOuterCasings'])(inputFraction), Validators.required],
       })
+    });
+  }
+
+  public getExcessMaterialReceivedFormArray(excessMaterialReceived: ExcessMaterialReceived[]): FormArray {
+    return this.formBuilder.array(excessMaterialReceived.map((excessItem) => {
+      return this.getExcessMaterialReceivedFormGroup(excessItem);
+    }));
+  }
+
+  public getExcessMaterialReceivedFormGroup(excessItem: ExcessMaterialReceived): FormGroup {
+    return this.formBuilder.group({
+      impurities: [pathOr(null, ['impurities'])(excessItem), Validators.required],
+      packagingMaterial: [pathOr(null, ['packagingMaterial'])(excessItem), Validators.required],
     });
   }
 
