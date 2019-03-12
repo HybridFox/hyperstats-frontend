@@ -175,7 +175,7 @@ This project is a Studio Hyperdrive team effort.
 * **Client**: Eucobat
 * **Start**: 18/12/2018
 * **Jira Board**: https://district01.atlassian.net/secure/RapidBoard.jspa?projectKey=RE&rapidView=73
-* **Bitbucket Repository**: https://district01.atlassian.net/secure/RapidBoard.jspa?rapidView=74&view=planning.nodetail
+* **Bitbucket Repository**: https://bitbucket.org/district01/rare_app_nodejs
 * **Design**: https://projects.invisionapp.com/share/S9PS1QNE243#/screens/339060362
 
 ### Team ###
