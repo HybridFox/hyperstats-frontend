@@ -20,7 +20,7 @@
         ></app-text-input>
       </div>
     </div>
-    <div class="l-grid__row l-grid--with-margins">
+    <div *ngIf="!form.disabled" class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col">
           <button
             class="a-button--link a-button--small"
@@ -32,6 +32,7 @@
     </div>
   </div>
   <button
+    *ngIf="!form.disabled"
     class="a-button--primary a-button-outline has-icon-after"
     (click)="addAdditive()">
       {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
