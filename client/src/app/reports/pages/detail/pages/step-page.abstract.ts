@@ -71,13 +71,19 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
       }
     };
 
-    this.reportActions.draft(data)
-        .toPromise()
-        .then(() => {
-          if (this.options.nextStep) {
-            this.router.navigate(this.options.nextStep, { relativeTo: this.activatedRoute });
-          }
-        })
-        .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
+    if (!this.formData.getFormData().disabled) {
+      this.reportActions.draft(data)
+      .toPromise()
+      .then(() => {
+        if (this.options.nextStep) {
+          this.router.navigate(this.options.nextStep, { relativeTo: this.activatedRoute });
+        }
+      })
+      .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
+    } else {
+      if (this.options.nextStep) {
+        this.router.navigate(this.options.nextStep, { relativeTo: this.activatedRoute });
+      }
+    }
   }
 }

@@ -214,15 +214,18 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
-	 * /api/auth/resend-validate-mail:
-	 *   post:
-	 *     description: Request resend validation mail
+	 * /api/auth/resend-validate-mail?{token}:
+	 *   get:
+	 *     description: Send a new validation mail to the user
 	 *     tags:
 	 *       - auth
 	 *     produces:
 	 *       - application/json
 	 *     parameters:
-	 *       - token
+	 *       - in: path
+	 *         name: token
+	 *         required: true
+	 *         type: string
 	 *     responses:
 	 *       200:
 	 *         description: Success
