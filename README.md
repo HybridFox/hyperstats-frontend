@@ -51,10 +51,10 @@ NOTE: Sometimes the front-end application doens't compiles, to fix this you need
 * **client/**: Contains the front-end
     * **e2e/**: Contains the end-to-end tests
     * **scripts/**: Contains translation scripts
-    * **src/**: Contains the angular setup.
+    * **src/**: Contains the angular setup
         * **app/**: Contains app code
-        * **assets/**: Contains the assets.
-        * **enviroments/**: Contains the enviroments.
+        * **assets/**: Contains the assets
+        * **enviroments/**: Contains the enviroments
         * **lib/**: Contains shared files
 * **server/**: Contains the back-end
     * **config/**: Contains the back-end config
@@ -62,7 +62,7 @@ NOTE: Sometimes the front-end application doens't compiles, to fix this you need
     * **data/**: Contains data
     * **fixtures/**: Contains fixtures
     * **helpers/**: Contains helpers
-    * **middelware/**: Contains middelware
+    * **middleware/**: Contains middleware
     * **models/**: Contains models
     * **routes/**: Contains routes
     * **test/**: Contains tests
@@ -120,12 +120,12 @@ We use tslint for staying consistent in code-style. Linting can be done by runni
 
 We follow these naming conventions:
 
-* **master**: Production-ready code.
-* **develop**: Development code.
-* **release/***: Snapshot of a release.
-* **feature/***: For developing new features.
-* **bugfix/***: For bugs that are logged during testing.
-* **hotfix/***: Only for hotfixing critical bugs from the `master`-branch.
+* **master**: Production-ready code
+* **develop**: Development code
+* **release/***: Snapshot of a release
+* **feature/***: For developing new features
+* **bugfix/***: For bugs that are logged during testing
+* **hotfix/***: Only for hotfixing critical bugs from the `master`-branch
 
 ---
 ## Environments ##
