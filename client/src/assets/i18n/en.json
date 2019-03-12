@@ -333,6 +333,10 @@
             },
             "SUCCESS": {
                 "TITLE": "Logged in!"
+            },
+            "UNAUTHORIZED": {
+                "DESCRIPTION": "Your account is deleted. Contact an administrator. ",
+                "TITLE": "Cannot login"
             }
         },
         "PROFILE": {
@@ -553,8 +557,7 @@
                 "REPORTING-YEAR": "Reporting year"
             },
             "TITLES": {
-                "GENERAL-INFORMATION": "General information",
-                "INPUT-FRACTIONS": "General information"
+                "GENERAL-INFORMATION": "General information"
             }
         },
         "NO-PROCESS": "Please select a recycling process in step 1",

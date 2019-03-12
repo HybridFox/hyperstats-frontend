@@ -8,7 +8,11 @@ const ResponseError = require("../../../helpers/errors/responseError");
  * @returns {Promise} User
  */
 module.exports = async(username, password) => {
-	const user = await UserModel.findOne({ "data.username": username, "meta.deleted": false }).exec();
+	const user = await UserModel.findOne({ "data.username": username }).exec();
+
+	if (user.meta.deleted) {
+		throw new ResponseError({ type: 401, msg: "Not authorized." });
+	}
 
 	if (!user) {
 		throw new ResponseError({ type: 404, msg: "User not found" });

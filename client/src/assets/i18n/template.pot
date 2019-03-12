@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-11T07:33:45.562Z\n"
-"PO-Revision-Date: 2019-03-11T07:33:45.562Z\n"
+"POT-Creation-Date: 2019-03-12T14:30:06.516Z\n"
+"PO-Revision-Date: 2019-03-12T14:30:06.516Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -626,6 +626,12 @@ msgstr ""
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##LOGIN##UNAUTHORIZED##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##UNAUTHORIZED##TITLE"
+msgstr ""
+
 msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
 msgstr ""
 
@@ -939,9 +945,6 @@ msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr ""
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
-msgstr ""
-
-msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
 msgstr ""
 
 msgid "WIZARD##NO-PROCESS"

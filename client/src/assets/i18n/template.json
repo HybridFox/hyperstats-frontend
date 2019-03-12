@@ -333,6 +333,10 @@
 			},
 			"SUCCESS": {
 				"TITLE": ""
+			},
+			"UNAUTHORIZED": {
+				"DESCRIPTION": "",
+				"TITLE": ""
 			}
 		},
 		"PROFILE": {
@@ -553,8 +557,7 @@
 				"REPORTING-YEAR": ""
 			},
 			"TITLES": {
-				"GENERAL-INFORMATION": "",
-				"INPUT-FRACTIONS": ""
+				"GENERAL-INFORMATION": ""
 			}
 		},
 		"NO-PROCESS": "",
