@@ -64,7 +64,7 @@
     </button>
 
     <button
-        *ngIf="user?.meta?.status?.type !== statusTypes?.DEACTIVATED"
+        *ngIf="user?.meta?.status?.type !== statusTypes?.PENDING"
         type="button"
         class="a-button--primary a-button--small u-margin-top-large u-margin-right-large"
         (click)="saveUser()"
@@ -73,7 +73,7 @@
         {{ 'GENERAL.BUTTONS.SAVE' | translate }}
     </button>
     <button
-        *ngIf="user?.meta?.status?.type !== statusTypes?.DEACTIVATED"
+        *ngIf="user?.meta?.status?.type !== statusTypes?.PENDING"
         type="button"
         class="a-button u-margin-left-x-large a-button--secondary a-button--small"
         (click)="resetPassword()"
