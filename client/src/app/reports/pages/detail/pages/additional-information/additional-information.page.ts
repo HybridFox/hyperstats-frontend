@@ -58,7 +58,6 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
   }
 
   public onFormReady() {
-    this.formData.getFormMetaData().get('additionalInformation').setValue(false);
   }
 
   public onUpload(filesList: FileList) {

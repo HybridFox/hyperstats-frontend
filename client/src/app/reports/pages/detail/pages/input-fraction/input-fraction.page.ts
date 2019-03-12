@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -47,8 +47,6 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
   }
 
   public onFormReady(): void {
-    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
-
     this.route.params
       .pipe(
         takeUntil(this.componentDestroyed$),

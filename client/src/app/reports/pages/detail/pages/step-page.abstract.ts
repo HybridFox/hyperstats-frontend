@@ -27,7 +27,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     protected router: Router,
     protected activatedRoute: ActivatedRoute,
     protected reportActions: ReportsActions,
-    protected options: StepPageOptions
+    protected options: StepPageOptions,
   ) {}
 
   public form: FormGroup;
@@ -40,7 +40,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     this.form = this.formData.getFormData().get(this.options.formSection) as FormGroup;
     this.onFormReady();
 
-    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
+    setTimeout(() => { this.formData.getFormMetaData().get(this.options.formSection).setValue(false); }, 0);
   }
 
   public ngOnDestroy() {

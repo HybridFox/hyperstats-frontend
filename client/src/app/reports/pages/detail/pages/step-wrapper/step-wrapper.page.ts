@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { BehaviorSubject, Subject, combineLatest } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +14,7 @@ import { FormArray, FormGroup } from '@angular/forms';
 @Component({
   templateUrl: './step-wrapper.page.html',
 })
-export class StepWrapperPageComponent implements DoCheck {
+export class StepWrapperPageComponent implements OnInit, DoCheck {
   @select$(ReportsProcessSelector.detail.result, mapToStepMenuItems) public siteMenuItems$: BehaviorSubject<StepMenuItem[]>;
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
   public title$;
@@ -35,7 +35,36 @@ export class StepWrapperPageComponent implements DoCheck {
     public formData: FormDataService,
   ) {}
 
+  public ngOnInit() {
+    this.setForm();
+  }
+
   public ngDoCheck() {
+    this.setForm();
+  }
+
+  private handleStepValidation() {
+    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
+    this.currentForm.controls.forEach(control => {
+      this.setValidValue(control as FormGroup);
+      control.valueChanges
+        .pipe(
+          takeUntil(this.componentDestroyed$)
+        )
+        .subscribe(() => {
+          this.setValidValue(control as FormGroup);
+        });
+    });
+  }
+
+  private setValidValue(control: FormGroup) {
+    const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
+    if (currentItem) {
+      currentItem.valid = control.valid;
+    }
+  }
+
+  public setForm() {
     if (!this.route.firstChild) {
       this.siteMenuItems$
         .pipe(
@@ -78,26 +107,5 @@ export class StepWrapperPageComponent implements DoCheck {
         }),
       );
     }, 1);
-  }
-
-  private handleStepValidation() {
-    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
-    this.currentForm.controls.forEach(control => {
-      this.setValidValue(control as FormGroup);
-      control.valueChanges
-        .pipe(
-          takeUntil(this.componentDestroyed$)
-        )
-        .subscribe(() => {
-          this.setValidValue(control as FormGroup);
-        });
-    });
-  }
-
-  private setValidValue(control: FormGroup) {
-    const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
-    if (currentItem) {
-      currentItem.valid = control.valid;
-    }
   }
 }

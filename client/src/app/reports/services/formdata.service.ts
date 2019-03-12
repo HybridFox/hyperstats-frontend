@@ -47,12 +47,12 @@ export class FormDataService {
     });
 
     this.metaFormGroup = this.formBuilder.group({
-      information: pathOr(false, ['meta', 'state', 'state', 'isPristine', 'information'])(report),
-      inputFraction: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'inputFraction'])(report),
-      additives: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'additives'])(report),
-      outputFraction: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'outputFraction'])(report),
-      recyclingEfficiency: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'recyclingEfficiency'])(report),
-      additionalInformation: pathOr(true, ['meta', 'state', 'state', 'isPristine', 'additionalInformation'])(report),
+      information: pathOr(false, ['meta', 'state', 'isPristine', 'information'])(report),
+      inputFraction: pathOr(true, ['meta', 'state', 'isPristine', 'inputFraction'])(report),
+      additives: pathOr(true, ['meta', 'state', 'isPristine', 'additives'])(report),
+      outputFraction: pathOr(true, ['meta', 'state', 'isPristine', 'outputFraction'])(report),
+      recyclingEfficiency: pathOr(true, ['meta', 'state', 'isPristine', 'recyclingEfficiency'])(report),
+      additionalInformation: pathOr(true, ['meta', 'state', 'isPristine', 'additionalInformation'])(report),
     });
 
     return this.formGroup;

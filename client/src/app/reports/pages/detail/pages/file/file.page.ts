@@ -37,13 +37,17 @@ export class FilePageComponent extends StepPageAbstract {
   }
 
   public onFormReady() {
-    this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
   }
 
   public save() {
     const data = {
       _id: this.formData.reportId,
       data: this.formData.getFormData().value,
+      meta: {
+        state: {
+          isPristine: this.formData.getFormMetaData().getRawValue(),
+        }
+      }
     };
 
     let promise: Promise<any>;
@@ -58,6 +62,11 @@ export class FilePageComponent extends StepPageAbstract {
     const data = {
       _id: this.formData.reportId,
       data: this.formData.getFormData().value,
+      meta: {
+        state: {
+          isPristine: this.formData.getFormMetaData().getRawValue(),
+        }
+      }
     };
 
     this.reportActions.file(data)

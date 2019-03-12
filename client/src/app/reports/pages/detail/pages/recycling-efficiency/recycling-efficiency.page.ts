@@ -48,7 +48,6 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
 
   public onFormReady() {
     this.mergeElements();
-    this.formData.getFormMetaData().get('recyclingEfficiency').setValue(false);
   }
 
   private mergeElements() {
