@@ -40,7 +40,9 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     this.form = this.formData.getFormData().get(this.options.formSection) as FormGroup;
     this.onFormReady();
 
-    setTimeout(() => { this.formData.getFormMetaData().get(this.options.formSection).setValue(false); }, 0);
+    setTimeout(() => {
+      this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
+    }, 0);
   }
 
   public ngOnDestroy() {

@@ -43,27 +43,6 @@ export class StepWrapperPageComponent implements OnInit, DoCheck {
     this.setForm();
   }
 
-  private handleStepValidation() {
-    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
-    this.currentForm.controls.forEach(control => {
-      this.setValidValue(control as FormGroup);
-      control.valueChanges
-        .pipe(
-          takeUntil(this.componentDestroyed$)
-        )
-        .subscribe(() => {
-          this.setValidValue(control as FormGroup);
-        });
-    });
-  }
-
-  private setValidValue(control: FormGroup) {
-    const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
-    if (currentItem) {
-      currentItem.valid = control.valid;
-    }
-  }
-
   public setForm() {
     if (!this.route.firstChild) {
       this.siteMenuItems$
@@ -107,5 +86,26 @@ export class StepWrapperPageComponent implements OnInit, DoCheck {
         }),
       );
     }, 1);
+  }
+
+  private handleStepValidation() {
+    this.currentForm = this.formData.formGroup.get(this.stepWrapperItems[this.route.routeConfig.path]) as FormArray;
+    this.currentForm.controls.forEach(control => {
+      this.setValidValue(control as FormGroup);
+      control.valueChanges
+        .pipe(
+          takeUntil(this.componentDestroyed$)
+        )
+        .subscribe(() => {
+          this.setValidValue(control as FormGroup);
+        });
+    });
+  }
+
+  private setValidValue(control: FormGroup) {
+    const currentItem = this.sideItems.find(item => item.link[1] === control.value.siteRef);
+    if (currentItem) {
+      currentItem.valid = control.valid;
+    }
   }
 }
