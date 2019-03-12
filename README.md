@@ -4,20 +4,21 @@
 Eucobat Rare
 
 # Table of contents #
-
 * [Setup](#setup)
     * [System Dependencies](#system-dependencies)
     * [Init](#init)
 * [Codebase](#codebase)
     * [Structure](#structure)
+    * [External Services](#external-services)
     * [NPM Scripts](#npm-scripts)
 * [Code Contribution](#code-contribution)
     * [Guidelines](#guidelines)
     * [Branches](#branches)
 * [Environments](#environments)
+    * [Development](#development)
+    * [Staging](#staging)
 * [Procedures](#procedures)
     * [Deployment](#deployment)
-    * [Start Stop](#start-stop)
 * [Project Context](#project-context)
     * [Details](#details)
     * [Team](#team)
@@ -42,12 +43,24 @@ Eucobat Rare
 ## Codebase ##
 
 ### Structure ###
-* **src/**: Contains the angular setup.
-  * **app/**: Contains the frontend
-  * **assets/**: Contains the assets.
-  * **enviroments/**: Contains the enviroments.
-  * **lib/**: Contains shared files
-* **e2e/**: Contains the end to end tests.
+* **client/**: Contains the front-end
+    * **e2e/**: Contains the end-to-end tests
+    * **scripts/**: Contains translation scripts
+    * **src/**: Contains the angular setup.
+        * **app/**: Contains app code
+        * **assets/**: Contains the assets.
+        * **enviroments/**: Contains the enviroments.
+        * **lib/**: Contains shared files
+* **server/**: Contains the back-end
+    * **config/**: Contains the back-end config
+    * **controllers/**: Contains back-end controllers
+    * **data/**: Contains data
+    * **fixtures/**: Contains fixtures
+    * **helpers/**: Contains helpers
+    * **middelware/**: Contains middelware
+    * **models/**: Contains models
+    * **routes/**: Contains routes
+    * **test/**: Contains tests
 
 ### External Services ###
 
@@ -55,9 +68,9 @@ This project implements several external services:
 
 * **RARE API**: RARE API.
 
-
 ### NPM Scripts ###
 
+#### Client Scripts ####
 | Command               | Description
 | --------------------- | -----------
 | ng                    | Angular general
@@ -74,10 +87,28 @@ This project implements several external services:
 All commands are executable by running ``docker-compose exec app `npm run [COMMAND-NAME]` ``.
 ---
 
+#### Server Scripts ####
+| Command               | Description
+| --------------------- | -----------
+| start                 | Start the project
+| lint                  | Run linter
+| clean:coverage        | Cleans the tests coverage
+| pretest               | Runs pretest
+| test                  | Runs the tests
+| posttest              | Runs linter
+| open:coverage         | Opens the coverage
+| projectsheet          | Opens the projectsheet
+
+All commands are executable by running ``docker-compose exec server `npm run [COMMAND-NAME]` ``.
+---
+
 ## Code Contribution ##
 
 ### Guidelines ###
 
+#### Code Linting ####
+
+We use tslint for staying consistent in code-style. Linting can be done by running ``docker-compose exec app `npm run lint` ``.
 
 ### Branches ###
 
@@ -90,7 +121,6 @@ We follow these naming conventions:
 * **bugfix/***: For bugs that are logged during testing.
 * **hotfix/***: Only for hotfixing critical bugs from the `master`-branch.
 
-
 ---
 ## Environments ##
 
@@ -98,20 +128,13 @@ We follow these naming conventions:
 
 The development environment receives automatic builds when code is contributed to the `development`-branch. This environment is expected to break from time to time and thus should be used for **internal testing only**!
 
-**URL**: [https://to-do-o.dev](https://to-do-o.dev)
+**URL**: [https://rare-o.studiohyperdrive.be](https://rare-o.studiohyperdrive.be)
 
 ### Staging ###
 
 The staging environment receives automatic builds when code is contributed to the `master`-branch. This environment is expected to remain stable and should be used for **client validation testing**.
 
-**URL**: [https://to-do-a.dev](https://to-do-a.dev)
-
-### Production ###
-
-The production environment is built manually from the `master`-branch. This environment has to be **stable at all times**. No unvalidated code can be deployed on this environment.
-
-**URL**: [https://to-do-p.dev](https://to-do-p.dev)
-
+**URL**: [https://rare-a.studiohyperdrive.be](https://rare-a.studiohyperdrive.be)
 
 ---
 ## Procedures ##
@@ -130,11 +153,7 @@ By a manually trigger in CircleCI.
 
 #### Production ####
 
-By a manually trigger in CircleCI.
-
-### Start Stop ###
-
-TODO
+Not yet available
 
 ---
 ## Project Context ##
@@ -146,7 +165,7 @@ This project is a Studio Hyperdrive team effort.
 * **Client**: Eucobat
 * **Start**: 18/12/2018
 * **Jira Board**: https://district01.atlassian.net/secure/RapidBoard.jspa?projectKey=RE&rapidView=73
-* **Drive Folder**: https://drive.google.com/drive/folders/1dH2U7hfnWqWqzhAHcVK6JhlwXJc1bX58
+* **Bitbucket Repository**: https://district01.atlassian.net/secure/RapidBoard.jspa?rapidView=74&view=planning.nodetail
 
 ### Team ###
 
@@ -154,7 +173,25 @@ List the team that has worked on this project, including the duration e.g.:
 
 * [Pieterjan Van Saet - Studio Hyperdrive](mailto:pieterjan.vansaet@studiohyperdrive.be)
     * **Function**: Frontend developer
-    * **Period**: December 2018 -> ...
+    * **Period**: December 2018 -> February 2019
 * [Jeroen Valcke - Studio Hyperdrive](mailto:jeroen.valcke@studiohyperdrive.be)
     * **Function**: Backend developer
     * **Period**: December 2018 -> ...
+* [Kim Janssens - Studio Hyperdrive](mailto:kim.janssens@studiohyperdrive.be)
+    * **Function**: Frontend developer
+    * **Period**: January 2019 -> March 2019
+* [Jasper De Smet - Studio Hyperdrive](mailto:jasper.desmet@studiohyperdrive.be)
+    * **Function**: Frontend / Backend developer
+    * **Period**: January 2019 -> February 2019
+* [Jo Smets - Studio Hyperdrive](mailto:jo.smets@studiohyperdrive.be)
+    * **Function**: Frontend developer
+    * **Period**: February 2019 -> ...
+* [Jochem Janssens - Studio Hyperdrive](mailto:jochem.janssens@studiohyperdrive.be)
+    * **Function**: Frontend developer
+    * **Period**: February 2019 -> ...
+* [Denis Valcke - Studio Hyperdrive](mailto:denis.valcke@studiohyperdrive.be)
+    * **Function**: Backend developer
+    * **Period**: February 2019 -> ...
+* [Aline Vanliefland - Studio Hyperdrive](mailto:aline.vanliefland@studiohyperdrive.be)
+    * **Function**: Project Manager
+    * **Period**: February 2019 -> ...
