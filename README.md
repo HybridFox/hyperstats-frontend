@@ -91,7 +91,6 @@ This project implements several external services:
 | compodoc              | generate angular compodocs in ./documentation
 
 All commands are executable by running ``docker-compose exec app `npm run [COMMAND-NAME]` ``.
----
 
 #### Server Scripts ####
 
@@ -107,8 +106,8 @@ All commands are executable by running ``docker-compose exec app `npm run [COMMA
 | projectsheet          | Opens the projectsheet
 
 All commands are executable by running ``docker-compose exec server `npm run [COMMAND-NAME]` ``.
----
 
+---
 ## Code Contribution ##
 
 ### Guidelines ###
@@ -198,12 +197,12 @@ List the team that has worked on this project, including the duration e.g.:
 * [Jo Smets - Studio Hyperdrive](mailto:jo.smets@studiohyperdrive.be)
     * **Function**: Frontend developer
     * **Period**: February 2019 -> ...
-* [Jochem Janssens - Studio Hyperdrive](mailto:jochem.janssens@studiohyperdrive.be)
-    * **Function**: Frontend developer
-    * **Period**: February 2019 -> ...
 * [Denis Valcke - Studio Hyperdrive](mailto:denis.valcke@studiohyperdrive.be)
     * **Function**: Backend developer
     * **Period**: February 2019 -> ...
 * [Aline Vanliefland - Studio Hyperdrive](mailto:aline.vanliefland@studiohyperdrive.be)
     * **Function**: Project Manager
+    * **Period**: February 2019 -> ...
+* [Jochem Janssens - Studio Hyperdrive](mailto:jochem.janssens@studiohyperdrive.be)
+    * **Function**: Frontend developer
     * **Period**: February 2019 -> ...
