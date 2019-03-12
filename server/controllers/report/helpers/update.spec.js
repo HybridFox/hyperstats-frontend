@@ -3,10 +3,11 @@ const chaiAsPromised = require("chai-as-promised");
 const createObjectId = require("mongoose").Types.ObjectId;
 const ResponseError = require("../../../helpers/errors/responseError");
 const createReport = require("./create");
-const updateReport = require("./update");
 const { REPORT_STATUS } = require("./const");
 const { mockMongoose } = require("../../../test/mocks");
 const { NEW_REPORT } = require("../../../test/mocks/report");
+const nodemailerMock = require("nodemailer-mock");
+const mockery = require("mockery");
 
 should();
 use(chaiAsPromised);
@@ -17,8 +18,12 @@ describe("Report", () => {
 		let mongoServer;
 		let savedReport;
 		let filedReport;
+		let updateReport;
 
 		before(async() => {
+			mockery.enable({ warnOnUnregistered: false });
+			mockery.registerMock("nodemailer", nodemailerMock);
+
 			mongoServer = await mockMongoose();
 
 			savedReport = await createReport({
@@ -31,9 +36,15 @@ describe("Report", () => {
 				meta: { status: REPORT_STATUS.SAVED },
 				companyId,
 			});
+
+			updateReport = require("./update");
 		});
 
+		afterEach(() => nodemailerMock.mock.reset());
+
 		after(() => {
+			mockery.deregisterAll();
+			mockery.disable();
 			mongoServer.stop();
 		});
 
