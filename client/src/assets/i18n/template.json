@@ -553,11 +553,11 @@
 				"REPORTING-YEAR": ""
 			},
 			"TITLES": {
-				"GENERAL-INFORMATION": "",
-				"INPUT-FRACTIONS": ""
+				"GENERAL-INFORMATION": ""
 			}
 		},
 		"NO-PROCESS": "",
+		"NO-PROCESS-SELECTED": "",
 		"OUTPUT-FRACTION": {
 			"DESCRIPTIONS": {
 				"OF-ELEMENT": "",
