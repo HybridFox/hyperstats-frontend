@@ -39,6 +39,9 @@ Eucobat Rare
 ### Init ###
 
 * `docker-compose up --build`
+* `The front-end runs on port 4350`
+
+NOTE: Sometimes the front-end application doens't compiles, to fix this you need to edit a file and the front-end will recompile itself
 
 ---
 ## Codebase ##
@@ -170,6 +173,7 @@ This project is a Studio Hyperdrive team effort.
 * **Start**: 18/12/2018
 * **Jira Board**: https://district01.atlassian.net/secure/RapidBoard.jspa?projectKey=RE&rapidView=73
 * **Bitbucket Repository**: https://district01.atlassian.net/secure/RapidBoard.jspa?rapidView=74&view=planning.nodetail
+* **Design**: https://projects.invisionapp.com/share/S9PS1QNE243#/screens/339060362
 
 ### Team ###
 
