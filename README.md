@@ -41,7 +41,7 @@ Eucobat Rare
 * `docker-compose up --build`
 * `The front-end runs on port 4350`
 
-NOTE: Sometimes the front-end application doens't compiles, to fix this you need to edit a file and the front-end will recompile itself
+NOTE: Sometimes the front-end application doens't compiles, to fix this you need to edit a file and the front-end will recompile itself.
 
 ---
 ## Codebase ##
@@ -144,7 +144,7 @@ The staging environment receives automatic builds when code is contributed to th
 
 ### Production ###
 
-There is no production environment available at the moment
+There is no production environment available at the moment.
 
 ---
 ## Procedures ##
@@ -163,7 +163,7 @@ By a manually trigger in CircleCI.
 
 #### Production ####
 
-Not yet available
+Not yet available.
 
 ---
 ## Project Context ##
