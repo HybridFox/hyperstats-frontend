@@ -4,6 +4,7 @@
 Eucobat Rare
 
 # Table of contents #
+
 * [Setup](#setup)
     * [System Dependencies](#system-dependencies)
     * [Init](#init)
@@ -43,6 +44,7 @@ Eucobat Rare
 ## Codebase ##
 
 ### Structure ###
+
 * **client/**: Contains the front-end
     * **e2e/**: Contains the end-to-end tests
     * **scripts/**: Contains translation scripts
@@ -71,6 +73,7 @@ This project implements several external services:
 ### NPM Scripts ###
 
 #### Client Scripts ####
+
 | Command               | Description
 | --------------------- | -----------
 | ng                    | Angular general
@@ -88,6 +91,7 @@ All commands are executable by running ``docker-compose exec app `npm run [COMMA
 ---
 
 #### Server Scripts ####
+
 | Command               | Description
 | --------------------- | -----------
 | start                 | Start the project
