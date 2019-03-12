@@ -143,6 +143,10 @@ The staging environment receives automatic builds when code is contributed to th
 
 **URL**: [https://rare-a.studiohyperdrive.be](https://rare-a.studiohyperdrive.be)
 
+### Production ###
+
+There is no production environment available at the moment
+
 ---
 ## Procedures ##
 
