@@ -57,8 +57,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
     this.cdRef.detectChanges();
   }
 
-  public onFormReady() {
-  }
+  public onFormReady() {}
 
   public onUpload(filesList: FileList) {
     this.fetchFilesIfNeeded();
