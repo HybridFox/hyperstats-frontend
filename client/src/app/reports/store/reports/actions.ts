@@ -9,6 +9,7 @@ import { Handler } from '@store/handler';
 import { ReportsRepository } from '@api/reports';
 import { ACTIONS } from './action-types';
 import { REPORT_STATE } from '../constants';
+import { Report } from './types';
 
 @Injectable()
 export class ReportsActions {
@@ -75,7 +76,7 @@ export class ReportsActions {
     this.handler.dispatch(ACTIONS.DETAIL.CLEAR);
   }
 
-  public createDrafted(report: any): Observable<any> {
+  public createDrafted(report: Report): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
@@ -86,7 +87,7 @@ export class ReportsActions {
       );
   }
 
-  public createFiled(report: any): Observable<any> {
+  public createFiled(report: Report): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
@@ -99,15 +100,15 @@ export class ReportsActions {
       );
   }
 
-  public draft(report: any): Observable<any> {
+  public draft(report: Report): Observable<any> {
     return this.update(report, REPORT_STATE.SAVED);
   }
 
-  public file(report: any): Observable<any> {
+  public file(report: Report): Observable<any> {
     return this.update(report, REPORT_STATE.FILED);
   }
 
-  private update(report, state = REPORT_STATE.SAVED): Observable<any> {
+  private update(report: Report, state = REPORT_STATE.SAVED): Observable<any> {
     return this.reportsRepository.update(report._id, {
       ...report,
       meta: {
