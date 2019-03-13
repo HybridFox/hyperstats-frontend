@@ -10,6 +10,10 @@ module.exports = async(req, res, next) => {
 
 		res.status(200).json(profile.get(req));
 	} catch (error) {
+		if (error.type === 401) {
+			return next({ message: errors.MissingAuthorization });
+		}
+
 		return next({ message: errors.ItemNotFound });
 	}
 };

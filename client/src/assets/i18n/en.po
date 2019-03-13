@@ -740,6 +740,14 @@ msgstr "Cannot login"
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr "Logged in!"
 
+msgid "TOAST##LOGIN##UNAUTHORIZED##DESCRIPTION"
+msgstr "Your account is deleted. Contact an administrator. "
+
+#, fuzzy
+#| msgid "TOAST##LOGIN##ERROR##TITLE"
+msgid "TOAST##LOGIN##UNAUTHORIZED##TITLE"
+msgstr "Cannot login"
+
 msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
 msgstr "There was an error when updating your profile"
 

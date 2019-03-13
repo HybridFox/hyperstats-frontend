@@ -626,6 +626,12 @@ msgstr ""
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr ""
 
+msgid "TOAST##LOGIN##UNAUTHORIZED##DESCRIPTION"
+msgstr ""
+
+msgid "TOAST##LOGIN##UNAUTHORIZED##TITLE"
+msgstr ""
+
 msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
 msgstr ""
 
