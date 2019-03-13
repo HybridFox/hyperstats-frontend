@@ -84,13 +84,11 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 value: CompanyType.R,
                 label: this.translateService.instant('TYPES.COMPANY.RECYCLER'),
                 selected: types.indexOf(CompanyType.R) !== -1
-            },
-            {
+            }, {
                 value: CompanyType.CO,
                 label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
                 selected: types.indexOf(CompanyType.CO) !== -1
-            },
-            {
+            }, {
               value: CompanyType.AO,
               label: this.translateService.instant('TYPES.COMPANY.AUTHORISATION-ORG'),
               selected: types.indexOf(CompanyType.AO) !== -1
