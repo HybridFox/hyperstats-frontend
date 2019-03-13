@@ -4,6 +4,7 @@ import { ActionButton } from './types';
 import { select } from '@angular-redux/store';
 import { storeRouterSelectors } from '@core/store-router';
 
+import { CompanyType } from '@api/company';
 import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
@@ -30,8 +31,9 @@ export class AppNavigationComponent implements OnInit {
 
     console.log(this.user);
 
-    // TODO: get CO and AO from an enum
-    this.showAddReport = !this.user.isAdmin && this.user.company.meta.type !== 'CO' && this.user.company.meta.type === 'AO';
+    this.showAddReport = !this.user.isAdmin &&
+      this.user.company.meta.type !== CompanyType.CO
+      && this.user.company.meta.type === CompanyType.AO;
   }
 
   public onLogout() {

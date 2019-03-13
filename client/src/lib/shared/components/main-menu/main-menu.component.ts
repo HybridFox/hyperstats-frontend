@@ -4,6 +4,8 @@ import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
+import { CompanyType } from '@api/company';
+
 @Component({
   selector: 'app-main-menu',
   templateUrl: './main-menu.component.html',
@@ -46,13 +48,13 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
         { title: ngxExtract('GENERAL.MENU.SIGNUP-REQUESTS'), link: ['/admin/users/signup-requests'] },
       ];
       // TODO: get types from enum
-    } else if (this.profile && this.profile.company.meta.type === 'CO') {
+    } else if (this.profile && this.profile.company.meta.type === CompanyType.CO) {
       this.navItems = [
         { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/recycler/reports'] },
         { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/recycler/proxies'] },
       ];
         // TODO: get types from enum
-    } else if (this.profile && this.profile.company.meta.type === 'AO') {
+    } else if (this.profile && this.profile.company.meta.type === CompanyType.AO) {
       this.navItems = [
         { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/recycler/reports'] },
       ];
