@@ -4,11 +4,10 @@ const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const errors = require("../../../helpers/errorHandler");
+const loginHandler = require("./loginHandler");
 
 should();
 use(chaiAsPromised);
-
-const loginHandler = require("./loginHandler");
 
 describe("LoginHandler", () => {
 	let mongoServer;

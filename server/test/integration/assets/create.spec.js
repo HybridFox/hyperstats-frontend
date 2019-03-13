@@ -6,6 +6,7 @@ const startServer = require("../../mocks/startServer");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
+const errors = require("../../../helpers/errorHandler");
 
 describe("Integration", () => {
 	describe("Assets", () => {
@@ -44,12 +45,6 @@ describe("Integration", () => {
 
 		describe("When logged in", async() => {
 			it("Should return validation error", async() => {
-				// This function doesn't work in the before hook
-				await createTestUser({
-					email: "test2@example.com",
-					isAdmin: true,
-				});
-
 				cookie = (await loginUser(server)).cookie;
 
 				return supertest(server)
