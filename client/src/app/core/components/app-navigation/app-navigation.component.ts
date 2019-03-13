@@ -27,6 +27,8 @@ export class AppNavigationComponent implements OnInit {
       window.scrollTo(0, 0);
     });
 
+    console.log(this.user);
+
     // TODO: get CO and AO from an enum
     this.showAddReport = !this.user.isAdmin && this.user.company.meta.type !== 'CO' && this.user.company.meta.type === 'AO';
   }

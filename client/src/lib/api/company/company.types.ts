@@ -23,8 +23,9 @@ export interface CompanyData {
 }
 
 export interface CompanyMeta {
-  isActive: boolean;
-  type: string;
+  activated: boolean;
+  deleted: boolean;
+  type: CompanyType;
 }
 
 export enum CompanyType {
