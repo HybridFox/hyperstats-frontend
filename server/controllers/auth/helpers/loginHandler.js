@@ -8,10 +8,14 @@ const errors = require("../../../helpers/errorHandler");
  * @returns {Promise} User
  */
 module.exports = async(username, password) => {
-	const user = await UserModel.findOne({ "data.username": username, "meta.deleted": false }).exec();
+	const user = await UserModel.findOne({ "data.username": username }).exec();
 
 	if (!user) {
 		throw errors.UserNotFound;
+	}
+
+	if (user.meta.deleted) {
+		throw errors.MissingAuthorization;
 	}
 
 	if (!await user.validatePassword(password)) {

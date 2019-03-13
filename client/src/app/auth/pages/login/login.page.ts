@@ -47,11 +47,18 @@ export class LoginPageComponent implements OnInit, OnDestroy {
         }).then(() => {
             this.toastrService.success(ngxExtract('TOAST.LOGIN.SUCCESS.TITLE') as string);
             this.router.navigate(['/']);
-        }).catch(() => {
+        }).catch((error) => {
+          if (error.status === 401) {
             this.toastrService.error(
-                ngxExtract('TOAST.LOGIN.ERROR.DESCRIPTION') as string,
-                ngxExtract('TOAST.LOGIN.ERROR.TITLE') as string
+              ngxExtract('TOAST.LOGIN.UNAUTHORIZED.DESCRIPTION') as string,
+              ngxExtract('TOAST.LOGIN.UNAUTHORIZED.TITLE') as string
             );
+          } else {
+            this.toastrService.error(
+              ngxExtract('TOAST.LOGIN.ERROR.DESCRIPTION') as string,
+              ngxExtract('TOAST.LOGIN.ERROR.TITLE') as string
+            );
+          }
         });
     }
 }

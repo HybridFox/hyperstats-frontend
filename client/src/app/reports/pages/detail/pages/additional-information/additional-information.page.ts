@@ -49,6 +49,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
   }
 
   public ngOnInit() {
+    super.ngOnInit();
     this.form = this.formData.getFormData().get('additionalInformation');
     this.fetchFilesIfNeeded();
   }

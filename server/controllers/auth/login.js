@@ -1,5 +1,6 @@
 const { loginHandler } = require("./helpers");
 const profile = require("../../helpers/profile");
+const errors = require("../../helpers/errorHandler");
 
 module.exports = async(req, res, next) => {
 	try {
@@ -9,6 +10,6 @@ module.exports = async(req, res, next) => {
 
 		res.status(200).json(profile.get(req));
 	} catch (error) {
-		return next(error);
+		next(error);
 	}
 };

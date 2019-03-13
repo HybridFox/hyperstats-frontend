@@ -45,7 +45,7 @@ export class UserFormComponent implements OnChanges {
             meta: this.formBuilder.group({
                 activated: this.formBuilder.control(
                   pathOr(this.statusTypes.DEACTIVATED,
-                  ['meta', 'status', 'type'], user) === this.statusTypes.PENDING
+                  ['meta', 'status', 'type'], user) === this.statusTypes.ACTIVATED
                 )
             })
         });

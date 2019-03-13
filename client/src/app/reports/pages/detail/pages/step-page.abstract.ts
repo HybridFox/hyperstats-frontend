@@ -27,7 +27,7 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     protected router: Router,
     protected activatedRoute: ActivatedRoute,
     protected reportActions: ReportsActions,
-    protected options: StepPageOptions
+    protected options: StepPageOptions,
   ) {}
 
   public form: FormGroup;
@@ -39,6 +39,12 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
   public ngOnInit() {
     this.form = this.formData.getFormData().get(this.options.formSection) as FormGroup;
     this.onFormReady();
+
+    setTimeout(() => {
+      if (this.formData.getFormMetaData().get(this.options.formSection)) {
+        this.formData.getFormMetaData().get(this.options.formSection).setValue(false);
+      }
+    }, 0);
   }
 
   public ngOnDestroy() {
@@ -58,15 +64,26 @@ export abstract class StepPageAbstract implements OnInit, OnDestroy {
     const data = {
       _id: this.formData.reportId,
       data: this.formData.getFormData().value,
+      meta: {
+        state: {
+          isPristine: this.formData.getFormMetaData().getRawValue(),
+        }
+      }
     };
 
-    this.reportActions.draft(data)
-        .toPromise()
-        .then(() => {
-          if (this.options.nextStep) {
-            this.router.navigate(this.options.nextStep, { relativeTo: this.activatedRoute });
-          }
-        })
-        .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
+    if (!this.formData.getFormData().disabled) {
+      this.reportActions.draft(data)
+      .toPromise()
+      .then(() => {
+        if (this.options.nextStep) {
+          this.router.navigate(this.options.nextStep, { relativeTo: this.activatedRoute });
+        }
+      })
+      .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
+    } else {
+      if (this.options.nextStep) {
+        this.router.navigate(this.options.nextStep, { relativeTo: this.activatedRoute });
+      }
+    }
   }
 }

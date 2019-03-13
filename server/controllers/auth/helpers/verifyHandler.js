@@ -36,9 +36,11 @@ module.exports = async(token) => {
 	user.meta.status.type = "PENDING";
 	user.meta.validation.isValidated = true;
 
-	await Promise.all([
-		mailToAdmins(user, adminEmails),
-	]);
+	if (adminEmails.length > 0) {
+		await Promise.all([
+			mailToAdmins(user, adminEmails),
+		]);
+	}
 
 	await user.save();
 
