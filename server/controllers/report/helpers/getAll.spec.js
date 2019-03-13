@@ -53,6 +53,7 @@ describe("Report", () => {
 		it("Should get all reports", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: null,
 				sortBy: "name",
 			});
@@ -65,6 +66,7 @@ describe("Report", () => {
 		it("Should sort reports on reportingYear", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: null,
 				sortBy: "reportingYear",
 			});
@@ -77,6 +79,7 @@ describe("Report", () => {
 		it("Should sort reports on reportingYear, descending", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: null,
 				sortBy: "-reportingYear",
 			});
@@ -89,6 +92,7 @@ describe("Report", () => {
 		it("Should filter on recyclingProcessId", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: firstRecycingProcess,
 				sortBy: "name",
 			});
