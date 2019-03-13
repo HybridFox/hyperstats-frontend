@@ -8,6 +8,7 @@ const errors = {
 	ItemNotFound: "ITEM_NOT_FOUND",
 	PageNotFound: "PAGE_NOT_FOUND",
 	UserNotFound: "USER_NOT_FOUND",
+	CompanyNotFound: "COMPANY_NOT_FOUND",
 	EmailAlreadyTaken: "EMAIL_ALREADY_TAKEN",
 	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
 	SendingEmailFailed: "SENDING_EMAIL_FAILED",
@@ -62,6 +63,10 @@ const errorHandler = (err) => {
 		case errors.UserNotFound:
 			statusCode = 404;
 			msg = `User not found.`;
+			break;
+		case errors.CompanyNotFound:
+			statusCode = 404;
+			msg = `Company not found.`;
 			break;
 		case errors.EmailAlreadyTaken:
 			statusCode = 409;

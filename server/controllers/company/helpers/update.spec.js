@@ -5,7 +5,7 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 const updateCompany = require("./update");
 const testCompany = require("../../../test/helpers/testCompany");
 const companyMock = require("../../../test/mocks/company");
-const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../../helpers/errorHandler");
 const { omit } = require("ramda");
 
 should();
@@ -82,7 +82,7 @@ describe("Company", () => {
 		});
 
 		it("Should not update a componay because the user does not maintain it", async() => {
-			expect(updateCompany({ _id: nonManagedCompany.toObject()._id, companyOfUser })).to.eventually.rejectedWith(ResponseError);
+			expect(updateCompany({ _id: nonManagedCompany.toObject()._id, companyOfUser })).to.eventually.rejectedWith(errors.CompanyNotFound);
 		});
 	});
 });

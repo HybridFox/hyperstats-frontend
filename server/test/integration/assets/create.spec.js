@@ -3,10 +3,8 @@ const { expect } = require("chai");
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 const startServer = require("../../mocks/startServer");
-const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
-const errors = require("../../../helpers/errorHandler");
 
 describe("Integration", () => {
 	describe("Assets", () => {
