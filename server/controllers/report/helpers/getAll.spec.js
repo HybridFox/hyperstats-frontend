@@ -101,6 +101,30 @@ describe("Report", () => {
 			expect(reports[0]).to.deep.equal(firstReport);
 			expect(reports.length).to.equal(1);
 		});
+
+		it("Should return the approved reports for an AO", async() => {
+			const reports = await getAllReports({
+				reportedById: companyId,
+				companyType: "AO",
+				recyclingProcessId: firstRecycingProcess,
+				sortBy: "name",
+			});
+
+			expect(reports).to.be.an("array");
+			expect(reports.length).to.equal(0);
+		});
+
+		it("Should return the approved reports for an CO", async() => {
+			const reports = await getAllReports({
+				reportedById: companyId,
+				companyType: "CO",
+				recyclingProcessId: firstRecycingProcess,
+				sortBy: "name",
+			});
+
+			expect(reports).to.be.an("array");
+			expect(reports.length).to.equal(0);
+		});
 	});
 });
 
