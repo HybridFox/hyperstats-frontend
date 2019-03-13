@@ -1,5 +1,4 @@
-export const UPLOAD_STATES = [{
-  state: 'NEW'
-}, {
-  state: 'SAVED'
-}];
+export const UPLOAD_STATES = {
+  NEW: 'NEW',
+  SAVED: 'SAVED'
+};

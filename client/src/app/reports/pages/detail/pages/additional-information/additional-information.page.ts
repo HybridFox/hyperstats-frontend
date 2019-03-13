@@ -19,7 +19,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
   public form: any;
   public uploadResult: any;
   public filesArray: [];
-  public uploadStates: any[] = UPLOAD_STATES;
+  public uploadStates = UPLOAD_STATES;
 
   constructor(
     codesService: CodesService,
@@ -65,14 +65,14 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
     if (this.uploadResult) {
       Array.from(filesList).map(file => {
         this.uploadResult.push({
-          state: this.uploadStates[0].state,
+          state: this.uploadStates.NEW,
           file: this.assetsRepository.upload(file)
         });
       });
     } else {
       this.uploadResult = Array.from(filesList).map(file => {
         return {
-          state: this.uploadStates[0].state,
+          state: this.uploadStates.NEW,
           file: this.assetsRepository.upload(file)
         };
       });
@@ -89,7 +89,7 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
           result: file,
         };
         return {
-          state: this.uploadStates[1].state,
+          state: this.uploadStates.SAVED,
           file: of(fileObject),
         };
       });

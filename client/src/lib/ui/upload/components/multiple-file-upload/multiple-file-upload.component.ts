@@ -21,18 +21,24 @@ export class MultipleFileUploadComponent implements OnChanges, OnDestroy {
     public ngOnChanges(changes: SimpleChanges) {
         if (changes.response && this.response) {
           const files = [];
-          this.response.map((object, index) => {
-            object.file
-              .pipe(takeUntil(this.componentDestroyed$))
-              .subscribe(res => {
-                if (res && res.result) {
-                  files[index] = res.result;
-                  if (this.control) {
-                    this.control.patchValue(files);
+          if (this.response.length === 0) {
+            if (this.control) {
+              this.control.patchValue([]);
+            }
+          } else {
+            this.response.map((object, index) => {
+              object.file
+                .pipe(takeUntil(this.componentDestroyed$))
+                .subscribe(res => {
+                  if (res && res.result) {
+                    files[index] = res.result;
+                    if (this.control) {
+                      this.control.patchValue(files);
+                    }
                   }
-                }
+              });
             });
-          });
+          }
         }
     }
 
