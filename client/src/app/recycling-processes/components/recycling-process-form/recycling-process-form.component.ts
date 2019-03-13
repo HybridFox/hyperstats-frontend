@@ -10,7 +10,7 @@ import { omit, prop, pathOr } from 'ramda';
 
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
-import { Toggle } from './recycling-process.interface';
+import { Toggle, Remove } from './recycling-process.interface';
 import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multiple-file-upload.const';
 
 @Component({
@@ -32,6 +32,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @Output() public upload: EventEmitter<any> = new EventEmitter<any>();
   @Output() public uploadAsset: EventEmitter<object> = new EventEmitter<object>();
   @Output() public uploadOverview: EventEmitter<object> = new EventEmitter<object>();
+  @Output() public removeFile: EventEmitter<Remove> = new EventEmitter<Remove>();
 
   public recyclingProcessForm: any;
   public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
@@ -185,22 +186,8 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     });
   }
 
-  public onUploadAsset(formData, key: number) {
-    const file = {
-      step: key,
-      file: formData,
-      type: 'asset'
-    };
-    this.uploadAsset.emit(file);
-  }
-
-  public onUploadOverview(formData, key: number) {
-    const file = {
-      step: key,
-      file: formData,
-      type: 'overview'
-    };
-    this.uploadOverview.emit(file);
+  public onRemoveFile(stepIndex: number, input: String) {
+    this.removeFile.emit({stepIndex, input});
   }
 
   public validateFormFields(formGroup: FormGroup) {
