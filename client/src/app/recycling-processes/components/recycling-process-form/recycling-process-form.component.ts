@@ -11,7 +11,7 @@ import { omit, prop, pathOr } from 'ramda';
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle } from './recycling-process.interface';
-import { UPLOAD_TYPES } from '@ui/upload/components/single-file-upload/single-file-upload.const';
+import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multiple-file-upload.const';
 
 @Component({
   selector: 'app-recycling-process-form',
@@ -35,7 +35,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
   public recyclingProcessForm: any;
   public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
-  public uploadTypes: any[] = UPLOAD_TYPES;
+  public uploadTypes = UPLOAD_CONSTS;
   public recyclingProcessId: string;
   public isActivated: boolean;
   public isDuplicate: boolean;
