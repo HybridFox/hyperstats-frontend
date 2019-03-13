@@ -77,18 +77,21 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         const originalParams = this.route.snapshot.queryParams;
         const types = pathOr(false, ['types', 'length'])(originalParams) ?
             originalParams.types :
-            [CompanyType.R, CompanyType.CO];
+            [CompanyType.R, CompanyType.CO, CompanyType.AO];
 
         this.filter = this.createFilterForm([
             {
                 value: CompanyType.R,
                 label: this.translateService.instant('TYPES.COMPANY.RECYCLER'),
                 selected: types.indexOf(CompanyType.R) !== -1
-            },
-            {
+            }, {
                 value: CompanyType.CO,
                 label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
                 selected: types.indexOf(CompanyType.CO) !== -1
+            }, {
+              value: CompanyType.AO,
+              label: this.translateService.instant('TYPES.COMPANY.AUTHORISATION-ORG'),
+              selected: types.indexOf(CompanyType.AO) !== -1
             }
         ], originalParams.admin === 'true', originalParams.pending === 'true');
 
