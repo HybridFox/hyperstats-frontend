@@ -15,7 +15,7 @@
           }"
         >
           <a [routerLink]="(currentId !== 'new') ? step.route : '#'">
-            <div *ngIf="!form?.disabled && (!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0); else itemValid" class="m-steps__step-icon">
+            <div *ngIf="(step.key && reportFormService.getFormMetaData()?.get(step.key)?.value) || !form?.disabled && (!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0); else itemValid" class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
             <ng-template #itemValid>

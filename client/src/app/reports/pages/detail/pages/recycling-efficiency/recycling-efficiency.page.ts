@@ -41,7 +41,7 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
       {
         prevStep: ['../output-fraction'],
         nextStep: ['../additional-information'],
-        formSection: 'outputFraction'
+        formSection: 'recyclingEfficiency'
       }
     );
   }
