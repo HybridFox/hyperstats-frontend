@@ -15,7 +15,7 @@ export class AppNavigationComponent implements OnInit {
   @select(storeRouterSelectors.data) public routeData$: any;
   @Input() public actionButton: ActionButton;
   @Input() public user: UserInterface;
-  @Output() public logout: EventEmitter<any> = new EventEmitter<any>();
+  @Output() public logout: EventEmitter<void> = new EventEmitter<void>();
 
   public showAddReport = false;
 
