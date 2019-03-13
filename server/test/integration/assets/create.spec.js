@@ -49,11 +49,7 @@ describe("Integration", () => {
 					.post(`/api/assets`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
-					.expect(400)
-					.then(({ body }) => {
-						expect(body).to.be.an("object");
-						expect(body.err).to.equal('"file" is required.');
-					});
+					.expect(400);
 			});
 
 			it("Should create recycling process by id", async() => {
