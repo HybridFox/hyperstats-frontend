@@ -9,7 +9,7 @@ import { UserInterface } from '@store/auth/auth.interface';
 })
 export class CoreNavigationComponent {
     @Input() public user: UserInterface;
-    @Output() public logout: EventEmitter<any> = new EventEmitter();
+    @Output() public logout: EventEmitter<void> = new EventEmitter<void>();
 
     public statusTypes = STATUS_TYPES;
 
