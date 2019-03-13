@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-12T14:30:06.516Z\n"
+"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1089,6 +1089,9 @@ msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
 
 msgid "WIZARD##NO-PROCESS"
+msgstr "Please create a recycling process before creating a report"
+
+msgid "WIZARD##NO-PROCESS-SELECTED"
 msgstr "Please select a recycling process in step 1"
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"

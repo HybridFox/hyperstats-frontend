@@ -561,6 +561,7 @@
 			}
 		},
 		"NO-PROCESS": "",
+		"NO-PROCESS-SELECTED": "",
 		"OUTPUT-FRACTION": {
 			"DESCRIPTIONS": {
 				"OF-ELEMENT": "",

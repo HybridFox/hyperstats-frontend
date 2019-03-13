@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-12T14:30:06.516Z\n"
-"PO-Revision-Date: 2019-03-12T14:30:06.516Z\n"
+"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
+"PO-Revision-Date: 2019-03-12T14:39:46.224Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -948,6 +948,9 @@ msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr ""
 
 msgid "WIZARD##NO-PROCESS"
+msgstr ""
+
+msgid "WIZARD##NO-PROCESS-SELECTED"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##DESCRIPTIONS##OF-ELEMENT"
