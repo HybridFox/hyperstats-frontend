@@ -7,7 +7,6 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/uti
 import { TranslateService } from '@ngx-translate/core';
 import { createFileUploadControl } from '@ui/upload/file-upload.helper';
 import { omit, prop, pathOr } from 'ramda';
-import { UserInterface } from '@store/auth/auth.interface';
 
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
@@ -24,7 +23,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @Input() public recyclingProcess: any;
   @Input() public recyclingPartners: any;
   @Input() public uploadResponse: any;
-  @Input() public user: UserInterface;
+  @Input() public user: any;
 
   @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
   @Output() public remove: EventEmitter<string> = new EventEmitter<string>();

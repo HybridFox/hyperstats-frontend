@@ -29,8 +29,6 @@ export class AppNavigationComponent implements OnInit {
       window.scrollTo(0, 0);
     });
 
-    console.log(this.user);
-
     this.showAddReport = !this.user.isAdmin &&
       this.user.company.meta.type !== CompanyType.CO
       && this.user.company.meta.type === CompanyType.AO;

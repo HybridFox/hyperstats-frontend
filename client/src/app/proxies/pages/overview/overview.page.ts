@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 @Component({
   templateUrl: './overview.page.html',
 })

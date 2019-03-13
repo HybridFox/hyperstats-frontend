@@ -3,18 +3,16 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { pathOr } from 'ramda';
 import { ToastrService } from 'ngx-toastr';
 import { AuthActions } from '@store/auth';
-import { UserInterface } from '@store/auth/auth.interface';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { STATUS_TYPES } from 'src/lib/constants';
-
 
 @Component({
     selector: 'app-user-form',
     templateUrl: './user-form.component.html',
 })
 export class UserFormComponent implements OnChanges {
-    @Input() public user: UserInterface;
+    @Input() public user: any;
     @Input() public companyOptions: Option[];
 
     @Output() public save: EventEmitter<any> = new EventEmitter<any>();
@@ -37,6 +35,7 @@ export class UserFormComponent implements OnChanges {
     }
 
     private createForm(user: any): FormGroup {
+      console.log(user);
         return this.formBuilder.group({
             data: this.formBuilder.group({
                 firstname: this.formBuilder.control(pathOr('', ['data', 'firstname'], user)),
