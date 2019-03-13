@@ -33,7 +33,7 @@ export interface UserInterface {
 }
 
 interface UserInterfaceStatusType {
-  status: 'ACTIVATED' | 'DEACTIVATED' | 'PENDING';
+  type: 'ACTIVATED' | 'DEACTIVATED' | 'PENDING';
 }
 
 interface UserInterfaceValidationType {
