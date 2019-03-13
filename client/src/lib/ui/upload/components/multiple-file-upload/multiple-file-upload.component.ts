@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
-import isNil from 'ramda/es/isNil';
 import { UPLOAD_CONSTS } from './multiple-file-upload.const';
+import { isNil } from 'ramda';
 
 @Component({
     selector: 'app-multiple-file-upload',
