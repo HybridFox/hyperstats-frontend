@@ -6,5 +6,5 @@ import { Observable } from 'rxjs';
   templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent {
-  @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
 }

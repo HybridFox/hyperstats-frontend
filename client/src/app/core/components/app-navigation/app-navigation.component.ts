@@ -4,6 +4,8 @@ import { ActionButton } from './types';
 import { select } from '@angular-redux/store';
 import { storeRouterSelectors } from '@core/store-router';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 @Component({
   selector: 'app-navigation',
   templateUrl: './app-navigation.component.html',
@@ -11,8 +13,7 @@ import { storeRouterSelectors } from '@core/store-router';
 export class AppNavigationComponent implements OnInit {
   @select(storeRouterSelectors.data) public routeData$: any;
   @Input() public actionButton: ActionButton;
-  // Why any 😢
-  @Input() public user: any;
+  @Input() public user: UserInterface;
   @Output() public logout: EventEmitter<any> = new EventEmitter<any>();
 
   public showAddReport = false;

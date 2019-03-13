@@ -12,12 +12,13 @@ import { UserType, StatusType } from '../../store/users/types';
 import { CompanyType } from '@api/company/company.types';
 import { TranslateService } from '@ngx-translate/core';
 import { UserCompanyActions } from '../../store/companies/actions';
+import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
     templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
-    @select(UserSelector.overview.result) public users$: Observable<any>;
+    @select(UserSelector.overview.result) public users$: Observable<UserInterface[]>;
     @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
 
     public filter: FormGroup;
