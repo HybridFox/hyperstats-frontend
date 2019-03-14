@@ -18,8 +18,6 @@ export class ReportsPageComponent implements OnInit {
   @select(ReportsSelector.list.result) public reports$: Observable<any>;
   @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
 
-  @select(ReportsSelector.companies.result) public test$: Observable<boolean>;
-
   @select$(
     ReportsProcessSelector.list.result,
     mapRecyclingProcessesToMenuItemsWithAll
