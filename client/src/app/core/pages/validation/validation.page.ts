@@ -5,12 +5,13 @@ import { AuthActions } from '@store/auth';
 import { ToastrService } from 'ngx-toastr';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { STATUS_TYPES } from 'src/lib/constants';
+import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
     templateUrl: './validation.page.html',
 })
 export class ValidationPageComponent implements OnDestroy {
-  @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
 
   public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
   public statusTypes = STATUS_TYPES;

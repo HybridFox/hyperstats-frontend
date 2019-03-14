@@ -13,11 +13,13 @@ import { UserCompanyActions } from 'src/app/manage-users/store/companies/actions
 import { UserSelector, UsersActions } from 'src/app/manage-users/store';
 import { STATUS_TYPES } from 'src/lib/constants';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 @Component({
     templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
-    @select(UserSelector.detail.result) public user$: Observable<object>;
+    @select(UserSelector.detail.result) public user$: Observable<UserInterface>;
     @select$(UserCompanySelector.list.result, companiesToSelectOptions) public companyOptions$: Observable<Option>;
     @select(UserSelector.detail.loading) public loading$: Observable<boolean>;
     @select(['entities', 'companies']) public companies$: Observable<object>;

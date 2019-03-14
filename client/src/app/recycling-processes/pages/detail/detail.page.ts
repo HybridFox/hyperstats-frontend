@@ -14,12 +14,13 @@ import { RecyclingPartnerActions, RecyclingPartnerSelector } from 'src/app/recyc
 import { FormHelper } from '@helpers/form.helper';
 import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { AssetsRepository } from '@api/assets';
+import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
   templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
-    @select(['auth', 'user', 'result']) public user$: Observable<any>;
+    @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
     @select(RecyclingProcessesSelectors.detail.result) public $process: Observable<any>;
     @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partners$: Observable<any[]>;
 

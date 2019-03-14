@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 @Component({
   templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent {
-  @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
 }
