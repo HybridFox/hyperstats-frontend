@@ -39,7 +39,6 @@ export class ReportsPageComponent implements OnInit {
     });
 
     this.reports$.subscribe((reports) => {
-      console.log(reports);
       if (reports && reports.length > 0) {
         this.reportsActive = true;
       }
