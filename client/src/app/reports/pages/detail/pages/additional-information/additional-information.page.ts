@@ -63,7 +63,6 @@ export class AdditionalInformationPageComponent extends StepPageAbstract impleme
   public onFormReady() {}
 
   public onUpload(filesList: FileList) {
-    console.log(filesList);
     Array.from(filesList).forEach(file => {
       this.files.push(this.assetsRepository.upload(file));
     });
