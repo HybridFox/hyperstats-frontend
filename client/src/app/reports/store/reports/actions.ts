@@ -9,7 +9,6 @@ import { Handler } from '@store/handler';
 import { ReportsRepository } from '@api/reports';
 import { ACTIONS } from './action-types';
 import { REPORT_STATE } from '../constants';
-import { Report } from './types';
 
 @Injectable()
 export class ReportsActions {
@@ -108,7 +107,7 @@ export class ReportsActions {
     return this.update(report, REPORT_STATE.FILED);
   }
 
-  private update(report: Report, state = REPORT_STATE.SAVED): Observable<any> {
+  private update(report, state = REPORT_STATE.SAVED): Observable<any> {
     return this.reportsRepository.update(report._id, {
       ...report,
       meta: {
