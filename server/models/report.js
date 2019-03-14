@@ -147,8 +147,18 @@ const ReportSchema = mongoose.Schema({
 	},
 	meta: {
 		approvedCompanies: [{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Company",
+			approvedBy: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Company",
+			},
+			company: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Company",
+			},
+			linkedApprovals: [{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Company",
+			}],
 		}],
 		reportingCompany: {
 			type: mongoose.Schema.Types.ObjectId,
