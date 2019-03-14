@@ -27,6 +27,12 @@ export class ReportsRepository {
     return this.http.get(url, options);
   }
 
+  public fetchAllCompanies(): Observable<any> {
+    const url = this.apiConfig.baseUrl('/reports/companies');
+
+    return this.http.get(url);
+  }
+
   public fetchById(id: string): Observable<any> {
     const url = this.apiConfig.baseUrl(`/reports/${id}`);
 

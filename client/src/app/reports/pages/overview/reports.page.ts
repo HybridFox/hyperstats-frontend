@@ -17,12 +17,15 @@ export class ReportsPageComponent implements OnInit {
   @select(['auth', 'user', 'result']) private user$: Observable<any>;
   @select(ReportsSelector.list.result) public reports$: Observable<any>;
   @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
+
+  @select(ReportsSelector.companies.result) public test$: Observable<boolean>;
+
   @select$(
     ReportsProcessSelector.list.result,
     mapRecyclingProcessesToMenuItemsWithAll
   ) public processesMenuItems$: Observable<MenuItem>;
   @select$(
-    ReportsSelector.list.result,
+    ReportsSelector.companies.result,
     mapReportToMenuItemsWithAll
   ) public recyclerMenuItems$: Observable<MenuItem>;
 
@@ -47,6 +50,8 @@ export class ReportsPageComponent implements OnInit {
         this.reportsActive = true;
       }
     });
+
+    this.reportsActions.fetchAllCompanies().toPromise();
 
     this.activatedRoute.queryParams
       .pipe(

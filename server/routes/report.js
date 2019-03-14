@@ -154,8 +154,17 @@ module.exports = (router) => {
 	 *           type: string
 	 *           description: object-id of the company
 	 *       reportingCompany:
-	 *         type: string
-	 *         description: object-id of the company
+	 *         type: object
+	 *         properties:
+	 *               _id:
+	 *                 type: string
+	 *                 description: object-id of the company
+	 *               data:
+	 *                 type: object
+	 *                 properties:
+	 *                   name:
+	 *                     type: string
+	 *                     description: name of the company
 	 *       created:
 	 *         type: string
 	 *         format: date-time
@@ -260,6 +269,30 @@ module.exports = (router) => {
 
 	/**
 	 * @swagger
+	 * /api/reports/companies:
+	 *   get:
+	 *     description: Get all companies
+	 *     tags:
+	 *       - report
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       200:
+	 *         description: Report array
+	 *         schema:
+	 *           type: array
+	 *           items:
+	 *             $ref: '#/definitions/ReportResponse'
+	 */
+
+	router.route("/reports/companies")
+		.get(
+			dataMiddleware.copy,
+			reportController.getAllCompanies
+		);
+
+	/**
+	 * @swagger
 	 * /api/reports:
 	 *   post:
 	 *     description: Create report
@@ -302,7 +335,7 @@ module.exports = (router) => {
 	 *         type: string
 	 *         required: true
 	 *     responses:
-	 *       201:
+	 *       200:
 	 *         description: Report
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
