@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 @Component({
   templateUrl: './audit-trail.page.html',
 })
 export class AuditTrailComponent {
-  @select(['auth', 'user', 'result']) public user$: Observable<object>;
+  @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
 
   logs = [
     {

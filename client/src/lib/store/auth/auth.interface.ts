@@ -20,12 +20,25 @@ export interface LoginInterface {
 }
 
 export interface UserInterface {
-    firstname: string;
-    lastname: string;
-    email: string;
-    created: string;
-    lastUpdated: string;
     company: CompanyInterface;
+    created: string;
+    email: string;
+    firstname: string;
+    isAdmin: boolean;
+    lastUpdated: string;
+    lastname: string;
+    status: UserInterfaceStatusType;
+    username: string;
+    validation: UserInterfaceValidationType;
+}
+
+interface UserInterfaceStatusType {
+  type: 'ACTIVATED' | 'DEACTIVATED' | 'PENDING';
+}
+
+interface UserInterfaceValidationType {
+  isValidated: boolean;
+  token: string;
 }
 
 export interface ResetPasswordInterface {

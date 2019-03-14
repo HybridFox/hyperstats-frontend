@@ -11,6 +11,7 @@ import { Option } from '@ui/form-fields/components/select/select.types';
 import { FormHelper } from '@helpers/form.helper';
 import { CompanyData } from '@api/company/company.types';
 import { CompanyInterface } from '@api/company/company.interface';
+import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
     templateUrl: './company-information.page.html',
@@ -18,7 +19,7 @@ import { CompanyInterface } from '@api/company/company.interface';
 
 export class CompanyPageComponent implements OnInit, OnDestroy {
     @select(AuthSelector.register.loading) public loading$: boolean;
-    @select(AuthSelector.user.result) public user$: Observable<any>;
+    @select(AuthSelector.user.result) public user$: Observable<UserInterface>;
 
     public companyForm: FormGroup;
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();

@@ -7,6 +7,8 @@ import { debounceTime } from 'rxjs/operators';
 import { AuthActions } from '@store/auth';
 import { LanguageService } from '../../services';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 const debounce = obs$ => obs$.pipe(
   debounceTime(1000),
 );
@@ -16,7 +18,7 @@ const debounce = obs$ => obs$.pipe(
   templateUrl: './core.component.html',
 })
 export class CoreComponent implements OnInit {
-  @select(['auth', 'user', 'result']) public user$: Observable<any>;
+  @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
   @select$(['auth', 'user', 'loading'], debounce) public loading$: Observable<any>;
 
   constructor(

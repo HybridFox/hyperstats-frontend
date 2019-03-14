@@ -4,12 +4,13 @@ import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { UserSelector, UsersActions } from '../../store';
+import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
   templateUrl: './requests.page.html',
 })
 export class RequestsPageComponent implements OnInit, OnDestroy {
-  @select(UserSelector.requests.result) public users$: Observable<any>;
+  @select(UserSelector.requests.result) public users$: Observable<UserInterface[]>;
   @select(UserSelector.requests.loading) public loading$: Observable<boolean>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
