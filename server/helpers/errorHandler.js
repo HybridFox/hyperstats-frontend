@@ -9,6 +9,7 @@ const errors = {
 	PageNotFound: "PAGE_NOT_FOUND",
 	UserNotFound: "USER_NOT_FOUND",
 	CompanyNotFound: "COMPANY_NOT_FOUND",
+	ProcessNotFound: "PROCESS_NOT_FOUND",
 	EmailAlreadyTaken: "EMAIL_ALREADY_TAKEN",
 	ItemCannotBeUpdated: "ITEM_CANNOT_BE_UPDATED",
 	SendingEmailFailed: "SENDING_EMAIL_FAILED",
@@ -67,6 +68,10 @@ const errorHandler = (err) => {
 		case errors.CompanyNotFound:
 			statusCode = 404;
 			msg = `Company not found.`;
+			break;
+		case errors.ProcessNotFound:
+			statusCode = 404;
+			msg = `Recycling process not found.`;
 			break;
 		case errors.EmailAlreadyTaken:
 			statusCode = 409;

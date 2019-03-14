@@ -5,7 +5,7 @@ module.exports = async(_id, bool) => {
 	const process = await RPModel.findOneAndUpdate({ _id, "meta.deleted": false }, { $set: { "meta.activated": bool } }, { new: true }).exec();
 
 	if (!process) {
-		throw errors.ItemNotFound;
+		throw errors.ProcessNotFound;
 	}
 
 	return process.toObject();
