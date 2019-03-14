@@ -4,7 +4,6 @@ const errors = require("../../../helpers/errorHandler");
 const getReportQuery = require("./getQuery");
 const { REPORT_STATUS } = require("./const");
 const mailer = require("../../../helpers/mail");
-const ResponseError = require("../../../helpers/errors/responseError");
 const UserModel = require("../../../models/user");
 const path = require("path");
 
@@ -16,10 +15,10 @@ const mailReportToUsers = (companyEmailList, id) => mailer({
 	data: {
 		confirmPath: `/recycler/reports/${id}`,
 	},
-}).catch(async(error) => {
+}).catch(async() => {
 	await companyEmailList.remove();
 
-	throw new ResponseError({ type: 500, msg: "Sending mail failed", error });
+	throw errors.SendingEmailFailed;
 });
 
 const getCurrentReport = async(id, query) => {
