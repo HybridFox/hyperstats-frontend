@@ -250,7 +250,6 @@ module.exports = (router) => {
 	 *           items:
 	 *             $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports")
 		.get(
 			dataMiddleware.copy,
@@ -279,7 +278,6 @@ module.exports = (router) => {
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports")
 		.post(
 			dataMiddleware.copy,
@@ -307,7 +305,6 @@ module.exports = (router) => {
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports/:id")
 		.get(
 			dataMiddleware.copy,
@@ -340,7 +337,6 @@ module.exports = (router) => {
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports/:id")
 		.put(
 			dataMiddleware.copy,
