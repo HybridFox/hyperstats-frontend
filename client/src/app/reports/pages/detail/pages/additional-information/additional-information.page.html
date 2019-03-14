@@ -6,7 +6,8 @@
     <app-multiple-file-upload
         class="u-margin-bottom-x-large"
         [multiple]="true"
-        [response]="uploadResult"
+        [response]="uploadResult$ | async"
+        [storedFiles]="storedFiles"
         (upload)=onUpload($event)
         [control]="form.get('files')"
         (removeFile)="onRemoveFile($event)"

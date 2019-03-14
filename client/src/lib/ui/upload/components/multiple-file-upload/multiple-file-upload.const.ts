@@ -1,5 +1,6 @@
-export const UPLOAD_STATES = [{
-  state: 'NEW'
-}, {
-  state: 'SAVED'
-}];
+export const UPLOAD_CONSTS = {
+  NEW: 'NEW',
+  STORED: 'STORED',
+  ASSET: 'ASSET',
+  SCHEMATIC: 'SCHEMATIC'
+};

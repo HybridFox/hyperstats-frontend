@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { UPLOAD_CONSTS } from './multiple-file-upload.const';
+import { isNil } from 'ramda';
 
 @Component({
     selector: 'app-multiple-file-upload',
@@ -9,30 +10,26 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class MultipleFileUploadComponent implements OnChanges, OnDestroy {
     @Input() public response: any;
+    @Input() public storedFiles: any;
     @Input() public label?: string;
     @Input() public control: FormControl;
     @Input() public multiple: boolean;
     @Output() public upload: EventEmitter<FileList> = new EventEmitter<FileList>();
-    @Output() public removeFile: EventEmitter<Number> = new EventEmitter<Number>();
+    @Output() public removeFile: EventEmitter<Object> = new EventEmitter<Object>();
 
     public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+    public uploadTypes = UPLOAD_CONSTS;
     public updateValue = (_: any) => {};
 
     public ngOnChanges(changes: SimpleChanges) {
-        if (changes.response && this.response) {
-          const files = [];
-          this.response.map((object, index) => {
-            object.file
-              .pipe(takeUntil(this.componentDestroyed$))
-              .subscribe(res => {
-                if (res && res.result) {
-                  files[index] = res.result;
-                  if (this.control) {
-                    this.control.patchValue(files);
-                  }
-                }
-            });
-          });
+        console.log(this.response);
+        if (changes.response && !isNil(this.response)) {
+          const files = this.storedFiles ? this.storedFiles.concat(this.response) : this.response;
+          this.patchFiles(files);
+        }
+        if (changes.storedFiles && !isNil(this.storedFiles)) {
+          const files = this.response ? this.storedFiles.concat(this.response) : this.storedFiles;
+          this.patchFiles(files);
         }
     }
 
@@ -45,7 +42,19 @@ export class MultipleFileUploadComponent implements OnChanges, OnDestroy {
         this.upload.emit(fileList);
     }
 
-    public onRemoveFile(index) {
-      this.removeFile.emit(index);
+    public onRemoveFile(index, type) {
+      this.removeFile.emit({index: index, type: type});
+    }
+
+    private patchFiles(files) {
+      if (this.control) {
+        this.control.patchValue(
+          files.map(file => {
+            if (file) {
+              return file.result;
+            }
+          })
+        );
+      }
     }
 }
