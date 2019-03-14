@@ -120,13 +120,6 @@
                 [options]="companyTypeOptions"
                 [control]="form.get('meta.type')"
             ></app-select-input>
-            <app-select-input
-                *ngIf="form.value?.meta?.type === 'RP'"
-                [label]="'GENERAL.LABELS.MANAGEDBY' | translate"
-                [options]="companies"
-                class="u-margin-bottom-large"
-                [control]="form.get('meta.managedBy')"
-            ></app-select-input>
         </div>
     </div>
 
