@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
+"POT-Creation-Date: 2019-03-14T09:58:43.443Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -547,10 +547,11 @@ msgstr ""
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
 
-#, fuzzy
-#| msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##EXPORT"
+msgstr "export"
+
 msgid "PAGE##REPORTS##FILED"
-msgstr "Filed"
+msgstr "filed"
 
 msgid "PAGE##REPORTS##NOPROCESSREPORTS"
 msgstr "There are no reports for this recycling process"
@@ -560,6 +561,9 @@ msgstr "You don’t have any reports yet"
 
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
+
+msgid "PAGE##REPORTS##VIEW"
+msgstr "view"
 
 msgid "PAGE##RESET-PASSWORD##ISRESET"
 msgstr "Your password has been reset! Please login to continiou"

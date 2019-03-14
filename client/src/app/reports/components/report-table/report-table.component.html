@@ -7,8 +7,8 @@
                 <td>{{ report?.data?.information?.reportingYear }}</td>
                 <td>{{report?.meta?.lastUpdated | date: 'dd/MM/yy'}}</td>
                 <td>
-                    <a [routerLink]="report._id" class="a-link u-margin-right-small">View</a>
-                    <a href="" class="a-link">Export</a>
+                    <a [routerLink]="report._id" class="a-link u-margin-right-small">{{'PAGE.REPORTS.VIEW' | translate}}</a>
+                    <a href="" class="a-link">{{'PAGE.REPORTS.EXPORT' | translate}}</a>
                 </td>
                 <td *ngIf="userIsRecycler">
                     <p [ngClass]="report?.meta?.status === 'FILED'?'a-label--success':'a-label--danger'" class="a-label u-align-center">{{

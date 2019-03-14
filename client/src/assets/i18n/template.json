@@ -216,10 +216,12 @@
 		"REPORTS": {
 			"DESCRIPTION": "",
 			"DRAFT": "",
+			"EXPORT": "",
 			"FILED": "",
 			"NOPROCESSREPORTS": "",
 			"NOREPORTS": "",
-			"TITLE": ""
+			"TITLE": "",
+			"VIEW": ""
 		},
 		"RESET-PASSWORD": {
 			"ISRESET": "",

@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
-"PO-Revision-Date: 2019-03-12T14:39:46.224Z\n"
+"POT-Creation-Date: 2019-03-14T09:58:43.443Z\n"
+"PO-Revision-Date: 2019-03-14T09:58:43.443Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -470,6 +470,9 @@ msgstr ""
 msgid "PAGE##REPORTS##DRAFT"
 msgstr ""
 
+msgid "PAGE##REPORTS##EXPORT"
+msgstr ""
+
 msgid "PAGE##REPORTS##FILED"
 msgstr ""
 
@@ -480,6 +483,9 @@ msgid "PAGE##REPORTS##NOREPORTS"
 msgstr ""
 
 msgid "PAGE##REPORTS##TITLE"
+msgstr ""
+
+msgid "PAGE##REPORTS##VIEW"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##ISRESET"

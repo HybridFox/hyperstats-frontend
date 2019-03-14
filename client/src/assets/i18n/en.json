@@ -216,10 +216,12 @@
         "REPORTS": {
             "DESCRIPTION": "Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize authentic create enable dynamic podcasting synergies architectures. Redefine authentic methodologies.",
             "DRAFT": "Draft",
-            "FILED": "Filed",
+            "EXPORT": "export",
+            "FILED": "filed",
             "NOPROCESSREPORTS": "There are no reports for this recycling process",
             "NOREPORTS": "You don’t have any reports yet",
-            "TITLE": "Reports"
+            "TITLE": "Reports",
+            "VIEW": "view"
         },
         "RESET-PASSWORD": {
             "ISRESET": "Your password has been reset! Please login to continiou",
