@@ -81,6 +81,11 @@ export interface AdditionalInformation {
     lastUpdated: string;
     deleted: boolean;
     status: string;
+    state: MetaState;
+ }
+
+ interface MetaState {
+  isPrestine: boolean;
  }
 
 export interface Report {
