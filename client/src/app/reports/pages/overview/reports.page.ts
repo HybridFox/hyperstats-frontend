@@ -7,7 +7,7 @@ import { takeUntil } from 'rxjs/operators';
 import { CompanyType } from '@api/company';
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
-import { mapRecyclingProcessesToMenuItemsWithAll } from '../../services/select.helpers';
+import { mapRecyclingProcessesToMenuItemsWithAll, mapReportToMenuItemsWithAll } from '../../services/select.helpers';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 
 @Component({
@@ -20,7 +20,11 @@ export class ReportsPageComponent implements OnInit {
   @select$(
     ReportsProcessSelector.list.result,
     mapRecyclingProcessesToMenuItemsWithAll
-  ) public menuItems$: Observable<MenuItem>;
+  ) public processesMenuItems$: Observable<MenuItem>;
+  @select$(
+    ReportsSelector.list.result,
+    mapReportToMenuItemsWithAll
+  ) public recyclerMenuItems$: Observable<MenuItem>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -50,7 +54,8 @@ export class ReportsPageComponent implements OnInit {
       )
       .subscribe(params => {
         this.reportsActions.fetchAll({
-          processId: params.recyclingProcess
+          processId: params.recyclingProcess,
+          recyclerId: params.recycler,
         }).toPromise();
       });
 

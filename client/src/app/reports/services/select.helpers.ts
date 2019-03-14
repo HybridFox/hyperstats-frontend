@@ -4,6 +4,8 @@ import { MenuItem, StepMenuItem } from '@shared/components/vertical-menu/vertica
 import { Option } from '@ui/form-fields/components/select/select.types';
 import pathOr from 'ramda/es/pathOr';
 
+import { Report, ReportingCompany } from '../store/reports/types';
+
 import { RecyclingProcess, ProcessStep} from '../store/recycling-processes/types';
 
 const ALL_MENU_ITEM: MenuItem = {
@@ -39,6 +41,16 @@ export const mapRecyclingProcessesToMenuItemsWithAll = mapper((process): MenuIte
   label: process.data.name,
   queryParams: { recyclingProcess: process._id}
 }), ALL_MENU_ITEM);
+
+export const mapReportToMenuItemsWithAll = mapper((report: Report): MenuItem => {
+  // TODO: will not work with multiple reportingCompanies
+  // TODO: get unique reportingCompanies
+  return {
+    link: ['./'],
+    label: (report.meta.reportingCompany as ReportingCompany).data.name,
+    queryParams: { recycler: (report.meta.reportingCompany as ReportingCompany)._id}
+  };
+}, ALL_MENU_ITEM);
 
 export const mapToSiteMenuItems = (obs$: Observable<any>) => {
   return obs$

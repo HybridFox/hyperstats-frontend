@@ -16,7 +16,12 @@
     <div class="l-grid__col-4-12">
       <div class="m-card--primary">
         <app-vertical-menu
-          [menuItems]="menuItems$ | async"
+          *ngIf="userIsRecycler"
+          [menuItems]="processesMenuItems$ | async"
+        ></app-vertical-menu>
+        <app-vertical-menu
+          *ngIf="!userIsRecycler"
+          [menuItems]="recyclerMenuItems$ | async"
         ></app-vertical-menu>
         <a *ngIf="userIsRecycler" class="a-button--primary a-button-outline has-icon-after u-margin-top" routerLink="new">
             {{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate }}
