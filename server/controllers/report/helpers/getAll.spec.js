@@ -136,6 +136,19 @@ describe("Report", () => {
 			expect(reports.length).to.equal(1);
 		});
 
+		it("Should filter on recycler", async() => {
+			const reports = await getAllReports({
+				reportedById: company._id,
+				companyType: "AO",
+				recycler: company._id,
+				recyclingProcessId: firstRecycingProcess,
+				sortBy: "name",
+			});
+
+			expect(reports).to.be.an("array");
+			expect(reports.length).to.equal(0);
+		});
+
 		it("Should return the approved reports for an AO", async() => {
 			const reports = await getAllReports({
 				reportedById: company._id,
