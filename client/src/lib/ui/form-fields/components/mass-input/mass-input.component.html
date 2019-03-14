@@ -2,7 +2,7 @@
   <div class="l-grid__col-6-12 a-input">
     <label *ngIf="label" class="a-input__label">{{ label }}</label>
     <div class="a-input__field-container">
-      <input [formControl]="control" [type]="type" class="a-input__field" [placeholder]="placeholder">
+      <input [formControl]="control" [type]="type" step="any" class="a-input__field" [placeholder]="placeholder">
       <span *ngIf="suffix" class="a-input__suffix">{{ suffix }}</span>
     </div>
     <p *ngIf="description && (!control.errors || !control.dirty)" class="a-input__description">{{ description }}</p>
