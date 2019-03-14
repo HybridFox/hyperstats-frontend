@@ -76,7 +76,7 @@ export class ReportsActions {
     this.handler.dispatch(ACTIONS.DETAIL.CLEAR);
   }
 
-  public createDrafted(report: Report): Observable<any> {
+  public createDrafted(report: any): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
@@ -87,7 +87,7 @@ export class ReportsActions {
       );
   }
 
-  public createFiled(report: Report): Observable<any> {
+  public createFiled(report: any): Observable<any> {
     return this.reportsRepository.create(report)
       .pipe(
         tap((response: any) => {
@@ -100,11 +100,11 @@ export class ReportsActions {
       );
   }
 
-  public draft(report: Report): Observable<any> {
+  public draft(report: any): Observable<any> {
     return this.update(report, REPORT_STATE.SAVED);
   }
 
-  public file(report: Report): Observable<any> {
+  public file(report: any): Observable<any> {
     return this.update(report, REPORT_STATE.FILED);
   }
 
