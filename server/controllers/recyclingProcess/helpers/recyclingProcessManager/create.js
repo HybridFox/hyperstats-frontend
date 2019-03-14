@@ -1,11 +1,15 @@
 const RecyclingProcessModel = require("../../../../models/recyclingProcess");
 
-module.exports = ({ process = {}, meta = {}, companyId }) => {
-	return RecyclingProcessModel.create({
+module.exports = async({ process = {}, meta = {}, companyId }) => {
+	const newProcess = new RecyclingProcessModel({
 		data: process,
 		meta: {
 			...meta,
-			reportingCompany: companyId,
+			createdByCompany: companyId,
 		},
 	});
+
+	await newProcess.save();
+
+	return newProcess.toObject();
 };

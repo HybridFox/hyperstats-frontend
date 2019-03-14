@@ -78,7 +78,7 @@ const RecyclingProcessSchema = mongoose.Schema({
 			type: Boolean,
 			default: true,
 		},
-		reportingCompany: {
+		createdByCompany: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Company",
 			required: true,

@@ -7,6 +7,7 @@ module.exports = (req, res, next) => {
 
 	recyclingProcessManager.create({
 		process: pathOr({}, ["data", "body", "data"], req),
+		meta: pathOr({}, ["data", "body", "meta"], req),
 		companyId: pathOr(null, ["company", "_id"], profile),
 	}).then((data) => res.status(201).json(data), next);
 };

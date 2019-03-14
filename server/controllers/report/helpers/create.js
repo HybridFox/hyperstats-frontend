@@ -1,11 +1,15 @@
 const ReportModel = require("../../../models/report");
 
 module.exports = async({ report = {}, meta = {}, companyId }) => {
-	return ReportModel.create({
+	const newReport = new ReportModel({
 		data: report,
 		meta: {
 			...meta,
 			reportingCompany: companyId,
 		},
 	});
+
+	await newReport.save();
+
+	return newReport.toObject();
 };
