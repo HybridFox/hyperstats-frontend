@@ -85,7 +85,7 @@ export interface AdditionalInformation {
  }
 
  interface MetaState {
-  isPrestine: boolean;
+  isPristine: boolean;
  }
 
 export interface Report {
