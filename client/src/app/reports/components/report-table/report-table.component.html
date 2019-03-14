@@ -2,7 +2,7 @@
     <table class="a-table">
         <tbody>
             <tr *ngFor="let report of reports">
-                <td *ngIf="!userIsRecycler">{{ report.meta.reportingCompany }}</td>
+                <td *ngIf="!userIsRecycler">{{ report?.meta?.reportingCompany?.data?.name }}</td>
                 <td>{{ report?.data?.information?.name }}</td>
                 <td>{{ report?.data?.information?.reportingYear }}</td>
                 <td>{{report?.meta?.lastUpdated | date: 'dd/MM/yy'}}</td>
