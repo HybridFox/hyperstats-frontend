@@ -3,7 +3,6 @@ const uuid = require("node-uuid").v4;
 const { path: rPath } = require("ramda");
 const UserModel = require("../../../models/user");
 const mailer = require("../../../helpers/mail");
-// const ResponseError = require("../../../helpers/errors/responseError");
 const errors = require("../../../helpers/errorHandler");
 
 // Send confirm email
