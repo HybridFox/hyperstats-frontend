@@ -17,7 +17,7 @@ const upload = multer({ storage: storage });
 
 module.exports = [upload.single("file"), (req, res, next) => {
 	if (!req.file) {
-		next(errors.FileIsRequired);
+		return next(errors.FileIsRequired);
 	}
 
 	return res.status(201).json({
