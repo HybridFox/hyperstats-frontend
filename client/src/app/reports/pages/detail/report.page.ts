@@ -24,7 +24,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
 
   public steps: Step[] = [
     {
-      name: 'WIZARD.TITLES.NEW-REPORT',
+      name: 'WIZARD.TITLES.INFORMATION',
       route: 'information',
       key: 'information',
     },
