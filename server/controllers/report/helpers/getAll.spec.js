@@ -107,7 +107,7 @@ describe("Report", () => {
 				sortBy: "reportingYear",
 			});
 
-			// fix populated value
+			// This fixes a problem with a populated value in the getAllReports
 			secondReport.data.information.recyclingProcess = null;
 
 			expect(reports).to.be.an("array");
