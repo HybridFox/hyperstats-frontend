@@ -32,7 +32,8 @@ export class ValidationGuard implements CanActivate {
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
       return this.user$
             .pipe(
-                map((user) => user.status.type === this.statusTypes.ACTIVATED && user.company && user.validation.isValidated),
+                map((user) => user.status.type ===
+                    this.statusTypes.ACTIVATED && (user.company || user.isAdmin) && user.validation.isValidated),
                 tap((res) => {
                     if (!res) {
                       return this.router.navigate(['/', 'validation']);

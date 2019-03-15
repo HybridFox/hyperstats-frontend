@@ -1,5 +1,5 @@
 const CompanyModel = require("../../../models/company");
-const Errors = require("../../../helpers/errorHandler");
+const errors = require("../../../helpers/errorHandler");
 
 module.exports = async({ _id, companyOfUser, update } = {}) => {
 	const query = {
@@ -10,7 +10,7 @@ module.exports = async({ _id, companyOfUser, update } = {}) => {
 	const company = await CompanyModel.findOne(query).exec();
 
 	if (!company) {
-		throw Errors.ItemNotFound;
+		throw errors.CompanyNotFound;
 	}
 
 	const originalCompany = company.toObject();

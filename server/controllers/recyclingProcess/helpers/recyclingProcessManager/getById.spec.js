@@ -1,9 +1,9 @@
 
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
-const Model = require("../../../../models/recyclingProcess");
+const createObjectId = require("mongoose").Types.ObjectId;
 const { mockMongoose } = require("../../../../test/mocks");
-const RecyclingProcesses = require("../../../../test/mocks/recyclingProcesses");
+const mockProcesses = require("../../../../test/mocks/recyclingProcesses");
 
 should();
 use(chaiAsPromised);
@@ -12,14 +12,17 @@ describe("Get Recycling process", () => {
 	let getById;
 	let mongoServer;
 	let processId;
+	const companyId = createObjectId();
+	const RecyclingProcesses = mockProcesses();
 
 	before(async() => {
 		mongoServer = await mockMongoose();
 		getById = require("./getById");
+		const create = require("./create");
 
-		const result = await new Model(RecyclingProcesses[0]).save();
+		const result = await create({ process: RecyclingProcesses[0].data, companyId });
 
-		processId = result.toObject()._id;
+		processId = result._id;
 	});
 
 	after(() => {

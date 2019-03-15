@@ -1,5 +1,10 @@
 const RecyclingProcessModel = require("../../../../models/recyclingProcess");
 
-module.exports = () => {
-	return RecyclingProcessModel.find({ "meta.deleted": false }).exec();
+module.exports = ({ companyId }) => {
+	return RecyclingProcessModel.find({
+		$and: [
+			{ "meta.deleted": false },
+			{ "meta.createdByCompany": companyId },
+		],
+	}).exec();
 };

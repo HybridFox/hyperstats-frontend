@@ -6,16 +6,20 @@ import { takeUntil } from 'rxjs/operators';
 
 import { CompanyType } from '@api/company';
 import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
+import { UserInterface } from '@store/auth/auth.interface';
+
 import { ReportsActions, ReportsSelector } from '../../store/reports';
+import { Report } from '../../store/reports/types';
 import { mapRecyclingProcessesToMenuItemsWithAll, mapReportToMenuItemsWithAll } from '../../services/select.helpers';
+
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 
 @Component({
   templateUrl: './reports.page.html',
 })
 export class ReportsPageComponent implements OnInit {
-  @select(['auth', 'user', 'result']) private user$: Observable<any>;
-  @select(ReportsSelector.list.result) public reports$: Observable<any>;
+  @select(['auth', 'user', 'result']) private user$: Observable<UserInterface>;
+  @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
   @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
 
   @select$(

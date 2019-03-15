@@ -60,7 +60,11 @@ describe("Integration", () => {
 					password: "validPassword",
 				})
 				.expect("Content-Type", /json/)
-				.expect(404);
+				.expect(404)
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(body.err).to.equal("User not found.");
+				});
 		});
 
 		it("Should fail to login the user when invalid password is passed", () => {
@@ -71,7 +75,11 @@ describe("Integration", () => {
 					password: "invalidPassword",
 				})
 				.expect("Content-Type", /json/)
-				.expect(404);
+				.expect(400)
+				.then(({ body }) => {
+					expect(body).to.be.an("object");
+					expect(body.err).to.equal("Invalid password.");
+				});
 		});
 
 		it("Should fail to login the user when no password is set", () => {

@@ -4,6 +4,7 @@ const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
+const errors = require("../../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
@@ -33,7 +34,7 @@ describe("Verify handler", () => {
 	});
 
 	it("Should fail to verify the user if the token is wrong", () => {
-		return expect(verifyHandler("invalidToken")).to.be.rejectedWith(Error);
+		return expect(verifyHandler("invalidToken")).to.be.rejectedWith(errors.UserNotFound);
 	});
 
 	it("Should validate the user if the token is ok", () => {
@@ -41,6 +42,6 @@ describe("Verify handler", () => {
 	});
 
 	it("Should fail to verify the user if the user is already validated", () => {
-		return expect(verifyHandler("someToken")).to.be.rejectedWith(Error);
+		return expect(verifyHandler("someToken")).to.be.rejectedWith(errors.UserNotFound);
 	});
 });
