@@ -99,6 +99,9 @@ export class OutputFractionPageComponent extends StepPageAbstract {
               if (input !== this.classifications.INTERMEDIATE) {
                 formArr.at(index).get('assignedStep').reset();
               }
+              if (input !== this.classifications.RECYCLING) {
+                formArr.at(index).get('virginReplacedMaterial').reset();
+              }
             });
         });
       });

@@ -7,8 +7,13 @@ export function validateOutputFraction (control: FormGroup) {
   const step = control.get('assignedStep');
   const industry = control.get('elementDestinationIndustry');
   const company = control.get('elementDestinationCompany');
+  const replacedMaterial = control.get('virginReplacedMaterial');
   const classifications = CLASSIFICATIONS;
 
+  if (virgin === classifications.RECYCLING && (isEmpty(replacedMaterial.value) || replacedMaterial.value === null)) {
+    control.controls['virginReplacedMaterial'].setErrors({'required': true});
+    return { isRequired: true };
+  }
   if (virgin === classifications.INTERMEDIATE && (isEmpty(step.value) || step.value === null)) {
     control.controls['assignedStep'].setErrors({'required': true});
     return { isRequired: true };
@@ -31,6 +36,7 @@ export function validateOutputFraction (control: FormGroup) {
     (isEmpty(industry.value) || !industry.value || isEmpty(company.value) || !company.value)) {
     return { isRequired: true };
   }
+  control.controls['virginReplacedMaterial'].setErrors(null);
   control.controls['elementDestinationCompany'].setErrors(null);
   control.controls['elementDestinationIndustry'].setErrors(null);
   control.controls['assignedStep'].setErrors(null);

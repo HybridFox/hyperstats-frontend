@@ -173,7 +173,7 @@ export class FormDataService {
       element: [pathOr('', ['element'])(element), Validators.required],
       mass: [pathOr(null, ['mass'])(element), Validators.required],
       virginClassification: [pathOr('', ['virginClassification'])(element), Validators.required],
-      virginReplacedMaterial: [pathOr('', ['virginReplacedMaterial'])(element), Validators.required],
+      virginReplacedMaterial: [pathOr('', ['virginReplacedMaterial'])(element)],
       elementDestinationIndustry: [pathOr('', ['elementDestinationIndustry'])(element)],
       elementDestinationCompany: [pathOr('', ['elementDestinationCompany'])(element)],
       assignedStep: [pathOr('', ['assignedStep'])(element)]
