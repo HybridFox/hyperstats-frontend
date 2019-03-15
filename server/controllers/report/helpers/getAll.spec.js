@@ -12,7 +12,7 @@ should();
 use(chaiAsPromised);
 
 describe("Report", () => {
-	describe("getAll", () => {
+	describe.only("getAll", () => {
 		const firstRecycingProcess = createObjectId();
 		const secondRecycingProcess = createObjectId();
 		let mongoServer;
@@ -90,6 +90,9 @@ describe("Report", () => {
 				sortBy: "name",
 			});
 
+			// fix populated value
+			firstReport.data.information.recyclingProcess = null;
+
 			expect(reports).to.be.an("array");
 			expect(reports[0].data).to.deep.equal(firstReport.data);
 			expect(reports[0].meta.reportingCompany.data.name).to.equal(company.data.name);
@@ -103,6 +106,9 @@ describe("Report", () => {
 				recyclingProcessId: null,
 				sortBy: "reportingYear",
 			});
+
+			// fix populated value
+			secondReport.data.information.recyclingProcess = null;
 
 			expect(reports).to.be.an("array");
 			expect(reports[0].data).to.deep.equal(secondReport.data);
