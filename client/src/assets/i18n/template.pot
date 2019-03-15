@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
-"PO-Revision-Date: 2019-03-12T14:39:46.224Z\n"
+"POT-Creation-Date: 2019-03-15T08:41:36.298Z\n"
+"PO-Revision-Date: 2019-03-15T08:41:36.298Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -45,6 +45,12 @@ msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##TYPEREQUIRED"
+msgstr ""
+
+msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
 msgstr ""
 
 msgid "GENERAL##LABELS##ACCEPT"

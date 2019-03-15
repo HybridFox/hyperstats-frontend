@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
+"POT-Creation-Date: 2019-03-15T08:41:36.298Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -49,6 +49,12 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
+
+msgid "GENERAL##FIELD-ERRORS##TYPEREQUIRED"
+msgstr "Type is required when weight is filled in"
+
+msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
+msgstr "Weight is required when type is filled in"
 
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "Accept"
