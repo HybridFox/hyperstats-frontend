@@ -12,7 +12,7 @@ should();
 use(chaiAsPromised);
 
 describe("Report", () => {
-	describe.only("getAll", () => {
+	describe("getAll", () => {
 		const firstRecycingProcess = createObjectId();
 		const secondRecycingProcess = createObjectId();
 		let mongoServer;
