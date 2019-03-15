@@ -76,7 +76,7 @@ export interface AdditionalInformation {
 
  export interface Meta {
     approvedCompanies: string[];
-    reportingCompany: string;
+    reportingCompany: string | ReportingCompany;
     created: string;
     lastUpdated: string;
     deleted: boolean;
@@ -86,6 +86,13 @@ export interface AdditionalInformation {
 
  interface MetaState {
   isPristine: boolean;
+ }
+
+ export interface ReportingCompany {
+   _id: string;
+   data: {
+     name: string;
+   };
  }
 
 export interface Report {

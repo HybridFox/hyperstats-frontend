@@ -41,6 +41,29 @@ export class ReportsActions {
       );
   }
 
+  public fetchAllCompanies(): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.COMPANIES.FETCH);
+
+    return this.reportsRepository.fetchAllCompanies()
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.COMPANIES.FETCH, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap((response: any) => {
+          this.handler.dispatchSuccess(ACTIONS.COMPANIES.FETCH, {
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.report])
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.COMPANIES.FETCH);
+        }),
+      );
+  }
+
   public fetchById(id: string): Observable<any> {
     if (!id || id === 'new') {
       this.handler.dispatch(ACTIONS.DETAIL.FETCH, {

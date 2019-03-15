@@ -41,6 +41,7 @@ module.exports = async({ reportedById, recyclingProcessId, recycler, companyType
 	return ReportModel
 		.find(getQuery(reportedById, recyclingProcessId, recycler, companyType))
 		.populate("meta.reportingCompany", "data.name")
+		.populate("data.information.recyclingProcess", "data.name")
 		.sort(setSorting(sortBy))
 		.lean()
 		.exec();

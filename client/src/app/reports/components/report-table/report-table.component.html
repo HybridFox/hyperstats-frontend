@@ -4,8 +4,9 @@
             <tr *ngFor="let report of reports">
                 <td *ngIf="!userIsRecycler">{{ report?.meta?.reportingCompany?.data?.name }}</td>
                 <td>{{ report?.data?.information?.name }}</td>
+                <td *ngIf="!userIsRecycler">{{ report?.data?.information?.recyclingProcess?.data?.name }}</td>
                 <td>{{ report?.data?.information?.reportingYear }}</td>
-                <td>{{report?.meta?.lastUpdated | date: 'dd/MM/yy'}}</td>
+                <td *ngIf="userIsRecycler">{{report?.meta?.lastUpdated | date: 'dd/MM/yy'}}</td>
                 <td>
                     <a [routerLink]="report._id" class="a-link u-margin-right-small">{{'PAGE.REPORTS.VIEW' | translate}}</a>
                     <a href="" class="a-link">{{'PAGE.REPORTS.EXPORT' | translate}}</a>

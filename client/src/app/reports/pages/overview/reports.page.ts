@@ -10,8 +10,8 @@ import { UserInterface } from '@store/auth/auth.interface';
 
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { Report } from '../../store/reports/types';
+import { mapRecyclingProcessesToMenuItemsWithAll, mapReportToMenuItemsWithAll } from '../../services/select.helpers';
 
-import { mapRecyclingProcessesToMenuItemsWithAll } from '../../services/select.helpers';
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 
 @Component({
@@ -21,10 +21,15 @@ export class ReportsPageComponent implements OnInit {
   @select(['auth', 'user', 'result']) private user$: Observable<UserInterface>;
   @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
   @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
+
   @select$(
     ReportsProcessSelector.list.result,
     mapRecyclingProcessesToMenuItemsWithAll
-  ) public menuItems$: Observable<MenuItem>;
+  ) public processesMenuItems$: Observable<MenuItem>;
+  @select$(
+    ReportsSelector.companies.result,
+    mapReportToMenuItemsWithAll
+  ) public recyclerMenuItems$: Observable<MenuItem>;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -48,13 +53,16 @@ export class ReportsPageComponent implements OnInit {
       }
     });
 
+    this.reportsActions.fetchAllCompanies().toPromise();
+
     this.activatedRoute.queryParams
       .pipe(
         takeUntil(this.componentDestroyed$)
       )
       .subscribe(params => {
         this.reportsActions.fetchAll({
-          processId: params.recyclingProcess
+          processId: params.recyclingProcess,
+          recyclerId: params.recycler,
         }).toPromise();
       });
 
