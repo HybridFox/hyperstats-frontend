@@ -1,7 +1,7 @@
 const path = require("path");
 const UserModel = require("../../../models/user");
+const errors = require("../../../helpers/errorHandler");
 const mailer = require("../../../helpers/mail");
-const ResponseError = require("../../../helpers/errors/responseError");
 
 const mailToAdmins = (user, admins) => mailer({
 	to: admins,
@@ -12,10 +12,10 @@ const mailToAdmins = (user, admins) => mailer({
 		userLastName: user.data.lastname,
 		confirmPath: `/admin/users/signup-requests/${user._id}`,
 	},
-}).catch(async(error) => {
+}).catch(async() => {
 	await user.remove();
 
-	throw new ResponseError({ type: 500, msg: "Sending mail failed", error });
+	throw errors.SendingEmailFailed;
 });
 
 /**
@@ -30,7 +30,7 @@ module.exports = async(token) => {
 	const adminEmails = admins.reduce((acc, admin) => [...acc, admin.data.email], []);
 
 	if (!user) {
-		throw new Error({ type: 400, msg: "Invalid token!" });
+		throw errors.UserNotFound;
 	}
 
 	user.meta.status.type = "PENDING";

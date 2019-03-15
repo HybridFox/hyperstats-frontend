@@ -1,5 +1,5 @@
 const UserModel = require("../../../../models/user");
-const Errors = require("../../../../helpers/errorHandler");
+const errors = require("../../../../helpers/errorHandler");
 
 module.exports = (id, company) => {
 	return UserModel.findOneAndUpdate(
@@ -9,7 +9,7 @@ module.exports = (id, company) => {
 	).lean().exec()
 		.then((data) => {
 			if (!data) {
-				throw Errors.ItemNotFound;
+				throw errors.ItemNotFound;
 			}
 
 			return data;

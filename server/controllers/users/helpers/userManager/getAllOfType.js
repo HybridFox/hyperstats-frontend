@@ -1,5 +1,3 @@
-
-
 const UserModel = require("../../../../models/user");
 
 const getQuery = (type, includeAdmin = false, status) => {

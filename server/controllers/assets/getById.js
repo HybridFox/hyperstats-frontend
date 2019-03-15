@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { MongoGridFS } = require("mongo-gridfs");
-const Errors = require("../../helpers/errorHandler");
+const errors = require("../../helpers/errorHandler");
 
 module.exports = (req, res, next) => {
 	const gridFS = new MongoGridFS(mongoose.connection.db, "fs");
@@ -30,11 +30,5 @@ module.exports = (req, res, next) => {
 				})
 				.pipe(res);
 		})
-		.catch((err) => {
-			if (err.message === "No Object found") {
-				return next(Errors.ItemNotFound);
-			}
-
-			next(err);
-		});
+		.catch((err) => next(err.message === "No Object found" ? errors.ItemNotFound : err));
 };
