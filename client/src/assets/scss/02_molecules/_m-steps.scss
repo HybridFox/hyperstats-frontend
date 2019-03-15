@@ -13,6 +13,8 @@
         }
 
         &.m-steps__step--selected {
+            pointer-events: none;
+            cursor: default;
             .m-steps__step-text {
                 color: $zodiac;
                 font-weight: bold;
