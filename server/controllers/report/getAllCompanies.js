@@ -9,8 +9,6 @@ module.exports = (req, res, next) => {
 		reportedById: pathOr(null, ["company", "_id"], profile),
 		companyType: pathOr("R", ["company", "meta", "type"], profile),
 	})
-		.then((reports) => {
-			return res.status(200).json(reports);
-		})
+		.then((reports) => res.status(200).json(reports))
 		.catch((error) => next(error));
 };
