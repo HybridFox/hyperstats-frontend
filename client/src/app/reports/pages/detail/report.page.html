@@ -10,7 +10,7 @@
           *ngFor="let step of steps; let i = index;"
           routerLinkActive="m-steps__step--selected"
           [ngClass]="{
-            'm-steps__step--selected': (currentId === 'new' && i === 0) || (currentId !== 'new' && i === 1),
+            'm-steps__step--selected': (currentId === 'new' && i === 0),
             'm-steps__step--disabled': (currentId === 'new' && i !== 0)
           }"
         >

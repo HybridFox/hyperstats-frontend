@@ -10,7 +10,8 @@ export function validateAdditives(control: FormGroup) {
     control.controls['type'].setErrors(null);
     control.controls['weight'].setErrors(null);
     return null;
-  } else if (!isEmpty(type) || weight) {
+  }
+  if (!isEmpty(type) || weight) {
     Object.keys(control.controls).map((controlName) => {
       control.get(controlName).markAsDirty({onlySelf: true});
     });
