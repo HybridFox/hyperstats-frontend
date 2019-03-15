@@ -111,7 +111,7 @@ export class CompanyFormComponent implements OnChanges, OnInit {
                     function: [pathOr('', ['data', 'contactPerson', 'function'], value), Validators.required],
                     phone: [pathOr('', ['data', 'contactPerson', 'phone'], value), Validators.required],
                     mobile: [pathOr('', ['data', 'contactPerson', 'mobile'], value), Validators.required],
-                    email: [pathOr('', ['data', 'contactPerson', 'email'], value), Validators.required],
+                    email: [pathOr('', ['data', 'contactPerson', 'email'], value), [Validators.email, Validators.required]],
                 })
             }),
             meta: this.formBuilder.group({

@@ -98,6 +98,7 @@
                 [label]="'GENERAL.LABELS.EMAIL' | translate"
                 class="u-margin-bottom-large"
                 [control]="form.get('data.contactPerson').get('email')"
+                type="email"
             ></app-text-input>
         </div>
     </div>
@@ -119,13 +120,6 @@
                 class="u-margin-bottom-large"
                 [options]="companyTypeOptions"
                 [control]="form.get('meta.type')"
-            ></app-select-input>
-            <app-select-input
-                *ngIf="form.value?.meta?.type === 'RP'"
-                [label]="'GENERAL.LABELS.MANAGEDBY' | translate"
-                [options]="companies"
-                class="u-margin-bottom-large"
-                [control]="form.get('meta.managedBy')"
             ></app-select-input>
         </div>
     </div>

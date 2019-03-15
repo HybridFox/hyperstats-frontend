@@ -4,17 +4,19 @@
     [multiple]="multiple"
 ></app-upload-input>
 
-<div *ngFor="let file of response; let index = index">
+<div *ngFor="let file of storedFiles; let index = index">
   <app-uploaded-list
-      *ngIf="response && file?.state === 'SAVED'"
-      [storedFile]="(file.file | async)?.originalname"
-      (removeFile)="onRemoveFile(index)"
+      *ngIf="file?.originalname"
+      [storedFile]="file?.originalname"
+      (removeFile)="onRemoveFile(index, uploadTypes.STORED)"
   ></app-uploaded-list>
+</div>
 
+<div *ngFor="let file of response; let index = index">
   <app-upload-preview
-      *ngIf="response && file?.state === 'NEW'"
-      [progress]="(file.file | async)?.progress"
-      [name]="(file.file | async)?.originalname"
-      (removeFile)="onRemoveFile(index)"
+      *ngIf="file?.originalname"
+      [progress]="file?.progress"
+      [name]="file?.originalname"
+      (removeFile)="onRemoveFile(index, uploadTypes.NEW)"
   ></app-upload-preview>
 </div>
