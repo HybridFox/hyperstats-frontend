@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import pathOr from 'ramda/es/pathOr';
 import { validateAdditives } from '../pages/detail/pages/additives/additives-validator.directive';
+import { validateOutputFraction } from '../pages/detail/pages/output-fraction/output-fraction-validator.directive';
 
 import {
   Report,
@@ -16,7 +17,6 @@ import {
   AdditivesData,
   SiteRef
 } from '../store/reports/types';
-import { validateOutputFraction } from '../pages/detail/pages/output-fraction/validateOutputFraction.directive';
 
 @Injectable()
 export class FormDataService {

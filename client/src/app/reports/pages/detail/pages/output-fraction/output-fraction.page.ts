@@ -9,7 +9,7 @@ import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
 import { ReportsProcessActions, ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
-import { select$, select } from '@angular-redux/store';
+import { select$ } from '@angular-redux/store';
 import { RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { companiesToSelectOptions, processStepsToSelectOptions } from '@helpers/select.helpers';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -66,6 +66,7 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       this.formData.addOutputFraction(stepId);
       this.setActiveStepById(stepId);
     }
+    this.watchClassification();
   }
 
   public onFormReady(): void {
@@ -75,6 +76,31 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       )
       .subscribe((params) => {
         this.setActiveStepById(params.stepId);
+      });
+  }
+
+  private watchClassification() {
+    const formArr = (this.outputFraction.get('data') as FormArray);
+      formArr.valueChanges
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+      )
+      .subscribe(arr => {
+        arr.forEach((element, index) => {
+          formArr.at(index).get('virginClassification').valueChanges
+            .pipe(
+              takeUntil(this.componentDestroyed$),
+            )
+            .subscribe(input => {
+              if (input === this.classifications.INTERMEDIATE) {
+                formArr.at(index).get('elementDestinationIndustry').reset();
+                formArr.at(index).get('elementDestinationCompany').reset();
+              }
+              if (input !== this.classifications.INTERMEDIATE) {
+                formArr.at(index).get('assignedStep').reset();
+              }
+            });
+        });
       });
   }
 }

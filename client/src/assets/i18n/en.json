@@ -19,9 +19,7 @@
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
-            "REQUIRED": "This field is required",
-            "TYPEREQUIRED": "Type is required when weight is filled in",
-            "WEIGHTREQUIRED": "Weight is required when type is filled in"
+            "REQUIRED": "This field is required"
         },
         "LABELS": {
             "ACCEPT": "Accept",
@@ -59,7 +57,6 @@
             "I-ACCEPT-THE": "I accept the",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
-            "MANAGEDBY": "Name",
             "MESSAGE": "Message",
             "MOBILEPHONE": "Mobile phone",
             "NAME": "Name",
@@ -252,7 +249,6 @@
         "REVOKEPROXY": "Revoke this proxy"
     },
     "Recycler": "Recycler",
-    "Recycling Partner": "Recycling Partner",
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
@@ -571,10 +567,12 @@
             },
             "LABELS": {
                 "ADD-ADDITIONAL-ELEMENT": "Add additional element/compound",
+                "ASSIGNED-STEP": "Assigned Step",
                 "CLASSIFICATION": "Classification",
+                "DESTINATION-COMPANY": "Destination - Name of company",
+                "DESTINATION-INDUSTRY": "Destination - Industry",
                 "ELEMENT": "Element or compound",
                 "MASS": "Mass (t)",
-                "REPLACED-ELEMENT-MATERIAL": "Replaced element material",
                 "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
                 "SHARE-OUTPUT-FRACTION": "Share output fraction"
             },
@@ -597,7 +595,6 @@
             "ADDITIONAL-INFORMATION": "Add. Information",
             "ADDITIVES": "Additives",
             "FILE-REPORT": "File Report",
-            "INFORMATION": "General",
             "INPUT-FRACTION": "Input Fraction",
             "NEW-REPORT": "New Report",
             "OUTPUT-FRACTION": "Output Fraction",
