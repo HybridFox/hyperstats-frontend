@@ -13,18 +13,13 @@ export class ReportsRepository {
 
   public fetchAll(filters: ReportsType): Observable<any> {
     const url = this.apiConfig.baseUrl('/reports');
-
-    let options = {};
-
     if (filters.processId) {
-      options = { params: new HttpParams().set('recycling-process', filters.processId) };
+      return this.http.get(url, { params: new HttpParams().set('recycling-process', filters.processId) });
     }
 
     if (filters.recyclerId) {
-      options = { params: new HttpParams().set('recycler', filters.recyclerId) };
+      return this.http.get(url, { params: new HttpParams().set('recycler', filters.recyclerId) });
     }
-
-    return this.http.get(url, options);
   }
 
   public fetchAllCompanies(): Observable<any> {
