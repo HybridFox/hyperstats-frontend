@@ -1,7 +1,7 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { takeUntil, filter } from 'rxjs/operators';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { select$, select } from '@angular-redux/store';
 import { map } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ import { FormArray, FormGroup } from '@angular/forms';
 @Component({
   templateUrl: './step-wrapper.page.html',
 })
-export class StepWrapperPageComponent implements OnInit, DoCheck {
+export class StepWrapperPageComponent implements OnInit {
   @select$(ReportsProcessSelector.detail.result, mapToStepMenuItems) public siteMenuItems$: BehaviorSubject<StepMenuItem[]>;
   @select(ReportsProcessSelector.detail.result) public process$: BehaviorSubject<any>;
   public title$;
@@ -36,11 +36,7 @@ export class StepWrapperPageComponent implements OnInit, DoCheck {
   ) {}
 
   public ngOnInit() {
-    this.setForm();
-  }
-
-  public ngDoCheck() {
-    this.setForm();
+     this.setForm();
   }
 
   public setForm() {

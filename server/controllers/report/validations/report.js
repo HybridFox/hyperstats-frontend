@@ -97,12 +97,21 @@ const filedData = {
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
 		data: joi.array().items(joi.object().keys({
-			type: joi.string().required(),
-			weight: joi.number().required(),
+			type: joi.string(),
+			weight: joi.number(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
 				weight: joi.number().required(),
 			})),
+		}).when(joi.object({ weight: null, type: "" }).unknown(), {
+			then: joi.object({
+				type: joi.string().allow("").optional(),
+				weight: joi.number().allow(null).optional(),
+			}),
+			otherwise: joi.object({
+				type: joi.string().required(),
+				weight: joi.number().required(),
+			}),
 		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
