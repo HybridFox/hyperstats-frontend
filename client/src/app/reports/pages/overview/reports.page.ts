@@ -1,51 +1,63 @@
 import { Component, OnInit } from '@angular/core';
-import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
-import { select, select$ } from '@angular-redux/store';
-import { mapRecyclingProcessesToMenuItemsWithAll } from '../../services/select.helpers';
-import { Observable, Subject } from 'rxjs';
-import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
-import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { ActivatedRoute } from '@angular/router';
+import { select, select$ } from '@angular-redux/store';
+import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import { CompanyType } from '@api/company';
+import { MenuItem } from '@shared/components/vertical-menu/vertical-menu.types';
+import { UserInterface } from '@store/auth/auth.interface';
+
+import { ReportsActions, ReportsSelector } from '../../store/reports';
+import { Report } from '../../store/reports/types';
+
+import { mapRecyclingProcessesToMenuItemsWithAll } from '../../services/select.helpers';
+import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
+
 @Component({
-    templateUrl: './reports.page.html',
+  templateUrl: './reports.page.html',
 })
 export class ReportsPageComponent implements OnInit {
-    @select(ReportsSelector.list.result) public reports$: Observable<any>;
-    @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
-    @select$(
-        ReportsProcessSelector.list.result,
-        mapRecyclingProcessesToMenuItemsWithAll
-    ) public menuItems$: Observable<MenuItem>;
+  @select(['auth', 'user', 'result']) private user$: Observable<UserInterface>;
+  @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
+  @select(ReportsSelector.list.loading) public reportsLoading$: Observable<boolean>;
+  @select$(
+    ReportsProcessSelector.list.result,
+    mapRecyclingProcessesToMenuItemsWithAll
+  ) public menuItems$: Observable<MenuItem>;
 
-    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
-    public reportsActive = false;
+  public reportsActive = false;
+  public userIsRecycler = true;
 
-    constructor(
-        private reportsActions: ReportsActions,
-        private reportsProcessActions: ReportsProcessActions,
-        private activatedRoute: ActivatedRoute,
-    ) {}
+  constructor(
+    private reportsActions: ReportsActions,
+    private reportsProcessActions: ReportsProcessActions,
+    private activatedRoute: ActivatedRoute,
+  ) { }
 
-    ngOnInit() {
-      this.reports$.subscribe((reports) => {
-        if (reports && reports.length > 0) {
-          this.reportsActive = true;
-        }
+  ngOnInit() {
+    this.user$.subscribe((user) => {
+      this.userIsRecycler = (user.company.meta.type !== CompanyType.AO && user.company.meta.type !== CompanyType.CO);
+    });
+
+    this.reports$.subscribe((reports) => {
+      if (reports && reports.length > 0) {
+        this.reportsActive = true;
+      }
+    });
+
+    this.activatedRoute.queryParams
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe(params => {
+        this.reportsActions.fetchAll({
+          processId: params.recyclingProcess
+        }).toPromise();
       });
 
-      this.activatedRoute.queryParams
-        .pipe(
-          takeUntil(this.componentDestroyed$)
-        )
-        .subscribe(params => {
-          this.reportsActions.fetchAll({
-            processId: params.recyclingProcess
-          }).toPromise();
-        });
-
-      this.reportsProcessActions.fetchAllRecyclingProcesses().toPromise();
-    }
+    this.reportsProcessActions.fetchAllRecyclingProcesses().toPromise();
+  }
 }

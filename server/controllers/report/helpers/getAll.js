@@ -34,5 +34,10 @@ const setSorting = (sortBy) => {
 };
 
 module.exports = async({ reportedById, recyclingProcessId, companyType, sortBy }) => {
-	return ReportModel.find(getQuery(reportedById, recyclingProcessId, companyType)).sort(setSorting(sortBy)).lean().exec();
+	return ReportModel
+		.find(getQuery(reportedById, recyclingProcessId, companyType))
+		.populate("meta.reportingCompany", "data.name")
+		.sort(setSorting(sortBy))
+		.lean()
+		.exec();
 };
