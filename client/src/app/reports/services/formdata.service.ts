@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import pathOr from 'ramda/es/pathOr';
+import { validateAdditives } from '../pages/detail/pages/additives/additives-validator.directive';
 
 import {
   Report,
@@ -131,9 +132,9 @@ export class FormDataService {
 
   public getAdditive(additiveItem: AdditivesData): FormGroup {
     return this.formBuilder.group({
-      type: [pathOr('', ['type'])(additiveItem), Validators.required],
-      weight: [pathOr(null, ['weight'])(additiveItem), Validators.required],
-    });
+      type: [pathOr('', ['type'])(additiveItem)],
+      weight: [pathOr(null, ['weight'])(additiveItem)],
+    }, {validators: validateAdditives});
   }
 
   public getAdditives(additiveItems: AdditivesData[]): FormArray {
