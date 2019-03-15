@@ -48,9 +48,9 @@ const savedData = {
 			mass: joi.number().allow(null).optional(),
 			virginClassification: joi.string().allow("").optional(),
 			virginReplacedMaterial: joi.string().allow("").optional(),
-			elementDestinationIndustry: joi.string().allow("").optional(),
-			elementDestinationCompany: joi.string().allow("").optional(),
-			assignedStep: joi.string().allow("").optional(),
+			elementDestinationIndustry: joi.string().allow("", null).optional(),
+			elementDestinationCompany: joi.string().allow("", null).optional(),
+			assignedStep: joi.string().allow("", null).optional(),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({
@@ -122,9 +122,20 @@ const filedData = {
 			mass: joi.number().required(),
 			virginClassification: joi.string().required(),
 			virginReplacedMaterial: joi.string().required(),
-			elementDestinationIndustry: joi.string().required(),
-			elementDestinationCompany: joi.string().required(),
-			assignedStep: joi.string().required(),
+			elementDestinationIndustry: joi.string(),
+			elementDestinationCompany: joi.string(),
+			assignedStep: joi.string(),
+		}).when(joi.object({ assignedStep: "" }).unknown(), {
+			then: joi.object({
+				elementDestinationIndustry: joi.string().required(),
+				elementDestinationCompany: joi.string().required(),
+				assignedStep: joi.string().allow("", null),
+			}),
+			otherwise: joi.object({
+				elementDestinationIndustry: joi.string().allow("", null),
+				elementDestinationCompany: joi.string().allow("", null),
+				assignedStep: joi.string().required(),
+			}),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({

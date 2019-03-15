@@ -1007,6 +1007,9 @@ msgstr ""
 msgid "WIZARD##TITLES##FILE-REPORT"
 msgstr ""
 
+msgid "WIZARD##TITLES##INFORMATION"
+msgstr ""
+
 msgid "WIZARD##TITLES##INPUT-FRACTION"
 msgstr ""
 

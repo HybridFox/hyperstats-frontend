@@ -594,7 +594,8 @@
 		"TITLES": {
 			"ADDITIONAL-INFORMATION": "",
 			"ADDITIVES": "",
-			"FILE-REPORT": "",
+      "FILE-REPORT": "",
+      "INFORMATION": "",
 			"INPUT-FRACTION": "",
 			"NEW-REPORT": "",
 			"OUTPUT-FRACTION": "",

@@ -1146,6 +1146,9 @@ msgstr "Additives"
 msgid "WIZARD##TITLES##FILE-REPORT"
 msgstr "File Report"
 
+msgid "WIZARD##TITLES##INFORMATION"
+msgstr "General"
+
 msgid "WIZARD##TITLES##INPUT-FRACTION"
 msgstr "Input Fraction"
 
@@ -1178,9 +1181,6 @@ msgstr "The form is invalid, make sure you have filled all the fields"
 
 #~ msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
 #~ msgstr "Weight is required when type is filled in"
-
-#~ msgid "WIZARD##TITLES##INFORMATION"
-#~ msgstr "General"
 
 #, fuzzy
 #~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
