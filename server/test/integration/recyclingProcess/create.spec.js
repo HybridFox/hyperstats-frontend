@@ -1,7 +1,7 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
 const startServer = require("../../mocks/startServer");
-const mockRecyclingProcesses = require("../../mocks/recyclingProcesses");
+const mockProcesses = require("../../mocks/recyclingProcesses");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
@@ -14,16 +14,21 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let firstUser;
+		let secondUser;
+		let mockRecyclingProcesses;
 
 		before(async() => {
-			await createTestUser({
+			firstUser = await createTestUser({
 				email: "test1@example.com",
 				isAdmin: true,
 			});
-			await createTestUser({
+			secondUser = await createTestUser({
 				email: "test2@example.com",
 				isAdmin: true,
 			});
+
+			mockRecyclingProcesses = mockProcesses(firstUser.data.company);
 
 			await clearData("recyclingProcess");
 			await insertData("recyclingProcess", mockRecyclingProcesses);
@@ -40,7 +45,7 @@ describe("Integration", () => {
 		afterEach(() => reset());
 
 		after(async() => {
-			await removeTestUsers(["test1@example.com", "test2@example.com"]);
+			await removeTestUsers([firstUser.data.email, secondUser.data.email]);
 			await closeServer();
 		});
 
