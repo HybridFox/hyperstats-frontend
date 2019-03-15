@@ -53,6 +53,7 @@ describe("Report", () => {
 		it("Should get all reports", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: null,
 				sortBy: "name",
 			});
@@ -65,6 +66,7 @@ describe("Report", () => {
 		it("Should sort reports on reportingYear", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: null,
 				sortBy: "reportingYear",
 			});
@@ -77,6 +79,7 @@ describe("Report", () => {
 		it("Should sort reports on reportingYear, descending", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: null,
 				sortBy: "-reportingYear",
 			});
@@ -89,6 +92,7 @@ describe("Report", () => {
 		it("Should filter on recyclingProcessId", async() => {
 			const reports = await getAllReports({
 				reportedById: companyId,
+				companyType: "R",
 				recyclingProcessId: firstRecycingProcess,
 				sortBy: "name",
 			});
@@ -96,6 +100,30 @@ describe("Report", () => {
 			expect(reports).to.be.an("array");
 			expect(reports[0]).to.deep.equal(firstReport);
 			expect(reports.length).to.equal(1);
+		});
+
+		it("Should return the approved reports for an AO", async() => {
+			const reports = await getAllReports({
+				reportedById: companyId,
+				companyType: "AO",
+				recyclingProcessId: firstRecycingProcess,
+				sortBy: "name",
+			});
+
+			expect(reports).to.be.an("array");
+			expect(reports.length).to.equal(0);
+		});
+
+		it("Should return the approved reports for an CO", async() => {
+			const reports = await getAllReports({
+				reportedById: companyId,
+				companyType: "CO",
+				recyclingProcessId: firstRecycingProcess,
+				sortBy: "name",
+			});
+
+			expect(reports).to.be.an("array");
+			expect(reports.length).to.equal(0);
 		});
 	});
 });
