@@ -11,6 +11,7 @@ import { RecyclingProcess, ProcessStep } from '../../store/recycling-processes/t
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
+import { RecyclingPartnerActions } from 'src/app/recycling-partners/store';
 
 @Component({
   templateUrl: './report.page.html',
@@ -67,11 +68,13 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     private reportProcessActions: ReportsProcessActions,
     private reportsActions: ReportsActions,
     private route: ActivatedRoute,
+    private partnerActions: RecyclingPartnerActions,
   ) {}
 
   public ngOnInit() {
     this.fetchReport();
     this.fetchRecyclingProcesses();
+    this.fetchRecyclingPartners();
     this.watchReport();
   }
 
@@ -112,6 +115,14 @@ export class ReportPageComponent implements OnInit, OnDestroy {
 
   private fetchRecyclingProcesses() {
     this.reportProcessActions.fetchAllRecyclingProcesses()
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe();
+  }
+
+  private fetchRecyclingPartners() {
+    this.partnerActions.fetchAll()
       .pipe(
         takeUntil(this.componentDestroyed$)
       )

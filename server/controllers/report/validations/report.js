@@ -48,8 +48,9 @@ const savedData = {
 			mass: joi.number().allow(null).optional(),
 			virginClassification: joi.string().allow("").optional(),
 			virginReplacedMaterial: joi.string().allow("").optional(),
-			elementClassification: joi.string().allow("").optional(),
-			elementReplacedMaterial: joi.string().allow("").optional(),
+			elementDestinationIndustry: joi.string().allow("").optional(),
+			elementDestinationCompany: joi.string().allow("").optional(),
+			assignedStep: joi.string().allow("").optional(),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({
@@ -112,8 +113,9 @@ const filedData = {
 			mass: joi.number().required(),
 			virginClassification: joi.string().required(),
 			virginReplacedMaterial: joi.string().required(),
-			elementClassification: joi.string().required(),
-			elementReplacedMaterial: joi.string().required(),
+			elementDestinationIndustry: joi.string().required(),
+			elementDestinationCompany: joi.string().required(),
+			assignedStep: joi.string().required(),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({

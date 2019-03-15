@@ -8,14 +8,22 @@ import { FormGroup, FormArray } from '@angular/forms';
 import { FormDataService } from '../../../../services/formdata.service';
 import { ReportsActions } from '../../../../store/reports';
 import { StepPageAbstract } from '../step-page.abstract';
-import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
+import { ReportsProcessActions, ReportsProcessSelector } from 'src/app/reports/store/recycling-processes';
+import { select$, select } from '@angular-redux/store';
+import { RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
+import { companiesToSelectOptions, processStepsToSelectOptions } from '@helpers/select.helpers';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { CLASSIFICATIONS } from './classifications.const';
 
 @Component({
   templateUrl: './output-fraction.page.html',
 })
 export class OutputFractionPageComponent extends StepPageAbstract {
+  @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partners$: Observable<any[]>;
+  @select$(ReportsProcessSelector.detail.result, processStepsToSelectOptions) public processSteps$: BehaviorSubject<any>;
   public outputFraction: FormGroup;
   private stepId: number;
+  public classifications = CLASSIFICATIONS;
 
   constructor(
     public codesService: CodesService,

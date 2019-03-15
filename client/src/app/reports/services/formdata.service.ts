@@ -15,6 +15,7 @@ import {
   AdditivesData,
   SiteRef
 } from '../store/reports/types';
+import { validateOutputFraction } from '../pages/detail/pages/output-fraction/validateOutputFraction.directive';
 
 @Injectable()
 export class FormDataService {
@@ -172,9 +173,10 @@ export class FormDataService {
       mass: [pathOr(null, ['mass'])(element), Validators.required],
       virginClassification: [pathOr('', ['virginClassification'])(element), Validators.required],
       virginReplacedMaterial: [pathOr('', ['virginReplacedMaterial'])(element), Validators.required],
-      elementClassification: [pathOr('', ['elementClassification'])(element), Validators.required],
-      elementReplacedMaterial: [pathOr('', ['elementReplacedMaterial'])(element), Validators.required],
-    });
+      elementDestinationIndustry: [pathOr('', ['elementDestinationIndustry'])(element)],
+      elementDestinationCompany: [pathOr('', ['elementDestinationCompany'])(element)],
+      assignedStep: [pathOr('', ['assignedStep'])(element)]
+    }, {validators: validateOutputFraction});
   }
 
   public getOutputFractionElementFormArray(outputFractionElements: OutputFraction[]): FormArray {

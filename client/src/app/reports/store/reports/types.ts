@@ -61,8 +61,9 @@ export interface OutputFraction {
     mass: string;
     classification: string;
     replacedMaterial: string;
-    elementClassification: string;
-    elementReplacedMaterial: string;
+    elementDestinationIndustry: string;
+    elementDestinationCompany: string;
+    assignedStep: string;
 }
 
 export interface RecyclingEfficiency {
