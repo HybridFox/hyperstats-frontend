@@ -1,5 +1,4 @@
 const ReportModel = require("../../../models/report");
-const Errors = require("../../../helpers/errorHandler");
 const { REPORT_STATUS } = require("../../../controllers/report/helpers/const");
 
 module.exports = (companyOfUser) => {
