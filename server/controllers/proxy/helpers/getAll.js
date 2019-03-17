@@ -5,17 +5,14 @@ const { REPORT_STATUS } = require("../../../controllers/report/helpers/const");
 module.exports = (companyOfUser) => {
 	return ReportModel.aggregate([
 		{
+			$unwind: "$meta.approvedCompanies",
+		},
+		{
 			$match: {
-				$or: [
-					{ "meta.reportingCompany": companyOfUser },
-					{ "meta.approvedCompanies.approvedBy": companyOfUser },
-				],
+				"meta.approvedCompanies.approvedBy": companyOfUser,
 				"meta.deleted": false,
 				"meta.status": REPORT_STATUS.FILED,
 			},
-		},
-		{
-			$unwind: "$meta.approvedCompanies",
 		},
 		{
 			$group: {
