@@ -1,6 +1,6 @@
 export interface Toggle {
-    id: string;
-    isActivated: boolean;
+  id: string;
+  isActivated: boolean;
 }
 
 export interface Remove {
@@ -18,7 +18,7 @@ export interface Process {
 }
 
 export const PROCESS_REPORT_STATE = {
-    SAVED: 'SAVED',
-    FILED: 'FILED',
-    NOT_USED: 'NOT_USED',
+  SAVED: 'SAVED',
+  FILED: 'FILED',
+  NOT_USED: 'NOT_USED',
 };

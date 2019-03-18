@@ -21,11 +21,17 @@
         [title]="step.value.get('description').value || ('PAGE.RECYCLING-PROCESSES.RECYCLING-STEP' | translate:{ key: getStepKey(step.key) })"
         class="u-margin-bottom-large">
         <div action>
-          <button *ngIf="recyclingProcessForm.controls.steps.controls.length > 1" class="a-button--link a-button--small"
-            (click)="deleteStep(step.key)" [disabled]="formDisabled">
+          <button
+            *ngIf="recyclingProcessForm.controls.steps.controls.length > 1"
+            class="a-button--link a-button--small"
+            (click)="deleteStep(step.key)"
+            [disabled]="formDisabled">
             {{ 'GENERAL.LABELS.DELETE-STEP' | translate }}
           </button>
-          <button class="a-button--link a-button--small" (click)="duplicateStep(step.key)" [disabled]="formDisabled">
+          <button
+            class="a-button--link a-button--small"
+            (click)="duplicateStep(step.key)"
+            [disabled]="formDisabled">
             {{ 'GENERAL.LABELS.DUPLICATE-STEP' | translate }}
           </button>
         </div>
