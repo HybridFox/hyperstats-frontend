@@ -90,9 +90,12 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         }, PROCESS_REPORT_STATE.NOT_USED);
       }
     });
+
     if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
       this.recyclingProcessForm.disable();
       this.formDisabled = true;
+    } else {
+      this.formDisabled = false;
     }
   }
 

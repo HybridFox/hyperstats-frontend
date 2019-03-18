@@ -22,10 +22,10 @@
         class="u-margin-bottom-large">
         <div action>
           <button *ngIf="recyclingProcessForm.controls.steps.controls.length > 1" class="a-button--link a-button--small"
-            (click)="deleteStep(step.key)" disabled="formDisabled">
+            (click)="deleteStep(step.key)" [disabled]="formDisabled">
             {{ 'GENERAL.LABELS.DELETE-STEP' | translate }}
           </button>
-          <button class="a-button--link a-button--small" (click)="duplicateStep(step.key)" disabled="formDisabled">
+          <button class="a-button--link a-button--small" (click)="duplicateStep(step.key)" [disabled]="formDisabled">
             {{ 'GENERAL.LABELS.DUPLICATE-STEP' | translate }}
           </button>
         </div>
@@ -75,26 +75,28 @@
         (removeFile)="onRemoveFile(index, uploadTypes.SCHEMATIC)"
         ></app-single-file-upload>
     </div>
-    <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()" disabled="formDisabled">
+    <button class="a-button--primary a-button-outline has-icon-after" (click)="newStep()" [disabled]="formDisabled">
       {{ 'GENERAL.LABELS.ADD-ADDITIONAL-STEP' | translate }}
     </button>
     <app-sub-section-title class="u-margin-top-large"></app-sub-section-title>
     <div class="u-margin-top-large">
-      <button class="a-button--primary has-icon-after u-margin-right" (click)="saveForm()" disabled="formDisabled">
+      <button class="a-button--primary has-icon-after u-margin-right" (click)="saveForm()" [disabled]="formDisabled">
         {{ 'GENERAL.LABELS.SAVE' | translate }}
       </button>
       <button *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
         class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
-        (click)="toggleActivationForm()" disabled="formDisabled">
+        (click)="toggleActivationForm()" [disabled]="formDisabled">
         {{ 'GENERAL.LABELS.DISABLE' | translate }}
       </button>
       <button *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
         class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
-        (click)="toggleActivationForm()" disabled="formDisabled">
+        (click)="toggleActivationForm()" [disabled]="formDisabled">
         {{ 'GENERAL.LABELS.ENABLE' | translate }}
       </button>
-      <app-delete-button *ngIf="!!recyclingProcess?._id && !isDuplicate" (deleteFunction)="removeForm()"
-        disabled="formDisabled"></app-delete-button>
+      <app-delete-button
+        *ngIf="!!recyclingProcess?._id && !isDuplicate"
+        (deleteFunction)="removeForm()"
+        [disabled]="formDisabled"></app-delete-button>
     </div>
   </div>
 </div>
