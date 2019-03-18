@@ -95,6 +95,8 @@ export class FormDataService {
     return this.formBuilder.group({
       impurities: [pathOr(null, ['impurities'])(excessItem), Validators.required],
       packagingMaterial: [pathOr(null, ['packagingMaterial'])(excessItem), Validators.required],
+      water: [pathOr(null, ['water'])(excessItem), Validators.required],
+      otherMaterials: [pathOr(null, ['otherMaterials'])(excessItem), Validators.required],
     });
   }
 

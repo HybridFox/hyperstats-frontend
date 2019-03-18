@@ -48,6 +48,8 @@ export interface AdditivesData {
 export interface ExcessMaterialReceived {
     impurities: number;
     packagingMaterial: number;
+    water: number;
+    otherMaterials: number;
 }
 
 export interface AdditionalElement {
