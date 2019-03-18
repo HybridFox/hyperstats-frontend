@@ -115,7 +115,7 @@
         color: $zodiac;
         text-decoration: none;
         display: block;
-        padding: $spacer-large 0;
+        padding: $spacer-large 90px $spacer-large 0;
         border-bottom: 1px solid $alto;
         &:last-child {
             border-bottom: none;
@@ -134,6 +134,8 @@
                 width: 5px;
                 height: 40px;
                 background-color: $yellow;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
         &.activated {
@@ -143,6 +145,8 @@
                 right: 0;
                 font-size: $font-size-small;
                 color: $gray;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
         &.deactivated {
@@ -152,6 +156,8 @@
                 right: 0;
                 font-size: $font-size-small;
                 color: $gray;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
         &--valid {
