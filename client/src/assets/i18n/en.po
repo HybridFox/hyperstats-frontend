@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-15T09:58:18.798Z\n"
+"POT-Creation-Date: 2019-03-15T15:07:32.594Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -158,11 +158,6 @@ msgstr "Lastname"
 
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
-
-#, fuzzy
-#| msgid "GENERAL##LABELS##NAME"
-msgid "GENERAL##LABELS##MANAGEDBY"
-msgstr "Name"
 
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr "Message"
@@ -613,9 +608,6 @@ msgstr "Revoke this proxy"
 
 msgid "Recycler"
 msgstr "Recycler"
-
-msgid "Recycling Partner"
-msgstr "Recycling Partner"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "An email has been sent to the user requesting a password reset."
@@ -1107,17 +1099,23 @@ msgstr "On a dry weight basis"
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element/compound"
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ASSIGNED-STEP"
+msgstr "Assigned Step"
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
 msgstr "Classification"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-COMPANY"
+msgstr "Destination - Name of company"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-INDUSTRY"
+msgstr "Destination - Industry"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
 msgstr "Element or compound"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
-
-msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
-msgstr "Replaced element material"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
@@ -1152,6 +1150,9 @@ msgstr "Additives"
 msgid "WIZARD##TITLES##FILE-REPORT"
 msgstr "File Report"
 
+msgid "WIZARD##TITLES##INFORMATION"
+msgstr "General"
+
 msgid "WIZARD##TITLES##INPUT-FRACTION"
 msgstr "Input Fraction"
 
@@ -1168,14 +1169,22 @@ msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
 
+#, fuzzy
+#~| msgid "GENERAL##LABELS##NAME"
+#~ msgid "GENERAL##LABELS##MANAGEDBY"
+#~ msgstr "Name"
+
+#~ msgid "Recycling Partner"
+#~ msgstr "Recycling Partner"
+
+#~ msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+#~ msgstr "Replaced element material"
+
 #~ msgid "GENERAL##FIELD-ERRORS##TYPEREQUIRED"
 #~ msgstr "Type is required when weight is filled in"
 
 #~ msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
 #~ msgstr "Weight is required when type is filled in"
-
-#~ msgid "WIZARD##TITLES##INFORMATION"
-#~ msgstr "General"
 
 #, fuzzy
 #~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"

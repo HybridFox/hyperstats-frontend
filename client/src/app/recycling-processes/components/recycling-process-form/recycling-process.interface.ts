@@ -8,3 +8,12 @@ export interface Remove {
   input: String;
 }
 
+export interface Process {
+  data: {
+    name: string,
+    steps: any[];
+  };
+  meta: object;
+  _id: string;
+}
+
