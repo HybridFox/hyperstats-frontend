@@ -49,6 +49,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   public isDuplicate: boolean;
   public processReportStatus: string = PROCESS_REPORT_STATE.NOT_USED;
   public formDisabled = false;
+  public deleteConfirmMessage = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -88,12 +89,30 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
           return currentStatus;
         }, PROCESS_REPORT_STATE.NOT_USED);
+
+        if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
+          const itemsToDelete = reports.filter(report => (
+            this.recyclingProcess._id === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
+            && (report.meta.status === PROCESS_REPORT_STATE.SAVED)
+          );
+
+          this.deleteConfirmMessage = itemsToDelete.reduce((acc, curr, index) => {
+            if (index === 0) {
+              return `${acc} ${curr.data.information.name}`;
+            } else if (index === itemsToDelete.length - 1) {
+              return `${acc} and ${curr.data.information.name}.`;
+            } else {
+              return `${acc}, ${curr.data.information.name}`;
+            }
+          }, 'Are your sure you want to delete');
+        }
       }
     });
 
     if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
       this.recyclingProcessForm.disable();
       this.formDisabled = true;
+    } else if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
     } else {
       this.formDisabled = false;
     }
