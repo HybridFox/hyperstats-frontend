@@ -18,10 +18,10 @@
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
-      "PASSWORD": "",
-      "REQUIRED": "",
-      "TYPEREQUIRED": "",
-      "WEIGHTREQUIRED": ""
+			"PASSWORD": "",
+			"REQUIRED": "",
+			"TYPEREQUIRED": "",
+			"WEIGHTREQUIRED": ""
 		},
 		"LABELS": {
 			"ACCEPT": "",
@@ -535,10 +535,12 @@
 				"MASS-OUTER-CASINGS": "",
 				"METHODOLOG-CHEMICAL": "",
 				"METHODOLOG-WASTE": "",
+				"OTHER-MATERIALS": "",
 				"PACKAGING-CASING": "",
 				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
 				"SHARE-INPUT-FRACTION": "",
+				"WATER": "",
 				"WEIGHT-BATTERY": "",
 				"WEIGHT-INPUT-FRACTION": ""
 			},
@@ -597,8 +599,8 @@
 		"TITLES": {
 			"ADDITIONAL-INFORMATION": "",
 			"ADDITIVES": "",
-      "FILE-REPORT": "",
-      "INFORMATION": "",
+			"FILE-REPORT": "",
+			"INFORMATION": "",
 			"INPUT-FRACTION": "",
 			"NEW-REPORT": "",
 			"OUTPUT-FRACTION": "",

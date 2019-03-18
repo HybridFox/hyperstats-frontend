@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-18T08:32:35.604Z\n"
-"PO-Revision-Date: 2019-03-18T08:32:35.604Z\n"
+"POT-Creation-Date: 2019-03-18T09:17:01.666Z\n"
+"PO-Revision-Date: 2019-03-18T09:17:01.666Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -908,6 +908,9 @@ msgstr ""
 msgid "WIZARD##INPUT-FRACTION##LABELS##METHODOLOG-WASTE"
 msgstr ""
 
+msgid "WIZARD##INPUT-FRACTION##LABELS##OTHER-MATERIALS"
+msgstr ""
+
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr ""
 
@@ -918,6 +921,9 @@ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr ""
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WATER"
 msgstr ""
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"

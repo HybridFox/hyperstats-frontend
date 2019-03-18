@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-18T08:32:35.604Z\n"
+"POT-Creation-Date: 2019-03-18T09:17:01.666Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1036,6 +1036,9 @@ msgstr ""
 "Description of the methodology to determine the chemical composition of the "
 "batteries"
 
+msgid "WIZARD##INPUT-FRACTION##LABELS##OTHER-MATERIALS"
+msgstr "Other Materials"
+
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr "Packaging material / outer casing"
 
@@ -1049,6 +1052,9 @@ msgstr "Share of battery type in input fraction"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
 msgstr "Share of input fraction (%)"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WATER"
+msgstr "Water (H₂0)"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
 msgstr "Weight battery type in input fraction"
