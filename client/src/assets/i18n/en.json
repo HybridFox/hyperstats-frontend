@@ -19,9 +19,7 @@
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
-            "REQUIRED": "This field is required",
-            "TYPEREQUIRED": "Type is required when weight is filled in",
-            "WEIGHTREQUIRED": "Weight is required when type is filled in"
+            "REQUIRED": "This field is required"
         },
         "LABELS": {
             "ACCEPT": "Accept",
@@ -574,10 +572,12 @@
             },
             "LABELS": {
                 "ADD-ADDITIONAL-ELEMENT": "Add additional element/compound",
+                "ASSIGNED-STEP": "Assigned Step",
                 "CLASSIFICATION": "Classification",
+                "DESTINATION-COMPANY": "Destination - Name of company",
+                "DESTINATION-INDUSTRY": "Destination - Industry",
                 "ELEMENT": "Element or compound",
                 "MASS": "Mass (t)",
-                "REPLACED-ELEMENT-MATERIAL": "Replaced element material",
                 "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
                 "SHARE-OUTPUT-FRACTION": "Share output fraction"
             },

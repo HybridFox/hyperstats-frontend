@@ -32,10 +32,10 @@
           class="u-margin-top-x-large"
           [label]="'WIZARD.OUTPUT-FRACTION.LABELS.CLASSIFICATION' | translate"
           [control]="fraction.get('virginClassification')"
-          [options]="codesService.elements()"
+          [options]="codesService.classifications()"
         ></app-select-input>
       </div>
-      <div class="l-grid__col-6-12">
+      <div *ngIf="fraction.get('virginClassification').value === classifications.RECYCLING" class="l-grid__col-6-12">
         <app-text-input
           class="u-margin-top-x-large"
           [label]="'WIZARD.OUTPUT-FRACTION.LABELS.REPLACED-VIRGIN-MATERIAL' | translate"
@@ -43,24 +43,34 @@
         ></app-text-input>
       </div>
     </div>
-    <div class="l-grid__row l-grid--with-margins">
-      <div class="l-grid__col-6-12">
-        <app-select-input
-          class="u-margin-top-x-large u-margin-bottom"
-          [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
-          [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.OF-ELEMENT' | translate"
-          [control]="fraction.get('elementClassification')"
-          [options]="codesService.elements()"
-        ></app-select-input>
-      </div>
+    <div *ngIf="fraction.get('virginClassification').value !== classifications.INTERMEDIATE" class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-6-12">
         <app-text-input
           class="u-margin-top-x-large u-margin-bottom"
-          [label]="'WIZARD.OUTPUT-FRACTION.LABELS.REPLACED-ELEMENT-MATERIAL' | translate"
-          [control]="fraction.get('elementReplacedMaterial')"
+          [label]="'WIZARD.OUTPUT-FRACTION.LABELS.DESTINATION-INDUSTRY' | translate"
+          [description]="'WIZARD.OUTPUT-FRACTION.DESCRIPTIONS.OF-ELEMENT' | translate"
+          [control]="fraction.get('elementDestinationIndustry')"
         ></app-text-input>
       </div>
+      <div class="l-grid__col-6-12">
+        <app-select-input
+          class="u-margin-top-x-large u-margin-bottom"
+          [label]="'WIZARD.OUTPUT-FRACTION.LABELS.DESTINATION-COMPANY' | translate"
+          [control]="fraction.get('elementDestinationCompany')"
+          [options]="partners$ | async"
+        ></app-select-input>
+      </div>
     </div>
+    <div *ngIf="fraction.get('virginClassification').value === classifications.INTERMEDIATE" class="l-grid__row l-grid--with-margins">
+        <div class="l-grid__col-6-12">
+          <app-select-input
+            class="u-margin-top-x-large u-margin-bottom"
+            [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ASSIGNED-STEP' | translate"
+            [options]="processSteps$ | async"
+            [control]="fraction.get('assignedStep')"
+          ></app-select-input>
+        </div>
+      </div>
     <div class="l-grid__row l-grid--with-margins">
       <button
         *ngIf="!form?.disabled"

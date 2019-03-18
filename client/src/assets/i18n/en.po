@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-18T09:17:01.666Z\n"
+"POT-Creation-Date: 2019-03-15T15:07:32.594Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1114,17 +1114,23 @@ msgstr "On a dry weight basis"
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element/compound"
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ASSIGNED-STEP"
+msgstr "Assigned Step"
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
 msgstr "Classification"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-COMPANY"
+msgstr "Destination - Name of company"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-INDUSTRY"
+msgstr "Destination - Industry"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
 msgstr "Element or compound"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
-
-msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
-msgstr "Replaced element material"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
@@ -1185,6 +1191,9 @@ msgstr "The form is invalid, make sure you have filled all the fields"
 
 #~ msgid "Recycling Partner"
 #~ msgstr "Recycling Partner"
+
+#~ msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+#~ msgstr "Replaced element material"
 
 #, fuzzy
 #~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"

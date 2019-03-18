@@ -48,8 +48,9 @@ const NEW_REPORT = {
 			mass: 1,
 			virginClassification: "virginClassification",
 			virginReplacedMaterial: "virginReplacedMaterial",
-			elementClassification: "elementClassification",
-			elementReplacedMaterial: "elementReplacedMaterial",
+			elementDestinationIndustry: "elementDestinationIndustry",
+			elementDestinationCompany: "elementDestinationCompany",
+			assignedStep: "assignedStep",
 		}],
 	}],
 	recyclingEfficiency: {

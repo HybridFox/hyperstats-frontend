@@ -574,10 +574,12 @@
 			},
 			"LABELS": {
 				"ADD-ADDITIONAL-ELEMENT": "",
+				"ASSIGNED-STEP": "",
 				"CLASSIFICATION": "",
+				"DESTINATION-COMPANY": "",
+				"DESTINATION-INDUSTRY": "",
 				"ELEMENT": "",
 				"MASS": "",
-				"REPLACED-ELEMENT-MATERIAL": "",
 				"REPLACED-VIRGIN-MATERIAL": "",
 				"SHARE-OUTPUT-FRACTION": ""
 			},
