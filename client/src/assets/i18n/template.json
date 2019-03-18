@@ -18,8 +18,10 @@
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
-			"PASSWORD": "",
-			"REQUIRED": ""
+      "PASSWORD": "",
+      "REQUIRED": "",
+      "TYPEREQUIRED": "",
+      "WEIGHTREQUIRED": ""
 		},
 		"LABELS": {
 			"ACCEPT": "",
@@ -58,7 +60,6 @@
 			"INVALID_FORM": "",
 			"LASTNAME": "",
 			"LOGIN": "",
-			"MANAGEDBY": "",
 			"MESSAGE": "",
 			"MOBILEPHONE": "",
 			"NAME": "",
@@ -252,7 +253,6 @@
 		"REVOKEPROXY": ""
 	},
 	"Recycler": "",
-	"Recycling Partner": "",
 	"TOAST": {
 		"ADMIN-FORGOT-PASSWORD": {
 			"SUCCESS": {
@@ -538,6 +538,7 @@
 				"PACKAGING-CASING": "",
 				"PROCESS-CHEMISTRY": "",
 				"SHARE-BATTERY": "",
+				"SHARE-INPUT-FRACTION": "",
 				"WEIGHT-BATTERY": "",
 				"WEIGHT-INPUT-FRACTION": ""
 			},
@@ -596,7 +597,8 @@
 		"TITLES": {
 			"ADDITIONAL-INFORMATION": "",
 			"ADDITIVES": "",
-			"FILE-REPORT": "",
+      "FILE-REPORT": "",
+      "INFORMATION": "",
 			"INPUT-FRACTION": "",
 			"NEW-REPORT": "",
 			"OUTPUT-FRACTION": "",

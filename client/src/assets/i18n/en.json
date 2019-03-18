@@ -59,7 +59,6 @@
             "I-ACCEPT-THE": "I accept the",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
-            "MANAGEDBY": "Name",
             "MESSAGE": "Message",
             "MOBILEPHONE": "Mobile phone",
             "NAME": "Name",
@@ -254,7 +253,6 @@
         "REVOKEPROXY": "Revoke this proxy"
     },
     "Recycler": "Recycler",
-    "Recycling Partner": "Recycling Partner",
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
@@ -540,6 +538,7 @@
                 "PACKAGING-CASING": "Packaging material / outer casing",
                 "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
+                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
                 "WEIGHT-INPUT-FRACTION": "Weight input fraction"
             },
