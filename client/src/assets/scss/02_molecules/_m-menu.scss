@@ -114,8 +114,10 @@
         font-size: $font-size-regular;
         color: $zodiac;
         text-decoration: none;
-        display: block;
-        padding: $spacer-large 90px $spacer-large 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $spacer-large 0;
         border-bottom: 1px solid $alto;
         &:last-child {
             border-bottom: none;
@@ -141,23 +143,19 @@
         &.activated {
             &:after {
                 content: '(activated)';
-                position: absolute;
                 right: 0;
                 font-size: $font-size-small;
                 color: $gray;
-                top: 50%;
-                transform: translateY(-50%);
+                padding-left: $spacer;
             }
         }
         &.deactivated {
             &:after {
                 content: '(deactivated)';
-                position: absolute;
                 right: 0;
                 font-size: $font-size-small;
                 color: $gray;
-                top: 50%;
-                transform: translateY(-50%);
+                padding-left: $spacer;
             }
         }
         &--valid {
