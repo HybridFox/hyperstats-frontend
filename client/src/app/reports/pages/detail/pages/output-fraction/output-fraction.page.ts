@@ -52,6 +52,7 @@ export class OutputFractionPageComponent extends StepPageAbstract {
 
   public addElement() {
     (this.outputFraction.get('data') as FormArray).push(this.formData.getOutputFractionElementFormGroup(null));
+    this.watchClassification();
   }
 
   public removeElement(fraction: any, elementNumber: number) {
@@ -66,7 +67,6 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       this.formData.addOutputFraction(stepId);
       this.setActiveStepById(stepId);
     }
-    this.watchClassification();
   }
 
   public onFormReady(): void {
@@ -76,34 +76,29 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       )
       .subscribe((params) => {
         this.setActiveStepById(params.stepId);
+        this.watchClassification();
       });
   }
 
   private watchClassification() {
     const formArr = (this.outputFraction.get('data') as FormArray);
-      formArr.valueChanges
-      .pipe(
-        takeUntil(this.componentDestroyed$),
-      )
-      .subscribe(arr => {
-        arr.forEach((element, index) => {
-          formArr.at(index).get('virginClassification').valueChanges
-            .pipe(
-              takeUntil(this.componentDestroyed$),
-            )
-            .subscribe(input => {
-              if (input === this.classifications.INTERMEDIATE) {
-                formArr.at(index).get('elementDestinationIndustry').reset();
-                formArr.at(index).get('elementDestinationCompany').reset();
-              }
-              if (input !== this.classifications.INTERMEDIATE) {
-                formArr.at(index).get('assignedStep').reset();
-              }
-              if (input !== this.classifications.RECYCLING) {
-                formArr.at(index).get('virginReplacedMaterial').reset();
-              }
-            });
+    formArr.controls.forEach((control, index) => {
+      control.get('virginClassification').valueChanges
+        .pipe(
+          takeUntil(this.componentDestroyed$),
+        )
+        .subscribe(input => {
+          if (input === this.classifications.INTERMEDIATE) {
+            formArr.at(index).get('elementDestinationIndustry').reset();
+            formArr.at(index).get('elementDestinationCompany').reset();
+          }
+          if (input !== this.classifications.INTERMEDIATE) {
+            formArr.at(index).get('assignedStep').reset();
+          }
+          if (input !== this.classifications.RECYCLING) {
+            formArr.at(index).get('virginReplacedMaterial').reset();
+          }
         });
-      });
+    });
   }
 }
