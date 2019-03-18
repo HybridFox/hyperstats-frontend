@@ -5,13 +5,19 @@ import {
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
 import { createFileUploadControl } from '@ui/upload/file-upload.helper';
 import { omit, prop, pathOr } from 'ramda';
+import { select } from '@angular-redux/store';
 
 import { METHODS_OF_PROCESSING } from 'src/lib/constants';
 import * as uuid from 'uuid';
 import { Toggle, Remove } from './recycling-process.interface';
 import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multiple-file-upload.const';
+
+import { Report } from '../../../reports/store/reports/types';
+import { ReportsSelector } from '../../../reports/store/reports';
+import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 
 @Component({
   selector: 'app-recycling-process-form',
@@ -20,6 +26,8 @@ import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multip
 })
 
 export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
+  @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
+
   @Input() public recyclingProcess: any;
   @Input() public recyclingPartners: any;
   @Input() public uploadResponse: any;
@@ -37,9 +45,10 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   public recyclingProcessForm: any;
   public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
   public uploadTypes = UPLOAD_CONSTS;
-  public recyclingProcessId: string;
   public isActivated: boolean;
   public isDuplicate: boolean;
+  public processReportStatus: string = PROCESS_REPORT_STATE.NOT_USED;
+  public formDisabled = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,6 +61,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public ngOnChanges(changes: SimpleChanges) {
+
     if (this.recyclingPartners && changes.recyclingPartners) {
       const ownCompany = {
         value: this.user.company._id,
@@ -59,11 +69,30 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
       };
       this.recyclingPartners.unshift(ownCompany);
     }
+
     if (changes.recyclingProcess) {
       this.recyclingProcessForm = this.formBuilder.group({
         name: [pathOr('', ['data', 'name'])(this.recyclingProcess), Validators.required],
         steps: this.createStepFormGroups(pathOr([], ['data', 'steps'])(this.recyclingProcess))
       });
+    }
+
+    this.reports$.subscribe(reports => {
+      if (reports && this.recyclingProcess) {
+        this.processReportStatus = reports.reduce((currentStatus, report) => {
+          if (this.recyclingProcess._id === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
+            if (currentStatus !== PROCESS_REPORT_STATE.FILED) {
+              return report.meta.status;
+            }
+          }
+
+          return currentStatus;
+        }, PROCESS_REPORT_STATE.NOT_USED);
+      }
+    });
+    if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
+      this.recyclingProcessForm.disable();
+      this.formDisabled = true;
     }
   }
 
@@ -72,6 +101,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
       this.validateFormFields(this.recyclingProcessForm);
       return;
     }
+
     this.isDuplicate = false;
     this.submit.emit(this.recyclingProcessForm);
   }

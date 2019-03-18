@@ -17,3 +17,8 @@ export interface Process {
   _id: string;
 }
 
+export const PROCESS_REPORT_STATE = {
+    SAVED: 'SAVED',
+    FILED: 'FILED',
+    NOT_USED: 'NOT_USED',
+};

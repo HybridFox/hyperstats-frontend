@@ -20,6 +20,8 @@ export class ReportsRepository {
     if (filters.recyclerId) {
       return this.http.get(url, { params: new HttpParams().set('recycler', filters.recyclerId) });
     }
+
+    return this.http.get(url);
   }
 
   public fetchAllCompanies(): Observable<any> {

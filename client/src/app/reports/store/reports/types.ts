@@ -6,7 +6,7 @@ export interface Step {
 
 export interface Information {
     reportingYear: number;
-    recyclingProcess: string;
+    recyclingProcess: string | object;
     name: string;
     receiver: string;
 }
