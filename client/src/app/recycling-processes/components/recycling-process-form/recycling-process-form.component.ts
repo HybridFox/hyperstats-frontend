@@ -238,7 +238,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public onRemoveFile(stepIndex: number, input: String) {
-    this.removeFile.emit({stepIndex, input});
+    this.removeFile.emit({ stepIndex, input });
   }
 
   public validateFormFields(formGroup: FormGroup) {
