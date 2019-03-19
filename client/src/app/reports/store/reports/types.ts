@@ -75,12 +75,18 @@ export interface AdditionalInformation {
  }
 
  export interface Meta {
-    approvedCompanies: string[];
+    approvedCompanies: ApprovedCompany[];
     reportingCompany: string;
     created: string;
     lastUpdated: string;
     deleted: boolean;
     status: string;
+ }
+
+ interface ApprovedCompany {
+  approvedBy: string;
+  company: string;
+  linkedApprovals: string[];
  }
 
 export interface Report {
