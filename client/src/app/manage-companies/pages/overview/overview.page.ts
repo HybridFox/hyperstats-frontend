@@ -15,6 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
+    @select(['auth', 'user', 'result']) private user$: Observable<any>;
     @select(CompanySelector.overview.result) public companies$: Observable<any>;
     @select(CompanySelector.overview.loading) public loading$: Observable<boolean>;
 

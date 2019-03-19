@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-15T15:07:32.594Z\n"
-"PO-Revision-Date: 2019-03-15T15:07:32.594Z\n"
+"POT-Creation-Date: 2019-03-19T11:05:48.296Z\n"
+"PO-Revision-Date: 2019-03-19T11:05:48.296Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -264,6 +264,9 @@ msgid "GENERAL##MENU##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##MENU##PROXIES"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLERS"
 msgstr ""
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
@@ -1011,9 +1014,6 @@ msgid "WIZARD##TITLES##ADDITIVES"
 msgstr ""
 
 msgid "WIZARD##TITLES##FILE-REPORT"
-msgstr ""
-
-msgid "WIZARD##TITLES##INFORMATION"
 msgstr ""
 
 msgid "WIZARD##TITLES##INPUT-FRACTION"

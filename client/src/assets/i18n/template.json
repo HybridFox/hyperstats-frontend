@@ -98,6 +98,7 @@
 			"MORE": "",
 			"PRIVACY": "",
 			"PROXIES": "",
+			"RECYCLERS": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
@@ -596,8 +597,7 @@
 		"TITLES": {
 			"ADDITIONAL-INFORMATION": "",
 			"ADDITIVES": "",
-      "FILE-REPORT": "",
-      "INFORMATION": "",
+			"FILE-REPORT": "",
 			"INPUT-FRACTION": "",
 			"NEW-REPORT": "",
 			"OUTPUT-FRACTION": "",
