@@ -64,7 +64,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public ngOnChanges(changes: SimpleChanges) {
-
     if (this.recyclingPartners && changes.recyclingPartners) {
       const ownCompany = {
         value: this.user.company._id,
