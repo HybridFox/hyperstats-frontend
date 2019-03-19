@@ -5,6 +5,14 @@
             "RECYCLING": "Recycling",
             "SORTING": "Sorting",
             "TRANSPORT": "Transport"
+        },
+        "SORTOPTIONS": {
+            "LAST-EDITED": "Last edited",
+            "NAME": "Alphabetically ",
+            "REPORTING-YEAR-NTO": "Reporting Year (Newest to Oldest)",
+            "REPORTING-YEAR-OTN": "Reporting Year (Oldest to Newest)",
+            "STATUS-DRAFT-FILED": "Status (Draft to Filed)",
+            "STATUS-FILED-DRAFT": "Status (Filed to Draft)"
         }
     },
     "Compliance Organisation": "Compliance Organisation",
@@ -216,7 +224,7 @@
             "DESCRIPTION": "Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize authentic create enable dynamic podcasting synergies architectures. Redefine authentic methodologies.",
             "DRAFT": "Draft",
             "EXPORT": "export",
-            "FILED": "filed",
+            "FILED": "Filed",
             "NOPROCESSREPORTS": "There are no reports for this recycling process",
             "NOREPORTS": "You don’t have any reports yet",
             "TITLE": "Reports",
@@ -600,7 +608,6 @@
             "ADDITIONAL-INFORMATION": "Add. Information",
             "ADDITIVES": "Additives",
             "FILE-REPORT": "File Report",
-            "INFORMATION": "General",
             "INPUT-FRACTION": "Input Fraction",
             "NEW-REPORT": "New Report",
             "OUTPUT-FRACTION": "Output Fraction",

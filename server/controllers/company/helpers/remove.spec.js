@@ -11,6 +11,7 @@ const { omit } = require("ramda");
 
 should();
 use(chaiAsPromised);
+
 describe("Company", () => {
 	describe("remove", () => {
 		let mongoServer;

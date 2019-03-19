@@ -12,6 +12,14 @@ const REPORT_SORT_OPTIONS = {
 		param: "reportingYear",
 		path: "data.information",
 	},
+	status: {
+		param: "status",
+		path: "meta",
+	},
+	lastUpdated: {
+		param: "lastUpdated",
+		path: "meta",
+	},
 };
 
 const DEFAULT_REPORT_STATE = {
