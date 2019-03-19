@@ -5,7 +5,7 @@ const recyclingProcesses = require("../mocks/recyclingProcesses");
 module.exports.create = async(companyOfUser, process = recyclingProcesses[0]) => {
 	const item = new RecyclingProcessModel(compose(
 		set(
-			lensPath(["meta", "company"]),
+			lensPath(["meta", "createdByCompany"]),
 			companyOfUser
 		),
 		omit(["_id"])

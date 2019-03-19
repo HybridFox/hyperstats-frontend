@@ -63,7 +63,11 @@ describe("Report", () => {
 				},
 				meta: {
 					approvedCompanies: [
-						company._id,
+						{
+							approvedBy: company._id,
+							company: user._id,
+							linkedApprovals: [],
+						},
 					],
 					status: "FILED",
 				},
@@ -81,7 +85,11 @@ describe("Report", () => {
 				},
 				meta: {
 					approvedCompanies: [
-						user._id,
+						{
+							approvedBy: company._id,
+							company: user._id,
+							linkedApprovals: [],
+						},
 					],
 					status: "FILED",
 				},
@@ -99,7 +107,11 @@ describe("Report", () => {
 				},
 				meta: {
 					approvedCompanies: [
-						user._id,
+						{
+							approvedBy: company._id,
+							company: user._id,
+							linkedApprovals: [],
+						},
 					],
 					status: "SAVED",
 				},
@@ -117,9 +129,8 @@ describe("Report", () => {
 				companyType: "AO",
 			});
 
-			expect(reports).to.be.an("array");
+			expect(reports).to.be.an("array").to.have.lengthOf(1);
 			expect(reports[0]._id).to.deep.equal(company._id);
-			expect(reports.length).to.equal(1);
 		});
 
 		it("Should get all companies when CO", async() => {
@@ -128,9 +139,8 @@ describe("Report", () => {
 				companyType: "CO",
 			});
 
-			expect(reports).to.be.an("array");
+			expect(reports).to.be.an("array").to.have.lengthOf(1);
 			expect(reports[0]._id).to.deep.equal(company._id);
-			expect(reports.length).to.equal(1);
 		});
 
 		it("Should get no result when the id has no result", async() => {
