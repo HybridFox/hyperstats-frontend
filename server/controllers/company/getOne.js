@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
 		_id: req.data.params.id,
 		companyOfUser: getCompanyIdOfUser(req),
 		isAdmin: profileHelper.isAdmin(req),
-		companyTypeOfUser: req.session.company.meta.type,
 	})
 		.then((company) => res.status(200).json(company))
 		.catch((error) => next(error));
