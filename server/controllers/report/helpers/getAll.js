@@ -1,16 +1,29 @@
 const ReportModel = require("../../../models/report");
 const { isNil } = require("ramda");
-const { REPORT_SORT_OPTIONS } = require("./const");
+const { REPORT_SORT_OPTIONS, REPORT_STATUS } = require("./const");
+const { COMPANY_TYPES } = require("../../company/helpers/const");
 
-const getQuery = (reportedById, recyclingProcessId) => {
+const getQuery = (reportedById, recyclingProcessId, recycler, companyType) => {
 	const query = {
-		$and: [{ "meta.reportingCompany": reportedById }],
+		$and: [],
 	};
+
+	if (companyType === COMPANY_TYPES.R) {
+		query.$and.push({ "meta.reportingCompany": reportedById });
+	}
+
+	if (companyType === COMPANY_TYPES.CO || companyType === COMPANY_TYPES.AO) {
+		query.$and.push({ "meta.approvedCompanies": reportedById }, { "meta.status": REPORT_STATUS.FILED });
+	}
 
 	if (!isNil(recyclingProcessId)) {
 		query.$and.push({ "data.information.recyclingProcess": recyclingProcessId });
 	}
-	
+
+	if (!isNil(recycler)) {
+		query.$and.push({ "meta.reportingCompany": recycler });
+	}
+
 	return query;
 };
 
@@ -24,6 +37,12 @@ const setSorting = (sortBy) => {
 	return `${REPORT_SORT_OPTIONS[sortBy].path}.${REPORT_SORT_OPTIONS[sortBy].param}`;
 };
 
-module.exports = async({ reportedById, recyclingProcessId, sortBy }) => {
-	return ReportModel.find(getQuery(reportedById, recyclingProcessId)).sort(setSorting(sortBy)).lean().exec();
+module.exports = async({ reportedById, recyclingProcessId, recycler, companyType, sortBy }) => {
+	return ReportModel
+		.find(getQuery(reportedById, recyclingProcessId, recycler, companyType))
+		.populate("meta.reportingCompany", "data.name")
+		.populate("data.information.recyclingProcess", "data.name")
+		.sort(setSorting(sortBy))
+		.lean()
+		.exec();
 };

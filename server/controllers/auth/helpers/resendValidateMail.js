@@ -1,6 +1,6 @@
 const path = require("path");
 const mailer = require("../../../helpers/mail");
-const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../../helpers/errorHandler");
 
 const resendValidateMail = (user) => mailer({
 	to: user.email,
@@ -10,10 +10,10 @@ const resendValidateMail = (user) => mailer({
 		firstname: user.firstname,
 		confirmPath: `/api/auth/verify?token=${user.validation.token}`,
 	},
-}).catch(async(error) => {
+}).catch(async() => {
 	await user.remove();
 
-	throw new ResponseError({ type: 500, msg: "Sending mail failed", error });
+	throw errors.SendingEmailFailed;
 });
 
 const processRequest = async(body) => {

@@ -3,6 +3,7 @@ const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const UserModel = require("../../../models/user");
+const errors = require("../../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
@@ -32,11 +33,11 @@ describe("Reset password", () => {
 	});
 
 	it("Should fail to reset password when passing an invalid token", () => {
-		return expect(resetPassword("newPassword", "invalidToken")).to.be.rejectedWith(Error);
+		return expect(resetPassword("newPassword", "invalidToken")).to.be.rejectedWith(errors.UserNotFound);
 	});
 
 	it("Should fail to reset password when a valid token has expired", () => {
-		return expect(resetPassword("newPassword", "secondPasswordToken")).to.be.rejectedWith(Error);
+		return expect(resetPassword("newPassword", "secondPasswordToken")).to.be.rejectedWith(errors.UserNotFound);
 	});
 
 	it("Should reset the password when a valid unexpired token is passed", async() => {
@@ -54,6 +55,6 @@ describe("Reset password", () => {
 	});
 
 	it("Should not be able to use a reset token twice ", () => {
-		return expect(resetPassword("newPassword", "somePasswordToken")).to.be.rejectedWith(Error);
+		return expect(resetPassword("newPassword", "somePasswordToken")).to.be.rejectedWith(errors.UserNotFound);
 	});
 });

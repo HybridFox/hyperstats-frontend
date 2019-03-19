@@ -3,12 +3,11 @@ const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
-const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../../helpers/errorHandler");
+const loginHandler = require("./loginHandler");
 
 should();
 use(chaiAsPromised);
-
-const loginHandler = require("./loginHandler");
 
 describe("LoginHandler", () => {
 	let mongoServer;
@@ -24,7 +23,7 @@ describe("LoginHandler", () => {
 	});
 
 	it("Should error when not finding the user", () => {
-		return expect(loginHandler("example@example.com", "invalid")).to.eventually.rejectedWith(ResponseError);
+		return expect(loginHandler("example@example.com", "invalid")).to.eventually.rejectedWith(errors.UserNotFound);
 	});
 
 	it("Should find a user", () => {

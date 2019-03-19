@@ -4,6 +4,7 @@ const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const mockery = require("mockery");
+const loginHandler = require("./loginHandler");
 const errors = require("../../../helpers/errorHandler");
 
 should();
@@ -45,6 +46,18 @@ describe("RegisterHandler", () => {
 		firstname: "firstname",
 		lastname: "lastname",
 	})).to.eventually.be.fulfilled);
+
+	it("Should not be able to login user after registration (validation required)", async() => {
+		const userToTest = {
+			email: "validuser3@example.com",
+			username: "validuser3@example.com",
+			password: "validPassword3",
+			firstname: "firstname3",
+			lastname: "lastname3",
+		};
+
+		return expect(loginHandler(userToTest.username, userToTest.password)).to.eventually.rejectedWith(errors.UserNotFound);
+	});
 
 	it("Should not fail when user register itself twice before validation", async() => {
 		const userToTest = {

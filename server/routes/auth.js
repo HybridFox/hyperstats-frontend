@@ -27,6 +27,22 @@ module.exports = (router) => {
 	 *         type: string
 	 *       lastname:
 	 *         type: string
+	 *   UserRegisterBody:
+	 *     type: object
+	 *     required:
+	 *       - email
+	 *       - password
+	 *       - firstname
+	 *       - lastname
+	 *     properties:
+	 *       email:
+	 *         type: string
+	 *       password:
+	 *         type: string
+	 *       firstname:
+	 *         type: string
+	 *       lastname:
+	 *         type: string
 	 *   UserLoginBody:
 	 *     type: object
 	 *     required:
@@ -121,7 +137,7 @@ module.exports = (router) => {
 	 *         name: body
 	 *         required: true
 	 *         schema:
-	 *           $ref: '#/definitions/UserBody'
+	 *           $ref: '#/definitions/UserRegisterBody'
 	 *     responses:
 	 *       200:
 	 *         description: Registration success

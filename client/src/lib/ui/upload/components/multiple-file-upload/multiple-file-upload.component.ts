@@ -22,7 +22,6 @@ export class MultipleFileUploadComponent implements OnChanges, OnDestroy {
     public updateValue = (_: any) => {};
 
     public ngOnChanges(changes: SimpleChanges) {
-        console.log(this.response);
         if (changes.response && !isNil(this.response)) {
           const files = this.storedFiles ? this.storedFiles.concat(this.response) : this.response;
           this.patchFiles(files);

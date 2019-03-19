@@ -47,9 +47,10 @@ const savedData = {
 			element: joi.string().allow("").optional(),
 			mass: joi.number().allow(null).optional(),
 			virginClassification: joi.string().allow("").optional(),
-			virginReplacedMaterial: joi.string().allow("").optional(),
-			elementClassification: joi.string().allow("").optional(),
-			elementReplacedMaterial: joi.string().allow("").optional(),
+			virginReplacedMaterial: joi.string().allow("", null).optional(),
+			elementDestinationIndustry: joi.string().allow("", null).optional(),
+			elementDestinationCompany: joi.string().allow("", null).optional(),
+			assignedStep: joi.string().allow("", null).optional(),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({
@@ -97,12 +98,21 @@ const filedData = {
 	additives: joi.array().items(joi.object().keys({
 		siteRef: joi.string(),
 		data: joi.array().items(joi.object().keys({
-			type: joi.string().required(),
-			weight: joi.number().required(),
+			type: joi.string(),
+			weight: joi.number(),
 			chemicalComposition: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
 				weight: joi.number().required(),
 			})),
+		}).when(joi.object({ weight: null, type: "" }).unknown(), {
+			then: joi.object({
+				type: joi.string().allow("").optional(),
+				weight: joi.number().allow(null).optional(),
+			}),
+			otherwise: joi.object({
+				type: joi.string().required(),
+				weight: joi.number().required(),
+			}),
 		})),
 	})),
 	outputFraction: joi.array().items(joi.object().keys({
@@ -111,9 +121,21 @@ const filedData = {
 			element: joi.string().required(),
 			mass: joi.number().required(),
 			virginClassification: joi.string().required(),
-			virginReplacedMaterial: joi.string().required(),
-			elementClassification: joi.string().required(),
-			elementReplacedMaterial: joi.string().required(),
+			virginReplacedMaterial: joi.string().when("virginClassification", { is: "RECYCLING", then: joi.string().required(), otherwise: joi.string().allow("", null) }),
+			elementDestinationIndustry: joi.string(),
+			elementDestinationCompany: joi.string(),
+			assignedStep: joi.string(),
+		}).when(joi.object({ assignedStep: "" }).unknown(), {
+			then: joi.object({
+				elementDestinationIndustry: joi.string().required(),
+				elementDestinationCompany: joi.string().required(),
+				assignedStep: joi.string().allow("", null),
+			}),
+			otherwise: joi.object({
+				elementDestinationIndustry: joi.string().allow("", null),
+				elementDestinationCompany: joi.string().allow("", null),
+				assignedStep: joi.string().required(),
+			}),
 		})),
 	})),
 	recyclingEfficiency: joi.object().keys({

@@ -57,7 +57,6 @@
             "I-ACCEPT-THE": "I accept the",
             "LASTNAME": "Lastname",
             "LOGIN": "Login",
-            "MANAGEDBY": "Name",
             "MESSAGE": "Message",
             "MOBILEPHONE": "Mobile phone",
             "NAME": "Name",
@@ -216,10 +215,12 @@
         "REPORTS": {
             "DESCRIPTION": "Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize authentic create enable dynamic podcasting synergies architectures. Redefine authentic methodologies.",
             "DRAFT": "Draft",
-            "FILED": "Filed",
+            "EXPORT": "export",
+            "FILED": "filed",
             "NOPROCESSREPORTS": "There are no reports for this recycling process",
             "NOREPORTS": "You don’t have any reports yet",
-            "TITLE": "Reports"
+            "TITLE": "Reports",
+            "VIEW": "view"
         },
         "RESET-PASSWORD": {
             "ISRESET": "Your password has been reset! Please login to continiou",
@@ -250,7 +251,6 @@
         "REVOKEPROXY": "Revoke this proxy"
     },
     "Recycler": "Recycler",
-    "Recycling Partner": "Recycling Partner",
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
@@ -569,10 +569,12 @@
             },
             "LABELS": {
                 "ADD-ADDITIONAL-ELEMENT": "Add additional element/compound",
+                "ASSIGNED-STEP": "Assigned Step",
                 "CLASSIFICATION": "Classification",
+                "DESTINATION-COMPANY": "Destination - Name of company",
+                "DESTINATION-INDUSTRY": "Destination - Industry",
                 "ELEMENT": "Element or compound",
                 "MASS": "Mass (t)",
-                "REPLACED-ELEMENT-MATERIAL": "Replaced element material",
                 "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
                 "SHARE-OUTPUT-FRACTION": "Share output fraction"
             },
@@ -597,6 +599,7 @@
             "FILE-REPORT": "File Report",
             "INFORMATION": "General",
             "INPUT-FRACTION": "Input Fraction",
+            "NEW-REPORT": "New Report",
             "OUTPUT-FRACTION": "Output Fraction",
             "RECYCLING-EFFICIENCY": "Recycling Efficiency"
         }

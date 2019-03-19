@@ -109,10 +109,13 @@ const ReportSchema = mongoose.Schema({
 				virginReplacedMaterial: {
 					type: String,
 				},
-				elementClassification: {
+				elementDestinationIndustry: {
 					type: String,
 				},
-				elementReplacedMaterial: {
+				elementDestinationCompany: {
+					type: String,
+				},
+				assignedStep: {
 					type: String,
 				},
 			}],
