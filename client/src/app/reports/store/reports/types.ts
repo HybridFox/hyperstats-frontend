@@ -61,8 +61,9 @@ export interface OutputFraction {
     mass: string;
     classification: string;
     replacedMaterial: string;
-    elementClassification: string;
-    elementReplacedMaterial: string;
+    elementDestinationIndustry: string;
+    elementDestinationCompany: string;
+    assignedStep: string;
 }
 
 export interface RecyclingEfficiency {
@@ -76,11 +77,23 @@ export interface AdditionalInformation {
 
  export interface Meta {
     approvedCompanies: string[];
-    reportingCompany: string;
+    reportingCompany: string | ReportingCompany;
     created: string;
     lastUpdated: string;
     deleted: boolean;
     status: string;
+    state: MetaState;
+ }
+
+ interface MetaState {
+  isPristine: boolean;
+ }
+
+ export interface ReportingCompany {
+   _id: string;
+   data: {
+     name: string;
+   };
  }
 
 export interface Report {

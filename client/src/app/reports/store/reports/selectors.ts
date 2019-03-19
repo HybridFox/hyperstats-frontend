@@ -10,6 +10,12 @@ import {
   listError,
 } from './list/selectors';
 
+import {
+  companies,
+  companiesLoading,
+  companiesError,
+} from './companies/selectors';
+
 export const ReportsSelector = {
   detail: {
     result: detail,
@@ -20,5 +26,10 @@ export const ReportsSelector = {
     result: list,
     loading: listLoading,
     error: listError,
+  },
+  companies: {
+    result: companies,
+    loading: companiesLoading,
+    error: companiesError,
   },
 };

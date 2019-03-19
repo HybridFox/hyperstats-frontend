@@ -5,6 +5,7 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 const nodemailerMock = require("nodemailer-mock");
 const UserModel = require("../../../models/user");
 const mockery = require("mockery");
+const errors = require("../../../helpers/errorHandler");
 
 should();
 use(chaiAsPromised);
@@ -32,7 +33,7 @@ describe("Request password reset", () => {
 	});
 
 	it("Should fail when using an invalid email", () => {
-		return expect(requestPasswordReset("invalid-email@example.com")).to.be.rejectedWith("ITEM_NOT_FOUND");
+		return expect(requestPasswordReset("invalid-email@example.com")).to.be.rejectedWith(errors.UserNotFound);
 	});
 
 	it("Should prepare a password reset when a valid email is passed", async() => {

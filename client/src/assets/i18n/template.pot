@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-14T08:34:16.161Z\n"
-"PO-Revision-Date: 2019-03-14T08:34:16.162Z\n"
+"POT-Creation-Date: 2019-03-15T15:07:32.594Z\n"
+"PO-Revision-Date: 2019-03-15T15:07:32.594Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -150,9 +150,6 @@ msgid "GENERAL##LABELS##LASTNAME"
 msgstr ""
 
 msgid "GENERAL##LABELS##LOGIN"
-msgstr ""
-
-msgid "GENERAL##LABELS##MANAGEDBY"
 msgstr ""
 
 msgid "GENERAL##LABELS##MESSAGE"
@@ -470,6 +467,9 @@ msgstr ""
 msgid "PAGE##REPORTS##DRAFT"
 msgstr ""
 
+msgid "PAGE##REPORTS##EXPORT"
+msgstr ""
+
 msgid "PAGE##REPORTS##FILED"
 msgstr ""
 
@@ -480,6 +480,9 @@ msgid "PAGE##REPORTS##NOREPORTS"
 msgstr ""
 
 msgid "PAGE##REPORTS##TITLE"
+msgstr ""
+
+msgid "PAGE##REPORTS##VIEW"
 msgstr ""
 
 msgid "PAGE##RESET-PASSWORD##ISRESET"
@@ -522,9 +525,6 @@ msgid "PROXIES##REVOKEPROXY"
 msgstr ""
 
 msgid "Recycler"
-msgstr ""
-
-msgid "Recycling Partner"
 msgstr ""
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
@@ -962,16 +962,22 @@ msgstr ""
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr ""
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ASSIGNED-STEP"
+msgstr ""
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-COMPANY"
+msgstr ""
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-INDUSTRY"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
-msgstr ""
-
-msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
 msgstr ""
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
@@ -1011,6 +1017,9 @@ msgid "WIZARD##TITLES##INFORMATION"
 msgstr ""
 
 msgid "WIZARD##TITLES##INPUT-FRACTION"
+msgstr ""
+
+msgid "WIZARD##TITLES##NEW-REPORT"
 msgstr ""
 
 msgid "WIZARD##TITLES##OUTPUT-FRACTION"

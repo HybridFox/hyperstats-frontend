@@ -3,6 +3,7 @@ const { expect } = require("chai");
 const { mockMongoose } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const UserModel = require("../../../models/user");
+const errors = require("../../../helpers/errorHandler");
 
 const updateUserProfile = require("./updateUserProfile");
 
@@ -20,7 +21,7 @@ describe("Update user profile", () => {
 	});
 
 	it("Should error when user is not found", () => {
-		return expect(updateUserProfile("example@example.com", "invalid")).to.eventually.rejectedWith(Error);
+		return expect(updateUserProfile("example@example.com", "invalid")).to.eventually.rejectedWith(errors.UserNotFound);
 	});
 
 	it("Should update the user", async() => {

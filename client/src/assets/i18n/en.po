@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-12T14:39:46.223Z\n"
+"POT-Creation-Date: 2019-03-15T15:07:32.594Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -158,11 +158,6 @@ msgstr "Lastname"
 
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
-
-#, fuzzy
-#| msgid "GENERAL##LABELS##NAME"
-msgid "GENERAL##LABELS##MANAGEDBY"
-msgstr "Name"
 
 msgid "GENERAL##LABELS##MESSAGE"
 msgstr "Message"
@@ -547,10 +542,11 @@ msgstr ""
 msgid "PAGE##REPORTS##DRAFT"
 msgstr "Draft"
 
-#, fuzzy
-#| msgid "PAGE##REPORTS##FILLED"
+msgid "PAGE##REPORTS##EXPORT"
+msgstr "export"
+
 msgid "PAGE##REPORTS##FILED"
-msgstr "Filed"
+msgstr "filed"
 
 msgid "PAGE##REPORTS##NOPROCESSREPORTS"
 msgstr "There are no reports for this recycling process"
@@ -560,6 +556,9 @@ msgstr "You don’t have any reports yet"
 
 msgid "PAGE##REPORTS##TITLE"
 msgstr "Reports"
+
+msgid "PAGE##REPORTS##VIEW"
+msgstr "view"
 
 msgid "PAGE##RESET-PASSWORD##ISRESET"
 msgstr "Your password has been reset! Please login to continiou"
@@ -609,9 +608,6 @@ msgstr "Revoke this proxy"
 
 msgid "Recycler"
 msgstr "Recycler"
-
-msgid "Recycling Partner"
-msgstr "Recycling Partner"
 
 msgid "TOAST##ADMIN-FORGOT-PASSWORD##SUCCESS##DESCRIPTION"
 msgstr "An email has been sent to the user requesting a password reset."
@@ -1103,17 +1099,23 @@ msgstr "On a dry weight basis"
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element/compound"
 
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##ASSIGNED-STEP"
+msgstr "Assigned Step"
+
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
 msgstr "Classification"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-COMPANY"
+msgstr "Destination - Name of company"
+
+msgid "WIZARD##OUTPUT-FRACTION##LABELS##DESTINATION-INDUSTRY"
+msgstr "Destination - Industry"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ELEMENT"
 msgstr "Element or compound"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##MASS"
 msgstr "Mass (t)"
-
-msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
-msgstr "Replaced element material"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-VIRGIN-MATERIAL"
 msgstr "Replaced virgin material"
@@ -1154,6 +1156,9 @@ msgstr "General"
 msgid "WIZARD##TITLES##INPUT-FRACTION"
 msgstr "Input Fraction"
 
+msgid "WIZARD##TITLES##NEW-REPORT"
+msgstr "New Report"
+
 msgid "WIZARD##TITLES##OUTPUT-FRACTION"
 msgstr "Output Fraction"
 
@@ -1163,6 +1168,23 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#, fuzzy
+#~| msgid "GENERAL##LABELS##NAME"
+#~ msgid "GENERAL##LABELS##MANAGEDBY"
+#~ msgstr "Name"
+
+#~ msgid "Recycling Partner"
+#~ msgstr "Recycling Partner"
+
+#~ msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
+#~ msgstr "Replaced element material"
+
+#~ msgid "GENERAL##FIELD-ERRORS##TYPEREQUIRED"
+#~ msgstr "Type is required when weight is filled in"
+
+#~ msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
+#~ msgstr "Weight is required when type is filled in"
 
 #, fuzzy
 #~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"

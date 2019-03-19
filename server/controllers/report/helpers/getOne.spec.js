@@ -1,7 +1,7 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const createObjectId = require("mongoose").Types.ObjectId;
-const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../../helpers/errorHandler");
 const createReport = require("./create");
 const getOneReport = require("./getOne");
 const { mockMongoose } = require("../../../test/mocks");
@@ -40,7 +40,7 @@ describe("Report", () => {
 			expect(getOneReport({
 				_id: createObjectId(),
 				reportedById: companyId,
-			})).to.eventually.rejectedWith(ResponseError);
+			})).to.eventually.rejectedWith(errors.ItemNotFound);
 		});
 	});
 });

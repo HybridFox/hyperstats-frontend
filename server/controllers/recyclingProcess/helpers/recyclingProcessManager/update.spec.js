@@ -1,9 +1,9 @@
 
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
+const createObjectId = require("mongoose").Types.ObjectId;
 const { mockMongoose } = require("../../../../test/mocks");
-const Model = require("../../../../models/recyclingProcess");
-const RecyclingProcesses = require("../../../../test/mocks/recyclingProcesses");
+const mockProcesses = require("../../../../test/mocks/recyclingProcesses");
 
 should();
 use(chaiAsPromised);
@@ -12,14 +12,17 @@ describe("Update Recyling partner", () => {
 	let updateCompany;
 	let mongoServer;
 	let processId;
+	let createdProcess;
+	const companyId = createObjectId();
+	const RecyclingProcesses = mockProcesses();
 
 	before(async() => {
 		mongoServer = await mockMongoose();
 		updateCompany = require("./update");
+		const create = require("./create");
 
-		const result = await new Model(RecyclingProcesses[0]).save();
-
-		processId = result.toObject()._id;
+		createdProcess = await create({ process: RecyclingProcesses[0].data, companyId });
+		processId = createdProcess._id;
 	});
 
 	after(() => {
@@ -28,9 +31,9 @@ describe("Update Recyling partner", () => {
 
 	it("Should update the recycling process based on a correct _id", async() => {
 		const result = await updateCompany(processId, {
-			...RecyclingProcesses[0],
+			...createdProcess,
 			data: {
-				...RecyclingProcesses[0].data,
+				...createdProcess.data,
 				name: "updated name",
 			},
 		});

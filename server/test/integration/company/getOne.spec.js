@@ -83,7 +83,7 @@ describe("Integration", () => {
 					.get(`/api/companies/${unmanagedRecycler}`)
 					.expect("Content-Type", /json/)
 					.set("cookie", cookie)
-					.expect(500);
+					.expect(404);
 			});
 
 			it("Should get a compliance org company that is coupled to the user", () => {
@@ -104,7 +104,7 @@ describe("Integration", () => {
 					.get(`/api/companies/${unmanagedComplienceOrg}`)
 					.expect("Content-Type", /json/)
 					.set("cookie", cookie)
-					.expect(500);
+					.expect(404);
 			});
 		});
 	});

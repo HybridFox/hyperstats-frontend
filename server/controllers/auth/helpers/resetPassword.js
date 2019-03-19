@@ -1,4 +1,5 @@
 const UserModel = require("../../../models/user");
+const errors = require("../../../helpers/errorHandler");
 
 module.exports = async(password, token) => {
 	const user = await UserModel.findOne({
@@ -8,7 +9,7 @@ module.exports = async(password, token) => {
 	}).exec();
 
 	if (!user) {
-		throw new Error({ type: 404, message: "User not found!" });
+		throw errors.UserNotFound;
 	}
 
 	user.data.password = await user.generateHash(password);

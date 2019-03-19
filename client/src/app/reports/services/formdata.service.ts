@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import pathOr from 'ramda/es/pathOr';
+import { validateAdditives } from '../pages/detail/pages/additives/additives-validator.directive';
+import { validateOutputFraction } from '../pages/detail/pages/output-fraction/output-fraction-validator.directive';
 
 import {
   Report,
@@ -130,9 +132,9 @@ export class FormDataService {
 
   public getAdditive(additiveItem: AdditivesData): FormGroup {
     return this.formBuilder.group({
-      type: [pathOr('', ['type'])(additiveItem), Validators.required],
-      weight: [pathOr(null, ['weight'])(additiveItem), Validators.required],
-    });
+      type: [pathOr('', ['type'])(additiveItem)],
+      weight: [pathOr(null, ['weight'])(additiveItem)],
+    }, {validators: validateAdditives});
   }
 
   public getAdditives(additiveItems: AdditivesData[]): FormArray {
@@ -171,10 +173,11 @@ export class FormDataService {
       element: [pathOr('', ['element'])(element), Validators.required],
       mass: [pathOr(null, ['mass'])(element), Validators.required],
       virginClassification: [pathOr('', ['virginClassification'])(element), Validators.required],
-      virginReplacedMaterial: [pathOr('', ['virginReplacedMaterial'])(element), Validators.required],
-      elementClassification: [pathOr('', ['elementClassification'])(element), Validators.required],
-      elementReplacedMaterial: [pathOr('', ['elementReplacedMaterial'])(element), Validators.required],
-    });
+      virginReplacedMaterial: [pathOr('', ['virginReplacedMaterial'])(element)],
+      elementDestinationIndustry: [pathOr('', ['elementDestinationIndustry'])(element)],
+      elementDestinationCompany: [pathOr('', ['elementDestinationCompany'])(element)],
+      assignedStep: [pathOr('', ['assignedStep'])(element)]
+    }, {validators: validateOutputFraction});
   }
 
   public getOutputFractionElementFormArray(outputFractionElements: OutputFraction[]): FormArray {

@@ -35,7 +35,6 @@ export class UserFormComponent implements OnChanges {
     }
 
     private createForm(user: any): FormGroup {
-      console.log(user);
         return this.formBuilder.group({
             data: this.formBuilder.group({
                 firstname: this.formBuilder.control(pathOr('', ['data', 'firstname'], user)),

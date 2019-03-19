@@ -66,7 +66,7 @@ describe("Integration", () => {
 					.delete(`/api/companies/${unmanagedRecycler}`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
-					.expect(500);
+					.expect(404);
 			});
 		});
 	});

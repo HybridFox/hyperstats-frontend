@@ -8,7 +8,7 @@
     <div class="m-filter u-pull-right">
         <app-select-input [inlineLabel]="true" label="{{ 'GENERAL.LABELS.SORTBY' | translate }}" [options]="[{label: 'Reporting Year', value: 'reportingYear'}]"></app-select-input>
     </div>
-    <a class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
+    <a *ngIf="userIsRecycler" class="a-button--primary" [routerLink]="['new']">{{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate}}</a>
   </div>
 </div>
 
@@ -16,11 +16,16 @@
     <div class="l-grid__col-4-12">
       <div class="m-card--primary">
         <app-vertical-menu
-          [menuItems]="menuItems$ | async"
+          *ngIf="userIsRecycler"
+          [menuItems]="processesMenuItems$ | async"
         ></app-vertical-menu>
-        <button class="a-button--primary a-button-outline has-icon-after u-margin-top" routerLink="new">
+        <app-vertical-menu
+          *ngIf="!userIsRecycler"
+          [menuItems]="recyclerMenuItems$ | async"
+        ></app-vertical-menu>
+        <a *ngIf="userIsRecycler" class="a-button--primary a-button-outline has-icon-after u-margin-top" routerLink="new">
             {{ 'GENERAL.BUTTONS.CREATENEWREPORT' | translate }}
-        </button>
+        </a>
         <p class="u-text-description">
             {{ 'PAGE.REPORTS.DESCRIPTION' | translate }}
         </p>
@@ -35,7 +40,7 @@
           <div *ngIf="!(reports$ | async)?.length">
             <p>{{ 'PAGE.REPORTS.NOPROCESSREPORTS' | translate }}</p>
           </div>
-          <app-report-table [reports]="reports$ | async"></app-report-table>
+          <app-report-table [reports]="reports$ | async" [userIsRecycler]="userIsRecycler"></app-report-table>
         </app-loading>
       </div>
     </div>
