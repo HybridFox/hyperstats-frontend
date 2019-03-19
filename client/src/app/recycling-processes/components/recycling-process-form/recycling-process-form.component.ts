@@ -104,7 +104,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
             } else {
               return `${acc}, ${curr.data.information.name}`;
             }
-          }, 'Are your sure you want to delete');
+          }, 'If you delete this process you delete the following reports:');
         }
       }
     });
@@ -112,7 +112,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
       this.recyclingProcessForm.disable();
       this.formDisabled = true;
-    } else if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
     } else {
       this.formDisabled = false;
     }
