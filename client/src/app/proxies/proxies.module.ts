@@ -35,6 +35,6 @@ export class ProxiesModule {
   constructor(
     private storeService: StoreService,
   ) {
-    this.storeService.injectAsyncReducer('recyclingProcesses', proxiesReducer);
+    this.storeService.injectAsyncReducer('proxies', proxiesReducer);
   }
 }
