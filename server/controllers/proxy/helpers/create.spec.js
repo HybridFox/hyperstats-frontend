@@ -7,7 +7,7 @@ const Errors = require("../../../helpers/errorHandler");
 const { mockMongoose, company: companyMock, report: reportMock } = require("../../../test/mocks");
 const createTestUser = require("../../../test/helpers/createTestUser");
 const createTestCompany = require("../../../test/helpers/testCompany");
-const createTestProcess = require("../../../test/helpers/testRecyclingProcess");
+const createObjectId = require("mongoose").Types.ObjectId;
 const createTestReport = require("../../../test/helpers/testReport");
 
 should();
@@ -32,7 +32,7 @@ describe("Proxy", () => {
 				companyMock
 			));
 			companyOfUser = user.data.company;
-			recyclingProcessId = (await createTestProcess.create(companyOfUser))._id;
+			recyclingProcessId = createObjectId();
 			reportId = (await createTestReport.create(companyOfUser, set(
 				lensPath(["data", "information", "recyclingProcess"]),
 				recyclingProcessId,
