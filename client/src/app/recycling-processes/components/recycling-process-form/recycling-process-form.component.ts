@@ -82,7 +82,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     this.reports$.subscribe(reports => {
       if (reports && this.recyclingProcess) {
         this.processReportStatus = reports.reduce((currentStatus, report) => {
-          if (this.recyclingProcess._id === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
+          if (pathOr(null, ['id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
             if (currentStatus !== PROCESS_REPORT_STATE.FILED) {
               return report.meta.status;
             }
@@ -93,7 +93,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
         if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
           const itemsToDelete = reports.filter(report => (
-            this.recyclingProcess._id === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
+            pathOr(null, ['id'])(this.recyclingProcess)  === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
             && (report.meta.status === PROCESS_REPORT_STATE.SAVED)
           );
 
