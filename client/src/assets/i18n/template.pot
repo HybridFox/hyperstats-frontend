@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-19T11:05:48.296Z\n"
-"PO-Revision-Date: 2019-03-19T11:05:48.296Z\n"
+"POT-Creation-Date: 2019-03-19T08:54:17.219Z\n"
+"PO-Revision-Date: 2019-03-19T08:54:17.219Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -18,6 +18,24 @@ msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
 msgstr ""
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
+msgstr ""
+
+msgid "CONSTANTS##SORTOPTIONS##LAST-EDITED"
+msgstr ""
+
+msgid "CONSTANTS##SORTOPTIONS##NAME"
+msgstr ""
+
+msgid "CONSTANTS##SORTOPTIONS##REPORTING-YEAR-NTO"
+msgstr ""
+
+msgid "CONSTANTS##SORTOPTIONS##REPORTING-YEAR-OTN"
+msgstr ""
+
+msgid "CONSTANTS##SORTOPTIONS##STATUS-DRAFT-FILED"
+msgstr ""
+
+msgid "CONSTANTS##SORTOPTIONS##STATUS-FILED-DRAFT"
 msgstr ""
 
 msgid "Compliance Organisation"

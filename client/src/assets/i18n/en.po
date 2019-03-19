@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-19T11:05:48.296Z\n"
+"POT-Creation-Date: 2019-03-19T08:53:44.442Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,6 +22,26 @@ msgstr "Sorting"
 
 msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
 msgstr "Transport"
+
+#, fuzzy
+#| msgid "CONSTANTS##SORTOPTIONS##LAST-UPDATED"
+msgid "CONSTANTS##SORTOPTIONS##LAST-EDITED"
+msgstr "Last edited"
+
+msgid "CONSTANTS##SORTOPTIONS##NAME"
+msgstr "Alphabetically "
+
+msgid "CONSTANTS##SORTOPTIONS##REPORTING-YEAR-NTO"
+msgstr "Reporting Year (Newest to Oldest)"
+
+msgid "CONSTANTS##SORTOPTIONS##REPORTING-YEAR-OTN"
+msgstr "Reporting Year (Oldest to Newest)"
+
+msgid "CONSTANTS##SORTOPTIONS##STATUS-DRAFT-FILED"
+msgstr "Status (Draft to Filed)"
+
+msgid "CONSTANTS##SORTOPTIONS##STATUS-FILED-DRAFT"
+msgstr "Status (Filed to Draft)"
 
 msgid "Compliance Organisation"
 msgstr "Compliance Organisation"
@@ -549,7 +569,7 @@ msgid "PAGE##REPORTS##EXPORT"
 msgstr "export"
 
 msgid "PAGE##REPORTS##FILED"
-msgstr "filed"
+msgstr "Filed"
 
 msgid "PAGE##REPORTS##NOPROCESSREPORTS"
 msgstr "There are no reports for this recycling process"

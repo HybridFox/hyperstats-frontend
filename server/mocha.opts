@@ -3,4 +3,4 @@
 --recursive
 --slow 2
 --exit
-./{,!(node_modules)/**}/*.spec.js
+./controllers/proxy

@@ -5,6 +5,14 @@
 			"RECYCLING": "",
 			"SORTING": "",
 			"TRANSPORT": ""
+		},
+		"SORTOPTIONS": {
+			"LAST-EDITED": "",
+			"NAME": "",
+			"REPORTING-YEAR-NTO": "",
+			"REPORTING-YEAR-OTN": "",
+			"STATUS-DRAFT-FILED": "",
+			"STATUS-FILED-DRAFT": ""
 		}
 	},
 	"Compliance Organisation": "",

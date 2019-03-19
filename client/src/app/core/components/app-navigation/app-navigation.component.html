@@ -12,7 +12,7 @@
       <a *ngIf="actionButton && showAddReport" [routerLink]="actionButton.link"
         class="a-button--secondary">{{ actionButton.label }}</a>
       <app-user-menu [profile]="user" (logout)="onLogout()"></app-user-menu>
-      <a routerLink="help" class="m-menu--main__item">{{ 'GENERAL.MENU.HELP' | translate }}</a>
+      <a [routerLink]="['/help']" class="m-menu--main__item">{{ 'GENERAL.MENU.HELP' | translate }}</a>
     </div>
   </div>
 </div>
