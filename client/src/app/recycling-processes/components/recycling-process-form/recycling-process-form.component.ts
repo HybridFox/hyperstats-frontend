@@ -19,8 +19,6 @@ import { Report } from '../../../reports/store/reports/types';
 import { ReportsSelector } from '../../../reports/store/reports';
 import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 
-import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
-
 @Component({
   selector: 'app-recycling-process-form',
   templateUrl: './recycling-process-form.component.html',
@@ -30,8 +28,8 @@ import { RecyclingProcess } from '../../../reports/store/recycling-processes/typ
 export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
 
-  @Input() public recyclingProcess: RecyclingProcess;
-  @Input() public recyclingPartners: any;
+  @Input() public recyclingProcess: any;
+  @Input() public recyclingPartners: any[];
   @Input() public uploadResponse: any;
   @Input() public user: any;
 
