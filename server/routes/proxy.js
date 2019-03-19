@@ -72,7 +72,7 @@ module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /api/proxies:
-	 *   patch:
+	 *   put:
 	 *     description: add proxy to report
 	 *     tags:
 	 *       - proxy
@@ -86,7 +86,7 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/ProxyModifyBody'
 	 *     responses:
 	 *       204:
-	 *         description: Proxy added to report
+	 *         description: Proxy addexd to report
 	 *   delete:
 	 *     description: Remove proxy from report
 	 *     tags:
