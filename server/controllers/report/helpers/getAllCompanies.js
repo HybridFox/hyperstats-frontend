@@ -17,7 +17,7 @@ const getQuery = (reportedById, companyType) => {
 const getReports = async(reportedById, companyType) => {
 	return ReportModel
 		.find(getQuery(reportedById, companyType))
-		.populate("meta.reportingCompany", "data.name")
+		.populate("meta.reportingCompany")
 		.lean()
 		.exec();
 };

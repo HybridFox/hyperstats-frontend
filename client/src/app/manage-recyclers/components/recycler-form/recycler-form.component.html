@@ -103,11 +103,6 @@
         </div>
     </div>
 
-    <app-sub-section-title
-        [title]="'PAGE.COMPANY.META' | translate"
-        class="u-margin-bottom-large"
-    ></app-sub-section-title>
-
     <div class="l-grid__row l-grid--with-margins">
         <div class="l-grid__col-8-12">
             <app-checkbox-input
@@ -115,14 +110,6 @@
                 class="u-margin-bottom-large"
                 [control]="form.get('meta.activated')"
             ></app-checkbox-input>
-            <app-select-input
-                [label]="'GENERAL.LABELS.COMPANYTYPE' | translate"
-                class="u-margin-bottom-large"
-                [options]="companyTypeOptions"
-                [control]="form.get('meta.type')"
-            ></app-select-input>
         </div>
     </div>
-
-    <app-sub-section-title class="u-margin-top-large"></app-sub-section-title>
 </ng-container>

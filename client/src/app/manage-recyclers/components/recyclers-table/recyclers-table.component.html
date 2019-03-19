@@ -1,0 +1,27 @@
+<div class="a-table-wrapper">
+    <table class="a-table">
+        <thead>
+            <tr>
+                <th>{{ "GENERAL.LABELS.NAME" | translate }}</th>
+                <th>{{ "GENERAL.LABELS.STREET" | translate }}</th>
+                <th>{{ "GENERAL.LABELS.CITY" | translate }}</th>
+                <th>{{ "GENERAL.LABELS.ACTIVE" | translate }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let recycler of recyclers">
+                <td>{{ recycler?.data?.name }}</td>
+                <td>{{ recycler?.data?.address?.street }} {{ recycler?.data?.address?.number }}</td>
+                <td>{{ recycler?.data?.address?.city }}</td>
+                <td>
+                        <span *ngIf="!recycler?.meta?.activated" class="fa fa-circle-o"></span>
+                        <span *ngIf="recycler?.meta?.activated" class="fa fa-dot-circle-o"></span>
+                </td>
+                <td>
+                    <a [routerLink]="recycler?._id" class="a-link">View</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

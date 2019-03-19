@@ -10,8 +10,10 @@ import { SharedModule } from '@shared/shared.module';
 
 import { ManageRecyclersRoutingModule } from './manage-recyclers-routing.module';
 
+import { Reducer, Services } from './store';
 import { Pages } from './pages';
 import { Components } from './components';
+import { ReportsRepository } from '@api/reports';
 
 @NgModule({
   declarations: [
@@ -29,5 +31,13 @@ import { Components } from './components';
     LoadingModule,
     FormFieldsModule,
   ],
+  providers: [
+    Services,
+    ReportsRepository
+  ]
 })
-export class ManageRecyclersModule {}
+export class ManageRecyclersModule {
+  constructor(private storeService: StoreService) {
+    this.storeService.injectAsyncReducer('recyclers-management', Reducer);
+  }
+}

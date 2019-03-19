@@ -5,7 +5,7 @@
     <div class="l-grid__col-12-12">
         <div class="m-card--primary u-margin-bottom-large">
             <app-loading [loading]="loading$ | async">
-                <app-recyclers-table *ngIf="recyclers$ | async" [companies]="recyclers$ | async"></app-recyclers-table>
+                <app-recyclers-table *ngIf="recyclers$ | async" [recyclers]="recyclers$ | async"></app-recyclers-table>
             </app-loading>
         </div>
     </div>

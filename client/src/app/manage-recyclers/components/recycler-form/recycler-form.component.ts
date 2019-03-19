@@ -1,32 +1,35 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { pathOr } from 'ramda';
+import countryList from 'country-list';
 import { Option } from '@ui/form-fields/components/select/select.types';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-company-form',
-    templateUrl: './company-form.component.html',
+    selector: 'app-recycler-form',
+    templateUrl: './recycler-form.component.html',
 })
-export class RecyclerFormComponent implements OnInit {
-    @Input() public company: any;
-    @Input() public companies: Option[];
-
-    @Output() public save: EventEmitter<any> = new EventEmitter<any>();
-    @Output() public remove: EventEmitter<any> = new EventEmitter<any>();
-    @Output() public toggleActivation: EventEmitter<any> = new EventEmitter<any>();
+export class RecyclerFormComponent implements OnInit, OnChanges {
+    @Input() public recycler: any;
 
     public form: FormGroup;
     public countryList: Option[];
-    public companyTypeOptions: Option[];
 
     constructor(
         private formBuilder: FormBuilder,
-        private translateService: TranslateService,
     ) {}
 
     public ngOnInit() {
-      this.form = this.createForm(this.company);
+      if (this.recycler) {
+        this.form = this.createForm(this.recycler);
+        this.form.disable();
+      }
+    }
+
+    public ngOnChanges() {
+      if (this.recycler) {
+        this.form = this.createForm(this.recycler);
+        this.form.disable();
+      }
     }
 
     private createForm(value = {
@@ -51,7 +54,7 @@ export class RecyclerFormComponent implements OnInit {
         },
         meta: {
             activated: false,
-            type: 'RP',
+            type: 'R',
             managedBy: null
         }
     }) {
