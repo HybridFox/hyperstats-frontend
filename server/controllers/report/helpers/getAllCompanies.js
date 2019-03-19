@@ -5,11 +5,15 @@ const { COMPANY_TYPES } = require("../../company/helpers/const");
 
 const getQuery = (reportedById, companyType) => {
 	const query = {
-		$and: [{ "meta.approvedCompanies": reportedById }],
+		"meta.approvedCompanies": {
+			$elemMatch: {
+				company: reportedById,
+			},
+		},
 	};
 
 	if (companyType === COMPANY_TYPES.CO || companyType === COMPANY_TYPES.AO) {
-		query.$and.push({ "meta.status": REPORT_STATUS.FILED });
+		query["meta.status"] = REPORT_STATUS.FILED;
 	}
 
 	return query;
