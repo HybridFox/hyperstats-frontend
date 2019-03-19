@@ -30,10 +30,10 @@ module.exports = (router) => {
 	 *         type: number
 	 *       packagingMaterial:
 	 *         type: number
-	 * 		 water:
-	 * 		   type: number
-	 * 		 otherMaterials:
-	 * 		   type: number
+	 *       water:
+	 *         type: number
+	 *       otherMaterials:
+	 *         type: number
 	 *   ReportChemicalComposition:
 	 *     type: object
 	 *     properties:
