@@ -40,9 +40,7 @@ describe("Proxy", () => {
 			)))._id;
 		});
 
-		after(() => {
-			mongoServer.stop();
-		});
+		after(() => mongoServer.stop());
 
 		it("Should return an 'item not found' error when the report can't be found", () => {
 			expect(createProxy({

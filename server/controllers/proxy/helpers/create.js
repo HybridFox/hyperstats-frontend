@@ -1,8 +1,7 @@
 const ReportModel = require("../../../models/report");
-const Errors = require("../../../helpers/errorHandler");
 
 module.exports = async({ proxy, recyclingProcess, year, userCompany } = {}) => {
-	const updateResponse = await ReportModel.updateMany({
+	await ReportModel.updateMany({
 		"data.information.reportingYear": year,
 		"data.information.recyclingProcess": recyclingProcess,
 		"meta.approvedCompanies": {
@@ -12,6 +11,18 @@ module.exports = async({ proxy, recyclingProcess, year, userCompany } = {}) => {
 				},
 			},
 		},
+		$or: [
+			{
+				"meta.reportingCompany": userCompany,
+			},
+			{
+				"meta.approvedCompanies": {
+					$elemMatch: {
+						company: userCompany,
+					},
+				},
+			},
+		],
 	}, {
 		$addToSet: {
 			"meta.approvedCompanies": {
@@ -21,8 +32,4 @@ module.exports = async({ proxy, recyclingProcess, year, userCompany } = {}) => {
 			},
 		},
 	}).exec();
-
-	if (updateResponse.n <= 0) {
-		throw Errors.ItemNotFound;
-	}
 };
