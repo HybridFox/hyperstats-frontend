@@ -25,6 +25,10 @@ const routes: Routes = [
         component: Pages.ContactPageComponent
       },
       {
+        path: 'help',
+        loadChildren: '../help/help.module#HelpModule',
+      },
+      {
         path: 'terms-and-conditions',
         component: Pages.TermsAndConditionsPageComponent
       },
