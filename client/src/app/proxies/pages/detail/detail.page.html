@@ -6,7 +6,7 @@
 <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxies">
   <app-sub-section-title
     class="p-proxies-proxy__title"
-    [title]="proxy?.proxyCompanyId"
+    [title]="proxy.proxyCompanyName"
   >
     <div action>
       <button
@@ -20,7 +20,7 @@
   <div class="a-table-wrapper">
     <form>
       <table class="a-table">
-        <thead>
+      <thead>
           <tr>
             <th></th>
             <ng-container *ngFor="let year of years">
@@ -35,12 +35,6 @@
               <ng-container *ngFor="let report of process.reports">
                 <td>{{ (report.active) ? "v" : "x" }}</td>
               </ng-container>
-              <!-- <td>
-                <app-checkbox-input></app-checkbox-input>
-              </td>
-              <td>
-                <app-checkbox-input></app-checkbox-input>
-              </td> -->
             </tr>
           </ng-container>
         </tbody>

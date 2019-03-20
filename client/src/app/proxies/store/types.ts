@@ -2,6 +2,7 @@ import { Information } from 'src/app/reports/store/reports/types';
 
 export interface Proxy {
   proxyCompanyId: string;
+  proxyCompanyName: string;
   processes: ProxyProcess[];
 }
 

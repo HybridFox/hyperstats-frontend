@@ -29,6 +29,7 @@ export class DetailPageComponent implements OnInit {
       if (proxies) {
         this.proxies = proxies.map(proxy => ({
           proxyCompanyId: proxy.proxyCompanyId,
+          proxyCompanyName: proxy.proxyCompanyName,
           processes: proxy.processes.map(process => ({
             process: process.process.data.name,
             reports: this.years.map(year => (

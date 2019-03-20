@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { tap, catchError, finalize } from 'rxjs/operators';
 import { throwError as _throw } from 'rxjs';
 
-import { EntitiesActions } from '@store/entities';
 import { Handler } from '@store/handler';
 import { ProxiesRepository } from '@api/proxies';
 
@@ -13,7 +12,6 @@ import { ACTIONS } from './action-types';
 export class ProxiesActions {
   constructor(
     private handler: Handler,
-    private entitiesActions: EntitiesActions,
     private proxiesRepository: ProxiesRepository,
   ) {}
 
