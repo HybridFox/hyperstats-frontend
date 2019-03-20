@@ -26,3 +26,20 @@ interface ProxyReport {
     information: Information;
   };
 }
+
+
+export interface ShownProxy {
+  proxyCompanyId: string;
+  proxyCompanyName: string;
+  processes: ShownProxyProcess[];
+}
+
+interface ShownProxyProcess {
+  process: string;
+  reports: ReportYears[];
+}
+
+interface ReportYears {
+  year: number;
+  active: boolean;
+}
