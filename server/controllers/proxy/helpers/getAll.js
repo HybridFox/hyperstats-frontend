@@ -1,3 +1,4 @@
+const { Types } = require("mongoose");
 const ReportModel = require("../../../models/report");
 const { REPORT_STATUS } = require("../../../controllers/report/helpers/const");
 
@@ -8,7 +9,7 @@ module.exports = (companyOfUser) => {
 		},
 		{
 			$match: {
-				"meta.approvedCompanies.approvedBy": companyOfUser,
+				"meta.approvedCompanies.approvedBy": Types.ObjectId(companyOfUser),
 				"meta.deleted": false,
 				"meta.status": REPORT_STATUS.FILED,
 			},
