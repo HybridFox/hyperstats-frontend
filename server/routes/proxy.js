@@ -86,7 +86,7 @@ module.exports = (router) => {
 	 *           $ref: '#/definitions/ProxyModifyBody'
 	 *     responses:
 	 *       204:
-	 *         description: Proxy addexd to report
+	 *         description: Proxy added to report
 	 *   delete:
 	 *     description: Remove proxy from report
 	 *     tags:
