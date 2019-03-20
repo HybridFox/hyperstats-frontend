@@ -43,24 +43,24 @@ export class CompaniesOverviewActions {
     }
 
     public fetchAllAuthorisationOrg(): Observable<any> {
-      this.handler.dispatchStart(ACTIONS.RECYCLERS.OVERVIEW.FETCH);
+      this.handler.dispatchStart(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH);
 
       return this.companyRepository.fetchByType(null)
         .pipe(
           catchError((error) => {
-            this.handler.dispatchError(ACTIONS.RECYCLERS.OVERVIEW.FETCH, {
+            this.handler.dispatchError(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH, {
               message: error.message,
             });
 
             return _throw(error);
           }),
           tap((response: any) => {
-            this.handler.dispatchSuccess(ACTIONS.RECYCLERS.OVERVIEW.FETCH, {
+            this.handler.dispatchSuccess(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH, {
               payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.company])
             });
           }),
           finalize(() => {
-            this.handler.dispatchDone(ACTIONS.RECYCLERS.OVERVIEW.FETCH);
+            this.handler.dispatchDone(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH);
           }),
         );
     }

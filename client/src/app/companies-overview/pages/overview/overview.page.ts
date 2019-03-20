@@ -16,7 +16,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     constructor(
       private route: ActivatedRoute,
       private companiesActions: CompaniesOverviewActions,
-  ) {}
+    ) {}
 
     public ngOnInit() {
       this.route.queryParams
@@ -24,8 +24,12 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 takeUntil(this.componentDestroyed$),
             )
             .subscribe((params) => {
-                this.companiesActions.fetchAllRecyclers().toPromise();
-                this.companiesActions.fetchAllAuthorisationOrg().toPromise();
+                if (this.route.snapshot['_routerState'].url === '/compliance-organisation/authorisation-org') {
+                  this.companiesActions.fetchAllAuthorisationOrg().toPromise();
+                }
+                if (this.route.snapshot['_routerState'].url === '/compliance-organisation/recyclers') {
+                  this.companiesActions.fetchAllRecyclers().toPromise();
+                }
             });
     }
 

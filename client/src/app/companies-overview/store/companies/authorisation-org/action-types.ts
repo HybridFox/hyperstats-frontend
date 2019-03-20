@@ -1,13 +1,13 @@
-import { MODULE, RECYCLERS } from '../constants';
+import { MODULE, AUTHORISATION_ORG } from '../constants';
 export const DETAIL = 'DETAIL';
 export const OVERVIEW = 'OVERVIEW';
 
 export const OVERVIEW_ACTIONS = {
-    FETCH: `${MODULE}/${RECYCLERS}/${OVERVIEW}/FETCH`,
+    FETCH: `${MODULE}/${AUTHORISATION_ORG}/${OVERVIEW}/FETCH`,
 };
 
 export const DETAIL_ACTIONS = {
-    FETCH: `${MODULE}/${RECYCLERS}/${DETAIL}/FETCH`,
+    FETCH: `${MODULE}/${AUTHORISATION_ORG}/${DETAIL}/FETCH`,
 };
 
 export const AUTHORISATION_ORG_ACTIONS = {

@@ -29,6 +29,8 @@ const getReports = async(reportedById, companyType) => {
 const getCompanies = (reports) => {
 	const companies = reports.map((report) => report.meta.reportingCompany);
 
+	console.log(companies);
+
 	return uniq(companies);
 };
 
