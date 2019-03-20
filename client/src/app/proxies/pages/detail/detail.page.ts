@@ -4,6 +4,7 @@ import { select } from '@angular-redux/store';
 
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
+import { RecyclingProcessesActions, RecyclingProcessesSelectors } from '../../../recycling-processes/store';
 import { Proxy } from '../../store/types';
 
 @Component({
@@ -12,6 +13,7 @@ import { Proxy } from '../../store/types';
 
 export class DetailPageComponent implements OnInit {
   @select(ProxiesSelectors.list.result) public $proxies: Observable<Proxy[]>;
+  @select(RecyclingProcessesSelectors.list.result) public $recyclingProcesses: Observable<any[]>;
 
   public proxies: any[];
   public years: any[];
@@ -23,6 +25,10 @@ export class DetailPageComponent implements OnInit {
 
   ngOnInit() {
     this.proxiesActions.fetchAll().toPromise();
+
+    this.$recyclingProcesses.subscribe((recyclingProcesses) => {
+      console.log(recyclingProcesses);
+    });
 
     this.years = this.codesService.years().map(year => year.value);
     this.$proxies.subscribe((proxies) => {
