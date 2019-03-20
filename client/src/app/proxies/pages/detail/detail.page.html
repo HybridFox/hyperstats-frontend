@@ -4,9 +4,6 @@
   </div>
 </div>
 <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxies">
-  <pre>
-    {{ proxy | json }}
-  </pre>
   <app-sub-section-title
     class="p-proxies-proxy__title"
     [title]="proxy?.proxyCompanyId"
@@ -26,23 +23,27 @@
         <thead>
           <tr>
             <th></th>
-            <th>2018</th>
-            <th>2019</th>
+            <ng-container *ngFor="let year of years">
+              <th>{{ year }}</th>
+            </ng-container>
           </tr>
         </thead>
-        <!-- <tbody>
-          <ng-container *ngFor="let type of proxy.types">
+        <tbody>
+          <ng-container *ngFor="let process of proxy.processes">
             <tr class="a-table__row--header">
-              <td>{{type.name}}</td>
-              <td>
+              <td>{{process.process}}</td>
+              <ng-container *ngFor="let report of process.reports">
+                <td>{{ (report.active) ? "v" : "x" }}</td>
+              </ng-container>
+              <!-- <td>
                 <app-checkbox-input></app-checkbox-input>
               </td>
               <td>
                 <app-checkbox-input></app-checkbox-input>
-              </td>
+              </td> -->
             </tr>
           </ng-container>
-        </tbody> -->
+        </tbody>
       </table>
     </form>
   </div>
