@@ -53,6 +53,7 @@ export class MainMenuComponent implements OnInit, AfterViewInit, OnChanges, OnDe
         { title: ngxExtract('GENERAL.MENU.REPORTS'), link: ['/compliance-organisation/reports'] },
         { title: ngxExtract('GENERAL.MENU.PROXIES'), link: ['/compliance-organisation/proxies'] },
         { title: ngxExtract('GENERAL.MENU.RECYCLERS'), link: ['/compliance-organisation/recyclers'] },
+        { title: ngxExtract('GENERAL.MENU.AUTHORISATION-ORG'), link: ['/compliance-organisation/authorisation-org'] },
       ];
         // TODO: get types from enum
     } else if (this.profile && this.profile.company.meta.type === CompanyType.AO) {

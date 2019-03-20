@@ -1,0 +1,16 @@
+<app-page-title
+      [title]="'PAGE.MANAGE-RECYCLERS.TITLE' | translate"
+></app-page-title>
+<div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-12-12">
+        <div class="m-card--primary u-margin-bottom-large">
+            <app-loading [loading]="loading$ | async">
+                <app-companies-table
+                  *ngIf="companies$ | async"
+                  [companies]="companies$ | async"
+                  [admin]="false"
+                ></app-companies-table>
+            </app-loading>
+        </div>
+    </div>
+</div>

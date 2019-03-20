@@ -1,0 +1,3 @@
+export const MODULE = 'COMPANY_OVERVIEW';
+export const RECYCLERS = 'RECYCLERS';
+export const AUTHORISATION_ORG = 'AUTHORISATION_ORG';

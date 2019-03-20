@@ -10,7 +10,8 @@ const routes: Routes = [
     { path: 'reports', loadChildren: '../reports/reports.module#ReportsModule' },
     { path: 'help', loadChildren: '../help/help.module#HelpModule' },
     { path: 'proxies', loadChildren: '../proxies/proxies.module#ProxiesModule' },
-    { path: 'recyclers', loadChildren: '../manage-recyclers/manage-recyclers.module#ManageRecyclersModule' },
+    { path: 'recyclers', loadChildren: '../companies-overview/companies-overview.module#CompaniesOverviewModule' },
+    { path: 'authorisation-org', loadChildren: '../companies-overview/companies-overview.module#CompaniesOverviewModule' },
 ];
 
 @NgModule({

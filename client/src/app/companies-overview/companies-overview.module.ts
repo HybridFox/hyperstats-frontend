@@ -8,11 +8,13 @@ import { LoadingModule } from '@ui/loading';
 import { FormFieldsModule } from '@ui/form-fields';
 import { SharedModule } from '@shared/shared.module';
 
-import { ManageCompaniesRoutingModule } from './manage-companies-routing.module';
+import { CompaniesOverviewRoutingModule } from './companies-overview-routing.module';
 
-import { Services, Reducer } from './store';
+import { Reducer, Services } from './store';
 import { Pages } from './pages';
+import { ReportsRepository } from '@api/reports';
 import { CompaniesFormModule } from '@ui/companies-form';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { CompaniesFormModule } from '@ui/companies-form';
     HttpClientModule,
     ReactiveFormsModule,
 
-    ManageCompaniesRoutingModule,
+    CompaniesOverviewRoutingModule,
     SharedModule,
     LoadingModule,
     FormFieldsModule,
@@ -32,10 +34,11 @@ import { CompaniesFormModule } from '@ui/companies-form';
   ],
   providers: [
     Services,
-  ],
+    ReportsRepository,
+  ]
 })
-export class ManageCompaniesModule {
+export class CompaniesOverviewModule {
   constructor(private storeService: StoreService) {
-    this.storeService.injectAsyncReducer('company-management', Reducer);
+    this.storeService.injectAsyncReducer('companies-overview', Reducer);
   }
 }
