@@ -31,7 +31,7 @@ export class ProxiesActions {
         }),
         tap((response: any) => {
           this.handler.dispatchSuccess(ACTIONS.FETCH_ALL, {
-            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.proxy])
+            payload: response
           });
         }),
         finalize(() => {
