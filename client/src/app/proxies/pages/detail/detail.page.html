@@ -1,101 +1,44 @@
-<div *ngIf="!proxies" class="m-card--primary u-margin-bottom-large">
-    <div class="m-card__placeholder">
-        <img src="/assets/images/choose.svg" alt="Choose image">
-    </div>
+<div *ngIf="!proxies || proxies.length === 0" class="m-card--primary u-margin-bottom-large">
+  <div class="m-card__placeholder">
+    <img src="/assets/images/choose.svg" alt="Choose image">
+  </div>
 </div>
 <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxies">
-    <app-sub-section-title
-        class="p-proxies-proxy__title"
-        [title]="proxy?.name"
-    >
-        <div action>
-            <button class="a-button--link a-button--small" (click)="revokeProxy()">{{'PROXIES.REVOKEPROXY' | translate}}</button>
-        </div>
-    </app-sub-section-title>
-    <div class="a-table-wrapper">
-        <form>
-            <table class="a-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>2017</th>
-                        <th>2018</th>
-                        <th>2019</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <ng-container *ngFor="let type of proxy.types">
-                        <ng-container *ngIf="!type.multiple">
-                            <tr class="a-table__row--header">
-                                <td>{{type.name}}</td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                            </tr>
-                        </ng-container>
-                        <ng-container *ngIf="type.multiple">
-                            <tr class="a-table__row--header">
-                                <td>{{type.name}}</td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                            </tr>
-                            <tr class="a-table__row--small">
-                                <td>Rapport 1</td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr class="a-table__row--small">
-                                <td>Rapport 2</td>
-                                <td>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr class="a-table__row--small">
-                                <td>Rapport 3</td>
-                                <td>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                                <td>
-                                </td>
-                            </tr>
-                            <tr class="a-table__row--small">
-                                <td>Rapport 4</td>
-                                <td>
-                                </td>
-                                <td>
-                                </td>
-                                <td>
-                                    <app-checkbox-input></app-checkbox-input>
-                                </td>
-                            </tr>
-                        </ng-container>
-                    </ng-container>
-                </tbody>
-            </table>
-        </form>
+  <app-sub-section-title
+    class="p-proxies-proxy__title"
+    [title]="proxy.proxyCompanyName"
+  >
+    <div action>
+      <button
+        class="a-button--link a-button--small"
+        (click)="revokeProxy()"
+      >
+        {{'PROXIES.REVOKEPROXY' | translate}}
+      </button>
     </div>
+  </app-sub-section-title>
+  <div class="a-table-wrapper">
+    <form>
+      <table class="a-table">
+      <thead>
+          <tr>
+            <th></th>
+            <ng-container *ngFor="let year of years">
+              <th>{{ year }}</th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let process of proxy.processes">
+            <tr class="a-table__row--header">
+              <td>{{process.process}}</td>
+              <ng-container *ngFor="let report of process.reports">
+                <td>{{ (report.active) ? "v" : "x" }}</td>
+              </ng-container>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </form>
+  </div>
 </div>
