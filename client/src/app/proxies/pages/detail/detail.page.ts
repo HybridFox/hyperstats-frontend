@@ -13,6 +13,8 @@ import { RecyclingProcess } from '../../../reports/store/recycling-processes/typ
 import { PROXY_OPTIONS } from '../../store/constants';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
 import { Proxy, RenderedProxy } from '../../store/types';
+import { ReportsActions } from 'src/app/reports/store/reports';
+import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 
 @Component({
   templateUrl: './detail.page.html',
@@ -35,12 +37,16 @@ export class DetailPageComponent implements OnInit {
 
   constructor(
     private proxiesActions: ProxiesActions,
+    private reportActions: ReportsActions,
+    private reportProcessActions: ReportsProcessActions,
     private codesService: CodesService,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
     this.proxiesActions.fetchAll().toPromise();
+    this.reportActions.fetchAll({}).toPromise();
+    this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
 
     this.$reports.subscribe((reports) => {
       this.reports = reports;
