@@ -13,13 +13,21 @@
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-12-12">
         <div class="m-card--primary u-margin-bottom-large">
-            <app-loading [loading]="loading$ | async">
-                <app-companies-table
-                  *ngIf="companies$ | async"
-                  [companies]="companies$ | async"
-                  [admin]="false"
-                ></app-companies-table>
-            </app-loading>
+          <app-loading [loading]="loading$ | async">
+              <app-companies-table
+                *ngIf="companies$ | async"
+                [companies]="companies$ | async"
+                [admin]="false"
+              ></app-companies-table>
+          </app-loading>
+        </div>
+        <div *ngIf="!(companies$ | async)" class="m-card--primary">
+          <div class="p-report__no-process">
+              <app-section-title
+                [title]="'WIZARD.NO-PROCESS' | translate"
+              ></app-section-title>
+              <img class="p-report__visual" src="/assets/images/choose.svg" alt="Choose image" >
+          </div>
         </div>
     </div>
 </div>

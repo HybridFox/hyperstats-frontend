@@ -5,7 +5,7 @@ import { select$, select } from '@angular-redux/store';
 import { ToastrService } from 'ngx-toastr';
 import { FormHelper } from '@helpers/form.helper';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { ReportsActions } from '../../../../store/reports';
 import { mapRecyclingProcessesToOptions } from '../../../../services/select.helpers';
