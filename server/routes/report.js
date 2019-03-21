@@ -287,6 +287,7 @@ module.exports = (router) => {
 	router.route("/reports/companies")
 		.get(
 			dataMiddleware.copy,
+			dataMiddleware.validate("query", reportValidations.types, Errors.ObjectValidationFailed),
 			reportController.getAllCompanies
 		);
 

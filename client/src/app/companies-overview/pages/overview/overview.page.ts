@@ -9,13 +9,17 @@ import { takeUntil } from 'rxjs/operators';
     templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
-    @select(CompaniesOverviewSelector.recyclers.overview.result) public companies$: Observable<any>;
+    @select(CompaniesOverviewSelector.recyclers.overview.result) public recyclers$: Observable<any>;
+    @select(CompaniesOverviewSelector.authorisationOrg.overview.result) public authOrg$: Observable<any>;
     @select(CompaniesOverviewSelector.recyclers.overview.loading) public loading$: Observable<boolean>;
+
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+
+    public companies$: Observable<any>;
 
     constructor(
       private route: ActivatedRoute,
-      private companiesActions: CompaniesOverviewActions,
+      private companiesOverviewActions: CompaniesOverviewActions,
     ) {}
 
     public ngOnInit() {
@@ -25,10 +29,12 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             )
             .subscribe((params) => {
                 if (this.route.snapshot['_routerState'].url === '/compliance-organisation/authorisation-org') {
-                  this.companiesActions.fetchAllAuthorisationOrg().toPromise();
+                  this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
+                  this.companies$ = this.authOrg$;
                 }
                 if (this.route.snapshot['_routerState'].url === '/compliance-organisation/recyclers') {
-                  this.companiesActions.fetchAllRecyclers().toPromise();
+                  this.companiesOverviewActions.fetchAllRecyclers().toPromise();
+                  this.companies$ = this.recyclers$;
                 }
             });
     }

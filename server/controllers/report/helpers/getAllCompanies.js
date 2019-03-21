@@ -22,20 +22,28 @@ const getReports = async(reportedById, companyType) => {
 	return ReportModel
 		.find(getQuery(reportedById, companyType))
 		.populate("meta.reportingCompany")
+		.populate("meta.approvedCompanies.linkedApprovals")
 		.lean()
 		.exec();
 };
 
-const getCompanies = (reports) => {
-	const companies = reports.map((report) => report.meta.reportingCompany);
+const mapCompanies = (getType, reports) => {
+	if (getType === COMPANY_TYPES.AO) {
+		return reports
+			.map(report => report.meta.approvedCompanies)
+			.map(report => report[0].linkedApprovals)
+			.reduce((acc, companies) => acc.concat(companies), []);
+	}
 
-	console.log(companies);
-
-	return uniq(companies);
+	return reports.map((report) => report.meta.reportingCompany);
 };
 
-module.exports = async({ reportedById, companyType }) => {
+const getCompanies = (getType, reports) => {
+	return uniq(mapCompanies(getType, reports));
+};
+
+module.exports = async({ getType, reportedById, companyType }) => {
 	const reports = await getReports(reportedById, companyType);
 
-	return getCompanies(reports);
+	return getCompanies(getType, reports);
 };

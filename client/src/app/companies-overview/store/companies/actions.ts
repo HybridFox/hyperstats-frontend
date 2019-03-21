@@ -9,6 +9,7 @@ import { EntitiesActions } from '@store/entities';
 import { ACTIONS } from './action-types';
 import { ReportsRepository } from '@api/reports';
 import { CompanyRepository } from '@api/company';
+import { CompanyType } from '@api/company';
 
 @Injectable()
 export class CompaniesOverviewActions {
@@ -22,7 +23,7 @@ export class CompaniesOverviewActions {
     public fetchAllRecyclers(): Observable<any> {
       this.handler.dispatchStart(ACTIONS.RECYCLERS.OVERVIEW.FETCH);
 
-      return this.reportsRepository.fetchAllCompanies()
+      return this.reportsRepository.fetchAllCompanies([CompanyType.R])
         .pipe(
           catchError((error) => {
             this.handler.dispatchError(ACTIONS.RECYCLERS.OVERVIEW.FETCH, {
@@ -45,7 +46,7 @@ export class CompaniesOverviewActions {
     public fetchAllAuthorisationOrg(): Observable<any> {
       this.handler.dispatchStart(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH);
 
-      return this.companyRepository.fetchByType(null)
+      return this.reportsRepository.fetchAllCompanies([CompanyType.AO])
         .pipe(
           catchError((error) => {
             this.handler.dispatchError(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH, {
