@@ -63,33 +63,38 @@ export class DetailPageComponent implements OnInit {
 
   private getProxiesFrom() {
     if (this.proxies && this.reports && this.recyclingProcesses && this.years) {
-      const companies = uniq(this.proxies.map(proxy => ({
-        proxyCompanyName: proxy.proxyCompanyName,
-        proxyCompanyId: proxy.proxyCompanyId
-      })));
-
-      this.renderedProxies = companies.map(company => {
-        const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
-
-        return {
-          companyInfo: {
-            companyName: company.proxyCompanyName,
-            companyId: company.proxyCompanyId,
-          },
-          processes: this.recyclingProcesses.map(recyclingProcess => ({
-            processInfo: {
-              processName: recyclingProcess.data.name,
-              processId: recyclingProcess._id,
-            },
-            reports: this.years.map(year => ({
-              year: year,
-              status: this.getStatus(this.reports, year, recyclingProcess, companyProxies),
-            })),
-          })),
-        };
-      });
+      this.renderedProxies = this.getProxies();
     }
   }
+
+  private getProxies() {
+    const companies = uniq(this.proxies.map(proxy => ({
+      proxyCompanyName: proxy.proxyCompanyName,
+      proxyCompanyId: proxy.proxyCompanyId
+    })));
+
+    return companies.map(company => {
+      const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
+
+      return {
+        companyInfo: {
+          companyName: company.proxyCompanyName,
+          companyId: company.proxyCompanyId,
+        },
+        processes: this.recyclingProcesses.map(recyclingProcess => ({
+          processInfo: {
+            processName: recyclingProcess.data.name,
+            processId: recyclingProcess._id,
+          },
+          reports: this.years.map(year => ({
+            year: year,
+            status: this.getStatus(this.reports, year, recyclingProcess, companyProxies),
+          })),
+        })),
+      };
+    });
+  }
+
   private getStatus(reports: Report[], year: string, recyclingProcess: RecyclingProcess, companyProxies: Proxy[]) {
     const matchingReports = reports.filter(report => (
       report.data.information.reportingYear === parseInt(year, 10) &&
