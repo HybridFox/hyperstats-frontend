@@ -46,8 +46,6 @@
             }
         }
 
-
-
         .a-input__label--disabled {
           cursor: not-allowed;
 
@@ -138,6 +136,25 @@
         font-size: $font-size-x-small;
         margin: 0;
     }
+}
+
+.a-input__checkbox--semi-checked .a-input__checkbox:not(:checked) ~ .a-input__fake-checkbox {
+  border-color: $zodiac;
+  background-color: $zodiac;
+  position: relative;
+
+  &::after {
+    content: "";
+
+    display: block;
+    background-color: white;
+    opacity: .9;
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+  }
 }
 
 .a-input--inline {
