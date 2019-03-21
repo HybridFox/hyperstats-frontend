@@ -11,7 +11,7 @@ import { RecyclingProcess } from '../../../reports/store/recycling-processes/typ
 
 import { PROXY_OPTIONS } from '../../store/constants';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
-import { Proxy } from '../../store/types';
+import { Proxy, RenderedProxy } from '../../store/types';
 
 @Component({
   templateUrl: './detail.page.html',
@@ -29,7 +29,7 @@ export class DetailPageComponent implements OnInit {
 
   public PROXY_OPTIONS = PROXY_OPTIONS;
 
-  public renderedProxies: any[];
+  public renderedProxies: RenderedProxy[];
 
   constructor(
     private proxiesActions: ProxiesActions,
