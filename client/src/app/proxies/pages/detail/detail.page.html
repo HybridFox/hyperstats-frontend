@@ -3,10 +3,10 @@
     <img src="/assets/images/choose.svg" alt="Choose image">
   </div>
 </div>
-<div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxies">
+<div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of renderedProxies">
   <app-sub-section-title
     class="p-proxies-proxy__title"
-    [title]="proxy.proxyCompanyName"
+    [title]="proxy.companyInfo.companyName"
   >
     <div action>
       <button
@@ -31,9 +31,9 @@
         <tbody>
           <ng-container *ngFor="let process of proxy.processes">
             <tr class="a-table__row--header">
-              <td>{{process.process}}</td>
+              <td>{{process.processName}}</td>
               <ng-container *ngFor="let report of process.reports">
-                <td>{{ (report.active) ? "v" : "x" }}</td>
+                <td>{{ report.status }}</td>
               </ng-container>
             </tr>
           </ng-container>
