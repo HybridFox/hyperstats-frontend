@@ -31,7 +31,7 @@
         <tbody>
           <ng-container *ngFor="let process of proxy.processes">
             <tr class="a-table__row--header">
-              <td>{{process.processName}}</td>
+              <td>{{process.processInfo.processName}}</td>
               <ng-container *ngFor="let report of process.reports">
                 <td>{{ report.status }}</td>
               </ng-container>

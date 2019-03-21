@@ -77,7 +77,10 @@ export class DetailPageComponent implements OnInit {
             companyId: company.proxyCompanyId,
           },
           processes: this.recyclingProcesses.map(recyclingProcess => ({
-            processName: recyclingProcess.data.name,
+            processInfo: {
+              processName: recyclingProcess.data.name,
+              processId: recyclingProcess._id,
+            },
             reports: this.years.map(year => ({
               year: year,
               status: this.getStatus(this.reports, year, recyclingProcess, companyProxies), // Disabled | empty | semi | selected

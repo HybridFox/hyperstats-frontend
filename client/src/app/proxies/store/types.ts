@@ -38,8 +38,13 @@ interface CompanyInfo {
 }
 
 interface RenderedProxyProcess {
-  processName: string;
+  processInfo: ProcessInfo;
   reports: RenderedProxyReport[];
+}
+
+interface ProcessInfo {
+  processName: string;
+  processId: string;
 }
 
 interface RenderedProxyReport {
