@@ -97,6 +97,7 @@
             "ABOUT": "About us",
             "AUDITTRAIL": "Audit Trial",
             "AUDITTRIAL": "Audit Trial",
+            "AUTHORISATION-ORG": "Authorisation Organisations",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
             "CONTACT": "Contact",
@@ -175,8 +176,14 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-AUTHORISATION-ORG": {
+            "TITLE": "Authorization Organisations"
+        },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
+        },
+        "MANAGE-RECYCLERS": {
+            "TITLE": "Recyclers"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"

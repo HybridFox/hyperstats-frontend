@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-19T08:53:44.442Z\n"
+"POT-Creation-Date: 2019-03-21T10:13:51.192Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -268,6 +268,9 @@ msgstr "Audit Trial"
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr "Authorisation Organisations"
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr "Companies"
 
@@ -455,8 +458,14 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr "Authorization Organisations"
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr "Manage companies"
+
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
+msgstr "Recyclers"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"

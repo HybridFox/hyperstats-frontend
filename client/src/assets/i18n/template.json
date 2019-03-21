@@ -97,6 +97,7 @@
 			"ABOUT": "",
 			"AUDITTRAIL": "",
 			"AUDITTRIAL": "",
+			"AUTHORISATION-ORG": "",
 			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
 			"CONTACT": "",
@@ -175,7 +176,13 @@
 				"TITLE": ""
 			}
 		},
+		"MANAGE-AUTHORISATION-ORG": {
+			"TITLE": ""
+		},
 		"MANAGE-COMPANIES": {
+			"TITLE": ""
+		},
+		"MANAGE-RECYCLERS": {
 			"TITLE": ""
 		},
 		"MANAGE-USERS": {

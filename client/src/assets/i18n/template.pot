@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-19T08:54:17.219Z\n"
-"PO-Revision-Date: 2019-03-19T08:54:17.219Z\n"
+"POT-Creation-Date: 2019-03-21T10:13:51.192Z\n"
+"PO-Revision-Date: 2019-03-21T10:13:51.192Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -257,6 +257,9 @@ msgstr ""
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr ""
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr ""
 
@@ -398,7 +401,13 @@ msgstr ""
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr ""
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-USERS##TITLE"

@@ -16,6 +16,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
     public companies$: Observable<any>;
+    public page: string;
 
     constructor(
       private route: ActivatedRoute,
@@ -31,10 +32,12 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 if (this.route.snapshot['_routerState'].url === '/compliance-organisation/authorisation-org') {
                   this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
                   this.companies$ = this.authOrg$;
+                  this.page = 'authorisation-org';
                 }
                 if (this.route.snapshot['_routerState'].url === '/compliance-organisation/recyclers') {
                   this.companiesOverviewActions.fetchAllRecyclers().toPromise();
                   this.companies$ = this.recyclers$;
+                  this.page = 'recyclers';
                 }
             });
     }
