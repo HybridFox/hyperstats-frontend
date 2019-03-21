@@ -10,7 +10,7 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(CompaniesOverviewSelector.recyclers.overview.result) public recyclers$: Observable<any>;
-    @select(CompaniesOverviewSelector.authorisationOrg.overview.result) public authOrg$: Observable<any>;
+    @select(CompaniesOverviewSelector.organisations.overview.result) public organisations$: Observable<any>;
     @select(CompaniesOverviewSelector.recyclers.overview.loading) public loading$: Observable<boolean>;
 
     private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -31,13 +31,19 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             .subscribe((params) => {
                 if (this.route.snapshot['_routerState'].url === '/compliance-organisation/authorisation-org') {
                   this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
-                  this.companies$ = this.authOrg$;
+                  this.companies$ = this.organisations$;
                   this.page = 'authorisation-org';
                 }
-                if (this.route.snapshot['_routerState'].url === '/compliance-organisation/recyclers') {
+                if (this.route.snapshot['_routerState'].url === '/compliance-organisation/recyclers' ||
+                    this.route.snapshot['_routerState'].url === '/authorisation-organisation/recyclers') {
                   this.companiesOverviewActions.fetchAllRecyclers().toPromise();
                   this.companies$ = this.recyclers$;
                   this.page = 'recyclers';
+                }
+                if (this.route.snapshot['_routerState'].url === '/authorisation-organisation/compliance-org') {
+                  this.companiesOverviewActions.fetchAllComplianceOrg().toPromise();
+                  this.companies$ = this.organisations$;
+                  this.page = 'compliance-org';
                 }
             });
     }

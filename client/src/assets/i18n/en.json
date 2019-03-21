@@ -100,6 +100,7 @@
             "AUTHORISATION-ORG": "Authorisation Organisations",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
+            "COMPLIANCE-ORG": "Compliance Organisations",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
@@ -180,6 +181,9 @@
             "TITLE": "Authorization Organisations"
         },
         "MANAGE-COMPANIES": {
+            "TITLE": "Manage companies"
+        },
+        "MANAGE-COMPLIANCE-ORG": {
             "TITLE": "Manage companies"
         },
         "MANAGE-RECYCLERS": {

@@ -10,7 +10,7 @@ import { CompaniesOverviewSelector, CompaniesOverviewActions } from '../../store
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
     @select(CompaniesOverviewSelector.recyclers.overview.result) public recyclers$: Observable<any>;
-    @select(CompaniesOverviewSelector.authorisationOrg.overview.result) public authOrg$: Observable<any>;
+    @select(CompaniesOverviewSelector.organisations.overview.result) public organisations$: Observable<any>;
     @select(CompaniesOverviewSelector.recyclers.detail.loading) public loading$: BehaviorSubject<boolean>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
@@ -30,7 +30,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
             .subscribe(({ id }) => {
               if (this.route.snapshot['_routerState'].url.includes('/compliance-organisation/authorisation-org')) {
                 this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
-                this.companies$ = this.authOrg$;
+                this.companies$ = this.organisations$;
               }
               if (this.route.snapshot['_routerState'].url.includes('/compliance-organisation/recyclers')) {
                 this.companiesOverviewActions.fetchAllRecyclers().toPromise();

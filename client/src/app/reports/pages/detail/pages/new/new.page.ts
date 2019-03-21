@@ -20,6 +20,8 @@ import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store
 export class NewPageComponent extends StepPageAbstract implements OnInit {
   @select$(ReportsProcessSelector.list.result, mapRecyclingProcessesToOptions) public processOptions$: BehaviorSubject<Option>;
 
+  public showForm: boolean;
+
   constructor(
     codesService: CodesService,
     reportFormService: FormDataService,
@@ -45,6 +47,7 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
 
   ngOnInit() {
     super.ngOnInit();
+    this.formData.formGroup.status === 'DISABLED' ? this.showForm = true : this.showForm = false;
   }
 
   public nextStep() {

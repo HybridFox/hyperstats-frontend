@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-21T10:13:51.192Z\n"
-"PO-Revision-Date: 2019-03-21T10:13:51.192Z\n"
+"POT-Creation-Date: 2019-03-21T13:26:12.449Z\n"
+"PO-Revision-Date: 2019-03-21T13:26:12.449Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -266,6 +266,9 @@ msgstr ""
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr ""
 
+msgid "GENERAL##MENU##COMPLIANCE-ORG"
+msgstr ""
+
 msgid "GENERAL##MENU##CONTACT"
 msgstr ""
 
@@ -405,6 +408,9 @@ msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-RECYCLERS##TITLE"

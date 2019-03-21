@@ -100,6 +100,7 @@
 			"AUTHORISATION-ORG": "",
 			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
+			"COMPLIANCE-ORG": "",
 			"CONTACT": "",
 			"HELP": "",
 			"LOGIN": "",
@@ -180,6 +181,9 @@
 			"TITLE": ""
 		},
 		"MANAGE-COMPANIES": {
+			"TITLE": ""
+		},
+		"MANAGE-COMPLIANCE-ORG": {
 			"TITLE": ""
 		},
 		"MANAGE-RECYCLERS": {

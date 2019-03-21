@@ -20,6 +20,7 @@ export class StepWrapperPageComponent implements OnInit {
   public title$;
   public currentForm: FormArray;
   public sideItems: StepMenuItem[] = [];
+  public showForm: boolean;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -37,6 +38,7 @@ export class StepWrapperPageComponent implements OnInit {
 
   public ngOnInit() {
      this.setForm();
+     this.formData.formGroup.status === 'DISABLED' ? this.showForm = true : this.showForm = false;
   }
 
   public setForm() {

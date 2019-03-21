@@ -1,7 +1,7 @@
 import { OverviewSelector } from './overview/selectors';
 import { DetailSelector } from './detail/selectors';
 
-export const AuthorisationOrgSelector = {
+export const OrganisationsSelector = {
   overview: OverviewSelector,
   detail: DetailSelector,
 };

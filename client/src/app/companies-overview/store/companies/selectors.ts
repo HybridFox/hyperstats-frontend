@@ -1,7 +1,7 @@
 import { RecyclersSelector } from './recyclers/selectors';
-import { AuthorisationOrgSelector } from './authorisation-org/selectors';
+import { OrganisationsSelector } from './organisations/selectors';
 
 export const CompaniesOverviewSelector = {
   recyclers: RecyclersSelector,
-  authorisationOrg: AuthorisationOrgSelector,
+  organisations: OrganisationsSelector,
 };

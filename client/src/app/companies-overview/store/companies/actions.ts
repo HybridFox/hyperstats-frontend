@@ -44,24 +44,47 @@ export class CompaniesOverviewActions {
     }
 
     public fetchAllAuthorisationOrg(): Observable<any> {
-      this.handler.dispatchStart(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH);
+      this.handler.dispatchStart(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH);
 
       return this.reportsRepository.fetchAllCompanies([CompanyType.AO])
         .pipe(
           catchError((error) => {
-            this.handler.dispatchError(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH, {
+            this.handler.dispatchError(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH, {
               message: error.message,
             });
 
             return _throw(error);
           }),
           tap((response: any) => {
-            this.handler.dispatchSuccess(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH, {
+            this.handler.dispatchSuccess(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH, {
               payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.company])
             });
           }),
           finalize(() => {
-            this.handler.dispatchDone(ACTIONS.AUTHORISATION_ORG.OVERVIEW.FETCH);
+            this.handler.dispatchDone(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH);
+          }),
+        );
+    }
+
+    public fetchAllComplianceOrg(): Observable<any> {
+      this.handler.dispatchStart(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH);
+
+      return this.reportsRepository.fetchAllCompanies([CompanyType.CO])
+        .pipe(
+          catchError((error) => {
+            this.handler.dispatchError(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH, {
+              message: error.message,
+            });
+
+            return _throw(error);
+          }),
+          tap((response: any) => {
+            this.handler.dispatchSuccess(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH, {
+              payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.company])
+            });
+          }),
+          finalize(() => {
+            this.handler.dispatchDone(ACTIONS.ORGANISATIONS.OVERVIEW.FETCH);
           }),
         );
     }

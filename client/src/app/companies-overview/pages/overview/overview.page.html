@@ -3,8 +3,12 @@
       [title]="'PAGE.MANAGE-RECYCLERS.TITLE' | translate"
 ></app-page-title>
 <app-page-title
-      *ngIf="page !== 'recyclers'"
+      *ngIf="page === 'authorisation-org'"
       [title]="'PAGE.MANAGE-AUTHORISATION-ORG.TITLE' | translate"
+></app-page-title>
+<app-page-title
+      *ngIf="page === 'compliance-org'"
+      [title]="'PAGE.MANAGE-COMPLIANCE-ORG.TITLE' | translate"
 ></app-page-title>
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-12-12">
