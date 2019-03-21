@@ -72,7 +72,7 @@ module.exports = (router) => {
 	/**
 	 * @swagger
 	 * /api/proxies:
-	 *   patch:
+	 *   put:
 	 *     description: add proxy to report
 	 *     tags:
 	 *       - proxy
