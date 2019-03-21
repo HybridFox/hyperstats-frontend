@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select } from '@angular-redux/store';
+import { FormControl, FormArray, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { uniq } from 'ramda';
 
@@ -26,6 +27,7 @@ export class DetailPageComponent implements OnInit {
   public reports: Report[];
   public recyclingProcesses: RecyclingProcess[];
   public years: string[];
+  public proxiesForm: FormArray;
 
   public PROXY_OPTIONS = PROXY_OPTIONS;
 
@@ -34,6 +36,7 @@ export class DetailPageComponent implements OnInit {
   constructor(
     private proxiesActions: ProxiesActions,
     private codesService: CodesService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit() {
@@ -63,9 +66,11 @@ export class DetailPageComponent implements OnInit {
 
   private getProxiesFrom() {
     if (this.proxies && this.reports && this.recyclingProcesses && this.years) {
-      this.renderedProxies = this.getProxies();
+      this.proxiesForm = this.getProxies();
+      console.log(this.proxiesForm);
     }
   }
+
 
   private getProxies() {
     const companies = uniq(this.proxies.map(proxy => ({
@@ -73,7 +78,7 @@ export class DetailPageComponent implements OnInit {
       proxyCompanyId: proxy.proxyCompanyId
     })));
 
-    return companies.map(company => {
+    return this.formBuilder.array(companies.map(company => {
       const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
 
       return {
@@ -81,18 +86,31 @@ export class DetailPageComponent implements OnInit {
           companyName: company.proxyCompanyName,
           companyId: company.proxyCompanyId,
         },
-        processes: this.recyclingProcesses.map(recyclingProcess => ({
-          processInfo: {
-            processName: recyclingProcess.data.name,
-            processId: recyclingProcess._id,
-          },
-          reports: this.years.map(year => ({
-            year: year,
-            status: this.getStatus(this.reports, year, recyclingProcess, companyProxies),
-          })),
-        })),
+        processes: this.getProcessesFormArray(this.recyclingProcesses, companyProxies),
       };
-    });
+    }));
+  }
+
+  private getProcessesFormArray(recyclingProcesses, companyProxies) {
+    return this.formBuilder.array(recyclingProcesses.map(recyclingProcess => ({
+      processInfo: {
+        processName: recyclingProcess.data.name,
+        processId: recyclingProcess._id,
+      },
+      reports: this.getReportsFormArray(recyclingProcess, companyProxies),
+    })));
+  }
+
+  private getReportsFormArray(recyclingProcess, companyProxies) {
+    return this.formBuilder.array(this.years.map(year => {
+      const status = this.getStatus(this.reports, year, recyclingProcess, companyProxies);
+      const value =  this.getValue(status);
+      return this.formBuilder.group({
+        year: year,
+        status: status,
+        value: new FormControl({value: value, disabled: status === PROXY_OPTIONS.DISABLED}),
+      });
+    }));
   }
 
   private getStatus(reports: Report[], year: string, recyclingProcess: RecyclingProcess, companyProxies: Proxy[]) {
@@ -135,5 +153,12 @@ export class DetailPageComponent implements OnInit {
     if (matchingProxies.length === 1) {
       return PROXY_OPTIONS.CHECKED;
     }
+  }
+
+  public getValue(status) {
+    if (status === PROXY_OPTIONS.DISABLED || status === PROXY_OPTIONS.UNCHECKED) {
+      return false;
+    }
+    return true;
   }
 }
