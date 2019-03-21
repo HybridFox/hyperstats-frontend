@@ -2,7 +2,7 @@
   <div class="a-input__checkbox-container">
     <label class="a-input__label">
       <input [formControl]="control" type="checkbox" class="a-input__checkbox">
-      <span class="a-input__fake-checkbox"></span>
+      <span class="a-input__fake-checkbox" [ngClass]="{'a-input__checkbox--disabled': control.disabled}"></span>
       <span *ngIf="label">{{ label }}</span>
       <ng-content select="[checkbox-label]"></ng-content>
     </label>
