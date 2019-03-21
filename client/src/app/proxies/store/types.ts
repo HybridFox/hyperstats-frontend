@@ -1,4 +1,5 @@
 import { Information } from 'src/app/reports/store/reports/types';
+import { PROXY_OPTIONS } from './constants';
 
 export interface Proxy {
   proxyCompanyId: string;
@@ -49,5 +50,5 @@ interface ProcessInfo {
 
 interface RenderedProxyReport {
   year: string;
-  status: string;
+  status: PROXY_OPTIONS;
 }

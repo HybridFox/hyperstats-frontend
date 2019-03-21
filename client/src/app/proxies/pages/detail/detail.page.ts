@@ -6,7 +6,7 @@ import { uniq } from 'ramda';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
-import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
+import { Report } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 
 import { PROXY_OPTIONS } from '../../store/constants';
@@ -19,7 +19,7 @@ import { Proxy, RenderedProxy } from '../../store/types';
 
 export class DetailPageComponent implements OnInit {
   @select(ProxiesSelectors.list.result) public $proxies: Observable<Proxy[]>;
-  @select(ReportsSelector.list.result) public $reports: Observable<any[]>;
+  @select(ReportsSelector.list.result) public $reports: Observable<Report[]>;
   @select(ReportsProcessSelector.list.result) public $recyclingProcesses: Observable<any[]>;
 
   public proxies: Proxy[];
@@ -83,7 +83,7 @@ export class DetailPageComponent implements OnInit {
             },
             reports: this.years.map(year => ({
               year: year,
-              status: this.getStatus(this.reports, year, recyclingProcess, companyProxies), // Disabled | empty | semi | selected
+              status: this.getStatus(this.reports, year, recyclingProcess, companyProxies),
             })),
           })),
         };
