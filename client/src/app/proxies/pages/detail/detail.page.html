@@ -37,6 +37,7 @@
                   <td>
                     <app-checkbox-input
                       [control]="report.get('value')"
+                      [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-' : ''"
                     >
                     </app-checkbox-input>
                   </td>

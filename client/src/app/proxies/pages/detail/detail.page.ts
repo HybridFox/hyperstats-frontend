@@ -157,6 +157,6 @@ export class DetailPageComponent implements OnInit {
   }
 
   public getValue(status) {
-      return !(status === PROXY_OPTIONS.DISABLED || status === PROXY_OPTIONS.UNCHECKED);
+      return status === PROXY_OPTIONS.CHECKED;
   }
 }
