@@ -80,7 +80,7 @@ describe("Integration", () => {
 					});
 			});
 
-			it("Should get all complience org companies that are coupled to the user", () => {
+			it("Should get all compliance org companies", () => {
 				return supertest(server)
 					.get(`/api/companies?type=CO`)
 					.set("cookie", cookie)
@@ -88,7 +88,7 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array");
-						expect(body).to.have.lengthOf(1);
+						expect(body).to.have.lengthOf(2);
 					});
 			});
 		});
