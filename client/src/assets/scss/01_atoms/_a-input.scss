@@ -33,11 +33,6 @@
                 margin-right: $spacer-small;
             }
 
-            .a-input__checkbox--disabled {
-              background-color: $mercury;
-              cursor: not-allowed;
-            }
-
             .a-input__checkbox:checked ~ .a-input__fake-checkbox {
                 border-color: $zodiac;
                 background-color: $zodiac;
@@ -49,6 +44,16 @@
                     font-size: 1.4em;
                 }
             }
+        }
+
+
+
+        .a-input__label--disabled {
+          cursor: not-allowed;
+
+          & .a-input__fake-checkbox {
+            background-color: $mercury;
+          }
         }
     }
 
