@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
+import { uniq } from 'ramda';
 
 import { CodesService } from 'src/app/core/services/codes/codes.service';
-import { ProxiesActions, ProxiesSelectors } from '../../store';
 import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
-import { Proxy, ShownProxy } from '../../store/types';
-
 import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 
-import { uniq } from 'ramda';
-
 import { PROXY_OPTIONS } from '../../store/constants';
+import { ProxiesActions, ProxiesSelectors } from '../../store';
+import { Proxy } from '../../store/types';
 
 @Component({
   templateUrl: './detail.page.html',
