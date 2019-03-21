@@ -1,37 +1,37 @@
 export interface Step {
-    name: string;
-    route: string;
-    key: string;
+  name: string;
+  route: string;
+  key: string;
 }
 
 export interface Information {
-    reportingYear: number;
-    recyclingProcess: string | object;
-    name: string;
-    receiver: string;
+  reportingYear: number;
+  recyclingProcess: string | object;
+  name: string;
+  receiver: string;
 }
 
 export interface InputFraction {
-    siteRef: string;
-    data: InputFractionData;
+  siteRef: string;
+  data: InputFractionData;
 }
 
 export interface InputFractionData {
-    processChemistry: string;
-    weightInput: number;
-    shareOfBatteryType: number;
-    weightBatteryType: number;
-    excessMaterialReceived: ExcessMaterialReceived[];
-    elements: AdditionalElement[];
-    descriptionOfMethodologyShare: string;
-    descriptionOfMethodologyChemicalComposition: string;
-    massOfExternalJacket: number;
-    massOfOuterCasings: number;
+  processChemistry: string;
+  weightInput: number;
+  shareOfBatteryType: number;
+  weightBatteryType: number;
+  excessMaterialReceived: ExcessMaterialReceived[];
+  elements: AdditionalElement[];
+  descriptionOfMethodologyShare: string;
+  descriptionOfMethodologyChemicalComposition: string;
+  massOfExternalJacket: number;
+  massOfOuterCasings: number;
 }
 
 interface ChemicalComposition {
-    element: string;
-    weight: number;
+  element: string;
+  weight: number;
 }
 
 export interface Additives {
@@ -40,73 +40,79 @@ export interface Additives {
 }
 
 export interface AdditivesData {
-    type: string;
-    weight: number;
-    chemicalComposition: ChemicalComposition;
+  type: string;
+  weight: number;
+  chemicalComposition: ChemicalComposition;
 }
 
 export interface ExcessMaterialReceived {
-    impurities: number;
-    packagingMaterial: number;
+  impurities: number;
+  packagingMaterial: number;
 }
 
 export interface AdditionalElement {
-    element: string;
-    mass: number;
+  element: string;
+  mass: number;
 }
 
 export interface OutputFraction {
-    element: string;
-    share: string;
-    mass: string;
-    classification: string;
-    replacedMaterial: string;
-    elementDestinationIndustry: string;
-    elementDestinationCompany: string;
-    assignedStep: string;
+  element: string;
+  share: string;
+  mass: string;
+  classification: string;
+  replacedMaterial: string;
+  elementDestinationIndustry: string;
+  elementDestinationCompany: string;
+  assignedStep: string;
 }
 
 export interface RecyclingEfficiency {
-    calculatedEfficiency: number;
+  calculatedEfficiency: number;
 }
 
 export interface AdditionalInformation {
-    files: string[];
-    additionalInformation: string;
- }
+  files: string[];
+  additionalInformation: string;
+}
 
- export interface Meta {
-    approvedCompanies: string[];
-    reportingCompany: string | ReportingCompany;
-    created: string;
-    lastUpdated: string;
-    deleted: boolean;
-    status: string;
-    state: MetaState;
- }
+export interface Meta {
+  approvedCompanies: ApprovedCompany[];
+  reportingCompany: string | ReportingCompany;
+  created: string;
+  lastUpdated: string;
+  deleted: boolean;
+  status: string;
+  state: MetaState;
+}
 
- interface MetaState {
+interface MetaState {
   isPristine: boolean;
- }
+}
 
- export interface ReportingCompany {
-   _id: string;
-   data: {
-     name: string;
-   };
- }
+export interface ReportingCompany {
+  _id: string;
+  data: {
+    name: string;
+  };
+}
+
+interface ApprovedCompany {
+  approvedBy: string;
+  company: string;
+  linkedApprovals: string[];
+}
 
 export interface Report {
-    _id: string;
-    data: {
-        information: Information,
-        inputFraction: InputFraction[],
-        additives: Additives[],
-        outputFraction: OutputFraction[],
-        recyclingEfficiency: RecyclingEfficiency,
-        additionalInformation: AdditionalInformation,
-    };
-    meta: Meta;
+  _id: string;
+  data: {
+    information: Information,
+    inputFraction: InputFraction[],
+    additives: Additives[],
+    outputFraction: OutputFraction[],
+    recyclingEfficiency: RecyclingEfficiency,
+    additionalInformation: AdditionalInformation,
+  };
+  meta: Meta;
 }
 
 export interface SiteRef {

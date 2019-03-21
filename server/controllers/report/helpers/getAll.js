@@ -4,24 +4,28 @@ const { REPORT_SORT_OPTIONS, REPORT_STATUS } = require("./const");
 const { COMPANY_TYPES } = require("../../company/helpers/const");
 
 const getQuery = (reportedById, recyclingProcessId, recycler, companyType) => {
-	const query = {
-		$and: [],
-	};
+	const query = {};
 
 	if (companyType === COMPANY_TYPES.R) {
-		query.$and.push({ "meta.reportingCompany": reportedById });
+		query["meta.reportingCompany"] = reportedById;
 	}
 
 	if (companyType === COMPANY_TYPES.CO || companyType === COMPANY_TYPES.AO) {
-		query.$and.push({ "meta.approvedCompanies": reportedById }, { "meta.status": REPORT_STATUS.FILED });
+		query["meta.status"] = REPORT_STATUS.FILED;
+
+		query["meta.approvedCompanies"] = {
+			$elemMatch: {
+				company: reportedById,
+			},
+		};
 	}
 
 	if (!isNil(recyclingProcessId)) {
-		query.$and.push({ "data.information.recyclingProcess": recyclingProcessId });
+		query["data.information.recyclingProcess"] = recyclingProcessId;
 	}
 
 	if (!isNil(recycler)) {
-		query.$and.push({ "meta.reportingCompany": recycler });
+		query["meta.reportingCompany"] = recycler;
 	}
 
 	return query;

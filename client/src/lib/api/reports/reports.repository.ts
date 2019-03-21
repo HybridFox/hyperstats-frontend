@@ -14,11 +14,21 @@ export class ReportsRepository {
   public fetchAll(filters: ReportsType): Observable<any> {
     const url = this.apiConfig.baseUrl('/reports');
     if (filters.processId) {
+      if (filters.sortBy) {
+        return this.http.get(url, { params: new HttpParams().set('recycling-process', filters.processId).set('sortBy', filters.sortBy) });
+      }
       return this.http.get(url, { params: new HttpParams().set('recycling-process', filters.processId) });
     }
 
     if (filters.recyclerId) {
+      if (filters.sortBy) {
+        return this.http.get(url, { params: new HttpParams().set('recycler', filters.recyclerId).set('sortBy', filters.sortBy) });
+      }
       return this.http.get(url, { params: new HttpParams().set('recycler', filters.recyclerId) });
+    }
+
+    if (filters.sortBy) {
+      return this.http.get(url, { params: new HttpParams().set('sortBy', filters.sortBy) });
     }
 
     return this.http.get(url);

@@ -13,6 +13,7 @@ import { Report } from '../../store/reports/types';
 import { mapRecyclingProcessesToMenuItemsWithAll, mapReportToMenuItemsWithAll } from '../../services/select.helpers';
 
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
+import { SORTOPTIONS } from './reports.const';
 
 @Component({
   templateUrl: './reports.page.html',
@@ -35,6 +36,9 @@ export class ReportsPageComponent implements OnInit {
 
   public reportsActive = false;
   public userIsRecycler = true;
+  public processId: string;
+  public recyclerId: string;
+  public sortOptions = SORTOPTIONS;
 
   constructor(
     private reportsActions: ReportsActions,
@@ -60,12 +64,25 @@ export class ReportsPageComponent implements OnInit {
         takeUntil(this.componentDestroyed$)
       )
       .subscribe(params => {
+        this.processId = params.recyclingProcess;
+        this. recyclerId = params.recycler;
+
         this.reportsActions.fetchAll({
-          processId: params.recyclingProcess,
-          recyclerId: params.recycler,
+          processId: this.processId,
+          recyclerId: this.recyclerId,
         }).toPromise();
       });
 
     this.reportsProcessActions.fetchAllRecyclingProcesses().toPromise();
+  }
+
+  public sortBy(event) {
+    if (event.srcElement.value) {
+      this.reportsActions.fetchAll({
+        processId: this.processId,
+        recyclerId: this.recyclerId,
+        sortBy: event.srcElement.value,
+      }).toPromise();
+    }
   }
 }

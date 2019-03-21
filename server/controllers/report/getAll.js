@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
 		companyType: pathOr("R", ["company", "meta", "type"], profile),
 		recyclingProcessId: pathOr(null, ["data", "query", "recycling-process"], req),
 		recycler: pathOr(null, ["data", "query", "recycler"], req),
-		sortBy: pathOr(REPORT_SORT_OPTIONS.name.param, ["data", "query", "sort"], req),
+		sortBy: pathOr(REPORT_SORT_OPTIONS.name.param, ["data", "query", "sortBy"], req),
 	})
 		.then((reports) => res.status(200).json(reports))
 		.catch((error) => next(error));
