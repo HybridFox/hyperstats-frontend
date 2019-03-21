@@ -67,10 +67,8 @@ export class DetailPageComponent implements OnInit {
   private getProxiesFrom() {
     if (this.proxies && this.reports && this.recyclingProcesses && this.years) {
       this.proxiesForm = this.getProxies();
-      console.log(this.proxiesForm);
     }
   }
-
 
   private getProxies() {
     const companies = uniq(this.proxies.map(proxy => ({
@@ -124,20 +122,17 @@ export class DetailPageComponent implements OnInit {
     }
 
     const matchingProxies = companyProxies.filter(proxy => {
-      const matchingProxiesProcess = proxy.processes.filter(process => process.process._id === recyclingProcess._id);
-      if (matchingProxiesProcess.length === 0) {
-        return false;
-      }
+      const proxiesReports = proxy.processes
+        .filter(process => process.process._id === recyclingProcess._id)
+        .map(proxyProcess => proxyProcess.reports);
 
-      const proxiesReports = matchingProxiesProcess.map(proxyProcess => proxyProcess.reports);
       if (proxiesReports.length === 0) {
         return false;
       }
 
-      const matchingProxiesReports = proxiesReports.filter(proxyReport => {
-        const proxyReportItem = proxyReport.filter(item => item.data.information.reportingYear === parseInt(year, 10));
-        return proxyReportItem.length > 0;
-      });
+      const matchingProxiesReports = proxiesReports.filter(proxyReport =>
+        proxyReport.filter(item => item.data.information.reportingYear === parseInt(year, 10)).length > 0
+      );
 
       return matchingProxiesReports.length > 0;
     });
@@ -156,9 +151,6 @@ export class DetailPageComponent implements OnInit {
   }
 
   public getValue(status) {
-    if (status === PROXY_OPTIONS.DISABLED || status === PROXY_OPTIONS.UNCHECKED) {
-      return false;
-    }
-    return true;
+      return !(status === PROXY_OPTIONS.DISABLED || status === PROXY_OPTIONS.UNCHECKED);
   }
 }
