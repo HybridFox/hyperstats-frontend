@@ -1,12 +1,14 @@
 <button
     class="a-button--danger has-icon-after u-text-uppercase"
     (click)="openPopup()"
+    [disabled]="disabled"
 >
     {{ 'GENERAL.LABELS.REMOVE' | translate }}
 </button>
 <div *ngIf="popupOpen" class="o-popup" >
     <div class="m-card--primary">
-        <p>{{ 'GENERAL.POPUP.DELETEITEM' | translate }}</p>
+        <p *ngIf="!extraMessage">{{ 'GENERAL.POPUP.DELETEITEM' | translate }}</p>
+        <p *ngIf="extraMessage">{{ extraMessage }}</p>
         <div>
             <button
                 class="a-button--ghost a-button-outline u-text-uppercase u-margin-right"
