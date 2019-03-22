@@ -33,28 +33,3 @@ interface ProxyReport {
     information: Information;
   };
 }
-
-export interface RenderedProxy {
-  companyInfo: CompanyInfo;
-  processes: RenderedProxyProcess[];
-}
-
-interface CompanyInfo {
-  companyId: string;
-  companyName: string;
-}
-
-interface RenderedProxyProcess {
-  processInfo: ProcessInfo;
-  reports: RenderedProxyReport[];
-}
-
-interface ProcessInfo {
-  processName: string;
-  processId: string;
-}
-
-interface RenderedProxyReport {
-  year: string;
-  status: PROXY_OPTIONS;
-}

@@ -14,7 +14,7 @@ import { CompaniesActions } from '../../../manage-companies/store/companies/acti
 
 import { PROXY_OPTIONS } from '../../store/constants';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
-import { Proxy, RenderedProxy, ProxyBody } from '../../store/types';
+import { Proxy, ProxyBody } from '../../store/types';
 import { ReportsActions } from 'src/app/reports/store/reports';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 import { UserInterface } from '@store/auth/auth.interface';
@@ -45,8 +45,6 @@ export class OverviewPageComponent implements OnInit {
   public selectedCompany: string;
 
   public PROXY_OPTIONS = PROXY_OPTIONS;
-
-  public renderedProxies: RenderedProxy[];
 
   constructor(
     private proxiesActions: ProxiesActions,
@@ -89,8 +87,9 @@ export class OverviewPageComponent implements OnInit {
     this.years = this.codesService.years().map(year => year.value);
   }
 
-  public revokeProxy() {
-    console.log('revokeProxy');
+  public revokeProxy(proxy: FormControl) {
+    console.log('revoke Proxy');
+    console.log(proxy);
   }
 
   public toggleAddCompany() {
