@@ -1,4 +1,5 @@
 const CompanyModel = require("../../../models/company");
+const { COMPANY_TYPES } = require("../../company/helpers/const");
 const {
 	__,
 	set,
@@ -20,16 +21,16 @@ const getTypeQuery = (type) => ifElse(
 )(type);
 
 const getCompanyListQuery = curry((type, company) => {
-	if (company.meta.type === "R" && type === "RP") {
+	if (company.meta.type === COMPANY_TYPES.R && type === COMPANY_TYPES.RP) {
 		return { "meta.managedBy": company._id };
 	}
-	if (company.meta.type === "R" && type !== "RP") {
-		return { "meta.type": { $in: ["AO", "CO"] } };
+	if (company.meta.type === COMPANY_TYPES.R && type !== COMPANY_TYPES.RP) {
+		return { "meta.type": { $in: [COMPANY_TYPES.CO, COMPANY_TYPES.AO] } };
 	}
-	if (company.meta.type === "CO") {
-		return { "meta.type": "AO" };
+	if (company.meta.type === COMPANY_TYPES.CO) {
+		return { "meta.type": COMPANY_TYPES.AO };
 	}
-	if (company.meta.type === "AO") {
+	if (company.meta.type === COMPANY_TYPES.AO) {
 		return { "_id": company._id };
 	}
 });

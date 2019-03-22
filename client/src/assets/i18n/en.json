@@ -27,7 +27,9 @@
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
-            "REQUIRED": "This field is required"
+            "REQUIRED": "This field is required",
+            "TYPEREQUIRED": "Type is required when weight is filled in",
+            "WEIGHTREQUIRED": "Weight is required when type is filled in"
         },
         "LABELS": {
             "ACCEPT": "Accept",
@@ -98,8 +100,10 @@
             "ABOUT": "About us",
             "AUDITTRAIL": "Audit Trial",
             "AUDITTRIAL": "Audit Trial",
+            "AUTHORISATION-ORG": "Authorisation Organisations",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
+            "COMPLIANCE-ORG": "Compliance Organisations",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
@@ -107,6 +111,7 @@
             "MORE": "More...",
             "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
+            "RECYCLERS": "Recyclers",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
@@ -175,8 +180,17 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-AUTHORISATION-ORG": {
+            "TITLE": "Authorization Organisations"
+        },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
+        },
+        "MANAGE-COMPLIANCE-ORG": {
+            "TITLE": "Compliance Organisations"
+        },
+        "MANAGE-RECYCLERS": {
+            "TITLE": "Recyclers"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -573,6 +587,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-ORGANISATIONS": "No  {{ key }}.",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
@@ -610,6 +625,7 @@
             "ADDITIONAL-INFORMATION": "Add. Information",
             "ADDITIVES": "Additives",
             "FILE-REPORT": "File Report",
+            "INFORMATION": "General",
             "INPUT-FRACTION": "Input Fraction",
             "NEW-REPORT": "New Report",
             "OUTPUT-FRACTION": "Output Fraction",

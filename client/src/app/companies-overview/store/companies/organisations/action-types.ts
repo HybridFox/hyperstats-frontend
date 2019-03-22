@@ -1,0 +1,16 @@
+import { MODULE, ORGANISATIONS } from '../constants';
+export const DETAIL = 'DETAIL';
+export const OVERVIEW = 'OVERVIEW';
+
+export const OVERVIEW_ACTIONS = {
+    FETCH: `${MODULE}/${ORGANISATIONS}/${OVERVIEW}/FETCH`,
+};
+
+export const DETAIL_ACTIONS = {
+    FETCH: `${MODULE}/${ORGANISATIONS}/${DETAIL}/FETCH`,
+};
+
+export const ORGANISATIONS_ACTIONS = {
+  OVERVIEW: OVERVIEW_ACTIONS,
+  DETAIL: DETAIL_ACTIONS
+};

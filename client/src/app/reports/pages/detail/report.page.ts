@@ -12,6 +12,7 @@ import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recyc
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
 import { RecyclingPartnerActions } from 'src/app/recycling-partners/store';
+import isNil from 'ramda/es/isNil';
 
 @Component({
   templateUrl: './report.page.html',
@@ -134,20 +135,24 @@ export class ReportPageComponent implements OnInit, OnDestroy {
 
     const control = this.form.get('information.recyclingProcess');
 
-    if (control.value) {
-      this.reportProcessActions.getById(control.value).toPromise();
-    }
-
     if (pathOr('SAVED', ['meta', 'status'], report) === 'FILED') {
       this.form.disable();
+    }
+
+    if (!isNil(control.value)) {
+      typeof(control.value) === 'string'
+        ? this.reportProcessActions.getById(control.value).toPromise()
+        : this.reportProcessActions.getById(control.value._id).toPromise();
     }
 
     control
       .valueChanges
       .pipe(
         takeUntil(this.componentDestroyed$),
-        tap((id: string) => {
-          this.reportProcessActions.getById(id).toPromise();
+        tap((id) => {
+          typeof(id) === 'string'
+            ? this.reportProcessActions.getById(id).toPromise()
+            : this.reportProcessActions.getById(id._id).toPromise();
         }),
         switchMap(() => {
           return this.process$;

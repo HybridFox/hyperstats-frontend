@@ -44,7 +44,7 @@ export class ReportsActions {
   public fetchAllCompanies(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.COMPANIES.FETCH);
 
-    return this.reportsRepository.fetchAllCompanies()
+    return this.reportsRepository.fetchAllCompanies(null)
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.COMPANIES.FETCH, {

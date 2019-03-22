@@ -1,0 +1,29 @@
+<div class="a-table-wrapper">
+  <table class="a-table">
+      <thead>
+          <tr>
+              <th>{{ "GENERAL.LABELS.NAME" | translate }}</th>
+              <th>{{ "GENERAL.LABELS.STREET" | translate }}</th>
+              <th>{{ "GENERAL.LABELS.CITY" | translate }}</th>
+              <th>{{ "GENERAL.LABELS.ACTIVE" | translate }}</th>
+              <th *ngIf="admin">{{ "GENERAL.LABELS.TYPE" | translate }}</th>
+              <th></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let company of companies">
+              <td>{{ company?.data?.name }}</td>
+              <td>{{ company?.data?.address?.street }} {{ company?.data?.address?.number }}</td>
+              <td>{{ company?.data?.address?.city }}</td>
+              <td>
+                <span *ngIf="!company?.meta?.activated" class="fa fa-circle-o"></span>
+                <span *ngIf="company?.meta?.activated" class="fa fa-dot-circle-o"></span>
+              </td>
+              <td *ngIf="admin">{{ company?.meta?.type }}</td>
+              <td>
+                  <a [routerLink]="company?._id" class="a-link">View</a>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

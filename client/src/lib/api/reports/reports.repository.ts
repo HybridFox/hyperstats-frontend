@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ApiConfigService } from '@api/config.service';
 import { ReportsType } from './reports.types';
+import { CompanyType } from '@api/company';
 
 @Injectable()
 export class ReportsRepository {
@@ -34,10 +35,10 @@ export class ReportsRepository {
     return this.http.get(url);
   }
 
-  public fetchAllCompanies(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/reports/companies');
-
-    return this.http.get(url);
+  public fetchAllCompanies(types: CompanyType[]): Observable<any> {
+    return this.http.get(this.apiConfig.baseUrl(`/reports/companies`), {
+      params: types ? { 'type': types } : {}
+    });
   }
 
   public fetchById(id: string): Observable<any> {

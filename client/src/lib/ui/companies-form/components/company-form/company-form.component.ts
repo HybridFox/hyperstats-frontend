@@ -13,6 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class CompanyFormComponent implements OnChanges, OnInit {
     @Input() public company: any;
     @Input() public companies: Option[];
+    @Input() public admin: boolean;
 
     @Output() public save: EventEmitter<any> = new EventEmitter<any>();
     @Output() public remove: EventEmitter<any> = new EventEmitter<any>();
@@ -41,6 +42,9 @@ export class CompanyFormComponent implements OnChanges, OnInit {
 
     public ngOnChanges() {
         this.form = this.createForm(this.company);
+        if (!this.admin) {
+          this.form.disable();
+        }
     }
 
     public saveCompany() {
