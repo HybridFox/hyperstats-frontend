@@ -266,10 +266,16 @@ msgstr ""
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr ""
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr ""
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
+msgstr ""
+
+msgid "GENERAL##MENU##COMPLIANCE-ORG"
 msgstr ""
 
 msgid "GENERAL##MENU##CONTACT"
@@ -291,6 +297,9 @@ msgid "GENERAL##MENU##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##MENU##PROXIES"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLERS"
 msgstr ""
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
@@ -404,7 +413,16 @@ msgstr ""
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr ""
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-USERS##TITLE"
@@ -987,6 +1005,9 @@ msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr ""
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##NO-ORGANISATIONS"
 msgstr ""
 
 msgid "WIZARD##NO-PROCESS"

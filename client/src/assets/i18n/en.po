@@ -275,11 +275,17 @@ msgstr "Audit Trial"
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trial"
 
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr "Authorisation Organisations"
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr "Companies"
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr "Company information"
+
+msgid "GENERAL##MENU##COMPLIANCE-ORG"
+msgstr "Compliance Organisations"
 
 msgid "GENERAL##MENU##CONTACT"
 msgstr "Contact"
@@ -303,6 +309,9 @@ msgstr "Privacy"
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
+
+msgid "GENERAL##MENU##RECYCLERS"
+msgstr "Recyclers"
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr "Recycling Partners"
@@ -459,8 +468,17 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr "Authorization Organisations"
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr "Manage companies"
+
+msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
+msgstr "Compliance Organisations"
+
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
+msgstr "Recyclers"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -1125,6 +1143,9 @@ msgstr "Reporting year"
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
+
+msgid "WIZARD##NO-ORGANISATIONS"
+msgstr "No  {{ key }}."
 
 msgid "WIZARD##NO-PROCESS"
 msgstr "Please create a recycling process before creating a report"

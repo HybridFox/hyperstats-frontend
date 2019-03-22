@@ -24,6 +24,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
             .subscribe((user) => {
                 if (user.isAdmin) {
                     this.router.navigate(['admin']);
+                } else if (user.company.meta.type === 'CO') {
+                    this.router.navigate(['compliance-organisation']);
+                } else if (user.company.meta.type === 'AO') {
+                    this.router.navigate(['authorisation-organisation']);
                 } else {
                     this.router.navigate(['recycler']);
                 }

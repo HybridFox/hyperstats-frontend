@@ -12,12 +12,11 @@ import { ManageCompaniesRoutingModule } from './manage-companies-routing.module'
 
 import { CompaniesServices, Reducer } from './store';
 import { Pages } from './pages';
-import { Components } from './components';
+import { CompaniesFormModule } from '@ui/companies-form';
 
 @NgModule({
   declarations: [
     Pages,
-    Components,
   ],
   entryComponents: [],
   imports: [
@@ -29,6 +28,7 @@ import { Components } from './components';
     SharedModule,
     LoadingModule,
     FormFieldsModule,
+    CompaniesFormModule
   ],
   providers: [
     CompaniesServices,

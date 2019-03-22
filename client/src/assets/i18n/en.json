@@ -100,8 +100,10 @@
             "ABOUT": "About us",
             "AUDITTRAIL": "Audit Trial",
             "AUDITTRIAL": "Audit Trial",
+            "AUTHORISATION-ORG": "Authorisation Organisations",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company information",
+            "COMPLIANCE-ORG": "Compliance Organisations",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Login",
@@ -109,6 +111,7 @@
             "MORE": "More...",
             "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
+            "RECYCLERS": "Recyclers",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
@@ -177,8 +180,17 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-AUTHORISATION-ORG": {
+            "TITLE": "Authorization Organisations"
+        },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
+        },
+        "MANAGE-COMPLIANCE-ORG": {
+            "TITLE": "Compliance Organisations"
+        },
+        "MANAGE-RECYCLERS": {
+            "TITLE": "Recyclers"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -576,6 +588,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-ORGANISATIONS": "No  {{ key }}.",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
