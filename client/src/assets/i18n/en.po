@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-22T10:53:24.366Z\n"
+"POT-Creation-Date: 2019-03-22T14:37:40.261Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -636,6 +636,9 @@ msgstr "Success! Your registration is now complete, please login to continue"
 msgid "PROXIES##REVOKEPROXY"
 msgstr "Revoke this proxy"
 
+msgid "PROXIES##SAVEPROXIES"
+msgstr "Save proxies"
+
 msgid "Recycler"
 msgstr "Recycler"
 
@@ -1189,6 +1192,9 @@ msgstr "Additives"
 msgid "WIZARD##TITLES##FILE-REPORT"
 msgstr "File Report"
 
+msgid "WIZARD##TITLES##INFORMATION"
+msgstr "General"
+
 msgid "WIZARD##TITLES##INPUT-FRACTION"
 msgstr "Input Fraction"
 
@@ -1204,9 +1210,6 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
-
-#~ msgid "WIZARD##TITLES##INFORMATION"
-#~ msgstr "General"
 
 #, fuzzy
 #~| msgid "GENERAL##LABELS##NAME"
