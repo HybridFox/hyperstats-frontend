@@ -164,6 +164,7 @@ export class OverviewPageComponent implements OnInit {
         });
       });
     });
+    this.proxiesActions.fetchAll().toPromise();
   }
 
   private putNewProxy(body: ProxyBody) {
