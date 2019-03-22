@@ -4,6 +4,6 @@ export { CompaniesActions } from './companies/actions';
 export { Reducer } from './companies/reducer';
 export { CompanySelector } from './companies/selectors';
 
-export const Services = [
+export const CompaniesServices = [
     CompaniesActions,
 ];

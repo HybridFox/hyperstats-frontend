@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 
@@ -13,7 +13,8 @@ import { UploadModule } from '@ui/upload';
     ReactiveFormsModule,
     TranslateModule,
     RouterModule,
-    UploadModule
+    UploadModule,
+    FormsModule,
   ],
   providers: [],
   declarations: [
@@ -21,6 +22,7 @@ import { UploadModule } from '@ui/upload';
   ],
   exports: [
     ...Components,
+    FormsModule,
   ],
 })
 export class FormFieldsModule { }

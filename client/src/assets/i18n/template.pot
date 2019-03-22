@@ -212,6 +212,9 @@ msgstr ""
 msgid "GENERAL##LABELS##SAVE"
 msgstr ""
 
+msgid "GENERAL##LABELS##SELECT-COMPANY"
+msgstr ""
+
 msgid "GENERAL##LABELS##SELECT-OPTION"
 msgstr ""
 
@@ -429,6 +432,9 @@ msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
 msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##NO-COMPANIES"
 msgstr ""
 
 msgid "PAGE##PROXIES##TITLE"

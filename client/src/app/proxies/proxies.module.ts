@@ -17,6 +17,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 import { ProxiesApiModule } from '@api/proxies';
 
 import { Pages } from './pages';
+import { CompaniesServices, Reducer } from '../manage-companies/store';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { Pages } from './pages';
   providers: [
     ...ReportsStoreServices,
     ...ReportsServices,
+    CompaniesServices,
     ProxiesServices,
   ],
   declarations: [
@@ -42,5 +44,6 @@ export class ProxiesModule {
   ) {
     this.storeService.injectAsyncReducer('proxies', proxiesReducer);
     this.storeService.injectAsyncReducer('reports', Reducers);
+    this.storeService.injectAsyncReducer('company-management', Reducer);
   }
 }

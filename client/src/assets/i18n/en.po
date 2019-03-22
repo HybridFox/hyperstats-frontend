@@ -91,10 +91,8 @@ msgstr "Activity"
 msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##COMPANY"
 msgid "GENERAL##LABELS##ADD-COMPANY"
-msgstr "Company"
+msgstr "Add company"
 
 msgid "GENERAL##LABELS##ADD-PROXY"
 msgstr "Add proxy"
@@ -220,6 +218,9 @@ msgstr "Reset password"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
+
+msgid "GENERAL##LABELS##SELECT-COMPANY"
+msgstr "Select a company"
 
 msgid "GENERAL##LABELS##SELECT-OPTION"
 msgstr "Select a option"
@@ -490,6 +491,9 @@ msgstr ""
 "Proxies are the organizations that have access to your reports. In this "
 "overview you can control who has access to your reports for a given "
 "reporting year and recycling process"
+
+msgid "PAGE##PROXIES##NO-COMPANIES"
+msgstr "There are no companies available"
 
 msgid "PAGE##PROXIES##TITLE"
 msgstr "{{ name }} proxies"
