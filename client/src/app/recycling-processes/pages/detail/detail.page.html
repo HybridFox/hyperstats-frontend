@@ -1,17 +1,17 @@
 <div *ngIf="!recyclingProcessId" class="m-card__placeholder">
-    <img src="/assets/images/choose.svg" alt="Choose image">
+  <img src="/assets/images/choose.svg" alt="Choose image">
 </div>
 
 <app-recycling-process-form
-    *ngIf="recyclingProcessId"
-    [recyclingProcess]="process"
-    [recyclingPartners]="partners$ | async"
-    [user]="user$ | async"
-    (submit)="save($event)"
-    (remove)="remove($event)"
-    (toggleActivation)="toggleActivation($event)"
-    (duplicate)="duplicateProcess($event)"
-    [uploadResponse]="uploadResults"
-    (upload)="onUpload($event)"
-    (removeFile)="onRemoveFile($event)"
+  *ngIf="recyclingProcessId"
+  [recyclingProcess]="process"
+  [recyclingPartners]="partners$ | async"
+  [user]="user$ | async"
+  (submit)="save($event)"
+  (remove)="remove($event)"
+  (toggleActivation)="toggleActivation($event)"
+  (duplicate)="duplicateProcess($event)"
+  [uploadResponse]="uploadResults"
+  (upload)="onUpload($event)"
+  (removeFile)="onRemoveFile($event)"
 ></app-recycling-process-form>

@@ -1,7 +1,7 @@
 export interface RecyclingProcess {
   data: Data;
   meta: Meta;
-  id: string;
+  _id: string;
 }
 
 interface Data {
