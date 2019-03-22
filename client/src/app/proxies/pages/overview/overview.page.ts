@@ -88,8 +88,21 @@ export class OverviewPageComponent implements OnInit {
   }
 
   public revokeProxy(proxy: FormControl) {
-    console.log('revoke Proxy');
-    console.log(proxy);
+    const companyId = proxy.value.companyInfo.companyId;
+    proxy.value.processes.controls.forEach(process => {
+      const recyclingProcessId = process.value.processInfo.processId;
+      process.value.reports.controls.forEach(report => {
+        if (report.controls.value.value) {
+          const body = {
+            proxy: companyId,
+            recyclingProcess: recyclingProcessId,
+            year: parseInt(report.controls.year.value, 10),
+          };
+
+          this.deleteNewProxy(body);
+        }
+      });
+    });
   }
 
   public toggleAddCompany() {
