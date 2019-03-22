@@ -541,9 +541,12 @@
                 "MASS-OUTER-CASINGS": "Mass of outer casings belonging to battery pack (kg) (to be excluded from the input fraction)",
                 "METHODOLOG-CHEMICAL": "Description of methodology to determine the share of different types of waste battery or accumulator present in an input fraction",
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
+                "OTHER-MATERIALS": "Other Materials",
                 "PACKAGING-CASING": "Packaging material / outer casing",
                 "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
+                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
+                "WATER": "Water (H₂0)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
                 "WEIGHT-INPUT-FRACTION": "Weight input fraction"
             },

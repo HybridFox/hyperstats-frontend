@@ -6,9 +6,16 @@ export interface Step {
 
 export interface Information {
   reportingYear: number;
-  recyclingProcess: string | object;
+  recyclingProcess: string | PopulatedRecyclingProcess;
   name: string;
   receiver: string;
+}
+
+export interface PopulatedRecyclingProcess {
+  _id: string;
+  data: {
+    name: string;
+  };
 }
 
 export interface InputFraction {
@@ -48,6 +55,8 @@ export interface AdditivesData {
 export interface ExcessMaterialReceived {
   impurities: number;
   packagingMaterial: number;
+  water: number;
+  otherMaterials: number;
 }
 
 export interface AdditionalElement {
