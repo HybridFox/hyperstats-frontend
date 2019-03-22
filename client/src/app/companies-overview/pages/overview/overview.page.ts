@@ -32,7 +32,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 if (this.route.snapshot['_routerState'].url === '/compliance-organisation/authorisation-org') {
                   this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
                   this.companies$ = this.organisations$;
-                  this.page = 'authorisation-org';
+                  this.page = 'authorisation organisations';
                 }
                 if (this.route.snapshot['_routerState'].url.includes('/recyclers')) {
                   this.companiesOverviewActions.fetchAllRecyclers().toPromise();
@@ -42,7 +42,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 if (this.route.snapshot['_routerState'].url === '/authorisation-organisation/compliance-org') {
                   this.companiesOverviewActions.fetchAllComplianceOrg().toPromise();
                   this.companies$ = this.organisations$;
-                  this.page = 'compliance-org';
+                  this.page = 'compliance organisations';
                 }
             });
     }

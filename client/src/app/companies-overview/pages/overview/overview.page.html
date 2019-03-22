@@ -3,28 +3,28 @@
       [title]="'PAGE.MANAGE-RECYCLERS.TITLE' | translate"
 ></app-page-title>
 <app-page-title
-      *ngIf="page === 'authorisation-org'"
+      *ngIf="page === 'authorisation organisations'"
       [title]="'PAGE.MANAGE-AUTHORISATION-ORG.TITLE' | translate"
 ></app-page-title>
 <app-page-title
-      *ngIf="page === 'compliance-org'"
+      *ngIf="page === 'compliance organisations'"
       [title]="'PAGE.MANAGE-COMPLIANCE-ORG.TITLE' | translate"
 ></app-page-title>
 <div class="l-grid__row l-grid--with-margins">
     <div class="l-grid__col-12-12">
-        <div class="m-card--primary u-margin-bottom-large">
+        <div *ngIf="(companies$ | async) && (companies$ | async).length !== 0" class="m-card--primary u-margin-bottom-large">
           <app-loading [loading]="loading$ | async">
               <app-companies-table
-                *ngIf="companies$ | async"
+                *ngIf="(companies$ | async)"
                 [companies]="companies$ | async"
                 [admin]="false"
               ></app-companies-table>
           </app-loading>
         </div>
-        <div *ngIf="!(companies$ | async)" class="m-card--primary">
+        <div *ngIf="!(companies$ | async) || (companies$ | async).length === 0" class="m-card--primary">
           <div class="p-report__no-process">
               <app-section-title
-                [title]="'WIZARD.NO-PROCESS' | translate"
+                [title]="'WIZARD.NO-ORGANISATIONS' | translate:{ key: page }"
               ></app-section-title>
               <img class="p-report__visual" src="/assets/images/choose.svg" alt="Choose image">
           </div>

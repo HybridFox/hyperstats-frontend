@@ -27,7 +27,9 @@
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
-            "REQUIRED": "This field is required"
+            "REQUIRED": "This field is required",
+            "TYPEREQUIRED": "Type is required when weight is filled in",
+            "WEIGHTREQUIRED": "Weight is required when type is filled in"
         },
         "LABELS": {
             "ACCEPT": "Accept",
@@ -583,6 +585,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-ORGANISATIONS": "No  {{ key }}.",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
@@ -620,6 +623,7 @@
             "ADDITIONAL-INFORMATION": "Add. Information",
             "ADDITIVES": "Additives",
             "FILE-REPORT": "File Report",
+            "INFORMATION": "General",
             "INPUT-FRACTION": "Input Fraction",
             "NEW-REPORT": "New Report",
             "OUTPUT-FRACTION": "Output Fraction",
