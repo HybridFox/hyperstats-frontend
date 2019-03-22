@@ -103,6 +103,7 @@ export class OverviewPageComponent implements OnInit {
         }
       });
     });
+    this.proxiesActions.fetchAll().toPromise();
   }
 
   public toggleAddCompany() {
