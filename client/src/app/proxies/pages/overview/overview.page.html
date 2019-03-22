@@ -57,18 +57,26 @@
       </p>
     </div>
     <div *ngIf="showAddCompany" class="m-card--primary">
-      <button class="a-button--primary a-button-outline has-icon-after" (click)="toggleAddCompany()">
-        dismiss
-      </button>
       <p *ngIf="companies.length === 0">
-          {{ 'PAGE.PROXIES.NO-COMPANIES' | translate }}
+        {{ 'PAGE.PROXIES.NO-COMPANIES' | translate }}
       </p>
-      <select *ngIf="companies.length > 0" class="a-input__field" [(ngModel)]="selectedCompany">
-          <option value="" disabled>{{ 'GENERAL.LABELS.SELECT-COMPANY' | translate }}</option>
-        <option *ngFor="let option of companies; trackBy: trackOption" [value]="option.value">{{ option.label | translate }}</option>
-      </select>
-      <button class="a-button--primary a-button-outline has-icon-after" (click)="addCompany()" [disabled]="!selectedCompany">
+      <div *ngIf="companies.length > 0" class="l-grid__row u-margin-bottom-large">
+        <div class="a-input">
+          <div class="a-input__field-container">
+            <select class="a-input__field" [(ngModel)]="selectedCompany">
+              <option value="" disabled>{{ 'GENERAL.LABELS.SELECT-COMPANY' | translate }}</option>
+              <option *ngFor="let option of companies; trackBy: trackOption" [value]="option.value">
+                {{ option.label | translate }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="a-button--primary a-button-outline has-icon-after" (click)="addCompany()"
+        [disabled]="!selectedCompany">
         {{ 'GENERAL.LABELS.ADD-COMPANY' | translate }}
+      </button>
+      <button class="a-button--link" (click)="toggleAddCompany()">
+        dismiss
       </button>
     </div>
   </div>
