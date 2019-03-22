@@ -20,7 +20,11 @@
     <div class="l-grid__col-8-12">
         <div class="m-card--primary u-margin-bottom-large">
             <app-loading [loading]="loading$ | async">
-                <app-companies-table *ngIf="companies$ | async" [companies]="companies$ | async"></app-companies-table>
+                <app-companies-table
+                  *ngIf="companies$ | async"
+                  [companies]="companies$ | async"
+                  [admin]="true"
+                ></app-companies-table>
             </app-loading>
         </div>
     </div>

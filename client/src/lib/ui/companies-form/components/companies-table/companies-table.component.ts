@@ -6,4 +6,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CompaniesTableComponent {
     @Input() public companies: any[];
+    @Input() public admin: boolean;
 }

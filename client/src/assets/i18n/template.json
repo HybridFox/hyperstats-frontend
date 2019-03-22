@@ -99,8 +99,10 @@
 			"ABOUT": "",
 			"AUDITTRAIL": "",
 			"AUDITTRIAL": "",
+			"AUTHORISATION-ORG": "",
 			"COMPANIES": "",
 			"COMPANYINFORMATION": "",
+			"COMPLIANCE-ORG": "",
 			"CONTACT": "",
 			"HELP": "",
 			"LOGIN": "",
@@ -108,6 +110,7 @@
 			"MORE": "",
 			"PRIVACY": "",
 			"PROXIES": "",
+			"RECYCLERS": "",
 			"RECYCLINGPARTNERS": "",
 			"RECYCLINGPROCESSES": "",
 			"REGISTER": "",
@@ -176,7 +179,16 @@
 				"TITLE": ""
 			}
 		},
+		"MANAGE-AUTHORISATION-ORG": {
+			"TITLE": ""
+		},
 		"MANAGE-COMPANIES": {
+			"TITLE": ""
+		},
+		"MANAGE-COMPLIANCE-ORG": {
+			"TITLE": ""
+		},
+		"MANAGE-RECYCLERS": {
 			"TITLE": ""
 		},
 		"MANAGE-USERS": {
@@ -573,6 +585,7 @@
 				"GENERAL-INFORMATION": ""
 			}
 		},
+		"NO-ORGANISATIONS": "",
 		"NO-PROCESS": "",
 		"NO-PROCESS-SELECTED": "",
 		"OUTPUT-FRACTION": {
