@@ -35,21 +35,26 @@ export class DetailPageComponent implements OnInit, OnDestroy {
               if (this.route.snapshot['_routerState'].url.includes('/recyclers')) {
                 this.companiesOverviewActions.fetchAllRecyclers().toPromise();
                 this.companies$ = this.recyclers$;
+                this.getDetail(id);
               }
               if (this.route.snapshot['_routerState'].url.includes('/compliance-org')) {
                 this.companiesOverviewActions.fetchAllComplianceOrg().toPromise();
                 this.companies$ = this.organisations$;
               }
-              this.companies$.subscribe(recycler => {
-                if (recycler && recycler.length > 0) {
-                  this.company = recycler.find(x => x._id === id );
-                }
-              });
+              this.getDetail(id);
             });
     }
 
     public ngOnDestroy() {
         this.componentDestroyed$.next(true);
         this.componentDestroyed$.complete();
+    }
+
+    public getDetail(id) {
+      this.companies$.subscribe(recycler => {
+        if (recycler && recycler.length > 0) {
+          this.company = recycler.find(x => x._id === id );
+        }
+      });
     }
 }
