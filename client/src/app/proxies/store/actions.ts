@@ -7,6 +7,7 @@ import { Handler } from '@store/handler';
 import { ProxiesRepository } from '@api/proxies';
 
 import { ACTIONS } from './action-types';
+import { ProxyBody } from './types';
 
 @Injectable()
 export class ProxiesActions {
@@ -36,5 +37,9 @@ export class ProxiesActions {
           this.handler.dispatchDone(ACTIONS.FETCH_ALL);
         }),
       );
+  }
+
+  public put(body: ProxyBody): Observable<any> {
+    return this.proxiesRepository.put(body);
   }
 }

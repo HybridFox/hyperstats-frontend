@@ -2,7 +2,7 @@
 </app-page-title>
 <div class="l-grid__row l-grid--with-margins">
   <div class="l-grid__col-8-12">
-    <div *ngIf="!proxies || proxies.length === 0" class="m-card--primary u-margin-bottom-large">
+    <div *ngIf="(!proxies || proxies.length === 0) && !extraCompanies.length" class="m-card--primary u-margin-bottom-large">
       <div class="m-card__placeholder">
         <img src="/assets/images/choose.svg" alt="Choose image">
       </div>

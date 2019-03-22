@@ -28,10 +28,10 @@ import { CompanyType } from '@api/company';
 
 export class OverviewPageComponent implements OnInit {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
-  @select$(CompanySelector.overview.result, companiesToSelectOptions) public $companyOptions: Observable<Option[]>;
-  @select(ProxiesSelectors.list.result) public $proxies: Observable<Proxy[]>;
-  @select(ReportsSelector.list.result) public $reports: Observable<Report[]>;
-  @select(ReportsProcessSelector.list.result) public $recyclingProcesses: Observable<any[]>;
+  @select$(CompanySelector.overview.result, companiesToSelectOptions) public companyOptions$: Observable<Option[]>;
+  @select(ProxiesSelectors.list.result) public proxies$: Observable<Proxy[]>;
+  @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
+  @select(ReportsProcessSelector.list.result) public recyclingProcesses$: Observable<any[]>;
 
   public proxies: Proxy[];
   public reports: Report[];
@@ -63,22 +63,22 @@ export class OverviewPageComponent implements OnInit {
     this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
     this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
 
-    this.$reports.subscribe((reports) => {
+    this.reports$.subscribe((reports) => {
       this.reports = reports;
       this.getProxiesFrom();
     });
 
-    this.$recyclingProcesses.subscribe((recyclingProcesses) => {
+    this.recyclingProcesses$.subscribe((recyclingProcesses) => {
       this.recyclingProcesses = recyclingProcesses;
       this.getProxiesFrom();
     });
 
-    this.$proxies.subscribe((proxies) => {
+    this.proxies$.subscribe((proxies) => {
       this.proxies = proxies;
       this.getProxiesFrom();
     });
 
-    this.$companyOptions.subscribe((companies) => {
+    this.companyOptions$.subscribe((companies) => {
       if (this.proxies) {
         this.removeProxyCompaniesFromCompanies(companies);
       } else {
@@ -157,12 +157,12 @@ export class OverviewPageComponent implements OnInit {
   private putNewProxy(body: ProxyBody) {
     console.log('put');
     console.log(body);
+    this.proxiesActions.put(body).toPromise();
   }
 
   private deleteNewProxy(body: ProxyBody) {
     console.log('delete');
     console.log(body);
-
   }
 
   private removeProxyCompaniesFromCompanies(companies) {
@@ -229,6 +229,7 @@ export class OverviewPageComponent implements OnInit {
       (report.data.information.recyclingProcess as PopulatedRecyclingProcess)._id === recyclingProcess._id
     ));
 
+
     if (matchingReports.length === 0) {
       return PROXY_OPTIONS.DISABLED;
     }
@@ -257,9 +258,7 @@ export class OverviewPageComponent implements OnInit {
       return PROXY_OPTIONS.SEMI_CHECKED;
     }
 
-    if (matchingProxies.length === 1) {
-      return PROXY_OPTIONS.CHECKED;
-    }
+    return PROXY_OPTIONS.CHECKED;
   }
 
   public getValue(status) {
