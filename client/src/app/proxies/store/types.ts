@@ -1,4 +1,5 @@
 import { Information } from 'src/app/reports/store/reports/types';
+import { PROXY_OPTIONS } from './constants';
 
 export interface Proxy {
   proxyCompanyId: string;
@@ -27,19 +28,27 @@ interface ProxyReport {
   };
 }
 
-
-export interface ShownProxy {
-  proxyCompanyId: string;
-  proxyCompanyName: string;
-  processes: ShownProxyProcess[];
+export interface RenderedProxy {
+  companyInfo: CompanyInfo;
+  processes: RenderedProxyProcess[];
 }
 
-interface ShownProxyProcess {
-  process: string;
-  reports: ReportYears[];
+interface CompanyInfo {
+  companyId: string;
+  companyName: string;
 }
 
-interface ReportYears {
-  year: number;
-  active: boolean;
+interface RenderedProxyProcess {
+  processInfo: ProcessInfo;
+  reports: RenderedProxyReport[];
+}
+
+interface ProcessInfo {
+  processName: string;
+  processId: string;
+}
+
+interface RenderedProxyReport {
+  year: string;
+  status: PROXY_OPTIONS;
 }

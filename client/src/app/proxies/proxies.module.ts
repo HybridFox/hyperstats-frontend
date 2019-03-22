@@ -8,6 +8,9 @@ import { ProxiesRoutingModule } from './proxies-routing.module';
 import { ProxiesServices } from './store';
 import { proxiesReducer } from './store/reducers';
 
+import { ReportsStoreServices, Reducers } from '../reports/store';
+import { ReportsServices } from '../reports/services';
+
 import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
@@ -25,6 +28,8 @@ import { Pages } from './pages';
     ProxiesApiModule,
   ],
   providers: [
+    ...ReportsStoreServices,
+    ...ReportsServices,
     ProxiesServices,
   ],
   declarations: [
@@ -36,5 +41,6 @@ export class ProxiesModule {
     private storeService: StoreService,
   ) {
     this.storeService.injectAsyncReducer('proxies', proxiesReducer);
+    this.storeService.injectAsyncReducer('reports', Reducers);
   }
 }

@@ -70,6 +70,12 @@ msgstr "Your password needs one uppercase, one lowercase and a number"
 msgid "GENERAL##FIELD-ERRORS##REQUIRED"
 msgstr "This field is required"
 
+msgid "GENERAL##FIELD-ERRORS##TYPEREQUIRED"
+msgstr "Type is required when weight is filled in"
+
+msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
+msgstr "Weight is required when type is filled in"
+
 msgid "GENERAL##LABELS##ACCEPT"
 msgstr "Accept"
 
@@ -1050,6 +1056,9 @@ msgstr ""
 "Description of the methodology to determine the chemical composition of the "
 "batteries"
 
+msgid "WIZARD##INPUT-FRACTION##LABELS##OTHER-MATERIALS"
+msgstr "Other Materials"
+
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr "Packaging material / outer casing"
 
@@ -1060,6 +1069,12 @@ msgstr "Process chemistry"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr "Share of battery type in input fraction"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
+msgstr "Share of input fraction (%)"
+
+msgid "WIZARD##INPUT-FRACTION##LABELS##WATER"
+msgstr "Water (H₂0)"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-BATTERY"
 msgstr "Weight battery type in input fraction"
@@ -1200,12 +1215,6 @@ msgstr "The form is invalid, make sure you have filled all the fields"
 #~ msgid "WIZARD##OUTPUT-FRACTION##LABELS##REPLACED-ELEMENT-MATERIAL"
 #~ msgstr "Replaced element material"
 
-#~ msgid "GENERAL##FIELD-ERRORS##TYPEREQUIRED"
-#~ msgstr "Type is required when weight is filled in"
-
-#~ msgid "GENERAL##FIELD-ERRORS##WEIGHTREQUIRED"
-#~ msgstr "Weight is required when type is filled in"
-
 #, fuzzy
 #~| msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 #~ msgid "WIZARD##NEW-REPORT##TITLES##INPUT-FRACTIONS"
@@ -1215,9 +1224,6 @@ msgstr "The form is invalid, make sure you have filled all the fields"
 #~| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 #~ msgid "TYPES##COMPANY##RECYCLER-PARTNER"
 #~ msgstr "Recycling Partners"
-
-#~ msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-INPUT-FRACTION"
-#~ msgstr "Share of input fraction (%)"
 
 #~ msgid "PAGE##REGISTER##EMAIL-CONFIRMED"
 #~ msgstr "Email confirmed! Signup request send to admin."

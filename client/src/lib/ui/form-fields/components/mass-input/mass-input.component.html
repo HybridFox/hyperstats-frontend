@@ -9,7 +9,7 @@
     <p *ngIf="control.errors && control.dirty" class="a-input__error">{{ 'GENERAL.FIELD-ERRORS.' + firstError() | translate }}</p>
   </div>
   <div class="l-grid__col-6-12">
-      <label *ngIf="label" class="a-input__label">{{ "WIZARD.OUTPUT-FRACTION.LABELS.SHARE-OUTPUT-FRACTION" | translate }}</label>
+      <label *ngIf="label" class="a-input__label">{{ labelShare }}</label>
       <div class="a-input__field-container">
         <span *ngIf="percentage" class="a-input__field">{{ percentage }}%</span>
         <span *ngIf="!percentage" class="a-input__field"></span>
