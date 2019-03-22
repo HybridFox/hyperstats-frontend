@@ -103,6 +103,7 @@ export class OverviewPageComponent implements OnInit {
         }
       });
     });
+    this.proxiesActions.fetchAll().toPromise();
   }
 
   public toggleAddCompany() {
@@ -164,17 +165,16 @@ export class OverviewPageComponent implements OnInit {
         });
       });
     });
+    this.extraCompanies = [];
+    this.proxiesActions.fetchAll().toPromise();
   }
 
   private putNewProxy(body: ProxyBody) {
-    console.log('put');
-    console.log(body);
     this.proxiesActions.put(body).toPromise();
   }
 
   private deleteNewProxy(body: ProxyBody) {
-    console.log('delete');
-    console.log(body);
+    this.proxiesActions.delete(body).toPromise();
   }
 
   private removeProxyCompaniesFromCompanies(companies) {

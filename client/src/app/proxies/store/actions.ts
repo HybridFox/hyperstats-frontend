@@ -42,4 +42,8 @@ export class ProxiesActions {
   public put(body: ProxyBody): Observable<any> {
     return this.proxiesRepository.put(body);
   }
+
+  public delete(body: ProxyBody): Observable<any> {
+    return this.proxiesRepository.delete(body);
+  }
 }
