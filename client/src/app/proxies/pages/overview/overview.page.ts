@@ -167,14 +167,11 @@ export class OverviewPageComponent implements OnInit {
   }
 
   private putNewProxy(body: ProxyBody) {
-    console.log('put');
-    console.log(body);
     this.proxiesActions.put(body).toPromise();
   }
 
   private deleteNewProxy(body: ProxyBody) {
-    console.log('delete');
-    console.log(body);
+    this.proxiesActions.delete(body).toPromise();
   }
 
   private removeProxyCompaniesFromCompanies(companies) {

@@ -23,4 +23,10 @@ export class ProxiesRepository {
 
     return this.http.put(url, body);
   }
+
+  public delete(body: ProxyBody): Observable<any> {
+    const url = this.apiConfig.baseUrl('/proxies');
+
+    return this.http.delete(url, {body: body});
+  }
 }
