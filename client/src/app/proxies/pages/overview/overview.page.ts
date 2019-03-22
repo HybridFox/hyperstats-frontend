@@ -165,6 +165,7 @@ export class OverviewPageComponent implements OnInit {
         });
       });
     });
+    this.extraCompanies = [];
     this.proxiesActions.fetchAll().toPromise();
   }
 
