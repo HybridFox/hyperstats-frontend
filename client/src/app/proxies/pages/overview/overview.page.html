@@ -68,7 +68,7 @@
         <option *ngFor="let option of companies; trackBy: trackOption" [value]="option.value">{{ option.label | translate }}</option>
       </select>
       <button class="a-button--primary a-button-outline has-icon-after" (click)="addCompany()" [disabled]="!selectedCompany">
-        add company
+        { 'GENERAL.LABELS.ADD-COMPANY' | translate }}
       </button>
     </div>
   </div>
