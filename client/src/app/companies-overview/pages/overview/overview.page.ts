@@ -29,18 +29,17 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
                 takeUntil(this.componentDestroyed$),
             )
             .subscribe((params) => {
-                if (this.route.snapshot['_routerState'].url === '/compliance-organisation/authorisation-org') {
+                if (this.route.snapshot['_routerState'].url.includes('/authorisation-org')) {
                   this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
                   this.companies$ = this.organisations$;
                   this.page = 'authorisation-org';
                 }
-                if (this.route.snapshot['_routerState'].url === '/compliance-organisation/recyclers' ||
-                    this.route.snapshot['_routerState'].url === '/authorisation-organisation/recyclers') {
+                if (this.route.snapshot['_routerState'].url.includes('/recyclers')) {
                   this.companiesOverviewActions.fetchAllRecyclers().toPromise();
                   this.companies$ = this.recyclers$;
                   this.page = 'recyclers';
                 }
-                if (this.route.snapshot['_routerState'].url === '/authorisation-organisation/compliance-org') {
+                if (this.route.snapshot['_routerState'].url.includes('/compliance-org')) {
                   this.companiesOverviewActions.fetchAllComplianceOrg().toPromise();
                   this.companies$ = this.organisations$;
                   this.page = 'compliance-org';

@@ -28,13 +28,17 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 takeUntil(this.componentDestroyed$),
             )
             .subscribe(({ id }) => {
-              if (this.route.snapshot['_routerState'].url.includes('/compliance-organisation/authorisation-org')) {
+              if (this.route.snapshot['_routerState'].url.includes('/authorisation-org')) {
                 this.companiesOverviewActions.fetchAllAuthorisationOrg().toPromise();
                 this.companies$ = this.organisations$;
               }
-              if (this.route.snapshot['_routerState'].url.includes('/compliance-organisation/recyclers')) {
+              if (this.route.snapshot['_routerState'].url.includes('/recyclers')) {
                 this.companiesOverviewActions.fetchAllRecyclers().toPromise();
                 this.companies$ = this.recyclers$;
+              }
+              if (this.route.snapshot['_routerState'].url.includes('/compliance-org')) {
+                this.companiesOverviewActions.fetchAllComplianceOrg().toPromise();
+                this.companies$ = this.organisations$;
               }
               this.companies$.subscribe(recycler => {
                 if (recycler && recycler.length > 0) {
