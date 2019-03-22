@@ -17,6 +17,8 @@ const NEW_REPORT = {
 			excessMaterialReceived: [{
 				impurities: 1,
 				packagingMaterial: 1,
+				water: 1,
+				otherMaterials: 1,
 			}],
 			elements: [{
 				element: "element",

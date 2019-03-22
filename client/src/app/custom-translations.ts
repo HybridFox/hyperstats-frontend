@@ -1,6 +1,8 @@
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 ngxExtract('GENERAL.FIELD-ERRORS.REQUIRED');
+ngxExtract('GENERAL.FIELD-ERRORS.TYPEREQUIRED');
+ngxExtract('GENERAL.FIELD-ERRORS.WEIGHTREQUIRED');
 ngxExtract('GENERAL.FIELD-ERRORS.EMAIL');
 ngxExtract('GENERAL.FIELD-ERRORS.PASSWORD');
 
@@ -9,6 +11,7 @@ ngxExtract('GENERAL.FIELD-ERRORS.EMAIL');
 ngxExtract('GENERAL.FIELD-ERRORS.PASSWORD');
 
 ngxExtract('WIZARD.TITLES.NEW-REPORT');
+ngxExtract('WIZARD.TITLES.INFORMATION');
 ngxExtract('WIZARD.TITLES.INPUT-FRACTION');
 ngxExtract('WIZARD.TITLES.ADDITIVES');
 ngxExtract('WIZARD.TITLES.OUTPUT-FRACTION');

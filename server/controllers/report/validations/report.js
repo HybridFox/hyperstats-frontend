@@ -19,6 +19,8 @@ const savedData = {
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().allow(null).optional(),
 				packagingMaterial: joi.number().allow(null).optional(),
+				water: joi.number().allow(null).optional(),
+				otherMaterials: joi.number().allow(null).optional(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().allow("").optional(),
@@ -84,6 +86,8 @@ const filedData = {
 			excessMaterialReceived: joi.array().items(joi.object().keys({
 				impurities: joi.number().required(),
 				packagingMaterial: joi.number().required(),
+				water: joi.number().required(),
+				otherMaterials: joi.number().required(),
 			})),
 			elements: joi.array().items(joi.object().keys({
 				element: joi.string().required(),
