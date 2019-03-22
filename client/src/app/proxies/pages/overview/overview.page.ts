@@ -99,8 +99,6 @@ export class OverviewPageComponent implements OnInit {
 
   public addCompany() {
     if (this.selectedCompany) {
-      console.log(this.companies);
-      console.log(this.selectedCompany);
       const newCompany = this.companies.find(company => company.value === this.selectedCompany);
 
       this.extraCompanies.push({
