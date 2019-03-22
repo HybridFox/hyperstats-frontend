@@ -12,7 +12,7 @@ module.exports = async(req, res, next) => {
 
 		profileHelper.set(req, user);
 
-		return res.status(200).json(profileHelper.get(req));
+		return res.status(200).json(await profileHelper.get(req));
 	} catch (error) {
 		return next(error);
 	}

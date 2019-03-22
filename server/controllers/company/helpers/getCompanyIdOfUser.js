@@ -1,7 +1,7 @@
 const profileHelper = require("../../../helpers/profile");
 const { pathOr, compose } = require("ramda");
 
-module.exports = (req) => compose(
+module.exports = async(req) => compose(
 	pathOr(null, ["company", "_id"]),
-	profileHelper.get
+	await profileHelper.get
 )(req);
