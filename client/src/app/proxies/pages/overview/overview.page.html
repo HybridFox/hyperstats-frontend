@@ -8,6 +8,9 @@
       </div>
     </div>
     <ng-container *ngIf="proxiesForm">
+      <button class="a-button--primary a-button-outline has-icon-after" (click)="saveProxies()">
+        save proxies
+      </button>
       <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxiesForm.controls">
         <app-sub-section-title class="p-proxies-proxy__title" [title]="proxy.value.companyInfo.companyName">
           <div action>
