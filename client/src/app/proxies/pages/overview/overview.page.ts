@@ -79,7 +79,11 @@ export class OverviewPageComponent implements OnInit {
     });
 
     this.$companyOptions.subscribe((companies) => {
-      this.companies = companies;
+      if (this.proxies) {
+        this.removeProxyCompaniesFromCompanies(companies);
+      } else {
+        this.companies = companies;
+      }
     });
 
     this.years = this.codesService.years().map(year => year.value);
@@ -95,14 +99,30 @@ export class OverviewPageComponent implements OnInit {
 
   public addCompany() {
     if (this.selectedCompany) {
+      console.log(this.companies);
+      console.log(this.selectedCompany);
       const newCompany = this.companies.find(company => company.value === this.selectedCompany);
 
       this.extraCompanies.push({
         proxyCompanyName: newCompany.label,
         proxyCompanyId: newCompany.value,
       });
+
       this.getProxiesFrom();
+      this.removeProxyCompaniesFromCompanies(this.companies);
+      this.selectedCompany = '';
     }
+  }
+
+  private removeProxyCompaniesFromCompanies(companies) {
+    const shownCompanies = [...uniq(this.proxies.map(proxy => ({
+      proxyCompanyName: proxy.proxyCompanyName,
+      proxyCompanyId: proxy.proxyCompanyId
+    }))), ...this.extraCompanies];
+
+    this.companies = companies.filter(company => {
+      return !shownCompanies.find(shownCompany => shownCompany.proxyCompanyId === company.value);
+    });
   }
 
   private getProxiesFrom() {
