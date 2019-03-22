@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-19T08:54:17.219Z\n"
-"PO-Revision-Date: 2019-03-19T08:54:17.219Z\n"
+"POT-Creation-Date: 2019-03-22T10:43:07.401Z\n"
+"PO-Revision-Date: 2019-03-22T10:43:07.401Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -204,6 +204,9 @@ msgid "GENERAL##LABELS##RESET-PASSWORD"
 msgstr ""
 
 msgid "GENERAL##LABELS##SAVE"
+msgstr ""
+
+msgid "GENERAL##LABELS##SELECT-COMPANY"
 msgstr ""
 
 msgid "GENERAL##LABELS##SELECT-OPTION"
@@ -405,6 +408,9 @@ msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
 msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##NO-COMPANIES"
 msgstr ""
 
 msgid "PAGE##PROXIES##TITLE"

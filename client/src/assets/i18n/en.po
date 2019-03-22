@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-19T08:53:44.442Z\n"
+"POT-Creation-Date: 2019-03-22T10:43:07.401Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -214,6 +214,9 @@ msgstr "Reset password"
 
 msgid "GENERAL##LABELS##SAVE"
 msgstr "Save"
+
+msgid "GENERAL##LABELS##SELECT-COMPANY"
+msgstr "Select a company"
 
 msgid "GENERAL##LABELS##SELECT-OPTION"
 msgstr "Select a option"
@@ -466,6 +469,9 @@ msgstr ""
 "Proxies are the organizations that have access to your reports. In this "
 "overview you can control who has access to your reports for a given "
 "reporting year and recycling process"
+
+msgid "PAGE##PROXIES##NO-COMPANIES"
+msgstr "There are no companies available"
 
 msgid "PAGE##PROXIES##TITLE"
 msgstr "{{ name }} proxies"

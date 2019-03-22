@@ -77,6 +77,7 @@
             "REMOVE": "Remove",
             "RESET-PASSWORD": "Reset password",
             "SAVE": "Save",
+            "SELECT-COMPANY": "Select a company",
             "SELECT-OPTION": "Select a option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
@@ -185,6 +186,7 @@
         },
         "PROXIES": {
             "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
+            "NO-COMPANIES": "There are no companies available",
             "TITLE": "{{ name }} proxies"
         },
         "RECYCLING-PARTNERS": {
