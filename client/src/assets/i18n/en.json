@@ -272,7 +272,8 @@
         }
     },
     "PROXIES": {
-        "REVOKEPROXY": "Revoke this proxy"
+        "REVOKEPROXY": "Revoke this proxy",
+        "SAVEPROXIES": "Save proxies"
     },
     "Recycler": "Recycler",
     "TOAST": {

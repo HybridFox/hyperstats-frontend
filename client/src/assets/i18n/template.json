@@ -272,7 +272,8 @@
 		}
 	},
 	"PROXIES": {
-		"REVOKEPROXY": ""
+		"REVOKEPROXY": "",
+		"SAVEPROXIES": ""
 	},
 	"Recycler": "",
 	"TOAST": {

@@ -1,8 +1,16 @@
 <app-page-title [title]="('PAGE.PROXIES.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })">
 </app-page-title>
 <div class="l-grid__row l-grid--with-margins">
+  <div class="l-grid__col-12-12">
+    <button class="a-button--primary a-button-outline has-icon-after u-margin-bottom-large" (click)="saveProxies()">
+      {{'PROXIES.SAVEPROXIES' | translate}}
+    </button>
+  </div>
+</div>
+<div class="l-grid__row l-grid--with-margins">
   <div class="l-grid__col-8-12">
-    <div *ngIf="!proxies || proxies.length === 0" class="m-card--primary u-margin-bottom-large">
+    <div *ngIf="(!proxies || proxies.length === 0) && !extraCompanies.length"
+      class="m-card--primary u-margin-bottom-large">
       <div class="m-card__placeholder">
         <img src="/assets/images/choose.svg" alt="Choose image">
       </div>
@@ -11,7 +19,7 @@
       <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxiesForm.controls">
         <app-sub-section-title class="p-proxies-proxy__title" [title]="proxy.value.companyInfo.companyName">
           <div action>
-            <button class="a-button--link a-button--small" (click)="revokeProxy()">
+            <button class="a-button--link a-button--small" (click)="revokeProxy(proxy)">
               {{'PROXIES.REVOKEPROXY' | translate}}
             </button>
           </div>

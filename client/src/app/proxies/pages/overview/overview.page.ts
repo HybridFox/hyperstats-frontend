@@ -14,7 +14,7 @@ import { CompaniesActions } from '../../../manage-companies/store/companies/acti
 
 import { PROXY_OPTIONS } from '../../store/constants';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
-import { Proxy, RenderedProxy } from '../../store/types';
+import { Proxy, ProxyBody } from '../../store/types';
 import { ReportsActions } from 'src/app/reports/store/reports';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 import { UserInterface } from '@store/auth/auth.interface';
@@ -28,10 +28,10 @@ import { CompanyType } from '@api/company';
 
 export class OverviewPageComponent implements OnInit {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
-  @select$(CompanySelector.overview.result, companiesToSelectOptions) public $companyOptions: Observable<Option[]>;
-  @select(ProxiesSelectors.list.result) public $proxies: Observable<Proxy[]>;
-  @select(ReportsSelector.list.result) public $reports: Observable<Report[]>;
-  @select(ReportsProcessSelector.list.result) public $recyclingProcesses: Observable<any[]>;
+  @select$(CompanySelector.overview.result, companiesToSelectOptions) public companyOptions$: Observable<Option[]>;
+  @select(ProxiesSelectors.list.result) public proxies$: Observable<Proxy[]>;
+  @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
+  @select(ReportsProcessSelector.list.result) public recyclingProcesses$: Observable<any[]>;
 
   public proxies: Proxy[];
   public reports: Report[];
@@ -45,8 +45,6 @@ export class OverviewPageComponent implements OnInit {
   public selectedCompany: string;
 
   public PROXY_OPTIONS = PROXY_OPTIONS;
-
-  public renderedProxies: RenderedProxy[];
 
   constructor(
     private proxiesActions: ProxiesActions,
@@ -63,22 +61,22 @@ export class OverviewPageComponent implements OnInit {
     this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
     this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
 
-    this.$reports.subscribe((reports) => {
+    this.reports$.subscribe((reports) => {
       this.reports = reports;
       this.getProxiesFrom();
     });
 
-    this.$recyclingProcesses.subscribe((recyclingProcesses) => {
+    this.recyclingProcesses$.subscribe((recyclingProcesses) => {
       this.recyclingProcesses = recyclingProcesses;
       this.getProxiesFrom();
     });
 
-    this.$proxies.subscribe((proxies) => {
+    this.proxies$.subscribe((proxies) => {
       this.proxies = proxies;
       this.getProxiesFrom();
     });
 
-    this.$companyOptions.subscribe((companies) => {
+    this.companyOptions$.subscribe((companies) => {
       if (this.proxies) {
         this.removeProxyCompaniesFromCompanies(companies);
       } else {
@@ -89,8 +87,9 @@ export class OverviewPageComponent implements OnInit {
     this.years = this.codesService.years().map(year => year.value);
   }
 
-  public revokeProxy() {
-    console.log('revokeProxy');
+  public revokeProxy(proxy: FormControl) {
+    console.log('revoke Proxy');
+    console.log(proxy);
   }
 
   public toggleAddCompany() {
@@ -110,6 +109,59 @@ export class OverviewPageComponent implements OnInit {
       this.removeProxyCompaniesFromCompanies(this.companies);
       this.selectedCompany = '';
     }
+  }
+
+  public saveProxies() {
+    this.proxiesForm.controls.forEach((company) => {
+      const matchingProxy = this.proxies.find(proxy => proxy.proxyCompanyId === company.value.companyInfo.companyId);
+      const companyId = company.value.companyInfo.companyId;
+      company.value.processes.controls.forEach(process => {
+        const recyclingProcessId = process.value.processInfo.processId;
+        process.value.reports.controls.forEach(report => {
+          const body = {
+            proxy: companyId,
+            recyclingProcess: recyclingProcessId,
+            year: parseInt(report.controls.year.value, 10),
+          };
+
+          if (matchingProxy) {
+            const matchingProcess = matchingProxy.processes.find(proxyProcess => proxyProcess.process._id === recyclingProcessId);
+            if (!matchingProcess) {
+              if (report.controls.value.value) {
+                this.putNewProxy(body);
+              }
+            } else {
+              const matchingReport = matchingProcess.reports.find(processReport =>
+                processReport.data.information.reportingYear === parseInt(report.controls.year.value, 10));
+                if (!matchingReport) {
+                  if (report.controls.value.value) {
+                    this.putNewProxy(body);
+                  }
+                } else {
+                  if (!report.controls.value.value) {
+                    this.deleteNewProxy(body);
+                  }
+                }
+            }
+          } else {
+            if (report.controls.value.value) {
+              this.putNewProxy(body);
+            }
+          }
+        });
+      });
+    });
+  }
+
+  private putNewProxy(body: ProxyBody) {
+    console.log('put');
+    console.log(body);
+    this.proxiesActions.put(body).toPromise();
+  }
+
+  private deleteNewProxy(body: ProxyBody) {
+    console.log('delete');
+    console.log(body);
   }
 
   private removeProxyCompaniesFromCompanies(companies) {
@@ -176,6 +228,7 @@ export class OverviewPageComponent implements OnInit {
       (report.data.information.recyclingProcess as PopulatedRecyclingProcess)._id === recyclingProcess._id
     ));
 
+
     if (matchingReports.length === 0) {
       return PROXY_OPTIONS.DISABLED;
     }
@@ -204,9 +257,7 @@ export class OverviewPageComponent implements OnInit {
       return PROXY_OPTIONS.SEMI_CHECKED;
     }
 
-    if (matchingProxies.length === 1) {
-      return PROXY_OPTIONS.CHECKED;
-    }
+    return PROXY_OPTIONS.CHECKED;
   }
 
   public getValue(status) {
