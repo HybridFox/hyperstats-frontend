@@ -19,7 +19,11 @@ const UserModel = require("../models/user");
  * @param {Object} req Express request object
  * @returns {Object} User Profile
  */
-module.exports.get = (req) => path(["session", "safeProfile"])(req);
+module.exports.get = async(req) => {
+	await reload(req);
+
+	return path(["session", "safeProfile"])(req);
+};
 
 /**
  * @function get Get full profile
@@ -59,7 +63,11 @@ const set = module.exports.set = (req, user) => {
 	req.session.save();
 };
 
-module.exports.reload = async(req) => {
+/**
+ * @function reload Reload profile props in session
+ * @param {Object} req Express request object
+ */
+const reload = module.exports.reload = async(req) => {
 	if (!path(["session", "profile", "_id"])(req)) {
 		return;
 	}

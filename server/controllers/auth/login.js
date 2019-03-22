@@ -7,7 +7,7 @@ module.exports = async(req, res, next) => {
 
 		profile.set(req, user);
 
-		res.status(200).json(profile.get(req));
+		res.status(200).json(await profile.get(req));
 	} catch (error) {
 		next(error);
 	}
