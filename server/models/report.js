@@ -48,6 +48,12 @@ const ReportSchema = mongoose.Schema({
 					packagingMaterial: {
 						type: Number,
 					},
+					water: {
+						type: Number,
+					},
+					otherMaterials: {
+						type: Number,
+					},
 				}],
 				elements: [{
 					element: {

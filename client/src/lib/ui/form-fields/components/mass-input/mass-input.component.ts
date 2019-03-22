@@ -20,6 +20,7 @@ import { isNil } from 'ramda';
 export class MassInputComponent implements OnInit, OnChanges, OnDestroy, ControlValueAccessor {
   @Input() placeholder = '';
   @Input() label?: string;
+  @Input() labelShare?: string;
   @Input() suffix?: string;
   @Input() description?: string;
   @Input() type = 'text';
