@@ -8,14 +8,14 @@ module.exports = async({ proxy, recyclingProcess, year, userCompany }) => {
 		"meta.approvedCompanies": {
 			$elemMatch: {
 				company: proxy,
-				approvedBy: userCompany,
+				approvedBy: userCompany._id,
 			},
 		},
 	}, {
 		$pull: {
 			"meta.approvedCompanies": {
 				company: proxy,
-				approvedBy: userCompany,
+				approvedBy: userCompany._id,
 			},
 		},
 	});
