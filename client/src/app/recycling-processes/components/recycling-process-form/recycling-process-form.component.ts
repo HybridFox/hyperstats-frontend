@@ -98,11 +98,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
           this.deleteConfirmMessage = itemsToDelete.reduce((acc, curr, index) => {
             if (index === 0) {
               return `${acc} ${curr.data.information.name}`;
-            } else if (index === itemsToDelete.length - 1) {
-              return `${acc} and ${curr.data.information.name}.`;
-            } else {
-              return `${acc}, ${curr.data.information.name}`;
             }
+            if (index === itemsToDelete.length - 1) {
+              return `${acc} and ${curr.data.information.name}.`;
+            }
+            return `${acc}, ${curr.data.information.name}`;
           }, 'If you delete this process you delete the following reports:');
         }
       }
