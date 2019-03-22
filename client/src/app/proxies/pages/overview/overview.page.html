@@ -60,10 +60,14 @@
       <button class="a-button--primary a-button-outline has-icon-after" (click)="toggleAddCompany()">
         dismiss
       </button>
-      <p class="u-text-description">
-        select box with all the companies
+      <p *ngIf="companies.length === 0">
+          {{ 'PAGE.PROXIES.NO-COMPANIES' | translate }}
       </p>
-      <button class="a-button--primary a-button-outline has-icon-after" (click)="addCompany()">
+      <select *ngIf="companies.length > 0" class="a-input__field" [(ngModel)]="selectedCompany">
+          <option value="" disabled>{{ 'GENERAL.LABELS.SELECT-COMPANY' | translate }}</option>
+        <option *ngFor="let option of companies; trackBy: trackOption" [value]="option.value">{{ option.label | translate }}</option>
+      </select>
+      <button class="a-button--primary a-button-outline has-icon-after" (click)="addCompany()" [disabled]="!selectedCompany">
         add company
       </button>
     </div>

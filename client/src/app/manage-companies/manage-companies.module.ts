@@ -10,7 +10,7 @@ import { SharedModule } from '@shared/shared.module';
 
 import { ManageCompaniesRoutingModule } from './manage-companies-routing.module';
 
-import { Services, Reducer } from './store';
+import { CompaniesServices, Reducer } from './store';
 import { Pages } from './pages';
 import { Components } from './components';
 
@@ -31,7 +31,7 @@ import { Components } from './components';
     FormFieldsModule,
   ],
   providers: [
-    Services,
+    CompaniesServices,
   ],
 })
 export class ManageCompaniesModule {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { select } from '@angular-redux/store';
+import { select, select$ } from '@angular-redux/store';
 import { FormControl, FormArray, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { uniq } from 'ramda';
@@ -9,6 +9,8 @@ import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
 import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
+import { CompanySelector } from '../../../manage-companies/store';
+import { CompaniesActions } from '../../../manage-companies/store/companies/actions';
 
 import { PROXY_OPTIONS } from '../../store/constants';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
@@ -16,6 +18,9 @@ import { Proxy, RenderedProxy } from '../../store/types';
 import { ReportsActions } from 'src/app/reports/store/reports';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 import { UserInterface } from '@store/auth/auth.interface';
+import { companiesToSelectOptions } from '@helpers/select.helpers';
+import { Option } from '@ui/form-fields/components/select/select.types';
+import { CompanyType } from '@api/company';
 
 @Component({
   templateUrl: './overview.page.html',
@@ -23,6 +28,7 @@ import { UserInterface } from '@store/auth/auth.interface';
 
 export class OverviewPageComponent implements OnInit {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
+  @select$(CompanySelector.overview.result, companiesToSelectOptions) public $companyOptions: Observable<Option[]>;
   @select(ProxiesSelectors.list.result) public $proxies: Observable<Proxy[]>;
   @select(ReportsSelector.list.result) public $reports: Observable<Report[]>;
   @select(ReportsProcessSelector.list.result) public $recyclingProcesses: Observable<any[]>;
@@ -33,6 +39,10 @@ export class OverviewPageComponent implements OnInit {
   public years: string[];
   public proxiesForm: FormArray;
   public showAddCompany = false;
+  public companies: Option[] = [];
+
+  public extraCompanies = [];
+  public selectedCompany: string;
 
   public PROXY_OPTIONS = PROXY_OPTIONS;
 
@@ -42,6 +52,7 @@ export class OverviewPageComponent implements OnInit {
     private proxiesActions: ProxiesActions,
     private reportActions: ReportsActions,
     private reportProcessActions: ReportsProcessActions,
+    private companiesActions: CompaniesActions,
     private codesService: CodesService,
     private formBuilder: FormBuilder
   ) { }
@@ -50,6 +61,7 @@ export class OverviewPageComponent implements OnInit {
     this.proxiesActions.fetchAll().toPromise();
     this.reportActions.fetchAll({}).toPromise();
     this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
+    this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
 
     this.$reports.subscribe((reports) => {
       this.reports = reports;
@@ -66,6 +78,10 @@ export class OverviewPageComponent implements OnInit {
       this.getProxiesFrom();
     });
 
+    this.$companyOptions.subscribe((companies) => {
+      this.companies = companies;
+    });
+
     this.years = this.codesService.years().map(year => year.value);
   }
 
@@ -78,7 +94,15 @@ export class OverviewPageComponent implements OnInit {
   }
 
   public addCompany() {
-    console.log('add the company');
+    if (this.selectedCompany) {
+      const newCompany = this.companies.find(company => company.value === this.selectedCompany);
+
+      this.extraCompanies.push({
+        proxyCompanyName: newCompany.label,
+        proxyCompanyId: newCompany.value,
+      });
+      this.getProxiesFrom();
+    }
   }
 
   private getProxiesFrom() {
@@ -88,10 +112,10 @@ export class OverviewPageComponent implements OnInit {
   }
 
   private getProxies() {
-    const companies = uniq(this.proxies.map(proxy => ({
+    const companies = [...uniq(this.proxies.map(proxy => ({
       proxyCompanyName: proxy.proxyCompanyName,
       proxyCompanyId: proxy.proxyCompanyId
-    })));
+    }))), ...this.extraCompanies];
 
     return this.formBuilder.array(companies.map(company => {
       const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
