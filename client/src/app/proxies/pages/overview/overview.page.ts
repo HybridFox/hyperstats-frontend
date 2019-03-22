@@ -73,11 +73,11 @@ export class OverviewPageComponent implements OnInit {
     console.log('revokeProxy');
   }
 
-  public toggleAddCompany = () => {
+  public toggleAddCompany() {
     this.showAddCompany = !this.showAddCompany;
   }
 
-  public addCompany = () => {
+  public addCompany() {
     console.log('add the company');
   }
 
