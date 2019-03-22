@@ -14,7 +14,7 @@ import { CompaniesActions } from '../../../manage-companies/store/companies/acti
 
 import { PROXY_OPTIONS } from '../../store/constants';
 import { ProxiesActions, ProxiesSelectors } from '../../store';
-import { Proxy, RenderedProxy } from '../../store/types';
+import { Proxy, RenderedProxy, ProxyBody } from '../../store/types';
 import { ReportsActions } from 'src/app/reports/store/reports';
 import { ReportsProcessActions } from 'src/app/reports/store/recycling-processes';
 import { UserInterface } from '@store/auth/auth.interface';
@@ -113,7 +113,56 @@ export class OverviewPageComponent implements OnInit {
   }
 
   public saveProxies() {
-    console.log('save the proxies');
+    this.proxiesForm.controls.forEach((company) => {
+      const matchingProxy = this.proxies.find(proxy => proxy.proxyCompanyId === company.value.companyInfo.companyId);
+      const companyId = company.value.companyInfo.companyId;
+      company.value.processes.controls.forEach(process => {
+        const recyclingProcessId = process.value.processInfo.processId;
+        process.value.reports.controls.forEach(report => {
+          const body = {
+            proxy: companyId,
+            recyclingProcess: recyclingProcessId,
+            year: parseInt(report.controls.year.value, 10),
+          };
+
+          if (matchingProxy) {
+            const matchingProcess = matchingProxy.processes.find(proxyProcess => proxyProcess.process._id === recyclingProcessId);
+            if (!matchingProcess) {
+              if (report.controls.value.value) {
+                this.putNewProxy(body);
+              }
+            } else {
+              const matchingReport = matchingProcess.reports.find(processReport =>
+                processReport.data.information.reportingYear === parseInt(report.controls.year.value, 10));
+                if (!matchingReport) {
+                  if (report.controls.value.value) {
+                    this.putNewProxy(body);
+                  }
+                } else {
+                  if (!report.controls.value.value) {
+                    this.deleteNewProxy(body);
+                  }
+                }
+            }
+          } else {
+            if (report.controls.value.value) {
+              this.putNewProxy(body);
+            }
+          }
+        });
+      });
+    });
+  }
+
+  private putNewProxy(body: ProxyBody) {
+    console.log('put');
+    console.log(body);
+  }
+
+  private deleteNewProxy(body: ProxyBody) {
+    console.log('delete');
+    console.log(body);
+
   }
 
   private removeProxyCompaniesFromCompanies(companies) {

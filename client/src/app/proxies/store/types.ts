@@ -1,6 +1,12 @@
 import { Information } from 'src/app/reports/store/reports/types';
 import { PROXY_OPTIONS } from './constants';
 
+export interface ProxyBody {
+  proxy: string;
+  recyclingProcess: string;
+  year: number;
+}
+
 export interface Proxy {
   proxyCompanyId: string;
   proxyCompanyName: string;
