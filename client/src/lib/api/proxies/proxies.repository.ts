@@ -28,6 +28,6 @@ export class ProxiesRepository {
     const url = this.apiConfig.baseUrl('/proxies');
 
     // @ts-ignore
-    return this.http.delete(url, {body: body});
+    return this.http.delete(url, {body});
   }
 }
