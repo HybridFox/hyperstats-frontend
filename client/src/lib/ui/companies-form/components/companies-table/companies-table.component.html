@@ -16,8 +16,8 @@
               <td>{{ company?.data?.address?.street }} {{ company?.data?.address?.number }}</td>
               <td>{{ company?.data?.address?.city }}</td>
               <td>
-                      <span *ngIf="!company?.meta?.activated" class="fa fa-circle-o"></span>
-                      <span *ngIf="company?.meta?.activated" class="fa fa-dot-circle-o"></span>
+                <span *ngIf="!company?.meta?.activated" class="fa fa-circle-o"></span>
+                <span *ngIf="company?.meta?.activated" class="fa fa-dot-circle-o"></span>
               </td>
               <td *ngIf="admin">{{ company?.meta?.type }}</td>
               <td>

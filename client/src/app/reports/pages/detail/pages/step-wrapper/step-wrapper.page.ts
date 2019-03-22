@@ -20,7 +20,7 @@ export class StepWrapperPageComponent implements OnInit {
   public title$;
   public currentForm: FormArray;
   public sideItems: StepMenuItem[] = [];
-  public showForm: boolean;
+  public showForm = true;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 

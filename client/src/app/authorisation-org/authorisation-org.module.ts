@@ -1,4 +1,4 @@
-import { NgModule,  } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AuthorisationOrgRoutingModule } from './authorisation-org-routing.module';
 

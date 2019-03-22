@@ -13,10 +13,10 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     @select(CompaniesOverviewSelector.organisations.overview.result) public organisations$: Observable<any>;
     @select(CompaniesOverviewSelector.recyclers.overview.loading) public loading$: Observable<boolean>;
 
-    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
-
     public companies$: Observable<any>;
     public page: string;
+
+    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
     constructor(
       private route: ActivatedRoute,

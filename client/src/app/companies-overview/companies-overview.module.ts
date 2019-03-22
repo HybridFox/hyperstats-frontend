@@ -1,4 +1,4 @@
-import { NgModule,  } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +14,6 @@ import { Reducer, Services } from './store';
 import { Pages } from './pages';
 import { ReportsRepository } from '@api/reports';
 import { CompaniesFormModule } from '@ui/companies-form';
-import { ActivatedRouteSnapshot } from '@angular/router';
 
 @NgModule({
   declarations: [

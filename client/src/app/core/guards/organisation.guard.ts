@@ -21,20 +21,27 @@ export class OrganisationGuard implements CanActivate {
                   if (user.company.meta.type === 'R' && route.routeConfig.path === 'recycler') {
                     return true;
                   }
+
                   if (user.company.meta.type !== 'CO' && user.company.meta.type !== 'AO' ) {
                     this.router.navigate(['/']);
+
                     return false;
                   }
+
                   if (user.company.meta.type === 'CO' &&
                       (route.routeConfig.path === 'authorisation-organisation' || route.routeConfig.path === 'recycler')) {
                     this.router.navigate(['/']);
+
                     return false;
                   }
+
                   if (user.company.meta.type === 'AO' &&
                       (route.routeConfig.path === 'compliance-organisation' || route.routeConfig.path === 'recycler')) {
                     this.router.navigate(['/']);
+
                     return false;
                   }
+
                   return true;
                 })
             );

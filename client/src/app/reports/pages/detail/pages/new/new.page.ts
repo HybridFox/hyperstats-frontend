@@ -20,7 +20,7 @@ import { ReportsProcessActions, ReportsProcessSelector } from '../../../../store
 export class NewPageComponent extends StepPageAbstract implements OnInit {
   @select$(ReportsProcessSelector.list.result, mapRecyclingProcessesToOptions) public processOptions$: BehaviorSubject<Option>;
 
-  public showForm: boolean;
+  public showForm = true;
 
   constructor(
     codesService: CodesService,

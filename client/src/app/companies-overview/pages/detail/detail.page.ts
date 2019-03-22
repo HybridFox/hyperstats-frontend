@@ -13,9 +13,10 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     @select(CompaniesOverviewSelector.organisations.overview.result) public organisations$: Observable<any>;
     @select(CompaniesOverviewSelector.recyclers.detail.loading) public loading$: BehaviorSubject<boolean>;
 
-    private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
     public company: object;
     public companies$: Observable<any>;
+
+    private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
     constructor(
         private route: ActivatedRoute,
