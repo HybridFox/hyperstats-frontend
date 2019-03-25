@@ -1,12 +1,14 @@
 const { expect } = require("chai");
-const getCompanyIdOfUser = require("./getCompanyIdOfUser");
-const proxyquire = require("proxyquire");
-const UserModel = {};
 const mockery = require("mockery");
-const { path } = require("ramda");
+const getCompanyIdOfUser = require("./getCompanyIdOfUser");
+const proxyquire = require("proxyquire").noCallThru();
+const profileStub = {};
 
 const loggedInReq = {
 	session: {
+		profile: {
+			_id: "someID",
+		},
 		safeProfile: {
 			company: {
 				_id: "companyID",
@@ -15,22 +17,29 @@ const loggedInReq = {
 	},
 };
 
+const getCompany = proxyquire("./getCompanyIdOfUser.js", {
+	"../../../helpers/profile": profileStub,
+});
+
+profileStub.reload = () => console.log("mock called");
+
 describe.only("Company", () => {
-	before(async() => {
-		const profileMock = {
-			reload: function() {
-				console.log("hello from mockend function");
-			},
-		};
+	// let getCompanyIdOfUser;
 
-		mockery.enable({ warnOnUnregistered: false });
-		mockery.registerMock("../../../helpers/profile", profileMock);
-	});
+	// before(async() => {
+	// 	const UserModel = {
+	// 		findOne: () => loggedInReq,
+	// 	};
 
-	after(() => {
-		mockery.deregisterAll();
-		mockery.disable();
-	});
+	// 	mockery.enable({ warnOnUnregistered: false, useCleanCache: true });
+	// 	mockery.registerMock("../../../helpers/profile", UserModel);
+	// 	getCompanyIdOfUser  = require("./getCompanyIdOfUser");
+	// });
+
+	// after(() => {
+	// 	mockery.deregisterAll();
+	// 	mockery.disable();
+	// });
 
 	describe("get by id of user", () => {
 		it("Should get company id of user", () => {
