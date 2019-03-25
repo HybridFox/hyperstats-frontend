@@ -92,13 +92,13 @@ msgid "GENERAL##LABELS##ADD-ADDITIONAL-STEP"
 msgstr "Add additional step"
 
 msgid "GENERAL##LABELS##ADD-COMPANY"
-msgstr "Add company"
+msgstr "Add Company"
 
 msgid "GENERAL##LABELS##ADD-PROXY"
-msgstr "Add proxy"
+msgstr "Add Proxy"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PARTNER"
-msgstr "Add recycling partner"
+msgstr "Add Recycling Partner"
 
 msgid "GENERAL##LABELS##ADD-RECYCLING-PROCESS"
 msgstr "Add Recycling Process"
@@ -124,10 +124,8 @@ msgstr "Company"
 msgid "GENERAL##LABELS##COMPANYNAME"
 msgstr "Company name"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##COMPANY"
 msgid "GENERAL##LABELS##COMPANYTYPE"
-msgstr "Company"
+msgstr "Company type"
 
 msgid "GENERAL##LABELS##COMPANYVAT"
 msgstr "Company VAT"
@@ -166,7 +164,7 @@ msgid "GENERAL##LABELS##ENABLE"
 msgstr "Enable"
 
 msgid "GENERAL##LABELS##FIRSTNAME"
-msgstr "Firstname"
+msgstr "First Name"
 
 msgid "GENERAL##LABELS##FORGOT-PASSWORD"
 msgstr "Forgot Password"
@@ -178,7 +176,7 @@ msgid "GENERAL##LABELS##I-ACCEPT-THE"
 msgstr "I accept the"
 
 msgid "GENERAL##LABELS##LASTNAME"
-msgstr "Lastname"
+msgstr "Last Name"
 
 msgid "GENERAL##LABELS##LOGIN"
 msgstr "Login"
@@ -223,7 +221,7 @@ msgid "GENERAL##LABELS##SELECT-COMPANY"
 msgstr "Select a company"
 
 msgid "GENERAL##LABELS##SELECT-OPTION"
-msgstr "Select a option"
+msgstr "Select an option"
 
 msgid "GENERAL##LABELS##SORTBY"
 msgstr "Sort by"
@@ -247,7 +245,7 @@ msgid "GENERAL##LABELS##SUBMIT"
 msgstr "Submit"
 
 msgid "GENERAL##LABELS##TERMS-AND-CONDITIONS"
-msgstr "terms and conditions"
+msgstr "Terms and Conditions"
 
 msgid "GENERAL##LABELS##TRY-AGAIN"
 msgstr "Try again"
@@ -262,30 +260,22 @@ msgid "GENERAL##LABELS##WELCOME"
 msgstr "Welcome!"
 
 msgid "GENERAL##LABELS##ZIPCODE"
-msgstr "Zipcode"
+msgstr "Zip Code"
 
 msgid "GENERAL##MENU##ABOUT"
 msgstr "About us"
 
-#, fuzzy
-#| msgid "GENERAL##MENU##AUDITTRIAL"
 msgid "GENERAL##MENU##AUDITTRAIL"
-msgstr "Audit Trial"
+msgstr "Audit Trail"
 
 msgid "GENERAL##MENU##AUDITTRIAL"
-msgstr "Audit Trial"
-
-msgid "GENERAL##MENU##AUTHORISATION-ORG"
-msgstr "Authorisation Organisations"
+msgstr "Audit Trail"
 
 msgid "GENERAL##MENU##COMPANIES"
 msgstr "Companies"
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
-msgstr "Company information"
-
-msgid "GENERAL##MENU##COMPLIANCE-ORG"
-msgstr "Compliance Organisations"
+msgstr "Company Information"
 
 msgid "GENERAL##MENU##CONTACT"
 msgstr "Contact"
@@ -294,10 +284,10 @@ msgid "GENERAL##MENU##HELP"
 msgstr "Help"
 
 msgid "GENERAL##MENU##LOGIN"
-msgstr "Login"
+msgstr "Log in"
 
 msgid "GENERAL##MENU##LOGOFF"
-msgstr "Logoff"
+msgstr "Log off"
 
 msgid "GENERAL##MENU##MORE"
 msgstr "More..."
@@ -309,9 +299,6 @@ msgstr "Privacy"
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
-
-msgid "GENERAL##MENU##RECYCLERS"
-msgstr "Recyclers"
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr "Recycling Partners"
@@ -326,7 +313,7 @@ msgid "GENERAL##MENU##REPORTS"
 msgstr "Reports"
 
 msgid "GENERAL##MENU##SIGNUP-REQUESTS"
-msgstr "Signup Requests"
+msgstr "Sign up Requests"
 
 msgid "GENERAL##MENU##USERPROFILE"
 msgstr "User profile"
@@ -393,7 +380,7 @@ msgid "PAGE##ACCESS-DENIED##DEACTIVATED##DESCRIPTION"
 msgstr "Your account is deactivated. Contact an administrator if necessary."
 
 msgid "PAGE##ACCESS-DENIED##DEACTIVATED##TITLE"
-msgstr "Account Deactivated"
+msgstr "Account deactivated"
 
 msgid "PAGE##ACCESS-DENIED##NOCOMPANY##DESCRIPTION"
 msgstr ""
@@ -468,17 +455,8 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
-msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
-msgstr "Authorization Organisations"
-
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr "Manage companies"
-
-msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
-msgstr "Compliance Organisations"
-
-msgid "PAGE##MANAGE-RECYCLERS##TITLE"
-msgstr "Recyclers"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -490,7 +468,10 @@ msgid "PAGE##PROXIES##DESCRIPTION"
 msgstr ""
 "Proxies are the organizations that have access to your reports. In this "
 "overview you can control who has access to your reports for a given "
-"reporting year and recycling process"
+"reporting year and recycling process."
+
+msgid "PAGE##PROXIES##NO-COMPANIES"
+msgstr "There are no companies available"
 
 msgid "PAGE##PROXIES##NO-COMPANIES"
 msgstr "There are no companies available"
@@ -609,13 +590,13 @@ msgid "PAGE##REPORTS##VIEW"
 msgstr "view"
 
 msgid "PAGE##RESET-PASSWORD##ISRESET"
-msgstr "Your password has been reset! Please login to continiou"
+msgstr "Your password has been reset! Please login to continue."
 
 msgid "PAGE##RESET-PASSWORD##TITLE"
 msgstr "Reset your password"
 
 msgid "PAGE##SIGNUP-REQUESTS##NO-REQUESTS"
-msgstr "No signup requests"
+msgstr "No sign up requests"
 
 msgid "PAGE##SIGNUP-REQUESTS##TITLE"
 msgstr "Signup Requests"
@@ -634,7 +615,7 @@ msgid "PAGE##TERMS-AND-CONDITIONS##SUB-TITLE"
 msgstr "Lorem Ipsum Dolor Sit Amet Co"
 
 msgid "PAGE##TERMS-AND-CONDITIONS##TITLE"
-msgstr "Terms and conditions"
+msgstr "Terms and Conditions"
 
 msgid "PAGE##USER-ADMIN##CONFIGURATION"
 msgstr "Configuration"
@@ -643,13 +624,13 @@ msgid "PAGE##USER-ADMIN##MAIN-INFORMATION"
 msgstr "User information"
 
 msgid "PAGE##VERIFICATION-FAILED##CONTENT"
-msgstr "We are having trouble verifying your email, please try again later"
+msgstr "We are having trouble verifying your email, please try again later."
 
 msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
-msgstr "Success! Your registration is now complete, please login to continue"
+msgstr "Success! Your registration is now complete, please log in to continue."
 
 msgid "PROXIES##REVOKEPROXY"
 msgstr "Revoke this proxy"
@@ -673,10 +654,10 @@ msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
 msgstr "Could not register"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
-msgstr "Please check your inbox for a verification email"
+msgstr "Please check your inbox for a verification email."
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
-msgstr "Registration successfull"
+msgstr "Registration successful"
 
 #, fuzzy
 #| msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
@@ -688,15 +669,11 @@ msgstr "Please try again later"
 msgid "TOAST##COMPANY-REMOVE##ERROR##TITLE"
 msgstr "Could not register"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgid "TOAST##COMPANY-REMOVE##SUCCESS##DESCRIPTION"
-msgstr "Please check your inbox for a verification email"
+msgstr "Please check your inbox for a verification email."
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgid "TOAST##COMPANY-REMOVE##SUCCESS##TITLE"
-msgstr "Registration successfull"
+msgstr "Registration successful"
 
 #, fuzzy
 #| msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
@@ -713,10 +690,8 @@ msgstr "Could not register"
 msgid "TOAST##COMPANY-SAVE##SUCCESS##DESCRIPTION"
 msgstr "Success!"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgid "TOAST##COMPANY-SAVE##SUCCESS##TITLE"
-msgstr "Registration successfull"
+msgstr "Registration successful"
 
 #, fuzzy
 #| msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
@@ -743,10 +718,8 @@ msgstr "Could not register"
 msgid "TOAST##COMPANY-TOGGLE##SUCCESS##DESCRIPTION"
 msgstr "Please check your inbox for a verification email"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
 msgid "TOAST##COMPANY-TOGGLE##SUCCESS##TITLE"
-msgstr "Registration successfull"
+msgstr "Registration successful"
 
 msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
 msgstr "There was en error sending your message"
@@ -779,10 +752,10 @@ msgid "TOAST##GENERAL##INVALID##TITLE"
 msgstr "Incorrect form state"
 
 msgid "TOAST##LOGIN##ERROR##DESCRIPTION"
-msgstr "Make sure you are using the correct details to login"
+msgstr "Make sure you are using the correct details to log in"
 
 msgid "TOAST##LOGIN##ERROR##TITLE"
-msgstr "Cannot login"
+msgstr "Cannot log in"
 
 msgid "TOAST##LOGIN##SUCCESS##TITLE"
 msgstr "Logged in!"
@@ -790,10 +763,8 @@ msgstr "Logged in!"
 msgid "TOAST##LOGIN##UNAUTHORIZED##DESCRIPTION"
 msgstr "Your account is deleted. Contact an administrator. "
 
-#, fuzzy
-#| msgid "TOAST##LOGIN##ERROR##TITLE"
 msgid "TOAST##LOGIN##UNAUTHORIZED##TITLE"
-msgstr "Cannot login"
+msgstr "Cannot log in"
 
 msgid "TOAST##PROFILE##ERROR##DESCRIPTION"
 msgstr "There was an error when updating your profile"
@@ -873,7 +844,7 @@ msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##DESCRIPTION"
 msgstr "Recycling process is successfully saved."
 
 msgid "TOAST##RECYCLING-PROCESS-SAVE##SUCCESS##TITLE"
-msgstr "Recycling Processes saved"
+msgstr "Recycling processes saved"
 
 msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
 msgstr "activated"
@@ -1108,7 +1079,7 @@ msgid "WIZARD##INPUT-FRACTION##LABELS##WEIGHT-INPUT-FRACTION"
 msgstr "Weight input fraction"
 
 msgid "WIZARD##INPUT-FRACTION##TITLES##ADDITIONAL-INFORMATION"
-msgstr "Addition information"
+msgstr "Additional information"
 
 msgid "WIZARD##INPUT-FRACTION##TITLES##ELEMENTS-COMPONENTS"
 msgstr "Elements or components, which are part of the input fractions"
@@ -1144,9 +1115,6 @@ msgstr "Reporting year"
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
 
-msgid "WIZARD##NO-ORGANISATIONS"
-msgstr "No  {{ key }}."
-
 msgid "WIZARD##NO-PROCESS"
 msgstr "Please create a recycling process before creating a report"
 
@@ -1163,7 +1131,7 @@ msgid "WIZARD##OUTPUT-FRACTION##LABELS##ADD-ADDITIONAL-ELEMENT"
 msgstr "Add additional element/compound"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##ASSIGNED-STEP"
-msgstr "Assigned Step"
+msgstr "Assigned step"
 
 msgid "WIZARD##OUTPUT-FRACTION##LABELS##CLASSIFICATION"
 msgstr "Classification"
@@ -1199,7 +1167,7 @@ msgid "WIZARD##RECYCLING-EFFICIENCY##LABELS##OUTPUT"
 msgstr "Output"
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##CALCULATED-EFFICIENCY"
-msgstr "Calculated recycling efficiency"
+msgstr "Calculated Recycling Efficiency"
 
 msgid "WIZARD##RECYCLING-EFFICIENCY##TITLES##OVERVIEW-ELEMENTS"
 msgstr "Overview elements"
