@@ -473,9 +473,6 @@ msgstr ""
 msgid "PAGE##PROXIES##NO-COMPANIES"
 msgstr "There are no companies available"
 
-msgid "PAGE##PROXIES##NO-COMPANIES"
-msgstr "There are no companies available"
-
 msgid "PAGE##PROXIES##TITLE"
 msgstr "{{ name }} proxies"
 
