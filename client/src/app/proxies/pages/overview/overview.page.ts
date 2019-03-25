@@ -152,16 +152,12 @@ export class OverviewPageComponent implements OnInit {
                   if (report.controls.value.value) {
                     this.putNewProxy(body);
                   }
-                } else {
-                  if (!report.controls.value.value) {
-                    this.deleteNewProxy(body);
-                  }
+                } else if (!report.controls.value.value) {
+                  this.deleteNewProxy(body);
                 }
             }
-          } else {
-            if (report.controls.value.value) {
-              this.putNewProxy(body);
-            }
+          } else if (report.controls.value.value) {
+            this.putNewProxy(body);
           }
         });
       });
