@@ -4,6 +4,7 @@
   <div class="l-grid__col-12-12">
     <app-proxies-save-button
       (saveFunction)="saveProxies()"
+      [disabled]="!proxyChanges"
     ></app-proxies-save-button>
   </div>
 </div>
@@ -41,7 +42,7 @@
                     <td>{{process.value.processInfo.processName}}</td>
                     <ng-container *ngFor="let report of process.value.reports.controls">
                       <td>
-                        <app-checkbox-input [control]="report.get('value')"
+                        <app-checkbox-input (click)="checkBoxClicked()" [control]="report.get('value')"
                           [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-input__checkbox--semi-checked' : ''">
                         </app-checkbox-input>
                       </td>

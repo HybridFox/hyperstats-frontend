@@ -41,6 +41,7 @@ export class OverviewPageComponent implements OnInit {
   public proxiesForm: FormArray;
   public showAddCompany = false;
   public companies: Option[] = [];
+  public proxyChanges = false;
 
   public extraCompanies = [];
   public selectedCompany: string;
@@ -164,6 +165,12 @@ export class OverviewPageComponent implements OnInit {
     });
     this.extraCompanies = [];
     this.proxiesActions.fetchAll().toPromise();
+  }
+
+  public checkBoxClicked() {
+    if (!this.proxyChanges) {
+      this.proxyChanges = true;
+    }
   }
 
   private putNewProxy(body: ProxyBody) {

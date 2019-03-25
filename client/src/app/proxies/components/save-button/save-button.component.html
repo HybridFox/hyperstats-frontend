@@ -1,6 +1,7 @@
 <button
     class="a-button--primary a-button-outline has-icon-after u-margin-bottom-large"
     (click)="openPopup()"
+    [disabled]="disabled"
 >
     {{ 'PROXIES.SAVEPROXIES' | translate }}
 </button>

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-proxies-save-button',
@@ -6,6 +6,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 
 export class SaveButtonComponent {
+  @Input() public disabled: boolean;
   @Output() public saveFunction: EventEmitter<any> = new EventEmitter();
 
   public popupOpen: boolean;
