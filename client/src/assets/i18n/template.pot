@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-25T09:54:17.185Z\n"
-"PO-Revision-Date: 2019-03-25T09:54:17.185Z\n"
+"POT-Creation-Date: 2019-03-25T12:41:52.572Z\n"
+"PO-Revision-Date: 2019-03-25T12:41:52.572Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -567,6 +567,12 @@ msgid "PAGE##VERIFICATION-FAILED##TITLE"
 msgstr ""
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
+msgstr ""
+
+msgid "PROXIES##POPUP##EXPLANATION"
+msgstr ""
+
+msgid "PROXIES##POPUP##TITLE"
 msgstr ""
 
 msgid "PROXIES##REVOKEPROXY"

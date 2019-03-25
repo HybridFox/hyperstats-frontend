@@ -2,9 +2,9 @@
 </app-page-title>
 <div class="l-grid__row l-grid--with-margins">
   <div class="l-grid__col-12-12">
-    <button class="a-button--primary a-button-outline has-icon-after u-margin-bottom-large" (click)="saveProxies()">
-      {{'PROXIES.SAVEPROXIES' | translate}}
-    </button>
+    <app-proxies-save-button
+      (saveFunction)="saveProxies()"
+    ></app-proxies-save-button>
   </div>
 </div>
 <div class="l-grid__row l-grid--with-margins">

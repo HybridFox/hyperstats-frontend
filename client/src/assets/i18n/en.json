@@ -100,8 +100,10 @@
             "ABOUT": "About us",
             "AUDITTRAIL": "Audit Trail",
             "AUDITTRIAL": "Audit Trail",
+            "AUTHORISATION-ORG": "Authorisation Organisation",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company Information",
+            "COMPLIANCE-ORG": "Companies",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Log in",
@@ -109,6 +111,7 @@
             "MORE": "More...",
             "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
+            "RECYCLERS": "Recycling Partners",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
@@ -177,8 +180,17 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-AUTHORISATION-ORG": {
+            "TITLE": "Manage users"
+        },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
+        },
+        "MANAGE-COMPLIANCE-ORG": {
+            "TITLE": "Manage companies"
+        },
+        "MANAGE-RECYCLERS": {
+            "TITLE": "Manage users"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -260,6 +272,10 @@
         }
     },
     "PROXIES": {
+        "POPUP": {
+            "EXPLANATION": "When you share proxies with a complicance organisation, this organisation can reshare them to other authorization organisations.",
+            "TITLE": "Are your sure you want to save this proxies?"
+        },
         "REVOKEPROXY": "Revoke this proxy",
         "SAVEPROXIES": "Save proxies"
     },
@@ -576,6 +592,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-ORGANISATIONS": "Please create a recycling process before creating a report",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
