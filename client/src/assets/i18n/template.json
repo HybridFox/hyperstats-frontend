@@ -80,6 +80,7 @@
 			"REMOVE": "",
 			"RESET-PASSWORD": "",
 			"SAVE": "",
+			"SELECT-COMPANY": "",
 			"SELECT-OPTION": "",
 			"SORTBY": "",
 			"SPONSOREDBY": "",
@@ -199,6 +200,7 @@
 		},
 		"PROXIES": {
 			"DESCRIPTION": "",
+			"NO-COMPANIES": "",
 			"TITLE": ""
 		},
 		"RECYCLING-PARTNERS": {
@@ -270,7 +272,8 @@
 		}
 	},
 	"PROXIES": {
-		"REVOKEPROXY": ""
+		"REVOKEPROXY": "",
+		"SAVEPROXIES": ""
 	},
 	"Recycler": "",
 	"TOAST": {
