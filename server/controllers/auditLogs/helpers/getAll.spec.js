@@ -11,14 +11,12 @@ use(chaiAsPromised);
 describe("Audit log", () => {
 	describe("getAll", () => {
 		const companyId = createObjectId();
-		let logsForFirstReport = createObjectId();
-		let logsForSecondReport = createObjectId();
 		let mongoServer;
 
 		before(async() => {
 			mongoServer = await mockMongoose();
 
-			logsForFirstReport = await createLog({
+			await createLog({
 				report: {
 					_id: createObjectId(),
 					data: { information: { name: "Testreport" } },
@@ -33,7 +31,7 @@ describe("Audit log", () => {
 				},
 			});
 
-			logsForSecondReport = await createLog({
+			await createLog({
 				report: {
 					_id: createObjectId(),
 					data: { information: { name: "Testreport" } },
@@ -57,8 +55,8 @@ describe("Audit log", () => {
 			const logs = await getAllLogs(companyId);
 
 			expect(logs).to.be.an("array");
-			expect(logs[0]).to.deep.equal(logsForFirstReport);
-			expect(logs[1]).to.deep.equal(logsForSecondReport);
+			expect(logs[0].activity).to.deep.equal("John Connor created a report: Testreport");
+			expect(logs[1].activity).to.deep.equal("John Connor created a report: Testreport");
 			expect(logs.length).to.equal(2);
 		});
 	});
