@@ -21,6 +21,7 @@ import { UserInterface } from '@store/auth/auth.interface';
 import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { CompanyType } from '@api/company';
+import { REPORT_STATE } from '../../../reports/store/constants';
 
 @Component({
   templateUrl: './overview.page.html',
@@ -237,6 +238,7 @@ export class OverviewPageComponent implements OnInit {
 
   private getStatus(reports: Report[], year: string, recyclingProcess: RecyclingProcess, companyProxies: Proxy[]) {
     const matchingReports = reports.filter(report => (
+      report.meta.status === REPORT_STATE.FILED &&
       report.data.information.reportingYear === parseInt(year, 10) &&
       (report.data.information.recyclingProcess as PopulatedRecyclingProcess)._id === recyclingProcess._id
     ));
