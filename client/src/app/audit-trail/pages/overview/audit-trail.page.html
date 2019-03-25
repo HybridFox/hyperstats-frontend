@@ -1,0 +1,9 @@
+<app-page-title
+    [title]="('PAGE.AUDITTRAIL.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })"
+></app-page-title>
+
+<div class="m-card--primary u-margin-bottom-large">
+  <app-audit-trail-table
+    [logs]='logs$ | async'
+  ></app-audit-trail-table>
+</div>

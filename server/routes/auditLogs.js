@@ -16,7 +16,7 @@ module.exports = (router) => {
 	 *         format: date-time
 	 *       user:
 	 *         type: string
-	 *         description: The objectId of the report
+	 *         description: The objectId of the user
 	 *   AuditLogData:
 	 *     type: object
 	 *     properties:
