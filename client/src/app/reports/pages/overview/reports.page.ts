@@ -14,6 +14,7 @@ import { mapRecyclingProcessesToMenuItemsWithAll, mapReportToMenuItemsWithAll } 
 
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { SORTOPTIONS, SORTOPTIONS_SHARED_REPORTS } from './reports.const';
+import pathOr from 'ramda/es/pathOr';
 
 @Component({
   templateUrl: './reports.page.html',
@@ -48,7 +49,8 @@ export class ReportsPageComponent implements OnInit {
 
   ngOnInit() {
     this.user$.subscribe((user) => {
-      this.userIsRecycler = (user.company.meta.type !== CompanyType.AO && user.company.meta.type !== CompanyType.CO);
+      this.userIsRecycler = (pathOr('', ['company', 'meta', 'type'], user) !== CompanyType.AO
+        && pathOr('', ['company', 'meta', 'type'], user) !== CompanyType.CO);
       if (!this.userIsRecycler) {
         this.sortOptions = SORTOPTIONS_SHARED_REPORTS;
       }
