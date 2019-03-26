@@ -7,7 +7,7 @@ module.exports = async(req, res, next) => {
 		const user = await compose(
 			curry(helpers.updateUserProfile)(__, req.body),
 			prop("email"),
-			profileHelper.get
+			await profileHelper.get
 		)(req);
 
 		profileHelper.set(req, user);

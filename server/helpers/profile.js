@@ -49,6 +49,7 @@ module.exports.unset = async(req) => {
  */
 const set = module.exports.set = (req, user) => {
 	req.session.profile = user;
+	console.log(req.session.profile);
 	req.session.safeProfile = compose(
 		when(isEmpty, always(null)),
 		converge(
