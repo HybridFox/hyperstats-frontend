@@ -1150,6 +1150,12 @@ msgstr "Reporting year"
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
 
+msgid "WIZARD##NO-LOGS"
+msgstr "No logs yet"
+
+#, fuzzy
+#| msgid "WIZARD##NO-PROCESS"
+
 msgid "WIZARD##NO-ORGANISATIONS"
 msgstr "Please create a recycling process before creating a report"
 
