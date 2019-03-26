@@ -661,7 +661,7 @@ msgstr "Success! Your registration is now complete, please log in to continue."
 
 msgid "PROXIES##POPUP##EXPLANATION"
 msgstr ""
-"When you share proxies with a complicance organisation, this organisation "
+"When you share proxies with a compliance organisation, this organisation "
 "can reshare them to other authorization organisations."
 
 msgid "PROXIES##POPUP##TITLE"
