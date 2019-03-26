@@ -105,6 +105,10 @@ export class OverviewPageComponent implements OnInit {
         }
       });
     });
+    this.companies = [...this.companies, {
+      value: proxy.value.companyInfo.companyId,
+      label: proxy.value.companyInfo.companyName,
+    }];
     this.proxiesActions.fetchAll().toPromise();
   }
 
