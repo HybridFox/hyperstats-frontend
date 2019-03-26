@@ -592,6 +592,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-LOGS": "No logs yet",
         "NO-ORGANISATIONS": "Please create a recycling process before creating a report",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",

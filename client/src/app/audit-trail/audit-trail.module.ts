@@ -5,7 +5,12 @@ import { ReportsApiModule } from '@api/reports';
 import { FormFieldsModule } from '@ui/form-fields';
 
 import { AuditTrailRoutingModule } from './audit-trail-routing.module';
-import { AuditTrailComponent } from './audit-trail.page';
+import { Components } from './components';
+import { Pages } from './pages';
+import { AuditTrailServices, auditTrailReducer } from './store';
+import { AuditTrailApiModule } from '@api/audit-trail';
+import { StoreService } from '@store/store.service';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   imports: [
@@ -14,9 +19,21 @@ import { AuditTrailComponent } from './audit-trail.page';
     SharedModule,
     ReportsApiModule,
     FormFieldsModule,
+    AuditTrailApiModule,
   ],
   declarations: [
-    AuditTrailComponent
+    Pages,
+    Components,
+  ],
+  providers: [
+    AuditTrailServices,
   ],
 })
-export class AuditTrailModule {}
+export class AuditTrailModule {
+  constructor(
+    private storeService: StoreService,
+  ) {
+    this.storeService.injectAsyncReducer('audit-trail', auditTrailReducer);
+  }
+}
+
