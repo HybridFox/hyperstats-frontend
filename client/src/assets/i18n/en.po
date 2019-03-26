@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-22T14:37:40.261Z\n"
+"POT-Creation-Date: 2019-03-26T11:43:42.654Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -271,11 +271,21 @@ msgstr "Audit Trail"
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trail"
 
+#, fuzzy
+#| msgid "TYPES##COMPANY##AUTHORISATION-ORG"
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr "Authorisation Organisation"
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr "Companies"
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr "Company Information"
+
+#, fuzzy
+#| msgid "GENERAL##MENU##COMPANIES"
+msgid "GENERAL##MENU##COMPLIANCE-ORG"
+msgstr "Companies"
 
 msgid "GENERAL##MENU##CONTACT"
 msgstr "Contact"
@@ -299,6 +309,11 @@ msgstr "Privacy"
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
+
+#, fuzzy
+#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
+msgid "GENERAL##MENU##RECYCLERS"
+msgstr "Recycling Partners"
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr "Recycling Partners"
@@ -455,8 +470,23 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
+#, fuzzy
+#| msgid "PAGE##MANAGE-USERS##TITLE"
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr "Manage users"
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr "Manage companies"
+
+#, fuzzy
+#| msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
+msgstr "Manage companies"
+
+#, fuzzy
+#| msgid "PAGE##MANAGE-USERS##TITLE"
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
+msgstr "Manage users"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -1111,6 +1141,14 @@ msgstr "Reporting year"
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
+
+msgid "WIZARD##NO-LOGS"
+msgstr "No logs yet"
+
+#, fuzzy
+#| msgid "WIZARD##NO-PROCESS"
+msgid "WIZARD##NO-ORGANISATIONS"
+msgstr "Please create a recycling process before creating a report"
 
 msgid "WIZARD##NO-PROCESS"
 msgstr "Please create a recycling process before creating a report"
