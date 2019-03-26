@@ -41,7 +41,8 @@
                     <td>{{process.value.processInfo.processName}}</td>
                     <ng-container *ngFor="let report of process.value.reports.controls">
                       <td>
-                        <app-checkbox-input [control]="report.get('value')"
+                        <app-checkbox-input
+                          [control]="report.get('value')"
                           [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-input__checkbox--semi-checked' : ''">
                         </app-checkbox-input>
                       </td>
