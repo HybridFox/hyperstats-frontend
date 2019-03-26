@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-22T14:37:40.261Z\n"
+"POT-Creation-Date: 2019-03-25T09:54:17.185Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -271,11 +271,17 @@ msgstr "Audit Trail"
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trail"
 
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr "Authorisation Organisations"
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr "Companies"
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr "Company Information"
+
+msgid "GENERAL##MENU##COMPLIANCE-ORG"
+msgstr "Compliance Organisations"
 
 msgid "GENERAL##MENU##CONTACT"
 msgstr "Contact"
@@ -299,6 +305,9 @@ msgstr "Privacy"
 
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
+
+msgid "GENERAL##MENU##RECYCLERS"
+msgstr "Recyclers"
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr "Recycling Partners"
@@ -455,8 +464,17 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr "Authorisation organisations"
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr "Manage companies"
+
+msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
+msgstr "Compliance organisations"
+
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
+msgstr "Recyclers"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -1111,6 +1129,9 @@ msgstr "Reporting year"
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr "General information"
+
+msgid "WIZARD##NO-ORGANISATIONS"
+msgstr "You don’t have any linked {{key}}."
 
 msgid "WIZARD##NO-PROCESS"
 msgstr "Please create a recycling process before creating a report"
