@@ -14,6 +14,7 @@ import { RecyclingPartnerSelector } from 'src/app/recycling-partners/store';
 import { companiesToSelectOptions, processStepsToSelectOptions } from '@helpers/select.helpers';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { CLASSIFICATIONS } from './classifications.const';
+import isEmpty from 'ramda/es/isEmpty';
 
 @Component({
   templateUrl: './output-fraction.page.html',
@@ -77,6 +78,17 @@ export class OutputFractionPageComponent extends StepPageAbstract {
       .subscribe((params) => {
         this.setActiveStepById(params.stepId);
         this.watchClassification();
+      });
+      this.partners$.subscribe(partners => {
+        if (isEmpty(partners)) {
+          setTimeout(() => {
+            const formArr = (this.outputFraction.get('data') as FormArray);
+            formArr.controls.forEach((group, index) => {
+              (group as FormGroup).controls['elementDestinationCompany'].setErrors({'no-companies': true});
+              (group as FormGroup).get('elementDestinationCompany').markAsDirty({onlySelf: true});
+            });
+          });
+        }
       });
   }
 

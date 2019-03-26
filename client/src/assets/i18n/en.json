@@ -26,6 +26,7 @@
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
+            "NO-COMPANIES": "Recycling partner required",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
             "REQUIRED": "This field is required",
             "TYPEREQUIRED": "Type is required when weight is filled in",
@@ -100,8 +101,10 @@
             "ABOUT": "About us",
             "AUDITTRAIL": "Audit Trail",
             "AUDITTRIAL": "Audit Trail",
+            "AUTHORISATION-ORG": "Authorisation Organisation",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company Information",
+            "COMPLIANCE-ORG": "Companies",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Log in",
@@ -109,6 +112,7 @@
             "MORE": "More...",
             "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
+            "RECYCLERS": "Recycling Partners",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
@@ -177,8 +181,17 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-AUTHORISATION-ORG": {
+            "TITLE": "Manage users"
+        },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
+        },
+        "MANAGE-COMPLIANCE-ORG": {
+            "TITLE": "Manage companies"
+        },
+        "MANAGE-RECYCLERS": {
+            "TITLE": "Manage users"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -576,6 +589,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-ORGANISATIONS": "Please create a recycling process before creating a report",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
