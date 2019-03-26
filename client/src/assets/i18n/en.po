@@ -659,6 +659,14 @@ msgstr "Something went wrong"
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success! Your registration is now complete, please log in to continue."
 
+msgid "PROXIES##POPUP##EXPLANATION"
+msgstr ""
+"When you share proxies with a compliance organisation, this organisation "
+"can reshare them to other authorization organisations."
+
+msgid "PROXIES##POPUP##TITLE"
+msgstr "Are your sure you want to save this proxies?"
+
 msgid "PROXIES##REVOKEPROXY"
 msgstr "Revoke this proxy"
 
@@ -1147,6 +1155,7 @@ msgstr "No logs yet"
 
 #, fuzzy
 #| msgid "WIZARD##NO-PROCESS"
+
 msgid "WIZARD##NO-ORGANISATIONS"
 msgstr "Please create a recycling process before creating a report"
 

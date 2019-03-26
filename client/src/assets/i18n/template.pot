@@ -569,6 +569,12 @@ msgstr ""
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr ""
 
+msgid "PROXIES##POPUP##EXPLANATION"
+msgstr ""
+
+msgid "PROXIES##POPUP##TITLE"
+msgstr ""
+
 msgid "PROXIES##REVOKEPROXY"
 msgstr ""
 

@@ -17,6 +17,7 @@ import { FormFieldsModule } from '@ui/form-fields';
 import { ProxiesApiModule } from '@api/proxies';
 
 import { Pages } from './pages';
+import { Components } from './components';
 import { CompaniesServices, Reducer } from '../manage-companies/store';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { CompaniesServices, Reducer } from '../manage-companies/store';
   ],
   declarations: [
     Pages,
+    Components,
   ],
 })
 export class ProxiesModule {
