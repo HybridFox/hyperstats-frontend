@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Log } from '@api/audit-trail/audit-trail.types';
 
 @Component({
   selector: 'app-audit-trail-table',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 
 export class AuditTrailTableComponent {
-  @Input() public logs: any;
+  @Input() public logs: Log;
 }
