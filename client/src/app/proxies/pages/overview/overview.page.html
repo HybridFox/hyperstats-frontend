@@ -1,18 +1,91 @@
-<app-page-title
-    [title]="('PAGE.PROXIES.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })"
-></app-page-title>
+<app-page-title [title]="('PAGE.PROXIES.TITLE' | translate:{ name: (user$ | async)?.company?.data?.name })">
+</app-page-title>
 <div class="l-grid__row l-grid--with-margins">
-    <div class="l-grid__col-8-12">
-        <router-outlet></router-outlet>
+  <div class="l-grid__col-12-12">
+    <button class="a-button--primary a-button-outline has-icon-after u-margin-bottom-large" (click)="saveProxies()">
+      {{'PROXIES.SAVEPROXIES' | translate}}
+    </button>
+  </div>
+</div>
+<div class="l-grid__row l-grid--with-margins">
+  <div class="l-grid__col-8-12">
+    <div *ngIf="(!proxies || proxies.length === 0) && !extraCompanies.length"
+      class="m-card--primary u-margin-bottom-large">
+      <div class="m-card__placeholder">
+        <img src="/assets/images/choose.svg" alt="Choose image">
+      </div>
     </div>
-    <div class="l-grid__col-4-12">
-        <div class="m-card--primary">
-            <button class="a-button--primary a-button-outline has-icon-after" routerLink="new">
-                {{ 'GENERAL.LABELS.ADD-PROXY' | translate }}
+    <ng-container *ngIf="proxiesForm">
+      <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxiesForm.controls">
+        <app-sub-section-title class="p-proxies-proxy__title" [title]="proxy.value.companyInfo.companyName">
+          <div action>
+            <button class="a-button--link a-button--small" (click)="revokeProxy(proxy)">
+              {{'PROXIES.REVOKEPROXY' | translate}}
             </button>
-            <p class="u-text-description">
-                {{ 'PAGE.PROXIES.DESCRIPTION' | translate }}
-            </p>
+          </div>
+        </app-sub-section-title>
+        <div class="a-table-wrapper">
+          <form>
+            <table class="a-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <ng-container *ngFor="let year of years">
+                    <th>{{ year }}</th>
+                  </ng-container>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let process of proxy.value.processes.controls">
+                  <tr class="a-table__row--header">
+                    <td>{{process.value.processInfo.processName}}</td>
+                    <ng-container *ngFor="let report of process.value.reports.controls">
+                      <td>
+                        <app-checkbox-input [control]="report.get('value')"
+                          [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-input__checkbox--semi-checked' : ''">
+                        </app-checkbox-input>
+                      </td>
+                    </ng-container>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </form>
         </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="l-grid__col-4-12">
+    <div *ngIf="!showAddCompany" class="m-card--primary">
+      <button class="a-button--primary a-button-outline has-icon-after" (click)="toggleAddCompany()">
+        {{ 'GENERAL.LABELS.ADD-PROXY' | translate }}
+      </button>
+      <p class="u-text-description">
+        {{ 'PAGE.PROXIES.DESCRIPTION' | translate }}
+      </p>
     </div>
+    <div *ngIf="showAddCompany" class="m-card--primary">
+      <p *ngIf="companies.length === 0">
+        {{ 'PAGE.PROXIES.NO-COMPANIES' | translate }}
+      </p>
+      <div *ngIf="companies.length > 0" class="l-grid__row u-margin-bottom-large">
+        <div class="a-input">
+          <div class="a-input__field-container">
+            <select class="a-input__field" [(ngModel)]="selectedCompany">
+              <option value="" disabled>{{ 'GENERAL.LABELS.SELECT-COMPANY' | translate }}</option>
+              <option *ngFor="let option of companies; trackBy: trackOption" [value]="option.value">
+                {{ option.label | translate }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button class="a-button--primary a-button-outline has-icon-after" (click)="addCompany()"
+        [disabled]="!selectedCompany">
+        {{ 'GENERAL.LABELS.ADD-COMPANY' | translate }}
+      </button>
+      <button class="a-button--link" (click)="toggleAddCompany()">
+        {{ 'GENERAL.BUTTONS.CANCEL' | translate }}
+      </button>
+    </div>
+  </div>
 </div>

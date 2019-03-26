@@ -2,6 +2,7 @@
 
 <div class="m-card--primary u-margin-bottom-large">
     <app-company-form
+        [admin]="true"
         [company]="company$ | async"
         [companies]="companyOptions$ | async"
         (save)="save($event)"

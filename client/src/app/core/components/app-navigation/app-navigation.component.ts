@@ -31,7 +31,7 @@ export class AppNavigationComponent implements OnInit {
 
     this.showAddReport = !this.user.isAdmin &&
       this.user.company.meta.type !== CompanyType.CO
-      && this.user.company.meta.type === CompanyType.AO;
+      && this.user.company.meta.type !== CompanyType.AO;
   }
 
   public onLogout() {

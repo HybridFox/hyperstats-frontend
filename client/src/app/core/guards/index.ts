@@ -4,9 +4,12 @@ import { AuthGuard } from './auth.guard';
 export { AuthGuard } from './auth.guard';
 import { ValidationGuard } from './validation.guard';
 export { ValidationGuard } from './validation.guard';
+import { OrganisationGuard } from './organisation.guard';
+export { OrganisationGuard } from './organisation.guard';
 
 export const Guards = [
     AdminGuard,
     AuthGuard,
-    ValidationGuard
+    ValidationGuard,
+    OrganisationGuard
 ];

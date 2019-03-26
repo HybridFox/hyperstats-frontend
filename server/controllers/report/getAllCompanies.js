@@ -6,9 +6,10 @@ module.exports = async(req, res, next) => {
 	const profile = await profileHelper.get(req);
 
 	return getAllCompanies({
+		filterType: req.data.query.type,
 		reportedById: pathOr(null, ["company", "_id"], profile),
 		companyType: pathOr("R", ["company", "meta", "type"], profile),
 	})
-		.then((reports) => res.status(200).json(reports))
+		.then((companies) => res.status(200).json(companies))
 		.catch((error) => next(error));
 };

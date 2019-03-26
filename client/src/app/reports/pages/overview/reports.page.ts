@@ -13,7 +13,7 @@ import { Report } from '../../store/reports/types';
 import { mapRecyclingProcessesToMenuItemsWithAll, mapReportToMenuItemsWithAll } from '../../services/select.helpers';
 
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
-import { SORTOPTIONS } from './reports.const';
+import { SORTOPTIONS, SORTOPTIONS_SHARED_REPORTS } from './reports.const';
 
 @Component({
   templateUrl: './reports.page.html',
@@ -49,6 +49,9 @@ export class ReportsPageComponent implements OnInit {
   ngOnInit() {
     this.user$.subscribe((user) => {
       this.userIsRecycler = (user.company.meta.type !== CompanyType.AO && user.company.meta.type !== CompanyType.CO);
+      if (!this.userIsRecycler) {
+        this.sortOptions = SORTOPTIONS_SHARED_REPORTS;
+      }
     });
 
     this.reports$.subscribe((reports) => {

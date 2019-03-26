@@ -80,7 +80,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     this.reports$.subscribe(reports => {
       if (reports && this.recyclingProcess) {
         this.processReportStatus = reports.reduce((currentStatus, report) => {
-          if (pathOr(null, ['id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
+          if (pathOr(null, ['_id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
             if (currentStatus !== PROCESS_REPORT_STATE.FILED) {
               return report.meta.status;
             }

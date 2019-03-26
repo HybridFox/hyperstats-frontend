@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-19T08:54:17.219Z\n"
-"PO-Revision-Date: 2019-03-19T08:54:17.219Z\n"
+"POT-Creation-Date: 2019-03-26T11:43:42.654Z\n"
+"PO-Revision-Date: 2019-03-26T11:43:42.654Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -212,6 +212,9 @@ msgstr ""
 msgid "GENERAL##LABELS##SAVE"
 msgstr ""
 
+msgid "GENERAL##LABELS##SELECT-COMPANY"
+msgstr ""
+
 msgid "GENERAL##LABELS##SELECT-OPTION"
 msgstr ""
 
@@ -263,10 +266,16 @@ msgstr ""
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr ""
 
+msgid "GENERAL##MENU##AUTHORISATION-ORG"
+msgstr ""
+
 msgid "GENERAL##MENU##COMPANIES"
 msgstr ""
 
 msgid "GENERAL##MENU##COMPANYINFORMATION"
+msgstr ""
+
+msgid "GENERAL##MENU##COMPLIANCE-ORG"
 msgstr ""
 
 msgid "GENERAL##MENU##CONTACT"
@@ -288,6 +297,9 @@ msgid "GENERAL##MENU##PRIVACY"
 msgstr ""
 
 msgid "GENERAL##MENU##PROXIES"
+msgstr ""
+
+msgid "GENERAL##MENU##RECYCLERS"
 msgstr ""
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
@@ -401,7 +413,16 @@ msgstr ""
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr ""
 
+msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
+msgstr ""
+
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
+msgstr ""
+
+msgid "PAGE##MANAGE-RECYCLERS##TITLE"
 msgstr ""
 
 msgid "PAGE##MANAGE-USERS##TITLE"
@@ -411,6 +432,9 @@ msgid "PAGE##PROFILE##TITLE"
 msgstr ""
 
 msgid "PAGE##PROXIES##DESCRIPTION"
+msgstr ""
+
+msgid "PAGE##PROXIES##NO-COMPANIES"
 msgstr ""
 
 msgid "PAGE##PROXIES##TITLE"
@@ -546,6 +570,9 @@ msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr ""
 
 msgid "PROXIES##REVOKEPROXY"
+msgstr ""
+
+msgid "PROXIES##SAVEPROXIES"
 msgstr ""
 
 msgid "Recycler"
@@ -980,6 +1007,12 @@ msgstr ""
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
 msgstr ""
 
+msgid "WIZARD##NO-LOGS"
+msgstr ""
+
+msgid "WIZARD##NO-ORGANISATIONS"
+msgstr ""
+
 msgid "WIZARD##NO-PROCESS"
 msgstr ""
 
@@ -1044,6 +1077,9 @@ msgid "WIZARD##TITLES##ADDITIVES"
 msgstr ""
 
 msgid "WIZARD##TITLES##FILE-REPORT"
+msgstr ""
+
+msgid "WIZARD##TITLES##INFORMATION"
 msgstr ""
 
 msgid "WIZARD##TITLES##INPUT-FRACTION"
