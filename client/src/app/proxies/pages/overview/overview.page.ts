@@ -41,6 +41,7 @@ export class OverviewPageComponent implements OnInit {
   public proxiesForm: FormArray;
   public showAddCompany = false;
   public companies: Option[] = [];
+  public selectCompanies: Option[] = [];
   public proxyChanges = false;
 
   public extraCompanies = [];
@@ -76,13 +77,18 @@ export class OverviewPageComponent implements OnInit {
     this.proxies$.subscribe((proxies) => {
       this.proxies = proxies;
       this.getProxiesFrom();
+
+      if (this.companies && this.companies.length > 0) {
+        this.removeProxyCompaniesFromCompanies(this.companies);
+      }
     });
 
     this.companyOptions$.subscribe((companies) => {
+      this.companies = companies;
       if (this.proxies) {
         this.removeProxyCompaniesFromCompanies(companies);
       } else {
-        this.companies = companies;
+        this.selectCompanies = companies;
       }
     });
 
@@ -134,6 +140,8 @@ export class OverviewPageComponent implements OnInit {
         proxyCompanyId: newCompany.value,
       });
 
+      this.selectCompanies = this.selectCompanies.filter(company => company.value !== newCompany.value);
+
       this.getProxiesFrom();
       this.removeProxyCompaniesFromCompanies(this.companies);
       this.selectedCompany = '';
@@ -177,6 +185,7 @@ export class OverviewPageComponent implements OnInit {
       });
     });
     this.extraCompanies = [];
+    this.removeProxyCompaniesFromCompanies(this.companies);
     this.proxiesActions.fetchAll().toPromise();
   }
 
@@ -200,7 +209,7 @@ export class OverviewPageComponent implements OnInit {
       proxyCompanyId: proxy.proxyCompanyId
     }))), ...this.extraCompanies];
 
-    this.companies = companies.filter(company => {
+    this.selectCompanies = companies.filter(company => {
       return !shownCompanies.find(shownCompany => shownCompany.proxyCompanyId === company.value);
     });
   }

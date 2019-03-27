@@ -66,15 +66,15 @@
       </p>
     </div>
     <div *ngIf="showAddCompany" class="m-card--primary">
-      <p *ngIf="companies.length === 0">
+      <p *ngIf="selectCompanies.length === 0">
         {{ 'PAGE.PROXIES.NO-COMPANIES' | translate }}
       </p>
-      <div *ngIf="companies.length > 0" class="l-grid__row u-margin-bottom-large">
+      <div *ngIf="selectCompanies.length > 0" class="l-grid__row u-margin-bottom-large">
         <div class="a-input">
           <div class="a-input__field-container">
             <select class="a-input__field" [(ngModel)]="selectedCompany">
               <option value="" disabled>{{ 'GENERAL.LABELS.SELECT-COMPANY' | translate }}</option>
-              <option *ngFor="let option of companies; trackBy: trackOption" [value]="option.value">
+              <option *ngFor="let option of selectCompanies; trackBy: trackOption" [value]="option.value">
                 {{ option.label | translate }}</option>
             </select>
           </div>
