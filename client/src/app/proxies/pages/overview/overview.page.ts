@@ -217,6 +217,8 @@ export class OverviewPageComponent implements OnInit {
       proxyCompanyId: proxy.proxyCompanyId
     }))), ...this.extraCompanies];
 
+    companies.sort((a, b) => (a.proxyCompanyName > b.proxyCompanyName) ? 1 : ((b.proxyCompanyName > a.proxyCompanyName) ? -1 : 0));
+
     return this.formBuilder.array(companies.map(company => {
       const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
 
