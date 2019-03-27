@@ -84,7 +84,8 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     this.reports$.subscribe(reports => {
       if (reports && this.recyclingProcess) {
         this.processReportStatus = reports.reduce((currentStatus, report) => {
-          if (pathOr(null, ['_id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
+          const recyclingProcess = pathOr('', ['data', 'information', 'recyclingProcess'])(report);
+          if (pathOr(null, ['_id'])(this.recyclingProcess) === pathOr(recyclingProcess, ['_id'])(recyclingProcess)) {
             if (currentStatus !== PROCESS_REPORT_STATE.FILED) {
               return report.meta.status;
             }
@@ -94,9 +95,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         }, PROCESS_REPORT_STATE.NOT_USED);
 
         if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
-          const itemsToDelete = reports.filter(report =>
-            pathOr(null, ['_id'])(this.recyclingProcess)  === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)
-            && (report.meta.status === PROCESS_REPORT_STATE.SAVED));
+          const itemsToDelete = reports.filter(report => {
+            const recyclingProcess = pathOr('', ['data', 'information', 'recyclingProcess'])(report);
+            return pathOr(null, ['_id'])(this.recyclingProcess)  === pathOr(recyclingProcess, ['_id'])(recyclingProcess)
+              && (report.meta.status === PROCESS_REPORT_STATE.SAVED);
+          });
 
           this.deleteConfirmMessage = itemsToDelete.reduce((acc, curr, index) => {
             if (index === 0) {
