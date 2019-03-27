@@ -2,10 +2,16 @@
 </app-page-title>
 <div class="l-grid__row l-grid--with-margins">
   <div class="l-grid__col-12-12">
-    <app-proxies-save-button
-      (saveFunction)="saveProxies()"
+    <app-proxies-popup-button
+      (actionFunction)="saveProxies()"
+      [buttonText]="'PROXIES.SAVEPROXIES' | translate"
+      buttonClass="a-button--primary a-button-outline u-margin-bottom-large"
       [disabled]="!proxyChanges"
-    ></app-proxies-save-button>
+      [popupTitle]="'PROXIES.POPUP.TITLE' | translate"
+      [popupExplanation]="'PROXIES.POPUP.EXPLANATION' | translate"
+      [confirmLabel]="'GENERAL.BUTTONS.SAVE' | translate"
+      [cancelLabel]="'GENERAL.BUTTONS.CANCEL' | translate"
+    ></app-proxies-popup-button>
   </div>
 </div>
 <div class="l-grid__row l-grid--with-margins">
@@ -20,9 +26,16 @@
       <div class="m-card--primary u-margin-bottom-large" *ngFor="let proxy of proxiesForm.controls">
         <app-sub-section-title class="p-proxies-proxy__title" [title]="proxy.value.companyInfo.companyName">
           <div action>
-            <button class="a-button--link a-button--small" (click)="revokeProxy(proxy)">
-              {{'PROXIES.REVOKEPROXY' | translate}}
-            </button>
+            <app-proxies-popup-button
+              (actionFunction)="revokeProxy(proxy)"
+              [buttonText]="'PROXIES.REVOKEPROXY' | translate"
+              buttonClass="a-button--link a-button--small"
+              [disabled]="false"
+              [popupTitle]="'PROXIES.POPUP.TITLE' | translate"
+              [popupExplanation]="'PROXIES.POPUP.EXPLANATION' | translate"
+              [confirmLabel]="'GENERAL.BUTTONS.DELETE' | translate"
+              [cancelLabel]="'GENERAL.BUTTONS.CANCEL' | translate"
+            ></app-proxies-popup-button>
           </div>
         </app-sub-section-title>
         <div class="a-table-wrapper">

@@ -1,27 +1,27 @@
 <button
-    class="a-button--primary a-button-outline has-icon-after u-margin-bottom-large"
+    [class]="buttonClass"
     (click)="openPopup()"
     [disabled]="disabled"
 >
-    {{ 'PROXIES.SAVEPROXIES' | translate }}
+  {{ buttonText }}
 </button>
 <div *ngIf="popupOpen" class="o-popup" >
     <div class="m-card--primary">
       <app-section-title
-        [title]="'PROXIES.POPUP.TITLE' | translate"
+        [title]="popupTitle"
       ></app-section-title>
-      <p>{{'PROXIES.POPUP.EXPLANATION' | translate}}</p>
+      <p>{{ popupExplanation }}</p>
       <button
           class="a-button--ghost a-button-outline u-text-uppercase u-margin-right"
-          (click)="confirmSave()"
+          (click)="confirmAction()"
       >
-          {{ 'GENERAL.BUTTONS.SAVE' | translate }}
+          {{ confirmLabel }}
       </button>
       <button
           class="a-button--outline a-button--danger u-text-uppercase"
-          (click)="cancelSave()"
+          (click)="cancelAction()"
       >
-          {{ 'GENERAL.BUTTONS.CANCEL' | translate }}
+          {{ cancelLabel }}
       </button>
     </div>
 </div>
