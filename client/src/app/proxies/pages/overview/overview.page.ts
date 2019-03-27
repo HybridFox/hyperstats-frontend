@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { select, select$ } from '@angular-redux/store';
 import { FormControl, FormArray, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { uniq } from 'ramda';
 
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
-import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
+import { Report } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { CompanySelector } from '../../../manage-companies/store';
 import { CompaniesActions } from '../../../manage-companies/store/companies/actions';
@@ -22,17 +23,20 @@ import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { CompanyType } from '@api/company';
 import { REPORT_STATE } from '../../../reports/store/constants';
+import { pathOr } from 'ramda';
 
 @Component({
   templateUrl: './overview.page.html',
 })
 
-export class OverviewPageComponent implements OnInit {
+export class OverviewPageComponent implements OnInit, OnDestroy {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
   @select$(CompanySelector.overview.result, companiesToSelectOptions) public companyOptions$: Observable<Option[]>;
   @select(ProxiesSelectors.list.result) public proxies$: Observable<Proxy[]>;
   @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
   @select(ReportsProcessSelector.list.result) public recyclingProcesses$: Observable<any[]>;
+
+  public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   public proxies: Proxy[];
   public reports: Report[];
@@ -64,32 +68,39 @@ export class OverviewPageComponent implements OnInit {
     this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
     this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
 
-    this.reports$.subscribe((reports) => {
-      this.reports = reports;
-      this.getProxiesFrom();
+    this.reports$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((reports) => {
+        this.reports = reports;
+        this.getProxiesFrom();
+      });
+
+    this.recyclingProcesses$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((recyclingProcesses) => {
+        this.recyclingProcesses = recyclingProcesses;
+        this.getProxiesFrom();
     });
 
-    this.recyclingProcesses$.subscribe((recyclingProcesses) => {
-      this.recyclingProcesses = recyclingProcesses;
-      this.getProxiesFrom();
+    this.proxies$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((proxies) => {
+        this.proxies = proxies;
+        this.getProxiesFrom();
+
+        if (this.companies && this.companies.length > 0) {
+          this.removeProxyCompaniesFromCompanies(this.companies);
+        }
     });
 
-    this.proxies$.subscribe((proxies) => {
-      this.proxies = proxies;
-      this.getProxiesFrom();
-
-      if (this.companies && this.companies.length > 0) {
-        this.removeProxyCompaniesFromCompanies(this.companies);
-      }
-    });
-
-    this.companyOptions$.subscribe((companies) => {
-      this.companies = companies;
-      if (this.proxies) {
-        this.removeProxyCompaniesFromCompanies(companies);
-      } else {
-        this.selectCompanies = companies;
-      }
+    this.companyOptions$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((companies) => {
+        if (this.proxies) {
+          this.removeProxyCompaniesFromCompanies(companies);
+        } else {
+          this.selectCompanies = companies;
+        }
     });
 
     this.years = this.codesService.years().map(year => year.value);
@@ -121,6 +132,7 @@ export class OverviewPageComponent implements OnInit {
       }];
     } else {
       this.extraCompanies = this.extraCompanies.filter(company => company.proxyCompanyId !==  proxy.value.companyInfo.companyId);
+      this.removeProxyCompaniesFromCompanies(this.companies);
       this.getProxiesFrom();
     }
 
@@ -195,6 +207,11 @@ export class OverviewPageComponent implements OnInit {
     }
   }
 
+  public ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
+  }
+
   private putNewProxy(body: ProxyBody) {
     this.proxiesActions.put(body).toPromise();
   }
@@ -225,6 +242,8 @@ export class OverviewPageComponent implements OnInit {
       proxyCompanyName: proxy.proxyCompanyName,
       proxyCompanyId: proxy.proxyCompanyId
     }))), ...this.extraCompanies];
+
+    companies.sort((a, b) => (a.proxyCompanyName > b.proxyCompanyName) ? 1 : ((b.proxyCompanyName > a.proxyCompanyName) ? -1 : 0));
 
     return this.formBuilder.array(companies.map(company => {
       const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
@@ -262,11 +281,12 @@ export class OverviewPageComponent implements OnInit {
   }
 
   private getStatus(reports: Report[], year: string, recyclingProcess: RecyclingProcess, companyProxies: Proxy[]) {
-    const matchingReports = reports.filter(report => (
-      report.meta.status === REPORT_STATE.FILED &&
+    const matchingReports = reports.filter(report => {
+      const reportProcess = report.data.information.recyclingProcess;
+      return (report.meta.status === REPORT_STATE.FILED &&
       report.data.information.reportingYear === parseInt(year, 10) &&
-      (report.data.information.recyclingProcess as PopulatedRecyclingProcess)._id === recyclingProcess._id
-    ));
+      pathOr(reportProcess, ['_id'], reportProcess) === recyclingProcess._id);
+    });
 
 
     if (matchingReports.length === 0) {

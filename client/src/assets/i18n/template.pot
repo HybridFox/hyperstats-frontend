@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-26T11:43:42.654Z\n"
-"PO-Revision-Date: 2019-03-26T11:43:42.654Z\n"
+"POT-Creation-Date: 2019-03-27T08:00:09.299Z\n"
+"PO-Revision-Date: 2019-03-27T08:00:09.299Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -51,6 +51,9 @@ msgid "GENERAL##BUTTONS##DELETE-ELEMENT"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##GOTOAPP"
+msgstr ""
+
+msgid "GENERAL##BUTTONS##REVOKE"
 msgstr ""
 
 msgid "GENERAL##BUTTONS##SAVE"
@@ -569,13 +572,19 @@ msgstr ""
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr ""
 
-msgid "PROXIES##POPUP##EXPLANATION"
+msgid "PROXIES##REVOKE-POPUP##EXPLANATION"
 msgstr ""
 
-msgid "PROXIES##POPUP##TITLE"
+msgid "PROXIES##REVOKE-POPUP##TITLE"
 msgstr ""
 
 msgid "PROXIES##REVOKEPROXY"
+msgstr ""
+
+msgid "PROXIES##SAVE-POPUP##EXPLANATION"
+msgstr ""
+
+msgid "PROXIES##SAVE-POPUP##TITLE"
 msgstr ""
 
 msgid "PROXIES##SAVEPROXIES"
