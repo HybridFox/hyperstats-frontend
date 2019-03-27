@@ -7,6 +7,7 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/uti
 import { STATUS_TYPES } from 'src/lib/constants';
 import { UserInterface } from '@store/auth/auth.interface';
 import { Router } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
     templateUrl: './validation.page.html',
@@ -24,7 +25,11 @@ export class ValidationPageComponent implements OnDestroy, OnInit {
   ) { }
 
   public ngOnInit() {
-    this.user$.subscribe(user => {
+    this.user$
+    .pipe(
+      takeUntil(this.componentDestroyed$),
+    )
+    .subscribe(user => {
       if (user && user.status.type === STATUS_TYPES.ACTIVATED && user.validation.isValidated && user.company) {
         return this.router.navigate(['/']);
       }
