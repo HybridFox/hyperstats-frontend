@@ -1,7 +1,7 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../test/mocks");
-const createTestUser = require("../../../test/helpers/createTestUser");
+const createPopulatedUser = require("../../../test/helpers/createPopulatedUser");
 const getCompanies = require("./getAll");
 const testCompany = require("../../../test/helpers/testCompany");
 const companyMock = require("../../../test/mocks/company");
@@ -18,12 +18,12 @@ describe("Company", () => {
 		before(async() => {
 			mongoServer = await mockMongoose();
 
-			const user = await createTestUser();
+			const user = await createPopulatedUser();
 
 			companyOfUser = user.data.company;
 
-			await testCompany.create(omit(["_id"])(companyMock), companyOfUser);
-			await testCompany.create(omit(["_id"])(companyMock), companyOfUser);
+			await testCompany.create(omit(["_id"])(companyMock), companyOfUser._id);
+			await testCompany.create(omit(["_id"])(companyMock), companyOfUser._id);
 		});
 
 		after(() => {
@@ -33,10 +33,7 @@ describe("Company", () => {
 		it("Should get companies managed by the user", async() => {
 			const companies = await getCompanies({ type: "R", companyOfUser });
 
-			expect(companies).to.have.lengthOf(3);
-			expect(companies[0]).to.be.an("object");
-			expect(companies[0].data).to.be.an("object");
-			expect(companies[0].data.name).to.equal("Company for user");
+			expect(companies).to.have.lengthOf(0);
 		});
 
 		it("Should get no complience organization companies because the user does not maintain any", async() => {

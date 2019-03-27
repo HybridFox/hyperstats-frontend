@@ -9,7 +9,7 @@ module.exports = (id, recyclingProcess) => {
 	).exec()
 		.then((data) => {
 			if (!data) {
-				throw Errors.ItemNotFound;
+				throw Errors.ProcessNotFound;
 			}
 
 			return data;

@@ -1,11 +1,12 @@
 const UserModel = require("../../../models/user");
 const { pick } = require("ramda");
+const errors = require("../../../helpers/errorHandler");
 
 module.exports = async(email, profile) => {
 	const user = await UserModel.findOne({ "data.email": email });
 
 	if (!user) {
-		throw new Error({ type: 404, msg: "User not found" });
+		throw errors.UserNotFound;
 	}
 
 	user.data = {

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AuthGuard, AdminGuard, ValidationGuard } from './guards';
+import { AuthGuard, AdminGuard, ValidationGuard, OrganisationGuard } from './guards';
 
 import * as Pages from './pages';
 
@@ -25,6 +25,10 @@ const routes: Routes = [
         component: Pages.ContactPageComponent
       },
       {
+        path: 'help',
+        loadChildren: '../help/help.module#HelpModule',
+      },
+      {
         path: 'terms-and-conditions',
         component: Pages.TermsAndConditionsPageComponent
       },
@@ -41,7 +45,7 @@ const routes: Routes = [
     children: [
       {
         path: 'recycler',
-        canActivate: [AuthGuard, ValidationGuard],
+        canActivate: [AuthGuard, ValidationGuard, OrganisationGuard],
         loadChildren: '../recycler/recycler.module#RecyclerModule',
       },
       {
@@ -54,6 +58,16 @@ const routes: Routes = [
         canActivate: [AuthGuard, AdminGuard, ValidationGuard],
         loadChildren: '../admin/admin.module#AdminModule',
       },
+      {
+        path: 'compliance-organisation',
+        canActivate: [AuthGuard, ValidationGuard, OrganisationGuard],
+        loadChildren: '../compliance-org/compliance-org.module#ComplianceOrgModule',
+      },
+      {
+        path: 'authorisation-organisation',
+        canActivate: [AuthGuard, ValidationGuard, OrganisationGuard],
+        loadChildren: '../authorisation-org/authorisation-org.module#AuthorisationOrgModule',
+      },
     ]
   },
   {
@@ -62,13 +76,23 @@ const routes: Routes = [
   },
   {
     path: 'recycler',
-    canActivate: [AuthGuard, ValidationGuard],
+    canActivate: [AuthGuard, ValidationGuard, OrganisationGuard],
     loadChildren: '../recycler/recycler.module#RecyclerModule',
   },
   {
     path: 'admin',
     canActivate: [AuthGuard, AdminGuard, ValidationGuard],
     loadChildren: '../admin/admin.module#AdminModule',
+  },
+  {
+    path: 'compliance-organisation',
+    canActivate: [AuthGuard, OrganisationGuard, ValidationGuard],
+    loadChildren: '../compliance-org/compliance-org.module#ComplianceOrgModule',
+  },
+  {
+    path: 'authorisation-organisation',
+    canActivate: [AuthGuard, ValidationGuard, OrganisationGuard],
+    loadChildren: '../authorisation-org/authorisation-org.module#AuthorisationOrgModule',
   },
 ];
 

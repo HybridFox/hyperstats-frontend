@@ -1,4 +1,5 @@
 const CompanyModel = require("../../../models/company");
+const { COMPANY_TYPES } = require("../../company/helpers/const");
 const {
 	__,
 	set,
@@ -19,22 +20,37 @@ const getTypeQuery = (type) => ifElse(
 	always({})
 )(type);
 
-const getCompanyQuery = curry((isAdmin, company) => isAdmin ? {} : {
-	$or: [{
-		"meta.managedBy": company,
-	}, {
-		_id: company,
-	}],
+const getCompanyListQuery = curry((type, company) => {
+	if (company.meta.type === COMPANY_TYPES.R && type === COMPANY_TYPES.RP) {
+		return { "meta.managedBy": company._id };
+	}
+	if (company.meta.type === COMPANY_TYPES.R && type !== COMPANY_TYPES.RP) {
+		return { "meta.type": { $in: [COMPANY_TYPES.CO, COMPANY_TYPES.AO] } };
+	}
+	if (company.meta.type === COMPANY_TYPES.CO) {
+		return { "meta.type": COMPANY_TYPES.AO };
+	}
+	if (company.meta.type === COMPANY_TYPES.AO) {
+		return { "_id": company._id };
+	}
 });
 
 const getNonDeletedQuery = () => ({ "meta.deleted": false });
 
-const getQuery = (type, companyOfUser, isAdmin) => ({
+const getAdminQuery = (type) => ({
 	...getTypeQuery(type),
-	...getCompanyQuery(isAdmin, companyOfUser),
+	...getNonDeletedQuery(),
+});
+
+const getCompanyQuery = (type, companyOfUser) => ({
+	...getCompanyListQuery(type, companyOfUser),
 	...getNonDeletedQuery(),
 });
 
 module.exports = async({ type, companyOfUser, isAdmin = false } = {}) => {
-	return CompanyModel.find(getQuery(type, companyOfUser, isAdmin)).lean().exec();
+	if (isAdmin) {
+		return CompanyModel.find(getAdminQuery(type)).lean().exec();
+	}
+
+	return CompanyModel.find(getCompanyQuery(type, companyOfUser)).lean().exec();
 };

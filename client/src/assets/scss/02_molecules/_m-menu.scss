@@ -70,7 +70,6 @@
         padding: $spacer-small $spacer;
         border-radius: 0 0 4px 4px;
         border: 1px solid $mercury;
-        width: max-content;
         z-index: 999;
         &__item {
             list-style: none;
@@ -115,7 +114,9 @@
         font-size: $font-size-regular;
         color: $zodiac;
         text-decoration: none;
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: $spacer-large 0;
         border-bottom: 1px solid $alto;
         &:last-child {
@@ -135,24 +136,26 @@
                 width: 5px;
                 height: 40px;
                 background-color: $yellow;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
         &.activated {
             &:after {
                 content: '(activated)';
-                position: absolute;
                 right: 0;
                 font-size: $font-size-small;
                 color: $gray;
+                padding-left: $spacer;
             }
         }
         &.deactivated {
             &:after {
                 content: '(deactivated)';
-                position: absolute;
                 right: 0;
                 font-size: $font-size-small;
                 color: $gray;
+                padding-left: $spacer;
             }
         }
         &--valid {

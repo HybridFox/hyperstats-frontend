@@ -16,12 +16,14 @@ import { AuthActions } from '@store/auth';
 import { AuthRepository } from '@store/auth/auth.repository';
 
 import { Components } from './components';
+import { Pipes } from './pipes';
 
 @NgModule({
   providers: [
     Services,
     DatePipe,
     DecimalPipe,
+    Pipes,
 
     // Auth
     AuthActions,
@@ -39,10 +41,12 @@ import { Components } from './components';
   ],
   declarations: [
     ...Components,
+    Pipes
   ],
   exports: [
     ...Components,
     TranslateModule,
+    Pipes
   ]
 })
 export class SharedModule { }

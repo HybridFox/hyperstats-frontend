@@ -17,6 +17,8 @@ const NEW_REPORT = {
 			excessMaterialReceived: [{
 				impurities: 1,
 				packagingMaterial: 1,
+				water: 1,
+				otherMaterials: 1,
 			}],
 			elements: [{
 				element: "element",
@@ -46,8 +48,9 @@ const NEW_REPORT = {
 			mass: 1,
 			virginClassification: "virginClassification",
 			virginReplacedMaterial: "virginReplacedMaterial",
-			elementClassification: "elementClassification",
-			elementReplacedMaterial: "elementReplacedMaterial",
+			elementDestinationIndustry: "elementDestinationIndustry",
+			elementDestinationCompany: "elementDestinationCompany",
+			assignedStep: "assignedStep",
 		}],
 	}],
 	recyclingEfficiency: {

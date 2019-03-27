@@ -1,14 +1,14 @@
-<div *ngIf="!(process$ | async)" class="u-margin-top">
+<div *ngIf="!(process$ | async) && !showForm" class="u-margin-top">
   <div class="m-card--primary">
       <div class="p-report__no-process">
           <app-section-title
-            [title]="'WIZARD.NO-PROCESS' | translate"
+            [title]="'WIZARD.NO-PROCESS-SELECTED' | translate"
           ></app-section-title>
           <img class="p-report__visual" src="/assets/images/choose.svg" alt="Choose image" >
       </div>
   </div>
 </div>
-<div *ngIf="process$ | async" class="l-grid__row l-grid--with-margins u-margin-top">
+<div *ngIf="(process$ | async) || showForm" class="l-grid__row l-grid--with-margins u-margin-top">
   <div *ngIf="sideItems && sideItems.length > 0; else noSteps" class="o-region--sidebar-first l-grid__col-3-12 m-card--primary">
     <nav class="m-menu--vertical">
       <a

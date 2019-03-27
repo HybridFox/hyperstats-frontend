@@ -14,6 +14,8 @@ import {
   RequestPasswordResetInterface,
   ProfileInterface
 } from './auth.interface';
+import { CompanyInterface } from '@api/company/company.interface';
+import { CompanyData, CompanyMeta } from '@api/company/company.types';
 
 @Injectable()
 export class AuthActions {
@@ -152,9 +154,29 @@ export class AuthActions {
       .then(() => this.handler.dispatch(ACTIONS.CLEAR_USER));
   }
 
-  public updateCompanyOfProfile(company: any) {
-      this.handler.dispatch(ACTIONS.UPDATE_COMPANY, {
-        payload: company
-      });
+  public updateCompanyOfProfile(company: CompanyData, companyMeta: CompanyMeta): Promise<CompanyInterface> {
+    this.handler.dispatchStart(ACTIONS.UPDATE_COMPANY);
+
+    return this.authRepository.updateProfileCompany(company)
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.UPDATE_COMPANY, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap(({ data }: CompanyInterface) => {
+          this.handler.dispatch(ACTIONS.UPDATE_COMPANY, {
+            payload: {
+              data: data,
+              meta: companyMeta
+            }
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.UPDATE_COMPANY);
+        }),
+      ).toPromise();
   }
 }

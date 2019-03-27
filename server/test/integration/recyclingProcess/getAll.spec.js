@@ -1,8 +1,7 @@
 const supertest = require("supertest");
 const { expect } = require("chai");
-const { omit } = require("ramda");
 const startServer = require("../../mocks/startServer");
-const mockRecyclingProcesses = require("../../mocks/recyclingProcesses");
+const mockProcesses = require("../../mocks/recyclingProcesses");
 const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
@@ -15,16 +14,23 @@ describe("Integration", () => {
 		let closeServer;
 		let reset;
 		let cookie;
+		let firstUser;
+		let secondUser;
+		let mockRecyclingProcesses;
 
 		before(async() => {
-			await createTestUser({
+			firstUser = await createTestUser({
 				email: "test1@example.com",
+				password: "Something123",
 				isAdmin: true,
 			});
-			await createTestUser({
+			secondUser = await createTestUser({
 				email: "test2@example.com",
+				password: "Something123",
 				isAdmin: true,
 			});
+
+			mockRecyclingProcesses = mockProcesses(firstUser.data.company);
 
 			await clearData("recyclingProcess");
 			await insertData("recyclingProcess", mockRecyclingProcesses);
@@ -35,13 +41,16 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, {
+				username: "test1@example.com",
+				password: "Something123",
+			})).cookie;
 		});
 
 		afterEach(() => reset());
 
 		after(async() => {
-			await removeTestUsers(["test1@example.com", "test2@example.com"]);
+			await removeTestUsers([firstUser.data.email, secondUser.data.email]);
 			await closeServer();
 		});
 
@@ -63,43 +72,8 @@ describe("Integration", () => {
 					.expect(200)
 					.then(({ body }) => {
 						expect(body).to.be.an("array").to.have.lengthOf(mockRecyclingProcesses.length);
-						expect(omit(["__v"], body[0])).to.deep.equal({
-							"_id": "5c49ccebe9fe3f0a757f0001",
-							"data": {
-								"name": "Test 1",
-								"steps": [
-									{
-										"_id": "5c49bbebe9fe3f0a757f0001",
-										"uuid": "a991ec11-2ed6-4d04-a724-b8ba74b7ba7e",
-										"description": "description 1",
-										"methodOfProcessing": "methodOfProcessing 1",
-										"precedingStep": "precedingStep 1",
-										"qualitativeDescription": {
-											"asset": {
-												"assetId": "",
-												"mimetype": "",
-												"uploadDate": "",
-												"originalname": "",
-											},
-											"text": "qualitativeDescription text 1",
-										},
-										"schematicOverview": {
-											"assetId": "",
-											"mimetype": "",
-											"uploadDate": "",
-											"originalname": "",
-										},
-										"site": "site 1",
-									},
-								],
-							},
-							"meta": {
-								"deleted": false,
-								"activated": true,
-								"created": "2019-01-24T14:34:19.351Z",
-								"lastUpdated": "2019-01-24T14:34:19.351Z",
-							},
-						});
+						expect(body[0].data).to.deep.equal(mockRecyclingProcesses[0].data);
+						expect(body[0].meta.createdByCompany.toString()).to.equal(mockRecyclingProcesses[0].meta.createdByCompany.toString());
 					});
 			});
 		});

@@ -1,3 +1,5 @@
 export interface ReportsType {
-  processId: string;
+  processId?: string;
+  recyclerId?: string;
+  sortBy?: string;
 }

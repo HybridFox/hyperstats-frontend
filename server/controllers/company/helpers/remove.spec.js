@@ -5,12 +5,13 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 const removeCompany = require("./remove");
 const testCompany = require("../../../test/helpers/testCompany");
 const companyMock = require("../../../test/mocks/company");
-const ResponseError = require("../../../helpers/errors/responseError");
+const errors = require("../../../helpers/errorHandler");
 const CompanyModel = require("../../../models/company");
 const { omit } = require("ramda");
 
 should();
 use(chaiAsPromised);
+
 describe("Company", () => {
 	describe("remove", () => {
 		let mongoServer;
@@ -43,7 +44,7 @@ describe("Company", () => {
 		});
 
 		it("Should not remove a company that the user has no access to", async() => {
-			expect(removeCompany({ _id: nonManagedCompany.toObject()._id, companyOfUser })).to.eventually.rejectedWith(ResponseError);
+			expect(removeCompany({ _id: nonManagedCompany.toObject()._id, companyOfUser })).to.eventually.rejectedWith(errors.CompanyNotFound);
 		});
 	});
 });

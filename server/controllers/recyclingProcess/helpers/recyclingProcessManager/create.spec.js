@@ -2,7 +2,8 @@
 const { expect, use, should } = require("chai");
 const chaiAsPromised = require("chai-as-promised");
 const { mockMongoose } = require("../../../../test/mocks");
-const RecyclingProcesses = require("../../../../test/mocks/recyclingProcesses");
+const createObjectId = require("mongoose").Types.ObjectId;
+const mockProcesses = require("../../../../test/mocks/recyclingProcesses");
 
 should();
 use(chaiAsPromised);
@@ -10,6 +11,8 @@ use(chaiAsPromised);
 describe("Create Recycling process", () => {
 	let create;
 	let mongoServer;
+	const companyId = createObjectId();
+	const RecyclingProcesses = mockProcesses();
 
 	before(async() => {
 		mongoServer = await mockMongoose();
@@ -21,7 +24,11 @@ describe("Create Recycling process", () => {
 	});
 
 	it("Should create a recycling process", async() => {
-		const result = await create(RecyclingProcesses[0]);
+		const result = await create({
+			process: RecyclingProcesses[0].data,
+			meta: RecyclingProcesses[0].meta,
+			companyId,
+		});
 
 		expect(result).to.be.an("object");
 		expect(result.data).to.be.an("object");

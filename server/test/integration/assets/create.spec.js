@@ -3,7 +3,6 @@ const { expect } = require("chai");
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 const startServer = require("../../mocks/startServer");
-const createTestUser = require("../../helpers/createTestUser");
 const removeTestUsers = require("../../helpers/removeTestUsers");
 const loginUser = require("../../helpers/loginUser");
 
@@ -44,23 +43,13 @@ describe("Integration", () => {
 
 		describe("When logged in", async() => {
 			it("Should return validation error", async() => {
-				// This function doesn't work in the before hook
-				await createTestUser({
-					email: "test2@example.com",
-					isAdmin: true,
-				});
-
 				cookie = (await loginUser(server)).cookie;
 
 				return supertest(server)
 					.post(`/api/assets`)
 					.set("cookie", cookie)
 					.expect("Content-Type", /json/)
-					.expect(400)
-					.then(({ body }) => {
-						expect(body).to.be.an("object");
-						expect(body.err[0].err).to.equal('"file" is required');
-					});
+					.expect(400);
 			});
 
 			it("Should create recycling process by id", async() => {

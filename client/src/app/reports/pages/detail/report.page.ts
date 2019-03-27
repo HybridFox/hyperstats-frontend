@@ -11,6 +11,8 @@ import { RecyclingProcess, ProcessStep } from '../../store/recycling-processes/t
 import { ReportsProcessActions, ReportsProcessSelector } from '../../store/recycling-processes';
 import { ReportsActions, ReportsSelector } from '../../store/reports';
 import { select } from '@angular-redux/store';
+import { RecyclingPartnerActions } from 'src/app/recycling-partners/store';
+import isNil from 'ramda/es/isNil';
 
 @Component({
   templateUrl: './report.page.html',
@@ -24,7 +26,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
 
   public steps: Step[] = [
     {
-      name: 'WIZARD.TITLES.NEW-REPORT',
+      name: 'WIZARD.TITLES.INFORMATION',
       route: 'information',
       key: 'information',
     },
@@ -67,11 +69,13 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     private reportProcessActions: ReportsProcessActions,
     private reportsActions: ReportsActions,
     private route: ActivatedRoute,
+    private partnerActions: RecyclingPartnerActions,
   ) {}
 
   public ngOnInit() {
     this.fetchReport();
     this.fetchRecyclingProcesses();
+    this.fetchRecyclingPartners();
     this.watchReport();
   }
 
@@ -118,25 +122,37 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       .subscribe();
   }
 
+  private fetchRecyclingPartners() {
+    this.partnerActions.fetchAll()
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe();
+  }
+
   private initForm(report = null) {
     this.form = this.reportFormService.initForm(report);
 
     const control = this.form.get('information.recyclingProcess');
 
-    if (control.value) {
-      this.reportProcessActions.getById(control.value).toPromise();
-    }
-
     if (pathOr('SAVED', ['meta', 'status'], report) === 'FILED') {
       this.form.disable();
+    }
+
+    if (!isNil(control.value)) {
+      typeof(control.value) === 'string'
+        ? this.reportProcessActions.getById(control.value).toPromise()
+        : this.reportProcessActions.getById(control.value._id).toPromise();
     }
 
     control
       .valueChanges
       .pipe(
         takeUntil(this.componentDestroyed$),
-        tap((id: string) => {
-          this.reportProcessActions.getById(id).toPromise();
+        tap((id) => {
+          typeof(id) === 'string'
+            ? this.reportProcessActions.getById(id).toPromise()
+            : this.reportProcessActions.getById(id._id).toPromise();
         }),
         switchMap(() => {
           return this.process$;

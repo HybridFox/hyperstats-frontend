@@ -13,17 +13,19 @@ import { UserCompanyActions } from 'src/app/manage-users/store/companies/actions
 import { UserSelector, UsersActions } from 'src/app/manage-users/store';
 import { STATUS_TYPES } from 'src/lib/constants';
 
+import { UserInterface } from '@store/auth/auth.interface';
+
 @Component({
     templateUrl: './detail.page.html',
 })
 export class DetailPageComponent implements OnInit, OnDestroy {
-    @select(UserSelector.detail.result) public user$: Observable<object>;
+    @select(UserSelector.detail.result) public user$: Observable<UserInterface>;
     @select$(UserCompanySelector.list.result, companiesToSelectOptions) public companyOptions$: Observable<Option>;
     @select(UserSelector.detail.loading) public loading$: Observable<boolean>;
     @select(['entities', 'companies']) public companies$: Observable<object>;
 
     private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
-    public statusTypes: any[] = STATUS_TYPES;
+    public statusTypes = STATUS_TYPES;
 
     constructor(
         private route: ActivatedRoute,
@@ -74,7 +76,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
                 ngxExtract('TOAST.USER-ADMIN-ACCEPT.ERROR.TITLE') as string
             ));
       } else {
-        event.user.meta.status.type = 'statusTypes[1].type';
+        event.user.meta.status.type = this.statusTypes.DEACTIVATED;
         this.usersActions.updateUser(event.user).toPromise()
             .then(() => this.toastrService.success(
                 ngxExtract('TOAST.USER-ADMIN-DECLINE.SUCCESS.DESCRIPTION') as string,

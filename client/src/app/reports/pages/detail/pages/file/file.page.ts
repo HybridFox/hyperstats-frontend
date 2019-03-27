@@ -41,7 +41,12 @@ export class FilePageComponent extends StepPageAbstract {
   public save() {
     const data = {
       _id: this.formData.reportId,
-      data: this.formData.getFormData().value,
+      data: this.formData.getFormData().getRawValue(),
+      meta: {
+        state: {
+          isPristine: this.formData.getFormMetaData().getRawValue(),
+        }
+      }
     };
 
     let promise: Promise<any>;
@@ -55,7 +60,12 @@ export class FilePageComponent extends StepPageAbstract {
   public file() {
     const data = {
       _id: this.formData.reportId,
-      data: this.formData.getFormData().value,
+      data: this.formData.getFormData().getRawValue(),
+      meta: {
+        state: {
+          isPristine: this.formData.getFormMetaData().getRawValue(),
+        }
+      }
     };
 
     this.reportActions.file(data)

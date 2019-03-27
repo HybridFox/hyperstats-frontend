@@ -5,6 +5,14 @@
             "RECYCLING": "Recycling",
             "SORTING": "Sorting",
             "TRANSPORT": "Transport"
+        },
+        "SORTOPTIONS": {
+            "LAST-EDITED": "Last edited",
+            "NAME": "Alphabetically ",
+            "REPORTING-YEAR-NTO": "Reporting Year (Newest to Oldest)",
+            "REPORTING-YEAR-OTN": "Reporting Year (Oldest to Newest)",
+            "STATUS-DRAFT-FILED": "Status (Draft to Filed)",
+            "STATUS-FILED-DRAFT": "Status (Filed to Draft)"
         }
     },
     "Compliance Organisation": "Compliance Organisation",
@@ -14,12 +22,15 @@
             "CREATENEWREPORT": "Create new report",
             "DELETE-ELEMENT": "Delete element",
             "GOTOAPP": "Go to app",
+            "REVOKE": "Revoke",
             "SAVE": "Save"
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
-            "REQUIRED": "This field is required"
+            "REQUIRED": "This field is required",
+            "TYPEREQUIRED": "Type is required when weight is filled in",
+            "WEIGHTREQUIRED": "Weight is required when type is filled in"
         },
         "LABELS": {
             "ACCEPT": "Accept",
@@ -27,9 +38,9 @@
             "ACTIVE": "Active",
             "ACTIVITY": "Activity",
             "ADD-ADDITIONAL-STEP": "Add additional step",
-            "ADD-COMPANY": "Company",
-            "ADD-PROXY": "Add proxy",
-            "ADD-RECYCLING-PARTNER": "Add recycling partner",
+            "ADD-COMPANY": "Add Company",
+            "ADD-PROXY": "Add Proxy",
+            "ADD-RECYCLING-PARTNER": "Add Recycling Partner",
             "ADD-RECYCLING-PROCESS": "Add Recycling Process",
             "ADMIN": "Admin",
             "BOX": "Box",
@@ -38,7 +49,7 @@
             "CITY": "City",
             "COMPANY": "Company",
             "COMPANYNAME": "Company name",
-            "COMPANYTYPE": "Company",
+            "COMPANYTYPE": "Company type",
             "COMPANYVAT": "Company VAT",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
@@ -51,13 +62,12 @@
             "DUPLICATE-STEP": "Duplicate step",
             "EMAIL": "Email",
             "ENABLE": "Enable",
-            "FIRSTNAME": "Firstname",
+            "FIRSTNAME": "First Name",
             "FORGOT-PASSWORD": "Forgot Password",
             "FUNCTION": "Function",
             "I-ACCEPT-THE": "I accept the",
-            "LASTNAME": "Lastname",
+            "LASTNAME": "Last Name",
             "LOGIN": "Login",
-            "MANAGEDBY": "Name",
             "MESSAGE": "Message",
             "MOBILEPHONE": "Mobile phone",
             "NAME": "Name",
@@ -70,7 +80,8 @@
             "REMOVE": "Remove",
             "RESET-PASSWORD": "Reset password",
             "SAVE": "Save",
-            "SELECT-OPTION": "Select a option",
+            "SELECT-COMPANY": "Select a company",
+            "SELECT-OPTION": "Select an option",
             "SORTBY": "Sort by",
             "SPONSOREDBY": "Sponsored by",
             "STREET": "Street",
@@ -78,32 +89,35 @@
             "STREETNUMBER": "Number",
             "SUBJECT": "Subject",
             "SUBMIT": "Submit",
-            "TERMS-AND-CONDITIONS": "terms and conditions",
+            "TERMS-AND-CONDITIONS": "Terms and Conditions",
             "TRY-AGAIN": "Try again",
             "TYPE": "Type",
             "UPDATE-PROFILE": "Update profile",
             "WELCOME": "Welcome!",
-            "ZIPCODE": "Zipcode",
+            "ZIPCODE": "Zip Code",
             "INVALID_FORM": "The form is invalid, make sure you have filled all the fields"
         },
         "MENU": {
             "ABOUT": "About us",
-            "AUDITTRAIL": "Audit Trial",
-            "AUDITTRIAL": "Audit Trial",
+            "AUDITTRAIL": "Audit Trail",
+            "AUDITTRIAL": "Audit Trail",
+            "AUTHORISATION-ORG": "Authorisation Organisations",
             "COMPANIES": "Companies",
-            "COMPANYINFORMATION": "Company information",
+            "COMPANYINFORMATION": "Company Information",
+            "COMPLIANCE-ORG": "Compliance Organisations",
             "CONTACT": "Contact",
             "HELP": "Help",
-            "LOGIN": "Login",
-            "LOGOFF": "Logoff",
+            "LOGIN": "Log in",
+            "LOGOFF": "Log off",
             "MORE": "More...",
             "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
+            "RECYCLERS": "Recyclers",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
             "REPORTS": "Reports",
-            "SIGNUP-REQUESTS": "Signup Requests",
+            "SIGNUP-REQUESTS": "Sign up Requests",
             "USERPROFILE": "User profile",
             "USERS": "Users"
         },
@@ -124,7 +138,7 @@
         "ACCESS-DENIED": {
             "DEACTIVATED": {
                 "DESCRIPTION": "Your account is deactivated. Contact an administrator if necessary.",
-                "TITLE": "Account Deactivated"
+                "TITLE": "Account deactivated"
             },
             "NOCOMPANY": {
                 "DESCRIPTION": "You don’t have a company assigned. Contact the administrator for more info. ",
@@ -167,8 +181,17 @@
                 "TITLE": "Password reset requested"
             }
         },
+        "MANAGE-AUTHORISATION-ORG": {
+            "TITLE": "Authorisation organisations"
+        },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
+        },
+        "MANAGE-COMPLIANCE-ORG": {
+            "TITLE": "Compliance organisations"
+        },
+        "MANAGE-RECYCLERS": {
+            "TITLE": "Recyclers"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -177,7 +200,8 @@
             "TITLE": "Profile"
         },
         "PROXIES": {
-            "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process",
+            "DESCRIPTION": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process.",
+            "NO-COMPANIES": "There are no companies available",
             "TITLE": "{{ name }} proxies"
         },
         "RECYCLING-PARTNERS": {
@@ -216,41 +240,51 @@
         "REPORTS": {
             "DESCRIPTION": "Deploy interactive reinvent widgets grow e-commerce sexy semantic monetize authentic create enable dynamic podcasting synergies architectures. Redefine authentic methodologies.",
             "DRAFT": "Draft",
+            "EXPORT": "export",
             "FILED": "Filed",
             "NOPROCESSREPORTS": "There are no reports for this recycling process",
             "NOREPORTS": "You don’t have any reports yet",
-            "TITLE": "Reports"
+            "TITLE": "Reports",
+            "VIEW": "view"
         },
         "RESET-PASSWORD": {
-            "ISRESET": "Your password has been reset! Please login to continiou",
+            "ISRESET": "Your password has been reset! Please login to continue.",
             "TITLE": "Reset your password"
         },
         "SIGNUP-REQUESTS": {
-            "NO-REQUESTS": "No signup requests",
+            "NO-REQUESTS": "No sign up requests",
             "TITLE": "Signup Requests"
         },
         "TERMS-AND-CONDITIONS": {
             "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum",
             "SUB-TITLE": "Lorem Ipsum Dolor Sit Amet Co",
-            "TITLE": "Terms and conditions"
+            "TITLE": "Terms and Conditions"
         },
         "USER-ADMIN": {
             "CONFIGURATION": "Configuration",
             "MAIN-INFORMATION": "User information"
         },
         "VERIFICATION-FAILED": {
-            "CONTENT": "We are having trouble verifying your email, please try again later",
+            "CONTENT": "We are having trouble verifying your email, please try again later.",
             "TITLE": "Something went wrong"
         },
         "VERIFICATION-SUCCEEDED": {
-            "TITLE": "Success! Your registration is now complete, please login to continue"
+            "TITLE": "Success! Your registration is now complete, please log in to continue."
         }
     },
     "PROXIES": {
-        "REVOKEPROXY": "Revoke this proxy"
+        "REVOKE-POPUP": {
+            "EXPLANATION": "When you revoke this proxy the corresponding organisation will not see you reports anymore",
+            "TITLE": "Are you sure you want to revoke this proxy?"
+        },
+        "REVOKEPROXY": "Revoke this proxy",
+        "SAVE-POPUP": {
+            "EXPLANATION": "When you share proxies with a compliance organisation, this organisation can reshare them to other authorization organisations.",
+            "TITLE": "Are you sure you want to save this proxies?"
+        },
+        "SAVEPROXIES": "Save proxies"
     },
     "Recycler": "Recycler",
-    "Recycling Partner": "Recycling Partner",
     "TOAST": {
         "ADMIN-FORGOT-PASSWORD": {
             "SUCCESS": {
@@ -264,8 +298,8 @@
                 "TITLE": "Could not register"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your inbox for a verification email",
-                "TITLE": "Registration successfull"
+                "DESCRIPTION": "Please check your inbox for a verification email.",
+                "TITLE": "Registration successful"
             }
         },
         "COMPANY-REMOVE": {
@@ -274,8 +308,8 @@
                 "TITLE": "Could not register"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your inbox for a verification email",
-                "TITLE": "Registration successfull"
+                "DESCRIPTION": "Please check your inbox for a verification email.",
+                "TITLE": "Registration successful"
             }
         },
         "COMPANY-SAVE": {
@@ -285,7 +319,7 @@
             },
             "SUCCESS": {
                 "DESCRIPTION": "Success!",
-                "TITLE": "Registration successfull"
+                "TITLE": "Registration successful"
             }
         },
         "COMPANY-TOGGLE": {
@@ -297,7 +331,7 @@
             },
             "SUCCESS": {
                 "DESCRIPTION": "Please check your inbox for a verification email",
-                "TITLE": "Registration successfull"
+                "TITLE": "Registration successful"
             }
         },
         "CONTACT": {
@@ -328,11 +362,15 @@
         },
         "LOGIN": {
             "ERROR": {
-                "DESCRIPTION": "Make sure you are using the correct details to login",
-                "TITLE": "Cannot login"
+                "DESCRIPTION": "Make sure you are using the correct details to log in",
+                "TITLE": "Cannot log in"
             },
             "SUCCESS": {
                 "TITLE": "Logged in!"
+            },
+            "UNAUTHORIZED": {
+                "DESCRIPTION": "Your account is deleted. Contact an administrator. ",
+                "TITLE": "Cannot log in"
             }
         },
         "PROFILE": {
@@ -394,7 +432,7 @@
             },
             "SUCCESS": {
                 "DESCRIPTION": "Recycling process is successfully saved.",
-                "TITLE": "Recycling Processes saved"
+                "TITLE": "Recycling processes saved"
             }
         },
         "RECYCLING-PROCESS-TOGGLE": {
@@ -529,14 +567,17 @@
                 "MASS-OUTER-CASINGS": "Mass of outer casings belonging to battery pack (kg) (to be excluded from the input fraction)",
                 "METHODOLOG-CHEMICAL": "Description of methodology to determine the share of different types of waste battery or accumulator present in an input fraction",
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
+                "OTHER-MATERIALS": "Other Materials",
                 "PACKAGING-CASING": "Packaging material / outer casing",
                 "PROCESS-CHEMISTRY": "Process chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
+                "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
+                "WATER": "Water (H₂0)",
                 "WEIGHT-BATTERY": "Weight battery type in input fraction",
                 "WEIGHT-INPUT-FRACTION": "Weight input fraction"
             },
             "TITLES": {
-                "ADDITIONAL-INFORMATION": "Addition information",
+                "ADDITIONAL-INFORMATION": "Additional information",
                 "ELEMENTS-COMPONENTS": "Elements or components, which are part of the input fractions",
                 "EXCESS-MATERIAL": "Excess material received"
             }
@@ -553,11 +594,12 @@
                 "REPORTING-YEAR": "Reporting year"
             },
             "TITLES": {
-                "GENERAL-INFORMATION": "General information",
-                "INPUT-FRACTIONS": "General information"
+                "GENERAL-INFORMATION": "General information"
             }
         },
-        "NO-PROCESS": "Please select a recycling process in step 1",
+        "NO-ORGANISATIONS": "You don’t have any linked {{key}}.",
+        "NO-PROCESS": "Please create a recycling process before creating a report",
+        "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {
             "DESCRIPTIONS": {
                 "OF-ELEMENT": "Of the element/compound",
@@ -565,10 +607,12 @@
             },
             "LABELS": {
                 "ADD-ADDITIONAL-ELEMENT": "Add additional element/compound",
+                "ASSIGNED-STEP": "Assigned step",
                 "CLASSIFICATION": "Classification",
+                "DESTINATION-COMPANY": "Destination - Name of company",
+                "DESTINATION-INDUSTRY": "Destination - Industry",
                 "ELEMENT": "Element or compound",
                 "MASS": "Mass (t)",
-                "REPLACED-ELEMENT-MATERIAL": "Replaced element material",
                 "REPLACED-VIRGIN-MATERIAL": "Replaced virgin material",
                 "SHARE-OUTPUT-FRACTION": "Share output fraction"
             },
@@ -583,7 +627,7 @@
                 "OUTPUT": "Output"
             },
             "TITLES": {
-                "CALCULATED-EFFICIENCY": "Calculated recycling efficiency",
+                "CALCULATED-EFFICIENCY": "Calculated Recycling Efficiency",
                 "OVERVIEW-ELEMENTS": "Overview elements"
             }
         },
@@ -591,6 +635,7 @@
             "ADDITIONAL-INFORMATION": "Add. Information",
             "ADDITIVES": "Additives",
             "FILE-REPORT": "File Report",
+            "INFORMATION": "General",
             "INPUT-FRACTION": "Input Fraction",
             "NEW-REPORT": "New Report",
             "OUTPUT-FRACTION": "Output Fraction",

@@ -30,6 +30,10 @@ module.exports = (router) => {
 	 *         type: number
 	 *       packagingMaterial:
 	 *         type: number
+	 *       water:
+	 *         type: number
+	 *       otherMaterials:
+	 *         type: number
 	 *   ReportChemicalComposition:
 	 *     type: object
 	 *     properties:
@@ -154,8 +158,17 @@ module.exports = (router) => {
 	 *           type: string
 	 *           description: object-id of the company
 	 *       reportingCompany:
-	 *         type: string
-	 *         description: object-id of the company
+	 *         type: object
+	 *         properties:
+	 *               _id:
+	 *                 type: string
+	 *                 description: object-id of the company
+	 *               data:
+	 *                 type: object
+	 *                 properties:
+	 *                   name:
+	 *                     type: string
+	 *                     description: name of the company
 	 *       created:
 	 *         type: string
 	 *         format: date-time
@@ -250,12 +263,36 @@ module.exports = (router) => {
 	 *           items:
 	 *             $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports")
 		.get(
 			dataMiddleware.copy,
 			dataMiddleware.validate("query", reportValidations.getAllQuery, Errors.ItemNotFound),
 			reportController.getAll
+		);
+
+	/**
+	 * @swagger
+	 * /api/reports/companies:
+	 *   get:
+	 *     description: Get all companies
+	 *     tags:
+	 *       - report
+	 *     produces:
+	 *       - application/json
+	 *     responses:
+	 *       200:
+	 *         description: Report array
+	 *         schema:
+	 *           type: array
+	 *           items:
+	 *             $ref: '#/definitions/ReportResponse'
+	 */
+
+	router.route("/reports/companies")
+		.get(
+			dataMiddleware.copy,
+			dataMiddleware.validate("query", reportValidations.types, Errors.ObjectValidationFailed),
+			reportController.getAllCompanies
 		);
 
 	/**
@@ -279,7 +316,6 @@ module.exports = (router) => {
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports")
 		.post(
 			dataMiddleware.copy,
@@ -302,12 +338,11 @@ module.exports = (router) => {
 	 *         type: string
 	 *         required: true
 	 *     responses:
-	 *       201:
+	 *       200:
 	 *         description: Report
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports/:id")
 		.get(
 			dataMiddleware.copy,
@@ -340,7 +375,6 @@ module.exports = (router) => {
 	 *         schema:
 	 *           $ref: '#/definitions/ReportResponse'
 	 */
-
 	router.route("/reports/:id")
 		.put(
 			dataMiddleware.copy,

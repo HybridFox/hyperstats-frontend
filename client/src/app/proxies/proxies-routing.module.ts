@@ -7,16 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: Pages.OverviewPageComponent,
-    children: [
-      {
-        path: '',
-        component: Pages.DetailPageComponent,
-      },
-      {
-        path: ':proxy',
-        component: Pages.DetailPageComponent,
-      }
-    ]
   }
 ];
 

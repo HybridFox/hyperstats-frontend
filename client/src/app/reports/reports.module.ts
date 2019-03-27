@@ -20,6 +20,7 @@ import { LoadingModule } from '@ui/loading';
 import { Components } from './components';
 import { UploadModule } from '@ui/upload';
 import { AssetsRepository } from '@api/assets';
+import { recyclingPartnerReducer } from '../recycling-partners/store';
 
 @NgModule({
   imports: [
@@ -35,7 +36,7 @@ import { AssetsRepository } from '@api/assets';
   providers: [
     ...ReportsStoreServices,
     ...ReportsServices,
-    AssetsRepository
+    AssetsRepository,
   ],
   declarations: [
     Pages,
@@ -48,5 +49,6 @@ export class ReportsModule {
     private storeService: StoreService,
   ) {
     this.storeService.injectAsyncReducer('reports', Reducers);
+    this.storeService.injectAsyncReducer('recyclingPartners', recyclingPartnerReducer);
   }
 }

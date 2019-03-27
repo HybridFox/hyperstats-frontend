@@ -48,6 +48,12 @@ const ReportSchema = mongoose.Schema({
 					packagingMaterial: {
 						type: Number,
 					},
+					water: {
+						type: Number,
+					},
+					otherMaterials: {
+						type: Number,
+					},
 				}],
 				elements: [{
 					element: {
@@ -109,10 +115,13 @@ const ReportSchema = mongoose.Schema({
 				virginReplacedMaterial: {
 					type: String,
 				},
-				elementClassification: {
+				elementDestinationIndustry: {
 					type: String,
 				},
-				elementReplacedMaterial: {
+				elementDestinationCompany: {
+					type: String,
+				},
+				assignedStep: {
 					type: String,
 				},
 			}],
@@ -147,8 +156,18 @@ const ReportSchema = mongoose.Schema({
 	},
 	meta: {
 		approvedCompanies: [{
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "Company",
+			approvedBy: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Company",
+			},
+			company: {
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Company",
+			},
+			linkedApprovals: [{
+				type: mongoose.Schema.Types.ObjectId,
+				ref: "Company",
+			}],
 		}],
 		reportingCompany: {
 			type: mongoose.Schema.Types.ObjectId,

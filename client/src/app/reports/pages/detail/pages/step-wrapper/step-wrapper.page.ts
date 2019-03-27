@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject, combineLatest } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { ActivatedRoute, Router } from '@angular/router';
+import { takeUntil, filter } from 'rxjs/operators';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { select$, select } from '@angular-redux/store';
 import { map } from 'rxjs/operators';
 
@@ -20,6 +20,7 @@ export class StepWrapperPageComponent implements OnInit {
   public title$;
   public currentForm: FormArray;
   public sideItems: StepMenuItem[] = [];
+  public showForm = true;
 
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
@@ -36,6 +37,11 @@ export class StepWrapperPageComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
+     this.setForm();
+     this.formData.formGroup.status === 'DISABLED' ? this.showForm = true : this.showForm = false;
+  }
+
+  public setForm() {
     if (!this.route.firstChild) {
       this.siteMenuItems$
         .pipe(

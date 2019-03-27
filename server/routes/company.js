@@ -23,6 +23,8 @@ module.exports = (router) => {
 	 *     properties:
 	 *       name:
 	 *         type: string
+	 *       vat:
+	 *         type: string
 	 *       address:
 	 *         type: object
 	 *         properties:
@@ -44,18 +46,45 @@ module.exports = (router) => {
 	 *           - zipCode
 	 *           - city
 	 *           - country
+	 *       contactPerson:
+	 *         type: object
+	 *         properties:
+	 *           name:
+	 *             type: string
+	 *           function:
+	 *             type: string
+	 *           phone:
+	 *             type: string
+	 *           mobile:
+	 *             type: string
+	 *           email:
+	 *             type: string
+	 *         required:
+	 *           - name
+	 *           - function
+	 *           - phone
+	 *           - mobile
+	 *           - email
 	 *     required:
 	 *       - name
 	 *       - address
+	 *       - contactPerson
 	 *   CompanyMeta:
 	 *     type: object
 	 *     properties:
+	 *       activated:
+	 *         type: boolean
+	 *       deleted:
+	 *         type: boolean
+	 *       type:
+	 *         $ref: '#/definitions/CompanyTypes'
+	 *       managedBy:
+	 *         type: string
+	 *         description: objectId of the company
 	 *       created:
 	 *         type: string
 	 *       lastUpdated:
 	 *         type: string
-	 *       type:
-	 *         $ref: '#/definitions/CompanyTypes'
 	 *   CompanyBody:
 	 *       $ref: '#/definitions/CompanyData'
 	 *   CompanyResponse:

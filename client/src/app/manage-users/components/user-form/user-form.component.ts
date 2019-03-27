@@ -20,7 +20,7 @@ export class UserFormComponent implements OnChanges {
     @Output() public updateRequest: EventEmitter<object> = new EventEmitter<object>();
 
     public form: FormGroup;
-    public statusTypes: any[] = STATUS_TYPES;
+    public statusTypes = STATUS_TYPES;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -43,14 +43,17 @@ export class UserFormComponent implements OnChanges {
                 company: this.formBuilder.control(pathOr(user.data.company, ['data', 'company', '_id'], user), Validators.required)
             }),
             meta: this.formBuilder.group({
-                activated: this.formBuilder.control(pathOr('DEACTIVATED', ['meta', 'status', 'type'], user) === 'ACTIVATED')
+                activated: this.formBuilder.control(
+                  pathOr(this.statusTypes.DEACTIVATED,
+                  ['meta', 'status', 'type'], user) === this.statusTypes.ACTIVATED
+                )
             })
         });
     }
 
     public resetPassword(): Promise<any> {
         return this.authAction.requestPasswordReset({
-            username: this.user.data.username
+            username: this.user.data.email.toLowerCase()
         }).then(() => {
             this.toastrService.success(
                 ngxExtract('TOAST.ADMIN-FORGOT-PASSWORD.SUCCESS.DESCRIPTION') as string,
@@ -76,7 +79,7 @@ export class UserFormComponent implements OnChanges {
                 ...user.meta,
                 ...formValues.meta,
                 status: {
-                    type: formValues.meta.activated ? 'ACTIVATED' : 'DEACTIVATED'
+                    type: formValues.meta.activated ? this.statusTypes.ACTIVATED : this.statusTypes.DEACTIVATED
                 }
             }
         };
