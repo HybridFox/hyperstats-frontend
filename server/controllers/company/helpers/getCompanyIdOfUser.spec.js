@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 const profileStub = {};
-const proxyquire = require("proxyquire");
+const proxyquire = require("proxyquire").noPreserveCache();
 
 const loggedInReq = {
 	company: {
@@ -9,11 +9,15 @@ const loggedInReq = {
 };
 
 describe("Company", () => {
-	const getCompanyIdOfUser = proxyquire("./getCompanyIdOfUser", {
-		"../../../helpers/profile": profileStub,
-	});
+	let getCompanyIdOfUser;
 
-	profileStub.get = (req) => req;
+	before(() => {
+		getCompanyIdOfUser = proxyquire("./getCompanyIdOfUser", {
+			"../../../helpers/profile": profileStub,
+		});
+
+		profileStub.get = (req) => req;
+	});
 
 	describe("get by id of user", () => {
 		it("Should get company id of user", () => {

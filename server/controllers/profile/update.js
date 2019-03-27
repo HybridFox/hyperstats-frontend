@@ -1,14 +1,11 @@
 const profileHelper = require("../../helpers/profile");
 const helpers = require("./helpers");
-const { prop, compose, curry, __ } = require("ramda");
+const { prop } = require("ramda");
 
 module.exports = async(req, res, next) => {
 	try {
-		const user = await compose(
-			curry(helpers.updateUserProfile)(__, req.body),
-			prop("email"),
-			await profileHelper.get
-		)(req);
+		const profile = await profileHelper.get(req);
+		const user = await helpers.updateUserProfile(prop("email", profile), req.body);
 
 		profileHelper.set(req, user);
 

@@ -47,7 +47,7 @@ module.exports.unset = async(req) => {
  * @function set Set user on session
  * @param {Object} req Express request object
  */
-const set = module.exports.set = (req, user) => {
+const set = module.exports.set = async(req, user) => {
 	req.session.profile = user;
 	req.session.safeProfile = compose(
 		when(isEmpty, always(null)),
@@ -76,7 +76,7 @@ const reload = module.exports.reload = async(req) => {
 
 	await updatedUser.populateCompany();
 
-	set(req, updatedUser.toObject());
+	await set(req, updatedUser.toObject());
 };
 
 module.exports.isAdmin = (req) => !!path(["session", "profile", "meta", "isAdmin"])(req);

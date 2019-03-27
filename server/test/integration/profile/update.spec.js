@@ -2,7 +2,7 @@ const supertest = require("supertest");
 const { expect } = require("chai");
 const startServer = require("../../mocks/startServer");
 
-describe.only("Integration", () => {
+describe("Integration", () => {
 	describe("Profile update", () => {
 		let server;
 		let closeServer;
