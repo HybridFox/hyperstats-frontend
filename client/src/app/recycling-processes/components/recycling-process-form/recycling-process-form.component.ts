@@ -62,6 +62,10 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public ngOnChanges(changes: SimpleChanges) {
+    if (!this.recyclingProcess) {
+      this.processReportStatus = '';
+    }
+
     if (this.recyclingPartners && changes.recyclingPartners) {
       const ownCompany = {
         value: this.user.company._id,
@@ -90,10 +94,9 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         }, PROCESS_REPORT_STATE.NOT_USED);
 
         if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
-          const itemsToDelete = reports.filter(report => (
-            pathOr(null, ['id'])(this.recyclingProcess)  === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
-            && (report.meta.status === PROCESS_REPORT_STATE.SAVED)
-          );
+          const itemsToDelete = reports.filter(report =>
+            pathOr(null, ['_id'])(this.recyclingProcess)  === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)
+            && (report.meta.status === PROCESS_REPORT_STATE.SAVED));
 
           this.deleteConfirmMessage = itemsToDelete.reduce((acc, curr, index) => {
             if (index === 0) {
@@ -108,12 +111,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
       }
     });
 
-    if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
-      this.recyclingProcessForm.disable();
-      this.formDisabled = true;
-    } else {
-      this.formDisabled = false;
-    }
+    this.checkProcessReportStatus();
   }
 
   public saveForm() {
@@ -142,6 +140,20 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   public duplicateProcess() {
     this.isDuplicate = true;
     this.duplicate.emit(this.recyclingProcess._id);
+
+    this.processReportStatus = '';
+  }
+
+  private checkProcessReportStatus() {
+    if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
+      this.recyclingProcessForm.disable();
+      this.formDisabled = true;
+    } else {
+      if (this.recyclingProcessForm) {
+        this.recyclingProcessForm.enable();
+      }
+      this.formDisabled = false;
+    }
   }
 
   private createStepFormGroups(steps: any[]): FormArray {
