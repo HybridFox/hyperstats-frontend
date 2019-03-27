@@ -116,6 +116,7 @@ export class OverviewPageComponent implements OnInit {
       }];
     } else {
       this.extraCompanies = this.extraCompanies.filter(company => company.proxyCompanyId !==  proxy.value.companyInfo.companyId);
+      this.removeProxyCompaniesFromCompanies(this.companies);
       this.getProxiesFrom();
     }
 
