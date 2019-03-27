@@ -65,7 +65,7 @@ describe("Integration", () => {
 				.expect(201);
 
 			// Check if user is logged out using get profile
-			return supertest(server)
+			return await supertest(server)
 				.get("/api/profile")
 				.set("cookie", cookie)
 				.expect("Content-Type", /json/)
