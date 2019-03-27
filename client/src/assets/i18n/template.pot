@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-26T14:45:07.829Z\n"
-"PO-Revision-Date: 2019-03-26T14:45:07.829Z\n"
+"POT-Creation-Date: 2019-03-26T11:43:42.654Z\n"
+"PO-Revision-Date: 2019-03-26T11:43:42.654Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -572,6 +572,12 @@ msgstr ""
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr ""
 
+msgid "PROXIES##POPUP##EXPLANATION"
+msgstr ""
+
+msgid "PROXIES##POPUP##TITLE"
+msgstr ""
+
 msgid "PROXIES##REVOKEPROXY"
 msgstr ""
 
@@ -1008,6 +1014,9 @@ msgid "WIZARD##NEW-REPORT##LABELS##REPORTING-YEAR"
 msgstr ""
 
 msgid "WIZARD##NEW-REPORT##TITLES##GENERAL-INFORMATION"
+msgstr ""
+
+msgid "WIZARD##NO-LOGS"
 msgstr ""
 
 msgid "WIZARD##NO-ORGANISATIONS"
