@@ -79,7 +79,12 @@ export class OutputFractionPageComponent extends StepPageAbstract {
         this.setActiveStepById(params.stepId);
         this.watchClassification();
       });
-      this.partners$.subscribe(partners => {
+
+    this.partners$
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+      )
+      .subscribe(partners => {
         if (isEmpty(partners)) {
           setTimeout(() => {
             const formArr = (this.outputFraction.get('data') as FormArray);
