@@ -61,9 +61,10 @@ export class FormDataService {
   }
 
   public getInformationFormGroup(information: Information): FormGroup {
+    const recyclingProcess = pathOr(null, ['recyclingProcess'])(information);
     return this.formBuilder.group({
       reportingYear: [pathOr(null, ['reportingYear'])(information), Validators.required],
-      recyclingProcess: [pathOr(null, ['recyclingProcess'])(information), Validators.required],
+      recyclingProcess: [pathOr(recyclingProcess, ['_id'])(recyclingProcess), Validators.required],
       name: [pathOr('', ['name'])(information), Validators.required],
     });
   }

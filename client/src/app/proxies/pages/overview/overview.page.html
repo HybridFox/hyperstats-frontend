@@ -2,9 +2,10 @@
 </app-page-title>
 <div class="l-grid__row l-grid--with-margins">
   <div class="l-grid__col-12-12">
-    <button class="a-button--primary a-button-outline has-icon-after u-margin-bottom-large" (click)="saveProxies()">
-      {{'PROXIES.SAVEPROXIES' | translate}}
-    </button>
+    <app-proxies-save-button
+      (saveFunction)="saveProxies()"
+      [disabled]="!proxyChanges"
+    ></app-proxies-save-button>
   </div>
 </div>
 <div class="l-grid__row l-grid--with-margins">
@@ -42,6 +43,7 @@
                     <ng-container *ngFor="let report of process.value.reports.controls">
                       <td>
                         <app-checkbox-input
+                          (click)="checkBoxClicked()"
                           [control]="report.get('value')"
                           [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-input__checkbox--semi-checked' : ''">
                         </app-checkbox-input>

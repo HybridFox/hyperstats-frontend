@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-25T09:54:17.185Z\n"
+"POT-Creation-Date: 2019-03-26T11:43:42.654Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -646,6 +646,14 @@ msgstr "Something went wrong"
 
 msgid "PAGE##VERIFICATION-SUCCEEDED##TITLE"
 msgstr "Success! Your registration is now complete, please log in to continue."
+
+msgid "PROXIES##POPUP##EXPLANATION"
+msgstr ""
+"When you share proxies with a compliance organisation, this organisation "
+"can reshare them to other authorization organisations."
+
+msgid "PROXIES##POPUP##TITLE"
+msgstr "Are your sure you want to save this proxies?"
 
 msgid "PROXIES##REVOKEPROXY"
 msgstr "Revoke this proxy"

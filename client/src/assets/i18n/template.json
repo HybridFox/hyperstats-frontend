@@ -272,6 +272,10 @@
 		}
 	},
 	"PROXIES": {
+		"POPUP": {
+			"EXPLANATION": "",
+			"TITLE": ""
+		},
 		"REVOKEPROXY": "",
 		"SAVEPROXIES": ""
 	},
@@ -588,6 +592,7 @@
 				"GENERAL-INFORMATION": ""
 			}
 		},
+		"NO-LOGS": "",
 		"NO-ORGANISATIONS": "",
 		"NO-PROCESS": "",
 		"NO-PROCESS-SELECTED": "",

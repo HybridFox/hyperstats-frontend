@@ -41,6 +41,7 @@ export class OverviewPageComponent implements OnInit {
   public proxiesForm: FormArray;
   public showAddCompany = false;
   public companies: Option[] = [];
+  public proxyChanges = false;
 
   public extraCompanies = [];
   public selectedCompany: string;
@@ -89,6 +90,7 @@ export class OverviewPageComponent implements OnInit {
   }
 
   public revokeProxy(proxy: FormControl) {
+    let proxyDeleted = false;
     const companyId = proxy.value.companyInfo.companyId;
     proxy.value.processes.controls.forEach(process => {
       const recyclingProcessId = process.value.processInfo.processId;
@@ -101,9 +103,21 @@ export class OverviewPageComponent implements OnInit {
           };
 
           this.deleteNewProxy(body);
+          proxyDeleted = true;
         }
       });
     });
+
+    if (proxyDeleted) {
+      this.companies = [...this.companies, {
+        value: proxy.value.companyInfo.companyId,
+        label: proxy.value.companyInfo.companyName,
+      }];
+    } else {
+      this.extraCompanies = this.extraCompanies.filter(company => company.proxyCompanyId !==  proxy.value.companyInfo.companyId);
+      this.getProxiesFrom();
+    }
+
     this.proxiesActions.fetchAll().toPromise();
   }
 
@@ -152,22 +166,24 @@ export class OverviewPageComponent implements OnInit {
                   if (report.controls.value.value) {
                     this.putNewProxy(body);
                   }
-                } else {
-                  if (!report.controls.value.value) {
-                    this.deleteNewProxy(body);
-                  }
+                } else if (!report.controls.value.value) {
+                  this.deleteNewProxy(body);
                 }
             }
-          } else {
-            if (report.controls.value.value) {
-              this.putNewProxy(body);
-            }
+          } else if (report.controls.value.value) {
+            this.putNewProxy(body);
           }
         });
       });
     });
     this.extraCompanies = [];
     this.proxiesActions.fetchAll().toPromise();
+  }
+
+  public checkBoxClicked() {
+    if (!this.proxyChanges) {
+      this.proxyChanges = true;
+    }
   }
 
   private putNewProxy(body: ProxyBody) {
