@@ -22,6 +22,7 @@ import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { CompanyType } from '@api/company';
 import { REPORT_STATE } from '../../../reports/store/constants';
+import { pathOr } from 'ramda';
 
 @Component({
   templateUrl: './overview.page.html',
@@ -253,11 +254,12 @@ export class OverviewPageComponent implements OnInit {
   }
 
   private getStatus(reports: Report[], year: string, recyclingProcess: RecyclingProcess, companyProxies: Proxy[]) {
-    const matchingReports = reports.filter(report => (
-      report.meta.status === REPORT_STATE.FILED &&
+    const matchingReports = reports.filter(report => {
+      const reportProcess = report.data.information.recyclingProcess;
+      return (report.meta.status === REPORT_STATE.FILED &&
       report.data.information.reportingYear === parseInt(year, 10) &&
-      (report.data.information.recyclingProcess as PopulatedRecyclingProcess)._id === recyclingProcess._id
-    ));
+      pathOr(reportProcess, ['_id'], reportProcess) === recyclingProcess._id);
+    });
 
 
     if (matchingReports.length === 0) {
