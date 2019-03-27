@@ -22,6 +22,7 @@
 			"CREATENEWREPORT": "",
 			"DELETE-ELEMENT": "",
 			"GOTOAPP": "",
+			"REVOKE": "",
 			"SAVE": ""
 		},
 		"FIELD-ERRORS": {
@@ -272,11 +273,15 @@
 		}
 	},
 	"PROXIES": {
-		"POPUP": {
+		"REVOKE-POPUP": {
 			"EXPLANATION": "",
 			"TITLE": ""
 		},
 		"REVOKEPROXY": "",
+		"SAVE-POPUP": {
+			"EXPLANATION": "",
+			"TITLE": ""
+		},
 		"SAVEPROXIES": ""
 	},
 	"Recycler": "",
