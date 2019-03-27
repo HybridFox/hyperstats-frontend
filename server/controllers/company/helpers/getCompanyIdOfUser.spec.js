@@ -1,35 +1,27 @@
 const { expect } = require("chai");
-const { mockMongoose } = require("../../../test/mocks");
-const createTestUser = require("../../../test/helpers/createTestUser");
-const getCompanyIdOfUser  = require("./getCompanyIdOfUser");
+const profileStub = {};
+const proxyquire = require("proxyquire");
 
-describe.only("Company", () => {
-	let mongoServer;
-	let user;
-	let loggedInReq;
+const loggedInReq = {
+	company: {
+		_id: "companyID",
+	},
+};
 
-	before(async() => {
-		mongoServer = await mockMongoose();
-		user = await createTestUser();
-		loggedInReq = {
-			session: {
-				profile: user,
-				safeProfile: user,
-			},
-		};
+describe("Company", () => {
+	const getCompanyIdOfUser = proxyquire("./getCompanyIdOfUser", {
+		"../../../helpers/profile": profileStub,
 	});
 
-	after(() => {
-		mongoServer.stop();
-	});
+	profileStub.get = (req) => req;
 
 	describe("get by id of user", () => {
 		it("Should get company id of user", () => {
-			expect(getCompanyIdOfUser(loggedInReq)).to.equal("companyID");
+			expect(getCompanyIdOfUser(loggedInReq)).to.eventually.equal("companyID");
 		});
 
-		// it("Should be undefined when no company is found", () => {
-		// 	expect(getCompanyIdOfUser({ session: {} })).to.be.null;
-		// });
+		it("Should be undefined when no company is found", () => {
+			expect(getCompanyIdOfUser({ session: {} })).to.eventually.be.null;
+		});
 	});
 });
