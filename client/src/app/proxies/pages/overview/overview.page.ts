@@ -127,17 +127,17 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     });
 
     if (proxyDeleted) {
-      this.companies = [...this.companies, {
+      this.selectCompanies = [...this.selectCompanies, {
         value: proxy.value.companyInfo.companyId,
         label: proxy.value.companyInfo.companyName,
       }];
     } else {
       this.extraCompanies = this.extraCompanies.filter(company => company.proxyCompanyId !==  proxy.value.companyInfo.companyId);
       this.removeProxyCompaniesFromCompanies(this.companies);
-      this.getProxiesFrom();
     }
 
     this.proxiesActions.fetchAll().toPromise();
+    this.getProxiesFrom();
   }
 
   public toggleAddCompany() {
