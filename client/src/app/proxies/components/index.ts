@@ -1,6 +1,6 @@
-import { SaveButtonComponent } from './save-button';
-export { SaveButtonComponent } from './save-button';
+import { PopupButtonComponent } from './popup-button';
+export { PopupButtonComponent } from './popup-button';
 
 export const Components = [
-  SaveButtonComponent,
+  PopupButtonComponent,
 ];

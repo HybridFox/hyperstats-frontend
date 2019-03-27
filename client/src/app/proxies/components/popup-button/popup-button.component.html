@@ -1,0 +1,27 @@
+<button
+  [class]="buttonClass"
+  (click)="openPopup()"
+  [disabled]="disabled"
+>
+  {{ buttonText }}
+</button>
+<div *ngIf="popupOpen" class="o-popup">
+  <div class="m-card--primary">
+    <app-section-title
+      [title]="popupTitle">
+    </app-section-title>
+    <p>{{ popupExplanation }}</p>
+    <button
+      class="a-button--ghost a-button-outline u-text-uppercase u-margin-right"
+      (click)="confirmAction()"
+    >
+      {{ confirmLabel }}
+    </button>
+    <button
+      class="a-button--outline a-button--danger u-text-uppercase"
+      (click)="cancelAction()"
+    >
+      {{ cancelLabel }}
+    </button>
+  </div>
+</div>

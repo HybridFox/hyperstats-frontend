@@ -8,7 +8,7 @@ import { uniq } from 'ramda';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
-import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
+import { Report } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { CompanySelector } from '../../../manage-companies/store';
 import { CompaniesActions } from '../../../manage-companies/store/companies/actions';
@@ -23,6 +23,7 @@ import { companiesToSelectOptions } from '@helpers/select.helpers';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { CompanyType } from '@api/company';
 import { REPORT_STATE } from '../../../reports/store/constants';
+import { pathOr } from 'ramda';
 
 @Component({
   templateUrl: './overview.page.html',
@@ -233,6 +234,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
       proxyCompanyId: proxy.proxyCompanyId
     }))), ...this.extraCompanies];
 
+    companies.sort((a, b) => (a.proxyCompanyName > b.proxyCompanyName) ? 1 : ((b.proxyCompanyName > a.proxyCompanyName) ? -1 : 0));
+
     return this.formBuilder.array(companies.map(company => {
       const companyProxies = this.proxies.filter(proxy => company.proxyCompanyId === proxy.proxyCompanyId);
 
@@ -269,11 +272,12 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
   }
 
   private getStatus(reports: Report[], year: string, recyclingProcess: RecyclingProcess, companyProxies: Proxy[]) {
-    const matchingReports = reports.filter(report => (
-      report.meta.status === REPORT_STATE.FILED &&
+    const matchingReports = reports.filter(report => {
+      const reportProcess = report.data.information.recyclingProcess;
+      return (report.meta.status === REPORT_STATE.FILED &&
       report.data.information.reportingYear === parseInt(year, 10) &&
-      (report.data.information.recyclingProcess as PopulatedRecyclingProcess)._id === recyclingProcess._id
-    ));
+      pathOr(reportProcess, ['_id'], reportProcess) === recyclingProcess._id);
+    });
 
 
     if (matchingReports.length === 0) {
