@@ -96,6 +96,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     this.companyOptions$
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe((companies) => {
+        this.companies = companies;
         if (this.proxies) {
           this.removeProxyCompaniesFromCompanies(companies);
         } else {
