@@ -45,6 +45,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
   public proxiesForm: FormArray;
   public showAddCompany = false;
   public companies: Option[] = [];
+  public selectCompanies: Option[] = [];
   public proxyChanges = false;
 
   public extraCompanies = [];
@@ -86,16 +87,20 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
       .subscribe((proxies) => {
         this.proxies = proxies;
         this.getProxiesFrom();
+
+        if (this.companies && this.companies.length > 0) {
+          this.removeProxyCompaniesFromCompanies(this.companies);
+        }
     });
 
     this.companyOptions$
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe((companies) => {
-      if (this.proxies) {
-        this.removeProxyCompaniesFromCompanies(companies);
-      } else {
-        this.companies = companies;
-      }
+        if (this.proxies) {
+          this.removeProxyCompaniesFromCompanies(companies);
+        } else {
+          this.selectCompanies = companies;
+        }
     });
 
     this.years = this.codesService.years().map(year => year.value);
@@ -147,6 +152,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         proxyCompanyId: newCompany.value,
       });
 
+      this.selectCompanies = this.selectCompanies.filter(company => company.value !== newCompany.value);
+
       this.getProxiesFrom();
       this.removeProxyCompaniesFromCompanies(this.companies);
       this.selectedCompany = '';
@@ -190,6 +197,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
       });
     });
     this.extraCompanies = [];
+    this.removeProxyCompaniesFromCompanies(this.companies);
     this.proxiesActions.fetchAll().toPromise();
   }
 
@@ -218,7 +226,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
       proxyCompanyId: proxy.proxyCompanyId
     }))), ...this.extraCompanies];
 
-    this.companies = companies.filter(company => {
+    this.selectCompanies = companies.filter(company => {
       return !shownCompanies.find(shownCompany => shownCompany.proxyCompanyId === company.value);
     });
   }
