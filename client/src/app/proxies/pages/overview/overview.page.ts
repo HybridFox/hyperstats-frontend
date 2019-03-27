@@ -7,7 +7,7 @@ import { uniq } from 'ramda';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
-import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
+import { Report } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { CompanySelector } from '../../../manage-companies/store';
 import { CompaniesActions } from '../../../manage-companies/store/companies/actions';
