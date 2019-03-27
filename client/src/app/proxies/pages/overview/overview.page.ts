@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { select, select$ } from '@angular-redux/store';
 import { FormControl, FormArray, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { uniq } from 'ramda';
 
 import { CodesService } from 'src/app/core/services/codes/codes.service';
@@ -28,12 +29,14 @@ import { pathOr } from 'ramda';
   templateUrl: './overview.page.html',
 })
 
-export class OverviewPageComponent implements OnInit {
+export class OverviewPageComponent implements OnInit, OnDestroy {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
   @select$(CompanySelector.overview.result, companiesToSelectOptions) public companyOptions$: Observable<Option[]>;
   @select(ProxiesSelectors.list.result) public proxies$: Observable<Proxy[]>;
   @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
   @select(ReportsProcessSelector.list.result) public recyclingProcesses$: Observable<any[]>;
+
+  public componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
   public proxies: Proxy[];
   public reports: Report[];
@@ -64,22 +67,30 @@ export class OverviewPageComponent implements OnInit {
     this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
     this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
 
-    this.reports$.subscribe((reports) => {
-      this.reports = reports;
-      this.getProxiesFrom();
+    this.reports$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((reports) => {
+        this.reports = reports;
+        this.getProxiesFrom();
+      });
+
+    this.recyclingProcesses$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((recyclingProcesses) => {
+        this.recyclingProcesses = recyclingProcesses;
+        this.getProxiesFrom();
     });
 
-    this.recyclingProcesses$.subscribe((recyclingProcesses) => {
-      this.recyclingProcesses = recyclingProcesses;
-      this.getProxiesFrom();
+    this.proxies$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((proxies) => {
+        this.proxies = proxies;
+        this.getProxiesFrom();
     });
 
-    this.proxies$.subscribe((proxies) => {
-      this.proxies = proxies;
-      this.getProxiesFrom();
-    });
-
-    this.companyOptions$.subscribe((companies) => {
+    this.companyOptions$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((companies) => {
       if (this.proxies) {
         this.removeProxyCompaniesFromCompanies(companies);
       } else {
@@ -186,6 +197,11 @@ export class OverviewPageComponent implements OnInit {
     if (!this.proxyChanges) {
       this.proxyChanges = true;
     }
+  }
+
+  public ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
   }
 
   private putNewProxy(body: ProxyBody) {
