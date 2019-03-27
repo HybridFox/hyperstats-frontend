@@ -101,6 +101,7 @@
       </button>
       <app-delete-button
         *ngIf="!!recyclingProcess?._id && !isDuplicate"
+        class="u-pull-right"
         (deleteFunction)="removeForm()"
         [extraMessage]="deleteConfirmMessage"
         [disabled]="formDisabled"></app-delete-button>

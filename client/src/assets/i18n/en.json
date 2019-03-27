@@ -101,10 +101,10 @@
             "ABOUT": "About us",
             "AUDITTRAIL": "Audit Trail",
             "AUDITTRIAL": "Audit Trail",
-            "AUTHORISATION-ORG": "Authorisation Organisation",
+            "AUTHORISATION-ORG": "Authorisation Organisations",
             "COMPANIES": "Companies",
             "COMPANYINFORMATION": "Company Information",
-            "COMPLIANCE-ORG": "Companies",
+            "COMPLIANCE-ORG": "Compliance Organisations",
             "CONTACT": "Contact",
             "HELP": "Help",
             "LOGIN": "Log in",
@@ -112,7 +112,7 @@
             "MORE": "More...",
             "PRIVACY": "Privacy",
             "PROXIES": "Proxies",
-            "RECYCLERS": "Recycling Partners",
+            "RECYCLERS": "Recyclers",
             "RECYCLINGPARTNERS": "Recycling Partners",
             "RECYCLINGPROCESSES": "Recycling Processes",
             "REGISTER": "Register",
@@ -182,16 +182,16 @@
             }
         },
         "MANAGE-AUTHORISATION-ORG": {
-            "TITLE": "Manage users"
+            "TITLE": "Authorisation organisations"
         },
         "MANAGE-COMPANIES": {
             "TITLE": "Manage companies"
         },
         "MANAGE-COMPLIANCE-ORG": {
-            "TITLE": "Manage companies"
+            "TITLE": "Compliance organisations"
         },
         "MANAGE-RECYCLERS": {
-            "TITLE": "Manage users"
+            "TITLE": "Recyclers"
         },
         "MANAGE-USERS": {
             "TITLE": "Manage users"
@@ -597,8 +597,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
-        "NO-LOGS": "No logs yet",
-        "NO-ORGANISATIONS": "Please create a recycling process before creating a report",
+        "NO-ORGANISATIONS": "You don’t have any linked {{key}}.",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",
         "OUTPUT-FRACTION": {

@@ -9,7 +9,7 @@ import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/ut
 import { AuthSelector, AuthActions } from '@store/auth';
 import { Option } from '@ui/form-fields/components/select/select.types';
 import { FormHelper } from '@helpers/form.helper';
-import { CompanyData } from '@api/company/company.types';
+import { CompanyData, CompanyMeta } from '@api/company/company.types';
 import { CompanyInterface } from '@api/company/company.interface';
 import { UserInterface } from '@store/auth/auth.interface';
 
@@ -26,6 +26,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
     public countryList: Option[];
 
     private originalCompanyData: CompanyData = null;
+    private originalCompanyMeta: CompanyMeta;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -54,6 +55,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
         this.user$.subscribe((user) => {
             if (user && user.company && user.company.data) {
                 this.originalCompanyData = user.company.data;
+                this.originalCompanyMeta = user.company.meta;
                 this.companyForm.patchValue(user.company.data);
             }
         });
@@ -82,7 +84,7 @@ export class CompanyPageComponent implements OnInit, OnDestroy {
         this.authActions.updateCompanyOfProfile({
             ...this.originalCompanyData,
             ...this.companyForm.value
-        }).then((company: CompanyInterface) => {
+        }, this.originalCompanyMeta).then((company: CompanyInterface) => {
             this.toastrService.success(
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.DESCRIPTION') as string,
                 ngxExtract('TOAST.COMPANY-INFORMATION.SUCCESS.TITLE') as string

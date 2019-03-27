@@ -274,10 +274,8 @@ msgstr "Audit Trail"
 msgid "GENERAL##MENU##AUDITTRIAL"
 msgstr "Audit Trail"
 
-#, fuzzy
-#| msgid "TYPES##COMPANY##AUTHORISATION-ORG"
 msgid "GENERAL##MENU##AUTHORISATION-ORG"
-msgstr "Authorisation Organisation"
+msgstr "Authorisation Organisations"
 
 msgid "GENERAL##MENU##COMPANIES"
 msgstr "Companies"
@@ -285,10 +283,8 @@ msgstr "Companies"
 msgid "GENERAL##MENU##COMPANYINFORMATION"
 msgstr "Company Information"
 
-#, fuzzy
-#| msgid "GENERAL##MENU##COMPANIES"
 msgid "GENERAL##MENU##COMPLIANCE-ORG"
-msgstr "Companies"
+msgstr "Compliance Organisations"
 
 msgid "GENERAL##MENU##CONTACT"
 msgstr "Contact"
@@ -313,10 +309,8 @@ msgstr "Privacy"
 msgid "GENERAL##MENU##PROXIES"
 msgstr "Proxies"
 
-#, fuzzy
-#| msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgid "GENERAL##MENU##RECYCLERS"
-msgstr "Recycling Partners"
+msgstr "Recyclers"
 
 msgid "GENERAL##MENU##RECYCLINGPARTNERS"
 msgstr "Recycling Partners"
@@ -473,23 +467,17 @@ msgstr "Please check your email for the link to reset your password"
 msgid "PAGE##FORGOT-PASSWORD##SUCCESS##TITLE"
 msgstr "Password reset requested"
 
-#, fuzzy
-#| msgid "PAGE##MANAGE-USERS##TITLE"
 msgid "PAGE##MANAGE-AUTHORISATION-ORG##TITLE"
-msgstr "Manage users"
+msgstr "Authorisation organisations"
 
 msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgstr "Manage companies"
 
-#, fuzzy
-#| msgid "PAGE##MANAGE-COMPANIES##TITLE"
 msgid "PAGE##MANAGE-COMPLIANCE-ORG##TITLE"
-msgstr "Manage companies"
+msgstr "Compliance organisations"
 
-#, fuzzy
-#| msgid "PAGE##MANAGE-USERS##TITLE"
 msgid "PAGE##MANAGE-RECYCLERS##TITLE"
-msgstr "Manage users"
+msgstr "Recyclers"
 
 msgid "PAGE##MANAGE-USERS##TITLE"
 msgstr "Manage users"
@@ -1167,7 +1155,7 @@ msgstr "No logs yet"
 #, fuzzy
 #| msgid "WIZARD##NO-PROCESS"
 msgid "WIZARD##NO-ORGANISATIONS"
-msgstr "Please create a recycling process before creating a report"
+msgstr "You don’t have any linked {{key}}."
 
 msgid "WIZARD##NO-PROCESS"
 msgstr "Please create a recycling process before creating a report"

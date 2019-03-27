@@ -12,11 +12,11 @@
 .p-app-root__content {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: auto;
 
     & > ng-component {
         display: flex;
         flex-direction: column;
-        flex: 1;
+        flex: auto;
     }
 }

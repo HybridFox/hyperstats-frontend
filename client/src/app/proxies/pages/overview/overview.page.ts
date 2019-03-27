@@ -313,6 +313,6 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
   }
 
   public getValue(status) {
-      return status === PROXY_OPTIONS.CHECKED;
+    return status === PROXY_OPTIONS.CHECKED;
   }
 }
