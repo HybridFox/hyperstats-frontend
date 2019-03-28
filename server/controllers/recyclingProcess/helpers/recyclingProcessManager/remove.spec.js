@@ -7,6 +7,7 @@ const Model = require("../../../../models/recyclingProcess");
 const { mockMongoose } = require("../../../../test/mocks");
 const mockProcesses = require("../../../../test/mocks/recyclingProcesses");
 
+const errors = require("../../../../helpers/errorHandler");
 const { report: reportMock } = require("../../../../test/mocks");
 const createTestUser = require("../../../../test/helpers/createTestUser");
 const createTestReport = require("../../../../test/helpers/testReport");
@@ -20,12 +21,12 @@ describe("Remove Recycling process", () => {
 	let remove;
 	let mongoServer;
 	let processId;
-	let reportId;
+	let mockReport;
 	let companyOfUser;
 	const companyId = createObjectId();
 	const RecyclingProcesses = mockProcesses();
 
-	before(async() => {
+	beforeEach(async() => {
 		mongoServer = await mockMongoose();
 		remove = require("./remove");
 		const create = require("./create");
@@ -36,19 +37,11 @@ describe("Remove Recycling process", () => {
 		const user = await createTestUser();
 		companyOfUser = user.data.company;
 
-		let mockReport = set(
+		this.mockReport = set(
 			lensPath(["data", "information", "recyclingProcess"]),
 			processId,
 			reportMock.mock
 		);
-
-		mockReport = set(
-			lensPath(["meta", "status"]),
-			REPORT_STATUS.SAVED,
-			mockReport
-		);
-
-		reportId = (await createTestReport.create(companyOfUser, mockReport))._id;
 	});
 
 	after(() => {
@@ -56,6 +49,12 @@ describe("Remove Recycling process", () => {
 	});
 
 	it("Should remove the recycling process based on a correct _id", async() => {
+		await createTestReport.create(companyOfUser, set(
+			lensPath(["meta", "status"]),
+			REPORT_STATUS.SAVED,
+			this.mockReport
+		));
+
 		await remove(processId);
 		const result = await Model.findOne({ _id: processId }).exec();
 
@@ -65,9 +64,30 @@ describe("Remove Recycling process", () => {
 	});
 
 	it("Should remove the corresponding saved reports", async() => {
+		const reportId = (await createTestReport.create(companyOfUser, set(
+			lensPath(["meta", "status"]),
+			REPORT_STATUS.SAVED,
+			this.mockReport
+		)))._id;
+
+		await remove(processId);
 		const result = await ReportModel.findById(reportId).lean().exec();
+
 		expect(result).to.be.an("object");
 		expect(result.meta).to.be.an("object");
 		expect(result.meta.deleted).to.be.true;
 	});
+
+	it("Should return 403 when trying to remove a process with a filed report", async() => {
+		await createTestReport.create(companyOfUser, mockReport);
+
+		expect(remove(processId)).to.eventually.rejectedWith(errors.Forbidden);
+	});
+
+	it("Should return 404 when trying to remove a removed process", async() => {
+		await remove(processId);
+
+		expect(remove(processId)).to.eventually.rejectedWith(errors.ProcessNotFound);
+	});
 });
+
