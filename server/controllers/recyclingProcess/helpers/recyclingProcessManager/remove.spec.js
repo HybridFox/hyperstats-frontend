@@ -15,7 +15,7 @@ const ReportModel = require("../../../../models/report");
 should();
 use(chaiAsPromised);
 
-describe.only("Remove Recycling process", () => {
+describe("Remove Recycling process", () => {
 	let remove;
 	let mongoServer;
 	let processId;
