@@ -1,7 +1,8 @@
 const recyclingProcessManager = require("./helpers/recyclingProcessManager");
 
 module.exports = (req, res, next) => {
-	recyclingProcessManager.remove(req.data.params.id)
+	const id = req.data.params.id;
+	recyclingProcessManager.remove(id)
 		.then(() => {
 			res.status(204).send();
 		}, next);
