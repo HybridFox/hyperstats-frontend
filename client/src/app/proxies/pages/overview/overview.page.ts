@@ -8,7 +8,7 @@ import { uniq } from 'ramda';
 import { CodesService } from 'src/app/core/services/codes/codes.service';
 import { ReportsSelector } from '../../../reports/store/reports/selectors';
 import { ReportsProcessSelector } from '../../../reports/store/recycling-processes/selectors';
-import { Report } from '../../../reports/store/reports/types';
+import { Report, PopulatedRecyclingProcess } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { CompanySelector } from '../../../manage-companies/store';
 import { CompaniesActions } from '../../../manage-companies/store/companies/actions';
@@ -40,7 +40,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
 
   public proxies: Proxy[];
   public reports: Report[];
-  public recyclingProcesses: RecyclingProcess[];
+  public recyclingProcesses: RecyclingProcess[] | PopulatedRecyclingProcess[];
   public years: string[];
   public proxiesForm: FormArray;
   public showAddCompany = false;
@@ -52,6 +52,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
   public selectedCompany: string;
 
   public PROXY_OPTIONS = PROXY_OPTIONS;
+
+  public userCompanyType: string;
 
   constructor(
     private proxiesActions: ProxiesActions,
@@ -70,9 +72,10 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     this.user$
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe((user) => {
-        if (user.company.meta.type === CompanyType.R) {
+        this.userCompanyType = user.company.meta.type;
+        if (this.userCompanyType === CompanyType.R) {
           this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
-        } else if (user.company.meta.type === CompanyType.CO) {
+        } else if (this.userCompanyType === CompanyType.CO) {
           this.companiesActions.fetchByType([CompanyType.AO]).toPromise();
         }
       });
@@ -81,15 +84,23 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe((reports) => {
         this.reports = reports;
+
+        if (this.userCompanyType === CompanyType.CO && reports) {
+          this.recyclingProcesses = uniq(reports.map(report => (report.data.information.recyclingProcess as PopulatedRecyclingProcess)));
+        }
+
         this.getProxiesFrom();
       });
 
-    this.recyclingProcesses$
-      .pipe(takeUntil(this.componentDestroyed$))
-      .subscribe((recyclingProcesses) => {
-        this.recyclingProcesses = recyclingProcesses;
-        this.getProxiesFrom();
-    });
+
+    if (this.userCompanyType !== CompanyType.CO) {
+      this.recyclingProcesses$
+        .pipe(takeUntil(this.componentDestroyed$))
+        .subscribe((recyclingProcesses) => {
+          this.recyclingProcesses = recyclingProcesses;
+          this.getProxiesFrom();
+      });
+    }
 
     this.proxies$
       .pipe(takeUntil(this.componentDestroyed$))
