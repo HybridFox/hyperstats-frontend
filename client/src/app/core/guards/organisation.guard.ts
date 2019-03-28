@@ -8,42 +8,42 @@ import { AuthSelector } from '@store/auth';
 
 @Injectable()
 export class OrganisationGuard implements CanActivate {
-    @select(AuthSelector.user.result) user$: Observable<any>;
+  @select(AuthSelector.user.result) user$: Observable<any>;
 
-    constructor(
-        private router: Router,
-    ) { }
+  constructor(
+    private router: Router,
+  ) { }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.user$
-            .pipe(
-                map((user) => {
-                  if (user.company.meta.type === 'R' && route.routeConfig.path === 'recycler') {
-                    return true;
-                  }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.user$
+      .pipe(
+        map((user) => {
+          if (user.company.meta.type === 'R' && route.routeConfig.path === 'recycler') {
+            return true;
+          }
 
-                  if (user.company.meta.type !== 'CO' && user.company.meta.type !== 'AO' ) {
-                    this.router.navigate(['/']);
+          if (user.company.meta.type !== 'CO' && user.company.meta.type !== 'AO') {
+            this.router.navigate(['/']);
 
-                    return false;
-                  }
+            return false;
+          }
 
-                  if (user.company.meta.type === 'CO' &&
-                      (route.routeConfig.path === 'authorisation-organisation' || route.routeConfig.path === 'recycler')) {
-                    this.router.navigate(['/']);
+          if (user.company.meta.type === 'CO' &&
+            (route.routeConfig.path === 'authorisation-organisation' || route.routeConfig.path === 'recycler')) {
+            this.router.navigate(['/']);
 
-                    return false;
-                  }
+            return false;
+          }
 
-                  if (user.company.meta.type === 'AO' &&
-                      (route.routeConfig.path === 'compliance-organisation' || route.routeConfig.path === 'recycler')) {
-                    this.router.navigate(['/']);
+          if (user.company.meta.type === 'AO' &&
+            (route.routeConfig.path === 'compliance-organisation' || route.routeConfig.path === 'recycler')) {
+            this.router.navigate(['/']);
 
-                    return false;
-                  }
+            return false;
+          }
 
-                  return true;
-                })
-            );
-    }
+          return true;
+        })
+      );
+  }
 }

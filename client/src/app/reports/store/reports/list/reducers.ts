@@ -3,26 +3,26 @@ import { progressReducer } from '@store/hor';
 import { MODULE, LIST } from '../../constants';
 
 export const reducer = (
-    state = null,
-    action,
+  state = null,
+  action,
 ) => {
-    if (action.type === ACTIONS.LIST.FETCH) {
-        return [
-            ...action.payload
-        ];
+  if (action.type === ACTIONS.LIST.FETCH) {
+    return [
+      ...action.payload
+    ];
+  }
+
+  if (action.type === ACTIONS.LIST.ADD_TO_LIST) {
+    if (state) {
+      return state.concat(action.payload);
     }
 
-    if (action.type === ACTIONS.LIST.ADD_TO_LIST) {
-        if (state) {
-            return state.concat(action.payload);
-        }
+    return [...action.payload];
+  }
 
-        return [...action.payload];
-    }
-
-    return state;
+  return state;
 };
 
 export const listReducer = progressReducer({
-    entityType: `${MODULE}/${LIST}`
+  entityType: `${MODULE}/${LIST}`
 }, reducer);

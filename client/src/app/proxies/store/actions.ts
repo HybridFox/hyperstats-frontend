@@ -14,7 +14,7 @@ export class ProxiesActions {
   constructor(
     private handler: Handler,
     private proxiesRepository: ProxiesRepository,
-  ) {}
+  ) { }
 
   public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH_ALL);

@@ -67,7 +67,7 @@ export class AdditivesPageComponent extends StepPageAbstract implements OnInit {
   }
 
   private setActiveStepById(stepId: string) {
-   this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
+    this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
     if (this.stepId !== -1) {
       this.additive = this.form.get(`${this.stepId}`) as FormGroup;
     } else {

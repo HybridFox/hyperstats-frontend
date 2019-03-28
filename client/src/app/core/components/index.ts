@@ -8,8 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 export { FooterComponent } from './footer/footer.component';
 
 export const Components = [
-    AppNavigationComponent,
-    CoreComponent,
-    CoreNavigationComponent,
-    FooterComponent,
+  AppNavigationComponent,
+  CoreComponent,
+  CoreNavigationComponent,
+  FooterComponent,
 ];

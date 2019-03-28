@@ -8,7 +8,7 @@ import { STATUS_TYPES } from 'src/lib/constants';
 import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
-    templateUrl: './validation.page.html',
+  templateUrl: './validation.page.html',
 })
 export class ValidationPageComponent implements OnDestroy {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;

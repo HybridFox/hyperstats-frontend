@@ -20,7 +20,7 @@ export class OverviewPageComponent implements OnInit {
   constructor(
     private recyclingProcessesActions: RecyclingProcessesActions,
     private reportActions: ReportsActions,
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.recyclingProcessesActions.fetchAll().toPromise();

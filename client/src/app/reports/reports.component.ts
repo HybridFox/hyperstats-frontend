@@ -5,4 +5,4 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
   templateUrl: './reports.component.html',
 })
-export class ReportsComponent {}
+export class ReportsComponent { }

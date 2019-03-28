@@ -13,9 +13,10 @@ export function validateAdditives(control: FormGroup) {
   }
   if (!isEmpty(type) || weight) {
     Object.keys(control.controls).map((controlName) => {
-      control.get(controlName).markAsDirty({onlySelf: true});
+      control.get(controlName).markAsDirty({ onlySelf: true });
     });
-    weight ? control.controls['type'].setErrors({'typeRequired': true}) : control.controls['weight'].setErrors({'weightRequired': true});
+    weight ? control.controls['type'].setErrors({ 'typeRequired': true }) :
+    control.controls['weight'].setErrors({ 'weightRequired': true });
     return { isRequired: true };
   }
   control.controls['type'].setErrors(null);

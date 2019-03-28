@@ -10,7 +10,7 @@ import { LanguageService } from '../../services/language';
 import { CoreComponent } from './core.component';
 
 class MockLanguageService {
-  initLanguage() {}
+  initLanguage() { }
 }
 
 class MockAuthActions {
@@ -37,9 +37,9 @@ describe('CoreComponent', () => {
         { provide: LanguageService, useClass: MockLanguageService },
         { provide: AuthActions, useClass: MockAuthActions }
       ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
 
     spyOn((TestBed.get(LanguageService) as any), 'initLanguage').and.callThrough();
   }));

@@ -15,115 +15,115 @@ import { UserCompanyActions } from '../../store/companies/actions';
 import { UserInterface } from '@store/auth/auth.interface';
 
 @Component({
-    templateUrl: './overview.page.html',
+  templateUrl: './overview.page.html',
 })
 export class OverviewPageComponent implements OnInit, OnDestroy {
-    @select(UserSelector.overview.result) public users$: Observable<UserInterface[]>;
-    @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
+  @select(UserSelector.overview.result) public users$: Observable<UserInterface[]>;
+  @select(UserSelector.overview.loading) public loading$: Observable<boolean>;
 
-    public filter: FormGroup;
+  public filter: FormGroup;
 
-    private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
 
-    constructor(
-        private usersActions: UsersActions,
-        private userCompanyActions: UserCompanyActions,
-        private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
-        private translateService: TranslateService
-    ) {}
+  constructor(
+    private usersActions: UsersActions,
+    private userCompanyActions: UserCompanyActions,
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private translateService: TranslateService
+  ) { }
 
-    public ngOnInit() {
-        this.setFilterForm();
+  public ngOnInit() {
+    this.setFilterForm();
 
-        this.route.queryParams
-            .pipe(
-                takeUntil(this.componentDestroyed$)
-            )
-            .subscribe((params) => {
-                const types = pathOr(0, ['types', 'length'])(params) > 0 ? params.types : null;
-                this.usersActions.fetchByTypes(types, params.admin === 'true', params.pending === 'true').toPromise();
-                this.userCompanyActions.fetchUserCompanies().toPromise();
-            });
+    this.route.queryParams
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe((params) => {
+        const types = pathOr(0, ['types', 'length'])(params) > 0 ? params.types : null;
+        this.usersActions.fetchByTypes(types, params.admin === 'true', params.pending === 'true').toPromise();
+        this.userCompanyActions.fetchUserCompanies().toPromise();
+      });
 
-        this.filter.valueChanges
-            .pipe(
-                takeUntil(this.componentDestroyed$),
-                map((data: any) => ({
-                    types: data.types.reduce((acc, type) => {
-                        return type.selected ? acc.concat([type.value]) : acc;
-                    }, []),
-                    admin: data.admin.selected,
-                    pending: data.pending.selected
-                }))
-            )
-            .subscribe((value) => {
-                this.router.navigate([], {
-                    queryParams: {
-                        types: value.types,
-                        admin: value.admin,
-                        pending: value.pending
-                    }
-                });
-            });
-    }
-
-    public ngOnDestroy() {
-        this.componentDestroyed$.next(true);
-        this.componentDestroyed$.complete();
-    }
-
-    private setFilterForm() {
-        const originalParams = this.route.snapshot.queryParams;
-        const types = pathOr(false, ['types', 'length'])(originalParams) ?
-            originalParams.types :
-            [CompanyType.R, CompanyType.CO, CompanyType.AO];
-
-        this.filter = this.createFilterForm([
-            {
-                value: CompanyType.R,
-                label: this.translateService.instant('TYPES.COMPANY.RECYCLER'),
-                selected: types.indexOf(CompanyType.R) !== -1
-            }, {
-                value: CompanyType.CO,
-                label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
-                selected: types.indexOf(CompanyType.CO) !== -1
-            }, {
-              value: CompanyType.AO,
-              label: this.translateService.instant('TYPES.COMPANY.AUTHORISATION-ORG'),
-              selected: types.indexOf(CompanyType.AO) !== -1
-            }
-        ], originalParams.admin === 'true', originalParams.pending === 'true');
-
+    this.filter.valueChanges
+      .pipe(
+        takeUntil(this.componentDestroyed$),
+        map((data: any) => ({
+          types: data.types.reduce((acc, type) => {
+            return type.selected ? acc.concat([type.value]) : acc;
+          }, []),
+          admin: data.admin.selected,
+          pending: data.pending.selected
+        }))
+      )
+      .subscribe((value) => {
         this.router.navigate([], {
           queryParams: {
-              types: types,
-              admin: originalParams.admin,
-              pending: originalParams.pending
-          },
-      });
-    }
-
-    private createFilterForm(types, isAdmin, isPending) {
-        return this.formBuilder.group({
-            admin: this.formBuilder.group({
-                value: UserType.ADMIN,
-                label: 'Admin',
-                selected: isAdmin,
-            }),
-            types: this.formBuilder.array(types.map((type) => {
-                return this.formBuilder.group({
-                    value: type.value,
-                    label: type.label,
-                    selected: type.selected,
-                });
-            })),
-            pending: this.formBuilder.group({
-                value: StatusType.PENDING,
-                label: 'Pending Approvals',
-                selected: isPending,
-            })
+            types: value.types,
+            admin: value.admin,
+            pending: value.pending
+          }
         });
-    }
+      });
+  }
+
+  public ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
+  }
+
+  private setFilterForm() {
+    const originalParams = this.route.snapshot.queryParams;
+    const types = pathOr(false, ['types', 'length'])(originalParams) ?
+      originalParams.types :
+      [CompanyType.R, CompanyType.CO, CompanyType.AO];
+
+    this.filter = this.createFilterForm([
+      {
+        value: CompanyType.R,
+        label: this.translateService.instant('TYPES.COMPANY.RECYCLER'),
+        selected: types.indexOf(CompanyType.R) !== -1
+      }, {
+        value: CompanyType.CO,
+        label: this.translateService.instant('TYPES.COMPANY.COMPLIANCE-ORG'),
+        selected: types.indexOf(CompanyType.CO) !== -1
+      }, {
+        value: CompanyType.AO,
+        label: this.translateService.instant('TYPES.COMPANY.AUTHORISATION-ORG'),
+        selected: types.indexOf(CompanyType.AO) !== -1
+      }
+    ], originalParams.admin === 'true', originalParams.pending === 'true');
+
+    this.router.navigate([], {
+      queryParams: {
+        types: types,
+        admin: originalParams.admin,
+        pending: originalParams.pending
+      },
+    });
+  }
+
+  private createFilterForm(types, isAdmin, isPending) {
+    return this.formBuilder.group({
+      admin: this.formBuilder.group({
+        value: UserType.ADMIN,
+        label: 'Admin',
+        selected: isAdmin,
+      }),
+      types: this.formBuilder.array(types.map((type) => {
+        return this.formBuilder.group({
+          value: type.value,
+          label: type.label,
+          selected: type.selected,
+        });
+      })),
+      pending: this.formBuilder.group({
+        value: StatusType.PENDING,
+        label: 'Pending Approvals',
+        selected: isPending,
+      })
+    });
+  }
 }
