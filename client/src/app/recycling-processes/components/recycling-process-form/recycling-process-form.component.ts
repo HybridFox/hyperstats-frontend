@@ -62,8 +62,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public ngOnChanges(changes: SimpleChanges) {
-    if (!this.recyclingProcess) {
-      this.processReportStatus = '';
+    if (changes.recyclingProcess) {
+      if (changes.recyclingProcess.currentValue !== changes.recyclingProcess.previousValue) {
+        this.processReportStatus = '';
+        this.checkProcessReportStatus();
+      }
     }
 
     if (this.recyclingPartners && changes.recyclingPartners) {
@@ -145,6 +148,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     this.duplicate.emit(this.recyclingProcess._id);
 
     this.processReportStatus = '';
+    this.checkProcessReportStatus();
   }
 
   private checkProcessReportStatus() {
