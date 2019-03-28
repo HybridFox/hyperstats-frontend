@@ -11,6 +11,7 @@ const { report: reportMock } = require("../../../../test/mocks");
 const createTestUser = require("../../../../test/helpers/createTestUser");
 const createTestReport = require("../../../../test/helpers/testReport");
 const ReportModel = require("../../../../models/report");
+const { REPORT_STATUS } = require("../../../report/helpers/const");
 
 should();
 use(chaiAsPromised);
@@ -43,7 +44,7 @@ describe("Remove Recycling process", () => {
 
 		mockReport = set(
 			lensPath(["meta", "status"]),
-			"SAVED",
+			REPORT_STATUS.SAVED,
 			mockReport
 		);
 
