@@ -92,7 +92,6 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         this.getProxiesFrom();
       });
 
-
     if (this.userCompanyType !== CompanyType.CO) {
       this.recyclingProcesses$
         .pipe(takeUntil(this.componentDestroyed$))
