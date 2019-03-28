@@ -597,6 +597,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-LOGS": "No logs yet",
         "NO-ORGANISATIONS": "You don’t have any linked {{key}}.",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",

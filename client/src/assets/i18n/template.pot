@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-03-27T08:00:09.299Z\n"
-"PO-Revision-Date: 2019-03-27T08:00:09.299Z\n"
+"POT-Creation-Date: 2019-03-28T07:25:41.902Z\n"
+"PO-Revision-Date: 2019-03-28T07:25:41.902Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -476,16 +476,10 @@ msgstr ""
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
 msgstr ""
 
-msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
-msgstr ""
-
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
-msgstr ""
-
-msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
 msgstr ""
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
