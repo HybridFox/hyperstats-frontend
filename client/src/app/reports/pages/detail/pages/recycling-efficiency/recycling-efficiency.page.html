@@ -1,38 +1,48 @@
 <div class="m-card--primary u-margin-top">
-    <app-sub-section-title
-        [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.OVERVIEW-ELEMENTS' | translate"
-    ></app-sub-section-title>
-    <div class="a-table-wrapper">
-        <table class="a-table">
-            <thead>
-                <tr>
-                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.ELEMENTS' | translate }}</th>
-                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.INPUT' | translate }}</th>
-                    <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.OUTPUT' | translate }}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="a-table__row--small" *ngFor="let type of types">
-                    <ng-container *ngIf="type.element">
-                        <td>{{ type.element }}</td>
-                        <td>{{ type.input }}</td>
-                        <td>{{ type.output }}</td>
-                    </ng-container>
-                </tr>
-            </tbody>
-        </table>
+  <app-sub-section-title
+    [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.OVERVIEW-ELEMENTS' | translate">
+  </app-sub-section-title>
+  <div class="a-table-wrapper">
+    <table class="a-table">
+      <thead>
+        <tr>
+          <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.ELEMENTS' | translate }}</th>
+          <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.INPUT' | translate }}</th>
+          <th>{{ 'WIZARD.RECYCLING-EFFICIENCY.LABELS.OUTPUT' | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="a-table__row--small" *ngFor="let type of types">
+          <ng-container *ngIf="type.element">
+            <td>{{ type.element }}</td>
+            <td>{{ type.input }}</td>
+            <td>{{ type.output }}</td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-sub-section-title
+    class="u-margin-top-x-large"
+    [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.CALCULATED-EFFICIENCY' | translate"
+  ></app-sub-section-title>
+  <div class="l-grid__row l-grid--with-margins">
+    <div class="l-grid__col-4-12">
+      <p>{{formData.getFormData().get('recyclingEfficiency.calculatedEfficiency').value || 0 }}%</p>
     </div>
-    <app-sub-section-title
-        class="u-margin-top-x-large"
-        [title]="'WIZARD.RECYCLING-EFFICIENCY.TITLES.CALCULATED-EFFICIENCY' | translate"
-    ></app-sub-section-title>
-    <div class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-4-12">
-            <p>{{formData.getFormData().get('recyclingEfficiency.calculatedEfficiency').value || 0 }}%</p>
-        </div>
-    </div>
-    <div class="u-margin-top-large">
-        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-OUTPUT' | translate }}</button>
-        <button (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-ADD-INFO' | translate }}</button>
-    </div>
+  </div>
+  <div class="u-margin-top-large">
+    <button
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'WIZARD.BUTTON.BACK-TO-OUTPUT' | translate }}
+    </button>
+    <button
+      (click)="nextStep()"
+      class="a-button--primary"
+    >
+      {{ 'WIZARD.BUTTON.GO-TO-ADD-INFO' | translate }}
+    </button>
+  </div>
 </div>
