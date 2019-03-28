@@ -2,9 +2,13 @@
     "Authorisation Organisation": "Authorisation Organisation",
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
-            "RECYCLING": "Recycling",
-            "SORTING": "Sorting",
-            "TRANSPORT": "Transport"
+            "HYDROMETALLURGY": "Hydrometallurgy",
+            "MECHANICAL": "Mechanical",
+            "MECHANICAL-HYDROMETALLURGY": "Mechanical + Hydrometallurgy",
+            "MECHANICAL-METALLURGICAL": "Mechanical + Metallurgical",
+            "NOT-APPLICABLE": "Not Applicable",
+            "PYROMETALLURGY": "Pyrometallurgy",
+            "VACUUM-THERMAL-PROCESS": "Vacuum Thermal Process"
         },
         "SORTOPTIONS": {
             "LAST-EDITED": "Last edited",
@@ -597,6 +601,7 @@
                 "GENERAL-INFORMATION": "General information"
             }
         },
+        "NO-LOGS": "No logs yet",
         "NO-ORGANISATIONS": "You don’t have any linked {{key}}.",
         "NO-PROCESS": "Please create a recycling process before creating a report",
         "NO-PROCESS-SELECTED": "Please select a recycling process in step 1",

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-27T08:00:09.299Z\n"
+"POT-Creation-Date: 2019-03-28T10:13:53.772Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,14 +14,26 @@ msgstr ""
 msgid "Authorisation Organisation"
 msgstr "Authorisation Organisation"
 
-msgid "CONSTANTS##METHODS-OF-PROCESSING##RECYCLING"
-msgstr "Recycling"
+msgid "CONSTANTS##METHODS-OF-PROCESSING##HYDROMETALLURGY"
+msgstr "Hydrometallurgy"
 
-msgid "CONSTANTS##METHODS-OF-PROCESSING##SORTING"
-msgstr "Sorting"
+msgid "CONSTANTS##METHODS-OF-PROCESSING##MECHANICAL"
+msgstr "Mechanical"
 
-msgid "CONSTANTS##METHODS-OF-PROCESSING##TRANSPORT"
-msgstr "Transport"
+msgid "CONSTANTS##METHODS-OF-PROCESSING##MECHANICAL-HYDROMETALLURGY"
+msgstr "Mechanical + Hydrometallurgy"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##MECHANICAL-METALLURGICAL"
+msgstr "Mechanical + Metallurgical"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##NOT-APPLICABLE"
+msgstr "Not Applicable"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##PYROMETALLURGY"
+msgstr "Pyrometallurgy"
+
+msgid "CONSTANTS##METHODS-OF-PROCESSING##VACUUM-THERMAL-PROCESS"
+msgstr "Vacuum Thermal Process"
 
 #, fuzzy
 #| msgid "CONSTANTS##SORTOPTIONS##LAST-UPDATED"
