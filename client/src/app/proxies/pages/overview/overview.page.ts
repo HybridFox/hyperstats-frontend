@@ -66,7 +66,16 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     this.proxiesActions.fetchAll().toPromise();
     this.reportActions.fetchAll({}).toPromise();
     this.reportProcessActions.fetchAllRecyclingProcesses().toPromise();
-    this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
+
+    this.user$
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe((user) => {
+        if (user.company.meta.type === CompanyType.R) {
+          this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
+        } else if (user.company.meta.type === CompanyType.CO) {
+          this.companiesActions.fetchByType([CompanyType.AO]).toPromise();
+        }
+      });
 
     this.reports$
       .pipe(takeUntil(this.componentDestroyed$))
