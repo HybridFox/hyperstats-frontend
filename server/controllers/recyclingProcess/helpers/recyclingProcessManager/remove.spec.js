@@ -58,9 +58,7 @@ describe("Remove Recycling process", () => {
 		await remove(processId);
 		const result = await Model.findOne({ _id: processId }).exec();
 
-		expect(result).to.be.an("object");
-		expect(result.meta).to.be.an("object");
-		expect(result.meta.deleted).to.be.true;
+		expect(result).to.be.an("object").to.have.property("meta").to.be.an("object").to.have.property("deleted").to.be.true;
 	});
 
 	it("Should remove the corresponding saved reports", async() => {
@@ -73,9 +71,7 @@ describe("Remove Recycling process", () => {
 		await remove(processId);
 		const result = await ReportModel.findById(reportId).lean().exec();
 
-		expect(result).to.be.an("object");
-		expect(result.meta).to.be.an("object");
-		expect(result.meta.deleted).to.be.true;
+		expect(result).to.be.an("object").to.have.property("meta").to.be.an("object").to.have.property("deleted").to.be.true;
 	});
 
 	it("Should return 403 when trying to remove a process with a filed report", async() => {
