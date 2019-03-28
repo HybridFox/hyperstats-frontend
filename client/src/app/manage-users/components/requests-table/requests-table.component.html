@@ -1,22 +1,22 @@
 <div class="a-table-wrapper">
-    <table class="a-table">
-        <thead>
-            <tr>
-                <th>{{ "GENERAL.LABELS.FIRSTNAME" | translate }}</th>
-                <th>{{ "GENERAL.LABELS.LASTNAME" | translate }}</th>
-                <th>{{ "GENERAL.LABELS.EMAIL" | translate }}</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let user of requests">
-                <td>{{ user?.data.firstname }}</td>
-                <td>{{ user?.data.lastname }}</td>
-                <td>{{ user?.data.email }}</td>
-                <td>
-                  <a [routerLink]="user?._id" class="a-link">View</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="a-table">
+    <thead>
+      <tr>
+        <th>{{ "GENERAL.LABELS.FIRSTNAME" | translate }}</th>
+        <th>{{ "GENERAL.LABELS.LASTNAME" | translate }}</th>
+        <th>{{ "GENERAL.LABELS.EMAIL" | translate }}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of requests">
+        <td>{{ user?.data.firstname }}</td>
+        <td>{{ user?.data.lastname }}</td>
+        <td>{{ user?.data.email }}</td>
+        <td>
+          <a [routerLink]="user?._id" class="a-link">View</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
