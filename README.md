@@ -196,10 +196,10 @@ List the team that has worked on this project, including the duration e.g.:
     * **Period**: January 2019 -> February 2019
 * [Jo Smets - Studio Hyperdrive](mailto:jo.smets@studiohyperdrive.be)
     * **Function**: Frontend developer
-    * **Period**: February 2019 -> ...
+    * **Period**: February 2019 -> March 2019
 * [Denis Valcke - Studio Hyperdrive](mailto:denis.valcke@studiohyperdrive.be)
     * **Function**: Backend developer
-    * **Period**: February 2019 -> ...
+    * **Period**: February 2019 -> March 2019
 * [Aline Vanliefland - Studio Hyperdrive](mailto:aline.vanliefland@studiohyperdrive.be)
     * **Function**: Project Manager
     * **Period**: February 2019 -> ...

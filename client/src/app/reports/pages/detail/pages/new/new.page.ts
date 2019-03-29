@@ -42,7 +42,7 @@ export class NewPageComponent extends StepPageAbstract implements OnInit {
       {
         nextStep: ['../input-fraction'],
         formSection: 'information'
-    });
+      });
   }
 
   ngOnInit() {

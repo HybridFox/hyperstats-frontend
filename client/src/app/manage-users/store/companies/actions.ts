@@ -10,33 +10,33 @@ import { CompanyRepository, CompanyType } from '@api/company';
 
 @Injectable()
 export class UserCompanyActions {
-    constructor(
-        private handler: Handler,
-        private entitiesActions: EntitiesActions,
-        private userCompanyRepository: CompanyRepository,
-    ) { }
+  constructor(
+    private handler: Handler,
+    private entitiesActions: EntitiesActions,
+    private userCompanyRepository: CompanyRepository,
+  ) { }
 
-    public fetchUserCompanies(): Observable<any> {
-        this.handler.dispatchStart(ACTIONS.FETCH);
+  public fetchUserCompanies(): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.FETCH);
 
-        return this.userCompanyRepository.fetchByType([CompanyType.R, CompanyType.CO, CompanyType.AO])
-            .pipe(
-                catchError((error) => {
-                    this.handler.dispatchError(ACTIONS.FETCH, {
-                      message: error.message,
-                    });
+    return this.userCompanyRepository.fetchByType([CompanyType.R, CompanyType.CO, CompanyType.AO])
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.FETCH, {
+            message: error.message,
+          });
 
-                    return throwError(error);
-                }),
-                tap((response) => {
-                    this.handler.dispatchSuccess(ACTIONS.FETCH, {
-                        payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.company]),
-                        pagination: null,
-                    });
-                }),
-                finalize(() => {
-                    this.handler.dispatchDone(ACTIONS.FETCH);
-                })
-            );
-    }
+          return throwError(error);
+        }),
+        tap((response) => {
+          this.handler.dispatchSuccess(ACTIONS.FETCH, {
+            payload: this.entitiesActions.normalize(response, [EntitiesActions.schema.company]),
+            pagination: null,
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.FETCH);
+        })
+      );
+  }
 }

@@ -3,25 +3,25 @@ import { progressReducer } from '@store/hor';
 import { MODULE, OVERVIEW, DETAIL, ACTIONS, REQUESTS } from './action-types';
 
 const OverviewReducer = (
-    state = null,
-    action,
+  state = null,
+  action,
 ) => {
-    if (action.type === ACTIONS.OVERVIEW.FETCH) {
-        return action.payload;
-    }
+  if (action.type === ACTIONS.OVERVIEW.FETCH) {
+    return action.payload;
+  }
 
-    return state;
+  return state;
 };
 
 const DetailReducer = (
-    state = null,
-    action,
+  state = null,
+  action,
 ) => {
-    if (action.type === ACTIONS.DETAIL.FETCH) {
-        return action.payload;
-    }
+  if (action.type === ACTIONS.DETAIL.FETCH) {
+    return action.payload;
+  }
 
-    return state;
+  return state;
 };
 
 const RequestsReducer = (
@@ -29,23 +29,23 @@ const RequestsReducer = (
   action,
 ) => {
   if (action.type === ACTIONS.REQUESTS.FETCH_PENDING_REQUESTS) {
-      return action.payload;
+    return action.payload;
   }
 
   return state;
 };
 
 export const ReducerConfig = {
-    overview: progressReducer(
-        { entityType: `${MODULE}/${OVERVIEW}` },
-        OverviewReducer,
-    ),
-    detail: progressReducer(
-        { entityType: `${MODULE}/${DETAIL}` },
-        DetailReducer,
-    ),
-    requests: progressReducer(
-      { entityType: `${MODULE}/${REQUESTS}` },
-        RequestsReducer,
-    ),
+  overview: progressReducer(
+    { entityType: `${MODULE}/${OVERVIEW}` },
+    OverviewReducer,
+  ),
+  detail: progressReducer(
+    { entityType: `${MODULE}/${DETAIL}` },
+    DetailReducer,
+  ),
+  requests: progressReducer(
+    { entityType: `${MODULE}/${REQUESTS}` },
+    RequestsReducer,
+  ),
 };

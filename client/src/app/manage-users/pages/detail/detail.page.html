@@ -1,10 +1,10 @@
 <h1>Detail page</h1>
 
 <div class="m-card--primary u-margin-bottom-large">
-    <app-user-form
-        [user]="user$ | async"
-        [companyOptions]="companyOptions$ | async"
-        (save)="update($event)"
-        (updateRequest)="updateRequest($event)"
-    ></app-user-form>
+  <app-user-form
+    [user]="user$ | async"
+    [companyOptions]="companyOptions$ | async"
+    (save)="update($event)"
+    (updateRequest)="updateRequest($event)"
+  ></app-user-form>
 </div>

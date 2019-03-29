@@ -15,8 +15,8 @@ const routes: Routes = [
     path: 'overview/:id',
     component: Pages.DetailPageComponent,
   }, {
-      path: 'signup-requests',
-      component: Pages.RequestsPageComponent,
+    path: 'signup-requests',
+    component: Pages.RequestsPageComponent,
   }, {
     path: 'signup-requests/:id',
     component: Pages.DetailPageComponent,

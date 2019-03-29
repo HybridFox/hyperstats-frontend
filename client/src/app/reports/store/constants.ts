@@ -5,6 +5,6 @@ export const DETAIL = 'DETAIL';
 export const COMPANIES = 'COMPANIES';
 
 export const REPORT_STATE = {
-    SAVED: 'SAVED',
-    FILED: 'FILED',
+  SAVED: 'SAVED',
+  FILED: 'FILED',
 };

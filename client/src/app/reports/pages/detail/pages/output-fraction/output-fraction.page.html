@@ -1,10 +1,9 @@
 <ng-container *ngIf="outputFraction">
   <app-sub-section-title
     class="u-margin-bottom"
-    [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate"
-  ></app-sub-section-title>
-  <div
-    class="m-card--secondary u-margin-bottom"
+    [title]="'WIZARD.OUTPUT-FRACTION.TITLES.OVERVIEW' | translate">
+  </app-sub-section-title>
+  <div class="m-card--secondary u-margin-bottom"
     *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
     <div class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-6-12">
@@ -43,7 +42,8 @@
         ></app-text-input>
       </div>
     </div>
-    <div *ngIf="fraction.get('virginClassification').value !== classifications.INTERMEDIATE" class="l-grid__row l-grid--with-margins">
+    <div *ngIf="fraction.get('virginClassification').value !== classifications.INTERMEDIATE"
+      class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-6-12">
         <app-text-input
           class="u-margin-top-x-large u-margin-bottom"
@@ -61,16 +61,17 @@
         ></app-select-input>
       </div>
     </div>
-    <div *ngIf="fraction.get('virginClassification').value === classifications.INTERMEDIATE" class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col-6-12">
-          <app-select-input
-            class="u-margin-top-x-large u-margin-bottom"
-            [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ASSIGNED-STEP' | translate"
-            [options]="processSteps$ | async"
-            [control]="fraction.get('assignedStep')"
-          ></app-select-input>
-        </div>
+    <div *ngIf="fraction.get('virginClassification').value === classifications.INTERMEDIATE"
+      class="l-grid__row l-grid--with-margins">
+      <div class="l-grid__col-6-12">
+        <app-select-input
+          class="u-margin-top-x-large u-margin-bottom"
+          [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ASSIGNED-STEP' | translate"
+          [options]="processSteps$ | async"
+          [control]="fraction.get('assignedStep')"
+        ></app-select-input>
       </div>
+    </div>
     <div class="l-grid__row l-grid--with-margins">
       <button
         *ngIf="!form?.disabled"
@@ -85,7 +86,13 @@
     {{ 'WIZARD.OUTPUT-FRACTION.LABELS.ADD-ADDITIONAL-ELEMENT' | translate }} <i class="a-icon a-icon--plus"></i>
   </button>
   <div class="u-margin-top-large">
-    <button *ngIf="stepId === 0" (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-ADDITIVES' | translate }}</button>
+    <button
+      *ngIf="stepId === 0"
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'WIZARD.BUTTON.BACK-TO-ADDITIVES' | translate }}
+    </button>
     <a
       *ngIf="stepId > 0"
       class="a-button--ghost u-margin-right"
@@ -100,6 +107,11 @@
     >
       {{ 'GENERAL.LABELS.NEXT-STEP' | translate }}
     </a>
-    <button *ngIf="stepId >= (form.controls.length - 1)" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-EFFICIENCY' | translate }}</button>
+    <button
+      *ngIf="stepId >= (form.controls.length - 1)"
+      (click)="nextStep()"
+      class="a-button--primary">
+        {{ 'WIZARD.BUTTON.GO-TO-EFFICIENCY' | translate }}
+      </button>
   </div>
 </ng-container>

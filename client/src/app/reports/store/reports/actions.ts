@@ -16,7 +16,7 @@ export class ReportsActions {
     private handler: Handler,
     private entitiesActions: EntitiesActions,
     private reportsRepository: ReportsRepository,
-  ) {}
+  ) { }
 
   public fetchAll(filters: any): Observable<any> {
     this.handler.dispatchStart(ACTIONS.LIST.FETCH);

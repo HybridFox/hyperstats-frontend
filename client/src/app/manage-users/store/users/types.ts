@@ -1,5 +1,5 @@
 export const UserType = {
-    ADMIN: 'admin'
+  ADMIN: 'admin'
 };
 
 export const StatusType = {

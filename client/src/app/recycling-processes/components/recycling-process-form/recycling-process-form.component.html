@@ -58,7 +58,6 @@
         class="u-margin-bottom-x-large"></app-select-input>
       <app-textarea-input
         [label]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION' | translate"
-        [description]="'PAGE.RECYCLING-PROCESSES.LABELS.QUALITATIVE-DESCRIPTION-DESCRIPTION' | translate"
         [control]="step.value.get('qualitativeDescription').get('text')"></app-textarea-input>
       <app-single-file-upload
         class="u-margin-bottom-x-large"
@@ -70,8 +69,6 @@
         (removeFile)="onRemoveFile(index, uploadTypes.ASSET)"
         ></app-single-file-upload>
       <p class="m-file-upload__title">{{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW' | translate}}</p>
-      <p class="m-file-upload__description">
-        {{ 'PAGE.RECYCLING-PROCESSES.LABELS.SCHEMATIC-OVERVIEW-DESCRIPTION' | translate }}</p>
       <app-single-file-upload
         class="u-margin-bottom-x-large"
         [control]="step.value.get('schematicOverview')"
