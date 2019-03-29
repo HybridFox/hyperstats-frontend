@@ -33,8 +33,8 @@ describe("profile", () => {
 
 	afterEach(() => req = null);
 
-	it("Should get falsy value when requesting profile", () => {
-		const result = profile.get(req);
+	it("Should get falsy value when requesting profile", async() => {
+		const result = await profile.get(req);
 
 		expect(result).to.be.undefined;
 	});
@@ -59,9 +59,9 @@ describe("profile", () => {
 		});
 	});
 
-	it("Should get a safe profile", () => {
+	it("Should get a safe profile", async() => {
 		profile.set(req, user);
-		const result = profile.get(req);
+		const result = await profile.get(req);
 
 		expect(result).to.deep.equal({
 			firstname: "fname",
