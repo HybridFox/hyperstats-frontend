@@ -62,11 +62,9 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public ngOnChanges(changes: SimpleChanges) {
-    if (changes.recyclingProcess) {
-      if (changes.recyclingProcess.currentValue !== changes.recyclingProcess.previousValue) {
-        this.processReportStatus = '';
-        this.checkProcessReportStatus();
-      }
+    if (changes.recyclingProcess && changes.recyclingProcess.currentValue !== changes.recyclingProcess.previousValue) {
+      this.processReportStatus = '';
+      this.checkProcessReportStatus();
     }
 
     if (this.recyclingPartners && changes.recyclingPartners) {
