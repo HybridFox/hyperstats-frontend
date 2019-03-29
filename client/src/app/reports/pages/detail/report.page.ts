@@ -70,7 +70,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     private reportsActions: ReportsActions,
     private route: ActivatedRoute,
     private partnerActions: RecyclingPartnerActions,
-  ) {}
+  ) { }
 
   public ngOnInit() {
     this.fetchReport();
@@ -140,7 +140,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
     }
 
     if (!isNil(control.value)) {
-      typeof(control.value) === 'string'
+      typeof (control.value) === 'string'
         ? this.reportProcessActions.getById(control.value).toPromise()
         : this.reportProcessActions.getById(control.value._id).toPromise();
     }
@@ -150,7 +150,7 @@ export class ReportPageComponent implements OnInit, OnDestroy {
       .pipe(
         takeUntil(this.componentDestroyed$),
         tap((id) => {
-          typeof(id) === 'string'
+          typeof (id) === 'string'
             ? this.reportProcessActions.getById(id).toPromise()
             : this.reportProcessActions.getById(id._id).toPromise();
         }),

@@ -2,9 +2,13 @@
     "Authorisation Organisation": "Authorisation Organisation",
     "CONSTANTS": {
         "METHODS-OF-PROCESSING": {
-            "RECYCLING": "Recycling",
-            "SORTING": "Sorting",
-            "TRANSPORT": "Transport"
+            "HYDROMETALLURGY": "Hydrometallurgy",
+            "MECHANICAL": "Mechanical",
+            "MECHANICAL-HYDROMETALLURGY": "Mechanical + Hydrometallurgy",
+            "MECHANICAL-METALLURGICAL": "Mechanical + Metallurgical",
+            "NOT-APPLICABLE": "Not Applicable",
+            "PYROMETALLURGY": "Pyrometallurgy",
+            "VACUUM-THERMAL-PROCESS": "Vacuum Thermal Process"
         },
         "SORTOPTIONS": {
             "LAST-EDITED": "Last edited",
@@ -27,6 +31,7 @@
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
+            "NO-COMPANIES": "Recycling partner required",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
             "REQUIRED": "This field is required",
             "TYPEREQUIRED": "Type is required when weight is filled in",

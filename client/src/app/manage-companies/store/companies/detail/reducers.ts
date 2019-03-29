@@ -2,17 +2,17 @@ import { ACTIONS, MODULE, DETAIL } from '../action-types';
 import { progressReducer } from '@store/hor';
 
 const reducer = (
-    state = null,
-    action,
+  state = null,
+  action,
 ) => {
-    if (action.type === ACTIONS.DETAIL.FETCH) {
-        return action.payload;
-    }
+  if (action.type === ACTIONS.DETAIL.FETCH) {
+    return action.payload;
+  }
 
-    return state;
+  return state;
 };
 
 export const DetailReducer = progressReducer(
-    { entityType: `${MODULE}/${DETAIL}` },
-    reducer,
+  { entityType: `${MODULE}/${DETAIL}` },
+  reducer,
 );

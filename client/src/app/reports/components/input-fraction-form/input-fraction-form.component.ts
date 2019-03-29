@@ -16,7 +16,7 @@ export class InputFractionFormComponent implements OnChanges {
 
   constructor(
     private formData: FormDataService,
-  ) {}
+  ) { }
 
   public ngOnChanges() {
     this.setActiveStepById();

@@ -6,7 +6,7 @@ import { UserTableComponent } from './user-table/user-table.component';
 export { UserTableComponent } from './user-table/user-table.component';
 
 export const Components = [
-    UserFormComponent,
-    UserTableComponent,
-    SignupRequestsTableComponent
+  UserFormComponent,
+  UserTableComponent,
+  SignupRequestsTableComponent
 ];

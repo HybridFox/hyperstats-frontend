@@ -3,7 +3,8 @@
     class="u-margin-bottom"
     [title]="'WIZARD.ADDITIVES.TITLES.OVERVIEW' | translate"
   ></app-sub-section-title>
-  <div *ngFor="let additiveItem of additive.controls.data.controls; let i = index" class="m-card--secondary u-margin-bottom">
+  <div *ngFor="let additiveItem of additive.controls.data.controls; let i = index"
+    class="m-card--secondary u-margin-bottom">
     <div class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-5-12">
         <app-text-input
@@ -15,30 +16,29 @@
         <app-text-input
           [label]="'WIZARD.ADDITIVES.LABELS.WEIGHT' | translate"
           [control]="additiveItem.get('weight')"
-          type="number"
-          suffix="kg"
+          type="number" suffix="kg"
         ></app-text-input>
       </div>
     </div>
     <div *ngIf="!form?.disabled" class="l-grid__row l-grid--with-margins">
-        <div class="l-grid__col">
-          <button
-            class="a-button--link a-button--small"
-            (click)="removeElement(additiveItem, i)"
-          >
-            {{ 'GENERAL.BUTTONS.DELETE-ELEMENT' | translate }}
-          </button>
-        </div>
+      <div class="l-grid__col">
+        <button class="a-button--link a-button--small" (click)="removeElement(additiveItem, i)">
+          {{ 'GENERAL.BUTTONS.DELETE-ELEMENT' | translate }}
+        </button>
+      </div>
     </div>
   </div>
-  <button
-    *ngIf="!form?.disabled"
-    class="a-button--primary a-button-outline has-icon-after"
-    (click)="addAdditive()">
-      {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
+  <button *ngIf="!form?.disabled" class="a-button--primary a-button-outline has-icon-after" (click)="addAdditive()">
+    {{ 'WIZARD.ADDITIVES.LABELS.ADD-ADDITIONAL-ADDITIVE' | translate }} <i class="a-icon a-icon--plus"></i>
   </button>
   <div class="u-margin-top-large">
-    <button *ngIf="stepId === 0" (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-INPUT' | translate }}</button>
+    <button
+      *ngIf="stepId === 0"
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'WIZARD.BUTTON.BACK-TO-INPUT' | translate }}
+    </button>
     <a
       *ngIf="stepId > 0"
       class="a-button--ghost u-margin-right"
@@ -53,6 +53,12 @@
     >
       {{ 'GENERAL.LABELS.NEXT-STEP' | translate }}
     </a>
-    <button *ngIf="stepId >= (form.controls.length - 1)" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-OUTPUT' | translate }}</button>
+    <button
+      *ngIf="stepId >= (form.controls.length - 1)"
+      (click)="nextStep()"
+      class="a-button--primary"
+    >
+      {{ 'WIZARD.BUTTON.GO-TO-OUTPUT' | translate }}
+    </button>
   </div>
 </div>

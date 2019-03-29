@@ -2,8 +2,8 @@ const { pathOr } = require("ramda");
 const { getOne } = require("./helpers");
 const profileHelper = require("../../helpers/profile");
 
-module.exports = (req, res, next) => {
-	const profile = profileHelper.get(req);
+module.exports = async(req, res, next) => {
+	const profile = await profileHelper.get(req);
 
 	return getOne({
 		_id: req.data.params.id,

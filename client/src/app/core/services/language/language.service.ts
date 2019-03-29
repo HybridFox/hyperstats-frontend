@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
   constructor(
     private translate: TranslateService
-  ) {}
+  ) { }
 
   public initLanguage() {
     // this language will be used  as a fallback when a translation isn't found in the current language

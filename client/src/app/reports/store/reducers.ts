@@ -3,6 +3,6 @@ import { reportsReducer } from './reports';
 import { ReportsProcessReducer } from './recycling-processes';
 
 export const Reducers = combineReducers({
-    reports: reportsReducer,
-    recyclingProcesses: ReportsProcessReducer
+  reports: reportsReducer,
+  recyclingProcesses: ReportsProcessReducer
 });

@@ -1,12 +1,24 @@
-import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
+import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 
 export const METHODS_OF_PROCESSING = [{
-    value: 'TRANSPORT',
-    label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.TRANSPORT')
+  value: 'NOT-APPLICABLE',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.NOT-APPLICABLE')
 }, {
-    value: 'SORTING',
-    label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.SORTING')
+  value: 'HYDROMETALLURGY',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.HYDROMETALLURGY')
 }, {
-    value: 'RECYCLING',
-    label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.RECYCLING')
+  value: 'MECHANICAL',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.MECHANICAL')
+}, {
+  value: 'MECHANICAL-HYDROMETALLURGY',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.MECHANICAL-HYDROMETALLURGY')
+}, {
+  value: 'MECHANICAL-METALLURGICAL',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.MECHANICAL-METALLURGICAL')
+}, {
+  value: 'PYROMETALLURGY',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.PYROMETALLURGY')
+}, {
+  value: 'VACUUM-THERMAL-PROCESS',
+  label: ngxExtract('CONSTANTS.METHODS-OF-PROCESSING.VACUUM-THERMAL-PROCESS')
 }];

@@ -27,7 +27,7 @@ export class FormDataService {
 
   constructor(
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
   public getFormData(): FormGroup {
     return this.formGroup;
@@ -137,7 +137,7 @@ export class FormDataService {
     return this.formBuilder.group({
       type: [pathOr('', ['type'])(additiveItem)],
       weight: [pathOr(null, ['weight'])(additiveItem)],
-    }, {validators: validateAdditives});
+    }, { validators: validateAdditives });
   }
 
   public getAdditives(additiveItems: AdditivesData[]): FormArray {
@@ -180,7 +180,7 @@ export class FormDataService {
       elementDestinationIndustry: [pathOr('', ['elementDestinationIndustry'])(element)],
       elementDestinationCompany: [pathOr('', ['elementDestinationCompany'])(element)],
       assignedStep: [pathOr('', ['assignedStep'])(element)]
-    }, {validators: validateOutputFraction});
+    }, { validators: validateOutputFraction });
   }
 
   public getOutputFractionElementFormArray(outputFractionElements: OutputFraction[]): FormArray {
