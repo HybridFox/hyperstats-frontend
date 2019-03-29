@@ -70,7 +70,7 @@ export class ReportsPageComponent implements OnInit {
       )
       .subscribe(params => {
         this.processId = params.recyclingProcess;
-        this. recyclerId = params.recycler;
+        this.recyclerId = params.recycler;
 
         this.reportsActions.fetchAll({
           processId: this.processId,

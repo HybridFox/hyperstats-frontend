@@ -10,7 +10,7 @@ export class UsersRepository {
   constructor(
     private http: HttpClient,
     private apiConfig: ApiConfigService,
-  ) {}
+  ) { }
 
   public fetchByTypes(types: CompanyType[], admin: boolean, pending: boolean): Observable<any> {
 

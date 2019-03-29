@@ -5,37 +5,37 @@ import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    template: '',
+  template: '',
 })
 export class LandingPageComponent implements OnInit, OnDestroy {
-    @select(['auth', 'user', 'result']) private user$: Observable<any>;
+  @select(['auth', 'user', 'result']) private user$: Observable<any>;
 
-    private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
+  private componentDestroyed$: Subject<Boolean> = new Subject<boolean>();
 
-    constructor(
-        private router: Router,
-    ) {}
+  constructor(
+    private router: Router,
+  ) { }
 
-    public ngOnInit() {
-        this.user$
-            .pipe(
-                takeUntil(this.componentDestroyed$)
-            )
-            .subscribe((user) => {
-                if (user.isAdmin) {
-                    this.router.navigate(['admin']);
-                } else if (user.company.meta.type === 'CO') {
-                    this.router.navigate(['compliance-organisation']);
-                } else if (user.company.meta.type === 'AO') {
-                    this.router.navigate(['authorisation-organisation']);
-                } else {
-                    this.router.navigate(['recycler']);
-                }
-            });
-    }
+  public ngOnInit() {
+    this.user$
+      .pipe(
+        takeUntil(this.componentDestroyed$)
+      )
+      .subscribe((user) => {
+        if (user.isAdmin) {
+          this.router.navigate(['admin']);
+        } else if (user.company.meta.type === 'CO') {
+          this.router.navigate(['compliance-organisation']);
+        } else if (user.company.meta.type === 'AO') {
+          this.router.navigate(['authorisation-organisation']);
+        } else {
+          this.router.navigate(['recycler']);
+        }
+      });
+  }
 
-    public ngOnDestroy() {
-        this.componentDestroyed$.next(true);
-        this.componentDestroyed$.complete();
-    }
+  public ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
+  }
 }

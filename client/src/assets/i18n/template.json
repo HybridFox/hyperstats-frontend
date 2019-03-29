@@ -2,9 +2,13 @@
 	"Authorisation Organisation": "",
 	"CONSTANTS": {
 		"METHODS-OF-PROCESSING": {
-			"RECYCLING": "",
-			"SORTING": "",
-			"TRANSPORT": ""
+			"HYDROMETALLURGY": "",
+			"MECHANICAL": "",
+			"MECHANICAL-HYDROMETALLURGY": "",
+			"MECHANICAL-METALLURGICAL": "",
+			"NOT-APPLICABLE": "",
+			"PYROMETALLURGY": "",
+			"VACUUM-THERMAL-PROCESS": ""
 		},
 		"SORTOPTIONS": {
 			"LAST-EDITED": "",
@@ -27,6 +31,7 @@
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
+			"NO-COMPANIES": "",
 			"PASSWORD": "",
 			"REQUIRED": "",
 			"TYPEREQUIRED": "",

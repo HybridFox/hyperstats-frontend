@@ -1,8 +1,8 @@
 const profileHelper = require("../../helpers/profile");
 const errors = require("../../helpers/errorHandler");
 
-module.exports = (req, res, next) => {
-	const profile = profileHelper.get(req);
+module.exports = async(req, res, next) => {
+	const profile = await profileHelper.get(req);
 
 	if (!profile) {
 		return next({ message: errors.Forbidden });

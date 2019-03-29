@@ -5,5 +5,5 @@ export { Reducer } from './companies/reducers';
 export { CompaniesOverviewSelector } from './companies/selectors';
 
 export const Services = [
-    CompaniesOverviewActions,
+  CompaniesOverviewActions,
 ];

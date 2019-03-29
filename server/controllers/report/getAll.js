@@ -3,8 +3,8 @@ const { getAll } = require("./helpers");
 const profileHelper = require("../../helpers/profile");
 const { REPORT_SORT_OPTIONS } = require("./helpers/const");
 
-module.exports = (req, res, next) => {
-	const profile = profileHelper.get(req);
+module.exports = async(req, res, next) => {
+	const profile = await profileHelper.get(req);
 
 	return getAll({
 		reportedById: pathOr(null, ["company", "_id"], profile),

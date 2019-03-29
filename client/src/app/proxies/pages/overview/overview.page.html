@@ -58,8 +58,8 @@
                         <app-checkbox-input
                           (click)="checkBoxClicked()"
                           [control]="report.get('value')"
-                          [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-input__checkbox--semi-checked' : ''">
-                        </app-checkbox-input>
+                          [class]="(report.value.status === PROXY_OPTIONS.SEMI_CHECKED) ? 'a-input__checkbox--semi-checked' : ''"
+                        ></app-checkbox-input>
                       </td>
                     </ng-container>
                   </tr>

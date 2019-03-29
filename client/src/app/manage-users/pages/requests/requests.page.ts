@@ -17,9 +17,9 @@ export class RequestsPageComponent implements OnInit, OnDestroy {
   public data: boolean;
 
   constructor(
-      private usersActions: UsersActions,
-      private route: ActivatedRoute,
-  ) {}
+    private usersActions: UsersActions,
+    private route: ActivatedRoute,
+  ) { }
 
   public ngOnInit() {
     this.users$.subscribe(users => {
@@ -29,10 +29,10 @@ export class RequestsPageComponent implements OnInit, OnDestroy {
     });
     this.route.queryParams
       .pipe(
-          takeUntil(this.componentDestroyed$)
+        takeUntil(this.componentDestroyed$)
       )
       .subscribe((users) => {
-          this.usersActions.fetchPendingRequests().toPromise();
+        this.usersActions.fetchPendingRequests().toPromise();
       });
   }
 

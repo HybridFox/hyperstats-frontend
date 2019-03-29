@@ -14,11 +14,11 @@ import { ValidationPageComponent } from './validation/validation.page';
 export { ValidationPageComponent } from './validation/validation.page';
 
 export const Pages = [
-    AboutPageComponent,
-    AppWrapperPageComponent,
-    ContactPageComponent,
-    LandingPageComponent,
-    GeneralWrapperPageComponent,
-    TermsAndConditionsPageComponent,
-    ValidationPageComponent,
+  AboutPageComponent,
+  AppWrapperPageComponent,
+  ContactPageComponent,
+  LandingPageComponent,
+  GeneralWrapperPageComponent,
+  TermsAndConditionsPageComponent,
+  ValidationPageComponent,
 ];

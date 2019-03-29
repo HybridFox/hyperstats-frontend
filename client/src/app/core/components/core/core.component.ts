@@ -25,10 +25,10 @@ export class CoreComponent implements OnInit {
     private languageService: LanguageService,
     private authActions: AuthActions,
     private router: Router,
-  ) {}
+  ) { }
 
   public ngOnInit() {
     this.languageService.initLanguage();
-    this.authActions.fetchProfile().toPromise().catch(() => {});
+    this.authActions.fetchProfile().toPromise().catch(() => { });
   }
 }

@@ -1,28 +1,33 @@
 <div class="m-card--primary u-margin-top">
-    <app-sub-section-title
-        [title]="'WIZARD.FILE-REPORT.TITLES.FILE-SAVE-REPORT' | translate"
-    ></app-sub-section-title>
-    <div class="u-margin-top-x-large">
-        <p>{{ 'WIZARD.FILE-REPORT.DESCRIPTION.SAVE-REPORT' | translate }}</p>
-        <button
-          (click)="save()"
-          class="a-button--primary"
-          [disabled]="formData?.formGroup.disabled"
-        >
-          {{ 'WIZARD.FILE-REPORT.LABELS.SAVE-REPORT' | translate }}
-        </button>
-    </div>
-    <div class="u-margin-top-x-large">
-        <p>{{ 'WIZARD.FILE-REPORT.DESCRIPTION.FILE-REPORT' | translate }}</p>
-        <button
-          (click)="file()"
-          class="a-button--primary"
-          [disabled]="!formData?.formGroup?.valid"
-        >
-          {{ 'WIZARD.FILE-REPORT.LABELS.FILE-REPORT' | translate }}
-        </button>
-    </div>
-    <div class="u-margin-top-large">
-        <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-ADD-INFO' | translate }}</button>
-    </div>
+  <app-sub-section-title
+    [title]="'WIZARD.FILE-REPORT.TITLES.FILE-SAVE-REPORT' | translate"
+  ></app-sub-section-title>
+  <div class="u-margin-top-x-large">
+    <p>{{ 'WIZARD.FILE-REPORT.DESCRIPTION.SAVE-REPORT' | translate }}</p>
+    <button
+      (click)="save()"
+      class="a-button--primary"
+      [disabled]="formData?.formGroup.disabled"
+    >
+      {{ 'WIZARD.FILE-REPORT.LABELS.SAVE-REPORT' | translate }}
+    </button>
+  </div>
+  <div class="u-margin-top-x-large">
+    <p>{{ 'WIZARD.FILE-REPORT.DESCRIPTION.FILE-REPORT' | translate }}</p>
+    <button
+      (click)="file()"
+      class="a-button--primary"
+      [disabled]="!formData?.formGroup?.valid"
+    >
+      {{ 'WIZARD.FILE-REPORT.LABELS.FILE-REPORT' | translate }}
+    </button>
+  </div>
+  <div class="u-margin-top-large">
+    <button
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'WIZARD.BUTTON.BACK-TO-ADD-INFO' | translate }}
+    </button>
+  </div>
 </div>

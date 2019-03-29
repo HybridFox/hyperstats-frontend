@@ -59,5 +59,5 @@ export class InputFractionPageComponent extends StepPageAbstract implements OnIn
     this.stepId = this.form.getRawValue().findIndex((step) => step.siteRef === stepId);
     const currentLength: unknown = this.form.controls.length;
     this.formLength = (currentLength as number) - 1;
-   }
+  }
 }

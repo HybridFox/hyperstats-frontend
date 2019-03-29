@@ -1,24 +1,34 @@
 <div class="m-card--primary u-margin-top">
   <ng-container *ngIf="form">
     <app-sub-section-title
-      [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.FILE-UPLOADS' | translate"
-    ></app-sub-section-title>
+      [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.FILE-UPLOADS' | translate">
+    </app-sub-section-title>
     <app-multiple-file-upload
-        class="u-margin-bottom-x-large"
-        [multiple]="true"
-        [response]="uploadResult$ | async"
-        [storedFiles]="storedFiles"
-        (upload)=onUpload($event)
-        [control]="form.get('files')"
-        (removeFile)="onRemoveFile($event)"
+      class="u-margin-bottom-x-large"
+      [multiple]="true"
+      [response]="uploadResult$ | async"
+      [storedFiles]="storedFiles"
+      (upload)=onUpload($event)
+      [control]="form.get('files')"
+      (removeFile)="onRemoveFile($event)"
     ></app-multiple-file-upload>
     <app-sub-section-title
-      [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate"
-    ></app-sub-section-title>
+      [title]="'WIZARD.ADDITIONAL-INFORMATION.TITLES.ADDITIONAL-INFORMATION' | translate">
+    </app-sub-section-title>
     <app-textarea-input [control]="form.get('additionalInformation')"></app-textarea-input>
     <div class="u-margin-top-large">
-      <button (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-EFFICIENCY' | translate }}</button>
-      <button (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-FILE-REPORT' | translate }}</button>
+      <button
+        (click)="previousStep()"
+        class="a-button--ghost u-margin-right"
+      >
+        {{ 'WIZARD.BUTTON.BACK-TO-EFFICIENCY' | translate }}
+      </button>
+      <button
+        (click)="nextStep()"
+        class="a-button--primary"
+      >
+        {{ 'WIZARD.BUTTON.GO-TO-FILE-REPORT' | translate }}
+    </button>
     </div>
   </ng-container>
 </div>
