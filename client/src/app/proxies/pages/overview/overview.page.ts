@@ -72,10 +72,11 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     this.user$
       .pipe(takeUntil(this.componentDestroyed$))
       .subscribe((user) => {
-        this.userCompanyType = user.company.meta.type;
+        this.userCompanyType =  pathOr(null, ['company', 'meta', 'type'], user);
         if (this.userCompanyType === CompanyType.R) {
           this.companiesActions.fetchByType([CompanyType.CO, CompanyType.AO]).toPromise();
-        } else if (this.userCompanyType === CompanyType.CO) {
+        }
+        if (this.userCompanyType === CompanyType.CO) {
           this.companiesActions.fetchByType([CompanyType.AO]).toPromise();
         }
       });
