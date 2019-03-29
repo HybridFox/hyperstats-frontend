@@ -62,6 +62,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public ngOnChanges(changes: SimpleChanges) {
+    if (changes.recyclingProcess && changes.recyclingProcess.currentValue !== changes.recyclingProcess.previousValue) {
+      this.processReportStatus = '';
+      this.checkProcessReportStatus();
+    }
+
     if (this.recyclingPartners && changes.recyclingPartners) {
       const ownCompany = {
         value: this.user.company._id,
@@ -80,7 +85,8 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     this.reports$.subscribe(reports => {
       if (reports && this.recyclingProcess) {
         this.processReportStatus = reports.reduce((currentStatus, report) => {
-          if (pathOr(null, ['_id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report)) {
+          const recyclingProcess = pathOr('', ['data', 'information', 'recyclingProcess'])(report);
+          if (pathOr(null, ['_id'])(this.recyclingProcess) === pathOr(recyclingProcess, ['_id'])(recyclingProcess)) {
             if (currentStatus !== PROCESS_REPORT_STATE.FILED) {
               return report.meta.status;
             }
@@ -90,10 +96,11 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
         }, PROCESS_REPORT_STATE.NOT_USED);
 
         if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
-          const itemsToDelete = reports.filter(report => (
-            pathOr(null, ['id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
-            && (report.meta.status === PROCESS_REPORT_STATE.SAVED)
-          );
+          const itemsToDelete = reports.filter(report => {
+            const recyclingProcess = pathOr('', ['data', 'information', 'recyclingProcess'])(report);
+            return pathOr(null, ['_id'])(this.recyclingProcess)  === pathOr(recyclingProcess, ['_id'])(recyclingProcess)
+              && (report.meta.status === PROCESS_REPORT_STATE.SAVED);
+          });
 
           this.deleteConfirmMessage = itemsToDelete.reduce((acc, curr, index) => {
             if (index === 0) {
@@ -108,12 +115,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
       }
     });
 
-    if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
-      this.recyclingProcessForm.disable();
-      this.formDisabled = true;
-    } else {
-      this.formDisabled = false;
-    }
+    this.checkProcessReportStatus();
   }
 
   public saveForm() {
@@ -142,6 +144,22 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   public duplicateProcess() {
     this.isDuplicate = true;
     this.duplicate.emit(this.recyclingProcess._id);
+
+    this.processReportStatus = '';
+    this.checkProcessReportStatus();
+  }
+
+  private checkProcessReportStatus() {
+    if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
+      this.recyclingProcessForm.disable();
+      this.formDisabled = true;
+
+      return;
+    }
+    if (this.recyclingProcessForm) {
+      this.recyclingProcessForm.enable();
+    }
+    this.formDisabled = false;
   }
 
   private createStepFormGroups(steps: any[]): FormArray {
