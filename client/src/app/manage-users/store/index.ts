@@ -11,13 +11,13 @@ import { CompaniesActions } from 'src/app/manage-companies/store';
 export { UserSelector } from './users/selectors';
 
 export const Services = [
-    UserCompanyActions,
-    UsersActions,
-    UsersRepository,
-    CompaniesActions,
+  UserCompanyActions,
+  UsersActions,
+  UsersRepository,
+  CompaniesActions,
 ];
 
 export const Reducer = combineReducers({
-    ...UserReducer,
-    ...CompanyReducer,
+  ...UserReducer,
+  ...CompanyReducer,
 });

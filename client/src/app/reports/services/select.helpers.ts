@@ -6,14 +6,14 @@ import pathOr from 'ramda/es/pathOr';
 
 import { ReportingCompany } from '../store/reports/types';
 
-import { RecyclingProcess, ProcessStep} from '../store/recycling-processes/types';
+import { RecyclingProcess, ProcessStep } from '../store/recycling-processes/types';
 
 const ALL_MENU_ITEM: MenuItem = {
   link: ['./'],
   label: 'All',
 };
 
-const mapper = (customMapFn: Function, allOption?: MenuItem) =>  (obs$: Observable<any>) => {
+const mapper = (customMapFn: Function, allOption?: MenuItem) => (obs$: Observable<any>) => {
   return obs$
     .pipe(
       filter((processes: any[]) => {
@@ -39,14 +39,14 @@ export const mapRecyclingProcessesToOptions = mapper((process): Option => ({
 export const mapRecyclingProcessesToMenuItemsWithAll = mapper((process): MenuItem => ({
   link: ['./'],
   label: process.data.name,
-  queryParams: { recyclingProcess: process._id}
+  queryParams: { recyclingProcess: process._id }
 }), ALL_MENU_ITEM);
 
 export const mapReportToMenuItemsWithAll = mapper((report: ReportingCompany): MenuItem => {
   return {
     link: ['./'],
     label: report.data.name,
-    queryParams: { recycler: report._id}
+    queryParams: { recycler: report._id }
   };
 }, ALL_MENU_ITEM);
 

@@ -65,7 +65,7 @@ describe("Integration", () => {
 					.expect(403);
 			});
 
-			it("Should get a recycler company that is coupled to the user", () => {
+			it("Should get a recycler company that is coupled to the user", async() => {
 				return supertest(server)
 					.get(`/api/companies/${recycler1}`)
 					.expect("Content-Type", /json/)
@@ -86,7 +86,7 @@ describe("Integration", () => {
 					.expect(404);
 			});
 
-			it("Should get a compliance org company that is coupled to the user", () => {
+			it("Should get a compliance org company that is coupled to the user", async() => {
 				return supertest(server)
 					.get(`/api/companies/${complienceOrg1}`)
 					.expect("Content-Type", /json/)

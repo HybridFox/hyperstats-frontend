@@ -21,7 +21,7 @@ export class RecyclingPartnersComponent implements OnInit, OnDestroy {
 
   constructor(
     private recyclingPartnerActions: RecyclingPartnerActions,
-  ) {}
+  ) { }
 
   public ngOnInit() {
     this.recyclingPartnerActions.fetchAll().toPromise();

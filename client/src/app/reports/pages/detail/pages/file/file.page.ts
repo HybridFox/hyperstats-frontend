@@ -36,7 +36,7 @@ export class FilePageComponent extends StepPageAbstract {
     );
   }
 
-  public onFormReady() {}
+  public onFormReady() { }
 
   public save() {
     const data = {
@@ -51,9 +51,9 @@ export class FilePageComponent extends StepPageAbstract {
 
     let promise: Promise<any>;
     promise = this.reportActions.draft(data).toPromise();
-      promise.then(() => {
-        this.router.navigate(['/', 'recycler', 'reports']);
-      })
+    promise.then(() => {
+      this.router.navigate(['/', 'recycler', 'reports']);
+    })
       .catch(() => this.toastrService.error(ngxExtract('GENERAL.LABELS.INVALID_FORM') as string));
   }
 

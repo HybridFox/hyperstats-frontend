@@ -4,7 +4,13 @@
     [elements]="codesService.elements()"
   ></app-input-fraction-form>
   <div class="u-margin-top-large">
-    <button *ngIf="stepId === 0" (click)="previousStep()" class="a-button--ghost u-margin-right">{{ 'WIZARD.BUTTON.BACK-TO-NEW' | translate }}</button>
+    <button
+      *ngIf="stepId === 0"
+      (click)="previousStep()"
+      class="a-button--ghost u-margin-right"
+    >
+      {{ 'WIZARD.BUTTON.BACK-TO-NEW' | translate }}
+    </button>
     <a
       *ngIf="stepId > 0"
       class="a-button--ghost u-margin-right"
@@ -19,6 +25,12 @@
     >
       {{ 'GENERAL.LABELS.NEXT-STEP' | translate }}
     </a>
-    <button *ngIf="stepId >= formLength" (click)="nextStep()" class="a-button--primary">{{ 'WIZARD.BUTTON.GO-TO-ADDITVES' | translate }}</button>
+    <button
+      *ngIf="stepId >= formLength"
+      (click)="nextStep()"
+      class="a-button--primary"
+    >
+      {{ 'WIZARD.BUTTON.GO-TO-ADDITVES' | translate }}
+    </button>
   </div>
 </div>

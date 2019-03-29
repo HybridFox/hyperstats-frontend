@@ -34,11 +34,11 @@ export class StepWrapperPageComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     public formData: FormDataService,
-  ) {}
+  ) { }
 
   public ngOnInit() {
-     this.setForm();
-     this.formData.formGroup.status === 'DISABLED' ? this.showForm = true : this.showForm = false;
+    this.setForm();
+    this.formData.formGroup.status === 'DISABLED' ? this.showForm = true : this.showForm = false;
   }
 
   public setForm() {
@@ -67,22 +67,22 @@ export class StepWrapperPageComponent implements OnInit {
         this.process$,
         this.route.firstChild ? this.route.firstChild.params : null
       )
-      .pipe(
-        map(([process, params]) => {
-          if (!process) {
-            return;
-          }
-          return process.data.steps.find((step) => {
-            return step.uuid === params.stepId;
-          });
-        }),
-        map((step) => {
-          if (!step) {
-            return;
-          }
-          return step.description || 'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS';
-        }),
-      );
+        .pipe(
+          map(([process, params]) => {
+            if (!process) {
+              return;
+            }
+            return process.data.steps.find((step) => {
+              return step.uuid === params.stepId;
+            });
+          }),
+          map((step) => {
+            if (!step) {
+              return;
+            }
+            return step.description || 'WIZARD.NEW-REPORT.LABELS.RECYCLING-PROCESS';
+          }),
+        );
     }, 1);
   }
 

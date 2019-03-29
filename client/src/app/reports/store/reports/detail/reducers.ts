@@ -3,20 +3,20 @@ import { progressReducer } from '@store/hor';
 import { DETAIL, MODULE } from '../../constants';
 
 const reducer = (
-    state = null,
-    action,
+  state = null,
+  action,
 ) => {
-    if (action.type === ACTIONS.DETAIL.FETCH) {
-        return action.payload;
-    }
+  if (action.type === ACTIONS.DETAIL.FETCH) {
+    return action.payload;
+  }
 
-    if (action.type === ACTIONS.DETAIL.CLEAR) {
-      return null;
-    }
+  if (action.type === ACTIONS.DETAIL.CLEAR) {
+    return null;
+  }
 
-    return state;
+  return state;
 };
 
 export const detailReducer = progressReducer({
-    entityType: `${MODULE}/${DETAIL}`
+  entityType: `${MODULE}/${DETAIL}`
 }, reducer);

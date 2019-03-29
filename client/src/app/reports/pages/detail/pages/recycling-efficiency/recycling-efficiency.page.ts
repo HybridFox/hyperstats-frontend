@@ -65,12 +65,12 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
       })));
     }, []);
 
-    const elements =  groupBy((item: ElementType) => item.element)([...inputs, ...outputs]);
+    const elements = groupBy((item: ElementType) => item.element)([...inputs, ...outputs]);
 
     this.types = Object.keys(elements).map(element => {
       const inputNumbers = elements[element].reduce((previousState, currentItem) => {
         if (currentItem.input && !isNaN(parseInt(currentItem.input, 10))) {
-            return previousState + parseInt(currentItem.input, 10);
+          return previousState + parseInt(currentItem.input, 10);
         }
 
         return previousState;
@@ -78,7 +78,7 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
 
       const outputNumbers = elements[element].reduce((previousState, currentItem) => {
         if (currentItem.output && !isNaN(parseInt(currentItem.output, 10))) {
-            return previousState + parseInt(currentItem.output, 10);
+          return previousState + parseInt(currentItem.output, 10);
         }
 
         return previousState;
@@ -94,13 +94,13 @@ export class RecyclingEfficiencyPageComponent extends StepPageAbstract {
     this.calculateEfficiency();
   }
 
-  private calculateEfficiency () {
+  private calculateEfficiency() {
     const result = this.types.reduce((currentTotals, newItem) => (
       {
         input: (currentTotals.input + newItem.input),
         output: (currentTotals.output + newItem.output),
       }
-    ), {input: 0, output: 0});
+    ), { input: 0, output: 0 });
 
     if (result.output !== 0 && result.input !== 0) {
       const efficiency = (result.output / result.input) * 100;

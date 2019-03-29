@@ -3,6 +3,6 @@ import { RecyclersReducer } from './recyclers/reducers';
 import { OrganisationsReducer } from './organisations/reducers';
 
 export const Reducer = combineReducers({
-    recyclers: RecyclersReducer,
-    organisations: OrganisationsReducer,
+  recyclers: RecyclersReducer,
+  organisations: OrganisationsReducer,
 });

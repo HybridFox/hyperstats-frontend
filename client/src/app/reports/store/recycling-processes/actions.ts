@@ -19,7 +19,7 @@ export class ReportsProcessActions {
     private handler: Handler,
     private entitiesActions: EntitiesActions,
     private recyclingProcessesRepository: RecyclingProcessesRepository,
-  ) {}
+  ) { }
 
   public fetchAllRecyclingProcesses(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.LIST.FETCH);

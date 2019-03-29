@@ -13,10 +13,10 @@ export class AppWrapperPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
   public actionButton = { label: 'New report', link: ['/', 'recycler', 'reports', 'new'] };
 
-  constructor (
+  constructor(
     private authActions: AuthActions,
     private router: Router,
-  ) {}
+  ) { }
 
   public onLogout() {
     this.authActions.logout()

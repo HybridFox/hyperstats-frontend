@@ -19,7 +19,11 @@ const UserModel = require("../models/user");
  * @param {Object} req Express request object
  * @returns {Object} User Profile
  */
-module.exports.get = (req) => path(["session", "safeProfile"])(req);
+module.exports.get = async(req) => {
+	await reload(req);
+
+	return path(["session", "safeProfile"])(req);
+};
 
 /**
  * @function get Get full profile
@@ -32,18 +36,18 @@ module.exports.getFull = (req) => path(["session", "profile"])(req);
  * @function unset Unset profile props in session
  * @param {Object} req Express request object
  */
-module.exports.unset = async(req) => {
+module.exports.unset = (req) => {
 	delete req.session.profile;
 	delete req.session.safeProfile;
 
-	await req.session.save();
+	req.session.save();
 };
 
 /**
  * @function set Set user on session
  * @param {Object} req Express request object
  */
-const set = module.exports.set = (req, user) => {
+const set = module.exports.set = async(req, user) => {
 	req.session.profile = user;
 	req.session.safeProfile = compose(
 		when(isEmpty, always(null)),
@@ -59,7 +63,11 @@ const set = module.exports.set = (req, user) => {
 	req.session.save();
 };
 
-module.exports.reload = async(req) => {
+/**
+ * @function reload Reload profile props in session
+ * @param {Object} req Express request object
+ */
+const reload = module.exports.reload = async(req) => {
 	if (!path(["session", "profile", "_id"])(req)) {
 		return;
 	}
@@ -68,7 +76,7 @@ module.exports.reload = async(req) => {
 
 	await updatedUser.populateCompany();
 
-	set(req, updatedUser.toObject());
+	await set(req, updatedUser.toObject());
 };
 
 module.exports.isAdmin = (req) => !!path(["session", "profile", "meta", "isAdmin"])(req);

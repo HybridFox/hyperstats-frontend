@@ -4,6 +4,6 @@ import { ProfilePageComponent } from './profile/profile.page';
 export { ProfilePageComponent } from './profile/profile.page';
 
 export const Pages = [
-    CompanyPageComponent,
-    ProfilePageComponent,
+  CompanyPageComponent,
+  ProfilePageComponent,
 ];

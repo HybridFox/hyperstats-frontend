@@ -91,7 +91,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
 
         if (this.processReportStatus === PROCESS_REPORT_STATE.SAVED) {
           const itemsToDelete = reports.filter(report => (
-            pathOr(null, ['id'])(this.recyclingProcess)  === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
+            pathOr(null, ['id'])(this.recyclingProcess) === pathOr('', ['data', 'information', 'recyclingProcess', '_id'])(report))
             && (report.meta.status === PROCESS_REPORT_STATE.SAVED)
           );
 

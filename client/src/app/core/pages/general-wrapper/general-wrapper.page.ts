@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 export class GeneralWrapperPageComponent {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;
 
-  constructor (
+  constructor(
     private authActions: AuthActions,
     private router: Router,
-  ) {}
+  ) { }
 
   public onLogout() {
     this.authActions.logout()

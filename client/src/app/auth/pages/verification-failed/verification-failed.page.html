@@ -1,6 +1,11 @@
 <div class=" u-align-center">
-    <img src="./assets/images/warning.svg" alt="Warning" class="p-verification__visual">
-    <h1 class="p-verification__title">{{ 'PAGE.VERIFICATION-FAILED.TITLE' | translate }}</h1>
-    <p class="u-margin-bottom">{{ 'PAGE.VERIFICATION-FAILED.CONTENT' | translate }}</p>
-    <a [routerLink]="['../', 'register']" class="a-button--primary u-pull-center">{{ 'GENERAL.LABELS.TRY-AGAIN' | translate }}</a>
+  <img src="./assets/images/warning.svg" alt="Warning" class="p-verification__visual">
+  <h1 class="p-verification__title">{{ 'PAGE.VERIFICATION-FAILED.TITLE' | translate }}</h1>
+  <p class="u-margin-bottom">{{ 'PAGE.VERIFICATION-FAILED.CONTENT' | translate }}</p>
+  <a
+    [routerLink]="['../', 'register']"
+    class="a-button--primary u-pull-center"
+  >
+    {{ 'GENERAL.LABELS.TRY-AGAIN' | translate }}
+  </a>
 </div>

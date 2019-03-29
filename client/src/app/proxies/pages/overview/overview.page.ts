@@ -110,7 +110,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         if (this.companies && this.companies.length > 0) {
           this.removeProxyCompaniesFromCompanies(this.companies);
         }
-    });
+      });
 
     this.companyOptions$
       .pipe(takeUntil(this.componentDestroyed$))
@@ -121,7 +121,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         } else {
           this.selectCompanies = companies;
         }
-    });
+      });
 
     this.years = this.codesService.years().map(year => year.value);
   }
@@ -151,7 +151,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         label: proxy.value.companyInfo.companyName,
       }];
     } else {
-      this.extraCompanies = this.extraCompanies.filter(company => company.proxyCompanyId !==  proxy.value.companyInfo.companyId);
+      this.extraCompanies = this.extraCompanies.filter(company => company.proxyCompanyId !== proxy.value.companyInfo.companyId);
       this.removeProxyCompaniesFromCompanies(this.companies);
     }
 
@@ -202,13 +202,13 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
             } else {
               const matchingReport = matchingProcess.reports.find(processReport =>
                 processReport.data.information.reportingYear === parseInt(report.controls.year.value, 10));
-                if (!matchingReport) {
-                  if (report.controls.value.value) {
-                    this.putNewProxy(body);
-                  }
-                } else if (!report.controls.value.value) {
-                  this.deleteNewProxy(body);
+              if (!matchingReport) {
+                if (report.controls.value.value) {
+                  this.putNewProxy(body);
                 }
+              } else if (!report.controls.value.value) {
+                this.deleteNewProxy(body);
+              }
             }
           } else if (report.controls.value.value) {
             this.putNewProxy(body);
@@ -291,11 +291,11 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
   private getReportsFormArray(recyclingProcess, companyProxies) {
     return this.formBuilder.array(this.years.map(year => {
       const status = this.getStatus(this.reports, year, recyclingProcess, companyProxies);
-      const value =  this.getValue(status);
+      const value = this.getValue(status);
       return this.formBuilder.group({
         year: year,
         status: status,
-        value: new FormControl({value: value, disabled: status === PROXY_OPTIONS.DISABLED}),
+        value: new FormControl({ value: value, disabled: status === PROXY_OPTIONS.DISABLED }),
       });
     }));
   }
@@ -304,8 +304,8 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     const matchingReports = reports.filter(report => {
       const reportProcess = report.data.information.recyclingProcess;
       return (report.meta.status === REPORT_STATE.FILED &&
-      report.data.information.reportingYear === parseInt(year, 10) &&
-      pathOr(reportProcess, ['_id'], reportProcess) === recyclingProcess._id);
+        report.data.information.reportingYear === parseInt(year, 10) &&
+        pathOr(reportProcess, ['_id'], reportProcess) === recyclingProcess._id);
     });
 
 
