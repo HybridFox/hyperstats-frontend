@@ -62,6 +62,9 @@ msgstr ""
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr ""
 
+msgid "GENERAL##FIELD-ERRORS##NO-COMPANIES"
+msgstr ""
+
 msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr ""
 

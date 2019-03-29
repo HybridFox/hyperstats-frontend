@@ -67,6 +67,9 @@ msgstr "Save"
 msgid "GENERAL##FIELD-ERRORS##EMAIL"
 msgstr "Fill in a valid email address"
 
+msgid "GENERAL##FIELD-ERRORS##NO-COMPANIES"
+msgstr "Recycling partner required"
+
 msgid "GENERAL##FIELD-ERRORS##PASSWORD"
 msgstr "Your password needs one uppercase, one lowercase and a number"
 

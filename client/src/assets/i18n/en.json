@@ -27,6 +27,7 @@
         },
         "FIELD-ERRORS": {
             "EMAIL": "Fill in a valid email address",
+            "NO-COMPANIES": "Recycling partner required",
             "PASSWORD": "Your password needs one uppercase, one lowercase and a number",
             "REQUIRED": "This field is required",
             "TYPEREQUIRED": "Type is required when weight is filled in",

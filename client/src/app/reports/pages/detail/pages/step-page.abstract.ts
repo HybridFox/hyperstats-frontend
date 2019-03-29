@@ -2,7 +2,6 @@ import { ToastrService } from 'ngx-toastr';
 import { FormGroup } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { OnInit, OnDestroy } from '@angular/core';
-import { FormHelper } from '@helpers/form.helper';
 import { Router, ActivatedRoute } from '@angular/router';
 import { _ as ngxExtract } from '@biesbjerg/ngx-translate-extract/dist/utils/utils';
 

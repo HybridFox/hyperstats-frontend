@@ -27,6 +27,7 @@
 		},
 		"FIELD-ERRORS": {
 			"EMAIL": "",
+			"NO-COMPANIES": "",
 			"PASSWORD": "",
 			"REQUIRED": "",
 			"TYPEREQUIRED": "",
