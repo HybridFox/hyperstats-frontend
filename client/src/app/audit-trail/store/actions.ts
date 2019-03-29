@@ -13,7 +13,7 @@ export class AuditTrailActions {
   constructor(
     private handler: Handler,
     private auditTrailRepository: AuditTrailRepository,
-  ) {}
+  ) { }
 
   public fetchAll(): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH_ALL);

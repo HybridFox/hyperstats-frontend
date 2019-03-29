@@ -3,11 +3,11 @@ import { progressReducer } from '@store/hor';
 import { DETAIL, MODULE, RECYCLING_PROCESSES } from '../../constants';
 
 const reducer = (
-    state = null,
-    action,
+  state = null,
+  action,
 ) => {
   if (action.type === ACTIONS.DETAIL.FETCH) {
-      return action.payload;
+    return action.payload;
   }
 
   if (action.type === ACTIONS.DETAIL.CLEAR) {

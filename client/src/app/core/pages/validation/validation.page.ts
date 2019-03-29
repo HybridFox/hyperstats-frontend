@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
 
 @Component({
-    templateUrl: './validation.page.html',
+  templateUrl: './validation.page.html',
 })
 export class ValidationPageComponent implements OnDestroy, OnInit {
   @select(['auth', 'user', 'result']) public user$: Observable<UserInterface>;

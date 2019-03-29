@@ -8,23 +8,23 @@ import { AuthSelector } from '@store/auth';
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-    @select(AuthSelector.user.result) user$: Observable<any>;
+  @select(AuthSelector.user.result) user$: Observable<any>;
 
-    constructor(
-        private router: Router,
-    ) { }
+  constructor(
+    private router: Router,
+  ) { }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-        return this.user$
-            .pipe(
-                map((user) => {
-                    return user.isAdmin;
-                }),
-                tap((result) => {
-                    if (!result) {
-                        return this.router.navigate(['/']);
-                    }
-                })
-            );
-    }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    return this.user$
+      .pipe(
+        map((user) => {
+          return user.isAdmin;
+        }),
+        tap((result) => {
+          if (!result) {
+            return this.router.navigate(['/']);
+          }
+        })
+      );
+  }
 }

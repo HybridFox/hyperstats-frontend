@@ -8,8 +8,8 @@ import { OrganisationGuard } from './organisation.guard';
 export { OrganisationGuard } from './organisation.guard';
 
 export const Guards = [
-    AdminGuard,
-    AuthGuard,
-    ValidationGuard,
-    OrganisationGuard
+  AdminGuard,
+  AuthGuard,
+  ValidationGuard,
+  OrganisationGuard
 ];

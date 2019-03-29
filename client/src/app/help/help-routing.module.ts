@@ -4,13 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import * as Pages from './pages';
 
 const routes: Routes = [
-    {
-        path: '',
-        component: Pages.OverviewPageComponent,
-        children: [
-          { path: ':section', component: Pages.DetailPageComponent },
-        ]
-    },
+  {
+    path: '',
+    component: Pages.OverviewPageComponent,
+    children: [
+      { path: ':section', component: Pages.DetailPageComponent },
+    ]
+  },
 ];
 
 @NgModule({

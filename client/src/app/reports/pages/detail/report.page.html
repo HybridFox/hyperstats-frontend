@@ -1,7 +1,7 @@
 <div class="p-report u-margin-bottom-x-large">
   <app-page-title
-    [title]="(form?.get('information').value?.name || 'WIZARD.TITLES.NEW-REPORT') | translate"
-  ></app-page-title>
+    [title]="(form?.get('information').value?.name || 'WIZARD.TITLES.NEW-REPORT') | translate">
+  </app-page-title>
   <div class="m-card--primary u-margin-top">
     <div class="m-card">
       <div class="m-steps">
@@ -15,13 +15,15 @@
           }"
         >
           <a [routerLink]="(currentId !== 'new') ? step.route : '#'">
-            <div *ngIf="(step.key && reportFormService.getFormMetaData()?.get(step.key)?.value) || !form?.disabled && (!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0); else itemValid" class="m-steps__step-icon">
+            <div
+              *ngIf="(step.key && reportFormService.getFormMetaData()?.get(step.key)?.value) || !form?.disabled && (!form?.get(step.key)?.valid || form?.get(step.key).value.length === 0); else itemValid"
+              class="m-steps__step-icon">
               <span>{{i + 1}}</span>
             </div>
             <ng-template #itemValid>
-                <div class="m-steps__step-icon m-steps__step-icon--passed">
-                  <span class="a-icon a-icon--checkmark"></span>
-                </div>
+              <div class="m-steps__step-icon m-steps__step-icon--passed">
+                <span class="a-icon a-icon--checkmark"></span>
+              </div>
             </ng-template>
             <div class="m-steps__step-text">
               {{ step.name | translate }}

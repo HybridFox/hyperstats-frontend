@@ -3,36 +3,36 @@ import { LanguageService } from './language.service';
 import { TranslateService } from '@ngx-translate/core';
 
 class MockTranslateService {
-    setDefaultLang(lang) {}
-    use(lang) {}
+  setDefaultLang(lang) { }
+  use(lang) { }
 }
 
 describe('LanguageService', () => {
-    beforeEach(() => {
-        TestBed.configureTestingModule({
-            providers: [
-                LanguageService,
-                { provide: TranslateService, useClass: MockTranslateService },
-            ],
-        });
-
-        spyOn((TestBed.get(TranslateService) as any), 'setDefaultLang').and.callThrough();
-        spyOn((TestBed.get(TranslateService) as any), 'use').and.callThrough();
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [
+        LanguageService,
+        { provide: TranslateService, useClass: MockTranslateService },
+      ],
     });
 
-    it('should be created', inject([LanguageService], (service: LanguageService) => {
-        expect(service).toBeTruthy();
-    }));
+    spyOn((TestBed.get(TranslateService) as any), 'setDefaultLang').and.callThrough();
+    spyOn((TestBed.get(TranslateService) as any), 'use').and.callThrough();
+  });
 
-    it('should initiate lang', inject([LanguageService], (service: LanguageService) => {
-        service.initLanguage();
-        expect((TestBed.get(TranslateService) as any).setDefaultLang).toHaveBeenCalledWith('en');
-    }));
+  it('should be created', inject([LanguageService], (service: LanguageService) => {
+    expect(service).toBeTruthy();
+  }));
 
-    it('should set lang', inject([LanguageService], (service: LanguageService) => {
-        const language = 'nl';
+  it('should initiate lang', inject([LanguageService], (service: LanguageService) => {
+    service.initLanguage();
+    expect((TestBed.get(TranslateService) as any).setDefaultLang).toHaveBeenCalledWith('en');
+  }));
 
-        service.changeLanguage(language);
-        expect((TestBed.get(TranslateService) as any).use).toHaveBeenCalledWith(language);
-    }));
+  it('should set lang', inject([LanguageService], (service: LanguageService) => {
+    const language = 'nl';
+
+    service.changeLanguage(language);
+    expect((TestBed.get(TranslateService) as any).use).toHaveBeenCalledWith(language);
+  }));
 });
