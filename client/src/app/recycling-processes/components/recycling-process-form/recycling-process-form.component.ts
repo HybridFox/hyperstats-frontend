@@ -153,12 +153,13 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
     if (this.processReportStatus === PROCESS_REPORT_STATE.FILED) {
       this.recyclingProcessForm.disable();
       this.formDisabled = true;
-    } else {
-      if (this.recyclingProcessForm) {
-        this.recyclingProcessForm.enable();
-      }
-      this.formDisabled = false;
+
+      return;
     }
+    if (this.recyclingProcessForm) {
+      this.recyclingProcessForm.enable();
+    }
+    this.formDisabled = false;
   }
 
   private createStepFormGroups(steps: any[]): FormArray {
