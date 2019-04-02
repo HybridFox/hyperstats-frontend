@@ -16,7 +16,9 @@ import { Toggle, Remove } from './recycling-process.interface';
 import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multiple-file-upload.const';
 
 import { Report } from '../../../reports/store/reports/types';
+import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { ReportsSelector } from '../../../reports/store/reports';
+import { UserInterface } from '@store/auth/auth.interface';
 import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 
 @Component({
@@ -28,10 +30,10 @@ import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
 
-  @Input() public recyclingProcess: any;
+  @Input() public recyclingProcess: RecyclingProcess;
   @Input() public recyclingPartners: any[];
   @Input() public uploadResponse: any;
-  @Input() public user: any;
+  @Input() public user: UserInterface;
   @Input() public isDuplicated: boolean;
 
   @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
