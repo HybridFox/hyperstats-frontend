@@ -31,7 +31,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   public duplicateProcessId: string;
   public uploadResponse: any;
   public uploadResults;
-  public isDuplicated = false;
+  public isDuplicate = false;
 
   private processSubscription: Subscription;
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -66,13 +66,13 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   }
 
   public duplicateProcess(event) {
-    this.isDuplicated = true;
+    this.isDuplicate = true;
     this.duplicateProcessId = event;
     this.router.navigate(['../new'], { relativeTo: this.route });
   }
 
   public save(recyclingProcessForm: any) {
-    this.isDuplicated = false;
+    this.isDuplicate = false;
     FormHelper.markAsDirty(recyclingProcessForm);
 
     if (recyclingProcessForm.invalid) {
@@ -167,7 +167,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     this.uploadResults = null;
 
     if (!this.recyclingProcessId || (this.process && prop('_id', this.process) === this.recyclingProcessId)) {
-      this.isDuplicated = false;
+      this.isDuplicate = false;
 
       return;
     }

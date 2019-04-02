@@ -18,7 +18,6 @@ import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multip
 import { Report } from '../../../reports/store/reports/types';
 import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { ReportsSelector } from '../../../reports/store/reports';
-import { UserInterface } from '@store/auth/auth.interface';
 import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 
 @Component({
@@ -33,8 +32,8 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @Input() public recyclingProcess: RecyclingProcess;
   @Input() public recyclingPartners: any[];
   @Input() public uploadResponse: any;
-  @Input() public user: UserInterface;
-  @Input() public isDuplicated: boolean;
+  @Input() public user: any;
+  @Input() public isDuplicate: boolean;
 
   @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
   @Output() public remove: EventEmitter<string> = new EventEmitter<string>();

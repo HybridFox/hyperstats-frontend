@@ -2,7 +2,7 @@
   <div *ngIf="recyclingProcessForm">
     <app-section-title [title]="recyclingProcessForm.get('name').value" class="u-margin-bottom">
       <div action>
-        <button *ngIf="!!recyclingProcess?._id && !isDuplicated" class="a-button--link" (click)="duplicateProcess()">
+        <button *ngIf="!!recyclingProcess?._id && !isDuplicate" class="a-button--link" (click)="duplicateProcess()">
           {{ 'GENERAL.LABELS.DUPLICATE-PROCESS' | translate }}
         </button>
       </div>
@@ -86,18 +86,18 @@
       <button class="a-button--primary has-icon-after u-margin-right" (click)="saveForm()" [disabled]="formDisabled">
         {{ 'GENERAL.LABELS.SAVE' | translate }}
       </button>
-      <button *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicated"
+      <button *ngIf="recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
         class="a-button--danger a-button-outline has-icon-after u-text-uppercase u-margin-right"
         (click)="toggleActivationForm()" [disabled]="formDisabled">
         {{ 'GENERAL.LABELS.DISABLE' | translate }}
       </button>
-      <button *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicated"
+      <button *ngIf="!recyclingProcess?.meta.activated && !!recyclingProcess?._id && !isDuplicate"
         class="a-button--success a-button-outline has-icon-after u-text-uppercase u-margin-right"
         (click)="toggleActivationForm()" [disabled]="formDisabled">
         {{ 'GENERAL.LABELS.ENABLE' | translate }}
       </button>
       <app-delete-button
-        *ngIf="!!recyclingProcess?._id && !isDuplicated"
+        *ngIf="!!recyclingProcess?._id && !isDuplicate"
         class="u-pull-right"
         (deleteFunction)="removeForm()"
         [extraMessage]="deleteConfirmMessage"
