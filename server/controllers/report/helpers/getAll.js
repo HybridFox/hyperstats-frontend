@@ -4,7 +4,9 @@ const { REPORT_SORT_OPTIONS, REPORT_STATUS } = require("./const");
 const { COMPANY_TYPES } = require("../../company/helpers/const");
 
 const getQuery = (reportedById, recyclingProcessId, recycler, companyType) => {
-	let query = {};
+	let query = {
+		"meta.deleted": false,
+	};
 
 	if (companyType === COMPANY_TYPES.R) {
 		query["meta.reportingCompany"] = reportedById;
