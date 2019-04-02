@@ -10,7 +10,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class InputFractionFormComponent implements OnChanges {
   @Input() public stepId: number;
-  @Input() public elements: string;
 
   public form: FormGroup;
 
