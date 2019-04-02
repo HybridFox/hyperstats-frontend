@@ -39,7 +39,7 @@ describe("Integration", () => {
 			closeServer = c;
 			reset = r;
 
-			cookie = (await loginUser(server)).cookie;
+			cookie = (await loginUser(server, { username: "test1@example.com" })).cookie;
 		});
 
 		afterEach(() => reset());
