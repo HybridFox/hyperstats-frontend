@@ -16,6 +16,7 @@ import { Toggle, Remove } from './recycling-process.interface';
 import { UPLOAD_CONSTS } from '@ui/upload/components/multiple-file-upload/multiple-file-upload.const';
 
 import { Report } from '../../../reports/store/reports/types';
+import { RecyclingProcess } from '../../../reports/store/recycling-processes/types';
 import { ReportsSelector } from '../../../reports/store/reports';
 import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 
@@ -28,10 +29,11 @@ import { PROCESS_REPORT_STATE } from './recycling-process.interface';
 export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @select(ReportsSelector.list.result) public reports$: Observable<Report[]>;
 
-  @Input() public recyclingProcess: any;
+  @Input() public recyclingProcess: RecyclingProcess;
   @Input() public recyclingPartners: any[];
   @Input() public uploadResponse: any;
   @Input() public user: any;
+  @Input() public isDuplicate: boolean;
 
   @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
   @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
@@ -46,7 +48,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
   public uploadTypes = UPLOAD_CONSTS;
   public isActivated: boolean;
-  public isDuplicate: boolean;
   public processReportStatus: string = PROCESS_REPORT_STATE.NOT_USED;
   public formDisabled = false;
   public deleteConfirmMessage = '';
@@ -124,7 +125,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
       return;
     }
 
-    this.isDuplicate = false;
     this.submit.emit(this.recyclingProcessForm);
   }
 
@@ -142,7 +142,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public duplicateProcess() {
-    this.isDuplicate = true;
     this.duplicate.emit(this.recyclingProcess._id);
 
     this.processReportStatus = '';
