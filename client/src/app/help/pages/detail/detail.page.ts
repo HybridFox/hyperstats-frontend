@@ -9,7 +9,7 @@ const helpPageContent: any = {
   'recycling-processes': { en: ngxExtract('HELP.CONTENT.RECYCLING-PROCESSES') },
   'recycling-partners': { en: ngxExtract('HELP.CONTENT.RECYCLING-PARTNERS') },
   proxies: { en: ngxExtract('HELP.CONTENT.PROXIES') },
-  'audit-trial': { en: ngxExtract('HELP.CONTENT.AUDIT-TRAIL') },
+  'audit-trail': { en: ngxExtract('HELP.CONTENT.AUDIT-TRAIL') },
   fallback: { en: ngxExtract('HELP.CONTENT.FALLBACK')  }
 };
 
