@@ -18,6 +18,10 @@ export class OrganisationGuard implements CanActivate {
     return this.user$
       .pipe(
         map((user) => {
+          if (!user) {
+            return false;
+          }
+
           if (user.company.meta.type === 'R' && route.routeConfig.path === 'recycler') {
             return true;
           }
