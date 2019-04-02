@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: i18next-conv\n"
-"POT-Creation-Date: 2019-03-28T10:13:53.772Z\n"
+"POT-Creation-Date: 2019-04-02T10:40:08.782Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -35,8 +35,6 @@ msgstr "Pyrometallurgy"
 msgid "CONSTANTS##METHODS-OF-PROCESSING##VACUUM-THERMAL-PROCESS"
 msgstr "Vacuum Thermal Process"
 
-#, fuzzy
-#| msgid "CONSTANTS##SORTOPTIONS##LAST-UPDATED"
 msgid "CONSTANTS##SORTOPTIONS##LAST-EDITED"
 msgstr "Last edited"
 
@@ -146,7 +144,7 @@ msgid "GENERAL##LABELS##COMPANYTYPE"
 msgstr "Company type"
 
 msgid "GENERAL##LABELS##COMPANYVAT"
-msgstr "Company VAT"
+msgstr "Company registration number"
 
 msgid "GENERAL##LABELS##CONFIRMPASSWORD"
 msgstr "Confirm password"
@@ -316,8 +314,6 @@ msgstr "Log off"
 msgid "GENERAL##MENU##MORE"
 msgstr "More..."
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##PRIVACY"
 msgid "GENERAL##MENU##PRIVACY"
 msgstr "Privacy"
 
@@ -348,13 +344,9 @@ msgstr "User profile"
 msgid "GENERAL##MENU##USERS"
 msgstr "Users"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##CANCEL"
 msgid "GENERAL##POPUP##CANCELREMOVE"
 msgstr "Cancel"
 
-#, fuzzy
-#| msgid "GENERAL##LABELS##CONFIRMREMOVE"
 msgid "GENERAL##POPUP##CONFIRMREMOVE"
 msgstr "Delete"
 
@@ -442,21 +434,15 @@ msgstr "Filters:"
 msgid "PAGE##AUDITTRAIL##TITLE"
 msgstr "Audit Trail"
 
-#, fuzzy
-#| msgid "PAGE##RECYCLING-PARTNERS##ADDRESSINFORMATION"
 msgid "PAGE##COMPANY##ADDRESSINFORMATION"
 msgstr "Address Information Recycling Plant"
 
-#, fuzzy
-#| msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
 msgid "PAGE##COMPANY##CONTACTPERSON"
 msgstr "Contact Person"
 
-#, fuzzy
-#| msgid "PAGE##COMPANYINFORMATION##HELP"
 msgid "PAGE##COMPANY##META"
 msgstr ""
-"Use here your legal address information, not the address from for instance a "
+"Use your legal address information, not the address from for instance a "
 "certain processing location or office."
 
 msgid "PAGE##COMPANYINFORMATION##CONTACTPERSON"
@@ -464,7 +450,7 @@ msgstr "Contact Person"
 
 msgid "PAGE##COMPANYINFORMATION##HELP"
 msgstr ""
-"Use here your legal address information, not the address from for instance a "
+"Use your legal address information, not the address from for instance a "
 "certain processing location or office."
 
 msgid "PAGE##COMPANYINFORMATION##SUBTITLE"
@@ -553,21 +539,11 @@ msgstr "Method of processing"
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION"
 msgstr "Qualitative description of the operations"
 
-msgid "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
-msgstr ""
-"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
-"Tempor Incididunt Ut Labore Et Dolor"
-
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##RECYCLING-SITE-OWNER"
 msgstr "Is this your recycling site or from one of your partners?"
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW"
 msgstr "Schematic overview of process"
-
-msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
-msgstr ""
-"Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
-"Tempor Incididunt Ut Labore Et Dolor"
 
 msgid "PAGE##RECYCLING-PROCESSES##LABELS##UPLOAD-FILE-WITH-FURTHER-DETAILS"
 msgstr "(upload a file with further details on your recycling process)"
@@ -679,7 +655,7 @@ msgstr "Revoke this proxy"
 msgid "PROXIES##SAVE-POPUP##EXPLANATION"
 msgstr ""
 "When you share proxies with a compliance organisation, this organisation can "
-"reshare them to other authorization organisations."
+"reshare them with the necessary authorization organisations."
 
 msgid "PROXIES##SAVE-POPUP##TITLE"
 msgstr "Are you sure you want to save this proxies?"
@@ -700,21 +676,17 @@ msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
 msgstr "Please try again later"
 
 msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
-msgstr "Could not register"
+msgstr "Could not save company information"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
-msgstr "Please check your inbox for a verification email."
+msgstr "Your company information has been updated"
 
 msgid "TOAST##COMPANY-INFORMATION##SUCCESS##TITLE"
-msgstr "Registration successful"
+msgstr "Update successful"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
 msgid "TOAST##COMPANY-REMOVE##ERROR##DESCRIPTION"
 msgstr "Please try again later"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
 msgid "TOAST##COMPANY-REMOVE##ERROR##TITLE"
 msgstr "Could not register"
 
@@ -724,46 +696,30 @@ msgstr "Please check your inbox for a verification email."
 msgid "TOAST##COMPANY-REMOVE##SUCCESS##TITLE"
 msgstr "Registration successful"
 
-#, fuzzy
-#| msgid "TOAST##CONTACT##ERROR##DESCRIPTION"
 msgid "TOAST##COMPANY-SAVE##ERROR##DESCRIPTION"
 msgstr "There was en error sending your message"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
 msgid "TOAST##COMPANY-SAVE##ERROR##TITLE"
 msgstr "Could not register"
 
-#, fuzzy
-#| msgid "TOAST##CONTACT##SUCCESS##DESCRIPTION"
 msgid "TOAST##COMPANY-SAVE##SUCCESS##DESCRIPTION"
 msgstr "Success!"
 
 msgid "TOAST##COMPANY-SAVE##SUCCESS##TITLE"
 msgstr "Registration successful"
 
-#, fuzzy
-#| msgid "TOAST##RECYCLING-PROCESS-TOGGLE##ACTIVATED"
 msgid "TOAST##COMPANY-TOGGLE##ACTIVATED"
 msgstr "activated"
 
-#, fuzzy
-#| msgid "TOAST##RECYCLING-PROCESS-TOGGLE##DEACTIVATED"
 msgid "TOAST##COMPANY-TOGGLE##DEACTIVATED"
 msgstr "deactivated"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##ERROR##DESCRIPTION"
 msgid "TOAST##COMPANY-TOGGLE##ERROR##DESCRIPTION"
 msgstr "Please try again later"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##ERROR##TITLE"
 msgid "TOAST##COMPANY-TOGGLE##ERROR##TITLE"
 msgstr "Could not register"
 
-#, fuzzy
-#| msgid "TOAST##COMPANY-INFORMATION##SUCCESS##DESCRIPTION"
 msgid "TOAST##COMPANY-TOGGLE##SUCCESS##DESCRIPTION"
 msgstr "Please check your inbox for a verification email"
 
@@ -982,8 +938,6 @@ msgstr "Error saving user"
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##DESCRIPTION"
 msgstr "The user is successfully saved!"
 
-#, fuzzy
-#| msgid "TOAST##USER-ADMIN-SAVEF##SUCCESS##TITLE"
 msgid "TOAST##USER-ADMIN-SAVE##SUCCESS##TITLE"
 msgstr "User saved!"
 
@@ -1107,10 +1061,8 @@ msgstr "Other Materials"
 msgid "WIZARD##INPUT-FRACTION##LABELS##PACKAGING-CASING"
 msgstr "Packaging material / outer casing"
 
-#, fuzzy
-#| msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMESTRY"
 msgid "WIZARD##INPUT-FRACTION##LABELS##PROCESS-CHEMISTRY"
-msgstr "Process chemistry"
+msgstr "Battery chemistry"
 
 msgid "WIZARD##INPUT-FRACTION##LABELS##SHARE-BATTERY"
 msgstr "Share of battery type in input fraction"
@@ -1167,8 +1119,6 @@ msgstr "General information"
 msgid "WIZARD##NO-LOGS"
 msgstr "No logs yet"
 
-#, fuzzy
-#| msgid "WIZARD##NO-PROCESS"
 msgid "WIZARD##NO-ORGANISATIONS"
 msgstr "You don’t have any linked {{key}}."
 
@@ -1256,6 +1206,17 @@ msgstr "Recycling Efficiency"
 msgctxt "FORM"
 msgid "GENERAL##LABELS##INVALID"
 msgstr "The form is invalid, make sure you have filled all the fields"
+
+#~ msgid ""
+#~ "PAGE##RECYCLING-PROCESSES##LABELS##QUALITATIVE-DESCRIPTION-DESCRIPTION"
+#~ msgstr ""
+#~ "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+#~ "Tempor Incididunt Ut Labore Et Dolor"
+
+#~ msgid "PAGE##RECYCLING-PROCESSES##LABELS##SCHEMATIC-OVERVIEW-DESCRIPTION"
+#~ msgstr ""
+#~ "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod "
+#~ "Tempor Incididunt Ut Labore Et Dolor"
 
 #~ msgid "GENERAL##BUTTONS##DELETE"
 #~ msgstr "Delete"

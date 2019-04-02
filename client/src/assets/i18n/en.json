@@ -55,7 +55,7 @@
             "COMPANY": "Company",
             "COMPANYNAME": "Company name",
             "COMPANYTYPE": "Company type",
-            "COMPANYVAT": "Company VAT",
+            "COMPANYVAT": "Company registration number",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
             "DATE": "Date",
@@ -169,11 +169,11 @@
         "COMPANY": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
             "CONTACTPERSON": "Contact Person",
-            "META": "Use here your legal address information, not the address from for instance a certain processing location or office."
+            "META": "Use your legal address information, not the address from for instance a certain processing location or office."
         },
         "COMPANYINFORMATION": {
             "CONTACTPERSON": "Contact Person",
-            "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
+            "HELP": "Use your legal address information, not the address from for instance a certain processing location or office.",
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
@@ -284,7 +284,7 @@
         },
         "REVOKEPROXY": "Revoke this proxy",
         "SAVE-POPUP": {
-            "EXPLANATION": "When you share proxies with a compliance organisation, this organisation can reshare them to other authorization organisations.",
+            "EXPLANATION": "When you share proxies with a compliance organisation, this organisation can reshare them with the necessary authorization organisations.",
             "TITLE": "Are you sure you want to save this proxies?"
         },
         "SAVEPROXIES": "Save proxies"
@@ -300,11 +300,11 @@
         "COMPANY-INFORMATION": {
             "ERROR": {
                 "DESCRIPTION": "Please try again later",
-                "TITLE": "Could not register"
+                "TITLE": "Could not save company information"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your inbox for a verification email.",
-                "TITLE": "Registration successful"
+                "DESCRIPTION": "Your company information has been updated",
+                "TITLE": "Update successful"
             }
         },
         "COMPANY-REMOVE": {
@@ -574,7 +574,7 @@
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
                 "OTHER-MATERIALS": "Other Materials",
                 "PACKAGING-CASING": "Packaging material / outer casing",
-                "PROCESS-CHEMISTRY": "Process chemistry",
+                "PROCESS-CHEMISTRY": "Battery chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
                 "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WATER": "Water (H₂0)",
