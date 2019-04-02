@@ -32,6 +32,7 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   @Input() public recyclingPartners: any[];
   @Input() public uploadResponse: any;
   @Input() public user: any;
+  @Input() public isDuplicated: boolean;
 
   @Output() public submit: EventEmitter<FormArray> = new EventEmitter<FormArray>();
   @Output() public remove: EventEmitter<string> = new EventEmitter<string>();
@@ -46,7 +47,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   public methodsOfProcessing: any[] = METHODS_OF_PROCESSING;
   public uploadTypes = UPLOAD_CONSTS;
   public isActivated: boolean;
-  public isDuplicate: boolean;
   public processReportStatus: string = PROCESS_REPORT_STATE.NOT_USED;
   public formDisabled = false;
   public deleteConfirmMessage = '';
@@ -124,7 +124,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
       return;
     }
 
-    this.isDuplicate = false;
     this.submit.emit(this.recyclingProcessForm);
   }
 
@@ -142,7 +141,6 @@ export class RecyclingProcessFormComponent implements OnChanges, AfterViewInit {
   }
 
   public duplicateProcess() {
-    this.isDuplicate = true;
     this.duplicate.emit(this.recyclingProcess._id);
 
     this.processReportStatus = '';
