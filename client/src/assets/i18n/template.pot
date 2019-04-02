@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2019-04-02T10:40:08.782Z\n"
-"PO-Revision-Date: 2019-04-02T10:40:08.782Z\n"
+"POT-Creation-Date: 2019-04-02T10:55:22.083Z\n"
+"PO-Revision-Date: 2019-04-02T10:55:22.083Z\n"
 
 msgid "Authorisation Organisation"
 msgstr ""
@@ -348,6 +348,24 @@ msgid "GENERAL##POPUP##CONFIRMREMOVE"
 msgstr ""
 
 msgid "GENERAL##POPUP##DELETEITEM"
+msgstr ""
+
+msgid "HELP##CONTENT##AUDIT-TRAIL"
+msgstr ""
+
+msgid "HELP##CONTENT##FALLBACK"
+msgstr ""
+
+msgid "HELP##CONTENT##PROXIES"
+msgstr ""
+
+msgid "HELP##CONTENT##RECYCLING-PARTNERS"
+msgstr ""
+
+msgid "HELP##CONTENT##RECYCLING-PROCESSES"
+msgstr ""
+
+msgid "HELP##CONTENT##REPORTS"
 msgstr ""
 
 msgid "PAGE##ABOUT##CONTENT-1"
