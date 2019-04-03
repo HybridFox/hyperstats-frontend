@@ -132,6 +132,16 @@
 			"DELETEITEM": ""
 		}
 	},
+	"HELP": {
+		"CONTENT": {
+			"AUDIT-TRAIL": "",
+			"FALLBACK": "",
+			"PROXIES": "",
+			"RECYCLING-PARTNERS": "",
+			"RECYCLING-PROCESSES": "",
+			"REPORTS": ""
+		}
+	},
 	"PAGE": {
 		"ABOUT": {
 			"CONTENT-1": "",
