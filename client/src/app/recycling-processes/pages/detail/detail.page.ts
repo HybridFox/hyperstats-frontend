@@ -188,6 +188,10 @@ export class DetailPageComponent implements OnInit, OnDestroy {
       id = this.duplicateProcessId;
     }
 
+    if (this.recyclingProcessId !== 'new' && this.isDuplicate) {
+      this.isDuplicate = false;
+    }
+
     this.processActions.fetchById(id).toPromise();
     this.processSubscription = this.$process
       .pipe(takeUntil(this.componentDestroyed$))
