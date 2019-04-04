@@ -131,12 +131,11 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
     let proxyDeleted = false;
     const companyId = proxy.value.companyInfo.companyId;
     proxy.value.processes.controls.forEach(process => {
-      const recyclingProcessId = process.value.processInfo.processId;
       process.value.reports.controls.forEach(report => {
         if (report.controls.value.value) {
           const body = {
             proxy: companyId,
-            recyclingProcess: recyclingProcessId,
+            recyclingProcess: process.value.processInfo,
             year: parseInt(report.controls.year.value, 10),
           };
 
@@ -190,7 +189,7 @@ export class OverviewPageComponent implements OnInit, OnDestroy {
         process.value.reports.controls.forEach(report => {
           const body = {
             proxy: companyId,
-            recyclingProcess: recyclingProcessId,
+            recyclingProcess: process.value.processInfo,
             year: parseInt(report.controls.year.value, 10),
           };
 
