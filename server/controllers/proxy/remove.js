@@ -1,15 +1,18 @@
 const removeHelper = require("./helpers/remove");
 const profileHelper = require("../../helpers/profile");
+const { createLog } = require("../auditLogs/helpers");
 
 module.exports = (req, res, next) => {
-	const userCompany = profileHelper.getCompanyOfUser(req)._id;
+	const user = profileHelper.getFull(req);
 
 	return removeHelper({
 		proxy: req.data.body.proxy,
 		recyclingProcess: req.data.body.recyclingProcess,
 		year: req.data.body.year,
-		userCompany,
+		userCompany: user.data.company._id,
 	})
-		.then(() => res.status(204).send())
+		.then(() => {
+			createLog({ item: req.data.body, type: "proxy", user, action: "revoked" }).then(() => res.status(204).send());
+		})
 		.catch(next);
 };
