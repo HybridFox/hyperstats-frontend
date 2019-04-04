@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 
 	return createHelper({
 		proxy: req.data.body.proxy,
-		recyclingProcess: req.data.body.recyclingProcess,
+		recyclingProcess: req.data.body.recyclingProcess.processId,
 		year: req.data.body.year,
 		userCompany: user.data.company._id,
 	})

@@ -1,7 +1,7 @@
 const AuditLogModel = require("../../../models/auditLog");
 
 module.exports = async({ item, type, user, action = "created" }) => {
-	const itemName = (type === "proxy") ? item.proxy : item.data.information.name;
+	const itemName = (type === "proxy") ? `${item.recyclingProcess.processName} in ${item.year}` : item.data.information.name;
 
 	const newLog = new AuditLogModel({
 		data: {
