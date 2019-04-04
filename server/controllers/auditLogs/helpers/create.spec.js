@@ -21,10 +21,11 @@ describe("Audit log", () => {
 
 		it("Should create a log", async() => {
 			const createdReport = await createLog({
-				report: {
+				item: {
 					_id: createObjectId(),
 					data: { information: { name: "Testreport" } },
 				},
+				type: "report",
 				user: {
 					_id: createObjectId(),
 					data: {
