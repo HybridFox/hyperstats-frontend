@@ -35,7 +35,9 @@ export class InputFractionFormComponent implements OnChanges {
 
   private setActiveStepById() {
     if (this.stepId !== -1) {
-      this.form = this.formData.formGroup.get('inputFraction').get(`${this.stepId}`) as FormGroup;
+      setTimeout(() => {
+        this.form = this.formData.formGroup.get('inputFraction').get(`${this.stepId}`) as FormGroup;
+      });
     } else {
       this.setActiveStepById();
     }
