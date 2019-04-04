@@ -16,15 +16,18 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { CLASSIFICATIONS } from './classifications.const';
 import isEmpty from 'ramda/es/isEmpty';
 
+import { Option } from '../../../../../../lib/ui/form-fields/components/select/select.types';
+
 @Component({
   templateUrl: './output-fraction.page.html',
 })
 export class OutputFractionPageComponent extends StepPageAbstract {
-  @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partners$: Observable<any[]>;
-  @select$(ReportsProcessSelector.detail.result, processStepsToSelectOptions) public processSteps$: BehaviorSubject<any>;
+  @select$(RecyclingPartnerSelector.list.result, companiesToSelectOptions) public partners$: Observable<Option[]>;
+  @select$(ReportsProcessSelector.detail.result, processStepsToSelectOptions) public processSteps$: BehaviorSubject<Option[]>;
   public outputFraction: FormGroup;
   private stepId: number;
   public classifications = CLASSIFICATIONS;
+  public partners: Option[];
 
   constructor(
     public codesService: CodesService,
@@ -85,16 +88,21 @@ export class OutputFractionPageComponent extends StepPageAbstract {
         takeUntil(this.componentDestroyed$),
       )
       .subscribe(partners => {
-        if (isEmpty(partners)) {
-          setTimeout(() => {
-            const formArr = (this.outputFraction.get('data') as FormArray);
-            formArr.controls.forEach((group, index) => {
-              (group as FormGroup).controls['elementDestinationCompany'].setErrors({'no-companies': true});
-              (group as FormGroup).get('elementDestinationCompany').markAsDirty({onlySelf: true});
-            });
-          });
-        }
+        this.partners = partners;
+        this.checkCompaniesForElementDestination();
       });
+  }
+
+  private checkCompaniesForElementDestination() {
+    if (isEmpty(this.partners)) {
+      setTimeout(() => {
+        const formArr = (this.outputFraction.get('data') as FormArray);
+        formArr.controls.forEach(group => {
+          (group as FormGroup).controls['elementDestinationCompany'].setErrors({'no-companies': true});
+          (group as FormGroup).get('elementDestinationCompany').markAsDirty({onlySelf: true});
+        });
+      });
+    }
   }
 
   private watchClassification() {
@@ -111,6 +119,7 @@ export class OutputFractionPageComponent extends StepPageAbstract {
           }
           if (input !== this.classifications.INTERMEDIATE) {
             formArr.at(index).get('assignedStep').reset();
+            this.checkCompaniesForElementDestination();
           }
           if (input !== this.classifications.RECYCLING) {
             formArr.at(index).get('virginReplacedMaterial').reset();

@@ -31,6 +31,7 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   public duplicateProcessId: string;
   public uploadResponse: any;
   public uploadResults;
+  public isDuplicate = false;
 
   private processSubscription: Subscription;
   private componentDestroyed$: Subject<boolean> = new Subject<boolean>();
@@ -65,11 +66,13 @@ export class DetailPageComponent implements OnInit, OnDestroy {
   }
 
   public duplicateProcess(event) {
+    this.isDuplicate = true;
     this.duplicateProcessId = event;
     this.router.navigate(['../new'], { relativeTo: this.route });
   }
 
   public save(recyclingProcessForm: any) {
+    this.isDuplicate = false;
     FormHelper.markAsDirty(recyclingProcessForm);
 
     if (recyclingProcessForm.invalid) {
@@ -162,7 +165,10 @@ export class DetailPageComponent implements OnInit, OnDestroy {
 
   private fetchProcessIfNeeded(): void {
     this.uploadResults = null;
+
     if (!this.recyclingProcessId || (this.process && prop('_id', this.process) === this.recyclingProcessId)) {
+      this.isDuplicate = false;
+
       return;
     }
 
@@ -181,6 +187,11 @@ export class DetailPageComponent implements OnInit, OnDestroy {
     if (this.recyclingProcessId === 'new' && duplicate) {
       id = this.duplicateProcessId;
     }
+
+    if (this.recyclingProcessId !== 'new' && this.isDuplicate) {
+      this.isDuplicate = false;
+    }
+
     this.processActions.fetchById(id).toPromise();
     this.processSubscription = this.$process
       .pipe(takeUntil(this.componentDestroyed$))

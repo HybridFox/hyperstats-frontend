@@ -55,7 +55,7 @@
             "COMPANY": "Company",
             "COMPANYNAME": "Company name",
             "COMPANYTYPE": "Company type",
-            "COMPANYVAT": "Company VAT",
+            "COMPANYVAT": "Company registration number",
             "CONFIRMPASSWORD": "Confirm password",
             "COUNTRY": "Country",
             "DATE": "Date",
@@ -132,6 +132,16 @@
             "DELETEITEM": "Are you sure you want to delete this item?"
         }
     },
+    "HELP": {
+        "CONTENT": {
+            "AUDIT-TRAIL": "This page gives you an overview of the app activity within your organisation. The creation, update, filing and sharing of reports will be logged per user.",
+            "FALLBACK": "No page content available",
+            "PROXIES": "Proxies are the organizations that have access to your reports. In this overview you can control who has access to your reports for a given reporting year and recycling process.\n\nReports can be shared with the compliance and authorization organisations of your choice. Please note that when sharing a report with a compliance organisation, it can be passed on to the necessary authorization organisation(s) for further control.",
+            "RECYCLING-PARTNERS": "This section allows you to centralise all of the Recycling Partners your organisation works with. It should contain the legal information and details of your contact person for all of them. The address information should be the location where the actual recycling plants are situated.\n\nThe Recycling Partners listed in this section can also be used in your Recycling Processes and Reports.",
+            "RECYCLING-PROCESSES": "All of your company’s recycling processes should be listed here. Please make sure to add all the neccessary steps to your process and upload the relevant documentation.\n\nPlease note that a process cannot be edited or deleted once it has been linked to a filed report. Processes are visible by all users of your organisation.",
+            "REPORTS": "All of your company’s reports should be listed here. You can create one or more reports per recycling process and year. You can start creating a report and save it as draft to complete or edit it later.\n\nPlease note that a report cannot be edited or deleted once it has been filed. Reports are visible by all users of your organisation and, if shared, by designated external organisations (see Proxies section).\n\nEasily filter your reports by recycling process by using the filters on the left hand side. By clicking “”export”” you can download an Excel or PDF version of your report."
+        }
+    },
     "PAGE": {
         "ABOUT": {
             "CONTENT-1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Donec elementum ligula eu sapien consequat eleifend. Donec nec dolor erat, condimentum sagittis sem. Praesent porttitor porttitor risus, dapibus rutrum ipsum gravida et. Integer lectus nisi, facilisis sit amet eleifend nec, pharetra ut augue. Integer quam nunc, consequat nec egestas ac, volutpat ac nisi. Sed consectetur dignissim dignissim. Donec pretium est sit amet ipsum fringilla feugiat. Aliquam erat volutpat. Maecenas scelerisque, orci sit amet cursus tincidunt, libero nisl eleifend tortor, vitae cursus risus mauris vitae nisi. Cras laoreet ultrices",
@@ -169,11 +179,11 @@
         "COMPANY": {
             "ADDRESSINFORMATION": "Address Information Recycling Plant",
             "CONTACTPERSON": "Contact Person",
-            "META": "Use here your legal address information, not the address from for instance a certain processing location or office."
+            "META": "Use your legal address information, not the address from for instance a certain processing location or office."
         },
         "COMPANYINFORMATION": {
             "CONTACTPERSON": "Contact Person",
-            "HELP": "Use here your legal address information, not the address from for instance a certain processing location or office.",
+            "HELP": "Use your legal address information, not the address from for instance a certain processing location or office.",
             "SUBTITLE": "Address Information Recycling Plant",
             "TITLE": "Company information"
         },
@@ -224,10 +234,8 @@
                 "PRECEDING-STEP": "If any, choose a preceding step",
                 "PROCESSING-METHOD": "Method of processing",
                 "QUALITATIVE-DESCRIPTION": "Qualitative description of the operations",
-                "QUALITATIVE-DESCRIPTION-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
                 "RECYCLING-SITE-OWNER": "Is this your recycling site or from one of your partners?",
                 "SCHEMATIC-OVERVIEW": "Schematic overview of process",
-                "SCHEMATIC-OVERVIEW-DESCRIPTION": "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolor",
                 "UPLOAD-FILE-WITH-FURTHER-DETAILS": "(upload a file with further details on your recycling process)"
             },
             "PRECEDING-STEP": {
@@ -284,7 +292,7 @@
         },
         "REVOKEPROXY": "Revoke this proxy",
         "SAVE-POPUP": {
-            "EXPLANATION": "When you share proxies with a compliance organisation, this organisation can reshare them to other authorization organisations.",
+            "EXPLANATION": "When you share proxies with a compliance organisation, this organisation can reshare them with the necessary authorization organisations.",
             "TITLE": "Are you sure you want to save this proxies?"
         },
         "SAVEPROXIES": "Save proxies"
@@ -300,11 +308,11 @@
         "COMPANY-INFORMATION": {
             "ERROR": {
                 "DESCRIPTION": "Please try again later",
-                "TITLE": "Could not register"
+                "TITLE": "Could not save company information"
             },
             "SUCCESS": {
-                "DESCRIPTION": "Please check your inbox for a verification email.",
-                "TITLE": "Registration successful"
+                "DESCRIPTION": "Your company information has been updated",
+                "TITLE": "Update successful"
             }
         },
         "COMPANY-REMOVE": {
@@ -574,7 +582,7 @@
                 "METHODOLOG-WASTE": "Description of the methodology to determine the chemical composition of the batteries",
                 "OTHER-MATERIALS": "Other Materials",
                 "PACKAGING-CASING": "Packaging material / outer casing",
-                "PROCESS-CHEMISTRY": "Process chemistry",
+                "PROCESS-CHEMISTRY": "Battery chemistry",
                 "SHARE-BATTERY": "Share of battery type in input fraction",
                 "SHARE-INPUT-FRACTION": "Share of input fraction (%)",
                 "WATER": "Water (H₂0)",

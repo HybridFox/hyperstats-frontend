@@ -10,7 +10,6 @@ import { FormGroup } from '@angular/forms';
 })
 export class InputFractionFormComponent implements OnChanges {
   @Input() public stepId: number;
-  @Input() public elements: string;
 
   public form: FormGroup;
 
@@ -36,7 +35,9 @@ export class InputFractionFormComponent implements OnChanges {
 
   private setActiveStepById() {
     if (this.stepId !== -1) {
-      this.form = this.formData.formGroup.get('inputFraction').get(`${this.stepId}`) as FormGroup;
+      setTimeout(() => {
+        this.form = this.formData.formGroup.get('inputFraction').get(`${this.stepId}`) as FormGroup;
+      });
     } else {
       this.setActiveStepById();
     }

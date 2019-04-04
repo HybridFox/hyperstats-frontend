@@ -7,11 +7,10 @@
     *ngFor="let fraction of outputFraction.get('data').controls; let i = index;">
     <div class="l-grid__row l-grid--with-margins">
       <div class="l-grid__col-6-12">
-        <app-select-input
+        <app-text-input
           [label]="'WIZARD.OUTPUT-FRACTION.LABELS.ELEMENT' | translate"
           [control]="fraction.get('element')"
-          [options]="codesService.elements()"
-        ></app-select-input>
+        ></app-text-input>
       </div>
       <div class="l-grid__col-6-12">
         <app-mass-input

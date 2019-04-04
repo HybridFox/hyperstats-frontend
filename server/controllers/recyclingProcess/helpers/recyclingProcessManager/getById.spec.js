@@ -30,7 +30,10 @@ describe("Get Recycling process", () => {
 	});
 
 	it("Should get the recycling process based on a correct _id", async() => {
-		const result = await getById(processId);
+		const result = await getById({
+			_id: processId,
+			createdByCompany: companyId,
+		});
 
 		expect(result).to.be.an("object");
 		expect(result.data).to.be.an("object");
