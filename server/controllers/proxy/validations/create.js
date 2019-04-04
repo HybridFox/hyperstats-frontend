@@ -3,7 +3,7 @@ const { schemas } = require("../../../helpers/validation");
 
 const schema = joi.object().keys({
 	proxy: joi.string().required(),
-	recyclingProcess: joi.object().required(),
+	recyclingProcess: joi.string().required(),
 	year: joi.number().required(),
 });
 

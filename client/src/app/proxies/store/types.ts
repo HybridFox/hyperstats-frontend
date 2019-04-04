@@ -2,7 +2,7 @@ import { Information } from 'src/app/reports/store/reports/types';
 
 export interface ProxyBody {
   proxy: string;
-  recyclingProcess: any; // TODO fix any
+  recyclingProcess: string;
   year: number;
 }
 
