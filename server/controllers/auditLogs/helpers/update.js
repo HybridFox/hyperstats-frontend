@@ -9,7 +9,7 @@ module.exports = ({ report, user, status }) => {
 	};
 
 	return AuditLogModel.findOneAndUpdate(
-		{ "data.item": report._id },
+		{ "data.report": report._id },
 		{ $push: { "data.logs": newLog }, $set: { "meta.lastUpdated": new Date() } },
 		{ new: true }
 	)
