@@ -8,6 +8,7 @@ const routes: Routes = [
     path: '',
     component: Pages.OverviewPageComponent,
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'reports'},
       { path: ':section', component: Pages.DetailPageComponent },
     ]
   },
