@@ -23,6 +23,7 @@ describe("Audit log", () => {
 			const createdReport = await createLog({
 				item: {
 					_id: createObjectId(),
+					recyclingProcess: createObjectId(),
 					data: { information: { name: "Testreport" } },
 				},
 				type: "report",

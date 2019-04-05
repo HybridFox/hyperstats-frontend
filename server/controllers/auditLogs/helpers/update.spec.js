@@ -9,7 +9,7 @@ should();
 use(chaiAsPromised);
 
 describe("Audit log", () => {
-	describe("getAll", () => {
+	describe("update", () => {
 		const companyId = createObjectId();
 		const reportId = createObjectId();
 		let mongoServer;
