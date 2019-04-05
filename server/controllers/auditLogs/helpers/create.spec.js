@@ -8,12 +8,10 @@ const createTestUser = require("../../../test/helpers/createTestUser");
 const mockProcesses = require("../../../test/mocks/recyclingProcesses");
 const createProcess = require("../../recyclingProcess/helpers/recyclingProcessManager/create");
 
-
-
 should();
 use(chaiAsPromised);
 
-describe.only("Audit log", () => {
+describe("Audit log", () => {
 	describe("create", () => {
 		let mongoServer;
 		let recyclingProcess;
