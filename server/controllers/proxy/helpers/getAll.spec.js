@@ -39,9 +39,6 @@ describe("Proxy", () => {
 		let report2;
 		let report3;
 		let report4;
-		let report5;
-		let report6;
-		let report7;
 
 		before(async() => {
 			mongoServer = await mockMongoose();
@@ -87,21 +84,6 @@ describe("Proxy", () => {
 				reportMockWithoutId
 			));
 			report4 = await createTestReport.create(companyOfUser, set(
-				lensPath(["data", "information", "recyclingProcess"]),
-				recyclingProcessId3,
-				reportMockWithoutId
-			));
-			report5 = await createTestReport.create(otherRecyclerId.toString(), set(
-				lensPath(["data", "information", "recyclingProcess"]),
-				recyclingProcessId2,
-				reportMockWithoutId
-			));
-			report6 = await createTestReport.create(otherRecyclerId, set(
-				lensPath(["data", "information", "recyclingProcess"]),
-				recyclingProcessId3,
-				reportMockWithoutId
-			));
-			report7 = await createTestReport.create(otherRecyclerId, set(
 				lensPath(["data", "information", "recyclingProcess"]),
 				recyclingProcessId3,
 				reportMockWithoutId
