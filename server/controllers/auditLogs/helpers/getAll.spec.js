@@ -17,10 +17,12 @@ describe("Audit log", () => {
 			mongoServer = await mockMongoose();
 
 			await createLog({
-				report: {
+				item: {
 					_id: createObjectId(),
+					recyclingProcess: createObjectId(),
 					data: { information: { name: "Testreport" } },
 				},
+				type: "report",
 				user: {
 					_id: createObjectId(),
 					data: {
@@ -32,10 +34,12 @@ describe("Audit log", () => {
 			});
 
 			await createLog({
-				report: {
+				item: {
 					_id: createObjectId(),
+					recyclingProcess: createObjectId(),
 					data: { information: { name: "Testreport" } },
 				},
+				type: "report",
 				user: {
 					_id: createObjectId(),
 					data: {
