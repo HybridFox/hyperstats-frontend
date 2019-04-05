@@ -18,10 +18,12 @@ describe("Audit log", () => {
 			mongoServer = await mockMongoose();
 
 			await createLog({
-				report: {
+				item: {
 					_id: reportId,
+					recyclingProcess: createObjectId(),
 					data: { information: { name: "Testreport" } },
 				},
+				type: "report",
 				user: {
 					_id: createObjectId(),
 					data: {
@@ -51,7 +53,7 @@ describe("Audit log", () => {
 						company: { _id: companyId },
 					},
 				},
-				isFiled: false,
+				status: "SAVED",
 			});
 
 			expect(log).to.be.an("object");
@@ -72,7 +74,7 @@ describe("Audit log", () => {
 						company: { _id: companyId },
 					},
 				},
-				isFiled: true,
+				status: "FILED",
 			});
 
 			expect(log).to.be.an("object");
@@ -93,7 +95,7 @@ describe("Audit log", () => {
 						company: { _id: companyId },
 					},
 				},
-				isFiled: false,
+				status: "SAVED",
 			}).should.eventually.throw();
 		});
 	});
