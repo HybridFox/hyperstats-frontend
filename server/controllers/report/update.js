@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
 			updateLog({
 				report,
 				user,
-				isFiled: pathOr(REPORT_STATUS.SAVED, ["meta", "status"], report) === REPORT_STATUS.FILED,
+				status: pathOr(REPORT_STATUS.SAVED, ["meta", "status"], report),
 			})
 				.then(() => res.status(200).json(report))
 				.catch((error) => next(error));

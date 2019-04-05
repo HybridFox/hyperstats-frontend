@@ -1,5 +1,4 @@
 import { Information } from 'src/app/reports/store/reports/types';
-import { PROXY_OPTIONS } from './constants';
 
 export interface ProxyBody {
   proxy: string;

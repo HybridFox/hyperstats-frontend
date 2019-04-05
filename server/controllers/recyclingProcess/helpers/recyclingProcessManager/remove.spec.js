@@ -23,6 +23,7 @@ describe("Remove Recycling process", () => {
 	let processId;
 	let mockReport;
 	let companyOfUser;
+	let user;
 	const companyId = createObjectId();
 	const RecyclingProcesses = mockProcesses();
 
@@ -34,7 +35,7 @@ describe("Remove Recycling process", () => {
 		const result = await create({ process: RecyclingProcesses[0].data, companyId });
 		processId = result._id;
 
-		const user = await createTestUser();
+		user = await createTestUser();
 		companyOfUser = user.data.company;
 
 		this.mockReport = set(
@@ -55,7 +56,7 @@ describe("Remove Recycling process", () => {
 			this.mockReport
 		));
 
-		await remove(processId);
+		await remove(processId, user);
 		const result = await Model.findOne({ _id: processId }).exec();
 
 		expect(result).to.be.an("object").to.have.property("meta").to.be.an("object").to.have.property("deleted").to.be.true;
@@ -68,7 +69,7 @@ describe("Remove Recycling process", () => {
 			this.mockReport
 		)))._id;
 
-		await remove(processId);
+		await remove(processId, user);
 		const result = await ReportModel.findById(reportId).lean().exec();
 
 		expect(result).to.be.an("object").to.have.property("meta").to.be.an("object").to.have.property("deleted").to.be.true;
@@ -81,7 +82,7 @@ describe("Remove Recycling process", () => {
 	});
 
 	it("Should return 404 when trying to remove a removed process", async() => {
-		await remove(processId);
+		await remove(processId, user);
 
 		expect(remove(processId)).to.eventually.rejectedWith(errors.ProcessNotFound);
 	});

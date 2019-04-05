@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
 		companyId: pathOr(null, ["data", "company", "_id"], user),
 	})
 		.then((report) => {
-			createLog({ report, user }).then(() => res.status(201).json(report));
+			createLog({ item: report, type: "report", user }).then(() => res.status(201).json(report));
 		})
 		.catch((error) => next(error));
 };

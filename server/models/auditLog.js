@@ -5,7 +5,10 @@ const AuditLog = mongoose.Schema({
 		report: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: "Report",
-			required: true,
+		},
+		proxy: {
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Proxy",
 		},
 		reportingCompany: {
 			type: mongoose.Schema.Types.ObjectId,
