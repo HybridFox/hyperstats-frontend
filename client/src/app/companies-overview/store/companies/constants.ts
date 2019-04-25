@@ -1,3 +1,0 @@
-export const MODULE = 'COMPANY_OVERVIEW';
-export const RECYCLERS = 'RECYCLERS';
-export const ORGANISATIONS = 'AUTHORISATION_ORG';

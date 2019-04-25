@@ -1,0 +1,62 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
+import { ApiModule } from '@api/api';
+
+import { CoreRoutingModule } from './core-routing.module';
+
+import { StoreModule } from '@store/store.module';
+import { StoreService } from '@store/store.service';
+
+import { ErrorInterceptor } from '@helpers/error.interceptor';
+import { FormFieldsModule } from '@ui/form-fields';
+import { LoadingModule } from '@ui/loading';
+
+import { StoreRouterModule } from '@core/store-router';
+
+import { Components, RootComponent } from './components';
+import { Pages } from './pages';
+
+@NgModule({
+  declarations: [
+    ...Components,
+    ...Pages,
+  ],
+  imports: [
+    FormFieldsModule,
+    StoreModule,
+    BrowserModule,
+    CoreRoutingModule,
+    HttpClientModule,
+    ApiModule,
+
+    ReactiveFormsModule,
+    LoadingModule,
+
+    StoreRouterModule,
+
+    // Toastr
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 10000,
+      progressBar: true,
+      positionClass: 'toast-bottom-right',
+    }),
+  ],
+  providers: [
+    StoreService,
+
+    { provide: LOCALE_ID, useValue: 'en' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
+  ],
+  bootstrap: [RootComponent]
+})
+export class CoreModule { }

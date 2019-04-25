@@ -1,6 +1,0 @@
-import { MODULE, LIST, RECYCLING_PROCESSES } from '../../constants';
-
-export const LIST_ACTIONS = {
-  FETCH: `${MODULE}/${RECYCLING_PROCESSES}/${LIST}/FETCH`,
-  CLEAR: `${MODULE}/${RECYCLING_PROCESSES}/${LIST}/CLEAR`,
-};
