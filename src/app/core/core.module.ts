@@ -16,6 +16,7 @@ import { ErrorInterceptor } from '@helpers/error.interceptor';
 import { FormFieldsModule } from '@ui/form-fields';
 import { LoadingModule } from '@ui/loading';
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { StoreRouterModule } from '@core/store-router';
 
 import { Components, RootComponent } from './components';
@@ -33,6 +34,7 @@ import { Pages } from './pages';
     CoreRoutingModule,
     HttpClientModule,
     ApiModule,
+    NgxChartsModule,
 
     ReactiveFormsModule,
     LoadingModule,

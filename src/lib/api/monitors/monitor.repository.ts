@@ -3,11 +3,10 @@ import { HttpClient, HttpRequest, HttpEventType, HttpResponse, HttpEvent } from 
 import { Observable } from 'rxjs';
 
 import { ApiConfigService } from '@api/config.service';
-import { retry, map, tap, catchError } from 'rxjs/operators';
-import { last } from '@angular/router/src/utils/collection';
+import { map } from 'rxjs/operators';
 
 @Injectable()
-export class AssetsRepository {
+export class MonitorRepository {
   constructor(
     private http: HttpClient,
     private apiConfig: ApiConfigService,
