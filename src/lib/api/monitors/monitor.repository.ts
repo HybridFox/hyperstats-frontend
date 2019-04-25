@@ -12,43 +12,9 @@ export class MonitorRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public upload(file: File): Observable<any> {
-    const url = this.apiConfig.baseUrl('/assets');
+  public fetchAll(): Observable<any> {
+    const url = this.apiConfig.baseUrl('/monitors');
 
-    const formData = new FormData();
-    formData.append('file', file);
-
-    const req = new HttpRequest('POST', url, formData, {
-      reportProgress: true,
-    });
-
-    return this.http.request(req).pipe(
-      map(event => this.getEventMessage(event, file)),
-    );
-  }
-
-  private getEventMessage(event: HttpEvent<any>, file: File) {
-    switch (event.type) {
-      case HttpEventType.UploadProgress:
-        const progress = {
-          progress: Math.round(100 * event.loaded / event.total),
-          originalname: file.name,
-          result: null
-        };
-        return progress;
-      case HttpEventType.Response:
-        const result = {
-          progress: 100,
-          originalname: file.name,
-          result: event.body
-        };
-        return result;
-    }
-  }
-
-  public getFileURL(fileId) {
-    const url = this.apiConfig.baseUrl('/assets') + '/' + fileId;
-
-    return url;
+    return this.http.get(url);
   }
 }

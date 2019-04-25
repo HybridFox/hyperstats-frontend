@@ -19,8 +19,11 @@ import { LoadingModule } from '@ui/loading';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { StoreRouterModule } from '@core/store-router';
 
+import { MonitorApiModule } from '@api/monitors'
+
 import { Components, RootComponent } from './components';
 import { Pages } from './pages';
+import { CoreServices, coreReducer } from './store'
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { Pages } from './pages';
     ...Pages,
   ],
   imports: [
+    MonitorApiModule,
     FormFieldsModule,
     StoreModule,
     BrowserModule,
@@ -50,6 +54,7 @@ import { Pages } from './pages';
     }),
   ],
   providers: [
+    CoreServices,
     StoreService,
 
     { provide: LOCALE_ID, useValue: 'en' },
@@ -61,4 +66,10 @@ import { Pages } from './pages';
   ],
   bootstrap: [RootComponent]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(
+    private storeService: StoreService,
+  ) {
+    this.storeService.injectAsyncReducer('dashboard', coreReducer);
+  }
+}

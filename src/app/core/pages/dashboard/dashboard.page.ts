@@ -1,57 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { CoreActions, CoreSelectors } from "../../store";
+import { select$ } from "@angular-redux/store";
+import { Observable } from "rxjs";
+import { map, filter } from "rxjs/operators";
 
 @Component({
-  templateUrl: './dashboard.page.html',
+  templateUrl: "./dashboard.page.html"
 })
-export class DashboardPageComponent {
-  public data: any = [
-    {
-      "name": "Germany",
-      "series": [
-        {
-          "name": "2010",
-          "value": 7300000
-        },
-        {
-          "name": "2011",
-          "value": 8940000
-        }
-      ]
-    },
-
-    {
-      "name": "USA",
-      "series": [
-        {
-          "name": "2010",
-          "value": 7870000
-        },
-        {
-          "name": "2011",
-          "value": 8270000
-        }
-      ]
-    }
-  ];
+export class DashboardPageComponent implements OnInit {
+  // TODO: move this somewhere decently
+  @select$(CoreSelectors.list.result, obs$ =>
+    obs$.pipe(
+      filter(data => data !== null),
+      map(data =>
+        data.map(monitor => ({
+          name: monitor.name,
+          series: monitor.checks.map(check => ({
+            name: new Date(check.createdAt),
+            value: check.ping
+          }))
+        }))
+      )
+    )
+  )
+  public data$: Observable<any>;
 
   single: any[];
   multi: any[];
 
-  view: any[] = [700, 400];
+  view: any[] = [undefined, 400];
 
-  // options
-  showXAxis = true;
-  showYAxis = true;
-  gradient = false;
-  showLegend = true;
-  showXAxisLabel = true;
-  xAxisLabel = 'Country';
-  showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  xAxisLabel = "Time";
+  yAxisLabel = "Listeners";
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ["#5AA454", "#A10A28", "#C7B42C", "#AAAAAA"]
   };
 
-  constructor() {}
+  constructor(private coreActions: CoreActions) {}
+
+  ngOnInit() {
+    this.coreActions.fetchAll().subscribe();
+  }
 }

@@ -1,12 +1,11 @@
 <div class="p-about">
   <div class="container">
     <ngx-charts-line-chart
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="data"
+      [results]="data$ | async"
       [xAxis]="true"
       [yAxis]="true"
       [legend]="true"
+      [view]="view"
       [showXAxisLabel]="true"
       [showYAxisLabel]="true"
       [xAxisLabel]="xAxisLabel"

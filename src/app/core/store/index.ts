@@ -2,8 +2,8 @@ export * from './actions';
 export * from './reducers';
 export * from './selectors';
 
-import { ProxiesActions } from './actions';
+import { CoreActions } from './actions';
 
-export const ProxiesServices = [
-  ProxiesActions
+export const CoreServices = [
+  CoreActions
 ];
