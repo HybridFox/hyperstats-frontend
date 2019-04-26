@@ -1,13 +1,16 @@
 <div *ngIf="(data$ | async)" class="m-stats">
-  <h3>{{ (data$ | async).name }} </h3>
-  <ngx-charts-line-chart
-      [results]="data$ | async"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="true"
-      [xScaleMin]="xScaleMin"
-      [yScaleMax]="yScaleMax"
-      [scheme]="{domain: [monitor.color]}"
-      theme="dark">
-    </ngx-charts-line-chart>
+  <h3 class="m-stats__title">{{ monitor.name }}</h3>
+  <div class="m-stats__container">
+    <div class="m-stats__chart" *ngFor="let chartData of (data$ | async)">
+      <ngx-charts-line-chart
+        legendPosition="below"
+        [results]="[chartData]"
+        [legend]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [xScaleMin]="xScaleMin"
+        [scheme]="{domain: [monitor.color]}">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
 </div>

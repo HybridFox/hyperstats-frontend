@@ -11,8 +11,8 @@ export class CoreRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchAllGroups(): Observable<any> {
-    const url = this.apiConfig.baseUrl('/groups');
+  public fetchAllGroups(sparse = true): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/groups?sparse=${sparse}`);
 
     return this.http.get(url);
   }

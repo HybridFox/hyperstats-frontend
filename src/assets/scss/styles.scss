@@ -1,5 +1,3 @@
-@import '~@angular/cdk/overlay-prebuilt.css';
-
 // Base
 @import "./00_base/variables";
 @import "./00_base/normalize";
@@ -12,47 +10,9 @@
 @import "./00_base/container";
 @import "./00_base/utils";
 
-// Vendor
-@import "./06_vendor/v-material";
-
-// Atoms
-@import "./01_atoms/a-buttons";
-@import "./01_atoms/a-icons";
-@import "./01_atoms/a-input";
-@import "./01_atoms/a-labels";
-@import "./01_atoms/a-site-logo";
-@import "./01_atoms/a-table";
-@import "./01_atoms/a-text";
-@import "./01_atoms/a-link";
-
 // Molecules
-@import "./02_molecules/m-card";
-@import "./02_molecules/m-file-upload";
-@import "./02_molecules/m-footer";
-@import "./02_molecules/m-menu";
-@import "./02_molecules/m-nav";
-@import "./02_molecules/m-page-title";
-@import "./02_molecules/m-section-title";
-@import "./02_molecules/m-steps";
-@import "./02_molecules/m-sub-section-title";
-@import "./02_molecules/m-table";
-@import "./02_molecules/m-report";
-@import "./02_molecules/m-filter";
-
-// Organisms
-@import "./03_organisms/o-card-list";
-@import "./03_organisms/o-menu";
-@import "./03_organisms/o-popup";
-@import "./03_organisms/o-region";
-
-// Templates
-@import "./04_templates/t-section";
+@import "./02_molecules/m-stats";
+@import "./02_molecules/m-group";
 
 // Pages
 @import "./05_pages/p-app-root";
-
-.m-stats {
-  position: relative;
-  clear: both;
-  height: 100px;
-}

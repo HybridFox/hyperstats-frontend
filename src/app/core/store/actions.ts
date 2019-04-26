@@ -15,10 +15,10 @@ export class CoreActions {
     private coreRepository: CoreRepository,
   ) { }
 
-  public fetchAllGroups(): Observable<any> {
+  public fetchAllGroups(sparse = true): Observable<any> {
     this.handler.dispatchStart(ACTIONS.FETCH_GROUPS);
 
-    return this.coreRepository.fetchAllGroups()
+    return this.coreRepository.fetchAllGroups(sparse)
       .pipe(
         catchError((error) => {
           this.handler.dispatchError(ACTIONS.FETCH_GROUPS, {

@@ -1,0 +1,15 @@
+<div class="m-stats">
+  <div class="m-stats__container--large">
+    <div class="m-stats__chart">
+      <ngx-charts-line-chart
+        legendPosition="below"
+        [results]="mappedData$ | async"
+        [legend]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [xScaleMin]="xScaleMin"
+        [scheme]="{domain: colors}">
+      </ngx-charts-line-chart>
+    </div>
+  </div>
+</div>

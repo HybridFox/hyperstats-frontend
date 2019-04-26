@@ -1,0 +1,14 @@
+app-group {
+  .m-group {
+    .m-group__title {
+      color: $tundora;
+      background: $white;
+      border-radius: 10px;
+      padding: $spacer;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+  }
+}

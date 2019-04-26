@@ -1,19 +1,6 @@
 <div class="p-about">
   <div class="container">
-    <div *ngFor="let group of (data$ | async)">
-      <h2>{{ group.name }}</h2>
-      <app-monitor [monitor]="monitor" *ngFor="let monitor of group.monitors"></app-monitor>
-    </div>
-    <!-- <ngx-charts-line-chart
-      [results]="data$ | async"
-      [xAxis]="true"
-      [yAxis]="true"
-      [legend]="true"
-      [view]="view"
-      [showXAxisLabel]="true"
-      [showYAxisLabel]="true"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel">
-    </ngx-charts-line-chart>-->
+    <app-listeners [data]="data$"></app-listeners>
+    <app-group [group]="group" *ngFor="let group of (data$ | async)"></app-group>
   </div>
 </div>

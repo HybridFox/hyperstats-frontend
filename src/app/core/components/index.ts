@@ -2,8 +2,14 @@ import { RootComponent } from './root/root.component';
 export { RootComponent } from './root/root.component';
 import { MonitorComponent } from './monitor/monitor.component';
 export { MonitorComponent } from './monitor/monitor.component';
+import { GroupComponent } from './group/group.component';
+export { GroupComponent } from './group/group.component';
+import { ListenersComponents } from './listeners/listeners.component';
+export { ListenersComponents } from './listeners/listeners.component';
 
 export const Components = [
   RootComponent,
-  MonitorComponent
+  MonitorComponent,
+  GroupComponent,
+  ListenersComponents
 ];

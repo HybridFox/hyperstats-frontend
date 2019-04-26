@@ -1,0 +1,12 @@
+<div class="m-group">
+  <h2 class="m-group__title" (click)="toggleOpen()">
+    <span>{{ group.name }}</span>
+    <span class="m-group__title-icon">
+      <i *ngIf="!open" class="fa fa-caret-down"></i>
+      <i *ngIf="open" class="fa fa-caret-up"></i>
+    </span>
+  </h2>
+  <div *ngIf="open">
+      <app-monitor [monitor]="monitor" *ngFor="let monitor of group.monitors"></app-monitor>
+  </div>
+</div>

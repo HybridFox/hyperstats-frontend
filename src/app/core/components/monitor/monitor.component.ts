@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CoreActions, CoreSelectors } from '../../store';
+import { find } from "lodash-es";
 import { NgRedux } from '@angular-redux/store';
-import { filter, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { filter, map, takeUntil } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+
+import { CoreActions, CoreSelectors } from "../../store";
 
 @Component({
   selector: 'app-monitor',
@@ -11,8 +13,10 @@ import { Observable } from 'rxjs';
 export class MonitorComponent implements OnInit {
   @Input() public monitor: any;
 
+  private componentDestroyed$: BehaviorSubject<boolean> = new BehaviorSubject(false);
+
   public data$: Observable<any>;
-  public xScaleMin = new Date(new Date().getTime() - (24 * 60 * 60 * 1000));
+  public xScaleMin = new Date(new Date().getTime() - (1 * 60 * 60 * 1000));
   public yScaleMax = 2000;
 
   constructor(
@@ -24,16 +28,27 @@ export class MonitorComponent implements OnInit {
     this.coreActions.fetchMonitor(this.monitor.id).subscribe();
     this.data$ = this.ngRedux.select([...CoreSelectors.monitor.result, this.monitor.id]).pipe(
       filter(data => data !== undefined && data !== null),
-      map(data => ([{
-        name: data.name,
-        series: data.checks.map(check => ({
-          name: new Date(check.createdAt),
-          value: check.ping
+      map(monitorData => {
+        return monitorData.checks[0].values
+          .filter(valueType => valueType.key !== "statusCode")
+          .sort(function(a, b){
+            if(a.key < b.key) { return -1; }
+            if(a.key > b.key) { return 1; }
+            return 0;
+          })
+          .map((valueType, index) => ({
+            name: valueType.key,
+            series: monitorData.checks.map((checkData) => ({
+              name: new Date(checkData.createdAt),
+              value: find(checkData.values, { key: valueType.key }).value
+            }))
         }))
-      }])
-      )
+      })
     );
+  }
 
-    this.data$.subscribe(val => console.log(val));
+  ngOnDestroy() {
+    this.componentDestroyed$.next(true);
+    this.componentDestroyed$.complete();
   }
 }

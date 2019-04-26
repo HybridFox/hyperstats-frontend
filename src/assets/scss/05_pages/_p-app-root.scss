@@ -4,9 +4,11 @@
 }
 
 .p-app-root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  padding-top: $spacer;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.04);
 }
 
 .p-app-root__content {

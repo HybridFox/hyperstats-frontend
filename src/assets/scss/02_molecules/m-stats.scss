@@ -1,0 +1,50 @@
+.m-stats {
+  position: relative;
+  clear: both;
+  border-radius: 10px;
+  padding: $spacer;
+  margin-bottom: $spacer;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.04);
+  background-color: $white;
+
+  .m-stats__title {
+    color: $boulder;
+    margin: 0 0 $spacer 0;
+  }
+
+  .m-stats__container {
+    .m-stats__chart {
+      position: relative;
+      margin-top: 60px;
+      height: 100px;
+
+      .chart-legend {
+        position: absolute;
+        top: -40px;
+        left: 0;
+
+        header {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .m-stats__container--large {
+    .m-stats__chart {
+      position: relative;
+      margin-top: 40px;
+      height: 400px;
+
+      .chart-legend {
+        position: absolute;
+        top: -40px;
+        left: 0;
+
+        header {
+          display: none;
+        }
+      }
+    }
+  }
+}

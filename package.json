@@ -43,6 +43,7 @@
     "country-list": "2.1.0",
     "deep-extend": "^0.6.0",
     "i18next-conv": "^8.0.1",
+    "lodash-es": "4.17.11",
     "ng-redux": "^4.1.0",
     "ngx-toastr": "9.1.1",
     "normalizr": "^3.3.0",
