@@ -4,7 +4,7 @@ import { tap, catchError, finalize } from 'rxjs/operators';
 import { throwError as _throw } from 'rxjs';
 
 import { Handler } from '@store/handler';
-import { MonitorRepository } from '@api/monitors';
+import { CoreRepository } from './repository';
 
 import { ACTIONS } from './action-types';
 
@@ -12,28 +12,51 @@ import { ACTIONS } from './action-types';
 export class CoreActions {
   constructor(
     private handler: Handler,
-    private monitorRepository: MonitorRepository,
+    private coreRepository: CoreRepository,
   ) { }
 
-  public fetchAll(): Observable<any> {
-    this.handler.dispatchStart(ACTIONS.FETCH_ALL);
+  public fetchAllGroups(): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.FETCH_GROUPS);
 
-    return this.monitorRepository.fetchAll()
+    return this.coreRepository.fetchAllGroups()
       .pipe(
         catchError((error) => {
-          this.handler.dispatchError(ACTIONS.FETCH_ALL, {
+          this.handler.dispatchError(ACTIONS.FETCH_GROUPS, {
             message: error.message,
           });
 
           return _throw(error);
         }),
         tap((response: any) => {
-          this.handler.dispatchSuccess(ACTIONS.FETCH_ALL, {
+          this.handler.dispatchSuccess(ACTIONS.FETCH_GROUPS, {
             payload: response
           });
         }),
         finalize(() => {
-          this.handler.dispatchDone(ACTIONS.FETCH_ALL);
+          this.handler.dispatchDone(ACTIONS.FETCH_GROUPS);
+        }),
+      );
+  }
+
+  public fetchMonitor(monitorId: string): Observable<any> {
+    this.handler.dispatchStart(ACTIONS.FETCH_MONITOR);
+
+    return this.coreRepository.fetchMonitor(monitorId)
+      .pipe(
+        catchError((error) => {
+          this.handler.dispatchError(ACTIONS.FETCH_MONITOR, {
+            message: error.message,
+          });
+
+          return _throw(error);
+        }),
+        tap((response: any) => {
+          this.handler.dispatchSuccess(ACTIONS.FETCH_MONITOR, {
+            payload: response
+          });
+        }),
+        finalize(() => {
+          this.handler.dispatchDone(ACTIONS.FETCH_MONITOR);
         }),
       );
   }

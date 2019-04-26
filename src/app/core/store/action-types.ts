@@ -1,5 +1,8 @@
-export const TYPE_LIST = 'CORE';
+export const TYPE_GROUPS = 'GROUPS';
+export const TYPE_MONITORS = 'MONITORS';
 
 export const ACTIONS = {
-  FETCH_ALL: `${TYPE_LIST}/FETCH`,
+  FETCH_GROUPS: `${TYPE_GROUPS}/FETCH_ALL`,
+
+  FETCH_MONITOR: `${TYPE_MONITORS}/FETCH`,
 };

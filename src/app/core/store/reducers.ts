@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { listReducer } from './list/reducers';
+import { groupsReducer } from './groups/reducers';
+import { monitorReducer } from './monitor/reducers';
 
 export const coreReducer = combineReducers({
-  list: listReducer,
+  groups: groupsReducer,
+  monitor: monitorReducer,
 });

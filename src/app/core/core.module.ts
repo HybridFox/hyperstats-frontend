@@ -19,11 +19,11 @@ import { LoadingModule } from '@ui/loading';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { StoreRouterModule } from '@core/store-router';
 
-import { MonitorApiModule } from '@api/monitors'
+import { MonitorApiModule } from '@api/monitors';
 
 import { Components, RootComponent } from './components';
 import { Pages } from './pages';
-import { CoreServices, coreReducer } from './store'
+import { CoreServices, coreReducer } from './store';
 
 @NgModule({
   declarations: [
@@ -70,6 +70,6 @@ export class CoreModule {
   constructor(
     private storeService: StoreService,
   ) {
-    this.storeService.injectAsyncReducer('dashboard', coreReducer);
+    this.storeService.injectAsyncReducer('core', coreReducer);
   }
 }

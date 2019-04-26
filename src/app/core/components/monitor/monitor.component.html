@@ -1,0 +1,13 @@
+<div *ngIf="(data$ | async)" class="m-stats">
+  <h3>{{ (data$ | async).name }} </h3>
+  <ngx-charts-line-chart
+      [results]="data$ | async"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [xScaleMin]="xScaleMin"
+      [yScaleMax]="yScaleMax"
+      [scheme]="{domain: [monitor.color]}"
+      theme="dark">
+    </ngx-charts-line-chart>
+</div>

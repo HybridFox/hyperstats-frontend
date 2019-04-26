@@ -1,13 +1,24 @@
 import {
-  list,
-  listLoading,
-  listError,
-} from './list/selectors';
+  groups,
+  groupsLoading,
+  groupsError,
+} from './groups/selectors';
+
+import {
+  monitor,
+  monitorLoading,
+  monitorError,
+} from './monitor/selectors';
 
 export const CoreSelectors = {
-  list: {
-    result: list,
-    loading: listLoading,
-    error: listError,
+  groups: {
+    result: groups,
+    loading: groupsLoading,
+    error: groupsError,
+  },
+  monitor: {
+    result: monitor,
+    loading: monitorLoading,
+    error: monitorError,
   },
 };
