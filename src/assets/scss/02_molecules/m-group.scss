@@ -1,14 +1,22 @@
-app-group {
   .m-group {
     .m-group__title {
       color: $tundora;
       background: $white;
       border-radius: 10px;
+      box-shadow: 0px 3px 10px rgba(0,0,0,0.04);
       padding: $spacer;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       cursor: pointer;
+    }
+  }
+
+.p-app-root--dark {
+  .m-group {
+    .m-group__title {
+      color: $mercury;
+      background: $black;
     }
   }
 }

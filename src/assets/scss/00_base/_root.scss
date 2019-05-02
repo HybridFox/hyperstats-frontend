@@ -2,13 +2,17 @@ body {
     background-color: $athens-gray;
 }
 
+.p-app-root {
+  background-color: $athens-gray;
+}
+
+.p-app-root.p-app-root--dark {
+  background-color: $tundora;
+}
+
 .root {
     min-height: 100vh;
     margin-bottom: -$footer-height;
-}
-
-p {
-    line-height: 30px;
 }
 
 * {

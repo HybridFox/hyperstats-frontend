@@ -7,9 +7,16 @@
   box-shadow: 0px 3px 10px rgba(0,0,0,0.04);
   background-color: $white;
 
-  .m-stats__title {
-    color: $boulder;
+  .m-stats__header {
+    color: $tundora;
     margin: 0 0 $spacer 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .m-stats__title {
+      font-size: 1.2em;
+    }
   }
 
   .m-stats__container {
@@ -34,7 +41,7 @@
     .m-stats__chart {
       position: relative;
       margin-top: 40px;
-      height: 400px;
+      height: 500px;
 
       .chart-legend {
         position: absolute;
@@ -45,6 +52,48 @@
           display: none;
         }
       }
+    }
+  }
+}
+
+
+.chart-legend .legend-label .legend-label-text {
+  color: $boulder !important;
+}
+
+.chart-legend .legend-label .active .legend-label-text {
+  color: $black !important;
+}
+
+.p-app-root--dark {
+  a {
+    color: $white;
+  }
+
+  .chart-legend .legend-label .legend-label-text  {
+    color: $mercury !important;
+  }
+
+  .chart-legend .legend-label .active .legend-label-text  {
+    color: $white !important;
+  }
+
+  .m-stats {
+    position: relative;
+    clear: both;
+    border-radius: 10px;
+    background-color: $black;
+
+    .m-stats__header {
+      color: $mercury;
+    }
+
+    text {
+      fill: $mercury;
+    }
+
+    .gridline-path {
+      stroke: $tundora;
     }
   }
 }

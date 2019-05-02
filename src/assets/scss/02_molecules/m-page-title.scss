@@ -1,0 +1,27 @@
+.m-page-title {
+  margin: $spacer 0 $spacer-large 0;
+  padding: 0;
+
+  .m-page-title__title {
+    color: $tundora;
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+  }
+
+  .m-page-title__subtitle {
+    color: $boulder;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.p-app-root--dark {
+  .m-page-title__title {
+    color: $white;
+  }
+
+  .m-page-title__subtitle {
+    color: $mercury;
+  }
+}

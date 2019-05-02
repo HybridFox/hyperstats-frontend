@@ -11,6 +11,10 @@ export class GroupComponent {
 
   constructor() { }
 
+  trackByFn(index, item) {
+    return item.id;
+  }
+
   toggleOpen = () => {
     this.open = !this.open;
   }

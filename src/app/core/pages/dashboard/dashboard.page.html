@@ -1,6 +1,6 @@
 <div class="p-about">
   <div class="container">
     <app-listeners [data]="data$"></app-listeners>
-    <app-group [group]="group" *ngFor="let group of (data$ | async)"></app-group>
+    <app-group [group]="group" *ngFor="let group of (data$ | async); trackBy: trackByFn"></app-group>
   </div>
 </div>

@@ -1,0 +1,50 @@
+<div class="p-about">
+  <div class="container">
+    <div class="m-page-title">
+      <p class="m-page-title__subtitle">{{ monitor?.group.name || "&nbsp;" }}</p>
+      <h1 class="m-page-title__title">{{ monitor?.name }} <i class="fa fa-spinner fa-spin" *ngIf='loading$ | async'></i></h1>
+    </div>
+    <div class="m-range-picker">
+      <p class="m-range-picker__label">Date range</p>
+      <div class="m-range-picker__input-container">
+        <input
+          class="m-range-picker__input"
+          type="text"
+          ngxMdDaterangepicker
+          [(ngModel)]="dateRange"
+          [ranges]="ranges"
+          [alwaysShowCalendars]="true"
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+          [timePicker]="true"
+          [keepCalendarOpeningWithRange]="true"
+          [locale]="locale"
+          [timePicker24Hour]="true"
+          (datesUpdated)="handleRangeUpdate()"
+        />
+        <i class="fa fa-calendar m-range-picker__icon"></i>
+      </div>
+    </div>
+    <div class="m-stats" *ngIf="(mappedData$ | async) && (mappedData$ | async).length === 0">
+      No results found, please select a bigger dataset.
+    </div>
+    <div class="m-stats" *ngFor="let chartData of (mappedData$ | async)">
+      <div class="m-stats__container m-stats__container--large">
+        <div class="m-stats__chart">
+          <ngx-charts-line-chart
+            legendPosition="below"
+            [results]="[chartData]"
+            [legend]="true"
+            [xAxis]="true"
+            [yAxis]="true"
+            [scheme]="{domain: [monitor.color]}">
+            <ng-template #tooltipTemplate let-model="model">
+              <p>{{model.name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
+              <h3>{{model.value}}</h3>
+            </ng-template>
+          </ngx-charts-line-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

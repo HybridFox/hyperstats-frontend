@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxDaterangepickerModule } from '@qqnc/ngx-daterangepicker';
 
 import { ApiModule } from '@api/api';
 
@@ -15,6 +17,9 @@ import { StoreService } from '@store/store.service';
 import { ErrorInterceptor } from '@helpers/error.interceptor';
 import { FormFieldsModule } from '@ui/form-fields';
 import { LoadingModule } from '@ui/loading';
+import { MomentModule } from 'ngx-moment';
+import { NgxAircalModule } from "ngx-aircal";
+import { NgxMdDaterangepicker } from 'ngx-material-daterangepicker';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { StoreRouterModule } from '@core/store-router';
@@ -39,6 +44,9 @@ import { CoreServices, coreReducer } from './store';
     HttpClientModule,
     ApiModule,
     NgxChartsModule,
+    MomentModule,
+    RouterModule,
+    NgxMdDaterangepicker,
 
     ReactiveFormsModule,
     LoadingModule,

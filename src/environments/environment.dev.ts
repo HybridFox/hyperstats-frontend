@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://rare-o.studiohyperdrive.be/api/'
+  apiBaseUrl: 'https://stats-api.simulatorradio.com/'
 };
 
 /*

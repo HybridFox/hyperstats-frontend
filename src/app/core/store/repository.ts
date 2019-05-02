@@ -17,9 +17,15 @@ export class CoreRepository {
     return this.http.get(url);
   }
 
-  public fetchMonitor(monitorId: string): Observable<any> {
+  public fetchMonitor(monitorId: string, sparse = true, dateRange: any): Observable<any> {
     const url = this.apiConfig.baseUrl(`/monitors/${monitorId}`);
 
-    return this.http.get(url);
+    return this.http.get(url, {
+      params: {
+        sparse: sparse.toString(),
+        ...dateRange && dateRange.endDate && { endDate: dateRange.endDate.unix() },
+        ...dateRange && dateRange.startDate && { startDate: dateRange.startDate.unix() },
+      }
+    });
   }
 }

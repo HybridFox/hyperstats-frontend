@@ -5,6 +5,7 @@ import { filter, map, takeUntil } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 import { CoreActions, CoreSelectors } from "../../store";
+import { monitor } from '../../store/monitor/selectors';
 
 @Component({
   selector: 'app-monitor',
@@ -16,7 +17,7 @@ export class MonitorComponent implements OnInit {
   private componentDestroyed$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   public data$: Observable<any>;
-  public xScaleMin = new Date(new Date().getTime() - (1 * 60 * 60 * 1000));
+  public xScaleMin = new Date(new Date().getTime() - (6 * 60 * 60 * 1000));
   public yScaleMax = 2000;
 
   constructor(
@@ -25,24 +26,29 @@ export class MonitorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.coreActions.fetchMonitor(this.monitor.id).subscribe();
-    this.data$ = this.ngRedux.select([...CoreSelectors.monitor.result, this.monitor.id]).pipe(
+    this.coreActions.fetchDashboardMonitor(this.monitor.id, true).subscribe();
+    this.data$ = this.ngRedux.select([...CoreSelectors.dashboardMonitor.result, this.monitor.id]).pipe(
       filter(data => data !== undefined && data !== null),
-      map(monitorData => {
+      map((monitorData: any) => {
         return monitorData.checks[0].values
           .filter(valueType => valueType.key !== "statusCode")
-          .sort(function(a, b){
-            if(a.key < b.key) { return -1; }
-            if(a.key > b.key) { return 1; }
+          .sort(function (a, b) {
+            if (a.key < b.key) { return -1; }
+            if (a.key > b.key) { return 1; }
             return 0;
           })
-          .map((valueType, index) => ({
-            name: valueType.key,
-            series: monitorData.checks.map((checkData) => ({
-              name: new Date(checkData.createdAt),
-              value: find(checkData.values, { key: valueType.key }).value
-            }))
-        }))
+          .map((valueType, index) => {
+            return {
+              name: valueType.key,
+              series: monitorData.checks.map((checkData) => {
+                const c = find(checkData.values, { key: valueType.key }) as any;
+                return {
+                  name: new Date(checkData.createdAt),
+                  value: c ? c.value : 0
+                }
+              })
+          }
+          })
       })
     );
   }

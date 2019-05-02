@@ -1,0 +1,40 @@
+.m-range-picker {
+  .m-range-picker__input-container {
+    position: relative;
+    display: inline-block;
+    max-width: 1000px;
+    width: 100%;
+
+    .m-range-picker__input {
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      border: none;
+      box-shadow: 0px 3px 10px rgba(0,0,0,0.04);
+      margin-bottom: $spacer-large;
+      padding: $spacer $spacer $spacer $spacer-xx-large;
+      background-color: $white;
+      display: inline-block;
+    }
+
+    .m-range-picker__icon {
+      position: absolute;
+      top: $spacer;
+      left: $spacer;
+    }
+  }
+
+  .m-range-picker__label {
+    margin: 0 0 $spacer-x-small 0;
+    color: $boulder;
+  }
+
+  .md-drppicker {
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    padding: $spacer;
+
+    // Sorry, not sorry
+    transition: 0s ease !important;
+  }
+}

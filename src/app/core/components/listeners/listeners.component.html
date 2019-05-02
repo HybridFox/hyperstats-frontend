@@ -1,15 +1,31 @@
-<div class="m-stats">
-  <div class="m-stats__container--large">
-    <div class="m-stats__chart">
-      <ngx-charts-line-chart
-        legendPosition="below"
-        [results]="mappedData$ | async"
-        [legend]="true"
-        [xAxis]="true"
-        [yAxis]="true"
-        [xScaleMin]="xScaleMin"
-        [scheme]="{domain: colors}">
-      </ngx-charts-line-chart>
+<div>
+  <div class="m-live">
+    <div class="m-live__box-wrapper" *ngFor="let data of (liveData$ | async)">
+      <div class="m-live__box">
+        <div class="m-live__circle" [style.background-color]="data.color"></div>
+        <p class="m-live__name">{{ data.name }}</p>
+        <p class="m-live__listeners">{{ data.listeners }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-stats">
+    <div class="m-stats__container--large">
+      <div class="m-stats__chart">
+        <ngx-charts-line-chart
+          legendPosition="below"
+          [results]="mappedData$ | async"
+          [legend]="true"
+          [xAxis]="true"
+          [yAxis]="true"
+          [xScaleMin]="xScaleMin"
+          [scheme]="{domain: colors}">
+          <ng-template #tooltipTemplate let-model="model">
+            <p>{{model.name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
+            <h3>{{model.value}}</h3>
+          </ng-template>
+        </ngx-charts-line-chart>
+      </div>
     </div>
   </div>
 </div>

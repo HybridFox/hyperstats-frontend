@@ -1,0 +1,15 @@
+.m-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.p-app-root--dark {
+  .m-footer {
+    color: $mercury;
+
+    a {
+      color: $athens-gray;
+    }
+  }
+}

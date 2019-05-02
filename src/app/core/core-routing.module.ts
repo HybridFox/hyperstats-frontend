@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: Pages.DashboardPageComponent
   },
+  {
+    path: 'monitors/:monitorId',
+    component: Pages.MonitorPageComponent
+  },
 ];
 
 @NgModule({

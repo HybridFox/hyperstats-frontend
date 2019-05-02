@@ -1,5 +1,5 @@
 <div *ngIf="(data$ | async)" class="m-stats">
-  <h3 class="m-stats__title">{{ monitor.name }}</h3>
+  <p class="m-stats__header"><span class="m-stats__title">{{ monitor.name }}</span><span><a a [routerLink]="['monitors', monitor.id]">View more</a></span></p>
   <div class="m-stats__container">
     <div class="m-stats__chart" *ngFor="let chartData of (data$ | async)">
       <ngx-charts-line-chart
@@ -10,6 +10,10 @@
         [yAxis]="true"
         [xScaleMin]="xScaleMin"
         [scheme]="{domain: [monitor.color]}">
+        <ng-template #tooltipTemplate let-model="model">
+          <p>{{model.name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
+          <h3>{{model.value}}</h3>
+        </ng-template>
       </ngx-charts-line-chart>
     </div>
   </div>
