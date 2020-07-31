@@ -14,6 +14,10 @@
           <p>{{model.name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
           <h3>{{model.value}}</h3>
         </ng-template>
+        <ng-template #seriesTooltipTemplate let-model="model">
+          <p>{{model[0].name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
+          <h3 *ngFor="let stat of model">{{stat.series}}: {{stat.value}}</h3>
+        </ng-template>
       </ngx-charts-line-chart>
     </div>
   </div>

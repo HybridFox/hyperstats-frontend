@@ -11,6 +11,7 @@
 @import "./00_base/utils";
 
 // Molecules
+@import "./02_molecules/m-alert";
 @import "./02_molecules/m-stats";
 @import "./02_molecules/m-group";
 @import "./02_molecules/m-live";
@@ -20,3 +21,13 @@
 
 // Pages
 @import "./05_pages/p-app-root";
+
+.ranges ul span li:last-of-type {
+  display: none;
+}
+
+.fa-refresh {
+  position: relative;
+  top: -2px;
+  left: -2px;
+}

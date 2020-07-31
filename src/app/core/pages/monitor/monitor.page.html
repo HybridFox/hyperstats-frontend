@@ -12,13 +12,13 @@
           type="text"
           ngxMdDaterangepicker
           [(ngModel)]="dateRange"
-          [ranges]="ranges"
+          [ranges]="rangeService.ranges"
           [alwaysShowCalendars]="true"
           [minDate]="minDate"
           [maxDate]="maxDate"
           [timePicker]="true"
           [keepCalendarOpeningWithRange]="true"
-          [locale]="locale"
+          [locale]="rangeService.locale"
           [timePicker24Hour]="true"
           (datesUpdated)="handleRangeUpdate()"
         />
@@ -41,6 +41,10 @@
             <ng-template #tooltipTemplate let-model="model">
               <p>{{model.name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
               <h3>{{model.value}}</h3>
+            </ng-template>
+            <ng-template #seriesTooltipTemplate let-model="model">
+              <p>{{model[0].name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
+              <h3 *ngFor="let stat of model">{{stat.series}}: {{stat.value}}</h3>
             </ng-template>
           </ngx-charts-line-chart>
         </div>

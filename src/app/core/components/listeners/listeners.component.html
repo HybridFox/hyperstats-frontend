@@ -1,28 +1,61 @@
 <div>
   <div class="m-live">
-    <div class="m-live__box-wrapper" *ngFor="let data of (liveData$ | async)">
-      <div class="m-live__box">
+    <div class="m-live__box-wrapper" *ngFor="let data of (liveData$ | async); trackBy: trackByFn">
+      <div class="m-live__box" (mouseenter)="handleMouseEnter(data)" (mouseleave)="handleMouseLeave()">
         <div class="m-live__circle" [style.background-color]="data.color"></div>
         <p class="m-live__name">{{ data.name }}</p>
         <p class="m-live__listeners">{{ data.listeners }}</p>
+        <p class="m-live__checkbox"><input type="checkbox" *ngIf="form" [formControl]="form.get(data.name)" [name]="data.name"></p>
       </div>
     </div>
   </div>
 
-  <div class="m-stats">
+  <div class="m-range__container">
+    <div class="m-range-picker">
+      <p class="m-range-picker__label">Date range</p>
+      <div class="m-range-picker__input-container">
+        <input
+          class="m-range-picker__input"
+          type="text"
+          ngxMdDaterangepicker
+          [(ngModel)]="dateRange"
+          [ranges]="rangeService.ranges"
+          [alwaysShowCalendars]="true"
+          [minDate]="minDate"
+          [maxDate]="maxDate"
+          [timePicker]="true"
+          [keepCalendarOpeningWithRange]="true"
+          [locale]="rangeService.locale"
+          [timePicker24Hour]="true"
+          (datesUpdated)="handleRangeUpdate()"
+        />
+        <i class="fa fa-calendar m-range-picker__icon"></i>
+      </div>
+    </div>
+    <div class="m-range__refresh">
+      <span *ngIf="autorefreshEnabled"><i class="fa fa-refresh fa-spin"></i> {{ refreshIn }}s</span>
+      <span *ngIf="!autorefreshEnabled">Autorefresh disabled. <a href="#" (click)="enableAutorefresh($event)">Enable?</a></span>
+    </div>
+  </div>
+
+  <div class="m-stats m-stats--with-corners">
     <div class="m-stats__container--large">
       <div class="m-stats__chart">
         <ngx-charts-line-chart
           legendPosition="below"
           [results]="mappedData$ | async"
-          [legend]="true"
+          [activeEntries]="activeEntries"
+          [legend]="false"
           [xAxis]="true"
           [yAxis]="true"
-          [xScaleMin]="xScaleMin"
           [scheme]="{domain: colors}">
           <ng-template #tooltipTemplate let-model="model">
             <p>{{model.name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
             <h3>{{model.value}}</h3>
+          </ng-template>
+          <ng-template #seriesTooltipTemplate let-model="model">
+            <p>{{model[0].name | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}</p>
+            <h3 *ngFor="let stat of model">{{stat.series}}: {{stat.value}}</h3>
           </ng-template>
         </ngx-charts-line-chart>
       </div>

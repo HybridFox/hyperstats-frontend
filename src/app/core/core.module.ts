@@ -18,7 +18,6 @@ import { ErrorInterceptor } from '@helpers/error.interceptor';
 import { FormFieldsModule } from '@ui/form-fields';
 import { LoadingModule } from '@ui/loading';
 import { MomentModule } from 'ngx-moment';
-import { NgxAircalModule } from "ngx-aircal";
 import { NgxMdDaterangepicker } from 'ngx-material-daterangepicker';
 
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -29,11 +28,12 @@ import { MonitorApiModule } from '@api/monitors';
 import { Components, RootComponent } from './components';
 import { Pages } from './pages';
 import { CoreServices, coreReducer } from './store';
+import { RangeService } from './services/range.service';
 
 @NgModule({
   declarations: [
     ...Components,
-    ...Pages,
+    ...Pages
   ],
   imports: [
     MonitorApiModule,
@@ -64,6 +64,7 @@ import { CoreServices, coreReducer } from './store';
   providers: [
     CoreServices,
     StoreService,
+    RangeService,
 
     { provide: LOCALE_ID, useValue: 'en' },
     {

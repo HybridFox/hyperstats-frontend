@@ -1,0 +1,10 @@
+.m-alert {
+  padding: $spacer-small $spacer;
+  border-radius: $border-radius;
+  margin-bottom: $spacer;
+
+  &.m-alert--danger {
+    color: #FFF;
+    background-color: $danger;
+  }
+}

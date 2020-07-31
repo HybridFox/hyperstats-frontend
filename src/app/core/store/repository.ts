@@ -11,10 +11,16 @@ export class CoreRepository {
     private apiConfig: ApiConfigService,
   ) {}
 
-  public fetchAllGroups(sparse = true): Observable<any> {
-    const url = this.apiConfig.baseUrl(`/groups?sparse=${sparse}`);
+  public fetchAllGroups(sparse = true, dateRange): Observable<any> {
+    const url = this.apiConfig.baseUrl(`/groups`);
 
-    return this.http.get(url);
+    return this.http.get(url, {
+      params: {
+        sparse: sparse.toString(),
+        ...dateRange && dateRange.endDate && { endDate: dateRange.endDate.unix() },
+        ...dateRange && dateRange.startDate && { startDate: dateRange.startDate.unix() },
+      }
+    });
   }
 
   public fetchMonitor(monitorId: string, sparse = true, dateRange: any): Observable<any> {

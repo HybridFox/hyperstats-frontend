@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { find } from 'lodash-es';
 import * as moment from 'moment';
 import { Range } from './monitor.types';
+import { RangeService } from '../../services/range.service';
 
 @Component({
   templateUrl: './monitor.page.html'
@@ -15,36 +16,24 @@ export class MonitorPageComponent implements OnInit {
   @select(CoreSelectors.monitor.result) public data$: Observable<any>;
   @select(CoreSelectors.monitor.loading) public loading$: Observable<any>;
 
-  public mappedData$: Observable<any>
+  public mappedData$: Observable<any>;
   public monitor: any;
   public dateRange: Range = {
     startDate: moment().subtract(3, 'days'),
     endDate: moment()
   };
-  public locale = {
-    format: 'DD MMMM YYYY HH:mm',
-  }
-  public ranges: any = {
-    'Last': {
-      Day: [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-      Week: [moment().subtract(1, 'weeks').startOf('isoWeek'), moment().subtract(1, 'weeks').endOf('isoWeek')],
-      '2 Weeks': [moment().subtract(2, 'weeks').startOf('isoWeek'), moment().subtract(1, 'weeks').endOf('isoWeek')],
-    },
-    'Current': {
-      Day: [moment().startOf('day'), moment().endOf('day')],
-      Week: [moment().startOf('isoWeek'), moment().endOf('isoWeek')],
-    }
-  };
-  public minDate = moment("2019-04-25");
+
+  public minDate = moment('2019-05-01');
   public maxDate = moment();
 
   constructor(
     private coreActions: CoreActions,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public rangeService: RangeService
   ) { }
 
   handleRangeUpdate() {
-    this.fetch()
+    this.fetch();
   }
 
   ngOnInit() {
@@ -54,9 +43,9 @@ export class MonitorPageComponent implements OnInit {
       filter(data => data !== undefined && data !== null),
       map((monitorData: any) => {
         this.monitor = monitorData;
-        const checks = monitorData.checks[0];
+        const checks = monitorData.checks[0]._source;
         return checks ? checks.values
-          .filter(valueType => valueType.key !== "statusCode")
+          .filter(valueType => valueType.key !== 'statusCode')
           .sort(function (a, b) {
             if (a.key < b.key) { return -1; }
             if (a.key > b.key) { return 1; }
@@ -66,14 +55,14 @@ export class MonitorPageComponent implements OnInit {
             return {
               name: valueType.key,
               series: monitorData.checks.map((checkData) => {
-                const c = find(checkData.values, { key: valueType.key }) as any;
+                const c = find(checkData._source.values, { key: valueType.key }) as any;
                 return {
-                  name: new Date(checkData.createdAt),
+                  name: new Date(checkData._source.createdAt),
                   value: c ? c.value : 0
-                }
+                };
               })
-            }
-          }) : []
+            };
+          }) : [];
       })
     );
   }

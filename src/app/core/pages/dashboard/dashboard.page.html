@@ -1,6 +1,15 @@
 <div class="p-about">
   <div class="container">
-    <app-listeners [data]="data$"></app-listeners>
+    <!-- <div class="m-alert m-alert--danger">
+      Please use our new domain: <a href="https://radio-stats.akxis.io"><b>radio-stats.akxis.io</b></a> :)
+    </div> -->
+    <app-listeners
+      [data]="data$"
+      [loading]="loading$"
+      (rangeUpdated)="handleRangeUpdate($event)"
+      (refresh)="handleRefresh()"
+      (autorefreshUpdated)="handleAutorefreshUpdate($event)">
+    </app-listeners>
     <app-group [group]="group" *ngFor="let group of (data$ | async); trackBy: trackByFn"></app-group>
   </div>
 </div>

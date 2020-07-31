@@ -3,6 +3,7 @@
     position: relative;
     display: inline-block;
     max-width: 1000px;
+    min-width: 800px;
     width: 100%;
 
     .m-range-picker__input {
@@ -36,5 +37,26 @@
 
     // Sorry, not sorry
     transition: 0s ease !important;
+  }
+}
+
+.m-range__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .m-range__refresh {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #272727;
+    margin-bottom: $spacer;
+  }
+}
+
+.p-app-root--dark {
+  .m-range__container {
+    .m-range__refresh {
+      color: #e2e2e2;
+    }
   }
 }
