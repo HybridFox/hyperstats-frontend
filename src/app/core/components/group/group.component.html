@@ -3,7 +3,7 @@
   'm-group--open': open
 }">
   <h2 class="m-group__title" (click)="toggleOpen()">
-    <span>{{ group.name }}</span>
+    <span>{{ group.name }} <a *ngIf="group.codeName" class="m-group__about" target="_blank" [href]="'https://radiowiki.net/' + group.codeName">View on RadioWiki</a></span>
     <span class="m-group__title-icon">
       <i *ngIf="!open" class="fa fa-caret-down"></i>
       <i *ngIf="open" class="fa fa-caret-up"></i>

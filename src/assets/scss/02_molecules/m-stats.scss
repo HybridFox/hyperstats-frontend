@@ -59,6 +59,12 @@
 }
 
 
+.m-group {
+  *:not(:last-of-type) .m-stats {
+    border-bottom: 3px solid $mercury;
+  }
+}
+
 .chart-legend .legend-label .legend-label-text {
   color: $boulder !important;
 }
@@ -95,6 +101,12 @@
 
     .gridline-path {
       stroke: $tundora;
+    }
+  }
+
+  .m-group {
+    *:not(:last-of-type) .m-stats {
+      border-bottom: 3px solid $black;
     }
   }
 }

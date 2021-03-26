@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://api.radiostats.info/'
+  apiBaseUrl: 'https://arran-api.radiostats.info/'
 };
